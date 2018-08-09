@@ -1,0 +1,24 @@
+{
+    "title": "Exiting multiple loops",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select all statements that are true about multiple loops.",
+    "hint": "Exiting multiple loops is done by using <code>break<\/code> with a loop label.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "A loop inside a loop is called a nested loop.",
+        "Using <code>break<\/code> by itself exits the current loop only.",
+        "Loop labels look like this: <code>myLoop:<\/code>",
+        "You can exit more than one loop at a time.",
+        "You can break out of a labeled loop whenever you need.",
+        "You can embed one loop inside another."
+    ],
+    "wrong": [
+        "You may have only one labeled loop.",
+        "Nesting can only be used with <code>for<\/code> loops.",
+        "Loop labels look like this: <code>myLoop {<\/code>",
+        "You can exit up to two loops at a time.",
+        "You can only break out of loops inside a condition.",
+        "You can write <code>break 3<\/code> to break out of two loops."
+    ]
+}

@@ -1,0 +1,45 @@
+<p>If you put a loop inside a loop it’s called a <em>nested</em> loop, and it’s not uncommon to want to break out of both the inner loop and the outer loop at the same time.</p>
+<p>As an example, we could write some code to calculate the times tables from 1 through 10 like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">let</span> product <span class="operator">=</span> i <span class="operator">*</span> j</p>
+<p>    <span class="builtin">print</span> <span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>i<span class="delimiter variable">)</span></span> * <span class="interpolation"><span class="delimiter variable">\(</span>j<span class="delimiter variable">)</span></span> is <span class="interpolation"><span class="delimiter variable">\(</span>product<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If we wanted to exit part-way through we need to do two things. First, we give the outside loop a label, like this:</p>
+<pre class="code">
+<p></p>
+<p>outerLoop<span class="punctuation">:</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">let</span> product <span class="operator">=</span> i <span class="operator">*</span> j</p>
+<p>    <span class="builtin">print</span> <span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>i<span class="delimiter variable">)</span></span> * <span class="interpolation"><span class="delimiter variable">\(</span>j<span class="delimiter variable">)</span></span> is <span class="interpolation"><span class="delimiter variable">\(</span>product<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Second, add our condition inside the inner loop, then use <code>break outerLoop</code> to exit both loops at the same time:</p>
+<pre class="code">
+<p></p>
+<p>outerLoop<span class="punctuation">:</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">for</span> j <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">let</span> product <span class="operator">=</span> i <span class="operator">*</span> j</p>
+<p>    <span class="builtin">print</span> <span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>i<span class="delimiter variable">)</span></span> * <span class="interpolation"><span class="delimiter variable">\(</span>j<span class="delimiter variable">)</span></span> is <span class="interpolation"><span class="delimiter variable">\(</span>product<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>    <span class="keyword">if</span> product <span class="operator">==</span> <span class="number">50</span> <span class="punctuation">{</span></p>
+<p>      <span class="function">print</span><span class="punctuation">(</span><span class="string">"It's a bullseye!"</span><span class="punctuation">)</span></p>
+<p>      <span class="keyword">break</span> outerLoop</p>
+<p>    <span class="punctuation">}</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>With a regular <code>break</code>, only the inner loop would be exited – the outer loop would continue where it left off.</p>

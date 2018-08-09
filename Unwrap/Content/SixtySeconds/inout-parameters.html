@@ -1,0 +1,21 @@
+<p>All parameters passed into a Swift function are <em>constants</em>, so you can’t change them. If you want, you can pass in one or more parameters as <code>inout</code>, which means they can be changed inside your function, and those changes reflect in the original value outside the function.</p>
+<p>For example, if you want to double a number in place – i.e., change the value directly rather than returning a new one – you might write a function like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">doubleInPlace</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="keyword">inout</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  number <span class="operator">*</span><span class="operator">=</span> <span class="number">2</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>To use that, you first need to make a variable integer – you can’t use constant integers with <code>inout</code>, because they might be changed. You also need to pass the parameter to <code>doubleInPlace</code> using an ampersand, <code>&amp;</code>, before its name, which is an explicit recognition that you’re aware it is being used as <code>inout</code>.</p>
+<p>In code, you’d write this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> myNum <span class="operator">=</span> <span class="number">10</span> </p>
+<p><span class="function">doubleInPlace</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="operator">&amp;</span>myNum<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

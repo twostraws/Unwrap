@@ -1,0 +1,42 @@
+<p>Swift has a few ways of writing loops, but their underlying mechanism is the same: run some code repeatedly until a condition evaluates as false.</p>
+<p>The most common loop in Swift is a <code>for</code> loop: it will loop over arrays and ranges, and each time the loop goes around it will pull out one item and assign to a constant.</p>
+<p>For example, here’s a range of numbers:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> <span class="builtin">count</span> <span class="operator">=</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">10</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can use a <code>for</code> loop to print each item like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">for</span> number <span class="keyword">in</span> <span class="builtin">count</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Number is <span class="interpolation"><span class="delimiter variable">\(</span>number<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can do the same with arrays:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> albums <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"Red"</span><span class="punctuation">,</span> <span class="string">"1989"</span><span class="punctuation">,</span> <span class="string">"Reputation"</span><span class="punctuation">]</span></p>
+<p><span class="keyword">for</span> album <span class="keyword">in</span> albums <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>album<span class="delimiter variable">)</span></span> is on Apple Music"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you don’t use the constant that <code>for</code> loops give you, you should use an underscore instead so that Swift doesn’t create needless values:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"Players gonna "</span><span class="punctuation">)</span></p>
+<p><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">5</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"play"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

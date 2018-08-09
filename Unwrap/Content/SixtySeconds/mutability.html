@@ -1,0 +1,25 @@
+<p>The final difference between classes and structs is the way they deal with constants. If you have a constant struct with a variable property, that property can’t be changed because the struct itself is constant.</p>
+<p>However, if you have a constant <em>class</em> with a variable property, that property <em>can</em> be changed. Because of this, classes don’t need the <code>mutating</code> keyword with methods that change properties; that’s only needed with structs.</p>
+<p>This difference means you can change any variable property on a class even when the class is created as a constant – this is perfectly valid code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Singer</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name <span class="operator">=</span> <span class="string">"Taylor Swift"</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">let</span> taylor <span class="operator">=</span> <span class="function">Singer</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>taylor<span class="punctuation">.</span>name <span class="operator">=</span> <span class="string">"Ed Sheeran"</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>taylor<span class="punctuation">.</span>name<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you want to stop that from happening you need to make the property constant:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Singer</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">let</span> name <span class="operator">=</span> <span class="string">"Taylor Swift"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

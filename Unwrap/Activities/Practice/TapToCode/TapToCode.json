@@ -1,0 +1,62 @@
+[
+	{
+		"question": "Make an integer called <code>RANDOM_INT_NAME</code> equal to RANDOM_SMALL_INT.",
+		"existingCode": "",
+		"components": [
+			"CONSTANT_OR_VARIABLE",
+			"NAME_0",
+			":",
+			"Int",
+			"=",
+			"VALUE_0"
+		]
+	},
+	{
+		"question": "Make a string called <code>RANDOM_STRING_NAME</code> equal to \"RANDOM_STRING_VALUE_0\".",
+		"existingCode": "",
+		"components": [
+			"CONSTANT_OR_VARIABLE",
+			"NAME_0",
+			":",
+			"String",
+			"=",
+			"\"VALUE_0\""
+		]
+	},
+	{
+		"question": "Write code to print out <code>RANDOM_STRING_NAME</code>.",
+		"existingCode": "CONSTANT_OR_VARIABLE NAME_0 = \"VALUE_0\"",
+		"components": [
+			"print",
+			"(",
+			"NAME_0",
+			")"
+		]
+	},
+	{
+		"question": "Write code that joins these two strings together.",
+		"existingCode": "let RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\nlet RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_1\"",
+		"components": [
+			"CONSTANT_OR_VARIABLE",
+			"joined",
+			"=",
+			"NAME_0",
+			"+",
+			"NAME_1"
+		]
+	},
+	{
+		"question": "Write code that makes these strings into an array, in the order they were created.",
+		"existingCode": "let RANDOM_STRING_NAME1 = \"RANDOM_STRING_VALUE_0\"\nlet NAME_02 = \"RANDOM_STRING_VALUE_0\"",
+		"components": [
+			"CONSTANT_OR_VARIABLE",
+			"array",
+			"=",
+			"[",
+			"NAME_01",
+			",",
+			"NAME_02",
+			"]"
+		]
+	}
+]

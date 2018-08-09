@@ -1,0 +1,47 @@
+<p>If you use any external values inside your closure, Swift <em>captures</em> them – stores them alongside the closure, so they can be modified even if they don’t exist any more.</p>
+<p>Right now we have a <code>travel()</code> function that returns a closure, and the returned closure accepts a string as its only parameter and returns nothing:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">return</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>$0<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can call <code>travel()</code> to get back the closure, then call that closure freely:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result <span class="operator">=</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="function">result</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Closure capturing happens if we create values in <code>travel()</code> that get used inside the closure. For example, we might want to track how often the returned closure is called:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> counter <span class="operator">=</span> <span class="number">1</span></p>
+<p>  <span class="keyword">return</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>counter<span class="delimiter variable">)</span></span>. I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>$0<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>    counter <span class="operator">+</span><span class="operator">=</span> <span class="number">1</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Even though that <code>counter</code> variable was created inside <code>travel()</code>, it gets captured by the closure so it will still remain alive for that closure.</p>
+<p>So, if we call <code>result("London")</code> multiple times, the counter will go up and up:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">result</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p><span class="function">result</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p><span class="function">result</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

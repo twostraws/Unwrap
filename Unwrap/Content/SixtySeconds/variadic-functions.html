@@ -1,0 +1,30 @@
+<p>Some functions are <em>variadic</em>, which is a fancy way of saying they accept any number of parameters of the same type. The <code>print()</code> function is actually variadic: if you pass lots of parameters, they are all printed on one line with spaces between them:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"Haters"</span><span class="punctuation">,</span> <span class="string">"gonna"</span><span class="punctuation">,</span> <span class="string">"hate"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can make any parameter variadic by writing <code>...</code> after its type. So, an <code>Int</code> parameter is a single integer, whereas <code>Int...</code> is zero or more integers – potentially hundreds. </p>
+<p>Inside the function, Swift converts the values that were passed in to an array of integers, so you can loop over them as needed.</p>
+<p>To try this out, let’s write a <code>square()</code> function that can square many numbers:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">square</span><span class="punctuation">(</span>numbers<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">for</span> number <span class="keyword">in</span> numbers <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>number<span class="delimiter variable">)</span></span> squared is <span class="interpolation"><span class="delimiter variable">\(</span>number * number<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now we can run that with lots of numbers just by passing them in separated by commas:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">square</span><span class="punctuation">(</span>numbers<span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

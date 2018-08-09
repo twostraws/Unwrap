@@ -1,0 +1,6 @@
+framework module SavannaKit {
+  umbrella header "SavannaKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

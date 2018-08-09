@@ -1,0 +1,39 @@
+<p>The second difference between classes and structs is that you can create a class based on an existing class – it inherits all the properties and methods of the original class, and can add its own on top.</p>
+<p>This is called <em>class inheritance</em> or <em>subclassing</em>, the class you inherit from is called the “parent” or “super” class, and the new class is called the “child” class.</p>
+<p>Here’s the <code>Dog</code> class we just created:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> breed<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">,</span> breed<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>breed <span class="operator">=</span> breed</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We could create a new class based on that one called <code>Poodle</code>. It will inherit the same properties and initializer as <code>Dog</code> by default:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Poodle</span><span class="punctuation">:</span> <span class="builtin">Dog</span> <span class="punctuation">{</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>However, we can also give <code>Poodle</code> its own initializer. We know it will always have the breed “Poodle”, so we can make a new initializer that only needs a <code>name</code> property. Even better, we can make the <code>Poodle</code> initializer call the <code>Dog</code> initializer directly so that all the same setup happens:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Poodle</span><span class="punctuation">:</span> <span class="builtin">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">super</span><span class="punctuation">.</span><span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> name<span class="punctuation">,</span> breed<span class="punctuation">:</span> <span class="string">"Poodle"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>For safety reasons, Swift always makes you call <code>super.init()</code> from child classes – just in case the parent class does some important work when it’s created.</p>

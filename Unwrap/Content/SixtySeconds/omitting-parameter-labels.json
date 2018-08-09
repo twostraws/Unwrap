@@ -1,0 +1,24 @@
+{
+    "title": "Omitting parameter labels",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Function and parameter names are case-sensitive.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func bounceOnTrampoline(times: Int) {\n\tfor _ in 1...times {\n\t\tprint(\"Boing!\")\n\t}\n}",
+        "func evaluateJavaScript(_ input: String) {\n\tprint(\"Yup, that's JavaScript alright.\")\n}",
+        "func sumItems(_ items: [Int]) -> Int {\n\tvar total = 0\n\tfor item in items {\n\t\ttotal += item\n\t}\n\treturn total\n}",
+        "func greet(_ name: String) {\n\tprint(\"Hi, \\(name)!\")\n}",
+        "func climbMountain(_ name: String) {\n\tprint(\"I'm going to climb \\(name).\")\n}\nclimbMountain(\"Everest\")",
+        "func square(_ number: Int) -> Int {\n\treturn number * number\n}"
+    ],
+    "wrong": [
+        "func makeBurger(withCheese: Bool) {\n\tif cheese {\n\t\tprint(\"Here's a cheeseburger\")\n\t} else {\n\t\tprint(\"Here's a regular burger\")\n\t}\n}",
+        "func countPoodles(dogs: [String]) -> Int {\n\tvar sum = 0\n\tfor dog in dogs {\n\t\tif dog == \"Poodle\" {\n\t\t\tsum += 1\n\t\t}\n\t}\n\treturn sum\n}\ncountPoodles([\"Mollie\", \"Penny\", \"Poppy\"])",
+        "func addStudentToClass(_ name: String) {\n\tprint(\"Welcome to the class, \\(student)!\")\n}",
+        "func isEveryoneCanadian(_ birthCountries: [String]) {\n\tfor country in birthCountries {\n\t\tif country != \"Canada\" {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+        "func printLogMessage(message: String) -> Bool {\n\tprint(\"Log: \\(message)\")\n\treturn true\n}\nprintLogMessage(\"Something went wrong!\")",
+        "func formatLength(length length: Int) {\n\tprint(\"That measures \\(length)cm.\")\n}\nformatLength(95)"
+    ]
+}

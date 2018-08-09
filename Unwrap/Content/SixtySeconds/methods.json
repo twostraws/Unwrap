@@ -1,0 +1,24 @@
+{
+    "title": "Methods",
+    "postscript": "Methods work just like regular functions, so they can accept any parameters you want and return values. It's not required, but almost everyone puts properties before methods in their structs.",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Make sure each method returns what it says it will return.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "struct Pokemon {\n\tvar name: String\n\tfunc attack(with attackType: String) {\n\t\tprint(\"\\(name) uses \\(attackType)!\")\n\t}\n}",
+        "struct Car {\n\tvar maxSpeed: Int\n\tfunc accelerate(to speed: Int) {\n\t\tif speed > maxSpeed {\n\t\t\tprint(\"That's too fast!\")\n\t\t} else {\n\t\t\tprint(\"OK, let's go!\")\n\t\t}\n\t}\n}",
+        "struct XWing {\n\tvar callSign: String\n\tfunc startTrenchRun() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\tprint(\"I'm going to blow up the Death Star!\")\n\t\t\treturn true\n\t\t} else {\n\t\t\tprint(\"I'm hit!\")\n\t\t\treturn false\n\t\t}\n\t}\n}",
+        "struct Singer {\n\tvar signatureSong: String\n\tfunc sing() {\n\t\tprint(\"Who wants to hear \\(signatureSong)?\")\n\t}\n}",
+        "struct User {\n\tvar name: String\n\tvar street: String\n\tvar city: String\n\tvar postalCode: String\n\tfunc printAddress() -> String {\n\t\treturn \"\"\"\n\t\t\\(name)\n\t\t\\(street)\n\t\t\\(city)\n\t\t\\(postalCode)\n\t\t\"\"\"\n\t}\n}",
+        "struct Venue {\n\tvar name: String\n\tvar maximumCapacity: Int\n\tfunc makeBooking(for people: Int) {\n\t\tif people > maximumCapacity {\n\t\t\tprint(\"Sorry, we can only accommodate \\(maximumCapacity).\")\n\t\t} else {\n\t\t\tprint(\"\\(name) is all yours!\")\n\t\t}\n\t}\n}"
+    ],
+    "wrong": [
+        "struct WaterBottle {\n\tvar capacity: Int\n\trefill() {\n\t\tprint(\"Refilling up to \\(capacity)ml.\")\n\t}\n}",
+        "struct Event {\n\tticketPrices = [100, 200, 500]\n\tfunc buyTickets(type: Int) {\n\t\tlet cost = ticketPrices[type]\n\t\tprint(\"That'll be $\\(cost), please.\")\n\t}\n}",
+        "func Desk {\n\tvar isAdjustable: Bool\n\tfunc adjust(to newHeight: Int) {\n\t\tif isAdjustable {\n\t\t\tprint(\"Adjusting now...\")\n\t\t} else {\n\t\t\tprint(\"That isn't possible.\")\n\t\t}\n\t}\n}",
+        "struct Student {\n\tvar name: String\n\tvar sleepy: Bool\n\tfunc study {\n\t\tif sleepy {\n\t\t\tprint(\"I'm too tired right now.\")\n\t\t} else {\n\t\t\tprint(\"I'm hitting the books!\")\n\t\t}\n\t}\n}",
+        "struct House {\n\tvar isExpensiveArea = \"false\"\n\tvar numberOfRooms: Int\n\tmethod estimatePrice() -> Int {\n\t\tif isExpensiveArea == true {\n\t\t\treturn numberOfRooms * 100_000\n\t\t} else {\n\t\t\treturn numberOfRooms * 50_000\n\t\t}\n\t}\n}",
+        "struct Jewellery {\n\tvar price: Double\n\tfunc estimateInsurance() -> Double {\n\t\tprice \/ 50.0\n\t}\n}"
+    ]
+}

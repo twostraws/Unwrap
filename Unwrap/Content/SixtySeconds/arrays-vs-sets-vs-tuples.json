@@ -1,0 +1,24 @@
+{
+    "title": "Arrays vs sets vs tuples",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are best stored as arrays?",
+    "hint": "Arrays can hold any number of items, including duplicates, and preserve their order. Sets are preferred when you don't want duplicate items and when order doesn't matter. Tuples are preferred when you want limited items of specific types and names.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "High scores for a video game.",
+        "Monthly height measurements for a child.",
+        "A weather forecast for the next 10 days.",
+        "Messages in a chat program.",
+        "Songs in an album.",
+        "Lines in a poem."
+    ],
+    "wrong": [
+        "A person's name.",
+        "A list of all usernames on Twitter.",
+        "A list of words that are valid in Scrabble.",
+        "A user's address.",
+        "The current temperature.",
+        "Whether or not your user is logged in."
+    ]
+}

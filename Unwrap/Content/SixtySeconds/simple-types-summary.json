@@ -1,0 +1,24 @@
+{
+    "title": "Simple types: Summary",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these lines make variables?",
+    "hint": "Make sure the type annotations match what's placed inside!",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var name = \"Rumpelstiltskin\"",
+        "var depth = 10.2",
+        "var isActive = true",
+        "var score: Double = 10",
+        "var isEnabled: Bool = false",
+        "var state = \"game over\""
+    ],
+    "wrong": [
+        "let numberOfBooks = 6",
+        "let cpuType = \"Intel\"",
+        "let isOverflowing: Bool = \"true\"",
+        "var isActive: Bool = 0",
+        "var password: String = 12345",
+        "var depthInMeters: Int = 10.0"
+    ]
+}

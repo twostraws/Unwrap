@@ -1,0 +1,24 @@
+{
+    "title": "Shorthand parameter names",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "When passing a closure as a function parameter, which of these statements are true?",
+    "hint": "You either list your parameters and return value, or you use shorthand syntax - Swift won't allow you to use both.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Swift can infer the parameters the closure accepts.",
+        "Swift can infer the return type.",
+        "If there is only one line of code, you can skip writing <code>return<\/code>",
+        "Shorthand parameters are written as <code>$0<\/code>, <code>$1<\/code> and so on.",
+        "When use shorthand parameters you don't list the parameters you accept.",
+        "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves."
+    ],
+    "wrong": [
+        "Shorthand syntax can only be used with integers.",
+        "Shorthand syntax provides up to three parameters automatically.",
+        "Shorthand syntax can only be used with Swift's built-in functions like <code>print()<\/code>",
+        "Shorthand parameters are written as <code>#0<\/code>, <code>#1<\/code> and so on.",
+        "You must always list the parameters you accept when using shorthand syntax.",
+        "Shorthand parameters can't be used with string interpolation."
+    ]
+}

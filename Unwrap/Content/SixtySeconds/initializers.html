@@ -1,0 +1,43 @@
+<p>Initializers are special methods that provide different ways to create your struct. All structs come with one by default, called their <em>memberwise initializer</em> – this asks you to provide a value for each property when you create the struct.</p>
+<p>You can see this if we create a <code>User</code> struct that has one property:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">User</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> username<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>When we create one of those structs, we must provide a username:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> user <span class="operator">=</span> <span class="function">User</span><span class="punctuation">(</span>username<span class="punctuation">:</span> <span class="string">"twostraws"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can provide our own initializer to replace the default one. For example, we might want to create all new users as “Anonymous” and print a message, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">User</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> username<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    username <span class="operator">=</span> <span class="string">"Anonymous"</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Creating a new user!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You <em>don’t</em> write <code>func</code> before initializers, but you <em>do</em> need to make sure all properties have a value before the initializer ends.</p>
+<p>Now our initializer accepts no parameters, we need to create the struct like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> user <span class="operator">=</span> <span class="function">User</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>user<span class="punctuation">.</span>username <span class="operator">=</span> <span class="string">"twostraws"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

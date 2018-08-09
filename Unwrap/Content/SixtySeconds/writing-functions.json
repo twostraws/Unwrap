@@ -1,0 +1,24 @@
+{
+    "title": "Writing functions",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Function names and variable names are case-sensitive.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func printWelcome() {\n\tprint(\"Hi there!\")\n}\nprintWelcome()",
+        "func showHelp() {\n\tprint(\"Welcome to MyApp.\")\n\tprint(\"Click the button to start.\")\n}\nshowHelp()",
+        "func shareToTwitter() {\n\tprint(\"Sharing...\")\n}\nshareToTwitter()",
+        "func doNothing() { }\ndoNothing()",
+        "func playMusic() {\n\tprint(\"Here's some Ed Sheeran.\")\n}",
+        "func listOriginalStarWarsMovies() {\n\tfor i in 4...6 {\n\t\tprint(\"Episode \\(i)\")\n\t}\n}"
+    ],
+    "wrong": [
+        "func sendMessage() {\n\tprint(\"Sending message...\")\n}\nsendmessage()",
+        "func shipOrders() {\n\tlet orders = [1, 2, 3, 4, 5]\n\tfor order in orders {\n\t\tprint(\"Shipping order \\(id)\")\n\t}\n}\nshipOrders()",
+        "applyFix() {\n\tprint(\"The fix is applied!\")\n}",
+        "func study {\n\tprint(\"It's time to study.\")\n\tprint(\"I'm studying!\")\n\tprint(\"Bored now; time for Netflix.\")\n}\nstudy()",
+        "func readUserInput() {\n\twhile true {\n\t\tprint(\"Reading user input...\")\n\t\tbreak\n\t}\nreadUserInput()",
+        "func scoreGoal() {\n\tprint(\"Gooooaaaal!\")\n}\nscoreGoal(1)\nscoreGoal(2)\nscoreGoal(3)"
+    ]
+}

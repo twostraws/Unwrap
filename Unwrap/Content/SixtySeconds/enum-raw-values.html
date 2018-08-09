@@ -1,0 +1,36 @@
+<p>Sometimes you need to be able to assign values to enums so they have meaning. This lets you create them dynamically, and also use them in different ways.</p>
+<p>For example, you might create a <code>Planet</code> enum that stores integer values for each of its cases:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">Planet</span><span class="punctuation">:</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> mercury</p>
+<p>  <span class="keyword">case</span> venus</p>
+<p>  <span class="keyword">case</span> earth</p>
+<p>  <span class="keyword">case</span> mars</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift will automatically assign each of those a number starting from 0, and you can use that number to create an instance of the appropriate enum case. For example, <code>earth</code> will be given the number 2, so you can write this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> earth <span class="operator">=</span> <span class="function">Planet</span><span class="punctuation">(</span>rawValue<span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you want, you can assign one or more cases a specific value, and Swift will generate the rest. It’s not very natural for us to think of Earth as the second planet, so you could write this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">Planet</span><span class="punctuation">:</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> mercury <span class="operator">=</span> <span class="number">1</span></p>
+<p>  <span class="keyword">case</span> venus</p>
+<p>  <span class="keyword">case</span> earth</p>
+<p>  <span class="keyword">case</span> mars</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now Swift will assign 1 to <code>mercury</code> and count upwards from there, meaning that <code>earth</code> is now the third planet.</p>

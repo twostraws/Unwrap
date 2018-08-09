@@ -1,0 +1,24 @@
+{
+    "title": "Strings and integers",
+    "postscript": "Strings are case sensitive, which means \"Swift\" is not the same string as \"swift\".",
+    "reviewType": "multipleSelection",
+    "question": "Select all the integers.",
+    "hint": "Swift gives variables the string type when their values are enclosed in quotes, regardless of what the value is.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var rating = 5",
+        "var power = 9001",
+        "var speed = 65",
+        "var mortgageRemaining = 100_000",
+        "var highScore = 328_556",
+        "var repeatCount = 82"
+    ],
+    "wrong": [
+        "var winner = \"Miguel\"",
+        "var currentSong = \"Rainbow to the Stars\"",
+        "var age = \"23\"",
+        "var dogBreed = \"samoyed\"",
+        "var sizeInInches = \"27\"",
+        "var selectedWood = \"mahogany\""
+    ]
+}

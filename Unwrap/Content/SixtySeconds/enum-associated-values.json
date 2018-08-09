@@ -1,0 +1,24 @@
+{
+    "title": "Enum associated values",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these create enums with an associated value?",
+    "hint": "Associated values let you attach extra properties to any or all of your enum cases.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "enum Activity { case reading(bookTitle: String) }",
+        "enum Forecast { case cloudy(coverage: Int) }",
+        "enum Sport { case running(distance: Int) }",
+        "enum Building { case skyscraper(floors: Int) }",
+        "enum Instruments { case piano(isElectric: Bool) }",
+        "enum Class { case law(level: Int) }"
+    ],
+    "wrong": [
+        "case BandMember(role: String)",
+        "enum SocialMedia case twitter(username: Int)",
+        "enum Status { case read }",
+        "enum role { case administrator }",
+        "let chosenHobby = case hobby(name: String) }",
+        "let furniture = [chair, table, couch]"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Type annotations",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select the lines that create Doubles.",
+    "hint": "Doubles are any value that contain decimal data, or with the explicit typecast <code>Double<\/code>.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var score: Double = 1000",
+        "var depth = 10.2",
+        "var sales: Double = 100_000",
+        "var average = 32.0",
+        "var distance: Double = 320",
+        "var populationMillions = 12.5"
+    ],
+    "wrong": [
+        "let month = 6",
+        "let speed = 50",
+        "let city = \"Tokyo\"",
+        "let size = \"14.0\"",
+        "let mode = \"writing\"",
+        "let tweeted = false"
+    ]
+}

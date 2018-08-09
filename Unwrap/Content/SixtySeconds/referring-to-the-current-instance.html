@@ -1,0 +1,16 @@
+<p>Inside methods you get a special constant called <code>self</code>, which points to whatever instance of the struct is currently being used. This <code>self</code> value is particularly useful when you create initializers that have the same parameter names as your property.</p>
+<p>For example, if you create a <code>Person</code> struct with a <code>name</code> property, then tried to write an initializer that accepted a <code>name</code> parameter, <code>self</code> helps you distinguish between the property and the parameter – <code>self.name</code> refers to the property, whereas <code>name</code> refers to the parameter.</p>
+<p>Here’s that in code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span> was born!"</span><span class="punctuation">)</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

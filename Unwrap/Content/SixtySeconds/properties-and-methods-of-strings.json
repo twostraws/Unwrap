@@ -1,0 +1,24 @@
+{
+    "title": "Properties and methods of strings",
+    "postscript": "One of the most useful methods of strings is <code>contains()</code>, which returns true if the string contains another string. For example, <code>\"world\".contains(\"orl\")</code> is true.",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are true?",
+    "hint": "Strings are case-sensitive by default, so ABC is different from Abc and aBc.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let quote = \"Time is an illusion. Lunchtime doubly so.\"\nquote.contains(\"Lunch\")",
+        "let song = \"Shake it Off\"\nsong.uppercased().contains(\"SHAKE\")",
+        "var mac = \"iMac\"\nmac.hasPrefix(\"i\")",
+        "let username = \"twostraws\"\nusername.uppercased() == \"TWOSTRAWS\"",
+        "let joke = \"What's red and smells like blue paint? Red paint.\"\njoke.count > 10",
+        "var str = \"\"\nfor i in 1...5 {\n\tstr += \"\\(i)\"\n}\nstr.count == 5"
+    ],
+    "wrong": [
+        "var singer = \"Taylor Swift\"\nsinger.hasPrefix(\"TAY\")",
+        "var favoriteIceCream = \"choc chip\"\nfavoriteIceCream.count > 10",
+        "var superHero = \"Mario\"\nsuperHero.uppercased() == \"Mario\"",
+        "let definitelyTrue = \"Fox in sox\"\ndefinitelyTrue.contains(\"socks\")",
+        "let shoes = \"Jimmy Choo\"\nshoes.contains(Choo)",
+        "let content = \"Europe\"\ncontinent.contains(\"Europe\")"
+    ]
+}

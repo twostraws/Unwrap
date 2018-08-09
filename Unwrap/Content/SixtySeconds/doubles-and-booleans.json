@@ -1,0 +1,23 @@
+{
+    "title": "Doubles and booleans",
+    "postscript": "You will sometimes see another type called <code>Float</code>. This is similar to <code>Double</code>, but is less accurate because it uses less storage to store numbers.",
+    "reviewType": "multipleSelection",
+    "question": "Select all the Boolean values.",
+    "hint": "Booleans are any value that contain true or false.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var loggedIn = true",
+        "var isVisible = false",
+        "var dressHasPockets = true",
+        "var animated = false",
+        "var isEncrypted = true",
+        "var isReady = false"
+    ],
+    "wrong": [
+        "var isSaved = \"true\"",
+        "var sorted = \"false\"",
+        "var zoomed = 0",
+        "var isLoaded = 1",
+        "var isHidden = \"yes\""
+    ]
+}

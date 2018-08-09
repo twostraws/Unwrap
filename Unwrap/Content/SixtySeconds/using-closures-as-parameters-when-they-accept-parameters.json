@@ -1,0 +1,24 @@
+{
+    "title": "Using closures as parameters when they accept parameters",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Make sure each function is calling its closure with the correct parameters.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func makeSale(signContract: (String) -> Void) {\n\tlet clientName = \"Apple\"\n\tprint(\"\\(clientName) should buy our product.\")\n\tprint(\"You're interested? Great! Sign here.\")\n\tsignContract(clientName)\n}\nmakeSale { (client: String) in\n\tprint(\"We agree to pay you $100 million.\")\n\tprint(\"Signed, \\(client)\")\n}",
+        "func study(reviseNotes: (String) -> Void) {\n\tlet notes = \"Napoleon was a short, dead dude.\"\n\tfor _ in 1...10 {\n\t\treviseNotes(notes)\n\t}\n}\nstudy { (notes: String) in\n\tprint(\"I'm reading my notes: \\(notes)\")\n}",
+        "func getDirections(to: String, then travel: ([String]) -> Void) {\n\tlet directions = [\n\t\t\"Go straight ahead\",\n\t\t\"Turn left onto Station Road\",\n\t\t\"Turn right onto High Street\",\n\t\t\"You have arrived at \\(desination)\"\n\t]\n\ttravel(directions)\n}\ngetDirections(to: \"London\") { (directions: [String]) in\n\tprint(\"I'm getting my car.\")\n\tfor direction in directions {\n\t\tprint(direction)\n\t}\n}",
+        "func fetchData(then parse: (String) -> Void) {\n\tlet data = \"Success!\"\n\tparse(data)\n}\nfetchData { (data: String) in\n\tprint(\"Data received: \\(data)\")\n}",
+        "func runKidsParty(activities: ([String]) -> Void) {\n\tlet kids = [\"Bella\", \"India\", \"Phoebe\"]\n\tactivities(kids)\n}\nrunKidsParty { (names: [String]) in\n\tfor name in names {\n\t\tprint(\"Here's your party bag, \\(name).\")\n\t}\n}",
+        "func fix(item: String, payBill: (Int) -> Void) {\n\tprint(\"I've fixed your \\(item)\")\n\tpayBill(450)\n}\nfix(item: \"roof\") { (bill: Int) in\n\tprint(\"You want $\\(bill) for that? Outrageous!\")\n}"
+    ],
+    "wrong": [
+        "func postOnTwitter(handler: (Int) -> Void) {\n\tprint(\"What's orange and sounds like a parrot? A carrot.\")\n\tlet replies = 32\n\tresponseHandler(replies)\n}\npostOnTwitter { (replies: Int) in\n\tprint(\"Your post had \\(replies) replies.\")\n}",
+        "func getMeasurement(handler: Double -> Void) {\n\tlet measurement = 32.2\n\thandler(measurement)\n}\ngetMeasurement { (measurement: Double) in\n\tprint(\"It measures \\(measurement).\")\n}",
+        "func createInterface(positioning: ([String]) -> Void) {\n\tprint(\"Creating some buttons\")\n\tlet buttons = [\n\t\t\"Button 1\"\n\t\t\"Button 2\"\n\t\t\"Button 3\"\n\t]\n\tpositioning(buttons)\n}\ncreateInterface { (buttons: [String]) in\n\tfor button in buttons {\n\t\tprint(\"I'll place \\(button) here...\")\n\t}\n}",
+        "func processPrimes(using closure: (Int) -> Void) {\n\tlet primes = [2, 3, 5, 7, 11, 13, 17, 19]\n\tfor prime in primes {\n\t\tclosure(prime)\n\t}\n}\nprocessPrimes { (prime: Int) \n\tprint(\"\\(prime) is a prime number.\")\n\tlet square = prime * prime\n\tprint(\"\\(prime) squared is \\(square)\")\n}",
+        "func makePizza(addToppings: (Int)) {\n\tprint(\"The dough is ready.\")\n\tprint(\"The base is flat.\")\n\taddToppings(3)\n}\nmakePizza { (toppingCount: Int) in\n\tlet toppings = [\"ham\", \"salami\", \"onions\", \"peppers\"]\n\tfor i in 0..<toppingCount {\n\t\tlet topping = toppings[i]\n\t\tprint(\"I'm adding \\(topping)\")\n\t}\n}",
+        "func login(then action: (String) -> Void) {\n\tprint(\"Authenticating...\")\n\tlet username = \"twostraws\"\n\taction(username)\n}\nlogin {\n\tprint(\"Welcome, \\(username)!\")\n}"
+    ]
+}

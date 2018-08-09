@@ -1,0 +1,34 @@
+<p>If the last parameter to a function is a closure, Swift lets you use special syntax called <em>trailing closure syntax</em>. Rather than pass in your closure as a parameter, you pass it directly after the function inside braces.</p>
+<p>To demonstrate this, here’s our <code>travel()</code> function again. It accepts an <code>action</code> closure so that it can be run between two <code>print()</code> calls:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm getting ready to go."</span><span class="punctuation">)</span></p>
+<p>  <span class="function">action</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I arrived!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because its last parameter is a closure, we can call <code>travel()</code> using trailing closure syntax like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm driving in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>In fact, because there aren’t any other parameters, we can eliminate the parentheses entirely:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm driving in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Trailing closure syntax is extremely common in Swift, so it’s worth getting used to.</p>

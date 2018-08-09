@@ -1,0 +1,38 @@
+<p>The fourth difference between classes and structs is that classes can have <em>deinitializers</em> – code that gets run when an instance of a class is destroyed.</p>
+<p>To demonstrate this, here’s a <code>Person</code> class with a <code>name</code> property, a simple initializer, and a <code>printGreeting()</code> method that prints a message:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name <span class="operator">=</span> <span class="string">"John Doe"</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span> is alive!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p>  <span class="keyword">func</span> <span class="function">printGreeting</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, I'm <span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We’re going to create a few instances of the <code>Person</code> class inside a loop, because each time the loop goes around a new person will be created then destroyed:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="number">3</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">let</span> person <span class="operator">=</span> <span class="function">Person</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>  person<span class="punctuation">.</span><span class="function">printGreeting</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>And now for the deinitializer. This will be called when the <code>Person</code> instance is being destroyed:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">deinit</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span> is no more!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

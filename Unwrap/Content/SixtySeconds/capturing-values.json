@@ -1,0 +1,24 @@
+{
+    "title": "Capturing values",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Make sure the parameters passed into the function, and passed into the closure it returns, are correct.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func makeAdder() -> (Int) -> Void {\n\tvar sum = 0\n\treturn {\n\t\tsum += $0\n\t\tprint(\"Sum is now \\(sum)\")\n\t}\n}\nlet adder = makeAdder()\nadder(5)\nadder(3)",
+        "func summonGenie(wishCount: Int) -> (String) -> Void {\n\tvar currentWishes = wishCount\n\treturn {\n\t\tif currentWishes > 0 {\n\t\t\tcurrentWishes -= 1\n\t\t\tprint(\"You wished for \\($0).\")\n\t\t\tprint(\"Wishes left: \\(currentWishes)\")\n\t\t} else {\n\t\t\tprint(\"You're out of wishes.\")\n\t\t}\n\t}\n}\nlet genie = summonGenie(wishCount: 3)\ngenie(\"a Ferrari\")",
+        "func storeTwoValues(value1: String, value2: String) -> (String) -> String {\n\tvar previous = value1\n\tvar current = value2\n\treturn { new in\n\t\tlet removed = previous\n\t\tprevious = current\n\t\tcurrent = new\n\t\treturn \"Removed \\(removed)\"\n\t}\n}\nlet store = storeTwoValues(value1: \"Hello\", value2: \"World\")\nlet removed = store(\"Value Three\")\nprint(removed)",
+        "func createAgeValidator(strict: Bool) -> (Int) -> Bool {\n\treturn {\n\t\tif strict {\n\t\t\tif $0 >= 21 {\n\t\t\t\treturn true\n\t\t\t}\n\t\t} else {\n\t\t\tif $0 >= 18 {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t\treturn false\n\t}\n}\nlet validator = createAgeValidator(strict: true)\nvalidator(21)",
+        "func swingBat() -> () -> Void {\n\tvar strikes = 0\n\treturn {\n\t\tstrikes += 1\n\t\tif strikes >= 3 {\n\t\t\tprint(\"You're out!\")\n\t\t} else {\n\t\t\tprint(\"Strike \\(strikes)\")\n\t\t}\n\t}\n}\nlet swing = swingBat()\nswing()\nswing()\nswing()",
+        "func visitPlaces() -> (String) -> Void {\n\tvar places = [String: Int]()\n\treturn {\n\t\tplaces[$0, default: 0] += 1\n\t\tlet timesVisited = places[$0, default: 0]\n\t\tprint(\"Number of times I've visited \\($0): \\(timesVisited).\")\n\t}\n}\nlet visit = visitPlaces()\nvisit(\"London\")\nvisit(\"New York\")\nvisit(\"London\")"
+    ],
+    "wrong": [
+        "func takeMedicine(name: String) -> () -> Bool {\n\tvar pillsLeft = 30\n\treturn {\n\t\tif pillsLeft > 0 {\n\t\t\tpillsLeft -= 1\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\n\ntakeMedicine()",
+        "func translate(String) -> (String) -> String {\n\treturn {\n\t\tif language == \"French\" {\n\t\t\tif $0 == \"Hello\" {\n\t\t\t\treturn \"Bonjour\"\n\t\t\t} else {\n\t\t\t\treturn \"\\($0) is unknown.\"\n\t\t\t}\n\t\t} else {\n\t\t\treturn \"Unknown language.\"\n\t\t}\n\t}\n}\nlet translator = translate(language: \"French\")\nlet french = translator(\"Hello\")",
+        "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
+        "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
+        "func handOutBusinessCards() -> () -> Void {\n\tlet number = 0\n\treturn {\n\t\tnumber += 1\n\t\tprint(\"Number handed out: \\(number)\")\n\t}\n}\nlet handOut = handOutBusinessCards()\nhandOut()\nhandOut()",
+        "func findTallest() -> (String, Double) -> (String) {\n\tvar tallestName = \"\"\n\tvar tallestHeight = 0\n\treturn {\n\t\tif $1 > tallestHeight {\n\t\t\ttallestName = $0\n\t\t\ttallestHeight = $1\n\t\t}\n\t\treturn tallestName\n\t}\n}\nlet tallest = findTallest()\nvar tallestName = tallest(\"Hannah\", 1.72)\ntallestName = tallest(\"Christina\", 1.68)"
+    ]
+}

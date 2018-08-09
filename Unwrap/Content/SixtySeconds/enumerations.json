@@ -1,0 +1,24 @@
+{
+    "title": "Enumerations",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are best stored as enums?",
+    "hint": "Enums let you define fixed groups of items so you don't risk typos while using them.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Days of the week.",
+        "Months of the year.",
+        "Error types.",
+        "Directions (north, south, etc).",
+        "Suits in a deck of cards.",
+        "Genres of movies."
+    ],
+    "wrong": [
+        "Usernames.",
+        "Passwords.",
+        "A list of cities you have visited.",
+        "Heights of objects.",
+        "Average student exam scores.",
+        "Whether or not your user is logged in."
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Static properties and methods",
+    "postscript": "Static methods work the same way as static methods – just write <code>static func yourMethod()</code> rather than <code>func yourMethod()</code>.",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "struct Amplifier {\n\tstatic let maximumVolume = 11\n\tvar currentVolume: Int\n}",
+        "struct Pokemon {\n\tstatic var numberCaught = 0\n\tvar name: String\n\tstatic func catchPokemon() {\n\t\tprint(\"Caught!\")\n\t\tPokemon.numberCaught += 1\n\t}\n}",
+        "struct FootballTeam {\n\tstatic let teamSize = 11\n\tvar players: [String]\n}",
+        "struct NewsStory {\n\tstatic var breakingNewsCount = 0\n\tstatic var regularNewsCount = 0\n\tvar headline: String\n\tinit(headline: String, isBreaking: Bool) {\n\t\tself.headline = headline\n\t\tif isBreaking {\n\t\t\tNewsStory.breakingNewsCount += 1\n\t\t} else {\n\t\t\tNewsStory.regularNewsCount += 1\n\t\t}\n\t}\n}",
+        "struct Order {\n\tstatic let orderFormat = \"XXX-XXXX\"\n\tvar orderNumber: String\n}",
+        "struct LegoBrick {\n\tstatic var numberMade = 0\n\tvar shape: String\n\tvar color: String\n\tinit(shape: String, color: String) {\n\t\tself.shape = shape\n\t\tself.color = color\n\t\tLegoBrick.numberMade += 1\n\t}\n}"
+    ],
+    "wrong": [
+        "struct Person {\n\tstatic var population = 0\n\tvar name: String\n\tinit(personName: String) {\n\t\tname = personName\n\t\tpopulation += 1\n\t}\n}",
+        "struct Cat {\n\tstatic let allCats = [Cat]()\n\tinit() {\n\t\tCat.allCats.append(self)\n\t}\n\tstatic func chorus() {\n\t\tfor _ in allCats {\n\t\t\tprint(\"Meow!\")\n\t\t}\n\t}\n}",
+        "struct Marathon {\n\tstatic distance = 42\n\tvar name: String\n\tvar location: String\n}",
+        "struct Raffle {\n\tvar ticketsUsed = 0\n\tvar name: String\n\tvar tickets: Int\n\tinit(name: String, tickets: Int) {\n\t\tself.name = name\n\t\tself.tickets = tickets\n\t\tRaffle.ticketsUsed += tickets\n\t}\n}",
+        "struct Question {\n\tstatic let answer = 42\n\tvar questionText = \"Unknown\"\n\tinit(questionText: String, answer: String) {\n\t\tself.questionText = questionText\n\t\tself.answer = answer\n\t}\n}",
+        "struct PlayingCards {\n\tstatic let deckSize\n\tvar pictureStyle: String\n}"
+    ]
+}

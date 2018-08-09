@@ -1,0 +1,28 @@
+{
+    "title": "Comparison operators",
+    "postscript": "When comparing booleans you can write <code>if someBoolean</code> to mean <code>if someBoolean == true</code>.",
+    "reviewType": "multipleSelection",
+    "question": "If <code>a<\/code> is 1, <code>b<\/code> is 2, and <code>c<\/code> is 3, which of these is true?",
+    "hint": "You'll need to do a tiny bit of arithmetic in your head here.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "a < b",
+        "b < c",
+        "a < c",
+        "c >= a",
+        "c > b",
+        "c >= c",
+        "a + 1 < c",
+        "a + 2 == b + 1",
+        "a != c",
+        "a == a"
+    ],
+    "wrong": [
+        "a == b",
+        "a + 1 == c",
+        "a >= c",
+        "b == 2",
+        "b * 2 < c",
+        "c + 1 == a + 2"
+    ]
+}

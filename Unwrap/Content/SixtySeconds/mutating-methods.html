@@ -1,0 +1,24 @@
+<p>If a struct has a variable property but the instance of the struct was created as a constant, that property can’t be changed – the struct is constant, so all its properties are also constant regardless of how they were created.</p>
+<p>The problem is that when you create the struct Swift has no idea whether you will use it with constants or variables, so by default it takes the safe approach: Swift won’t let you write methods that change properties unless you specifically request it.</p>
+<p>When you <em>want</em> to change a property inside a method, you need to mark it using the <code>mutating</code> keyword, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">mutating</span> <span class="keyword">func</span> <span class="function">makeAnonymous</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    name <span class="operator">=</span> <span class="string">"Anonymous"</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because it changes the property, Swift will only allow that method to be called on <code>Person</code> instances that are variables:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> person <span class="operator">=</span> <span class="function">Person</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Ed"</span><span class="punctuation">)</span></p>
+<p>person<span class="punctuation">.</span><span class="function">makeAnonymous</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

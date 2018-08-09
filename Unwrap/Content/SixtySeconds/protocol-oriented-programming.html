@@ -1,0 +1,36 @@
+<p>Protocol extensions can provide default implementations for our own protocol methods. This makes it easy for types to conform to a protocol, and allows a technique called “protocol-oriented programming” – crafting your code around protocols and protocol extensions.</p>
+<p>First, here’s a protocol called <code>Identifiable</code> that requires any conforming type to have an <code>id</code> property and an <code>identify()</code> method:</p>
+<pre class="code">
+<p></p>
+<p>protocol <span class="builtin">Identifiable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span> <span class="punctuation">{</span> <span class="keyword">get</span> <span class="keyword">set</span> <span class="punctuation">}</span></p>
+<p>  <span class="keyword">func</span> <span class="function">identify</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We <em>could</em> make every conforming type write their own <code>identify()</code> method, but protocol extensions allow us to provide a default:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">extension</span> <span class="builtin">Identifiable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">identify</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"My ID is <span class="interpolation"><span class="delimiter variable">\(</span>id<span class="delimiter variable">)</span></span>."</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now when we create a type that conforms to <code>Identifiable</code> it gets <code>identify()</code> automatically:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">User</span><span class="punctuation">:</span> <span class="builtin">Identifiable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">let</span> twostraws <span class="operator">=</span> <span class="function">User</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="string">"twostraws"</span><span class="punctuation">)</span></p>
+<p>twostraws<span class="punctuation">.</span><span class="function">identify</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

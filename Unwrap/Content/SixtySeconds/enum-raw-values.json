@@ -1,0 +1,24 @@
+{
+    "title": "Enum raw values",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select all statements that are true about enums with raw values.",
+    "hint": "Raw values let us give each of our enum cases a value so they are more than just names.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Raw values let us give meaning to enum cases.",
+        "Raw values let us create enum values dynamically.",
+        "Integer raw values count from 0 automatically.",
+        "You can give each case specific values if you want.",
+        "You can use integers for raw values.",
+        "You don't need to use raw values."
+    ],
+    "wrong": [
+        "Raw values are required for enums.",
+        "Raw values can't be used directly.",
+        "If you give one case a value you must give them all values.",
+        "Raw values make enums into dictionaries.",
+        "Raw values must always be strings.",
+        "Raw values and associated values are the same."
+    ]
+}

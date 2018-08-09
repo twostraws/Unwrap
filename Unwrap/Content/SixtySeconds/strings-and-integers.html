@@ -1,0 +1,19 @@
+<p>Swift is what’s known as a type-safe language, which means that every variable must be of one specific type. The <code>str</code> variable that Xcode created for us holds a string of letters that spell “Hello, playground”, so Swift assigns it the type <code>String</code>.</p>
+<p>On the other hand, if we want to store someone’s age we might make a variable like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> age <span class="operator">=</span> <span class="number">38</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That holds a whole number, so Swift assigns the type <code>Int</code> – short for “integer”.</p>
+<p>If you have large numbers, Swift lets you use underscores as thousands separators – they don’t change the number, but they do make it easier to read. For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> population <span class="operator">=</span> <span class="number">8_000_000</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Strings and integers are different types, and they can’t be mixed. So, while it’s safe to change <code>str</code> to “Goodbye”, I can’t make it 38 because that’s an <code>Int</code> not a <code>String</code>.</p>

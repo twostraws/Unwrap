@@ -1,0 +1,24 @@
+{
+    "title": "Sets",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This set will contain two items – true or false?",
+    "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var colors: Set([\"Red\", \"Green\", \"Red\"])",
+        "var scores = Set([9, 10])",
+        "var ratings: Set([1, 1, 1, 2, 2, 2])",
+        "var attendees = Set([100, 100, 101, 100])",
+        "var readings = Set([true, false, true, true])",
+        "var names = Set([\"John\", \"Paul\"])"
+    ],
+    "wrong": [
+        "let users = [\"Taylor\", \"Adele\"]",
+        "let cats = [\"Burmese\", \"Siamese\", \"Persian\"]",
+        "let earthquakeStrengths = Set(1, 1, 2, 2)",
+        "let staffReviews = Set([1, 2, 1, 2, 3])",
+        "let averageHeights = Set([1.71, 1.72, 1.73])",
+        "let playlistSizes = Set([1000])"
+    ]
+}

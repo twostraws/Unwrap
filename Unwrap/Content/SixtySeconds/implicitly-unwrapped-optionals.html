@@ -1,0 +1,12 @@
+<p>Like regular optionals, implicitly unwrapped optionals might contain a value or they might be <code>nil</code>. However, unlike regular optionals you don’t need to unwrap them in order to use them: you can use them as if they weren’t optional at all.</p>
+<p>Implicitly unwrapped optionals are created by adding an exclamation mark after your type name, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> age<span class="punctuation">:</span> <span class="builtin">Int</span><span class="operator">!</span> <span class="operator">=</span> <span class="constant">nil</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because they behave as if they were already unwrapped, you don’t need <code>if let</code> or <code>guard let</code> to use implicitly unwrapped optionals. However, if you try to use them and they have no value – if they are <code>nil</code> – your code crashes.</p>
+<p>Implicitly unwrapped optionals exist because sometimes a variable will start life as nil, but will always have a value before you need to use it. Because you know they will have a value by the time you need them, it’s helpful not having to write <code>if let</code> all the time.</p>
+<p>That being said, if you’re able to use regular optionals instead it’s generally a good idea.</p>

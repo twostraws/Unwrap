@@ -1,0 +1,17 @@
+<p>Although class inheritance is very useful – and in fact large parts of Apple’s platforms require you to use it – sometimes you want to disallow other developers from building their own class based on yours.</p>
+<p>Swift gives us a <code>final</code> keyword just for this purpose: when you declare a class as being final, no other class can inherit from it. This means they can’t override your methods in order to change your behavior – they need to use your class the way it was written.</p>
+<p>To make a class final just put the <code>final</code> keyword before it, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">final</span> <span class="keyword">class</span> <span class="class-name">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> breed<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">,</span> breed<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>breed <span class="operator">=</span> breed</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

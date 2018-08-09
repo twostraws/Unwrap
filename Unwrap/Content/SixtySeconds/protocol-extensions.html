@@ -1,0 +1,35 @@
+<p>Protocols let you describe what methods something should have, but don’t provide the code inside. Extensions let you provide the code inside your methods, but only affect one data type – you can’t add the method to lots of types at the same time.</p>
+<p>Protocol extensions solve both those problems: they are like regular extensions, except rather than extending a specific type like <code>Int</code> you extend a whole protocol so that all conforming types get your changes.</p>
+<p>For example, here is an array and a set containing some names:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> pythons <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"Eric"</span><span class="punctuation">,</span> <span class="string">"Graham"</span><span class="punctuation">,</span> <span class="string">"John"</span><span class="punctuation">,</span> <span class="string">"Michael"</span><span class="punctuation">,</span> <span class="string">"Terry"</span><span class="punctuation">,</span> <span class="string">"Terry"</span><span class="punctuation">]</span></p>
+<p><span class="keyword">let</span> beatles <span class="operator">=</span> <span class="function">Set</span><span class="punctuation">(</span><span class="punctuation">[</span><span class="string">"John"</span><span class="punctuation">,</span> <span class="string">"Paul"</span><span class="punctuation">,</span> <span class="string">"George"</span><span class="punctuation">,</span> <span class="string">"Ringo"</span><span class="punctuation">]</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift’s arrays and sets both conform to a protocol called <code>Collection</code>, so we can write an extension to that protocol to add a <code>summarize()</code> method to print the collection neatly</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">extension</span> <span class="builtin">Collection</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">summarize</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"There are <span class="interpolation"><span class="delimiter variable">\(</span>count<span class="delimiter variable">)</span></span> of us:"</span><span class="punctuation">)</span></p>
+<p>    <span class="keyword">for</span> name <span class="keyword">in</span> <span class="keyword">self</span> <span class="punctuation">{</span></p>
+<p>      <span class="function">print</span><span class="punctuation">(</span>name<span class="punctuation">)</span></p>
+<p>    <span class="punctuation">}</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Both <code>Array</code> and <code>Set</code> will now have that method, so we can try it out:</p>
+<pre class="code">
+<p></p>
+<p>pythons<span class="punctuation">.</span><span class="function">summarize</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>beatles<span class="punctuation">.</span><span class="function">summarize</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

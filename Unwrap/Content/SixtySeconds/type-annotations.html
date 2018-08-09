@@ -1,0 +1,21 @@
+<p>Swift assigns each variable and constant a type based on what value it’s given when it’s created. So, when you write code like this Swift can see it holds a string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> str <span class="operator">=</span> <span class="string">"Hello, playground"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That will make <code>str</code> a string, so you can’t try to assign it an integer or a boolean later on. This is called <em>type inference</em>: Swift is able to infer the type of something based on how you created it.</p>
+<p>If you want you can be explicit about the type of your data rather than relying on Swift’s type inference, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> album<span class="punctuation">:</span> <span class="builtin">String</span> <span class="operator">=</span> <span class="string">"Reputation"</span></p>
+<p><span class="keyword">let</span> year<span class="punctuation">:</span> <span class="builtin">Int</span> <span class="operator">=</span> <span class="number">1989</span></p>
+<p><span class="keyword">let</span> height<span class="punctuation">:</span> <span class="builtin">Double</span> <span class="operator">=</span> <span class="number">1.78</span></p>
+<p><span class="keyword">let</span> taylorRocks<span class="punctuation">:</span> <span class="builtin">Bool</span> <span class="operator">=</span> <span class="boolean">true</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Notice that booleans have the short type name <code>Bool</code>, in the same way that integers have the short type name <code>Int</code>.</p>

@@ -1,0 +1,18 @@
+<p>It’s common to use <code>while</code> loops to make <em>infinite</em> loops: loops that either have no end or only end when you’re ready. All apps on your iPhone use infinite loops, because they start running, then continually watch for events until you choose to quit them.</p>
+<p>To make an infinite loop, just use <code>true</code> as your condition. <code>true</code> is always true, so the loop will repeat forever. <strong>Warning:</strong> Please make sure you have a check that exits your loop, otherwise it will never end.</p>
+<p>As an example, we’re going to use <code>while true</code> to print the music of John Cage’s piece 4’33” – if you didn’t know, it’s famous because it’s 4 minutes and 33 seconds of complete silence.</p>
+<p>We can write the “music” for this piece using <code>while true</code>, with a condition that exits the loop when we’ve gone around enough times:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> counter <span class="operator">=</span> <span class="number">0</span></p>
+<p><span class="keyword">while</span> <span class="boolean">true</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">" "</span><span class="punctuation">)</span></p>
+<p>  counter <span class="operator">+</span><span class="operator">=</span> <span class="number">1</span></p>
+<p>  <span class="keyword">if</span> counter <span class="operator">==</span> <span class="number">273</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">break</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

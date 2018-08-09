@@ -1,0 +1,29 @@
+<p>When talking about force unwrapping, I used this code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> str <span class="operator">=</span> <span class="string">"5"</span></p>
+<p><span class="keyword">let</span> num <span class="operator">=</span> <span class="function">Int</span><span class="punctuation">(</span>str<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That converts a string to an integer, but because you might try to pass any string there what you actually get back is an <em>optional</em> integer.</p>
+<p>This is a <em>failable initializer</em>: an initializer that might work or might not. You can write these in your own structs and classes by using <code>init?()</code> rather than <code>init()</code>, and return <code>nil</code> if something goes wrong. The return value will then be an optional of your type, for you to unwrap however you want.</p>
+<p>As an example, we could code a <code>Person</code> struct that must be created using a nine-letter ID string. If anything other than a nine-letter string is used we’ll return <code>nil</code>, otherwise we’ll continue as normal.</p>
+<p>Here’s that in Swift:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="operator">?</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">if</span> id<span class="punctuation">.</span><span class="builtin">count</span> <span class="operator">==</span> <span class="number">9</span> <span class="punctuation">{</span></p>
+<p>      <span class="keyword">self</span><span class="punctuation">.</span>id <span class="operator">=</span> id</p>
+<p>    <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>      <span class="keyword">return</span> <span class="constant">nil</span></p>
+<p>    <span class="punctuation">}</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

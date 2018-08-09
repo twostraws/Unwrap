@@ -1,0 +1,24 @@
+{
+    "title": "Variables",
+    "postscript": "Although Swift is pretty relaxed about how you name variables, it's usually a good idea to make them descriptive.",
+    "reviewType": "multipleSelection",
+    "question": "Which of these lines of code create new variables?",
+    "hint": "New variables are only created when you use the <code>var<\/code> keyword.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var str = \"Hello, playground\"",
+        "var name = \"Sophie\"",
+        "var address = \"321 Park Lane\"",
+        "var operatingSystem = \"macOS\"",
+        "var pirate = \"LeChuck\"",
+        "var dinosaur = \"T-Rex\""
+    ],
+    "wrong": [
+        "user = \"twostraws\"",
+        "status = \"success\"",
+        "favoriteColor = \"green\"",
+        "message = \"Good morning, Dave!\"",
+        "spaceship = \"Nostromo\"",
+        "city = \"Paris\""
+    ]
+}

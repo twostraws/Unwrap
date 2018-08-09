@@ -1,0 +1,37 @@
+<p>Child classes can replace parent methods with their own implementations – a process known as <em>overriding</em>. Here’s a trivial <code>Dog</code> class with a <code>makeNoise()</code> method:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">makeNoise</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Woof!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If we create a new <code>Poodle</code> class that inherits from <code>Dog</code>, it will inherit the <code>makeNoise()</code> method. So, this will print “Woof!”:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Poodle</span><span class="punctuation">:</span> <span class="builtin">Dog</span> <span class="punctuation">{</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">let</span> poppy <span class="operator">=</span> <span class="function">Poodle</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>poppy<span class="punctuation">.</span><span class="function">makeNoise</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Method overriding allows us to change the implementation of <code>makeNoise()</code> for the <code>Poodle</code> class.</p>
+<p>Swift requires us to use <code>override func</code> rather than just <code>func</code> when overriding a method – it stops you from overriding a method by accident, and you’ll get an error if you try to override something that doesn’t exist on the parent class:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Poodle</span><span class="punctuation">:</span> <span class="builtin">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">override</span> <span class="keyword">func</span> <span class="function">makeNoise</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Yip!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>With that change, <code>poppy.makeNoise()</code> will print “Yip!” rather than “Woof!”.</p>

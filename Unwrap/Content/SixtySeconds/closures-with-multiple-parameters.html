@@ -1,0 +1,25 @@
+<p>Just to make sure everything is clear, we’re going to write another closure example using two parameters.</p>
+<p>This time our <code>travel()</code> function will require a closure that specifies where someone is traveling to, and the speed they are going. This means we need to use <code>(String, Int) -&gt; String</code> for the parameter’s type:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">,</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm getting ready to go."</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">let</span> description <span class="operator">=</span> <span class="function">action</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">,</span> <span class="number">60</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>description<span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I arrived!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We’re going to call that using a trailing closure and shorthand closure parameter names. Because this accepts two parameters, we’ll be getting both <code>$0</code> and <code>$1</code>:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span></p>
+<p>  <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>$0<span class="delimiter variable">)</span></span> at <span class="interpolation"><span class="delimiter variable">\(</span>$1<span class="delimiter variable">)</span></span> miles per hour."</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Some people prefer not to use shorthand parameter names like <code>$0</code> because it can be confusing, and that’s OK – do whatever works best for you.</p>

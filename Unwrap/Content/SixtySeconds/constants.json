@@ -1,0 +1,24 @@
+{
+    "title": "Constants",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select the lines that create variables.",
+    "hint": "Variables are created using <code>var<\/code>, whereas constants are created using <code>let<\/code>.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var score = 1000",
+        "var loggedIn = false",
+        "var status = \"success\"",
+        "var height = 172.1",
+        "var season = \"summer\"",
+        "var isRead = true"
+    ],
+    "wrong": [
+        "let age = 26",
+        "let enabled = true",
+        "let username = \"twostraws\"",
+        "let width = 14.0",
+        "let password = \"fr0sti3s\"",
+        "let tweeted = false"
+    ]
+}

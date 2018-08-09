@@ -1,0 +1,23 @@
+<p>Swift has a rarely used operator called the ternary operator. It works with three values at once, which is where its name comes from: it checks a condition specified in the first value, and if it’s true returns the second value, but if its false returns the third value.</p>
+<p>The ternary operator is a condition plus true or false blocks all in one, split up by a question mark and a colon, all of which which makes it rather hard to read. Here’s an example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> firstCard <span class="operator">=</span> <span class="number">11</span></p>
+<p><span class="keyword">let</span> secondCard <span class="operator">=</span> <span class="number">10</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>firstCard <span class="operator">==</span> secondCard <span class="operator">?</span> <span class="string">"Cards are the same"</span> <span class="punctuation">:</span> <span class="string">"Cards are different"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That checks whether the two cards are the same, then prints “Cards are the same” if the condition is true, or “Cards are different” if it’s false. We could write the same code using a regular condition:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> firstCard <span class="operator">==</span> secondCard <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Cards are the same"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Cards are different"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

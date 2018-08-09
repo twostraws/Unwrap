@@ -1,0 +1,24 @@
+{
+    "title": "Operators and conditions: Summary",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Swift won't let you mix different data types.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let tvShow = \"Breaking \" + \"Bad\"",
+        "let height = 10\nlet width = 20\nheight < width",
+        "let passingGrade = 70...100",
+        "var average = 10.0\naverage += 1.1",
+        "let yourScore = 20\nvar highScore = 15\nif yourScore >= highScore {\nprint(\"You got the high score!\")\n}",
+        "switch age {\ncase 0...8:\n\tfallthrough\ncase 9..<18:\n\tprint(\"You're still a minor\")\ndefault:\n\tprint(\"You're an adult\")\n}"
+    ],
+    "wrong": [
+        "let sciFi = \"Babylon \" + 9",
+        "let height = 10\nlet weight = 20\nheight > weight",
+        "let testsTaken = 10\ntestsTaken += 1",
+        "var poorRating = 0....10",
+        "let rank = 4\nif rank <= 10 {\nprint(You're in the top 10!)\n}",
+        "let numberOfCats = 1\nswitch numberOfCats {\ncase 0:\n\tprint(\"You have no cats\")\ncase 1...3:\n\tprint(\"You have some cats\")\ncase 4..<10:\n\tprint(\"You have many cats!\")\n}"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Protocol inheritance",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code demonstrates protocol inheritance – true or false?",
+    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "protocol CarriesPassengers {\n\tvar passengerCount: Int { get set }\n}\nprotocol CarriesCargo {\n\tvar cargoCapacity: Int { get set }\n}\nprotocol Boat: CarriesPassengers, CarriesCargo {\n\tvar name: String { get set }\n}",
+        "protocol LikesTravel {\n\tfunc visit(place: String)\n}\nprotocol BuySouvenirs {\n\tfunc buy(item: String)\n}\nprotocol Tourist: LikesTravel, BuySouvenirs { }",
+        "protocol MakesDiagnoses {\n\tfunc evaluate(patient: String) -> String\n}\nprotocol PrescribesMedicine {\n\tfunc prescribe(drug: String)\n}\nprotocol Doctor: MakesDiagnoses, PrescribesMedicine { }",
+        "protocol GivesOrders {\n\tfunc makeItSo()\n}\nprotocol OrdersDrinks {\n\tfunc teaEarlGrey(hot: Bool)\n}\nprotocol StarshipCaptain: GivesOrders, OrdersDrinks { }",
+        "protocol HasMindTricks {\n\tfunc waveHandMystically()\n}\nprotocol UsesForce {\n\tfunc raiseXWing()\n}\nprotocol JediKnight: HasMindTricks, UsesForce { }",
+        "protocol TimeTraveler {\n\tfunc travel(to year: Int)\n}\nprotocol HuntsPeople {\n\tfunc locateJohnConnor()\n}\nprotocol Terminator: TimeTraveler, HuntsPeople { }"
+    ],
+    "wrong": [
+        "protocol HasEngine {\n\tfunc startEngine()\n}\nprotocol HasTrunk {\n\tfunc openTrunk()\n}\nstruct Car: HasEngine, HasTrunk { }",
+        "protocol HasRooms {\n\tvar roomCount: Int { get set }\n}\nprotocol ServesFood {\n\tvar openingTime: Int { get set }\n}\nprotocol Hotel: HasRooms ServesFood {\n\tvar starRating: Int { get set }\n}",
+        "protocol Readable {\n\tfunc read() -> String\n}\nprotocol Writeable {\n\tfunc write(string: String)\n}\nprotocol NetworkSocket: Readable, Writeable",
+        "protocol Buyable {\n\tvar cost: Int\n}\nprotocol Sellable {\n\tfunc findBuyers() -> [String]\n}\nprotocol FineArt: Buyable, Sellable { }",
+        "protocol Scoreable {\n\tfunc add\n}\nprotocol Winnable {\n\tfunc makeWinningSpeech\n}\nprotocol Competitor: Scoreable, Winnable { }",
+        "struct Collectible {\n\tvar rarity: Int { get set }\n}\nstruct Tradeable {\n\tvar condition: String { get }\n}\nprotocol ClassicToy: Collectible, Tradeable { }"
+    ]
+}

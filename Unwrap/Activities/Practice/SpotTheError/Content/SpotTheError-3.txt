@@ -1,0 +1,13 @@
+func FUNCTION_NAME(PARAM_NAME: Int) -> String {
+    var RETURN_NAME: String = "Found "
+    switch PARAM_NAME {
+    case 0:
+        RETURN_NAME += "TwoStraws"
+    case 1:
+        RETURN_NAME += "Taylor"
+    default:
+        RETURN_NAME += "nothing for ID \(PARAM_NAME)"
+    }
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE))

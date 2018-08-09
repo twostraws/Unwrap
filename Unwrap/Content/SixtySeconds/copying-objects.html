@@ -1,0 +1,47 @@
+<p>The third difference between classes and structs is how they are copied. When you copy a struct, both the original and the copy are different things – changing one won’t change the other. When you copy a <em>class</em>, both the original and the copy point to the <em>same</em> thing, so changing one <em>does</em> change the other.</p>
+<p>For example, here’s a simple <code>Singer</code> class that has a <code>name</code> property with a default value:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Singer</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name <span class="operator">=</span> <span class="string">"Taylor Swift"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If we create an instance of that class and prints its name, we’ll get “Taylor Swift”:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> singer <span class="operator">=</span> <span class="function">Singer</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>singer<span class="punctuation">.</span>name<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now let’s  create a second variable from the first one and change its name:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> singerCopy <span class="operator">=</span> singer</p>
+<p>singerCopy<span class="punctuation">.</span>name <span class="operator">=</span> <span class="string">"Justin Bieber"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because of the way classes work, both <code>singer</code> and <code>singerCopy</code> point to the same object in memory, so when we print the singer name again we’ll see “Justin Bieber”:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>singer<span class="punctuation">.</span>name<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>On the other hand, if <code>Singer</code> were a struct then we would get “Taylor Swift” printed a second time:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Singer</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name <span class="operator">=</span> <span class="string">"Taylor Swift"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

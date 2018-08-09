@@ -1,0 +1,37 @@
+<p>Swift must always know the type of each of your variables, but sometimes you know more information than Swift does. For example, here are three classes:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Animal</span> <span class="punctuation">{</span> <span class="punctuation">}</span></p>
+<p><span class="keyword">class</span> <span class="class-name">Fish</span><span class="punctuation">:</span> <span class="builtin">Animal</span> <span class="punctuation">{</span> <span class="punctuation">}</span></p>
+<p><span class="keyword">class</span> <span class="class-name">Dog</span><span class="punctuation">:</span> <span class="builtin">Animal</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">makeNoise</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Woof!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can create a couple of fish and a couple of dogs, and put them into an array, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> pets <span class="operator">=</span> <span class="punctuation">[</span><span class="function">Fish</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="function">Dog</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="function">Fish</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="function">Dog</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift can see both <code>Fish</code> and <code>Dog</code> inherit from the <code>Animal</code> class, so it uses type inference to make <code>pets</code> an array of <code>Animal</code>.</p>
+<p>If we want to loop over the <code>pets</code> array and ask all the dogs to bark, we need to perform a typecast: Swift will check to see whether each pet is a <code>Dog</code> object, and if it is we can then call <code>makeNoise()</code>. </p>
+<p>This uses a new keyword called <code>as?</code>, which returns an optional: it will be <code>nil</code> if the typecast failed, or a converted type otherwise.</p>
+<p>Here’s how we write the loop in Swift:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">for</span> pet <span class="keyword">in</span> pets <span class="punctuation">{</span></p>
+<p>  <span class="keyword">if</span> <span class="keyword">let</span> dog <span class="operator">=</span> pet <span class="keyword">as?</span> <span class="builtin">Dog</span> <span class="punctuation">{</span></p>
+<p>    dog<span class="punctuation">.</span><span class="function">makeNoise</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

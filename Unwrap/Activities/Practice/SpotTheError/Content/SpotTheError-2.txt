@@ -1,0 +1,9 @@
+func FUNCTION_NAME(PARAM_NAME: Int) -> String {
+    var calculation = PARAM_NAME * 10_000
+    if PARAM_NAME > 10 {
+        calculation += 20_000
+    }
+    let RETURN_NAME: String = "The result is \(calculation)"
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE))

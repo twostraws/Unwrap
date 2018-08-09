@@ -1,0 +1,24 @@
+{
+    "title": "Handling missing data",
+    "postscript": "Earlier you learned about the <code>index()</code> method of arrays, which returns the position of an item inside an array. This actually returns an optional position, because the item might not be in the array.",
+    "reviewType": "multipleSelection",
+    "question": "Which of these make good candidates for optionals?",
+    "hint": "Optionals are useful when you might not know some information or it might not exist.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "The position of an item in an array.",
+        "Someone's middle name.",
+        "Someone's birthday if you know it.",
+        "The capital city of a country your user just typed in.",
+        "The current destination of a car's satellite navigation system.",
+        "The year a user last went on a boat."
+    ],
+    "wrong": [
+        "The sum of 10 numbers.",
+        "The length of a string.",
+        "An array of all languages spoken in your country.",
+        "The number of pages in a book.",
+        "The international dialling code for a country.",
+        "The population of a city."
+    ]
+}

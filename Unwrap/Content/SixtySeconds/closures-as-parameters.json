@@ -1,0 +1,24 @@
+{
+    "title": "Closures as parameters",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Make sure all the parameters and return values have the correct types.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let awesomeTalk = {\n\tprint(\"Here's a great talk!\")\n}\nfunc deliverTalk(name: String, type: () -> Void) {\n\tprint(\"My talk is called \\(name)\")\n\ttype()\n}\ndeliverTalk(\"My Awesome Talk\", type: awesomeTalk)",
+        "let swanDive = {\n\tprint(\"SWAN DIVE!\")\n}\nfunc performDive(type dive: () -> Void) {\n\tprint(\"I'm climbing up to the top\")\n\tdive()\n}\nperformDive(type: swanDive)",
+        "let helicopterTravel = {\n\tprint(\"Get to the chopper!\")\n}\nfunc travel(by travelMeans: () -> Void) {\n\tprint(\"Let's go on vacation...\")\n\ttravelMeans()\n}\ntravel(by: helicopterTravel)",
+        "var payCash = {\n\tprint(\"Here's the money.\")\n}\nfunc buyClothes(item: String, using payment: () -> Void) {\n\tprint(\"I'll take this \\(item).\")\n\tpayment()\n}\nbuyClothes(item: \"jacket\", using: payCash)",
+        "var goOnBike = {\n\tprint(\"I'll take my bicycle.\")\n}\nfunc race(using vehicleType: () -> Void) {\n\tprint(\"Let's race!\")\n\tvehicleType()\n}",
+        "var learnWithUnwrap = {\n\tprint(\"Hey, this is fun!\")\n}\nfunc learnSwift(using approach: () -> Void) {\n\tprint(\"I'm learning Swift\")\n\tapproach()\n}\nlearnSwift(using: learnWithUnwrap)"
+    ],
+    "wrong": [
+        "let resignation = { (name: String) in\n\tprint(\"Dear \\(name), I'm outta here!\")\n}\nfunc printDocument(contents: () -> Void) {\n\tprint(\"Connecting to printer...\")\n\tprint(\"Sending document...\")\n\tcontents()\n}\nprintDocument(contents: resignation)",
+        "let evilRobot = {\n\tprint(\"EXTERMINATE\")\n}\nfunc buildRobot(personality: () -> Void) {\n\tprint(\"Time to turn on the robot!\")\n\tpersonality()\n}\nbuildRobot(using: evilRobot)",
+        "let driveSafely = {\n\treturn \"I'm being a considerate driver\"\n}\nfunc drive(using driving: () -> Void) {\n\tprint(\"Let's get in the car\")\n\tdriving()\n\tprint(\"We're there!\")\n}\ndrive(using: driveSafely)",
+        "var playWithDog = {\n\tprint(\"Fetch!\")\n}\nfunc play(using playType: () -> Void) -> String {\n\tprint(\"Let's play a game\")\n\tplayType()\n}\nplay(using: playWithDog)",
+        "var makeFromStraw = {\n\tprint(\"Let's build it out of straw\")\n}\nfunc buildHouse(using buildingStyle: () -> Void) {\n\tbuildingStyle\n\tprint(\"It's ready - can anyone blow it down?\")\n}",
+        "var swift {\n\tprint(\"Cool - I can use closures!\")\n}\nfunc writeCode(using language: () -> Void) {\n\tlanguage()\n\tprint(\"That'll be eleventy billion dollars, please.\")\n}"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Protocols and extensions",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Only extensions contain method implementations. To conform to a protocol, all types must implement the protocol's methods.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "protocol Identifiable {\n\tvar id: Int { get set }\n}",
+        "protocol SuitableForKids {\n\tvar minimumAge: Int { get set }\n\tvar maximumAge: Int { get set }\n}\nprotocol SupportsMultiplePlayers {\n\tvar minimumPlayers: Int { get set }\n\tvar maximumPlayers: Int { get set }\n}\nstruct FamilyBoardGame: SuitableForKids, SupportsMultiplePlayers {\n\tvar minimumAge = 3\n\tvar maximumAge = 110\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n}",
+        "protocol Inflatable {\n\tmutating func refillAir()\n}\nextension Inflatable {\n\tmutating func refillAir() {\n\t\tprint(\"Refilling the air.\")\n\t}\n}",
+        "extension Collection {\n\tfunc describe() {\n\t\tif count == 1 {\n\t\t\tprint(\"There is 1 item.\")\n\t\t} else {\n\t\t\tprint(\"There are \\(count) items.\")\n\t\t}\n\t}\n}",
+        "protocol HasAge {\n\tvar age: Int { get set }\n\tmutating func celebrateBirthday()\n}",
+        "protocol Paintable { }\nprotocol Tileable { }\nstruct Wall: Paintable, Tileable { }"
+    ],
+    "wrong": [
+        "protocol TravelsThroughTime {\n\tmutating func travel(to year: Int)\n}\nprotocol BiggerOnTheInside {\n\tfunc findSwimmingPool()\n}\nprotocol TARDIS: TravelsThroughTime BiggerOnTheInside {\n\tvar doctorNumber: Int { get set }\n}",
+        "protocol Ridable\nprotocol Trainable\nprotocol Dog: Trainable",
+        "protocol HasPages {\n\tvar pageCount: Int\n}\nprotocol HasTableOfContents {\n\tvar titles: [String]\n}\nprotocol Book: HasPages, HasTableOfContents {\n\tvar author: String\n}",
+        "protocol NotAMoon { }\nprotocol HasExhaustPort { }\nstruct DeathStar: NotAMoon HasExhaustPort { }",
+        "protocol CanFly {\n\tvar maximumFlightSpeed: Int { get set }\n}\nprotocol CanDrive {\n\tvar maximumDrivingSpeed: Int { get set }\n}\nstruct FlyingCar: CanFly, CanDrive { }",
+        "protocol Adjustable {\n\tmutating func adjustValue(by amount)\n}"
+    ]
+}

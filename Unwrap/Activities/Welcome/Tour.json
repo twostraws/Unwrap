@@ -1,0 +1,27 @@
+[
+	{
+		"image": "Tour1",
+		"title": "Learn Swift",
+		"text": "Unwrap teaches Swift using almost 100 short lessons. When you finish each chapter, you'll be given a short review so you can check you understood the new concepts."
+	},
+	{
+		"image": "Tour2",
+		"title": "Practice Swift",
+		"text": "As you progress, you'll unlock practice activities that test your coding skills. You might need to write code by tapping blocks or re-arranging lines, you might need to predict the output of a program, and more."
+	},
+	{
+		"image": "Tour3",
+		"title": "Challenge yourself",
+		"text": "Once a day you can try Unwrap's Daily Challenge, which gives you ten practice activities to see how you're doing overall. You can skip up to three questions if you need to."
+	},
+	{
+		"image": "Tour4",
+		"title": "Grow your skills",
+		"text": "Unwrap tracks what you've learned, your practice sessions, how many daily challenges you've completed, and more. This gets summed up by how many points you've earned, as well as what level you are."
+	},
+	{
+		"image": "Tour5",
+		"title": "If you get stuck…",
+		"text": "You'll often see a Hint button, which will give you a little nudge in the right direction if you tap it. You are never penalized for using hints, so use the Hint button as often as you need."
+	}
+]

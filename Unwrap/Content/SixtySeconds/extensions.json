@@ -1,0 +1,24 @@
+{
+    "title": "Extensions",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is a valid extension – true or false?",
+    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}",
+        "extension String {\n\tfunc withPrefix(_ prefix: String) -> String {\n\t\tif self.hasPrefix(prefix) { return self }\n\t\treturn \"\\(prefix)\\(self)\"\n\t}\n}",
+        "extension String {\n\tvar isLong: Bool {\n\t\treturn count > 25\n\t}\n}",
+        "extension Double {\n\tvar isNegative: Bool {\n\t\treturn self < 0\n\t}\n}",
+        "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}",
+        "extension String {\n\tfunc isUppercased() -> Bool {\n\t\treturn self == self.uppercased()\n\t}\n}"
+    ],
+    "wrong": [
+        "extension Int {\n\tvar isEven {\n\t\treturn self % 2 == 0\n\t}\n}",
+        "extension String {\n\tfunc append(_ other: String) {\n\t\tself += other\n\t}\n}",
+        "extension Bool {\n\tfunc toggled() -> Bool {\n\t\tif self = true {\n\t\t\treturn false\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
+        "ext Array {\n\tfunc summarize() {\n\t\tprint(\"The array has \\(count) items. They are:\")\n\t\tfor item in self {\n\t\t\tprint(item)\n\t\t}\n\t}\n}",
+        "extension Int {\n\ttimes(_ action: () -> Void) {\n\t\tfor _ in 0..<self {\n\t\t\taction()\n\t\t}\n\t}\n}",
+        "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tself == 42\n\t}\n}"
+    ]
+}

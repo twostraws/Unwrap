@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: [FONTSIZE]%;
+}
+
+img {
+	width: [IMAGEWIDTH];
+	height: auto;
+}
+
+p.mainImage {
+	margin-bottom: 10px;
+}
+
+div.container p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+div.continue p {
+	background-color: dodgerblue;
+	color: white;
+	margin-bottom: 5px;
+}
+
+
+
+/* 
+	Getting nice syntax highlighting is tricky!
+	We mark the whole thing as being black with white text
+	then use paragraphs inside preformatted text to apply 
+	margins. We also have a zero-height paragraph at the
+	start and end of the code to force all lines of code to 
+	be full width, then use CSS below to make all lines
+	have no bottom margin to keep the whole thing tight.
+
+	This effectively transforms malformed HTML into 
+	perfect attributed strings, so yay?
+*/
+
+pre.code {
+	background-color: #f0f0f0;
+	color: black;
+}
+
+code {
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+pre.code p {
+	 margin-bottom: 0;
+}
+
+span.keyword {
+	color: #B40062;
+}
+
+span.string {
+	color: #BA0011;
+}
+
+span.number {
+	color: #000BFF;
+}
+
+span.function {
+	color: black;
+}
+
+span.punctuation {
+	color: black;
+}
+
+span.builtin {
+	color: #306F79;
+}

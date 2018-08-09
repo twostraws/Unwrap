@@ -1,0 +1,24 @@
+{
+    "title": "Structs: Summary",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are true about structs?",
+    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Structs can have as many or as few properties as you need.",
+        "Structs can have custom initializers.",
+        "Strings and arrays are both structs.",
+        "Methods that change properties must be marked <code>mutating<\/code>",
+        "You can share properties and methods across all instances of a struct using <code>static<\/code>",
+        "Computed properties let us run code to return a value."
+    ],
+    "wrong": [
+        "You may either have stored properties or computed properties, but not both.",
+        "Structs may not use constant properties.",
+        "You can combine <code>public<\/code> and <code>private<\/code> in a single property.",
+        "The <code>self<\/code> keyword must not be used inside initializers.",
+        "You must always write your own initializer for structs.",
+        "Structs can't have lazy properties."
+    ]
+}

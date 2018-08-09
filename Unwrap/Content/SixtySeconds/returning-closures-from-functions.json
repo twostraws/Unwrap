@@ -1,0 +1,24 @@
+{
+    "title": "Returning closures from functions",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Make sure the returned closure accepts the right parameters and returns the right data type, if any.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func createDoubler() -> (Int) -> Int {\n\treturn {\n\t\treturn $0 * 2\n\t}\n}\nlet doubler = createDoubler()\nprint(doubler(2))",
+        "func makeGreeting(language: String) -> (String) -> Void {\n\tif language == \"French\" {\n\t\treturn {\n\t\t\tprint(\"Bonjour, \\($0)!\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"Hello, \\($0)!\")\n\t\t}\n\t}\n}\nlet greeting = makeGreeting(language: \"English\")\ngreeting(\"Paul\")",
+        "func createAgeCheck(strict: Bool) -> (Int) -> Bool {\n\tif strict {\n\t\treturn {\n\t\t\tif $0 <= 21 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tif $0 <= 18 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n}\nlet ageCheck = createAgeCheck(strict: true)\nlet result = ageCheck(20)\nprint(result)",
+        "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")",
+        "func createValidator() -> (String) -> Bool {\n\treturn {\n\t\tif $0 == \"twostraws\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\nlet validator = createValidator()\nprint(validator(\"twostraws\"))",
+        "func makeRecorder(media: String) -> () -> String {\n\tswitch media {\n\tcase \"podcast\":\n\t\treturn {\n\t\t\treturn \"I'm recording a podcast\"\n\t\t}\n\tdefault:\n\t\treturn {\n\t\t\treturn \"I'm recording a video\"\n\t\t}\n\t}\n}\nlet recorder = makeRecorder(media: \"podcast\")\nprint(recorder())"
+    ],
+    "wrong": [
+        "func makeSharer(String) -> () -> String {\n\tswitch destination {\n\tcase \"Twitter\":\n\t\treturn {\n\t\t\treturn \"I'm writing a tweet\"\n\t\t}\n\tdefault:\n\t\treturn {\n\t\t\treturn \"I'm sending an email\"\n\t\t}\n\t}\n}\nlet sharer = makeSharer(destination: \"Twitter\")\nprint(sharer())",
+        "func makeCodeGenerator(language: String) -> () -> Void {\n\tif language == \"Swift\" {\n\t\treturn \"Swift rocks!\"\n\t} else {\n\t\treturn \"Other languages are pretty great too!\"\n\t}\n}\nlet generator = makeCodeGenerator(language: \"Swift\")\ngenerator()",
+        "func mealProducer() -> (Int) -> String {\n\treturn {\n\t\tprint(\"I'll make dinner for \\($0) people.\")\n\t}\n}\nlet makeDinner = mealProducer()\nprint(makeDinner(5))",
+        "func paintingMaker(medium: String) -> (String) -> Void {\n\tif medium == \"watercolor\" {\n\t\treturn {\n\t\t\tprint(\"I'm going to paint some flowers.\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm going to paint a landscape.\")\n\t\t}\n\t}\n}\nlet maker = paintingMaker(medium: \"watercolor\")\nmaker()",
+        "func catchPokemon(level: Int) -> () {\n\tif level < 10 {\n\t\treturn {\n\t\t\treturn \"Use a regular ball\"\n\t\t}\n\t} else if level < 20 {\n\t\treturn {\n\t\t\treturn \"Use a great ball\"\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\treturn \"Use an ultra ball\"\n\t\t}\n\t}\n}\nlet catcher = catchPokemon(level: 11)\nprint(catcher())",
+        "func makeGame() -> Int -> Void {\n\treturn {\n\t\tif $0 <= 5 {\n\t\t\tprint(\"Let's play five-a-side football.\")\n\t\t} else {\n\t\t\tprint(\"Let's play regular football.\")\n\t\t}\n\t}\n}\nlet game = makeGame()\ngame(5)"
+    ]
+}

@@ -1,0 +1,42 @@
+<p>We’ve used lots of strings so far, and it turns out they are structs – they have their own methods and properties we can use to query and manipulate the string.</p>
+<p>First, let’s create a test string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> string <span class="operator">=</span> <span class="string">"Do or do not, there is no try."</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can read the number of characters in a string using its <code>count</code> property:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>string<span class="punctuation">.</span><span class="builtin">count</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>They have a <code>hasPrefix()</code> method that returns true if the string starts with specific letters:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>string<span class="punctuation">.</span><span class="function">hasPrefix</span><span class="punctuation">(</span><span class="string">"Do"</span><span class="punctuation">)</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can uppercase a string by calling its <code>uppercased()</code> method:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>string<span class="punctuation">.</span><span class="function">uppercased</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>And you can even have Swift sort the letters of the string into an array:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>string<span class="punctuation">.</span><span class="function">sorted</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Strings have lots more properties and methods – try typing <code>string.</code> to bring up Xcode’s code completion options.</p>

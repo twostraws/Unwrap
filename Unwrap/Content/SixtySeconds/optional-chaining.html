@@ -1,0 +1,19 @@
+<p>Swift provides us with a shortcut when using optionals: if you want to access something like <code>a.b.c</code> and <code>b</code> is optional, you can write a question mark after it to enable <em>optional chaining</em>: <code>a.b?.c</code>.</p>
+<p>When that code is run, Swift will check whether <code>b</code> has a value, and if it’s <code>nil</code> the rest of the line will be ignored – Swift will return <code>nil</code> immediately. But if it <em>has</em> a value, it will be unwrapped and execution will continue.</p>
+<p>To try this out, here’s an array of names:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> names <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"John"</span><span class="punctuation">,</span> <span class="string">"Paul"</span><span class="punctuation">,</span> <span class="string">"George"</span><span class="punctuation">,</span> <span class="string">"Ringo"</span><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We’re going to use the <code>first</code> property of that array, which will return the first name if there is one or <code>nil</code> if the array is empty. We can then call <code>uppercased()</code> on the result to make it an uppercase string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> beatle <span class="operator">=</span> names<span class="punctuation">.</span><span class="builtin">first</span><span class="operator">?</span><span class="punctuation">.</span><span class="function">uppercased</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That question mark is optional chaining – if <code>first</code> returns <code>nil</code> then Swift won’t try to uppercase it, and will set <code>beatle</code> to <code>nil</code> immediately.</p>

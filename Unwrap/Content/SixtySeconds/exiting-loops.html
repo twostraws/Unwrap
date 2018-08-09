@@ -1,0 +1,29 @@
+<p>You can exit a loop at any time using the <code>break</code> keyword. To try this out, let’s start with a regular <code>while</code> loop that counts down for a rocket launch:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> countDown <span class="operator">=</span> <span class="number">10</span></p>
+<p><span class="keyword">while</span> countDown <span class="operator">&gt;=</span> <span class="number">0</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>countDown<span class="punctuation">)</span></p>
+<p>  countDown <span class="operator">-</span><span class="operator">=</span> <span class="number">1</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"Blast off!"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>In this case, the astronaut in command gets bored part-way through the countdown and decides to skip the remainder and launch straight away:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">while</span> countDown <span class="operator">&gt;=</span> <span class="number">0</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>countDown<span class="punctuation">)</span></p>
+<p>  <span class="keyword">if</span> countDown <span class="operator">==</span> <span class="number">4</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm bored. Let's go now!"</span><span class="punctuation">)</span></p>
+<p>    <span class="keyword">break</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p>  countDown <span class="operator">-</span><span class="operator">=</span> <span class="number">1</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>With that change, as soon as <code>countDown</code> reaches 4 the astronaut’s message will be printed, and the rest of the loop gets skipped.</p>

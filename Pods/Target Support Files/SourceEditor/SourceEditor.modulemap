@@ -1,0 +1,6 @@
+framework module SourceEditor {
+  umbrella header "SourceEditor-umbrella.h"
+
+  export *
+  module * { export * }
+}

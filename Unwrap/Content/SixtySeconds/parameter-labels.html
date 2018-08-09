@@ -1,0 +1,37 @@
+<p>We wrote our <code>square()</code> function like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">return</span> number <span class="operator">*</span> number</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That names its parameter <code>number</code>, so we can use <code>number</code> inside the function to refer to it, but we must also use the name when running the function, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result <span class="operator">=</span> <span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="number">8</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift lets us provide two names for each parameter: one to be used externally when calling the function, and one to be used internally inside the function. This is as simple as writing two names, separated by a space.</p>
+<p>To demonstrate this, here’s a function that uses two names for its string parameter:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">sayHello</span><span class="punctuation">(</span>to name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, <span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span>!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>The parameter is called <code>to name</code>, which means externally it’s called <code>to</code>, but internally it’s called <code>name</code>. This gives variables a sensible name inside the function, but means calling the function reads naturally:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">sayHello</span><span class="punctuation">(</span>to<span class="punctuation">:</span> <span class="string">"Taylor"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

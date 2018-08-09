@@ -1,0 +1,24 @@
+<p>This is where closures can start to be read a bit like line noise: a closure you pass into a function can also accept its own parameters.</p>
+<p>We’ve been using <code>() -&gt; Void</code> to mean “accepts no parameters and returns nothing”, but you can go ahead and fill the <code>()</code> with the types of any parameters that your closure should accept.</p>
+<p>To demonstrate this, we can write a <code>travel()</code> function that accepts a closure as its only parameter, and that closure in turn accepts a string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm getting ready to go."</span><span class="punctuation">)</span></p>
+<p>  <span class="function">action</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I arrived!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now when we call <code>travel()</code> using trailing closure syntax, our closure code is required to accept a string:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span> <span class="punctuation">(</span>place<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="keyword">in</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

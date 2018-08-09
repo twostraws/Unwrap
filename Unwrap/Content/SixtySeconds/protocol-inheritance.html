@@ -1,0 +1,26 @@
+<p>One protocol can inherit from another in a process known as <em>protocol inheritance</em>. Unlike with classes, you can inherit from multiple protocols at the same time before you add your own customizations on top.</p>
+<p>We’re going to define three protocols: <code>Payable</code> requires conforming types to implement a <code>calculateWages()</code> method, <code>NeedsTraining</code> requires conforming types to implement a <code>study()</code> method, and <code>HasVacation</code> requires conforming types to implement a <code>takeVacation()</code> method:</p>
+<pre class="code">
+<p></p>
+<p>protocol <span class="builtin">Payable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">calculateWages</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Int</span></p>
+<p><span class="punctuation">}</span></p>
+<p>protocol <span class="builtin">NeedsTraining</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">study</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p>protocol <span class="builtin">HasVacation</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">takeVacation</span><span class="punctuation">(</span>days<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now create a single <code>Employee</code> protocol that brings them together in one protocol. We don’t need to add anything on top, so we’ll just write open and close braces:</p>
+<pre class="code">
+<p></p>
+<p>protocol <span class="builtin">Employee</span><span class="punctuation">:</span> <span class="builtin">Payable</span><span class="punctuation">,</span> <span class="builtin">NeedsTraining</span><span class="punctuation">,</span> <span class="builtin">HasVacation</span> <span class="punctuation">{</span> <span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now we can make new types conform to that single protocol rather than each of the three individual ones.</p>

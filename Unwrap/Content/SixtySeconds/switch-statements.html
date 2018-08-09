@@ -1,0 +1,45 @@
+<p>If you have several conditions using <code>if</code> and <code>else if</code>, it’s often clearer to use a different construct known as <code>switch case</code>. Using this approach you write your condition once, then list all possible outcomes and what should happen for each of them.</p>
+<p>To try this out, here’s a weather constant containing the string <code>sunny</code>:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> weather <span class="operator">=</span> <span class="string">"sunny"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can use a <code>switch</code> block to print one of four different messages:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">switch</span> weather <span class="punctuation">{</span></p>
+<p><span class="keyword">case</span> <span class="string">"rain"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Bring an umbrella"</span><span class="punctuation">)</span></p>
+<p><span class="keyword">case</span> <span class="string">"snow"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Wrap up warm"</span><span class="punctuation">)</span></p>
+<p><span class="keyword">case</span> <span class="string">"sunny"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Wear sunscreen"</span><span class="punctuation">)</span></p>
+<p>default<span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Enjoy your day!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>The last case – <code>default</code> – is required because Swift makes sure you cover all possible cases so that no eventuality is missed off. If the weather is anything other than rain, snow, or sun, the <code>default</code> case will be run.</p>
+<p>Swift will only run the code inside each case. If you want execution to continue on to the next case, use the <code>fallthrough</code> keyword like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">switch</span> weather <span class="punctuation">{</span></p>
+<p><span class="keyword">case</span> <span class="string">"rain"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Bring an umbrella"</span><span class="punctuation">)</span></p>
+<p><span class="keyword">case</span> <span class="string">"snow"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Wrap up warm"</span><span class="punctuation">)</span></p>
+<p><span class="keyword">case</span> <span class="string">"sunny"</span><span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Wear sunscreen"</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">fallthrough</span></p>
+<p>default<span class="punctuation">:</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Enjoy your day!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

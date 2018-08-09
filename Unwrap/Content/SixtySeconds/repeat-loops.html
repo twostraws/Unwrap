@@ -1,0 +1,36 @@
+<p>The third way of writing loops is not commonly used, but it’s so simple to learn we might as well cover it: it’s called the <code>repeat</code> loop, and it’s identical to a <code>while</code> loop except the condition to check comes at the end.</p>
+<p>So, we could rewrite our hide and seek example like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> number <span class="operator">=</span> <span class="number">1</span></p>
+<p><span class="keyword">repeat</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>number<span class="punctuation">)</span></p>
+<p>  number <span class="operator">+</span><span class="operator">=</span> <span class="number">1</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">while</span> number <span class="operator">&lt;=</span> <span class="number">20</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"Ready or not, here I come!"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because the condition comes at the <em>end</em> of the <code>repeat</code> loop the code inside the loop will always be executed at least once, whereas <code>while</code> loops check their condition before their first run.</p>
+<p>For example, this <code>print()</code> function will never be run, because <code>false</code> is always false:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">while</span> <span class="boolean">false</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"This is false"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Xcode will even warn us that the <code>print()</code> line will never be executed.</p>
+<p>On the other hand, this <code>print()</code> function will be run once, because <code>repeat</code> only fails the condition after the loop runs:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">repeat</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"This is false"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">while</span> <span class="boolean">false</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

@@ -1,0 +1,25 @@
+<p>The <code>print()</code> function prints something to the screen, but always adds a new line to the end of whatever you printed, so that multiple calls to <code>print()</code> don’t all appear on the same line.</p>
+<p>You can change that behavior if you want, so you could use spaces rather than line breaks. Most of the time, though, folks want new lines, so <code>print()</code> has a <code>terminator</code> parameter that uses new line as its default value.</p>
+<p>You can give your own parameters a default value just by writing an <code>=</code> after its type followed by the default you want to give it. So, we could write a <code>greet()</code> function that can optionally print nice greetings:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">greet</span><span class="punctuation">(</span><span class="number">_</span> person<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">,</span> nicely<span class="punctuation">:</span> <span class="builtin">Bool</span> <span class="operator">=</span> <span class="boolean">true</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">if</span> nicely <span class="operator">==</span> <span class="boolean">true</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, <span class="interpolation"><span class="delimiter variable">\(</span>person<span class="delimiter variable">)</span></span>!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Oh no, it's <span class="interpolation"><span class="delimiter variable">\(</span>person<span class="delimiter variable">)</span></span> again..."</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That can be called in two ways:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">greet</span><span class="punctuation">(</span><span class="string">"Taylor"</span><span class="punctuation">)</span></p>
+<p><span class="function">greet</span><span class="punctuation">(</span><span class="string">"Taylor"</span><span class="punctuation">,</span> nicely<span class="punctuation">:</span> <span class="boolean">false</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

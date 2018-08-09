@@ -1,0 +1,24 @@
+{
+    "title": "Optional try",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are true about throwing functions?",
+    "hint": "Many people call <code>!<\/code> the crash operator because it might crash your app, and it's no different with <code>try!<\/code>.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "If you use <code>try<\/code> you must either catch the error or mark your function as <code>throws<\/code>",
+        "Using <code>try?<\/code> converts a function's return value into an optional.",
+        "If you use <code>try!<\/code> and your call throws an error, your code crashes.",
+        "When using <code>try?<\/code> you must catch all errors that can be thrown.",
+        "You can combine <code>try?<\/code> with <code>if let<\/code>",
+        "Functions that throw errors must be marked <code>throws<\/code>."
+    ],
+    "wrong": [
+        "You can use <code>try?!<\/code> to combine <code>try?<\/code> and <code>try!<\/code>",
+        "If you use <code>try?<\/code> and your call throws an error, your code crashes.",
+        "If you use <code>try<\/code> and know your function won't throw errors, you don't need to catch anything.",
+        "Functions that might throw errors must be marked <code>throws?<\/code>",
+        "Throwing functions must never call other throwing functions.",
+        "Throwing functions can throw multiple errors using tuples."
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Unwrapping with guard",
+    "postscript": "It's common to use both <code>if let</code> and <code>guard let</code> to unwrap optionals into a constant of the same name. For example, <code>guard let name = name else { return }</code>",
+    "reviewType": "singleSelection",
+    "question": "This code print a message – true or false?",
+    "hint": "If your <code>guard let<\/code> condition fails, you must immediately exit the current method, loop, or condition.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func validate(password: String?) -> Bool {\n\tguard let password = password else {\n\t\treturn false\n\t}\n\tif password == \"fr0sties\" {\n\t\tprint(\"Authenticated successfully!\")\n\t\treturn true\n\t}\n\treturn false\n}\nvalidate(password: \"fr0sties\")",
+        "func test(number: Int?) {\n\tguard let number = number else { return }\n\tprint(\"Number is \\(number)\")\n}\ntest(number: 42)",
+        "func isLongEnough(_ string: String?) -> Bool {\n\tguard let string = string else { return false }\n\tif string.count >= 8 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif isLongEnough(\"Mario Odyssey\") {\n\tprint(\"Let's play that!\")\n}",
+        "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}",
+        "func uppercase(string: String?) -> String? {\n\tguard let string = string else {\n\t\treturn nil\n\t}\n\treturn string.uppercased()\n}\nif let result = uppercase(string: \"Hello\") {\n\tprint(result)\n}",
+        "func describe(occupation: String?) {\n\tguard let occupation = occupation else {\n\t\tprint(\"You don't have a job.\")\n\t\treturn\n\t}\n\tprint(\"You are an \\(occupation).\")\n}\nlet job = \"engineer\"\ndescribe(occupation: job)"
+    ],
+    "wrong": [
+        "func username(for id: Int?) -> String {\n\tguard let id = id else {\n\t\treturn nil\n\t}\n\tif id == 1989 {\n\t\treturn \"Taylor Swift\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let user = username(for: 1989) {\n\tprint(\"Hello, \\(user)!\")\n}",
+        "func verify(age: Int?) -> Bool {\n\tguard age >= 18 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif verify(age: 28) {\n\tprint(\"You're old enough.\")\n} else {\n\tprint(\"Come back in a few years.\")\n}",
+        "func playOpera(by composer: String?) -> String? {\n\tlet composer = composer else {\n\t\treturn \"Please specify a composer.\"\n\t}\n\tif composer == \"Mozart\" {\n\t\treturn \"Le nozze di Figaro\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let opera = playOpera(by: \"Mozart\") {\n\tprint(opera)\n}",
+        "func plantTree(_ type: String?) {\n\tguard let type else {\n\t\treturn\n\t}\n\tprint(\"Planting a \\(type).\")\n}\nplantTree(\"willow\")",
+        "func playScale(name: String?) {\n\tguard let name = name {\n\t\treturn\n\t}\n\tprint(\"Playing the \\(name) scale.\")\n}\nplayScale(name: \"C\")",
+        "func add3(to number: Int) -> Int {\n\tguard let number = number else {\n\t\treturn 3\n\t}\n\treturn number + 3\n}\nlet added = add3(to: 5)\nprint(added)"
+    ]
+}

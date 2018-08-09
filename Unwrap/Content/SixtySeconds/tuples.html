@@ -1,0 +1,31 @@
+<p>Tuples allow you store several values together in a single value. That might sound like arrays, but tuples are different:</p>
+<ol>
+<li>You can’t add or remove items from a tuple; they are fixed in size.</li>
+<li>You can’t change the type of items in a tuple; they always have the same types they were created with.</li>
+<li>You can access items in a tuple using numerical positions or by naming them, but Swift won’t let you read numbers or names that don’t exist.</li>
+</ol>
+<p>Tuples are created by placing multiple items into parentheses, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> name <span class="operator">=</span> <span class="punctuation">(</span><span class="builtin">first</span><span class="punctuation">:</span> <span class="string">"Taylor"</span><span class="punctuation">,</span> <span class="builtin">last</span><span class="punctuation">:</span> <span class="string">"Swift"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You then access items using numerical positions starting from 0:</p>
+<pre class="code">
+<p></p>
+<p>name<span class="punctuation">.</span><span class="number">0</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Or you can access items using their names:</p>
+<pre class="code">
+<p></p>
+<p>name<span class="punctuation">.</span><span class="builtin">first</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Remember, you can change the values inside a tuple after you create it, but not the <em>types</em> of values. So, if you tried to change <code>name</code> to be <code>(first: "Justin", age: 25)</code> you would get an error.</p>

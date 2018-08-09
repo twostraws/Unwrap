@@ -1,0 +1,29 @@
+<p>Swift lets you design your own types in two ways, of which the most common are called structures, or just <em>structs</em>. Structs can be given their own variables and constants, and their own functions, then created and used however you want.</p>
+<p>Let’s start with a simple example: we’re going to create a <code>Sport</code> struct that stores its name as a string. Variables inside structs are called <em>properties</em>, so this is a struct with one property:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Sport</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That defines the type, so now we can create and use an instance of it:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> tennis <span class="operator">=</span> <span class="function">Sport</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Tennis"</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>tennis<span class="punctuation">.</span>name<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We made both <code>name</code> and <code>tennis</code> variable, so we can change them just like regular variables:</p>
+<pre class="code">
+<p></p>
+<p>tennis<span class="punctuation">.</span>name <span class="operator">=</span> <span class="string">"Lawn tennis"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Properties can have default values just like regular variables, and you can usually rely on Swift’s type inference.</p>

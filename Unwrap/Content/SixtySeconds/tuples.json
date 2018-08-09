@@ -1,0 +1,24 @@
+{
+    "title": "Tuples",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select all statements that are true about tuples.",
+    "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Tuples are fixed in size.",
+        "You can't change the types of tuple items.",
+        "You can access tuple items using numerical positions.",
+        "You can name tuple items.",
+        "Tuples are created by placing items inside parentheses.",
+        "Tuples store values together in a single value."
+    ],
+    "wrong": [
+        "Tuples are the same as arrays.",
+        "Tuples can only hold strings.",
+        "All values in a tuple must be unique.",
+        "Tuples must always be created as variables.",
+        "Tuples cannot hold multi-line strings.",
+        "No one really understands tuples."
+    ]
+}

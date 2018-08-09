@@ -1,0 +1,24 @@
+{
+    "title": "Final test",
+    "postscript": "You can go back and re-read any of these chapters whenever you want – keep your Swift skills fresh!",
+    "reviewType": "multipleSelection",
+    "question": "Which of these statements are true?",
+    "hint": "These questions are taken from a variety of chapters – you might need to re-read one of them if you're not sure about an answer.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Strings are case-sensitive.",
+        "Closures can capture values around them.",
+        "Structs are copied differently from classes.",
+        "Enums can have associated values.",
+        "Variadic functions take any number of parameters.",
+        "Throwing functions must be called using <code>try</code>."
+    ],
+    "wrong": [
+        "Functions inside structs are called closures.",
+        "Swift automatically generates the shorthand parameter names <code>#0</code>, <code>#1</code>, and so on.",
+        "Classes may not contain private methods.",
+        "You can make a new struct by inheriting from any other structs that are not declared using <code>final</code>.",
+        "Extensions can only be used on protocols.",
+        "<code>String</code> and <code>String!</code> are the same thing."
+    ]
+}

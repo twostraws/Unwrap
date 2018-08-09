@@ -1,0 +1,44 @@
+<p>Arrays, sets, and dictionaries are called <em>collections</em>, because they collect values together in one place.</p>
+<p>If you want to create an <em>empty</em> collection just write its type followed by opening and closing parentheses. For example, we can create an empty dictionary with strings for keys and values like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> teams <span class="operator">=</span> <span class="punctuation">[</span><span class="builtin">String</span><span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">]</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can then add entries later on, like this:</p>
+<pre class="code">
+<p></p>
+<p>teams<span class="punctuation">[</span><span class="string">"Paul"</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="string">"Red"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Similarly, you can create an empty array to store integers like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> results <span class="operator">=</span> <span class="punctuation">[</span><span class="builtin">Int</span><span class="punctuation">]</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>The  exception is creating an empty set, which is done differently:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> words <span class="operator">=</span> <span class="builtin">Set</span><span class="operator">&lt;</span><span class="builtin">String</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="keyword">var</span> numbers <span class="operator">=</span> <span class="builtin">Set</span><span class="operator">&lt;</span><span class="builtin">Int</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>This is because Swift has special syntax only for dictionaries and arrays; other types must use angle bracket syntax like sets.</p>
+<p>If you wanted, you could create arrays and dictionaries with similar syntax:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> scores <span class="operator">=</span> <span class="builtin">Dictionary</span><span class="operator">&lt;</span><span class="builtin">String</span><span class="punctuation">,</span> <span class="builtin">Int</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="keyword">var</span> results <span class="operator">=</span> <span class="builtin">Array</span><span class="operator">&lt;</span><span class="builtin">Int</span><span class="operator">&gt;</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

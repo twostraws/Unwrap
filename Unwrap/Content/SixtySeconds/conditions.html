@@ -1,0 +1,40 @@
+<p>Now you know some operators you can write conditions using <code>if</code> statements. You give Swift a condition, and if that condition is true it will run code of your choosing.</p>
+<p>To try this out, I want to use a Swift function called <code>print()</code>: you run it with some text, and it will be printed out.</p>
+<p>We can use conditions to check for a winning Blackjack hand:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> firstCard <span class="operator">=</span> <span class="number">11</span></p>
+<p><span class="keyword">let</span> secondCard <span class="operator">=</span> <span class="number">10</span></p>
+<p><span class="keyword">if</span> firstCard <span class="operator">+</span> secondCard <span class="operator">==</span> <span class="number">21</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Blackjack!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>The code inside the braces – <code>{</code> and <code>}</code> – will be printed if the condition is true. If you want you can provide alternative code to run if the condition is <em>false</em>, using <code>else</code>:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> firstCard <span class="operator">+</span> secondCard <span class="operator">==</span> <span class="number">21</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Blackjack!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Regular cards"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can also chain conditions together using <code>else if</code>:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> firstCard <span class="operator">+</span> secondCard <span class="operator">==</span> <span class="number">2</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Aces – lucky!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="keyword">if</span> firstCard <span class="operator">+</span> secondCard <span class="operator">==</span> <span class="number">21</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Blackjack!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Regular cards"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

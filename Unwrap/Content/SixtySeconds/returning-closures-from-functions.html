@@ -1,0 +1,32 @@
+<p>In the same way that you can pass a closure <em>to</em> a function, you can get closures returned <em>from</em> a function too.</p>
+<p>The syntax for this is a bit confusing a first, because it uses <code>-&gt;</code> twice: once to specify your function’s return value, and a second time to specify your closure’s return value.</p>
+<p>To try this out, we’re going to write a <code>travel()</code> function that accepts no parameters, but returns a closure. The closure that gets returned must be called with a string, and will return nothing.</p>
+<p>Here’s how that looks in Swift:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">return</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>$0<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now call <code>travel()</code> to get back that closure, then call it as a function:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result <span class="operator">=</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p><span class="function">result</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>It’s technically allowable – although really not recommended! – to call the return value from <code>travel()</code> directly:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result2 <span class="operator">=</span> <span class="function">travel</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

@@ -1,0 +1,8 @@
+func FUNCTION_NAME(PARAM_NAME: Int, name: String) -> String {
+    var RETURN_NAME: String = ""
+    for _ in 1 ... PARAM_NAME {
+        RETURN_NAME += "\(name)\n"
+    }
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE, name: "Paul Hudson"))

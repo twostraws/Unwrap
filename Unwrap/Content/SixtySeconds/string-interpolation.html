@@ -1,0 +1,20 @@
+<p>You’ve seen how you can type values for strings directly into your code, but Swift also has a feature called string interpolation – the ability to place variables inside your strings to make them more useful.</p>
+<p>You can place any type of variable inside your string – all you have to do is write a backslash, <code>\</code>, followed by your variable name in parentheses. For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> score <span class="operator">=</span> <span class="number">85</span></p>
+<p><span class="keyword">var</span> str <span class="operator">=</span> <span class="string">"Your score was <span class="interpolation"><span class="delimiter variable">\(</span>score<span class="delimiter variable">)</span></span>"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>As you can see in the playground output, that sets the <code>str</code> variable to be “Your score was 85”.</p>
+<p>You can do this as many times as you need, making strings out of strings if you want:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> results <span class="operator">=</span> <span class="string">"The test results are here: <span class="interpolation"><span class="delimiter variable">\(</span>str<span class="delimiter variable">)</span></span>"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>As you’ll see later on, string interpolation isn’t just limited to placing variables – you can actually run code inside there.</p>

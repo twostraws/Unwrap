@@ -1,0 +1,24 @@
+{
+    "title": "Referring to the current instance",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "struct District {\n\tvar number: Int\n\tvar supervisor: String\n\tinit(number: Int, supervisor: String) {\n\t\tself.number = number\n\t\tself.supervisor = supervisor\n\t}\n}\nlet district = District(number: 9, supervisor: \"Unknown\")",
+        "struct Cottage {\n\tvar rooms: Int\n\tvar rating = 5\n\tinit(rooms: Int) {\n\t\tself.rooms = rooms\n\t}\n}\nlet bailbrookHouse = Cottage(rooms: 4)",
+        "struct Character {\n\tvar name: String\n\tvar actor: String\n\tvar probablyGoingToDie: Bool\n\tinit(name: String, actor: String) {\n\t\tself.name = name\n\t\tself.actor = actor\n\t\tif self.actor == \"Sean Bean\" {\n\t\t\tprobablyGoingToDie = true\n\t\t} else {\n\t\t\tprobablyGoingToDie = false\n\t\t}\n\t}\n}",
+        "struct Kitchen {\n\tvar utensils: [String]\n\tinit(utensils: [String]) {\n\t\tself.utensils = utensils\n\t}\n}",
+        "struct Conference {\n\tvar name: String\n\tvar location: String\n\tinit(name: String, location: String) {\n\t\tself.name = name\n\t\tself.location = location\n\t}\n}\nlet wwdc = Conference(name: \"WWDC\", location: \"San Jose\")",
+        "struct SuperHero {\n\tvar nickname: String\n\tvar powers: [String]\n\tinit(nickname: String, superPowers: [String]) {\n\t\tself.nickname = nickname\n\t\tself.powers = superPowers\n\t}\n}\nlet batman = SuperHero(nickname: \"The Caped Crusader\", superPowers: [\"He's really rich\"])"
+    ],
+    "wrong": [
+        "struct Cat {\n\tvar name: String\n\tvar breed: String\n\tvar meowVolume: Int\n\tinit(name: String, breed: String) {\n\t\tself.name = name\n\t\tself.breed = breed\n\t}\n}\nlet toby = Cat(name: \"Toby\", breed: \"Burmese\")",
+        "struct Parent {\n\tvar numberOfKids: Int\n\tvar tirednessPercent: Int\n\tinit (kids: Int) {\n\t\tself.numberOfKids = kids\n\t}\n}\nlet james = Parent(kids: 2)",
+        "struct Computer {\n\tvar cpus: Int\n\tvar ramGB: Int\n\tinit(cpus: Int, ram: Int) {\n\t\tself.cpus = cpus\n\t\tself.ram = ram\n\t}\n}",
+        "struct Language {\n\tvar nameEnglish: String\n\tvar nameLocal: String\n\tvar speakerCount: Int\n\tinit(english: String, local: String, speakerCount: Int) {\n\t\tself.nameEnglish = english\n\t\tself.nameLocal = local\n\t\tself.speakerCount = speakerCount\n\t}\n}\nlet french = Language(nameEnglish: \"French\", nameLocal: \"français\", speakerCount: 220_000_000)",
+        "struct Bus {\n\tvar routeNumber: String\n\tinit(route: Int) {\n\t\tself.routeNumber = route\n\t}\n}",
+        "struct Framework {\n\tvar name: String\n\tvar language: String\n\tfunc init(name: String, language: String) {\n\t\tself.name = name\n\t\tself.language = language\n\t}\n}\nlet vapor = Framework(name: \"Vapor\", language: \"Swift\")"
+    ]
+}

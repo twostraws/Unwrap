@@ -1,0 +1,51 @@
+<p>Arrays are also structs, which means they too have their own methods and properties we can use to query and manipulate the array.</p>
+<p>Here’s a simple array to get us started:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> toys <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"Woody"</span><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can read the number of items in an array using its <code>count</code> property:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>toys<span class="punctuation">.</span><span class="builtin">count</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you want to add a new item, use the <code>append()</code> method like this:</p>
+<pre class="code">
+<p></p>
+<p>toys<span class="punctuation">.</span><span class="function">append</span><span class="punctuation">(</span><span class="string">"Buzz"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can locate any item inside an array using its <code>index()</code> method, like this:</p>
+<pre class="code">
+<p></p>
+<p>toys<span class="punctuation">.</span><span class="function">index</span><span class="punctuation">(</span>of<span class="punctuation">:</span> <span class="string">"Buzz"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That will return 1 because arrays count from 0.</p>
+<p>Just like with strings, you can have Swift sort the items of the array alphabetically:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span>toys<span class="punctuation">.</span><span class="function">sorted</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Finally, if you want to remove an item, use the <code>remove()</code> method like this:</p>
+<pre class="code">
+<p></p>
+<p>toys<span class="punctuation">.</span><span class="function">remove</span><span class="punctuation">(</span>at<span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Arrays have lots more properties and methods – try typing <code>toys.</code> to bring up Xcode’s code completion options.</p>

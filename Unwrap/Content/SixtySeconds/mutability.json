@@ -1,0 +1,24 @@
+{
+    "title": "Mutability",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "All properties must have a value before the initializer ends.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "class Light {\n\tvar onState = false\n\tfunc toggle() {\n\t\tif onState {\n\t\t\tonState = false\n\t\t} else {\n\t\t\tonState = true\n\t\t}\n\t\tprint(\"Click\")\n\t}\n}\nlet light = Light()\nlight.toggle()",
+        "class Sun {\n\tvar isNova = false\n\tfunc goNova() {\n\t\tisNova = true\n\t}\n}\nlet sun = Sun()\nsun.goNova()",
+        "class Phasers {\n\tvar energyLevel = 100\n\tfunc firePhasers() {\n\t\tif energyLevel > 10 {\n\t\t\tprint(\"Firing!\")\n\t\t\tenergyLevel -= 10\n\t\t}\n\t}\n}\nvar phasers = Phasers()\nphasers.firePhasers()",
+        "class Pizza {\n\tprivate var toppings = [String]()\n\tfunc add(topping: String) {\n\t\ttoppings.append(topping)\n\t}\n}\nvar pizza = Pizza()\npizza.add(topping: \"Mushrooms\")",
+        "struct Code {\n\tvar numberOfBugs = 100\n\tmutating func fixBug() {\n\t\tnumberOfBugs += 3\n\t}\n}\nvar code = Code()\ncode.fixBug()",
+        "struct Barbecue {\n\tvar charcoalBricks = 20\n\tmutating func addBricks(_ number: Int) {\n\t\tcharcoalBricks += number\n\t}\n}\nvar barbecue = Barbecue()\nbarbecue.addBricks(4)"
+    ],
+    "wrong": [
+        "class School {\n\tlet students = 200\n\tfunc expel(student: String, for reason: String) {\n\t\tprint(\"\\(student) has been expelled for \\(reason).\")\n\t\tstudents -= 1\n\t}\n}\nlet school = School()\nschool.expel(student: \"Jason\", for: \"coding during class\")",
+        "class SewingMachine {\n\tvar itemsMade = 0\n\tmutating func makeBag(count: Int) {\n\t\titemsMade += count\n\t}\n}\nvar machine = SewingMachine()\nmachine.makeBag(count: 1)",
+        "struct Kindergarten {\n\tvar numberOfScreamingKids = 30\n\tmutating func handOutIceCream() {\n\t\tnumberOfScreamingKids = 0\n\t}\n}\nlet kindergarten = Kindergarten()\nkindergarten.handOutIceCream()",
+        "struct Piano {\n\tvar untunedKeys = 3\n\tfunc tune() {\n\t\tif untunedKeys > 0 {\n\t\t\tuntunedKeys -= 1\n\t\t}\n\t}\n}\nvar piano = Piano()\npiano.tune()",
+        "struct Park {\n\tvar numberOfFlowers = 1000\n\tfunc plantFlowers() {\n\t\tnumberOfFlowers += 50\n\t}\n}\nlet park = Park()\npark.plantFlowers()",
+        "class Beach {\n\tvar lifeguards = 10\n\tmutating func addLifeguards(count: Int) {\n\t\tlifeguards += count\n\t}\n}\nvar beach = Beach()\nbeach.addLifeguards(count: 2)"
+    ]
+}

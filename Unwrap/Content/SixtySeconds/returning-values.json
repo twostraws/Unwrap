@@ -1,0 +1,24 @@
+{
+    "title": "Returning values",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Make sure the function name, parameter name, and return type are all correct.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func read(books: [String]) -> Bool {\n\tfor book in books {\n\t\tprint(\"I'm reading \\(book)\")\n\t}\n\treturn true\n}",
+        "func isEveryoneAdult(ages: [Int]) -> Bool {\n\tfor age in ages {\n\t\tif age < 18 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\nisEveryoneAdult(ages: [10, 20, 16, 24])",
+        "func format(number: Int) -> String {\n\treturn \"The number is \\(number)\"\n}",
+        "func countMultiplesOf10(numbers: [Int]) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\ncountMultiplesOf10(numbers: [5, 10, 15, 20, 25])",
+        "func writeToLog(message: String) -> Bool {\n\tif message != \"\" {\n\t\tprint(\"Log: \\(message)\")\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
+        "func allTestsPassed(tests: [Bool]) -> Bool {\n\tfor test in tests {\n\t\tif test == false {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}"
+    ],
+    "wrong": [
+        "func burnCandles(count: Int) -> Int {\n\tfor _ in 1...count {\n\t\tprint(\"I'm lighting a candle\")\n\t}\n\treturn true\n}",
+        "func check(scores: Int) -> Bool {\n\tfor score in scores {\n\t\tif score < 80 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\ncheck(scores: [100, 90, 100, 85])",
+        "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
+        "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",
+        "func paintHouse(color: String) -> Bool {\n\tif color == \"tartan\" {\n\t\treturn false\n\t}\n}",
+        "func giveDog(food: String) -> String {\n\tif food = \"treat\" {\n\t\treturn \"The dog ate it\"\n\t} else {\n\t\treturn \"The dog stared in disgust\"\n\t}\n}"
+    ]
+}

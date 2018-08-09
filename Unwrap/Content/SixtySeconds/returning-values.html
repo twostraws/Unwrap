@@ -1,0 +1,22 @@
+<p>As well as receiving data, functions can also send back data. To do this, write a dash then a right angle bracket after your function’s parameter list, then tell Swift what kind of data will be returned.</p>
+<p>Inside your function, you use the <code>return</code> keyword to send a value back if you have one. Your function then immediately exits, sending back that value – no other code from that function will be run.</p>
+<p>We could rewrite our <code>square()</code> function to return a value rather than print it directly:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">return</span> number <span class="operator">*</span> number</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now we can grab that return value when the function is run, and print it there:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result <span class="operator">=</span> <span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="number">8</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>result<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you need to return multiple values, this is a perfect example of when to use tuples.</p>

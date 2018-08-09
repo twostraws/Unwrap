@@ -1,0 +1,238 @@
+[
+	{
+		"file": "1",
+		"inputMinimum": 1,
+		"inputMaximum": 100,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["formatValue", "processValue", "stringifyValue", "transformValue", "convertValue"]
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["height", "width", "depth", "distance", "score", "time"]
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "2",
+		"inputMinimum": 1,
+		"inputMaximum": 15,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["calculateWages", "calculateWorkload", "calculateCosts", "generateBill", "forecastRevenue"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["time", "days", "months", "people", "employees", "teamSize"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "3",
+		"inputMinimum": 1,
+		"inputMaximum": 10,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["fetchUsername", "checkPassword", "authenticateUser", "verifyUser"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["id", "user", "userID", "identifier", "number"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "4",
+		"inputMinimum": 1,
+		"inputMaximum": 100,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["fizzBuzz"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["number", "num", "input", "value"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "5",
+		"inputMinimum": 10,
+		"inputMaximum": 100,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["printBusinessCards", "printLetterHeads", "printResumes", "printGreetingCards", "printNameTags"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["count", "times", "copies"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "6",
+		"inputMinimum": 4,
+		"inputMaximum": 30,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["checkPrice", "checkCost", "checkHeight", "checkWeight", "checkSpeed", "checkDistance", "checkPressure"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["input", "value", "number"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "7",
+		"inputMinimum": 10,
+		"inputMaximum": 100,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["translateError", "formatError", "showError", "displayError"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["input", "error", "code", "id"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "8",
+		"inputMinimum": 5,
+		"inputMaximum": 50,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["driveCar", "flyPlane", "rideBike", "takeTrain", "takeBoat"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["distance"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "9",
+		"inputMinimum": 1,
+		"inputMaximum": 40,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["chapterForPage", "titleForPage", "sectionForPage"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["number", "pageNumber", "num"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "10",
+		"inputMinimum": 3,
+		"inputMaximum": 6,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["divideLoot", "splitTakings", "shareWinnings"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["people"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			},
+			{ 
+				"name": "FAIRLY_PARAM",
+				"values": ["true", "false"]
+			}
+		]
+	},
+	{
+		"file": "11",
+		"inputMinimum": 1,
+		"inputMaximum": 100,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["reviewEmployee", "rateStaff", "rateService", "rateEfficiency", "writeReview"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["rating", "score", "value", "input"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			}
+		]
+	},
+	{
+		"file": "12",
+		"inputMinimum": 5,
+		"inputMaximum": 50,
+		"replacements": [
+			{ 
+				"name": "FUNCTION_NAME",
+				"values": ["takeExercise", "performExercise"] 
+			},
+			{ 
+				"name": "PARAM_NAME",
+				"values": ["repetitions", "times", "count", "repeat"] 
+			},
+			{ 
+				"name": "RETURN_NAME",
+				"values": ["result", "returnValue", "output", "str"]
+			},
+			{ 
+				"name": "TYPE_PARAM",
+				"values": ["squat", "crunch", "deadlift", "push up", "pull up"]
+			}
+		]
+	}
+]

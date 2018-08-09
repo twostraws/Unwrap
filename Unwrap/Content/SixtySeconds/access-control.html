@@ -1,0 +1,46 @@
+<p>Access control lets you restrict which code can use properties and methods. This is important because you might want to stop people reading a property directly, for example.</p>
+<p>We could create a <code>Person</code> struct that has an <code>id</code> property to store their social security number:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>id <span class="operator">=</span> id</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">let</span> ed <span class="operator">=</span> <span class="function">Person</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="string">"12345"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Once that person has been created, we can make their <code>id</code> be private so you can’t read it from outside the struct – trying to write <code>ed.id</code> simply won’t work.</p>
+<p>Just use the <code>private</code> keyword, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">private</span> <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>id <span class="operator">=</span> id</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now only methods inside <code>Person</code> can read the <code>id</code> property. For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">private</span> <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>id<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>id <span class="operator">=</span> id</p>
+<p>  <span class="punctuation">}</span></p>
+<p>  <span class="keyword">func</span> <span class="function">identify</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> <span class="string">"My social security number is <span class="interpolation"><span class="delimiter variable">\(</span>id<span class="delimiter variable">)</span></span>"</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Another common option is <code>public</code>, which lets all other code use the property or method.</p>

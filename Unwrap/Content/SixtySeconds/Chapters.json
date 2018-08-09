@@ -1,0 +1,155 @@
+[
+	{
+		"name": "Simple Types",
+		"sections": [
+			"Variables",
+			"Strings and integers",
+			"Multi-line strings",
+			"Doubles and booleans",
+			"String interpolation",
+			"Constants",
+			"Type annotations",
+			"Simple types: Summary"
+		]
+	},
+	{
+		"name": "Complex Types",
+		"sections": [
+			"Arrays",
+			"Sets",
+			"Tuples",
+			"Arrays vs sets vs tuples",
+			"Dictionaries",
+			"Dictionary default values",
+			"Creating empty collections",
+			"Enumerations",
+			"Enum associated values",
+			"Enum raw values",
+			"Complex types: Summary"
+		]
+	},
+	{
+		"name": "Operators and conditions",
+		"sections": [
+			"Arithmetic Operators",
+			"Operator overloading",
+			"Compound assignment operators",
+			"Comparison operators",
+			"Conditions",
+			"The ternary operator",
+			"Switch statements",
+			"Range operators",
+			"Operators and conditions: Summary"
+		]
+	},
+	{
+		"name": "Looping",
+		"sections": [
+			"For loops",
+			"While loops",
+			"Repeat loops",
+			"Exiting loops",
+			"Exiting multiple loops",
+			"Skipping items",
+			"Infinite loops",
+			"Looping: Summary"
+		]
+	},
+	{
+		"name": "Functions",
+		"sections": [
+			"Writing functions",
+			"Accepting parameters",
+			"Returning values",
+			"Parameter labels",
+			"Omitting parameter labels",
+			"Default parameters",
+			"Variadic functions",
+			"Writing throwing functions",
+			"Running throwing functions",
+			"inout parameters",
+			"Functions: Summary"
+		]
+	},
+	{
+		"name": "Closures",
+		"sections": [
+			"Creating basic closures",
+			"Accepting parameters in a closure",
+			"Returning values from a closure",
+			"Closures as parameters",
+			"Trailing closure syntax",
+			"Using closures as parameters when they accept parameters",
+			"Using closures as parameters when they return values",
+			"Shorthand parameter names",
+			"Closures with multiple parameters",
+			"Returning closures from functions",
+			"Capturing values",
+			"Closures: Summary"
+		]
+	},
+	{
+		"name": "Structs",
+		"sections": [
+			"Creating your own structs",
+			"Computed properties",
+			"Property observers",
+			"Methods",
+			"Mutating methods",
+			"Properties and methods of strings",
+			"Properties and methods of arrays",
+			"Initializers",
+			"Referring to the current instance",
+			"Lazy properties",
+			"Static properties and methods",
+			"Access control",
+			"Structs: Summary"
+		]
+	},
+	{
+		"name": "Classes",
+		"sections": [
+			"Creating your own classes",
+			"Class inheritance",
+			"Overriding methods",
+			"Final classes",
+			"Copying objects",
+			"Deinitializers",
+			"Mutability",
+			"Classes: Summary"
+		]
+	},
+	{
+		"name": "Protocols",
+		"sections": [
+			"Protocols",
+			"Protocol inheritance",
+			"Extensions",
+			"Protocol extensions",
+			"Protocol-oriented programming",
+			"Protocols and extensions: Summary"
+		]
+	},
+	{
+		"name": "Optionals",
+		"sections": [
+			"Handling missing data",
+			"Unwrapping optionals",
+			"Unwrapping with guard",
+			"Force unwrapping",
+			"Implicitly unwrapped optionals",
+			"Nil coalescing",
+			"Optional chaining",
+			"Optional try",
+			"Failable initializers",
+			"Typecasting",
+			"Optionals: Summary"
+		]
+	},
+	{
+		"name": "Wrap up",
+		"sections": [
+			"Where now?"
+		]
+	}
+]

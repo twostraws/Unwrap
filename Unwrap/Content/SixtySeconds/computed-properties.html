@@ -1,0 +1,39 @@
+<p>We just created a <code>Sport</code> struct like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Sport</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That has a <em>name</em> property that stores a <code>String</code>. These are called <em>stored</em> properties, because Swift has a different kind of property called a <em>computed</em> property – a property that runs code to figure out its value.</p>
+<p>We’re going to add another stored property to the <code>Sport</code> struct, then a computed property. Here’s how that looks:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Sport</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> isOlympicSport<span class="punctuation">:</span> <span class="builtin">Bool</span></p>
+<p>  <span class="keyword">var</span> olympicStatus<span class="punctuation">:</span> <span class="builtin">String</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">if</span> isOlympicSport <span class="punctuation">{</span></p>
+<p>      <span class="keyword">return</span> <span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span> is an Olympic sport"</span></p>
+<p>    <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>      <span class="keyword">return</span> <span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>name<span class="delimiter variable">)</span></span> is not an Olympic sport"</span></p>
+<p>    <span class="punctuation">}</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>As you can see, <code>olympicStatus</code> looks like a regular <code>String</code>, but it returns different values depending on the other properties.</p>
+<p>We can try it out by creating a new instance of <code>Sport</code>:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> chessBoxing <span class="operator">=</span> <span class="function">Sport</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Chessboxing"</span><span class="punctuation">,</span> isOlympicSport<span class="punctuation">:</span> <span class="boolean">false</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>chessBoxing<span class="punctuation">.</span>olympicStatus<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

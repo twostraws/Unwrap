@@ -1,0 +1,25 @@
+<p>Sometimes functions fail because they have bad input, or because something went wrong internally. Swift lets us throw errors from functions by marking them as <code>throws</code> before their return type, then using the <code>throw</code> keyword when something goes wrong.</p>
+<p>First we need to define an <code>enum</code> that describes the errors we can throw. These must always be based on Swift’s existing <code>Error</code> type. We’re going to write a function that checks whether a password is good, so we’ll throw an error if the user tries an obvious password:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">PasswordError</span><span class="punctuation">:</span> <span class="builtin">Error</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> obvious</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now we’ll write a <code>checkPassword()</code> function that will throw that error if something goes wrong. This means using the <code>throws</code> keyword before the function’s return value, then using <code>throw PasswordError.obvious</code> if their password is “password”.</p>
+<p>Here’s that in Swift:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="number">_</span> password<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="keyword">throws</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Bool</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">if</span> password <span class="operator">==</span> <span class="string">"password"</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">throw</span> <span class="builtin">PasswordError</span><span class="punctuation">.</span>obvious</p>
+<p>  <span class="punctuation">}</span></p>
+<p>  <span class="keyword">return</span> <span class="boolean">true</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

@@ -1,0 +1,24 @@
+{
+    "title": "Closures with multiple parameters",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Closures don't use parameter labels.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "func authenticate(algorithm: (String, String) -> Bool) {\n\tprint(\"Authenticating user\")\n\tlet username = \"twostraws\"\n\tlet password = \"fr0sties\"\n\tlet result = algorithm(username, password)\n\tif result {\n\t\tprint(\"You're in!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
+        "func playSong(instrumentClosure: (String, Int) -> Void) {\n\tlet song = \"Stairway to Heaven\"\n\tlet volume = 11\n\tprint(\"I'm going to play \\(song)...\")\n\tinstrumentClosure(song, volume)\n}",
+        "func sleep(haveDream: () -> String) {\n\tprint(\"Yawn... time for bed.\")\n\tlet dream = haveDream()\n\tprint(\"I had a dream about \\(dream).\")\n}",
+        "func sendNewsletter(getRecipients: () -> [String]) {\n\tlet recipients = getRecipients()\n\tfor person in recipients {\n\t\tprint(\"I'm sending an email to \\(person)\")\n\t}\n}",
+        "func fadeOut(completion: () -> Void) {\n\tprint(\"Making the screen dim...\")\n\tcompletion()\n}",
+        "func getTransport(destination: String, method: (String, Int) -> Bool) {\n\tlet maxCost = 10\n\tlet result = method(destination, maxCost)\n\tif result {\n\t\tprint(\"OK, you can travel.\")\n\t} else {\n\t\tprint(\"Sorry, you need more money.\")\n\t}\n}"
+    ],
+    "wrong": [
+        "func takeTest(topic: String, test: (Int)) {\n\tlet minutes = 120\n\tprint(\"Today's test is on \\(topic).\")\n\tprint(\"You have \\(minutes) minutes.\")\n\ttest(minutes)\n}",
+        "func buyDevices(name: String, count: Int, configurator: () -> String) {\n\tprint(\"I'm buying \\(count)x\\(name).\")\n\tfor _ in 0..<count {\n\t\tlet configuredDevice = configurator(name)\n\t\tprint(configuredDevice)\n\t}\n}",
+        "func runBarbecue(foods: [String], grillTechnique: (String, Int) -> Void) {\n\tlet spiceLevel = \"10\"\n\tfor food in foods {\n\t\tgrillTechnique(food, spiceLevel)\n\t}\n}",
+        "func raceCar(with closure: (String, String) -> String) {\n\tlet driver = \"Lewis Hamilton\"\n\tlet team = \"Mercedes\"\n\tlet raceResult = closure(driver)\n\tprint(\"The result is in: \\(raceResult)!\")\n}",
+        "func printDocument(_ document: String, configurationCheck: (String Int) -> Bool) {\n\tlet copies = 1\n\tlet isAllowed = configurationCheck(document, copies)\n\tif isAllowed {\n\t\tprint(\"Printing now.\")\n\t} else {\n\t\tprint(\"That document can't be printed.\")\n\t}\n}",
+        "func makeSandwich(type sandwichType: String, condimentClosure: (String) -> String) {\n\tprint(\"First you make a basic \\(sandwichType) sandwich.\")\n\tprint(\"Next, you add condiments...\")\n\tlet newSandwichType = condimentClosure(type: sandwichType)\n\tprint(\"Now you have a \\(newSandwichType).\")\n}"
+    ]
+}

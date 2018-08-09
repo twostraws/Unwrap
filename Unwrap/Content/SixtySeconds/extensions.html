@@ -1,0 +1,34 @@
+<p>Extensions allow you to add methods to existing types, to make them do things they weren’t originally designed to do. </p>
+<p>For example, we could add an extension to the <code>Int</code> type so that it has a <code>squared()</code> method that returns the current number multiplied by itself:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">extension</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">func</span> <span class="function">squared</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> <span class="keyword">self</span> <span class="operator">*</span> <span class="keyword">self</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>To try that out, just create an integer and you’ll see it now has a <code>squared()</code> method:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> number <span class="operator">=</span> <span class="number">8</span></p>
+<p>number<span class="punctuation">.</span><span class="function">squared</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift doesn’t let you add stored properties in extensions, so you must use computed properties instead. For example, we could add a new <code>isEven</code> computed property to integers that returns true if it holds an even number:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">extension</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> isEven<span class="punctuation">:</span> <span class="builtin">Bool</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> <span class="keyword">self</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

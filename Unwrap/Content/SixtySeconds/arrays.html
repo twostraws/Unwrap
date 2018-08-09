@@ -1,0 +1,24 @@
+<p>Arrays are collections of values that are stored as a single value. For example, John, Paul, George, and Ringo are names, but arrays let you group them in a single value called The Beatles.</p>
+<p>In code, we write this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> john <span class="operator">=</span> <span class="string">"John Lennon"</span></p>
+<p><span class="keyword">let</span> paul <span class="operator">=</span> <span class="string">"Paul McCartney"</span></p>
+<p><span class="keyword">let</span> george <span class="operator">=</span> <span class="string">"George Harrison"</span></p>
+<p><span class="keyword">let</span> ringo <span class="operator">=</span> <span class="string">"Ringo Starr"</span></p>
+<p><span class="keyword">let</span> beatles <span class="operator">=</span> <span class="punctuation">[</span>john<span class="punctuation">,</span> paul<span class="punctuation">,</span> george<span class="punctuation">,</span> ringo<span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That last line makes the array: it starts and ends with brackets, with each item in the array separated by a comma.</p>
+<p>You can read values from an array by writing a number inside brackets. Array positions count from 0, so if you want to read “Paul McCartney” you would write this:</p>
+<pre class="code">
+<p></p>
+<p>beatles<span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Be careful: Swift crashes if you read an item that doesn’t exist. For example, trying to read <code>beatles[9]</code> is a bad idea.</p>
+<p><strong>Note:</strong> If you’re using type annotations, arrays are written in brackets: <code>[String]</code>, <code>[Int]</code>, <code>[Double]</code>, and <code>[Bool]</code>.</p>

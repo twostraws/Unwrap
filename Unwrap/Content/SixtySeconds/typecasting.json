@@ -1,0 +1,24 @@
+{
+    "title": "Typecasting",
+    "postscript": "Trying to convert between unrelated types such as from <code>String</code> to <code>Int</code> will always fail. On the other hand, casting from something to itself, such as from <code>Int</code> to <code>Int</code>, will always succeed.",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Swift can only typecast between related types.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Eagle()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This bird has an unknown wingspan.\")\n\t}\n}",
+        "class CitrusFruit {\n\tvar averagePH = 3.0\n}\nclass Orange: CitrusFruit { }\nlet citrus = Orange()\nif let orange = citrus as? Orange {\n\tprint(\"This orange has a pH of \\(orange.averagePH).\")\n}",
+        "let flavor = \"apple and mango\"\nif let taste = flavor as? String {\n\tprint(\"We added \\(taste).\")\n}",
+        "class Reading {\n\tvar value = 0.0\n}\nclass TemperatureReading: Reading { }\nlet temperature = TemperatureReading()\nif let reading = temperature as? Reading {\n\tprint(\"The reading is \\(reading.value).\")\n}",
+        "class Person {\n\tvar name = \"Taylor Swift\"\n}\nclass User: Person { }\nlet taylor = User()\nif let user = taylor as? User {\n\tprint(\"\\(user.name) is a user.\")\n}",
+        "class Transport { }\nclass Train: Transport {\n\tvar type = \"public\"\n}\nclass Car: Transport {\n\tvar type = \"private\"\n}\nlet travelPlans = [Train(), Car(), Train()]\nfor plan in travelPlans {\n\tif let train = plan as? Train {\n\t\tprint(\"We're taking \\(train.type) transport.\")\n\t}\n}"
+    ],
+    "wrong": [
+        "class Museum {\n\tvar name = \"National Museum\"\n}\nclass HistoryMuseum: Museum { }\nclass ToyMuseum: Museum { }\nlet museum = ToyMuseum()\nif let unwrappedMuseum = museum as? HistoryMuseum {\n\tprint(\"This is the \\(unwrappedMuseum.name).\")\n}",
+        "class Phone {\n\tvar model = \"Unknown\"\n}\nclass Smartphone { }\nlet iPhone = Smartphone()\nif let phone = iPhone as? Phone {\n\tprint(\"The model is: \\(phone.model).\")\n}",
+        "class Glasses {\n\tvar isShortSighted = true\n}\nstruct Sunglasses: Glasses { }\nlet shades = Sunglasses()\nif let glasses = shades as? Glasses {\n\tif glasses.isShortSighted {\n\t\tprint(\"These sunglasses are for shortsighted people.\")\n\t} else {\n\t\tprint(\"These sunglasses are for longsighted people.\")\n\t}\n}",
+        "class Sport { }\nclass Swimming: Sport {\n\tvar distance = 100\n}\nlet swimming = Sport()\nif let sport = swimming as? Swimming {\n\tprint(\"The distance is \\(sport.distance).\")\n}",
+        "var socialMediaSite = \"Twitter\"\nif let site = socialMediaSite as? Int {\n\tprint(\"The site is \\(site)\")\n}",
+        "let distances = [23, 28, 22]\nif let stringDistances = distances as? [String] {\n\tfor distance in stringDistances {\n\t\tprint(\"The distance was \\(distance).\")\n\t}\n}\n"
+    ]
+}

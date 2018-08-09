@@ -1,0 +1,47 @@
+<p>Back when we were talking about throwing functions, we looked at this code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">PasswordError</span><span class="punctuation">:</span> <span class="builtin">Error</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> obvious</p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">func</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="number">_</span> password<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="keyword">throws</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Bool</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">if</span> password <span class="operator">==</span> <span class="string">"password"</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">throw</span> <span class="builtin">PasswordError</span><span class="punctuation">.</span>obvious</p>
+<p>  <span class="punctuation">}</span></p>
+<p>  <span class="keyword">return</span> <span class="boolean">true</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">do</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">try</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="string">"password"</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"That password is good!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">catch</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"You can't use that password."</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That runs a throwing function, using <code>do</code>, <code>try</code>, and <code>catch</code> to handle errors gracefully.</p>
+<p>There are two alternatives to <code>try</code>, both of which will make more sense now that you understand optionals and force unwrapping.</p>
+<p>The first is <code>try?</code>, and changes throwing functions into functions that return an optional. If the function throws an error you’ll be sent <code>nil</code> as the result, otherwise you’ll get the return value wrapped as an optional.</p>
+<p>Using <code>try?</code> we can run <code>checkPassword()</code> like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> <span class="keyword">let</span> result <span class="operator">=</span> <span class="keyword">try</span><span class="operator">?</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="string">"password"</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Result was <span class="interpolation"><span class="delimiter variable">\(</span>result<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"D'oh."</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>The other alternative is <code>try!</code>, which you can use when you know for sure that the function will not fail. If the function <em>does</em> throw an error, your code will crash.</p>
+<p>Using <code>try!</code> we can rewrite the code to this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">try</span><span class="operator">!</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="string">"sekrit"</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"OK!"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

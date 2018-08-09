@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Where to start",
+		"text": "The main part of this app is split into three sections: Learn, Practice, and Challenges. To begin with you should work your way through the Learn section from top to bottom so that you learn Swift smoothly.\n\nEach time you read a chapter in the Learn section, you'll get an orange checkmark next to that section so you know it's complete. If you also answer the test for that chapter, you'll get a green checkmark and some bonus points.\n\nAs you progress you'll unlock parts of the Practice section so that you can hone skills you already learned. When you're ready, the Challenges section gives you questions from across all the Practice types.\n\nYou can take a challenge only once per day, so make sure you set aside some time to read the questions carefully!",
+		"action": ""
+	},
+	{
+		"title": "What are the points for?",
+		"text": "The points and levels help you keep track of your progress.\n\nYou earn points for each chapter you read, each test you take, and each practice and challenge you complete. You can share your score with your friends by tapping Share Score on the home page.",
+		"action": ""
+	},
+	{
+		"title": "Can I retake a daily challenge?",
+		"text": "No; daily challenges can be taken only once a day. Please wait until tomorrow before trying again.",
+		"action": ""
+	},
+	{
+		"title": "Where can I report mistakes?",
+		"text": "If you spot any sort of mistake in the app – perhaps you wrote some good code the app thought was bad, or perhaps it's just a typo – you can report it by emailing paul@hackingwithswift.com.",
+		"action": ""
+	},
+	{
+		"title": "How can I take the tour again?",
+		"text": "Tap here to show the introductory tour again.",
+		"action": "showTour"
+	},
+	{
+		"title": "About this app",
+		"text": "I wrote this app to app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at www.hackingwithswift.com – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.\n\nIf you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from www.github.com/twostraws/Unwrap. Contributions are welcome!",
+		"action": ""
+	}
+]

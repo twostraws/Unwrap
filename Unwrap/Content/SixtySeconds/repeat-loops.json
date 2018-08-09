@@ -1,0 +1,24 @@
+{
+    "title": "Repeat loops",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This is a valid <code>repeat<\/code> loop – true or false?",
+    "hint": "Watch out for text that is printed only when a condition is satisfied.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var bagels = 5\nrepeat {\n\tprint(\"Someone ate a bagel!\")\n\tbagels -= 1\n} while bagels > 0",
+        "var encores = 0\nrepeat {\n\tprint(\"Let's play that piece again.\")\n\tencores += 1\n} while encores < 3",
+        "var frogs = 4\nrepeat {\n\tfor _ in 1...frogs {\n\t\tprint(\"Ribbit!\")\n\t}\n} while false",
+        "var scales = [\"A\", \"B\", \"C\", \"D\", \"E\"]\nvar scaleCounter = 0\nrepeat {\n\tprint(\"Play the \\(scales[scaleCounter]) scale\")\n\tscaleCounter += 1\n} while scaleCounter < 3",
+        "var countdown: Int = 5\nrepeat {\n\tprint(\"\\(countdown)...\")\n\tcountdown -= 1\n} while countdown > 0\nprint(\"Lift off!\")",
+        "var number = 0\nrepeat {\n\tnumber += 2\n\tprint(\"\\(number) is an even number.\")\n} while number < 20"
+    ],
+    "wrong": [
+        "let people = 0\nrepeat {\n\tpeople += 1\n\tprint(\"There's space another person\")\n} while people < 10\nprint(\"We're full!\")",
+        "for i in 1...10 {\n\tprint(\"\\(i)...\")\n}\nprint(\"Ready or not, here I come!\")",
+        "var days = 365\nwhile days {\n\tprint(\"There are \\(days) until my birthday!\")\n\tdays -= 1\n}",
+        "var doubles = 0\nvar value = 1\nwhile {\n\tdoubles += 1\n\tvalue *= 2\n\tprint(\"Value is \\(value)\")\n} repeat doubles < 10",
+        "var testRuns = 0\nrepeat while testRuns < 10 {\n\tprint(\"Testing!\")\n\ttestRuns += 1\n}",
+        "let partyBags = 20\nrepeat {\n\tprint(\"Here's your party bag\")\n\tpartyBags -= 1\n} while partyBags > 0"
+    ]
+}

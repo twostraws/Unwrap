@@ -1,0 +1,24 @@
+{
+    "title": "Dictionary default values",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code is valid Swift – true or false?",
+    "hint": "Trying to read a dictionary using a key that doesn't exist is valid, but won't return any data.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let capitals = [\"England\": \"London\", \"Wales\": \"Cardiff\"]\nlet scotlandCapital = capitals[\"Scotland\"]",
+        "let characters = [\"Captain\": \"Malcom\", \"Engineer\": \"Kaylee\"]\nlet captain = characters[\"Captain\"]",
+        "let planets = [1: \"Mercury\", 2: \"Venus\"]\nlet venus = planets[2, default: \"Planet X\"]",
+        "let olympics = [2012: \"London\", 2016: \"Rio\", 2020: \"Tokyo\"]\nlet london = olympics[2012]",
+        "let books = [\"Austen\": \"Pride and Prejudice\"]\nlet dickens = books[\"Dickens\", default: \"Unknown\"]",
+        "let albums = [\"Prince\": \"Purple Rain\"]\nlet beatles = albums[\"Beatles\"]"
+    ],
+    "wrong": [
+        "let ships = [\"Star Trek\", \"Enterprise\"]\nlet enterprise = ships[\"Star Trek\"]",
+        "let users = [\"Taylor\", \"Taylor Swift\"]\nlet taylor = users[\"Taylor\", default: \"Anonymous\"]",
+        "let scores = [\"Paul\": 80, \"Sophie\": 100]\nlet john = scores[john]",
+        "let prices = [\"Milk\": 1, \"Pepsi\": 2]\nlet first = prices[0]",
+        "let ratings = [1: \"Bad\", 2: \"OK\", 3: \"Good\"]\nlet rating = ratings[\"2\"]",
+        "let abbreviations = [\"m\": \"meters\", \"km\": \"kilometers\"]\nlet meters = abbreviations[\"m\", default \"m\"]"
+    ]
+}

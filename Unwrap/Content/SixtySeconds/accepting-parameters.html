@@ -1,0 +1,28 @@
+<p>Functions become more powerful when they can be customized each time you run them. Swift lets you send values to a function that can then be used inside the function to change the way it behaves. We’ve used this already – we’ve been sending strings and integers to the <code>print()</code> function, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, world!"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Values sent into functions this way are called <em>parameters</em>.</p>
+<p>To make your own functions accept parameters, give each parameter a name, then a colon, then tell Swift the type of data it must be. All this goes inside the parentheses after your function name.</p>
+<p>For example, we can write a function to print the square of any number:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>number <span class="operator">*</span> number<span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That tells Swift we expect to receive an <code>Int</code>, and it should be called <code>number</code>. This name is used both inside the function when you want to refer to the parameter, but also when you run the function, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">square</span><span class="punctuation">(</span>number<span class="punctuation">:</span> <span class="number">8</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

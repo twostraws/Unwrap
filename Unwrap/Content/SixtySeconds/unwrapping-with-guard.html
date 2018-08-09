@@ -1,0 +1,17 @@
+<p>An alternative to <code>if let</code> is <code>guard let</code>, which also unwraps optionals. <code>guard let</code> will unwrap an optional for you, but if it finds <code>nil</code> inside it expects you to exit the function, loop, or condition you used it in.</p>
+<p>However, the major difference between <code>if let</code> and <code>guard let</code> is that your unwrapped optional remains usable after the <code>guard</code> code.</p>
+<p>Let’s try it out with a <code>greet()</code> function. This will accept an optional string as its only parameter and try to unwrap it, but if there’s nothing inside it will print a message and exit. Because optionals unwrapped using <code>guard let</code> stay around after the <code>guard</code> finishes, we can print the unwrapped string at the end of the function:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">greet</span><span class="punctuation">(</span><span class="number">_</span> name<span class="punctuation">:</span> <span class="builtin">String</span><span class="operator">?</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">guard</span> <span class="keyword">let</span> unwrapped <span class="operator">=</span> name <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"You didn't provide a name!"</span><span class="punctuation">)</span></p>
+<p>    <span class="keyword">return</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, <span class="interpolation"><span class="delimiter variable">\(</span>unwrapped<span class="delimiter variable">)</span></span>!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Using <code>guard let</code> lets you deal with problems at the start of your functions, then exit immediately. This means the rest of your function is the happy path – the path your code takes if everything is correct.</p>

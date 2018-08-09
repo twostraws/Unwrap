@@ -1,0 +1,21 @@
+<p>Optionals represent data that may or may not be there, but sometimes you know for <em>sure</em> that a value isn’t nil. In these cases, Swift lets you force unwrap the optional: convert it from an optional type to a non-optional type.</p>
+<p>For example, if you have a string that contains a number, you can convert it to an <code>Int</code> like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> str <span class="operator">=</span> <span class="string">"5"</span></p>
+<p><span class="keyword">let</span> num <span class="operator">=</span> <span class="function">Int</span><span class="punctuation">(</span>str<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That makes <code>num</code> an <em>optional</em> <code>Int</code> because you might have tried to convert a string like “Fish” rather than “5”.</p>
+<p>Even though Swift isn’t sure the conversion will work, you can see the code is safe so you can force unwrap the result by writing <code>!</code> after <code>Int(str)</code>, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> num <span class="operator">=</span> <span class="function">Int</span><span class="punctuation">(</span>str<span class="punctuation">)</span><span class="operator">!</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift will immediately unwrap the optional and make <code>num</code> a regular <code>Int</code> rather than an <code>Int?</code>. But if you’re <em>wrong</em> – if <code>str</code> was something that couldn’t be converted to an integer – your code will crash.</p>
+<p>As a result, you should force unwrap only when you’re sure it’s safe – there’s a reason it’s often called the crash operator.</p>

@@ -1,0 +1,157 @@
+[
+	{
+		"question": "This code should create <code>name</code> and <code>age</code> constants, then print them out.",
+		"hint": "Create the <code>name</code> constant first.",
+		"code": "let name = \"Paul\"\nlet age = 38\nprint(\"Your name is \\(name) and your age is \\(age).\")"
+	},
+	{
+		"question": "This code should create an array of winning numbers in a lottery then print them.",
+		"hint": "Make sure you print the text string before you start printing the numbers.",
+		"code": "let winningNumbers = [1, 5, 32, 33, 49]\nprint(\"The following numbers won:\")\nfor number in winningNumbers {\n\tprint(number)\n}"
+	},
+	{
+		"question": "This code should check that a password is at least eight characters.",
+		"hint": "Passwords are long enough if they are eight letters or longer.",
+		"code": "let passwordLength = 5\nif passwordLength >= 8 {\n\tprint(\"The password is long enough\")\n} else {\n\tprint(\"The password is too short\")\n}"
+	},
+	{
+		"question": "This code should count piano lessons.",
+		"hint": "You should modify <code>pianoLesson</code> only after printing the message.",
+		"code": "var pianoLesson = 1\nwhile pianoLesson < 5 {\n\tprint(\"This is lesson \\(pianoLesson)\")\n\tpianoLesson += 1\n}"
+	},
+	{
+		"question": "This code should print out Star Wars episodes 4 through 6.",
+		"hint": "Make sure you call the function only after it was defined.",
+		"code": "func listOriginalStarWarsMovies() {\n\tfor i in 4...6 {\n\t\tprint(\"Episode \\(i)\")\n\t}\n}\nlistOriginalStarWarsMovies()"
+	},
+	{
+		"question": "This code should print \"You're an adult.\"",
+		"hint": "Make sure you call the function only after it was defined.",
+		"code": "func check(age: Int) {\n\tif age >= 18 {\n\t\tprint(\"You're an adult.\")\n\t} else {\n\t\tprint(\"You're a minor.\")\n\t}\n}\ncheck(age: 18)"
+	},
+	{
+		"question": "This code should print the names of people joining a band.",
+		"hint": "This is a variadic function, so <code>names</code> will be an array.",
+		"code": "func makeBand(names: String...) {\n\tprint(\"Let's start a band...\")\n\tfor name in names {\n\t\tprint(\"\\(name) wants to join!\")\n\t}\n}"
+	},
+	{
+		"question": "This code should return true if all ages are 18 or over.",
+		"hint": "If any age is under 18, return false immediately. Otherwise, return true.",
+		"code": "func isEveryoneAdult(ages: [Int]) -> Bool {\n\tfor age in ages {\n\t\tif age < 18 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}"
+	},
+	{
+		"question": "This code should return true if someone scores a total of 500 points or more in their exams.",
+		"hint": "Add up each score in the <code>total</code> variable.",
+		"code": "func isPassingGrade(for scores: [Int]) -> Bool {\n\tvar total = 0\n\tfor score in scores {\n\t\ttotal += score\n\t}\n\tif total >= 500 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}"
+	},
+	{
+		"question": "This code should make pizza, but only if it doesn't have pineapple.",
+		"hint": "Make sure you define the enum before the class.",
+		"code": "enum PizzaErrors: Error {\n\tcase hasPineapple\n}\nfunc makePizza(type: String) throws {\n\tif type != \"Hawaiian\" {\n\t\tprint(\"Your pizza will be ready in 10 minutes.\")\n\t} else {\n\t\tthrow PizzaErrors.hasPineapple\n\t}\n}"
+	},
+	{
+		"question": "This code should print out the distances someone has rowed.",
+		"hint": "The message will be printed five times.",
+		"code": "let rowBoat = { (distance: Int) in\n\tfor _ in 1...distance {\n\t\tprint(\"I'm rowing 1km.\")\n\t}\n}\nrowBoat(5)"
+	},
+	{
+		"question": "This code should define a closure, create a function that can use the closure, then call it.",
+		"hint": "The output should be \"I'm learning Swift\" then \"Hey, this is fun!\"",
+		"code": "var learnWithUnwrap = {\n\tprint(\"Hey, this is fun!\")\n}\nfunc learnSwift(using approach: () -> Void) {\n\tprint(\"I'm learning Swift\")\n\tapproach()\n}\nlearnSwift(using: learnWithUnwrap)"
+	},
+	{
+		"question": "This code should walk, cycle, or drive somewhere depending on the distance.",
+		"hint": "Get the order correct: walking is for shor distances, driving is for long distances, and cycling for everything else.",
+		"code": "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\\\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")"
+	},
+	{
+		"question": "This code should track how many times a baseball player has swung their bat.",
+		"hint": "This uses capturing, so make sure <code>strikes</code> is declared before you return from <code>swingBat()</code>.",
+		"code": "func swingBat() -> () -> Void {\n\tvar strikes = 0\n\treturn {\n\t\tstrikes += 1\n\t\tif strikes >= 3 {\n\t\t\tprint(\"You're out!\")\n\t\t} else {\n\t\t\tprint(\"Strike \\(strikes)\")\n\t\t}\n\t}\n}\nlet swing = swingBat()\nswing()"
+	},
+	{
+		"question": "This code should create a <code>User</code> struct and an instance of it.",
+		"hint": "Memberwise initializers take their parameters in the same order they are declared in the struct.",
+		"code": "struct User {\n\tvar name = \"Anonymous\"\n\tvar age: Int\n}\nlet twostraws = User(name: \"Paul\", age: 38)"
+	},
+	{
+		"question": "This code should create a <code>Game</code> struct with a property observer.",
+		"hint": "Make sure <code>didSet</code> is placed inside the <code>score</code> property.",
+		"code": "struct Game {\n\tvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"Your score is now \\(score).\")\n\t\t}\n\t}\n}"
+	},
+	{
+		"question": "This code should make an X-Wing that attacks the Death Star if its callsign is Red 5.",
+		"hint": "Remember to put your properties before your methods.",
+		"code": "struct XWing {\n\tvar callSign: String\n\tfunc startTrenchRun() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\tprint(\"I'm going to blow up the Death Star!\")\n\t\t} else {\n\t\t\tprint(\"I'm hit!\")\n\t\t}\n\t}\n}"
+	},
+	{
+		"question": "This code should make a <code>Bicycle</code> struct that prints a message when it changes gear.",
+		"hint": "Make sure you change the <code>currentGear</code> property before you print the message.",
+		"code": "struct Bicycle {\n\tvar currentGear: Int\n\tmutating func changeGear(to newGear: Int) {\n\t\tcurrentGear = newGear\n\t\tprint(\"I'm now in gear \\(currentGear).\")\n\t}\n}"
+	},
+	{
+		"question": "This code should create two classes, then print a message when composing an opera.",
+		"hint": "Make sure you place the subclass after its parent.",
+		"code": "class Composer {\n\tfunc composeMusic() {\n\t\tprint(\"Here's some music I wrote.\")\n\t}\n}\nclass OperaComposer: Composer {\n\toverride func composeMusic() {\n\t\tprint(\"Here's an opera I wrote.\")\n\t}\n}\nlet verdi = OperaComposer()\nverdi.composeMusic()"
+	},
+	{
+		"question": "This code should print a message when an instance of the class is destroyed.",
+		"hint": "Deinitializers are like regular methods, so put the <code>print()</code> code inside <code>deinit</code>.",
+		"code": "class Firefly {\n\tdeinit {\n\t\tprint(\"I'm still annoyed that this was cancelled.\")\n\t}\n}"
+	},
+	{
+		"question": "This code should add a <code>cubed()</code> method to <code>Int</code>.",
+		"hint": "Make sure you define the extension first.",
+		"code": "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}\nlet number = 3\nlet cubed = number.cubed()"
+	},
+	{
+		"question": "This code should add a <code>clamped()</code> method to <code>Int</code> that makes sure its value is between a minimum and maximum.",
+		"hint": "If you clamp the number 5 between 3 and 8, you'll get back 5.",
+		"code": "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}\n"
+	},
+	{
+		"question": "This code should create a protocol then add a default method implementation.",
+		"hint": "Make sure you create the protocol before extending it.",
+		"code": "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up – energize!\")\n\t}\n}"
+	},
+	{
+		"question": "This code should print out someone's favorite movie if they have one.",
+		"hint": "Make sure you create the variable before trying to change it.",
+		"code": "var favoriteMovie: String? = nil\nfavoriteMovie = \"The Life of Brian\"\nif let movie = favoriteMovie {\n\tprint(\"Your favorite movie is \\(movie).\")\n} else {\n\tprint(\"You don't have a favorite movie.\")\n}"
+	},
+	{
+		"question": "This code should print out the location of \"Red\" in an array of albums.",
+		"hint": "You can only print the position of \"Red\" if it was found.",
+		"code": "let albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: \"Red\") {\n\tprint(\"Found Red at position \\(position).\")\n} else {\n\tprint(\"Red wasn't in the array.\")\n}"
+	},
+	{
+		"question": "This code should create a function that doubles a number, or returns nil if it's missing.",
+		"hint": "The <code>guard</code> statement should be the first thing inside <code>double()</code>.",
+		"code": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}"
+	},
+	{
+		"question": "This code should create two classes, then print a fact.",
+		"hint": "Create the <code>Bird</code> class first.",
+		"code": "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Eagle()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This bird has an unknown wingspan.\")\n\t}\n}"
+	},
+	{
+		"question": "This code should mow grass to a specific height if it was provided.",
+		"hint": "The <code>guard</code> statement should be the first thing inside <code>mowGrass()</code>.",
+		"code": "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)"
+	},
+	{
+		"question": "This code should print out all even numbers in an array.",
+		"hint": "Make sure you get the two <code>print()</code> calls the right way around.",
+		"code": "var numbers = [1, 2, 3, 4, 5, 6]\nfor number in numbers {\n\tif number % 2 == 0 {\n\t\tprint(number)\n\t} else {\n\t\tprint(\"Skipping odd number\")\n\t}\n}"
+	},
+	{
+		"question": "This code should print out all multiples of 10 in an array.",
+		"hint": "Make sure the <code>result</code> variable is created outside of the loop.",
+		"code": "func countMultiplesOf10(numbers: Int...) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\ncountMultiplesOf10(numbers: 5, 10, 15, 20, 25)"
+	},
+	{
+		"question": "This code should create a <code>Venue</code> struct with a maximum capacity, plus a method to make bookings.",
+		"hint": "Remember to put your properties before your methods.",
+		"code": "struct Venue {\n\tvar maximumCapacity: Int\n\tfunc makeBooking(for people: Int) {\n\t\tif people > maximumCapacity {\n\t\t\tprint(\"Sorry, we can only accommodate \\(maximumCapacity).\")\n\t\t} else {\n\t\t\tprint(\"The venue is booked!\")\n\t\t}\n\t}\n}"
+	}
+]

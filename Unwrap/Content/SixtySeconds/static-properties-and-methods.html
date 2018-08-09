@@ -1,0 +1,39 @@
+<p>All the properties and methods we’ve created so far have belonged to individual instances of structs, which means that if we had a <code>Student</code> struct we could create several student instances each with their own properties and methods:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Student</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">let</span> ed <span class="operator">=</span> <span class="function">Student</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Ed"</span><span class="punctuation">)</span></p>
+<p><span class="keyword">let</span> taylor <span class="operator">=</span> <span class="function">Student</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Taylor"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can also ask Swift to share specific properties and methods across all instances of the struct by declaring them as <em>static</em>.</p>
+<p>To try this out, we’re going to add a static property to the <code>Student</code> struct to store how many students are in the class. Each time we create a new student, we’ll add one to it:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Student</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">static</span> <span class="keyword">var</span> classSize <span class="operator">=</span> <span class="number">0</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>    <span class="builtin">Student</span><span class="punctuation">.</span>classSize <span class="operator">+</span><span class="operator">=</span> <span class="number">1</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Because the <code>classSize</code> struct belongs to the struct itself rather than instances of the struct, we need to read it using <code>Student.classSize</code>:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">print</span><span class="punctuation">(</span><span class="builtin">Student</span><span class="punctuation">.</span>classSize<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

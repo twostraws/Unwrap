@@ -1,0 +1,27 @@
+<p>Functions let us re-use code, which means we can write a function to do something interesting then run that function from lots of places. Repeating code is generally a bad idea, and functions help us avoid doing that.</p>
+<p>To start with, we’re going to write a function that prints help information for users of our app. We might need this anywhere in our app, so having it as a function is a good idea.</p>
+<p>Swift functions start with the <code>func</code> keyword, then your function name, then open and close parentheses. All the body of your function – the code that should be run when the function is requested – is placed inside braces.</p>
+<p>Let’s write the <code>printHelp()</code> function now:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">printHelp</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">let</span> message <span class="operator">=</span> <span class="string">"""</p>
+<p>Welcome to MyApp!</p>
+<p>Run this app inside a directory of images and</p>
+<p>MyApp will resize them all into thumbnails</p>
+<p>"""</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>message<span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now run that using <code>printHelp()</code> by itself:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">printHelp</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Running a function is often referred to as <em>calling</em> a function.</p>

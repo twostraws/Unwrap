@@ -1,0 +1,24 @@
+{
+    "title": "Optionals: Summary",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "Watch out for basic syntax errors.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let cat: String? = \"Toby\"\nif let cat = cat {\n\tprint(\"The cat's name is \\(cat).\")\n}\n",
+        "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)",
+        "struct Dog {\n\tvar name: String\n\tinit?(name: String) {\n\t\tguard name == \"Lassie\" else {\n\t\t\tprint(\"Sorry, wrong dog!\")\n\t\t\treturn nil\n\t\t}\n\t\tself.name = name\n\t}\n}\nlet dog = Dog(name: \"Fido\")",
+        "let coffee: String? = \"Cappuccino\"\nlet unwrappedCoffee: String = coffee!\n",
+        "func process(order: String) {\n\tprint(\"OK, I'll get your \\(order).\")\n}\nlet pizzaRequest: String! = \"pizza\"\nprocess(order: pizzaRequest)",
+        "let owlVariety: String? = nil\nprint(owlVariety ?? \"Unknown owl\")\n"
+    ],
+    "wrong": [
+        "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]\nlet upperRingo = names.last.uppercased()\n",
+        "enum NetworkError: Error {\n\tcase insecure\n\tcase noWifi\n}\nfunc downloadData(from url: String) -> String {\n\tif url.hasPrefix(\"https:\/\/\") {\n\t\treturn \"This is the best Swift site ever!\"\n\t} else {\n\t\tthrow NetworkError.insecure\n\t}\n}\nif let data = try? downloadData(from: \"https:\/\/www.hackingwithswift.com\") {\n\tprint(data)\n} else {\n\tprint(\"Unable to fetch the data.\")\n}",
+        "struct Furniture { }\nstruct DeckChair: Furniture { }\nlet chair = DeckChair()\nif let furniture = chair as? Furniture {\n\tprint(\"This is furniture.\")\n}\n",
+        "let birthYear: Int? = nil\nlet year = birthYear ? \"Unknown\"\n",
+        "func brewBeer(to strength: Double?) {\n\tguard strength = strength else { return }\n\tprint(\"Let's brew some beer!\")\n}\nbrewBeer(to: 5.5)",
+        "let doctor: String? = \"Dr Singh\"\nlet assignedDoctor: String = doctor?\n"
+    ]
+}

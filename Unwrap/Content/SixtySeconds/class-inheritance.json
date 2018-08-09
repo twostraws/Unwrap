@@ -1,0 +1,24 @@
+{
+    "title": "Class inheritance",
+    "postscript": "Your classes may inherit from only one parent.",
+    "reviewType": "singleSelection",
+    "question": "This code demonstrates valid class inheritance – true or false?",
+    "hint": "All properties must have a value before the initializer ends.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "class Bicycle {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t}\n}\nclass MountainBike: Bicycle {\n\tvar tireThickness: Double\n\tinit(color: String, tireThickness: Double) {\n\t\tself.tireThickness = tireThickness\n\t\tsuper.init(color: color)\n\t}\n}",
+        "class Printer {\n\tvar cost: Int\n\tinit(cost: Int) {\n\t\tself.cost = cost\n\t}\n}\nclass LaserPrinter: Printer {\n\tvar model: String\n\tinit(model: String, cost: Int) {\n\t\tself.model = model\n\t\tsuper.init(cost: cost)\n\t}\n}",
+        "class Product {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Book: Product {\n\tvar isbn: String\n\tinit(name: String, isbn: String) {\n\t\tself.isbn = isbn\n\t\tsuper.init(name: name)\n\t}\n}",
+        "class Shape {\n\tvar sides: Int\n\tinit(sides: Int) {\n\t\tself.sides = sides\n\t}\n}\nclass Rectangle: Shape {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t\tsuper.init(sides: 4)\n\t}\n}",
+        "class Instrument {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Piano: Instrument {\n\tvar isElectric: Bool\n\tinit(isElectric: Bool) {\n\t\tself.isElectric = isElectric\n\t\tsuper.init(name: \"Piano\")\n\t}\n}",
+        "class Handbag {\n\tvar price: Int\n\tinit(price: Int) {\n\t\tself.price = price\n\t}\n}\nclass DesignerHandbag: Handbag {\n\tvar brand: String\n\tinit(brand: String, price: Int) {\n\t\tself.brand = brand\n\t\tsuper.init(price: price)\n\t}\n}"
+    ],
+    "wrong": [
+        "class Dog {\n\tvar breed: String\n\tvar isPedigree: Bool\n\tinit(breed: String, isPedigree: Bool) {\n\t\tself.breed = breed\n\t\tself.isPedigree = isPedigree\n\t}\n}\nclass Poodle {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t\tsuper.init(breed: \"Poodle\", isPedigree: true)\n\t}\n}",
+        "class SmartPhone {\n\tvar price: Int\n\tinit(price: Int) {\n\t\tself.price = price\n\t}\n}\nclass SmartPhone: SmartPhone {\n\tvar features: [String]\n\tinit(features: [String]) {\n\t\tself.features = features\n\t\tsuper.init(price: features.count * 50)\n\t}\n}",
+        "class Student {\n\tvar name: String\n}\nclass UniversityStudent: Student {\n\tvar annualFees: Int\n\tinit(name: String, annualFees: Int) {\n\t\tself.annualFees = annualFees\n\t\tsuper.init(name: name)\n\t}\n}",
+        "class Food {\n\tvar name: String\n\tvar nutritionRating: Int\n\tsuper init(name: String, nutritionRating: Int) {\n\t\tself.name = name\n\t\tself.nutritionRating = nutritionRating\n\t}\n}\nclass Pizza: Food {\n\tinit() {\n\t\tsuper.init(name: \"Pizza\", nutritionRating: 3)\n\t}\n}",
+        "class Vehicle {\n\tvar wheels: Int\n\tinit(wheels: Int) {\n\t\tself.wheels = wheels\n\t}\n}\nclass Truck: Vehicle {\n\tvar goodsCapacity: Int\n\tinit(wheels: Int, goodsCapacity: Int) {\n\t\tself.goodsCapacity = goodsCapacity\n\t\tsuper.init()\n\t}\n}",
+        "class Computer {\n\tvar cpu: String\n\tvar ramGB: Int\n\tinit(cpu: String, ramGB: Int) {\n\t\tcpu = cpu\n\t\tramGB = ramGB\n\t}\n}\nclass Laptop: Computer {\n\tvar screenInches: Int\n\tinit(screenInches: Int, cpu: String, ramGB: Int) {\n\t\tself.screenInches = screenInches\n\t\tsuper.init(cpu: cpu, ramGB: ramGB)\n\t}\n}"
+    ]
+}

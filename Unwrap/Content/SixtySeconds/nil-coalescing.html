@@ -1,0 +1,24 @@
+<p>The nil coalescing operator unwraps an optional and returns the value inside if there is one. If there <em>isn’t</em> a value – if the optional was <code>nil</code> – then a default value is used instead. Either way, the result won’t be optional: it will either by the value from inside the optional or the default value used as a back up.</p>
+<p>Here’s a function that accepts an integer as its only parameter and returns an optional string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">username</span><span class="punctuation">(</span><span class="keyword">for</span> id<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span><span class="operator">?</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">if</span> id <span class="operator">==</span> <span class="number">1</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> <span class="string">"Taylor Swift"</span></p>
+<p>  <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> <span class="constant">nil</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If we call that with ID 15 we’ll get back <code>nil</code> because the user isn’t recognized, but with nil coalescing we can provide a default value of “Anonymous” like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> user <span class="operator">=</span> <span class="function">username</span><span class="punctuation">(</span><span class="keyword">for</span><span class="punctuation">:</span> <span class="number">15</span><span class="punctuation">)</span> <span class="operator">?</span><span class="operator">?</span> <span class="string">"Anonymous"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That will check the result that comes back from the <code>username()</code> function: if it’s a string then it will be unwrapped and placed into <code>user</code>, but if it has <code>nil</code> inside then “Anonymous” will be used instead.</p>

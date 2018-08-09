@@ -1,0 +1,43 @@
+<p>As a performance optimization, Swift lets you create some properties only when they are needed. As an example, consider this <code>FamilyTree</code> struct – it doesn’t do much, but in theory creating a family tree for someone takes a long time:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">FamilyTree</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="function">print</span><span class="punctuation">(</span><span class="string">"Creating family tree!"</span><span class="punctuation">)</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We might use that <code>FamilyTree</code> struct as a property inside a <code>Person</code> struct, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Person</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> familyTree <span class="operator">=</span> <span class="function">FamilyTree</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p><span class="keyword">var</span> ed <span class="operator">=</span> <span class="function">Person</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Ed"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>But what if we didn’t always need the family tree for a particular person? If we add the <code>lazy</code> keyword to the <code>familyTree</code> property, then Swift will only create the <code>FamilyTree</code> struct when it’s first accessed:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">lazy</span> <span class="keyword">var</span> familyTree <span class="operator">=</span> <span class="function">FamilyTree</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>So, if you want to see the “Creating family tree!” message, you need to access the property at least once:</p>
+<pre class="code">
+<p></p>
+<p>ed<span class="punctuation">.</span>familyTree</p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

@@ -1,0 +1,24 @@
+{
+    "title": "Classes: Summary",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these are true about classes?",
+    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "One class can inherit from another class.",
+        "A child class can override a method from its parent class.",
+        "You can declare a class as <code>final<\/code> to stop subclasses of it being created.",
+        "Deinitializers run when an instance of a class is destroyed.",
+        "Two variables can point at the same class data.",
+        "Classes and structs treat mutability differently."
+    ],
+    "wrong": [
+        "Structs can also use inheritance, but only in special circumstances.",
+        "You may inherit from multiple classes if you want.",
+        "The <code>override<\/code> keyword must be used in all methods of a child class.",
+        "Classes do not have access control keywords such as <code>private<\/code>",
+        "Classes must always have initializers.",
+        "If you want others to inherit from your classes, you must mark it <code>nonfinal<\/code>"
+    ]
+}

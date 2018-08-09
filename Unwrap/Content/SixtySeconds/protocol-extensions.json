@@ -1,0 +1,24 @@
+{
+    "title": "Protocol extensions",
+    "postscript": "One type can conform to as many protocols as you want.",
+    "reviewType": "singleSelection",
+    "question": "This extension correctly implements a method from its protocol – true or false?",
+    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "protocol Mammal {\n\tfunc eat()\n}\nextension Mammal {\n\tfunc eat() {\n\t\tprint(\"Time for dinner!\")\n\t}\n}",
+        "protocol Fencer {\n\tfunc fenceFoil()\n}\nextension Fencer {\n\tfunc fenceFoil() {\n\t\tprint(\"En garde!\")\n\t}\n}",
+        "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up - energize!\")\n\t}\n}",
+        "protocol Anime {\n\tvar availableLanguages: [String] { get set }\n\tfunc watch(in language: String)\n}\nextension Anime {\n\tfunc watch(in language: String) {\n\t\tif availableLanguages.contains(language) {\n\t\t\tprint(\"Now playing in \\(language)\")\n\t\t} else {\n\t\t\tprint(\"Unrecognized language.\")\n\t\t}\n\t}\n}",
+        "protocol Politician {\n\tvar isDirty: Bool { get set }\n\tfunc takeBribe()\n}\nextension Politician {\n\tfunc takeBribe() {\n\t\tif isDirty {\n\t\t\tprint(\"Thank you very much!\")\n\t\t} else {\n\t\t\tprint(\"Someone call the police!\")\n\t\t}\n\t}\n}",
+        "protocol Hamster {\n\tvar name: String { get set }\n\tfunc runInWheel(minutes: Int)\n}\nextension Hamster {\n\tfunc runInWheel(minutes: Int) {\n\t\tprint(\"\\(name) is going for a run.\")\n\t\tfor _ in 0..<minutes {\n\t\t\tprint(\"Whirr whirr whirr\")\n\t\t}\n\t}\n}"
+    ],
+    "wrong": [
+        "protocol SuperHeroMovie {\n\tfunc writeScript() -> String\n}\nextension SuperHeroMovie {\n\tfunc makeScript() -> String {\n\t\treturn \"\"\"\n\t\tLots of special effects,\n\t\tsome half-baked jokes,\n\t\tand a hint of another\n\t\tsequel at the end.\n\t\t\"\"\"\n\t}\n}",
+        "protocol Chef {\n\tfunc getRecipes() -> [String]\n}\nextension Chief {\n\tfunc getRecipes() -> [String] {\n\t\treturn [\"Macaroni Cheese\"]\n\t}\n}",
+        "protocol DogTrainer {\n\tfunc train(dog: String) {\n\t\tprint(\"We'll make \\(dog) behave in no time!\")\n\t}\n}",
+        "protocol SmartPhone {\n\tfunc makeCall(to name { get set })\n}\nextension SmartPhone {\n\tfunc makeCall(to name: String) {\n\t\tprint(\"Dialling \\(name)...\")\n\t}\n}",
+        "protocol Club {\n\tfunc organizeMeeting(day: String)\n}\nextension Club {\n\toverride func organizeMeeting(day: String) {\n\t\tprint(\"We're going to meet on \\(day).\")\n\t}\n}",
+        "protocol Bartender {\n\tfunc makeDrink\n}\nextension Bartender {\n\tfunc makeDrink(name: String) {\n\t\tprint(\"One \\(name) coming right up.\")\n\t}\n}"
+    ]
+}

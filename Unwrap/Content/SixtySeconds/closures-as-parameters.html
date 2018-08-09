@@ -1,0 +1,32 @@
+<p>Because closures can be used just like strings and integers, you can pass them into functions. The syntax for this can hurt your brain at first, so we’re going to take it slow.</p>
+<p>First, here’s our basic <code>driving()</code> closure again</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> driving <span class="operator">=</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm driving in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If we wanted to pass that closure into a function so it can be run inside that function, we would specify the parameter type as <code>() -&gt; Void</code>. That means “accepts no parameters, and returns <code>Void</code>” – Swift’s way of saying “nothing”.</p>
+<p>So, we can write a <code>travel()</code> function that accepts different kinds of traveling actions, and prints a message before and after:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Void</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm getting ready to go."</span><span class="punctuation">)</span></p>
+<p>  <span class="function">action</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I arrived!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now call that using our <code>driving</code> closure, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> driving<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

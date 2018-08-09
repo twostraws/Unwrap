@@ -1,0 +1,20 @@
+<p>You might have noticed that we don’t actually send any parameter names when we call <code>print()</code> – we say <code>print("Hello")</code> rather than <code>print(message: "Hello")</code>.</p>
+<p>You can get this same behavior in your own functions by using an underscore, <code>_</code>, for your external parameter name, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">greet</span><span class="punctuation">(</span><span class="number">_</span> person<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Hello, <span class="interpolation"><span class="delimiter variable">\(</span>person<span class="delimiter variable">)</span></span>!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can now call <code>greet()</code> without having to use the <code>person</code> parameter name:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">greet</span><span class="punctuation">(</span><span class="string">"Taylor"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>This can make some code more natural to read, but generally it’s better to give your parameters external names to avoid confusion. For example, if I say <code>setAlarm(5)</code> it’s hard to tell what that means – does it set an alarm for five o’clock, set an alarm for five hours from now, or activate pre-configured alarm number 5?</p>

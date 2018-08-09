@@ -1,0 +1,16 @@
+<p>Swift doesn’t like errors to happen when your program runs, which means it won’t let you run an error-throwing function by accident.</p>
+<p>Instead, you need to call these functions using three new keywords: <code>do</code> starts a section of code that might cause problems, <code>try</code> is used before every function that might throw an error, and <code>catch</code> lets you handle errors gracefully.</p>
+<p>If any errors are thrown inside the <code>do</code> block, execution immediately jumps to the <code>catch</code> block. Let’s try calling <code>checkPassword()</code> with a parameter that throws an error:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">do</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">try</span> <span class="function">checkPassword</span><span class="punctuation">(</span><span class="string">"password"</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"That password is good!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">catch</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"You can't use that password."</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>When that code runs, “You can’t use that password” is printed, but “That password is good” won’t be – that code will never be reached, because the error is thrown.</p>

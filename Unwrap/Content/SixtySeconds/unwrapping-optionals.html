@@ -1,0 +1,25 @@
+<p>Optional strings might contain a string like “Hello” or they might be nil – nothing at all.</p>
+<p>Consider this optional string:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span><span class="operator">?</span> <span class="operator">=</span> <span class="constant">nil</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>What happens if we use <code>name.count</code>? A real string has a <code>count</code> property that stores how many letters it has, but this is <code>nil</code> – it’s empty memory, not a string, so it doesn’t have a <code>count</code>.</p>
+<p>Because of this, trying to read <code>name.count</code> is unsafe and Swift won’t allow it. Instead, we must look inside the optional and see what’s there – a process known as <em>unwrapping</em>.</p>
+<p>A common way of unwrapping optionals is with <code>if let</code> syntax, which unwraps with a condition. If there was a value inside the optional then you can use it, but if there wasn’t the condition fails.</p>
+<p>For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> <span class="keyword">let</span> unwrapped <span class="operator">=</span> name <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>unwrapped.count<span class="delimiter variable">)</span></span> letters"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Missing name."</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If <code>name</code> holds a string, it will be put inside <code>unwrapped</code> as a regular <code>String</code> and we can read its <code>count</code> property inside the condition. Alternatively, if <code>name</code> is empty, the <code>else</code> code will be run.</p>

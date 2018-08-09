@@ -1,0 +1,7 @@
+func FUNCTION_NAME(PARAM_NAME: Int) -> String {
+    var RETURN_NAME: String = "The PARAM_NAME is "
+    RETURN_NAME += String(PARAM_NAME)
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE))
+

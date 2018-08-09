@@ -1,0 +1,12 @@
+func FUNCTION_NAME(PARAM_NAME: Int) -> String {
+    var RETURN_NAME: String = "Result for \(PARAM_NAME) - "
+    if PARAM_NAME < 10 {
+        RETURN_NAME += "that seems low"
+    } else if PARAM_NAME < 20 {
+        RETURN_NAME += "that's about right"
+    } else {
+        RETURN_NAME += "that seems high"
+    }
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE))

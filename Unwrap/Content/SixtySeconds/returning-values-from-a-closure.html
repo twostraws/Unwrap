@@ -1,0 +1,30 @@
+<p>Closures can also return values, and they are written similarly to parameters: you write them inside your closure, directly before the <code>in</code> keyword.</p>
+<p>To demonstrate this, we’re going to take our <code>driving()</code> closure and make it return its value rather than print it directly. Here’s the original:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> driving <span class="operator">=</span> <span class="punctuation">{</span> <span class="punctuation">(</span>place<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="keyword">in</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We want a closure that returns a string rather than printing the message directly, so we need to use <code>-&gt; String</code> before <code>in</code>, then use <code>return</code> just like a normal function:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> drivingWithReturn <span class="operator">=</span> <span class="punctuation">{</span> <span class="punctuation">(</span>place<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span> <span class="keyword">in</span></p>
+<p>  <span class="keyword">return</span> <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now run that closure and print its return value:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> message <span class="operator">=</span> <span class="function">drivingWithReturn</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p><span class="function">print</span><span class="punctuation">(</span>message<span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

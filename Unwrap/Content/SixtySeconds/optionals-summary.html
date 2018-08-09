@@ -1,0 +1,12 @@
+<p>You’ve made it to the end of the tenth part of this series, so let’s summarize:</p>
+<ol>
+<li>Optionals let us represent the absence of a value in a clear and unambiguous way.</li>
+<li>Swift won’t let us use optionals without unwrapping them, either using <code>if let</code> or using <code>guard let</code>.</li>
+<li>You can force unwrap optionals with an exclamation mark, but if you try to force unwrap <code>nil</code> your code will crash.</li>
+<li>Implicitly unwrapped optionals don’t have the safety checks of regular optionals.</li>
+<li>You can use nil coalescing to unwrap an optional and provide a default value if there was nothing inside.</li>
+<li>Optional chaining lets us write code to manipulate an optional, but if the optional turns out to be empty the code is ignored.</li>
+<li>You can use <code>try?</code> to convert a throwing function into an optional return value, or <code>try!</code> to crash if an error is thrown.</li>
+<li>If you need your initializer to fail when it’s given bad input, use <code>init?()</code> to make a failable initializer.</li>
+<li>You can use typecasting to convert one type of object to another.</li>
+</ol>

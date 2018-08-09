@@ -1,0 +1,64 @@
+<p>We just made a <code>travel()</code> function. It accepts one parameter, which is a closure that itself accepts one parameter and returns a string. That closure is then run between two calls to <code>print()</code>.</p>
+<p>Here’s that in code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">travel</span><span class="punctuation">(</span>action<span class="punctuation">:</span> <span class="punctuation">(</span><span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm getting ready to go."</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">let</span> description <span class="operator">=</span> <span class="function">action</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span>description<span class="punctuation">)</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I arrived!"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can call <code>travel()</code> using something like this:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span> <span class="punctuation">(</span>place<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span> <span class="keyword">in</span></p>
+<p>  <span class="keyword">return</span> <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>However, Swift <em>knows</em> the parameter to that closure must be a string, so we can remove it:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span> place <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">String</span> <span class="keyword">in</span></p>
+<p>  <span class="keyword">return</span> <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>It also knows the closure must return a string, so we can remove that:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span> place <span class="keyword">in</span></p>
+<p>  <span class="keyword">return</span> <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>As the closure only has one line of code that must be the one that returns the value, so Swift lets us remove the <code>return</code> keyword too:</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span> place <span class="keyword">in</span></p>
+<p>  <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Swift has a shorthand syntax that lets you go even shorter. Rather than writing <code>place in</code> we can let Swift provide automatic names for the closure’s parameters. These are named with a dollar sign, then a number counting from 0.</p>
+<pre class="code">
+<p></p>
+<p>travel <span class="punctuation">{</span></p>
+<p>  <span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>$0<span class="delimiter variable">)</span></span> in my car"</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

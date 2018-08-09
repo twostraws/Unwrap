@@ -1,0 +1,29 @@
+<p>Swift supports operator overloading, which is a fancy way of saying that what an operator does depends on the values you use it with. For example, <code>+</code> sums integers like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> meaningOfLife <span class="operator">=</span> <span class="number">42</span></p>
+<p><span class="keyword">let</span> doubleMeaning <span class="operator">=</span> <span class="number">42</span> <span class="operator">+</span> <span class="number">42</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>But <code>+</code> also joins strings, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> fakers <span class="operator">=</span> <span class="string">"Fakers gonna "</span></p>
+<p><span class="keyword">let</span> action <span class="operator">=</span> fakers <span class="operator">+</span> <span class="string">"fake"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can even use <code>+</code> to join arrays, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> firstHalf <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"John"</span><span class="punctuation">,</span> <span class="string">"Paul"</span><span class="punctuation">]</span></p>
+<p><span class="keyword">let</span> secondHalf <span class="operator">=</span> <span class="punctuation">[</span><span class="string">"George"</span><span class="punctuation">,</span> <span class="string">"Ringo"</span><span class="punctuation">]</span></p>
+<p><span class="keyword">let</span> beatles <span class="operator">=</span> firstHalf <span class="operator">+</span> secondHalf</p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Remember, Swift is a type-safe language, which means it won’t let you mix types. For example, you can’t add an integer to a string because it doesn’t make any sense.</p>

@@ -1,0 +1,20 @@
+<p>When you create closures, they don’t have a name or space to write any parameters. That doesn’t mean they can’t <em>accept</em> parameters, just that they do so in a different way: they are listed <em>inside</em> the open braces.</p>
+<p>To make a closure accept parameters, list them inside parentheses just after the opening brace, then write <code>in</code> so that Swift knows the main body of the closure is starting.</p>
+<p>For example, we could make a closure that accepts a place name string as its only parameter like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> driving <span class="operator">=</span> <span class="punctuation">{</span> <span class="punctuation">(</span>place<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="keyword">in</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"I'm going to <span class="interpolation"><span class="delimiter variable">\(</span>place<span class="delimiter variable">)</span></span> in my car"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>One of the differences between functions and closures is that you don’t use parameter labels when running closures. So, to call <code>driving()</code> now we’d write this:</p>
+<pre class="code">
+<p></p>
+<p><span class="function">driving</span><span class="punctuation">(</span><span class="string">"London"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

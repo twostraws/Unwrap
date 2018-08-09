@@ -1,0 +1,24 @@
+<p>Structs can have functions inside them, and those functions can use the properties of the struct as they need to. Functions inside structs are called <em>methods</em>, but they still use the same <code>func</code> keyword.</p>
+<p>We can demonstrate this with a <code>City</code> struct. This will have a <code>population</code> property that stores how many people are in the city, plus a <code>collectTaxes()</code> method that returns the population count multiplied by 1000. Because the method belongs to <code>City</code> it can read the current city’s <code>population</code> property.</p>
+<p>Here’s the code:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">City</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> population<span class="punctuation">:</span> <span class="builtin">Int</span></p>
+<p>  <span class="keyword">func</span> <span class="function">collectTaxes</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">-</span><span class="operator">&gt;</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">return</span> population <span class="operator">*</span> <span class="number">1000</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That method belongs to the struct, so we call it on instances of the struct like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> london <span class="operator">=</span> <span class="function">City</span><span class="punctuation">(</span>population<span class="punctuation">:</span> <span class="number">9_000_000</span><span class="punctuation">)</span></p>
+<p>london<span class="punctuation">.</span><span class="function">collectTaxes</span><span class="punctuation">(</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

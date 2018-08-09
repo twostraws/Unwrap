@@ -1,0 +1,24 @@
+{
+    "title": "Dictionaries",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select the lines that create dictionaries.",
+    "hint": "Arrays can hold any number of items, including duplicates, and preserve their order. Sets are preferred when you don't want duplicate items and when order doesn't matter. Tuples are preferred when you want limited items of specific types and names.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let scores = [\"Sophie\": 100]",
+        "let forecast = [\"Monday\": \"sunny\", \"Tuesday\": \"cloudy\"]",
+        "let heights = [\"Taylor Swift\": 1.78]",
+        "var roles = [\"captain\": \"Mal\", \"engineer\": \"Kaylee\"]",
+        "var capitals = [\"England\": \"London\", \"Scotland\": \"Edinburgh\"]",
+        "var address = [\"road\": \"Park Lane\", \"city\": \"Cardiff\"]"
+    ],
+    "wrong": [
+        "let password = \"fr0sti3s\"",
+        "let isVisible = true",
+        "let location = (\"road\": \"Park Lane\", \"city\": \"Cardiff\")",
+        "var place = [\"road\", \"Park Lane\", \"city\", \"Cardiff\"]",
+        "var speed = 60.75",
+        "var books = [\"The Jungle Book\"]"
+    ]
+}

@@ -1,0 +1,11 @@
+<p>I already said that variables have that name because their values can change over time, and that is often useful. However, very often you want to set a value once and never change it, and so we have an alternative to the <code>var</code> keyword called <code>let</code>.</p>
+<p>The <code>let</code> keyword creates <em>constants</em>, which are values that can be set once and never again. For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> taylor <span class="operator">=</span> <span class="string">"swift"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>If you try to change that, Xcode will refuse to run your code. It’s a form of safety: when you use constants you can no longer change something by accident.</p>
+<p>When you write your own Swift code, you should always use <code>let</code> unless you specifically want to change a value. In fact, Xcode will warn you if you use <code>var</code> then <em>don’t</em> change the variable.</p>

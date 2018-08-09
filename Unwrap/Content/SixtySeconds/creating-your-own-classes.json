@@ -1,0 +1,24 @@
+{
+    "title": "Creating your own classes",
+    "postscript": "If a class has properties, it needs an initializer. The only exception is if all properties have default values, in which case an initializer isn't needed.",
+    "reviewType": "singleSelection",
+    "question": "This code defines a valid class – true or false?",
+    "hint": "All properties must have a value before the initializer ends.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "class TIE {\n\tvar name: String\n\tvar speed: Int\n\tinit(name: String, speed: Int) {\n\t\tself.name = name\n\t\tself.speed = speed\n\t}\n}\nlet fighter = TIE(name: \"TIE Fighter\", speed: 50)\nlet interceptor = TIE(name: \"TIE Interceptor\", speed: 70)",
+        "class Podcast {\n\tvar hosts: [String]\n\tinit(hosts: [String]) {\n\t\tself.hosts = hosts\n\t}\n}",
+        "class BoardGame {\n\tvar name: String\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}",
+        "class VideoGame {\n\tvar hero: String\n\tvar enemy: String\n\tinit(heroName: String, enemyName: String) {\n\t\tself.hero = heroName\n\t\tself.enemy = enemyName\n\t}\n}\nlet monkeyIsland = VideoGame(heroName: \"Guybrush Threepwood\", enemyName: \"LeChuck\")",
+        "class ThemePark {\n\tvar entryPrice: Int\n\tvar rides: [String]\n\tinit(rides: [String]) {\n\t\tself.rides = rides\n\t\tself.entryPrice = rides.count * 2\n\t}\n}",
+        "class Empty { }\nlet nothing = Empty()"
+    ],
+    "wrong": [
+        "class Painting {\n\tvar title: String\n\tvar artist: String\n\tvar paintType: String\n\tfunc init(title: String, artist: String, paintType: String) {\n\t\tself.title = title\n\t\tself.artist = artist\n\t\tself.paintType = paintType\n\t}\n}",
+        "class Image {\n\tvar filename: String\n\tvar isAnimated: Bool\n\tinit(filename: String, isAnimated: Bool) {\n\t\tfilename = filename\n\t\tisAnimated = isAnimated\n\t}\n}",
+        "class Singer {\n\tvar name: String\n\tvar favoriteSong: String\n\tinit(name: String, song: String) {\n\t\tself.name = name\n\t\tself.song = song\n\t}\n}\nlet taylor = Singer(name: \"Taylor Swift\", song: \"Blank Space\")",
+        "struct Poll {\n\tvar question: String\n\tvar option1: String\n\tvar option2: String\n\tvar votes: [Int]\n}\nlet question = \"Jet black or rose gold?\"\nlet poll = Poll(question: question, option1: \"Jet black\", option2: \"Rose gold\", votes: [0, 0, 0, 0, 1, 0, 1])",
+        "struct Sandwich {\n\tvar name: String\n\tvar fillings: [String]\n}\nlet blt = Sandwich(name: \"BLT\", fillings: [\"Bacon\", \"Lettuce\", \"Tomato\"])",
+        "class Attendee {\n\tvar badgeNumber = 0\n\tvar name = \"Anonymous\"\n\tvar company = \"Unknown\"\n\tinit(badge: Int) {\n\t\tself.badgeNumber = badgeNumber\n\t}\n}"
+    ]
+}

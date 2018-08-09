@@ -1,0 +1,57 @@
+[
+	{
+		"code": "CONSTANT_OR_VARIABLE RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\nprint(\"NAME_NATURAL_0|capitalizedFirst is \\(NAME_0)\")",
+		"answers": [
+			{
+				"text": "NAME_NATURAL_0|capitalizedFirst is VALUE_0"
+			}
+		]
+	},
+
+	{
+		"code": "var RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\nNAME_0 = \"RANDOM_STRING_VALUE_0\"\nprint(\"NAME_NATURAL_0|capitalizedFirst is \\(NAME_0)\")",
+		"answers": [
+			{
+				"text": "NAME_NATURAL_0|capitalizedFirst is VALUE_1"
+			}
+		]
+	},
+
+	{
+		"code": "var RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\n\nif NAME_0.count RANDOM_OPERATOR RANDOM_SMALL_INT {\n\tNAME_0 = \"RANDOM_STRING_VALUE_0\"\n}\n\nprint(\"NAME_NATURAL_0|capitalizedFirst is \\(NAME_0)\")",
+		"answers": [
+			{
+				"conditions": [
+					{
+						"left": "VALUE_1|count",
+						"check": "OPERATOR_0",
+						"right": "VALUE_0"
+					}
+				],
+				"text": "NAME_NATURAL_0|capitalizedFirst is VALUE_2"
+			},
+			{
+				"text": "NAME_NATURAL_0|capitalizedFirst is VALUE_1"
+			}
+		]
+	},
+
+	{
+		"code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\nCONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\n\nCONSTANT_OR_VARIABLE multiplied = NAME_0 * NAME_1\n\nif multiplied % 2 == 0 {\n\tprint(\"Even number\")\n} else {\n\n\tprint(\"Odd number\")\n}",
+		"answers": [
+			{
+				"conditions": [
+					{
+						"left": "${(VALUE_0 * VALUE_1) % 2}",
+						"check": "==",
+						"right": "0"
+					}
+				],
+				"text": "Multiplying makes an even number"
+			},
+			{
+				"text": "Multiplying makes an odd number"
+			}
+		]
+	}
+]

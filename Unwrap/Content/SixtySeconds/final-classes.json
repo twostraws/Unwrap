@@ -1,0 +1,24 @@
+{
+    "title": "Final classes",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code defines a valid class – true or false?",
+    "hint": "All properties must have a value before the initializer ends.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "class Game { }\nfinal class BoardGame: Game { }",
+        "class Magazine { }\nfinal class FashionMagazine: Magazine { }",
+        "class Shoes { }\nfinal class KittenHeels: Shoes { }",
+        "class Furniture { }\nclass Couch: Furniture { }",
+        "class Player { }\nclass Barbarian: Player { }",
+        "class Hat { }\nclass Fez: Hat { }"
+    ],
+    "wrong": [
+        "class Pen { }\nclass Bic { }",
+        "final class GemStone { }\nclass Diamond: GemStone { }",
+        "final class Landmark { }\nfinal class Monument: Landmark { }",
+        "struct Massage { }\nclass HeadMassage: Massage { }",
+        "class MusicPlayer { }\nstruct RecordPlayer: MusicPlayer { }",
+        "class Movie { }\nfinal struct Comedy: Movie { }"
+    ]
+}

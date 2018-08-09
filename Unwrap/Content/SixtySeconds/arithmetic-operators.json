@@ -1,0 +1,24 @@
+{
+    "title": "Arithmetic operators",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these make <code>result<\/code> an integer equal to 10?",
+    "hint": "The <code>%<\/code> operator calculates division remainder",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let result = 5 + 5",
+        "let result = 20 \/ 4",
+        "let result = 11 - 6",
+        "var result = 11 % 6",
+        "var result = 1 * 5",
+        "var result = 7 - 1 - 1"
+    ],
+    "wrong": [
+        "let result = 2.5 * 2",
+        "let result = 12 % 6",
+        "let result = 10 \/ 2.0",
+        "var result = 2 + 2 + 1.0",
+        "var result = 2 + 2 + 2",
+        "var result = 12 - 8"
+    ]
+}

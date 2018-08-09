@@ -1,0 +1,24 @@
+{
+    "title": "Complex types: Summary",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these lines make variables?",
+    "hint": "Make sure the type annotations match what's placed inside.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var username = \"twostraws\"",
+        "var scores = [100, 90, 85]",
+        "var usedWords = Set([\"hello\", \"world\"])",
+        "var redCars: Int = 22",
+        "var episodeCount = 300",
+        "var isConnected = true"
+    ],
+    "wrong": [
+        "let isConfigured = false",
+        "let goldMedalist = \"Heidi Joakim\"",
+        "let averageScore: Double = 4.2",
+        "var repeatCount: Bool = 0",
+        "var unreadMessages: Int = \"12\"",
+        "var lotteryNumbers = Set(11, 23, 44)"
+    ]
+}

@@ -1,0 +1,17 @@
+func FUNCTION_NAME(PARAM_NAME: Int) -> String {
+    var RETURN_NAME: String = "SCORE \(PARAM_NAME)\n"
+    switch PARAM_NAME {
+    case 0...20:
+        RETURN_NAME += "Terrible"
+    case 21...40:
+        RETURN_NAME += "Poor"
+    case 41...60:
+        RETURN_NAME += "Average"
+    case 61...80:
+        RETURN_NAME += "Good"
+    default:
+        RETURN_NAME += "Excellent"
+    }
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE))

@@ -1,0 +1,38 @@
+<p>Property observers let you run code before or after any property changes. To demonstrate this, we’ll write a <code>Progress</code> struct that tracks a task and a completion percentage:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Progress</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> task<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> amount<span class="punctuation">:</span> <span class="builtin">Int</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can now create an instance of that struct and adjust its progress over time:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">var</span> progress <span class="operator">=</span> <span class="function">Progress</span><span class="punctuation">(</span>task<span class="punctuation">:</span> <span class="string">"Loading data"</span><span class="punctuation">,</span> amount<span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">)</span></p>
+<p>progress<span class="punctuation">.</span>amount <span class="operator">=</span> <span class="number">30</span></p>
+<p>progress<span class="punctuation">.</span>amount <span class="operator">=</span> <span class="number">80</span></p>
+<p>progress<span class="punctuation">.</span>amount <span class="operator">=</span> <span class="number">100</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>What we <em>want</em> to happen is for Swift to print a message every time <code>amount</code> changes, and we can use a <code>didSet</code> property observer for that. This will run some code every time <code>amount</code> changes:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">Progress</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> task<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> amount<span class="punctuation">:</span> <span class="builtin">Int</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">didSet</span> <span class="punctuation">{</span></p>
+<p>      <span class="function">print</span><span class="punctuation">(</span><span class="string">"<span class="interpolation"><span class="delimiter variable">\(</span>task<span class="delimiter variable">)</span></span> is now <span class="interpolation"><span class="delimiter variable">\(</span>amount<span class="delimiter variable">)</span></span>% complete"</span><span class="punctuation">)</span></p>
+<p>    <span class="punctuation">}</span></p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can also use <code>willSet</code> to take action <em>before</em> a property changes, but that is rarely used.</p>

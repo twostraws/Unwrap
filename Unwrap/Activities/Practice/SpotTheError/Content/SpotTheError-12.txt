@@ -1,0 +1,15 @@
+func FUNCTION_NAME(PARAM_NAME: Int, type: String) -> String {
+    var RETURN_NAME: String = ""
+    for _ in 0 ..< PARAM_NAME {
+        RETURN_NAME += "I'm doing a \(type)\n"
+    }
+    if PARAM_NAME < 10 {
+        RETURN_NAME += "That was easy!"
+    } else if PARAM_NAME < 30 {
+        RETURN_NAME += "That was challenging!"
+    } else {
+        RETURN_NAME += "Phew - I need a break!"
+    }
+    return RETURN_NAME
+}
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE, type: TYPE_PARAM))

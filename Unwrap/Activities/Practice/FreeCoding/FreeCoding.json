@@ -1,0 +1,69 @@
+[
+	{
+		"question": "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use.",
+		"hint": "If you make both strings uppercased using <code>lowercased()</code> you can compare the lowercased versions.",
+		"startingCode": "",
+		"answers": [
+			"func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
+			"func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.uppercased() == input2.uppercased()\n}",
+			"func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
+			"func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.uppercased() == input2.uppercased()\nreturn result\n}",
+			"func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}else{\nreturn false\n}",
+			"func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}"
+		]
+	},
+	{
+		"question": "Write a function that accepts two strings and returns them joined together. For example, sending in the strings 'car' and 'pet' should return 'carpet'.",
+		"hint": "You can use <code>+</code> to join two strings together.",
+		"startingCode": "",
+		"answers": [
+			"func myFunction(input1:String,input2:String) -> String{\nreturn input1 + input2\n}",
+			"func myFunction(input1:String,input2:String) -> String{\nletvar result:String = input1 + input2\nreturn result\n}"
+		]
+	},
+	{
+		"question": "Write a function that accepts a string and sends back an integer of how many characters are in the string.",
+		"hint": "You can use the <code>count</code> property to measure the length of the string.",
+		"startingCode": "",
+		"answers": [
+			"func myFunction(input1:String) -> Int{\nreturn input1.count\n}",
+			"func myFunction(input1:String) -> Int{\nletvar result:Int = input1.count\nreturn result}"
+		]
+	},
+	{
+		"question": "Write a function that accepts an integer and returns that number squared. For example, sending in the number 5 will return 25.",
+		"hint": "The square of a number is that number multiplied by itself",
+		"startingCode": "",
+		"answers": [
+			"func myFunction(input1:Int) -> Int{\nreturn input1 * input1\n}",
+			"func myFunction(input1:Int) -> Int{\nletvar result:Int = input1 * input1\nreturn result\n}"
+		]
+	},
+	{
+		"question": "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total.",
+		"hint": "You can solve this using a <code>for</code> loop.",
+		"startingCode": "let numbers = [1, 5, 2, 5, 3, 5]",
+		"answers": [
+			"var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
+			"var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
+			"letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
+			"letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
+			"letvar filtered:[Int] = numbers.filter{num in return num == 5}\nprint(filtered.count)",
+			"letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
+			"letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
+			"letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)"
+		]
+	},
+	{
+		"question": "Write code that doubles all the numbers in this array.",
+		"hint": "You can solve this using a <code>for</code> loop.",
+		"startingCode": "let numbers = [1, 3, 5, 7, 9]",
+		"answers": [
+			"var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
+			"var newArray:[Int] = [Int]()\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+			"letvar newArray:[Int] = numbers.map{$0 * 2}",
+			"letvar newArray:[Int] = numbers.map{num in return num * 2}",
+			"letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}"
+		]
+	}
+]

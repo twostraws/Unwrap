@@ -1,0 +1,22 @@
+<p>Dictionaries are collections of values just like arrays, but rather than storing things with an integer position you can access them using anything you want.</p>
+<p>The most common way of storing dictionary data is using strings. For example, we could create a dictionary that stores the height of singers using their name:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> heights <span class="operator">=</span> <span class="punctuation">[</span></p>
+<p>  <span class="string">"Taylor Swift"</span><span class="punctuation">:</span> <span class="number">1.78</span><span class="punctuation">,</span></p>
+<p>  <span class="string">"Ed Sheeran"</span><span class="punctuation">:</span> <span class="number">1.73</span></p>
+<p><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Just like arrays, dictionaries start and end with brackets and each item is separated with a comma. However, we also use a colon to separate the value you want to store (e.g. 1.78) from the identifier you want to store it under (e.g. “Taylor Swift”).</p>
+<p>These identifiers are called <em>keys</em>, and you can use them to read data back out of the dictionary:</p>
+<pre class="code">
+<p></p>
+<p>heights<span class="punctuation">[</span><span class="string">"Taylor Swift"</span><span class="punctuation">]</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p><strong>Note:</strong> When using type annotations, dictionaries are written in brackets with a colon between your identifier and value types. For example, <code>[String: Double]</code> and <code>[String: String]</code>.</p>

@@ -1,0 +1,36 @@
+<p>As well as storing a simple value, enums can also store <em>associated</em> values attached to each case. This lets you attach additional information to your enums so they can represent more nuanced data.</p>
+<p>For example, we might define an enum that stores various kinds of activities:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">Activity</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> bored</p>
+<p>  <span class="keyword">case</span> running</p>
+<p>  <span class="keyword">case</span> talking</p>
+<p>  <span class="keyword">case</span> singing</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That let’s us say that someone is talking, but we don’t know what they talking <em>about</em>, or we can know that someone is running, but we don’t know where they are running <em>to</em>.</p>
+<p>Enum associated values let us add those additional details:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">Activity</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> bored</p>
+<p>  <span class="keyword">case</span> <span class="function">running</span><span class="punctuation">(</span>destination<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">case</span> <span class="function">talking</span><span class="punctuation">(</span>topic<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span></p>
+<p>  <span class="keyword">case</span> <span class="function">singing</span><span class="punctuation">(</span>volume<span class="punctuation">:</span> <span class="builtin">Int</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Now we can be more precise – we can say that someone is talking about football:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> talking <span class="operator">=</span> <span class="builtin">Activity</span><span class="punctuation">.</span><span class="function">talking</span><span class="punctuation">(</span>topic<span class="punctuation">:</span> <span class="string">"football"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

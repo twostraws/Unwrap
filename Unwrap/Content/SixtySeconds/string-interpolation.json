@@ -1,0 +1,24 @@
+{
+    "title": "String interpolation",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Select the lines that use string interpolation.",
+    "hint": "String interpolation starts with a backslash, then contains a value inside parentheses.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "var greeting = \"Hello, \\(name)!\"",
+        "var warning = \"You need to be \\(years) or older\"",
+        "var alert = \"Error: \\(message)!\"",
+        "var name = \"\\(firstName) \\(lastName)\"",
+        "var result = \"\\(daysRemaining) days to go\"",
+        "var forecast = \"Today's weather will be \\(weather)\""
+    ],
+    "wrong": [
+        "var error = \"Error, please try again.\"",
+        "var str = \"Hello, playground!\"",
+        "var message = \"Installation failed: \\{reason}.\"",
+        "var versionString = \"You're using v(version)\"",
+        "var engine = \"Your engine is (size)cc\"",
+        "var formattedHeight = \"You are (size)cm\""
+    ]
+}

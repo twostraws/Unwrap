@@ -1,0 +1,24 @@
+{
+    "title": "Optional chaining",
+    "postscript": "You can chain as many things as you need. For example, <code>someOptionalArray?.first?.lowercased()</code>.",
+    "reviewType": "singleSelection",
+    "question": "Which of these are valid in Swift?",
+    "hint": "It might sound obvious, but optional chaining may only be used with optionals.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let shoppingList = [\"eggs\", \"tomatoes\", \"grapes\"]\nlet firstItem = shoppingList.first?.appending(\" are on my shopping list\")",
+        "let favoriteColors = [\"Paul\": \"Red\", \"Charlotte\": \"Pink\"]\nlet charlotteColor = favoriteColors[\"Charlotte\"]?.lowercased()",
+        "func albumReleased(in year: Int) -> String? {\n\tswitch year {\n\tcase 2006: return \"Taylor Swift\"\n\tcase 2008: return \"Fearless\"\n\tcase 2010: return \"Speak Now\"\n\tcase 2012: return \"Red\"\n\tcase 2014: return \"1989\"\n\tcase 2017: return \"Reputation\"\n\tdefault: return nil\n\t}\n}\nlet album = albumReleased(in: 2006)?.uppercased()",
+        "let racers = [\"Hamilton\", \"Verstappen\", \"Vettel\"]\nlet winnerWasVE = racers.first?.hasPrefix(\"Ve\")",
+        "let capitals = [\"Scotland\": \"Edinburgh\", \"Wales\": \"Cardiff\"]\nlet scottishCapital = capitals[\"Scotland\"]?.uppercased()",
+        "let songs: [String]? = [String]()\nlet finalSong = songs?.last?.uppercased()"
+    ],
+    "wrong": [
+        "func loadForecast(for dayNumber: Int) -> String {\n\tprint(\"Forecast unavailable.\")\n\treturn nil\n}\nlet forecast = loadForecast(for: 3)?.uppercased()",
+        "let captains = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
+        "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",
+        "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
+        "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",
+        "let attendees: [String] = [String]()\nlet firstInLine = attendees?.first?.uppercased()"
+    ]
+}

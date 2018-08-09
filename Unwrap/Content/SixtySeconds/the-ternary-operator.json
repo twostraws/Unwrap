@@ -1,0 +1,24 @@
+{
+    "title": "The ternary operator",
+    "postscript": "Although some coders love using the ternary operator, it's best to avoid it because it doesn't make your code very clear.",
+    "reviewType": "singleSelection",
+    "question": "This code will print \"Success\" – true or false?",
+    "hint": "The part after the question mark is executed if the condition is true, the part after the colon if it's false, and Swift won't let you compare different types of data.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let numberOfCats = 21\nprint(numberOfCats >= 18 ? \"Success\" : \"Failure\")",
+        "let strongMagnets = true\nprint(strongMagnets ? \"Success\" : \"Failure\")",
+        "let phone = \"iPhone\"\nprint(phone == \"Android\" ? \"Failure\" : \"Success\")",
+        "let dexterity = 18\nprint(dexterity >= 18 ? \"Success\" : \"Failure\")",
+        "let isComplete: Bool = false\nprint(isComplete == true ? \"Failure\" : \"Success\")",
+        "let sides = 5\nprint(sides <= 6 ? \"Success\" : \"Failure\")"
+    ],
+    "wrong": [
+        "let isRecyclable = false\nprint(isRecyclable == true ? \"Success\" : \"Failure\")",
+        "let highScore = 90\nlet actualScore = 89\nprint(actualScore > highScore ? \"Success\" : \"Failure\")",
+        "let storageSpace = 500\nprint(storageSpace > 1000 ? \"Success\" : \"Failure\")",
+        "var retweets = \"100\"\nprint(retweets > 10 ? \"Success\" : \"Failure\")",
+        "var averagePages: Double = 10.01\nprint(averagePages == 10 ? \"Success\" : \"Failure\")",
+        "var singers = [\"Taylor Swift\"]\nprint(singers == \"Taylor Swift\" ? \"Success\" : \"Failure\")"
+    ]
+}

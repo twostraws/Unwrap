@@ -1,0 +1,5 @@
+disabled_rules:
+  - line_length
+  - fallthrough
+  - large_tuple
+  - todo

@@ -1,0 +1,39 @@
+<p>Enumerations – usually called just <em>enums</em> – are a way of defining groups of related values in a way that makes them easier to use.</p>
+<p>For example, if you wanted to write some code to represent the success or failure of some work you were doing, you could represent that as strings:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result <span class="operator">=</span> <span class="string">"failure"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>But what happens if someone accidentally uses different naming?</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result2 <span class="operator">=</span> <span class="string">"failed"</span></p>
+<p><span class="keyword">let</span> result3 <span class="operator">=</span> <span class="string">"fail"</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>All those three are different strings, so they mean different things.</p>
+<p>With enums we can define a <code>Result</code> type that can be either <code>success</code> or <code>failure</code>, like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">enum</span> <span class="builtin">Result</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">case</span> success</p>
+<p>  <span class="keyword">case</span> failure</p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>And now when we use it we must choose one of those two values:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> result4 <span class="operator">=</span> <span class="builtin">Result</span><span class="punctuation">.</span>failure</p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>This stops you from accidentally using different strings each time.</p>

@@ -1,0 +1,31 @@
+<p>Protocols are a way of describing what properties and methods something must have. You then tell Swift which types use that protocol – a process known as adopting or conforming to a protocol.</p>
+<p>For example, we can write a function that accepts something with an <code>id</code> property, but we don’t care precisely what type of data is used. We’ll start by creating an <code>Identifiable</code> protocol, which will require all conforming types to have an <code>id</code> string that can be read (“get”) or written (“set”):</p>
+<pre class="code">
+<p></p>
+<p>protocol <span class="builtin">Identifiable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span> <span class="punctuation">{</span> <span class="keyword">get</span> <span class="keyword">set</span> <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>We can’t <em>create</em> instances of that protocol - it’s a description, not a type by itself. But we <em>can</em> create a struct that conforms to it:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">struct</span> <span class="builtin">User</span><span class="punctuation">:</span> <span class="builtin">Identifiable</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> id<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Finally, we’ll write a <code>displayID()</code> function that accepts any <code>Identifiable</code> object:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">func</span> <span class="function">displayID</span><span class="punctuation">(</span>thing<span class="punctuation">:</span> <span class="builtin">Identifiable</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"My ID is <span class="interpolation"><span class="delimiter variable">\(</span>thing.id<span class="delimiter variable">)</span></span>"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

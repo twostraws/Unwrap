@@ -1,0 +1,25 @@
+<p>Classes are similar to structs in that they allow you to create new types with properties and methods, but they have five important differences and I’m going to walk you through each of those differences one at a time.</p>
+<p>The first difference between classes and structs is that classes never come with a memberwise initializer. This means if you have properties in your class, you must always create your own initializer.</p>
+<p>For example:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">class</span> <span class="class-name">Dog</span> <span class="punctuation">{</span></p>
+<p>  <span class="keyword">var</span> name<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">var</span> breed<span class="punctuation">:</span> <span class="builtin">String</span></p>
+<p>  <span class="keyword">init</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">,</span> breed<span class="punctuation">:</span> <span class="builtin">String</span><span class="punctuation">)</span> <span class="punctuation">{</span></p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>name <span class="operator">=</span> name</p>
+<p>    <span class="keyword">self</span><span class="punctuation">.</span>breed <span class="operator">=</span> breed</p>
+<p>  <span class="punctuation">}</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>Creating instances of that class looks just the same as if it were a struct:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> poppy <span class="operator">=</span> <span class="function">Dog</span><span class="punctuation">(</span>name<span class="punctuation">:</span> <span class="string">"Poppy"</span><span class="punctuation">,</span> breed<span class="punctuation">:</span> <span class="string">"Poodle"</span><span class="punctuation">)</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>

@@ -1,0 +1,35 @@
+//
+//  BoolNames.swift
+//  Unwrap
+//
+//  Created by Paul Hudson on 09/08/2018.
+//  Copyright © 2018 Hacking with Swift.
+//
+
+import Foundation
+import GameplayKit
+
+extension Bool: TypeGenerating {
+    static func randomName() -> String {
+        let names = ["isAnimated", "isAuthenticated", "isActive", "isDeleted", "isEdited", "isEditing", "isEnabled", "isEncrypted", "isFirstResponder", "isFocused", "isHidden", "isLandscape", "isLoaded", "isLoggedIn", "isModal", "isOpaque", "isPortrait", "isPresented", "isRecognized", "isRead", "isReady", "isSaved", "isSelected", "isSorted", "isStatic", "isUnlocked", "isVisible", "isZoomed"]
+        let chosen = names[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
+        return chosen
+    }
+
+    static func makeInstance() -> String {
+        let storage = letOrVar()
+        let name = randomName()
+        let type: String
+
+        if includeType() {
+            type = ": Bool"
+        } else {
+            type = ""
+        }
+
+        let selectedValue = String(describing: Bool.random())
+        let value = "\(selectedValue)"
+
+        return "\(storage) \(name)\(type) = \(value)"
+    }
+}

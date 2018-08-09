@@ -1,0 +1,24 @@
+{
+    "title": "Running throwing functions",
+    "postscript": "You can have multiple catch blocks to hande individual errors if you want, but you do need to catch all possible errors at some point otherwise your code won't build.",
+    "reviewType": "multipleSelection",
+    "question": "Which of the following are true?",
+    "hint": "Start a throwing block using <code>do<\/code>, mark each throwing line with <code>try<\/code> and catch errors using <code>catch<\/code>.",
+    "syntaxHighlighting": false,
+    "correct": [
+        "Throwing functions must be called using <code>try<\/code>",
+        "Throwing functions must be marked with <code>throws<\/code>",
+        "Swift won't let you run an error-throwing function by accident.",
+        "Use <code>do<\/code> to start a section of code that calls throwing functions.",
+        "If any errors are thrown, execution immediately jumps to the <code>catch<\/code> block.",
+        "You can mark any function as throwing."
+    ],
+    "wrong": [
+        "Throwing functions can't return values.",
+        "You can call only one throwing function inside a <code>do<\/code> block.",
+        "Swift lets you skip adding a <code>catch<\/code> block when it's safe.",
+        "You don't need to catch all errors.",
+        "You should mark all functions as throwing.",
+        "You can define only one error enum in your apps."
+    ]
+}
