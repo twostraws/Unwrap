@@ -2,11 +2,11 @@
     "title": "Arithmetic operators",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of these make <code>result<\/code> an integer equal to 10?",
+    "question": "Which of these make <code>result<\/code> an integer equal to 5?",
     "hint": "The <code>%<\/code> operator calculates division remainder",
     "syntaxHighlighting": true,
     "correct": [
-        "let result = 5 + 5",
+        "let result = 5 + 0",
         "let result = 20 \/ 4",
         "let result = 11 - 6",
         "var result = 11 % 6",
