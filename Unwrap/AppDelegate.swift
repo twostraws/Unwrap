@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var tabBarController = MainTabBarController()
+    var tabBarController: MainTabBarController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window?.backgroundColor = .white
@@ -20,10 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         User.current = User.load() ?? User()
 
         /// Send in the main tab bar controller, which can create our initial coordinators.
+        tabBarController = MainTabBarController()
         window?.rootViewController = tabBarController
 
         /// We want the tab bar controller to handle our launch options so we can jump right too various tabs as needed.
-        tabBarController.handle(launchOptions)
+        tabBarController?.handle(launchOptions)
 
         return true
     }
