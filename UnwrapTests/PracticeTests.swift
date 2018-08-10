@@ -67,14 +67,14 @@ class PracticeTests: XCTestCase {
         // test a wide variety of possible examples
         for _ in 1...100 {
             let test = RearrangeTheLinesPractice()
-            XCTAssertTrue(test.check(answer: test.code), "Checking the answer against itself should always be true.")
+            XCTAssertTrue(test.answerIsCorrect(test.code), "Checking the answer against itself should always be true.")
 
             /// Add some dummy whitespace and check again.
             let adjustedCode = test.code.map {
                 return "\t" + $0 + "\t"
             }
 
-            XCTAssertTrue(test.check(answer: adjustedCode), "Whitespace should be ignored when rearranging the lines, so that any brace can be used anywhere.")
+            XCTAssertTrue(test.answerIsCorrect(adjustedCode), "Whitespace should be ignored when rearranging the lines, so that any brace can be used anywhere.")
         }
     }
 
