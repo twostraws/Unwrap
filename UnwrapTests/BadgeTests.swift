@@ -44,7 +44,7 @@ class BadgeTests: XCTestCase {
                 }
 
             for section in conditionChapter.sections {
-                user.learnedSection(section)
+                user.reviewedSection(section.bundleName)
             }
 
             XCTAssert(user.isBadgeEarned(badge))
@@ -56,14 +56,10 @@ class BadgeTests: XCTestCase {
         let user = User()
         let practiceBadges = badges.filter { $0.criterion == "practice" }
 
-        let exampleBadge = try badge(named: "One Of A Type")
-
-        guard let targetCount = Int(exampleBadge.value) else {
-            throw TestErrors.badBadge
-        }
-
         for badge in practiceBadges {
-            for _ in 1...targetCount {
+            for i in 1...10 {
+                XCTAssertFalse(user.isBadgeEarned(badge), "Completing \(badge.value) \(i) time(s) should not have unlocked the badge \(badge.name).")
+
                 user.completedPractice(badge.value, score: User.pointsForPracticing)
             }
 
