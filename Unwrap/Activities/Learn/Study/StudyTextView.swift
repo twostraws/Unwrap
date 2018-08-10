@@ -21,5 +21,6 @@ class StudyTextView: TappableTextView {
         // load our chapter text
         attributedText = NSAttributedString(chapterName: contentName)
         backgroundColor = .white
+        isEditable = false
     }
 }
