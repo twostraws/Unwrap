@@ -55,6 +55,13 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         guard let videoURL = Bundle.main.url(forResource: activeStudyReview.title.bundleName, withExtension: "mp4") else { return }
         let player = AVPlayer(url: videoURL)
 
+        // Plays sound when device is physically muted or silent
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch {
+            //Didn't work
+        }
+        
         // It would be lovely to make a custom subclass of
         // AVPlayerViewController that is always landscape,
         // but that causes our text view scroll position
