@@ -29,7 +29,7 @@ class BundleLoadingTests: XCTestCase {
     /// Tests that strings can be formatted in a bundle-friendly way.
     func testStringBundleNames() {
         let testString = "This?is , a:test'"
-        XCTAssert(testString.bundleName == "Thisis--atest")
+        XCTAssertEqual(testString.bundleName, "thisis--atest")
     }
 
     /// Tests loading the wrapper HTML from our bundle.
