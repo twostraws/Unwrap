@@ -9,7 +9,7 @@
         "var position = 5\nwhile position > 0 {\n\tprint(\"\\(position)!\")\n\tposition -= 1\n}",
         "var number: Int = 10\nwhile number > 0 {\n\tnumber -= 2\n\tif number % 2 == 0 {\n\t\tprint(\"\\(number) is an even number.\")\n\t}\n}",
         "var counter = 2\nwhile counter > 64 {\n\tprint(\"\\(counter) is a power of 2.\")\n\tcounter *= 2\n}",
-        "var averageScore = 2.5\nwhile averageScore > 15.0 {\n\taverageScore += 2.5\n\tprint(\"The average is score is \\(averageScore)\")\n}",
+        "var averageScore = 2.5\nwhile averageScore < 15.0 {\n\taverageScore += 2.5\n\tprint(\"The average score is \\(averageScore)\")\n}",
         "let colors = [\"Red\", \"Green\", \"Blue\", \"Orange\", \"Yellow\"]\nvar colorCounter = 0\nwhile colorCounter < 5 {\n\tprint(\"\\(colors[colorCounter]) is a popular color.\")\n\tcolorCounter += 1\n}",
         "var cats: Int = 0\nwhile cats < 10 {\n\tcats += 1\n\tprint(\"I'm getting another cat.\")\n\tif cats == 4 {\n\t\tprint(\"Enough cats!\")\n\t\tcats = 10\n\t}\n}"
     ],
