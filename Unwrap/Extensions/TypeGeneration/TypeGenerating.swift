@@ -14,7 +14,7 @@ protocol TypeGenerating {
 
 extension TypeGenerating {
     static func letOrVar() -> String {
-        if arc4random_uniform(2) == 0 {
+        if Bool.random() {
             return "var"
         } else {
             return "let"
