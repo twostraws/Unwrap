@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B169FF7212C3E0200BCA73D /* UIScrollView-ProgrammaticScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169FF6212C3E0200BCA73D /* UIScrollView-ProgrammaticScrolling.swift */; };
+		2B169FF9212C6BE600BCA73D /* UINavigationBar-BarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B169FF8212C6BE600BCA73D /* UINavigationBar-BarSize.swift */; };
 		4DF330FA7B825B71886020E9 /* Pods_UnwrapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFD8A2C064B3B2E474D67A1 /* Pods_UnwrapTests.framework */; };
 		510539F8211300D400B28328 /* UIImage-Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510539F7211300D400B28328 /* UIImage-Sharing.swift */; };
 		510539FA211307E800B28328 /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510539F9211307E800B28328 /* CoordinatedNavigationController.swift */; };
@@ -598,6 +599,7 @@
 /* Begin PBXFileReference section */
 		1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unwrap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B169FF6212C3E0200BCA73D /* UIScrollView-ProgrammaticScrolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView-ProgrammaticScrolling.swift"; sourceTree = "<group>"; };
+		2B169FF8212C6BE600BCA73D /* UINavigationBar-BarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar-BarSize.swift"; sourceTree = "<group>"; };
 		3F6890166B1F5B8EB91C8313 /* Pods-UnwrapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DFD8A2C064B3B2E474D67A1 /* Pods_UnwrapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnwrapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510539F7211300D400B28328 /* UIImage-Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Sharing.swift"; sourceTree = "<group>"; };
@@ -1614,6 +1616,7 @@
 				5153F4AD20F007EF009E829D /* UIViewController-Alerts.swift */,
 				511FD6B02105F07A0023E92C /* URL-String.swift */,
 				2B169FF6212C3E0200BCA73D /* UIScrollView-ProgrammaticScrolling.swift */,
+				2B169FF8212C6BE600BCA73D /* UINavigationBar-BarSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2759,6 +2762,7 @@
 				5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */,
 				51A4476B2108A108005D8665 /* Badge.swift in Sources */,
 				5192587120E2A46500A85704 /* Swift42.swift in Sources */,
+				2B169FF9212C6BE600BCA73D /* UINavigationBar-BarSize.swift in Sources */,
 				51C5642920CCC2520093030C /* LearnDataSource.swift in Sources */,
 				511FD6C62107CE9C0023E92C /* AlertHandling.swift in Sources */,
 				510539F8211300D400B28328 /* UIImage-Sharing.swift in Sources */,

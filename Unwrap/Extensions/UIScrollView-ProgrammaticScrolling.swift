@@ -15,8 +15,8 @@ extension UIScrollView {
         return contentOffset.y <= topEdge
     }
     
-    //animates scrolling to top of scrollview
-    func scrollToTop() {
-        self.setContentOffset(CGPoint(x: 0.0, y: -self.adjustedContentInset.top - 52), animated: true)
+    /// Animates scrolling to top of scrollview
+    func scrollToTop(maxNavBarHeight: CGFloat) {
+        self.setContentOffset(CGPoint(x: 0.0, y: -self.adjustedContentInset.top - maxNavBarHeight), animated: true)
     }
 }

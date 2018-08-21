@@ -41,16 +41,22 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, Stor
         }
     }
     
+    /// Scrolls to top of view when user taps on the current view controller's icon
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController == previousViewController {
-            if let scrollView = (viewController as? UINavigationController)?.viewControllers.first?.view as? UIScrollView {
-                if !scrollView.scrolledToTop {
-                    scrollView.scrollToTop()
-                }
-            }
+        defer {
+            previousViewController = viewController
         }
         
-        previousViewController = viewController
+        guard viewController == previousViewController else { return }
+        
+        guard let navigationController = viewController as? UINavigationController else { return }
+        
+        guard let scrollView = navigationController.viewControllers.first?.view as? UIScrollView else { return }
+        
+        if !scrollView.scrolledToTop {
+            let navigationBarMaxHeight = navigationController.navigationBar.largeTitleHeight
+            scrollView.scrollToTop(maxNavBarHeight: navigationBarMaxHeight)
+        }
         
     }
 }
