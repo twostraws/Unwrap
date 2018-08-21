@@ -19,4 +19,10 @@ class CreditsViewController: UIViewController, Storyboarded {
         let contents = String(bundleName: "Credits.md")
         textView.attributedText = contents.fromSimpleMarkdown()
     }
+
+    override func viewDidLayoutSubviews() {
+        // Set content offset to zero to make sure textview start from the top
+        // when view is laid out.
+        textView.setContentOffset(CGPoint.zero, animated: false)
+    }
 }
