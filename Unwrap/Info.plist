@@ -20,13 +20,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need access to your photo library to save this picture.</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>Challenges</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Today&apos;s Challenge</string>
+			<string>Today's Challenge</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.hackingwithswift.unwrap.challenges</string>
 		</dict>
@@ -51,8 +53,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need access to your photo library to save this picture.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
