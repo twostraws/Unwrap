@@ -6,9 +6,9 @@
     "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>",
     "syntaxHighlighting": true,
     "correct": [
-        "var singers: [\"Taylor\", \"Adele\", \"Justin\"]",
+        "var singers = [\"Taylor\", \"Adele\", \"Justin\"]",
         "var scores: [Int] = [10, 12, 9]",
-        "var averages: [98.5, 97.1, 99.9]",
+        "var averages = [98.5, 97.1, 99.9]",
         "var temperatures = [32.0]",
         "var readings: [Bool] = [false, false, true, false]",
         "var cities: [String] = [\"London\", \"Paris\", \"New York\"]"
