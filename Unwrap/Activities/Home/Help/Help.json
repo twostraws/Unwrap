@@ -26,7 +26,7 @@
 	},
 	{
 		"title": "About this app",
-		"text": "I wrote this app to app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at www.hackingwithswift.com – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.\n\nIf you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from www.github.com/twostraws/Unwrap. Contributions are welcome!",
+		"text": "I wrote this app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at www.hackingwithswift.com – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.\n\nIf you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from www.github.com/twostraws/Unwrap. Contributions are welcome!",
 		"action": ""
 	}
 ]
