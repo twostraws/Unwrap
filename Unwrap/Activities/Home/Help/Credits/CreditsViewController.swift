@@ -21,8 +21,8 @@ class CreditsViewController: UIViewController, Storyboarded {
     }
 
     override func viewDidLayoutSubviews() {
-        // Set content offset to zero to make sure textview start from the top
-        // when view is laid out.
-        textView.setContentOffset(CGPoint.zero, animated: false)
+        // Set content offset to zero to make sure the textview starts from the top
+        // when the view is laid out.
+        textView.setContentOffset(.zero, animated: false)
     }
 }
