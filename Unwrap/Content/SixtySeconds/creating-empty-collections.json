@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are valid in Swift?",
-    "hint": "Arrays and dictionaries can be made in two different ways, for example <code>[Int]<\/code> or <code>Array<Int> both create arrays.",
+    "hint": "Arrays and dictionaries can be made in two different ways, for example <code>[Int]<\/code> or <code>Array<Int><\/code> both create arrays.",
     "syntaxHighlighting": true,
     "correct": [
         "var authorAges = [String: Int]()",
