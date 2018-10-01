@@ -195,6 +195,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.textColor = nil
             cell.detailTextLabel?.text = "\(User.current.streakDays)"
             cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
+            //UITest reading accessibility label and not accessibility identifier in Storyboard
+            cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
         case 1:
@@ -203,6 +205,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.textColor = nil
             cell.detailTextLabel?.text = "\(User.current.streakDays)"
             cell.accessibilityLabel = "Your best streak count is \(User.current.streakDays)"
+            //UITest reading accessibility label and not accessibility identifier in Storyboard
+            cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
         default:
@@ -218,6 +222,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         cell.collectionView.dataSource = badgeDataSource
         cell.collectionView.delegate = badgeDataSource
+        //Storyboard doesn't override isAccessibilityElement for UITesting, setting it here
+        cell.isAccessibilityElement = true
         return cell
     }
 }
