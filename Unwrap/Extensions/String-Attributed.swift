@@ -23,8 +23,8 @@ extension String {
         let scaledBaseFont = metrics.scaledFont(for: baseFont)
         let scaledBoldFont = metrics.scaledFont(for: boldFont)
 
-        let baseAttributes = [NSAttributedStringKey.font: scaledBaseFont]
-        let boldAttributes = [NSAttributedStringKey.font: scaledBoldFont]
+        let baseAttributes = [NSAttributedString.Key.font: scaledBaseFont]
+        let boldAttributes = [NSAttributedString.Key.font: scaledBoldFont]
 
         /// Start with an attributed string of our base text with the base attributes.
         let result = NSMutableAttributedString(string: self, attributes: baseAttributes)

@@ -68,7 +68,7 @@ class RearrangeTheLinesDataSource: NSObject, UITableViewDataSource, UITableViewD
     }
 
     /// Even though this table is editable (so they can move rows), we don't want add/delete icons to appear.
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
     }
 

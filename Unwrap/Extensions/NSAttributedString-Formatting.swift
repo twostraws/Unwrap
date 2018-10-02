@@ -47,8 +47,8 @@ extension NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
 
-        let titleAttributes: [NSAttributedStringKey: Any] = [.font: UIFont.preferredFont(forTextStyle: .body), .paragraphStyle: paragraphStyle]
-        let numberAttributes: [NSAttributedStringKey: Any] = [.font: UIFont.preferredFont(forTextStyle: .largeTitle), .paragraphStyle: paragraphStyle]
+        let titleAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .body), .paragraphStyle: paragraphStyle]
+        let numberAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .largeTitle), .paragraphStyle: paragraphStyle]
 
         let title = NSMutableAttributedString(string: "\(title.uppercased())\n", attributes: titleAttributes)
         let number = NSAttributedString(string: subtitle, attributes: numberAttributes)
