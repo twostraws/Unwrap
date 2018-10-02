@@ -23,8 +23,8 @@ class MainTabBarController: UITabBarController, Storyboarded {
     }
 
     /// If we get some launch options, figure out which one was requested and jump right to the correct tab.
-    func handle(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+    func handle(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             if shortcutItem.type == "com.hackingwithswift.unwrap.challenges" {
                 selectedViewController = challenges.navigationController
             } else if shortcutItem.type == "com.hackingwithswift.unwrap.news" {

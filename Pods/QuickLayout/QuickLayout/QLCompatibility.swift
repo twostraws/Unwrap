@@ -17,6 +17,6 @@ public typealias QLRelation = NSLayoutConstraint.Relation
 import UIKit
 public typealias QLView = UIView
 public typealias QLPriority = UILayoutPriority
-public typealias QLAttribute = NSLayoutAttribute
-public typealias QLRelation = NSLayoutRelation
+public typealias QLAttribute = NSLayoutConstraint.Attribute
+public typealias QLRelation = NSLayoutConstraint.Relation
 #endif
