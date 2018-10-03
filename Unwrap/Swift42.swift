@@ -53,13 +53,12 @@ extension Array {
         return self[randomIndex]
     }
 
-    // Shuffles an array in place.
+    /// Shuffles an array in place.
     mutating func shuffle() {
-        // swiftlint:disable:next force_cast
-        self = (self as NSArray).shuffled() as! [Element]
+        self = shuffled()
     }
 
-    // Shuffles an array and returns the shuffled result.
+    /// Shuffles an array and returns the shuffled result.
     func shuffled() -> [Element] {
         // swiftlint:disable:next force_cast
         return (self as NSArray).shuffled() as! [Element]

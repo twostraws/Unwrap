@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Select all statements that are true about tuples.",
-    "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
+    "hint": "Tuples are fixed in size and the types can't be changed after they are created.",
     "syntaxHighlighting": false,
     "correct": [
         "Tuples are fixed in size.",

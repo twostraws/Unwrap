@@ -56,6 +56,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded, Sequ
 
         currentAnswer = answers.popLast()
         code.text = currentAnswer.text
+        code.contentTextView.isEditable = false
     }
 
     @IBAction func selectAnswer(_ sender: UIButton) {
