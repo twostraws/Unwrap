@@ -27,6 +27,9 @@ extension String {
         var output = self
         output = resolveLetVar(input: output)
 
+        // Replace all instances of TRUE_OR_FALSE with true or false.
+        output = resolveTrueFalse(input: output)
+
         // Replace all instances of RANDOM_INT_NAME with a random integer name.
         let randomIntResult = resolveRandomIntName(input: output)
         output = randomIntResult.output
@@ -43,6 +46,7 @@ extension String {
         output = randomStringResult.output
         names.append(contentsOf: randomStringResult.names)
         namesNatural.append(contentsOf: randomStringResult.namesNatural)
+        
 
         // Replace all instances of RANDOM_STRING_VALUE with a random string from the correct set of options.
 
@@ -59,6 +63,11 @@ extension String {
             output = randomStringValueResult.output
             values.append(contentsOf: randomStringValueResult.values)
         }
+
+        // Replace all instances of RANDOM_BOOL_NAME with a random string name.
+        let randomBoolResult = resolveRandomBoolName(input: output)
+        output = randomBoolResult.output
+        names.append(contentsOf: randomBoolResult.names)
 
         // Replace all instances of RANDOM_OPERATOR with a random sign.
         let randomOperatorResult = resolveRandomOperators(input: output)
@@ -125,6 +134,19 @@ extension String {
 
         return output
     }
+
+    ///  Converts TRUE_OR_FALSE into either "true" or "false"
+    fileprivate func resolveTrueFalse(input: String) -> String {
+        var output = input
+
+        while let truefalseRange = output.range(of: "TRUE_OR_FALSE") {
+            let trueOrFalse = Bool.random() ? "true" : "false"
+            output = output.replacingOccurrences(of: "TRUE_OR_FALSE", with: trueOrFalse, options: [], range: truefalseRange)
+        }
+
+        return output
+    }
+
 
     /// Creates an integer variable with a random name.
     fileprivate func resolveRandomIntName(input: String) -> (output: String, names: [String], namesNatural: [String]) {
@@ -214,6 +236,23 @@ extension String {
         }
 
         return (output, values)
+    }
+
+    /// Creates a bool variable with a random name.
+    fileprivate func resolveRandomBoolName(input: String) -> (output: String, names: [String]) {
+        var output = input
+        var names = [String]()
+
+        while let range = output.range(of: "RANDOM_BOOL_NAME") {
+            // pick out a new random name, making sure we haven't already used it
+            let result = Bool.randomName()
+            if names.contains(result) { continue }
+
+            names.append(result)
+            output = output.replacingOccurrences(of: "RANDOM_BOOL_NAME", with: result, options: [], range: range)
+        }
+
+        return (output, names)
     }
 
     /// Creates a random operator.

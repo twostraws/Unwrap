@@ -58,5 +58,218 @@
 			"NAME_02",
 			"]"
 		]
-	}
+	},
+    {
+        "question": "Write code that prints the numbers 1 through 10.",
+        "existingCode": "",
+        "components": [
+            "for",
+            "number",
+            "in",
+            "1",
+            "...",
+            "10",
+            "{",
+            "print(number)",
+            "}"
+        ]
+    },
+    {
+        "question": "Write code that prints the numbers 2, 4, 6, 8, 10.",
+        "existingCode": "",
+        "components": [
+            "for",
+            "number",
+            "in",
+            "1...10",
+            "{",
+            "if",
+            "number % 2",
+            "== 0",
+            "{",
+            "print(number)",
+            "}",
+            "}"
+        ]
+    },
+    {
+        "question": "Write code that reads the \"name\" key.",
+        "existingCode": "let details = [\"name\": \"Sophie\"]",
+        "components": [
+            "let",
+            "name",
+            "=",
+            "details[",
+            "\"name\"",
+            ",",
+            "default:",
+            "\"Unknown\"",
+            "]"
+        ]
+    },
+    {
+        "question": "Write code that prints a message forever.",
+        "existingCode": "",
+        "components": [
+            "while",
+            "true",
+            "{",
+            "print",
+            "(",
+            "\"Hello!\"",
+            ")",
+            "}"
+        ]
+    },
+    {
+        "question": "Write code that always prints a message.",
+        "existingCode": "",
+        "components": [
+            "if",
+            "10",
+            "<",
+            "20",
+            "{",
+            "print",
+            "(",
+            "\"Operators rock!\"",
+            ")",
+            "}"
+        ]
+    },
+    {
+        "question": "Write code that creates an instance of the <code>earth</code> case.",
+        "existingCode": "enum Planet: Int {\n  case mercury\n  case venus\n  case earth\n}",
+        "components": [
+            "let",
+            "earth",
+            "=",
+            "Planet",
+            "(",
+            "rawValue",
+            ":",
+            "2",
+            ")"
+        ]
+    },
+    {
+        "question": "Write code that creates an instance of the <code>singing</code> case.",
+        "existingCode": "enum Activity {\n  case walking\n  case talking\n  case singing(song: String)\n}",
+        "components": [
+            "let",
+            "activity",
+            "=",
+            "Activity",
+            ".",
+            "singing",
+            "(",
+            "song:",
+            "\"Shake it Off\"",
+            ")"
+        ]
+    },
+    {
+        "question": "Write code that prints \"You win!\".",
+        "existingCode": "let myScore = 5\nlet theirScore = 4",
+        "components": [
+            "if",
+            "myScore",
+            ">",
+            "theirScore",
+            "{",
+            "print",
+            "(",
+            "\"You win!\"",
+            ")",
+            "}"
+        ]
+    },
+    {
+        "question": "Write code that prints 1, 2, 3, 4, 5.",
+        "existingCode": "",
+        "components": [
+            "for",
+            "i",
+            "in",
+            "1...10",
+            "{",
+            "print",
+            "(\"\\(i)\")",
+            "if",
+            "i == 5",
+            "{",
+            "break",
+            "}",
+            "}",
+        ]
+    },
+    {
+        "question": "Create a new constant that subtracts <code>RANDOM_INT_NAME2</code> from <code>NAME_01</code>.",
+        "existingCode": "CONSTANT_OR_VARIABLE NAME_01 = RANDOM_SMALL_INT\nCONSTANT_OR_VARIABLE NAME_02 = RANDOM_SMALL_INT",
+        "components": [
+            "let",
+            "difference",
+            "=",
+            "NAME_01",
+            "-",
+            "NAME_02"
+        ]
+    },
+    {
+        "question": "Write a condition that prints one message when both values are true, and another when at least one of them are false.",
+        "existingCode": "CONSTANT_OR_VARIABLE RANDOM_BOOL_NAME = TRUE_OR_FALSE\nCONSTANT_OR_VARIABLE RANDOM_BOOL_NAME = TRUE_OR_FALSE",
+        "components": [
+            "if",
+            "NAME_0",
+            "&&",
+            "NAME_1 {",
+            "print(\"Both are true.\")",
+            "} else {",
+            "print(\"One or both are false.\")",
+            "}"
+        ]
+    },
+    {
+        "question": "Use the ternary operator to make <code>bothTrue</code> equal to true if both <code>RANDOM_BOOL_NAME</code> and <code>RANDOM_BOOL_NAME</code> are true.",
+        "existingCode": "CONSTANT_OR_VARIABLE NAME_0 = TRUE_OR_FALSE\nCONSTANT_OR_VARIABLE NAME_1 = TRUE_OR_FALSE",
+        "components": [
+            "CONSTANT_OR_VARIABLE",
+            "bothTrue",
+            "=",
+            "NAME_0 &&",
+            "NAME_1",
+            "?",
+            "true",
+            ":",
+            "false"
+        ]
+    },
+    {
+        "question": "Write code that sets <code>remainder</code> to 4.",
+        "existingCode": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = 9\nCONSTANT_OR_VARIABLE split = 5",
+        "components": [
+            "CONSTANT_OR_VARIABLE",
+            "remainder",
+            "=",
+            "NAME_0",
+            "%",
+            "split"
+        ]
+    },
+    {
+        "question": "Write code that creates an empty dictionary called <code>RANDOM_STRING_NAME</code>.",
+        "existingCode": "",
+        "components": [
+            "CONSTANT_OR_VARIABLE",
+            "NAME_0",
+            "=",
+            "[",
+            "String",
+            ":",
+            "String",
+            "]",
+            "("
+            ")"
+        ]
+    },
 ]
