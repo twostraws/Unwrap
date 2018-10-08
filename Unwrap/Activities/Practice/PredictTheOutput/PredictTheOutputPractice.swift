@@ -24,7 +24,7 @@ struct PredictTheOutputPractice: PracticeActivity {
 
     static let name = "Predict the Output"
     static let subtitle = "Read code then predict the output"
-    static let lockedUntil = "Range operators"
+    static let lockedUntil = "Functions: Summary"
     static let icon = UIImage(bundleName: "Practice-PredictTheOutput")
 
     init() {

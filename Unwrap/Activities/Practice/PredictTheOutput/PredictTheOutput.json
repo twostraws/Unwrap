@@ -8,6 +8,33 @@
 		]
 	},
 
+    {
+        "code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = \"RANDOM_SMALL_INT\"\nprint(\"NAME_NATURAL_0|capitalizedFirst doubled is \\(NAME_0 * 2)\")",
+        "answers": [
+            {
+                "text": "NAME_NATURAL_0|capitalizedFirst doubled is ${VALUE_0 * 2}"
+            }
+        ]
+    },
+
+    {
+        "code": "var RANDOM_INT_NAMEValue = RANDOM_MEDIUM_INT\n\nfunc reset(NAME_0: inout Int) {\n\tNAME_0 = 0\n}\n\nreset(NAME_0: &NAME_0Value)\n\nprint(\"NAME_NATURAL_0|capitalizedFirst is now \\(NAME_0Value)\")",
+        "answers": [
+            {
+                "text": "NAME_NATURAL_0|capitalizedFirst is now 0"
+            }
+        ]
+    },
+
+    {
+        "code": "let RANDOM_INT_NAME1 = RANDOM_TINY_INT\nlet RANDOM_INT_NAME2 = RANDOM_TINY_INT\nlet RANDOM_INT_NAME3 = RANDOM_TINY_INT\n\nlet sum = NAME_01 + NAME_02 + NAME_03\nprint(\"The sum is \\(sum)\")",
+        "answers": [
+            {
+                "text": "The sum is ${VALUE_0 + VALUE_1 + VALUE_2}"
+            }
+        ]
+    },
+
 	{
 		"code": "var RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\nNAME_0 = \"RANDOM_STRING_VALUE_0\"\nprint(\"NAME_NATURAL_0|capitalizedFirst is \\(NAME_0)\")",
 		"answers": [
@@ -16,6 +43,63 @@
 			}
 		]
 	},
+
+    {
+        "code": "let RANDOM_STRING_NAMEDict = [String: String]()\nlet selected = allValues[\"test\", default: \"Unknown\"]\nprint(selected)",
+        "answers": [
+            {
+                "text": "Unknown"
+            }
+        ]
+    },
+
+    {
+        "code": "var counter = 0\n\nfor i in 1...10 {\n\tif i == RANDOM_SMALL_INT {\n\t\tbreak\n\t}\n\n\tcounter += 1\n}\n\nprint(\"Counted to \\(counter)\")",
+        "answers": [
+            {
+                "text": "Counted to ${VALUE_0 - 1}"
+            }
+        ]
+    },
+
+    {
+        "code": "let score = RANDOM_MEDIUM_INT\n\nswitch score {\ncase 0...50:\n\tprint(\"Fail\")\ncase 51...70:\n\tprint(\"Pass\")\ncase 71...85:\n\tprint(\"Merit\")\ndefault:\n\tprint(\"Distinction\")\n}",
+        "answers": [
+            {
+                "conditions": [
+                    {
+                        "left": "VALUE_0",
+                        "check": "<=",
+                        "right": "50"
+                    }
+                ],
+                "text": "Fail"
+            },
+            {
+                "conditions": [
+                    {
+                        "left": "VALUE_0",
+                        "check": "<=",
+                        "right": "70"
+                    }
+                ],
+                "text": "Pass"
+            },
+            {
+                "conditions": [
+                    {
+                        "left": "VALUE_0",
+                        "check": "<=",
+                        "right": "85"
+                    }
+                ],
+                "text": "Merit"
+            },
+            {
+                "text": "Distinction"
+            }
+        ]
+    },
 
 	{
 		"code": "var RANDOM_STRING_NAME = \"RANDOM_STRING_VALUE_0\"\n\nif NAME_0.count RANDOM_OPERATOR RANDOM_SMALL_INT {\n\tNAME_0 = \"RANDOM_STRING_VALUE_0\"\n}\n\nprint(\"NAME_NATURAL_0|capitalizedFirst is \\(NAME_0)\")",
@@ -37,7 +121,7 @@
 	},
 
 	{
-		"code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\nCONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\n\nCONSTANT_OR_VARIABLE multiplied = NAME_0 * NAME_1\n\nif multiplied % 2 == 0 {\n\tprint(\"Even number\")\n} else {\n\n\tprint(\"Odd number\")\n}",
+		"code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\nCONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\n\nCONSTANT_OR_VARIABLE multiplied = NAME_0 * NAME_1\n\nif multiplied % 2 == 0 {\n\tprint(\"Even number\")\n} else {\n\tprint(\"Odd number\")\n}",
 		"answers": [
 			{
 				"conditions": [

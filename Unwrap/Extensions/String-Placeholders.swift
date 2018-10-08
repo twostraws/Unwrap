@@ -36,10 +36,20 @@ extension String {
         names.append(contentsOf: randomIntResult.names)
         namesNatural.append(contentsOf: randomIntResult.namesNatural)
 
+        // Replace all instances of RANDOM_MEDIUM_INT with a number between 1 and 100.
+        let randomMediumIntResult = resolveRandomInt(input: output, search: "MEDIUM", numberRange: 1...100)
+        output = randomMediumIntResult.output
+        values.append(contentsOf: randomMediumIntResult.values)
+
         // Replace all instances of RANDOM_SMALL_INT with a number between 1 and 10.
-        let randomSmallIntResult = resolveRandomSmallInt(input: output)
+        let randomSmallIntResult = resolveRandomInt(input: output, search: "SMALL", numberRange: 1...10)
         output = randomSmallIntResult.output
         values.append(contentsOf: randomSmallIntResult.values)
+
+        // Replace all instances of RANDOM_TINY_INT with a number between 1 and 3.
+        let randomTinyIntResult = resolveRandomInt(input: output, search: "TINY", numberRange: 1...3)
+        output = randomTinyIntResult.output
+        values.append(contentsOf: randomTinyIntResult.values)
 
         // Replace all instances of RANDOM_STRING_NAME with a random string name.
         let randomStringResult = resolveRandomStringName(input: output)
@@ -168,14 +178,15 @@ extension String {
     }
 
     /// Fills a placeholder with a random value between 1 and 9.
-    fileprivate func resolveRandomSmallInt(input: String) -> (output: String, values: [String]) {
+    fileprivate func resolveRandomInt(input: String, search: String, numberRange: ClosedRange<Int>) -> (output: String, values: [String]) {
         var output = input
         var values = [String]()
+        let searchString = "RANDOM_\(search)_INT"
 
-        while let range = output.range(of: "RANDOM_SMALL_INT") {
-            let randomNumber = String(Int.random(in: 1...9))
+        while let range = output.range(of: searchString) {
+            let randomNumber = String(Int.random(in: numberRange))
             values.append(randomNumber)
-            output = output.replacingOccurrences(of: "RANDOM_SMALL_INT", with: randomNumber, options: [], range: range)
+            output = output.replacingOccurrences(of: searchString, with: randomNumber, options: [], range: range)
         }
 
         return (output, values)
