@@ -3,6 +3,8 @@
 
 Unwrap was developed by Paul Hudson from Hacking with Swift (https://www.hackingwithswift.com). If you have any feedback or questions you're welcome to email me at paul@hackingwithswift.com or tweet me @twostraws.
 
+Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries. Hacking with Swift (c) 2018 Paul Hudson.
+
 Unwrap draws on several open source libraries, which are listed below along with the licenses. 
 
 
