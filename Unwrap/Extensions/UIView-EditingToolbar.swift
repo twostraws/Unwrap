@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     /// Creates a UIView containing toolbars with common Swift syntax characters. Should be attached to any text entry fields where users can type code.
-    static func editingToolbar(target: Any?, action: Selector?) -> UIView {
+    static func editingToolbar(target: Any?, action: Selector?) -> EditingToolbarView {
         // We want two rows of characters
         let rows = [
             "[]{}()<>:.",
@@ -18,7 +18,7 @@ extension UIView {
         ]
 
         // Wrap our toolbars into into a single UIView that we can return.
-        let wrapperView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: rows.count * 44))
+        let wrapperView = EditingToolbarView(frame: CGRect(x: 0, y: 0, width: 320, height: rows.count * 44))
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
 
         var toolbars = [String: Any]()
@@ -41,6 +41,7 @@ extension UIView {
                 let button = UIBarButtonItem(title: stringChar, style: .plain, target: target, action: action)
                 button.tag = numericCast(UInt8(ascii: stringChar.unicodeScalars[stringChar.startIndex]))
                 button.setTitleTextAttributes(buttonAttributes, for: .normal)
+                button.setTitleTextAttributes(buttonAttributes, for: .highlighted)
                 buttons.append(button)
                 buttons.append(spacer)
             }

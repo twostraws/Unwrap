@@ -102,6 +102,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
         guard let value = UnicodeScalar(sender.tag) else { return }
         let string = String(value)
         textView.insertText(string)
+        UIDevice.current.playInputClick()
     }
 }
 
