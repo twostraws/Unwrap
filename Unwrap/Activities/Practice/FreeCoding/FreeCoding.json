@@ -1,7 +1,7 @@
 [
 	{
 		"question": "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use.",
-		"hint": "If you make both strings uppercased using <code>lowercased()</code> you can compare the lowercased versions.",
+		"hint": "If you make both strings lowercased using <code>lowercased()</code> you can compare the lowercased versions.",
 		"startingCode": "",
 		"answers": [
 			"func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
