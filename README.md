@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://www.hackingwithswift.com/files/unwrap/logo.png" alt="Unwrap logo" width="614" height="171" />
+    <img src="https://www.hackingwithswift.com/files/unwrap/logo.png" alt="Unwrap logo" width="614" maxHeight="171" />
 </p>
 
 <p align="center">
