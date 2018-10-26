@@ -160,6 +160,10 @@
 		51CC139D2065AB8500F37A67 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC139C2065AB8500F37A67 /* GradientView.swift */; };
 		51CC139F2065AE9000F37A67 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC139E2065AE9000F37A67 /* Coordinator.swift */; };
 		51CC13A12065B20500F37A67 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13A02065B20500F37A67 /* Storyboarded.swift */; };
+		51D19DB921829DB200160226 /* combining-operators.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB621829DB100160226 /* combining-operators.mp4 */; };
+		51D19DBA21829DB200160226 /* combining-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB721829DB200160226 /* combining-operators.html */; };
+		51D19DBB21829DB200160226 /* combining-operators.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB821829DB200160226 /* combining-operators.json */; };
+		51D19DBD2182A13300160226 /* combining-operators.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DBC2182A13200160226 /* combining-operators.png */; };
 		51D8FE7120ED3879004DFF83 /* TapToCodeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */; };
 		51D8FE7320ED3BF6004DFF83 /* TapToCodePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */; };
 		51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D8FE7420EE040F004DFF83 /* TapToCode.json */; };
@@ -757,6 +761,10 @@
 		51CC139C2065AB8500F37A67 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		51CC139E2065AE9000F37A67 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		51CC13A02065B20500F37A67 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		51D19DB621829DB100160226 /* combining-operators.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "combining-operators.mp4"; sourceTree = "<group>"; };
+		51D19DB721829DB200160226 /* combining-operators.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "combining-operators.html"; sourceTree = "<group>"; };
+		51D19DB821829DB200160226 /* combining-operators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "combining-operators.json"; sourceTree = "<group>"; };
+		51D19DBC2182A13200160226 /* combining-operators.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combining-operators.png"; sourceTree = "<group>"; };
 		51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodeQuestion.swift; sourceTree = "<group>"; };
 		51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodePractice.swift; sourceTree = "<group>"; };
 		51D8FE7420EE040F004DFF83 /* TapToCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapToCode.json; sourceTree = "<group>"; };
@@ -1665,6 +1673,10 @@
 			isa = PBXGroup;
 			children = (
 				5156459720E116EE00CED877 /* Chapters.json */,
+				51D19DBC2182A13200160226 /* combining-operators.png */,
+				51D19DB721829DB200160226 /* combining-operators.html */,
+				51D19DB821829DB200160226 /* combining-operators.json */,
+				51D19DB621829DB100160226 /* combining-operators.mp4 */,
 				51FE120F20E25F1000F29889 /* complex-types-summary.json */,
 				51FE121020E25F1000F29889 /* copying-objects.mp4 */,
 				51FE121120E25F1000F29889 /* while-loops.png */,
@@ -2248,6 +2260,7 @@
 				51FE13DC20E25F1200F29889 /* creating-your-own-classes.html in Resources */,
 				51FE145A20E25F1200F29889 /* constants.png in Resources */,
 				51FE13C220E25F1200F29889 /* string-interpolation.png in Resources */,
+				51D19DBA21829DB200160226 /* combining-operators.html in Resources */,
 				51FE13C320E25F1200F29889 /* variadic-functions.json in Resources */,
 				51FE14B920E25F1200F29889 /* compound-assignment-operators.mp4 in Resources */,
 				5189D9D920EA8E9A00E6E1D3 /* FreeCoding.json in Resources */,
@@ -2281,6 +2294,7 @@
 				51FE14A220E25F1200F29889 /* omitting-parameter-labels.png in Resources */,
 				51FE13A620E25F1100F29889 /* optional-try.html in Resources */,
 				51FE13D920E25F1200F29889 /* strings-and-integers.mp4 in Resources */,
+				51D19DB921829DB200160226 /* combining-operators.mp4 in Resources */,
 				51FE139B20E25F1100F29889 /* constants.json in Resources */,
 				51FE140420E25F1200F29889 /* protocols-and-extensions-summary.html in Resources */,
 				51FE14F920E25F1200F29889 /* unwrapping-optionals.html in Resources */,
@@ -2345,6 +2359,7 @@
 				51FE145420E25F1200F29889 /* comparison-operators.png in Resources */,
 				51FE14E920E25F1200F29889 /* protocol-oriented-programming.html in Resources */,
 				51FA55D121186D6700C38188 /* where-now.json in Resources */,
+				51D19DBB21829DB200160226 /* combining-operators.json in Resources */,
 				51FE13F520E25F1200F29889 /* dictionary-default-values.png in Resources */,
 				51FE141F20E25F1200F29889 /* handling-missing-data.html in Resources */,
 				51FE13FC20E25F1200F29889 /* range-operators.png in Resources */,
@@ -2543,6 +2558,7 @@
 				51FE14B020E25F1200F29889 /* closures-summary.png in Resources */,
 				51FE14D520E25F1200F29889 /* final-classes.mp4 in Resources */,
 				51FE14DC20E25F1200F29889 /* trailing-closure-syntax.html in Resources */,
+				51D19DBD2182A13300160226 /* combining-operators.png in Resources */,
 				51FE14F220E25F1200F29889 /* type-annotations.json in Resources */,
 				51FE151020E25F1200F29889 /* typecasting.html in Resources */,
 				51FE142A20E25F1200F29889 /* optionals-summary.mp4 in Resources */,

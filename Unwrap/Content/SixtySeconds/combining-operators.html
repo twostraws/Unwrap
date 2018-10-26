@@ -1,0 +1,25 @@
+<p>Swift has two special operators that let us combine conditions together: they are <code>&amp;&amp;</code> (pronounced “and”) and <code>||</code> (pronounced “or”).</p>
+<p>For example, we could check that the age of two people are both over a certain value like this:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">let</span> age1 <span class="operator">=</span> <span class="number">12</span></p>
+<p><span class="keyword">let</span> age2 <span class="operator">=</span> <span class="number">21</span></p>
+<p><span class="keyword">if</span> age1 <span class="operator">&gt;</span> <span class="number">18</span> <span class="operator">&amp;&amp;</span> age2 <span class="operator">&gt;</span> <span class="number">18</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"Both are over 18"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>That <code>print()</code> call will only happen if both ages are over 18, which they aren’t. In fact, Swift won’t even bother checking the value of <code>age2</code> because it can see that <code>age1</code> already failed the test.</p>
+<p>The alternative to <code>&amp;&amp;</code> is <code>||</code>, which evaluates as true if either item passes the test. For example we could print a message if either age is over 18:</p>
+<pre class="code">
+<p></p>
+<p><span class="keyword">if</span> age1 <span class="operator">&gt;</span> <span class="number">18</span> <span class="operator">||</span> age2 <span class="operator">&gt;</span> <span class="number">18</span> <span class="punctuation">{</span></p>
+<p>  <span class="function">print</span><span class="punctuation">(</span><span class="string">"One of them is over 18"</span><span class="punctuation">)</span></p>
+<p><span class="punctuation">}</span></p>
+<p></p>
+</pre>
+
+<p style="height: 0px; margin-bottom: 0px;"></p>
+<p>You can use <code>&amp;&amp;</code> and <code>||</code> more than once in a single condition, but don’t make things too complicated otherwise it can be hard to read!</p>

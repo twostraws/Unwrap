@@ -1,0 +1,24 @@
+{
+    "title": "Combining operators",
+    "postscript": "",
+    "reviewType": "singleSelection",
+    "question": "This code will print a message – true or false?",
+    "hint": "Remember that both sides of <code>&&</code> must be true in order for the whole condition to be true.",
+    "syntaxHighlighting": true,
+    "correct": [
+        "let a = true\nlet b = true\n\nif a && b {\n\tprint(\"Hello, Swift!\")\n}",
+        "let a = true\nlet b = false\n\nif a || b {\n\tprint(\"Hello, Swift!\")\n}",
+        "let a = 10\nlet b = 10\n\nif a >= 10 && b <= 10 {\n\tprint(\"Hello, Swift!\")\n}\n",
+        "let test = false\n\nif test == false {\n\tprint(\"Hello, Swift!\")\n}",
+        "let name1 = \"Charlotte\"\nlet name2 = \"Sophie\"\n\nif name1 == \"Paul\" || name2 == \"Sophie\" {\n\tprint(\"Hello, Swift!\")\n}",
+        "let age1 = 18\nlet age2 = 21\n\nif age1 >= 18 || age1 <= 18 {\n\tprint(\"Hello, Swift!\")\n}",
+    ],
+    "wrong": [
+        "let age1 = 18\nlet age2 = 21\n\nif age1 > 18 || age1 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
+        "let score1 = 23\nlet score2 = 18\n\nif score1 > 18 | score2 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
+        "let rating = \"5\"\n\nif rating > 4 {\n\tprint(\"Hello, Swift!\")\n}",
+        "let average1 = 5.0\nlet average2 = 4.0\n\nif average1 > 5.0 && average2 > 4.0 {\n\tprint(\"Hello, Swift!\")\n}",
+        "let loggedIn = true\nlet authorized = false\n\nif loggedIn && authorized {\n\tprint(\"Hello, Swift!\")\n}",
+        "let loggedIn = true\nlet authorized = false\n\nif loggedIn == false && authorized == false {\n\tprint(\"Hello, Swift!\")\n}"
+    ]
+}
