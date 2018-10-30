@@ -33,6 +33,10 @@
 		511FD6C02107425F0023E92C /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6BF2107425F0023E92C /* TappableTextView.swift */; };
 		511FD6C2210746CC0023E92C /* TappableTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6C1210746CC0023E92C /* TappableTextViewDelegate.swift */; };
 		511FD6C62107CE9C0023E92C /* AlertHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6C52107CE9C0023E92C /* AlertHandling.swift */; };
+		51259E8B21885FC90092D96B /* combining-conditions.json in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8721885FC80092D96B /* combining-conditions.json */; };
+		51259E8C21885FC90092D96B /* combining-conditions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8821885FC90092D96B /* combining-conditions.mp4 */; };
+		51259E8D21885FC90092D96B /* combining-conditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8921885FC90092D96B /* combining-conditions.html */; };
+		51259E8E21885FC90092D96B /* combining-conditions.png in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8A21885FC90092D96B /* combining-conditions.png */; };
 		5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */; };
 		5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153F49120EF7430009E829D /* LearnCoordinator.swift */; };
 		5153F49420EF761B009E829D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153F49320EF761B009E829D /* HomeCoordinator.swift */; };
@@ -160,10 +164,6 @@
 		51CC139D2065AB8500F37A67 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC139C2065AB8500F37A67 /* GradientView.swift */; };
 		51CC139F2065AE9000F37A67 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC139E2065AE9000F37A67 /* Coordinator.swift */; };
 		51CC13A12065B20500F37A67 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13A02065B20500F37A67 /* Storyboarded.swift */; };
-		51D19DB921829DB200160226 /* combining-operators.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB621829DB100160226 /* combining-operators.mp4 */; };
-		51D19DBA21829DB200160226 /* combining-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB721829DB200160226 /* combining-operators.html */; };
-		51D19DBB21829DB200160226 /* combining-operators.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DB821829DB200160226 /* combining-operators.json */; };
-		51D19DBD2182A13300160226 /* combining-operators.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D19DBC2182A13200160226 /* combining-operators.png */; };
 		51D8FE7120ED3879004DFF83 /* TapToCodeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */; };
 		51D8FE7320ED3BF6004DFF83 /* TapToCodePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */; };
 		51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D8FE7420EE040F004DFF83 /* TapToCode.json */; };
@@ -628,6 +628,10 @@
 		511FD6BF2107425F0023E92C /* TappableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
 		511FD6C1210746CC0023E92C /* TappableTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableTextViewDelegate.swift; sourceTree = "<group>"; };
 		511FD6C52107CE9C0023E92C /* AlertHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandling.swift; sourceTree = "<group>"; };
+		51259E8721885FC80092D96B /* combining-conditions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "combining-conditions.json"; sourceTree = "<group>"; };
+		51259E8821885FC90092D96B /* combining-conditions.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "combining-conditions.mp4"; sourceTree = "<group>"; };
+		51259E8921885FC90092D96B /* combining-conditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "combining-conditions.html"; sourceTree = "<group>"; };
+		51259E8A21885FC90092D96B /* combining-conditions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combining-conditions.png"; sourceTree = "<group>"; };
 		5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectReviewViewController.swift; sourceTree = "<group>"; };
 		5153F49120EF7430009E829D /* LearnCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCoordinator.swift; sourceTree = "<group>"; };
 		5153F49320EF761B009E829D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -761,10 +765,6 @@
 		51CC139C2065AB8500F37A67 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		51CC139E2065AE9000F37A67 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		51CC13A02065B20500F37A67 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		51D19DB621829DB100160226 /* combining-operators.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "combining-operators.mp4"; sourceTree = "<group>"; };
-		51D19DB721829DB200160226 /* combining-operators.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "combining-operators.html"; sourceTree = "<group>"; };
-		51D19DB821829DB200160226 /* combining-operators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "combining-operators.json"; sourceTree = "<group>"; };
-		51D19DBC2182A13200160226 /* combining-operators.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combining-operators.png"; sourceTree = "<group>"; };
 		51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodeQuestion.swift; sourceTree = "<group>"; };
 		51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodePractice.swift; sourceTree = "<group>"; };
 		51D8FE7420EE040F004DFF83 /* TapToCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapToCode.json; sourceTree = "<group>"; };
@@ -1673,10 +1673,10 @@
 			isa = PBXGroup;
 			children = (
 				5156459720E116EE00CED877 /* Chapters.json */,
-				51D19DBC2182A13200160226 /* combining-operators.png */,
-				51D19DB721829DB200160226 /* combining-operators.html */,
-				51D19DB821829DB200160226 /* combining-operators.json */,
-				51D19DB621829DB100160226 /* combining-operators.mp4 */,
+				51259E8921885FC90092D96B /* combining-conditions.html */,
+				51259E8721885FC80092D96B /* combining-conditions.json */,
+				51259E8821885FC90092D96B /* combining-conditions.mp4 */,
+				51259E8A21885FC90092D96B /* combining-conditions.png */,
 				51FE120F20E25F1000F29889 /* complex-types-summary.json */,
 				51FE121020E25F1000F29889 /* copying-objects.mp4 */,
 				51FE121120E25F1000F29889 /* while-loops.png */,
@@ -2214,6 +2214,7 @@
 				51FE13BE20E25F1200F29889 /* access-control.mp4 in Resources */,
 				51FE146320E25F1200F29889 /* implicitly-unwrapped-optionals.png in Resources */,
 				51FE13B020E25F1200F29889 /* computed-properties.json in Resources */,
+				51259E8E21885FC90092D96B /* combining-conditions.png in Resources */,
 				51FE150620E25F1200F29889 /* accepting-parameters.json in Resources */,
 				51FE142920E25F1200F29889 /* conditions.png in Resources */,
 				51FE147520E25F1200F29889 /* protocols-and-extensions-summary.mp4 in Resources */,
@@ -2260,7 +2261,6 @@
 				51FE13DC20E25F1200F29889 /* creating-your-own-classes.html in Resources */,
 				51FE145A20E25F1200F29889 /* constants.png in Resources */,
 				51FE13C220E25F1200F29889 /* string-interpolation.png in Resources */,
-				51D19DBA21829DB200160226 /* combining-operators.html in Resources */,
 				51FE13C320E25F1200F29889 /* variadic-functions.json in Resources */,
 				51FE14B920E25F1200F29889 /* compound-assignment-operators.mp4 in Resources */,
 				5189D9D920EA8E9A00E6E1D3 /* FreeCoding.json in Resources */,
@@ -2294,7 +2294,6 @@
 				51FE14A220E25F1200F29889 /* omitting-parameter-labels.png in Resources */,
 				51FE13A620E25F1100F29889 /* optional-try.html in Resources */,
 				51FE13D920E25F1200F29889 /* strings-and-integers.mp4 in Resources */,
-				51D19DB921829DB200160226 /* combining-operators.mp4 in Resources */,
 				51FE139B20E25F1100F29889 /* constants.json in Resources */,
 				51FE140420E25F1200F29889 /* protocols-and-extensions-summary.html in Resources */,
 				51FE14F920E25F1200F29889 /* unwrapping-optionals.html in Resources */,
@@ -2345,6 +2344,7 @@
 				51A6D65820E6557000FB6B46 /* SpotTheError-7.txt in Resources */,
 				51FE144920E25F1200F29889 /* protocols.mp4 in Resources */,
 				51FE143F20E25F1200F29889 /* accepting-parameters.png in Resources */,
+				51259E8C21885FC90092D96B /* combining-conditions.mp4 in Resources */,
 				51FE143320E25F1200F29889 /* returning-values.json in Resources */,
 				51A6D65120E6557000FB6B46 /* SpotTheError-9.txt in Resources */,
 				51FE13CC20E25F1200F29889 /* operator-overloading.png in Resources */,
@@ -2359,7 +2359,6 @@
 				51FE145420E25F1200F29889 /* comparison-operators.png in Resources */,
 				51FE14E920E25F1200F29889 /* protocol-oriented-programming.html in Resources */,
 				51FA55D121186D6700C38188 /* where-now.json in Resources */,
-				51D19DBB21829DB200160226 /* combining-operators.json in Resources */,
 				51FE13F520E25F1200F29889 /* dictionary-default-values.png in Resources */,
 				51FE141F20E25F1200F29889 /* handling-missing-data.html in Resources */,
 				51FE13FC20E25F1200F29889 /* range-operators.png in Resources */,
@@ -2390,6 +2389,7 @@
 				51FE150A20E25F1200F29889 /* deinitializers.json in Resources */,
 				51FE13EC20E25F1200F29889 /* structs-summary.json in Resources */,
 				51FE14DE20E25F1200F29889 /* copying-objects.png in Resources */,
+				51259E8D21885FC90092D96B /* combining-conditions.html in Resources */,
 				51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */,
 				51FE13D120E25F1200F29889 /* multi-line-strings.mp4 in Resources */,
 				51FE13DD20E25F1200F29889 /* property-observers.json in Resources */,
@@ -2550,6 +2550,7 @@
 				51FE149E20E25F1200F29889 /* operator-overloading.json in Resources */,
 				51FE139E20E25F1100F29889 /* functions-summary.png in Resources */,
 				51FE13A820E25F1100F29889 /* enum-raw-values.png in Resources */,
+				51259E8B21885FC90092D96B /* combining-conditions.json in Resources */,
 				51FE14C420E25F1200F29889 /* returning-values-from-a-closure.mp4 in Resources */,
 				5156459A20E116EE00CED877 /* Assets.xcassets in Resources */,
 				51FE149D20E25F1200F29889 /* enum-associated-values.mp4 in Resources */,
@@ -2558,7 +2559,6 @@
 				51FE14B020E25F1200F29889 /* closures-summary.png in Resources */,
 				51FE14D520E25F1200F29889 /* final-classes.mp4 in Resources */,
 				51FE14DC20E25F1200F29889 /* trailing-closure-syntax.html in Resources */,
-				51D19DBD2182A13300160226 /* combining-operators.png in Resources */,
 				51FE14F220E25F1200F29889 /* type-annotations.json in Resources */,
 				51FE151020E25F1200F29889 /* typecasting.html in Resources */,
 				51FE142A20E25F1200F29889 /* optionals-summary.mp4 in Resources */,
@@ -2987,6 +2987,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -3040,6 +3041,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -3058,7 +3060,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -3077,7 +3078,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -3098,7 +3098,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
 			};
@@ -3120,7 +3119,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
 			};
@@ -3141,7 +3139,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Unwrap;
 			};
@@ -3162,7 +3159,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Unwrap;
 			};

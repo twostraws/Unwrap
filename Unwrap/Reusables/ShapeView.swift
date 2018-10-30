@@ -56,8 +56,8 @@ class ShapeView: UIView {
         animation.fromValue = 0
         animation.toValue = 1
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        animation.fillMode = kCAFillModeBackwards
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        animation.fillMode = .backwards
         layer.add(animation, forKey: "line")
 
         layer.strokeEnd = 1
@@ -74,9 +74,9 @@ class ShapeView: UIView {
         animation.values = values
         animation.keyTimes = values
         animation.duration = duration
-        animation.timingFunctions = (1...values.count).map { _ in CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut) }
+        animation.timingFunctions = (1...values.count).map { _ in CAMediaTimingFunction(name: .easeInEaseOut) }
 
-        animation.fillMode = kCAFillModeBackwards
+        animation.fillMode = .backwards
         layer.add(animation, forKey: "line")
 
         layer.strokeEnd = 1

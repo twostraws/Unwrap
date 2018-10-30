@@ -218,7 +218,7 @@ final class User: Codable {
         let notification = Notification(name: .userStatusChanged)
 
         // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
-        NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.commonModes])
+        NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
 
         // write the change out to disk at the next available chance; again, we don't want to do this immediately to avoid reading and writing at the same time
         DispatchQueue.main.async {

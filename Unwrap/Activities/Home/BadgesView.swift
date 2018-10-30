@@ -13,7 +13,7 @@ class BadgesView: UIView {
     var collectionView: UICollectionView!
 
     override var intrinsicContentSize: CGSize {
-        let size = CGSize(width: UIViewNoIntrinsicMetric, height: collectionView.collectionViewLayout.collectionViewContentSize.height)
+        let size = CGSize(width: UIView.noIntrinsicMetric, height: collectionView.collectionViewLayout.collectionViewContentSize.height)
         return size
     }
 }

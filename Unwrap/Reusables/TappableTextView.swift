@@ -52,7 +52,7 @@ class TappableTextView: UITextView, UITextViewDelegate {
         guard let textPosition = closestPosition(to: location) else { return }
         guard let attributes = textStyling(at: textPosition, in: .backward) else { return }
 
-        if let url = attributes[NSAttributedStringKey.link.rawValue] as? URL {
+        if let url = attributes[NSAttributedString.Key.link] as? URL {
             linkDelegate?.linkTapped(url)
         }
     }

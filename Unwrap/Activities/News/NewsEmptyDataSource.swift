@@ -16,13 +16,13 @@ class NewsEmptyDataSource: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
 
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "News"
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "We couldn't download the news right now. Please tap the button below to try again."
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
@@ -30,9 +30,9 @@ class NewsEmptyDataSource: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
         return UIImage(bundleName: "News-Placeholder")
     }
 
-    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> NSAttributedString? {
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
         let str = "Try Again"
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .callout)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 

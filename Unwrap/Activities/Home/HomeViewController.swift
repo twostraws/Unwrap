@@ -61,7 +61,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
             // Using 0 for a section height doesn't work, so this value is effectively 0.
             return CGFloat.leastNonzeroMagnitude
         } else {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
     }
 

@@ -88,10 +88,10 @@ class HomeCoordinator: Coordinator, AlertShowing {
     }
 
     /// We need to catch them sharing their score successfully, because doing it at least once to Facebook or Twitter unlocks a badge.
-    func handleScoreSharingResult(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) {
+    func handleScoreSharingResult(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) {
         guard completed == true else { return }
 
-        if activityType == UIActivityType.postToFacebook || activityType == UIActivityType.postToTwitter {
+        if activityType == .postToFacebook || activityType == .postToTwitter {
             User.current.sharedScore()
         }
     }
