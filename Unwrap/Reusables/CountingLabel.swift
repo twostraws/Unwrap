@@ -47,23 +47,20 @@ class CountingLabel: UILabel {
 
     /// Called every time a frame draw happens thanks to CADisplayLink, so its our chance to adjust our current value towards our target value, then update our label.
     @objc func updateCount() {
-        
         if targetValue > fromValue {
             // We need to add numbers to reach our target.
             currentValue += changeSpeed
-            
+
             if currentValue > targetValue {
                 stopWorking()
             }
-            
         } else {
             // We need to subtract numbers to reach our target.
             currentValue -= changeSpeed
-            
+
             if currentValue < targetValue {
                 stopWorking()
             }
-            
         }
 
         // Redraw our label contents using the new currentValue.
@@ -73,7 +70,7 @@ class CountingLabel: UILabel {
             attributedText = NSAttributedString.makeTitle(title, subtitle: currentValue.formatted)
         }
     }
-    
+
     // Target reached; clamp it and stop doing more work.
     private func stopWorking() {
         currentValue = targetValue
