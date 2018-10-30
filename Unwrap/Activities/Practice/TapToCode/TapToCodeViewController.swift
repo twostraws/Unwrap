@@ -75,7 +75,8 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
         prompt.attributedText = dataSource.question.fromSimpleHTML()
 
         // pull the existing code from the data source for the same reason
-        existingCode.text = dataSource.existingCode
+        existingCode.attributedText = dataSource.existingCode.syntaxHighlighted()
+        existingCode.font = Unwrap.codeFont
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
