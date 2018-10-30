@@ -81,19 +81,19 @@ public struct EKProperty {
         public var size: CGSize?
     
         /** Content mode */
-        public var contentMode: UIViewContentMode
+        public var contentMode: UIView.ContentMode
         
         /** Shuld the image can rounded */
         public var makeRound: Bool
     
-        public init(image: UIImage, size: CGSize? = nil, contentMode: UIViewContentMode = .scaleToFill, makeRound: Bool = false) {
+        public init(image: UIImage, size: CGSize? = nil, contentMode: UIView.ContentMode = .scaleToFill, makeRound: Bool = false) {
             self.image = image
             self.size = size
             self.contentMode = contentMode
             self.makeRound = makeRound
         }
         
-        public init(imageName: String, size: CGSize? = nil, contentMode: UIViewContentMode = .scaleToFill, makeRound: Bool = false) {
+        public init(imageName: String, size: CGSize? = nil, contentMode: UIView.ContentMode = .scaleToFill, makeRound: Bool = false) {
             self.init(image: UIImage(named: imageName)!, size: size, contentMode: contentMode, makeRound: makeRound)
         }
         
@@ -112,7 +112,7 @@ public struct EKProperty {
     public struct TextFieldContent {
         
         // NOTE: Intentionally a reference type
-        class Output {
+        class ContentWrapper {
             var text = ""
         }
         
@@ -122,9 +122,14 @@ public struct EKProperty {
         public var placeholder: LabelContent
         public var textStyle: LabelStyle
         public var bottomBorderColor: UIColor
-        let outputWrapper = Output()
-        public var output: String {
-            return outputWrapper.text
+        let contentWrapper = ContentWrapper()
+        public var textContent: String {
+            set {
+                contentWrapper.text = newValue
+            }
+            get {
+                return contentWrapper.text
+            }
         }
         
         public init(keyboardType: UIKeyboardType = .default, placeholder: LabelContent, textStyle: LabelStyle, isSecure: Bool = false, leadingImage: UIImage? = nil, bottomBorderColor: UIColor = .clear) {

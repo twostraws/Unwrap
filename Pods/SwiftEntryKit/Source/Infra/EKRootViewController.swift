@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol EntryPresenterDelegate: class {
+    var isResponsiveToTouches: Bool { set get }
+    func displayPendingEntryIfNeeded()
+}
+
 class EKRootViewController: UIViewController {
     
     // MARK: - Props
     
+    private unowned let delegate: EntryPresenterDelegate
+    
     private var lastAttributes: EKAttributes!
-    private var tapGestureRecognizer: UITapGestureRecognizer!
     
     private let backgroundView = EKBackgroundView()
 
@@ -32,15 +38,34 @@ class EKRootViewController: UIViewController {
         }
     }
     
+    /*
+     Count the total amount of currently displaying entries,
+     meaning, total subviews less one - the backgorund of the entry
+     */
+    fileprivate var displayingEntryCount: Int {
+        return view.subviews.count - 1
+    }
+    
+    fileprivate var isDisplaying: Bool {
+        return lastEntry != nil
+    }
+    
     private var lastEntry: EKContentView? {
         return view.subviews.last as? EKContentView
     }
-    
-    private var isResponsive: Bool = false {
+        
+    private var isResponsive = false {
         didSet {
             wrapperView.isAbleToReceiveTouches = isResponsive
-            EKWindowProvider.shared.entryWindow.isAbleToReceiveTouches = isResponsive
+            delegate.isResponsiveToTouches = isResponsive
         }
+    }
+
+    override var shouldAutorotate: Bool {
+        if lastAttributes == nil {
+            return true
+        }
+        return lastAttributes.positionConstraints.isRotationEnabled
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -57,7 +82,8 @@ class EKRootViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init() {
+    public init(with delegate: EntryPresenterDelegate) {
+        self.delegate = delegate
         previousStatusBar = .currentStatusBar
         super.init(nibName: nil, bundle: nil)
     }
@@ -85,7 +111,7 @@ class EKRootViewController: UIViewController {
 
         // In case the entry is a view controller, add the entry as child of root
         if let viewController = entryView.content.viewController {
-            addChildViewController(viewController)
+            addChild(viewController)
         }
         
         // Extract the attributes struct
@@ -114,7 +140,7 @@ class EKRootViewController: UIViewController {
         guard let lastAttributes = lastAttributes else {
             return true
         }
-        return attributes.displayPriority >= lastAttributes.displayPriority
+        return attributes.precedence.priority >= lastAttributes.precedence.priority
     }
 
     // Removes last entry - can keep the window 'ON' if necessary
@@ -145,7 +171,7 @@ class EKRootViewController: UIViewController {
 
 extension EKRootViewController {
     
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch lastAttributes.screenInteraction.defaultAction {
         case .dismissEntry:
             lastEntry?.animateOut(pushOut: false)
@@ -160,12 +186,20 @@ extension EKRootViewController {
 
 extension EKRootViewController: EntryContentViewDelegate {
     
-    func changeToActive(withAttributes attributes: EKAttributes) {
-        changeBackground(to: attributes.screenBackground, duration: attributes.entranceAnimation.totalDuration)
+    func didFinishDisplaying(entry: EKEntryView, keepWindowActive: Bool) {
+        guard !isDisplaying else {
+            return
+        }
+        
+        guard !keepWindowActive else {
+            return
+        }
+        
+        delegate.displayPendingEntryIfNeeded()
     }
     
     func changeToInactive(withAttributes attributes: EKAttributes, pushOut: Bool) {
-        guard EKAttributes.count <= 1 else {
+        guard displayingEntryCount <= 1 else {
             return
         }
         
@@ -186,6 +220,10 @@ extension EKRootViewController: EntryContentViewDelegate {
         if lastBackroundStyle != attributes.screenBackground {
             clear()
         }
+    }
+    
+    func changeToActive(withAttributes attributes: EKAttributes) {
+        changeBackground(to: attributes.screenBackground, duration: attributes.entranceAnimation.totalDuration)
     }
     
     private func changeBackground(to style: EKAttributes.BackgroundStyle, duration: TimeInterval) {

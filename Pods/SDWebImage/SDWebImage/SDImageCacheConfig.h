@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "SDWebImageCompat.h"
 
+typedef NS_ENUM(NSUInteger, SDImageCacheConfigExpireType) {
+    /**
+     * When the image is accessed it will update this value
+     */
+    SDImageCacheConfigExpireTypeAccessDate,
+    /**
+     * The image was obtained from the disk cache (Default)
+     */
+    SDImageCacheConfigExpireTypeModificationDate
+};
+
 @interface SDImageCacheConfig : NSObject
 
 /**
@@ -18,14 +29,24 @@
 @property (assign, nonatomic) BOOL shouldDecompressImages;
 
 /**
- * disable iCloud backup [defaults to YES]
+ * Whether or not to disable iCloud backup
+ * Defaults to YES.
  */
 @property (assign, nonatomic) BOOL shouldDisableiCloud;
 
 /**
- * use memory cache [defaults to YES]
+ * Whether or not to use memory cache
+ * @note When the memory cache is disabled, the weak memory cache will also be disabled.
+ * Defaults to YES.
  */
 @property (assign, nonatomic) BOOL shouldCacheImagesInMemory;
+
+/**
+ * The option to control weak memory cache for images. When enable, `SDImageCache`'s memory cache will use a weak maptable to store the image at the same time when it stored to memory, and get removed at the same time.
+ * However when memory warning is triggered, since the weak maptable does not hold a strong reference to image instacnce, even when the memory cache itself is purged, some images which are held strongly by UIImageViews or other live instances can be recovered again, to avoid later re-query from disk cache or network. This may be helpful for the case, for example, when app enter background and memory is purged, cause cell flashing after re-enter foreground.
+ * Defautls to YES. You can change this option dynamically.
+ */
+@property (assign, nonatomic) BOOL shouldUseWeakMemoryCache;
 
 /**
  * The reading options while reading cache from disk.
@@ -48,5 +69,11 @@
  * The maximum size of the cache, in bytes.
  */
 @property (assign, nonatomic) NSUInteger maxCacheSize;
+
+/**
+ * The attribute which the clear cache will be checked against when clearing the disk cache
+ * Default is Modified Date
+ */
+@property (assign, nonatomic) SDImageCacheConfigExpireType diskCacheExpireType;
 
 @end

@@ -12,7 +12,7 @@ public extension EKAttributes {
     
     /** Describes the frame of the entry. It's limitations, width and offset from the anchor (top / bottom of the screen) */
     public struct PositionConstraints {
-        
+
         /** Describes safe area relation */
         public enum SafeArea {
             
@@ -127,6 +127,9 @@ public extension EKAttributes {
             }
         }
         
+        /** Autorotate the entry along with the device orientation enabled / disabled */
+        public var isRotationEnabled = true
+        
         /** The entry can be bound to keyboard in case of appearance */
         public var keyboardRelation = KeyboardRelation.unbind
         
@@ -165,7 +168,7 @@ public extension EKAttributes {
         public init(verticalOffset: CGFloat = 0, size: Size = .sizeToWidth, maxSize: Size = .intrinsic) {
             self.verticalOffset = verticalOffset
             self.size = size
-            self.maxSize = .intrinsic
+            self.maxSize = maxSize
         }
     }
 }

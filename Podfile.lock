@@ -1,22 +1,22 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
-  - MKRingProgressView (2.0.1)
-  - QuickLayout (2.0.2)
+  - MKRingProgressView (2.2)
+  - QuickLayout (2.1.1)
   - SavannaKit (0.9.0)
-  - SDWebImage (4.4.1):
-    - SDWebImage/Core (= 4.4.1)
-  - SDWebImage/Core (4.4.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SourceEditor (1.0.1):
     - SavannaKit (~> 0.9)
-  - SwiftEntryKit (0.5.5):
-    - QuickLayout (= 2.0.2)
+  - SwiftEntryKit (0.8.4):
+    - QuickLayout (= 2.1.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8)
   - MKRingProgressView (~> 2.0)
   - SDWebImage (~> 4.0)
-  - SourceEditor (~> 1.0)
-  - SwiftEntryKit (= 0.5.5)
+  - SourceEditor (from `https://github.com/louisdh/source-editor.git`, branch `master`)
+  - SwiftEntryKit (= 0.8.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,18 +25,27 @@ SPEC REPOS:
     - QuickLayout
     - SavannaKit
     - SDWebImage
-    - SourceEditor
     - SwiftEntryKit
+
+EXTERNAL SOURCES:
+  SourceEditor:
+    :branch: master
+    :git: https://github.com/louisdh/source-editor.git
+
+CHECKOUT OPTIONS:
+  SourceEditor:
+    :commit: fd7d83470c8830c78b722b515192d50a8c39759e
+    :git: https://github.com/louisdh/source-editor.git
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  MKRingProgressView: a2adeddfff0ea03f0fb7f8b108f3f77176db3bb5
-  QuickLayout: a730730b646b231fd4ef7cffaeb1e81fe0e1ca92
+  MKRingProgressView: 6a8eb219f65d1f7ac27ad1986a4f42160b2f7640
+  QuickLayout: 9af2b7fd89a6552828f51a5aba28d1bcdb8b340c
   SavannaKit: 920c240bde011900df8156200a960dad3ee5edfd
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SourceEditor: 4d590385d642c812d08a91941a4bfc90eccf20af
-  SwiftEntryKit: 9be06d5a6138acb874223d84de2f42286c0c8d12
+  SwiftEntryKit: f0dd54bb0fb9f234738cd15a32365265cb975be8
 
-PODFILE CHECKSUM: 5921ad25b868eaf9ec164ac868ea5fe665d0b40a
+PODFILE CHECKSUM: 58dfa3156b1ec7afb55cafc0c8dc414091a10dcf
 
 COCOAPODS: 1.5.3

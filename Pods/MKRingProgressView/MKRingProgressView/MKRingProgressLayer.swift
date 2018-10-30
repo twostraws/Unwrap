@@ -26,7 +26,6 @@ import UIKit
 
 @objc(MKRingProgressLayer)
 open class RingProgressLayer: CALayer {
-
     /// The progress ring start color.
     @objc open var startColor = UIColor.red.cgColor {
         didSet {
@@ -66,6 +65,13 @@ open class RingProgressLayer: CALayer {
     @objc open var endShadowOpacity: CGFloat = 1.0 {
         didSet {
             endShadowOpacity = min(max(endShadowOpacity, 0.0), 1.0)
+            setNeedsDisplay()
+        }
+    }
+
+    /// Whether or not to hide the progress ring when progress is zero.
+    @objc open var hidesRingForZeroProgress: Bool = false {
+        didSet {
             setNeedsDisplay()
         }
     }
@@ -181,24 +187,27 @@ open class RingProgressLayer: CALayer {
             ctx.translateBy(x: -circleRect.midX, y: -circleRect.midY)
         }
 
-        // Draw shadow
+        // Draw shadow and progress end
 
-        if endShadowOpacity > 0.0 {
+        if p > 0.0 || !hidesRingForZeroProgress {
             ctx.saveGState()
 
-            ctx.addPath(CGPath(__byStroking: circlePath.cgPath,
-                               transform: nil,
-                               lineWidth: w,
-                               lineCap: .round,
-                               lineJoin: .round,
-                               miterLimit: 0)!)
-            ctx.clip()
+            if endShadowOpacity > 0.0 {
+                ctx.addPath(CGPath(__byStroking: circlePath.cgPath,
+                                   transform: nil,
+                                   lineWidth: w,
+                                   lineCap: .round,
+                                   lineJoin: .round,
+                                   miterLimit: 0)!)
+                ctx.clip()
 
-            let shadowOffset = CGSize(width: w / 10 * cos(angle + angleOffset),
-                                      height: w / 10 * sin(angle + angleOffset))
-            ctx.setShadow(offset: shadowOffset,
-                          blur: w / 3,
-                          color: UIColor(white: 0.0, alpha: endShadowOpacity).cgColor)
+                let shadowOffset = CGSize(width: w / 10 * cos(angle + angleOffset),
+                                          height: w / 10 * sin(angle + angleOffset))
+                ctx.setShadow(offset: shadowOffset,
+                              blur: w / 3,
+                              color: UIColor(white: 0.0, alpha: endShadowOpacity).cgColor)
+            }
+
             let arcEnd = CGPoint(x: c.x + r * cos(angle1), y: c.y + r * sin(angle1))
 
             let shadowPath: UIBezierPath = {
@@ -220,8 +229,16 @@ open class RingProgressLayer: CALayer {
                 }
             }()
 
+            let shadowFillColor: CGColor = {
+                let fadeStartProgress: CGFloat = 0.02
+                if !hidesRingForZeroProgress || p > fadeStartProgress {
+                    return startColor
+                }
+                // gradually decrease shadow opacity
+                return startColor.copy(alpha: p / fadeStartProgress)!
+            }()
             ctx.addPath(shadowPath.cgPath)
-            ctx.setFillColor(startColor)
+            ctx.setFillColor(shadowFillColor)
             ctx.fillPath()
 
             ctx.restoreGState()
@@ -277,11 +294,9 @@ open class RingProgressLayer: CALayer {
 
         return img
     }
-
 }
 
 fileprivate extension RingProgressViewStyle {
-
     var lineCap: CGLineCap {
         switch self {
         case .round:
@@ -299,5 +314,4 @@ fileprivate extension RingProgressViewStyle {
             return .miter
         }
     }
-
 }

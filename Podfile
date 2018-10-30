@@ -9,10 +9,10 @@ target 'Unwrap' do
   inhibit_all_warnings!
 
   # Pods for Unwrap
-  pod 'SwiftEntryKit', '0.5.5'
+  pod 'SwiftEntryKit', '0.8.4'
   pod 'SDWebImage', '~> 4.0'
   pod 'MKRingProgressView', '~> 2.0'
-  pod 'SourceEditor', '~> 1.0'
+  pod 'SourceEditor', :git => 'https://github.com/louisdh/source-editor.git', :branch => 'master'
   pod 'DZNEmptyDataSet', '~> 1.8'
 
   target 'UnwrapTests' do

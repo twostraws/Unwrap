@@ -40,11 +40,13 @@ github "maxkonovalov/MKRingProgressView"
 
 ## Usage
 
-See example Xcode project. It also contains additional classes for convenient grouping of 3 ring progress views replicating Activity app by Apple.
+See the example Xcode project. It contains 2 targets:
+- **ProgressRingExample** - a simple example containing a single progress ring with adjustable parameters.
+- **ActivityRingsExample** - an advanced usage example replicating Activity app by Apple. It also contains additional classes for convenient grouping of 3 ring progress views together.
 
 ### Interface Builder
 
-`MKRingProgressView` can be set up in Storyboard. Specify `startColor`, `endColor`, `ringWidth` and optional `backgroundRingColor` (if not set, defaults to `startColor` with 15% opacity).
+`MKRingProgressView` can be set up in Interface Builder. To use it, set the custom view class to `MKRingProgressView`. Most of the control's parameters can be customized in Interface Builder.
 
 ### Code
 
@@ -76,8 +78,9 @@ To achieve better performance the following options are possible:
 
 ## Requirements
 
-- iOS 8.0
-- Xcode 9, Swift 4
+- iOS 8.2
+- tvOS 9.0
+- Xcode 10, Swift 4.2
 
 ## License
 
