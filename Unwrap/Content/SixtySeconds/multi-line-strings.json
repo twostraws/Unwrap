@@ -10,7 +10,7 @@
         "var burns = \"\"\"\nThe best laid schemes\no' mice an' men\ngang aft agley\n\"\"\"",
         "var wordsworth = \"\"\"\nI wandered lonely as a cloud\nthat floats on high\no'er vales and hills\n\"\"\"",
         "var shakespeare = \"\"\"\nTo be or not to be\nthat is the question\n\"\"\"",
-        "var joseph = \"\"\"When I am an old woman,\nI shall wear purple\nwith a red hat that doesn't go,\nand doesn't suit me\"\"\"",
+        "var joseph = \"\"\"\nWhen I am an old woman,\nI shall wear purple\nwith a red hat that doesn't go,\nand doesn't suit me\n\"\"\"",
         "var tennyson = \"\"\"\nTis better to have loved\nand lost than never\n to have loved at all\n\"\"\""
     ],
     "wrong": [
