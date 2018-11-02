@@ -16,7 +16,7 @@
     "wrong": [
         "let sharkCount: Int = 21\nif sharkCount < 21 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
         "let passwordLength = 5\nif passwordLength <= 5 {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-        "let isAvailable: Bool = true\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+        "let isAvailable: Bool = false\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
         "var actualWage: Int = 22_000\nvar medianWage: Double = 22_000\nif actualWage >= medianWage {\n\tprint(\"Success\")\n}",
         "var favoriteColor = \"Red\"\nif favoriteColor == \"red\" {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
         "var cupsOfCoffee = \"4\"\nif cupsOfCoffee >= 3 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}"
