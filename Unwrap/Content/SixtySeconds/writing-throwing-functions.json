@@ -10,7 +10,7 @@
         "enum PrintError: Error {\n\tcase invalidCount\n}\nfunc printPages(text: String, count: Int) throws {\n\tif count <= 0 {\n\t\tthrow PrintError.invalidCount\n\t} else {\n\t\tfor _ in 1...count {\n\t\t\tprint(\"Printing \\(text)...\")\n\t\t}\n\t}\n}",
         "enum PizzaErrors: Error {\n\tcase hasPineapple\n}\nfunc makePizza(type: String) throws {\n\tif type != \"Hawaiian\" {\n\t\tprint(\"Your pizza will be ready in 10 minutes.\")\n\t} else {\n\t\tthrow PizzaErrors.hasPineapple\n\t}\n}",
         "enum PlayError: Error {\n\tcase cheating\n\tcase noPlayers\n}\nfunc playGame(name: String, cheat: Bool = false) throws {\n\tif cheat {\n\t\tthrow PlayError.cheating\n\t} else {\n\t\tprint(\"Let's play a game of \\(name)...\")\n\t}\n}",
-        "enum BookErrors: Error {\n\tcase tooFewPages\n\tcase tooManyPages\n}\nfunc writeBook(title: String, pages: Int) throws {\n\tswitch pages {\n\tcase 0...50:\n\t\tthrow BookErrors.tooFewPages\n\tcase 51...400:\n\t\tprint(\"Perfect! I'm going to write \\title)...\")\n\tdefault:\n\t\tthrow BookErrors.tooManyPages\n\t}\n}",
+        "enum BookErrors: Error {\n\tcase tooFewPages\n\tcase tooManyPages\n}\nfunc writeBook(title: String, pages: Int) throws {\n\tswitch pages {\n\tcase 0...50:\n\t\tthrow BookErrors.tooFewPages\n\tcase 51...400:\n\t\tprint(\"Perfect! I'm going to write \\(title)...\")\n\tdefault:\n\t\tthrow BookErrors.tooManyPages\n\t}\n}",
         "enum CatProblems: Error {\n\tcase notACat\n\tcase unfriendly\n}\nfunc strokeCat(_ name: String) throws {\n\tif name == \"Mr Bitey\" {\n\t\tthrow CatProblems.unfriendly\n\t} else if name == \"Lassie\" {\n\t\tthrow CatProblems.notACat\n\t} else {\n\t\tprint(\"You stroked \\(name).\")\n\t}\n}"
     ],
     "wrong": [
