@@ -18,7 +18,9 @@
 		"startingCode": "",
 		"answers": [
 			"func myFunction(input1:String,input2:String) -> String{\nreturn input1 + input2\n}",
-			"func myFunction(input1:String,input2:String) -> String{\nletvar result:String = input1 + input2\nreturn result\n}"
+			"func myFunction(input1:String,input2:String) -> String{\nletvar result:String = input1 + input2\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> String{\nreturn \"\\(input1)\\(input2)\"\n}",
+            "func myFunction(input1:String,input2:String) -> String{\nletvar result:String = \"\\(input1)\\(input2)\"\nreturn result\n}"
 		]
 	},
 	{
