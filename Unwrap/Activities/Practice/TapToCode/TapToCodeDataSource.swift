@@ -84,7 +84,7 @@ class TapToCodeDataSource: NSObject, UICollectionViewDataSource, UICollectionVie
         return cell
     }
 
-    // When we start dragging (from either collection view), sore the index path we're coming from.
+    // When we start dragging (from either collection view), store the index path we're coming from.
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let word = model.word(for: collectionView, at: indexPath)
         let itemProvider = NSItemProvider(object: word as NSString)
