@@ -663,6 +663,7 @@
 		51596DFA20EE94DC00952ADC /* AwardPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardPointsViewController.swift; sourceTree = "<group>"; };
 		51596DFC20EE995F00952ADC /* CountingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		51596DFE20EEBA1700952ADC /* AwardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardType.swift; sourceTree = "<group>"; };
+		5178262B2188CE79007AD2F3 /* Unwrap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Unwrap.entitlements; sourceTree = "<group>"; };
 		51862E5920CE12330086CD1B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51862E5B20CE13F00086CD1B /* UserTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTracking.swift; sourceTree = "<group>"; };
 		51862E5D20CE2C300086CD1B /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
@@ -1540,6 +1541,7 @@
 		51CC13612065607C00F37A67 /* Unwrap */ = {
 			isa = PBXGroup;
 			children = (
+				5178262B2188CE79007AD2F3 /* Unwrap.entitlements */,
 				51862E5520CE0EFB0086CD1B /* Activities */,
 				51CC13992065738D00F37A67 /* Extensions */,
 				51862E5320CE03450086CD1B /* Protocols */,
@@ -2159,6 +2161,11 @@
 					51CC135E2065607C00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 					51CC13722065607F00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
@@ -3058,7 +3065,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -3076,7 +3083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Today&apos;s Challenge</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.hackingwithswift.unwrap.challenges</string>
+			<string>com.hackingwithswift.unwrapswift.challenges</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
@@ -36,7 +36,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Latest News</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.hackingwithswift.unwrap.news</string>
+			<string>com.hackingwithswift.unwrapswift.news</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

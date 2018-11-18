@@ -30,9 +30,9 @@ class MainTabBarController: UITabBarController, Storyboarded {
     }
 
     func handle(shortcutItem: UIApplicationShortcutItem) {
-        if shortcutItem.type == "com.hackingwithswift.unwrap.challenges" {
+        if shortcutItem.type == "com.hackingwithswift.unwrapswift.challenges" {
             selectedViewController = challenges.navigationController
-        } else if shortcutItem.type == "com.hackingwithswift.unwrap.news" {
+        } else if shortcutItem.type == "com.hackingwithswift.unwrapswift.news" {
             selectedViewController = news.navigationController
         } else {
             fatalError("Unknown shortcut item type: \(shortcutItem.type).")
