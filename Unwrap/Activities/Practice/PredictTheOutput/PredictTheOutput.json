@@ -9,7 +9,7 @@
 	},
 
     {
-        "code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = \"RANDOM_SMALL_INT\"\nprint(\"NAME_NATURAL_0|capitalizedFirst doubled is \\(NAME_0 * 2)\")",
+        "code": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = RANDOM_SMALL_INT\nprint(\"NAME_NATURAL_0|capitalizedFirst doubled is \\(NAME_0 * 2)\")",
         "answers": [
             {
                 "text": "NAME_NATURAL_0|capitalizedFirst doubled is ${VALUE_0 * 2}"
