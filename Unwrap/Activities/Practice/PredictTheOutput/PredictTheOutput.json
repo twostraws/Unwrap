@@ -27,7 +27,7 @@
     },
 
     {
-        "code": "let RANDOM_INT_NAME1 = RANDOM_TINY_INT\nlet RANDOM_INT_NAME2 = RANDOM_TINY_INT\nlet RANDOM_INT_NAME3 = RANDOM_TINY_INT\n\nlet sum = NAME_01 + NAME_12 + NAME_23\nprint(\"The sum is \\(sum)\")",
+        "code": "let RANDOM_INT_NAME1 = RANDOM_TINY_INT\nlet NAME_02 = RANDOM_TINY_INT\nlet NAME_03 = RANDOM_TINY_INT\n\nlet NAME_0Total = NAME_01 + NAME_02 + NAME_03\nprint(\"The sum is \\(NAME_0Total)\")",
         "answers": [
             {
                 "text": "The sum is ${VALUE_0 + VALUE_1 + VALUE_2}"
