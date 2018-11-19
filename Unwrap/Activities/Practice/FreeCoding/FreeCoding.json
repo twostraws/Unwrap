@@ -66,6 +66,8 @@
 			"var newArray:[Int] = [Int]()\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
 			"var newArray:[Int] = []\nfor number in numbers{\nnewArray.append(number * 2)\n}",
 			"var newArray:[Int] = []\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+			"var newArray:Array<Int> = Array()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
+			"var newArray:Array<Int> = Array()\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
 			"letvar newArray:[Int] = numbers.map{$0 * 2}",
 			"letvar newArray:[Int] = numbers.map{num in return num * 2}",
 			"letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}"
