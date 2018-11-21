@@ -158,7 +158,7 @@ open class RingProgressView: UIView {
         layer.drawsAsynchronously = true
         layer.contentsScale = UIScreen.main.scale
         isAccessibilityElement = true
-        accessibilityTraits = UIAccessibilityTraitUpdatesFrequently
+        accessibilityTraits = UIAccessibilityTraits.updatesFrequently
         accessibilityLabel = "Ring progress"
     }
 

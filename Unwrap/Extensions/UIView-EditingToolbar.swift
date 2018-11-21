@@ -25,7 +25,7 @@ extension UIView {
         var constraints = [String]()
 
         // Choose a (fixed!) but chunky font for the buttons.
-        let buttonAttributes = [NSAttributedStringKey.font: UIFont.monospacedDigitSystemFont(ofSize: 22, weight: .medium)]
+        let buttonAttributes = [NSAttributedString.Key.font: UIFont.monospacedDigitSystemFont(ofSize: 22, weight: .medium)]
 
         for (index, row) in rows.enumerated() {
             let toolbar = UIToolbar()

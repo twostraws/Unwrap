@@ -84,7 +84,7 @@ struct TapToCodeModel {
     /// Calculate the size for each collection view cell by hand, adding a little space around the size of each word.
     func sizeForWord(in collectionView: UICollectionView, at indexPath: IndexPath) -> CGSize {
         let currentWord = word(for: collectionView, at: indexPath)
-        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .body)]
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         let attrib = NSAttributedString(string: currentWord, attributes: attrs)
         let size = attrib.size()
         return CGSize(width: size.width + 40, height: size.height + 30)

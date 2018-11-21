@@ -111,7 +111,7 @@ class EKContentView: UIView {
     private func setupInitialPosition() {
         
         // Determine the layout entrance type according to the entry type
-        let messageInAnchor: NSLayoutAttribute
+        let messageInAnchor: NSLayoutConstraint.Attribute
         
         inOffset = 0
         
@@ -440,8 +440,8 @@ class EKContentView: UIView {
     
     // Perform animation - translate / scale / fade
     private func performAnimation(out: Bool, with animation: EKAnimation, preAction: @escaping () -> () = {}, action: @escaping () -> ()) {
-        let curve: UIViewAnimationOptions = out ? .curveEaseIn : .curveEaseOut
-        let options: UIViewAnimationOptions = [curve, .beginFromCurrentState]
+        let curve: UIView.AnimationOptions = out ? .curveEaseIn : .curveEaseOut
+        let options: UIView.AnimationOptions = [curve, .beginFromCurrentState]
         preAction()
         if let spring = animation.spring {
             UIView.animate(withDuration: animation.duration, delay: animation.delay, usingSpringWithDamping: spring.damping, initialSpringVelocity: spring.initialVelocity, options: options, animations: {
@@ -477,7 +477,7 @@ class EKContentView: UIView {
         
         // Remove the view from its superview and in a case of a view controller, from its parent controller.
         super.removeFromSuperview()
-        contentView.content.viewController?.removeFromParentViewController()
+        contentView.content.viewController?.removeFromParent()
         
         if EKAttributes.count > 0 {
             EKAttributes.count -= 1
@@ -511,7 +511,7 @@ extension EKContentView {
     
     private struct KeyboardAttributes {
         let duration: TimeInterval
-        let curve: UIViewAnimationOptions
+        let curve: UIView.AnimationOptions
         let begin: CGRect
         let end: CGRect
         
@@ -519,10 +519,10 @@ extension EKContentView {
             guard let rawValue = rawValue else {
                 return nil
             }
-            duration = rawValue[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-            curve = UIViewAnimationOptions(rawValue: rawValue[UIKeyboardAnimationCurveUserInfoKey] as! UInt)
-            begin = (rawValue[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-            end = (rawValue[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            duration = rawValue[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+            curve = UIView.AnimationOptions(rawValue: rawValue[UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt)
+            begin = (rawValue[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+            end = (rawValue[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         }
         
         var height: CGFloat {
@@ -536,10 +536,10 @@ extension EKContentView {
         }
         
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardDidHide(_:)), name: .UIKeyboardDidHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardDidHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
     private func animate(by userInfo: [AnyHashable: Any]?, entrance: Bool) {
@@ -720,7 +720,7 @@ extension EKContentView {
         }
     }
     
-    private func handleExitDelayIfNeeded(byPanState state: UIGestureRecognizerState) {
+    private func handleExitDelayIfNeeded(byPanState state: UIGestureRecognizer.State) {
         guard attributes.entryInteraction.isDelayExit && attributes.displayDuration.isFinite else {
             return
         }

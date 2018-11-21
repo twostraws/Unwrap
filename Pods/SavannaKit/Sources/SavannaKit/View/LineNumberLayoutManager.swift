@@ -64,7 +64,7 @@ class LineNumberLayoutManager: NSLayoutManager {
 		}
 	}
 	
-	override func processEditing(for textStorage: NSTextStorage, edited editMask: NSTextStorageEditActions, range newCharRange: NSRange, changeInLength delta: Int, invalidatedRange invalidatedCharRange: NSRange) {
+	override func processEditing(for textStorage: NSTextStorage, edited editMask: NSTextStorage.EditActions, range newCharRange: NSRange, changeInLength delta: Int, invalidatedRange invalidatedCharRange: NSRange) {
 		super.processEditing(for: textStorage, edited: editMask, range: newCharRange, changeInLength: delta, invalidatedRange: invalidatedCharRange)
 		if invalidatedCharRange.location < lastParaLocation {
 			//  When the backing store is edited ahead the cached paragraph location, invalidate the cache and force a complete
@@ -84,7 +84,7 @@ class LineNumberLayoutManager: NSLayoutManager {
 		
 //		let style = DefaultTheme().lineNumbersStyle!
 		
-		let atts: [NSAttributedStringKey: Any] = [:
+		let atts: [NSAttributedString.Key: Any] = [:
 //			.font: style.font,
 //			.foregroundColor : style.textColor
 		]

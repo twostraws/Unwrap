@@ -38,7 +38,7 @@ class CountingLabel: UILabel {
         // Configure our animation to happen using a CADisplayLink, so the work happens as soon as frame draw ends.
         displayLink = CADisplayLink(target: self, selector: #selector(updateCount))
         displayLink?.preferredFramesPerSecond = preferredFramesPerSecond
-        displayLink?.add(to: RunLoop.current, forMode: .commonModes)
+        displayLink?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
 
         fromValue = start
         currentValue = start

@@ -50,9 +50,9 @@ class TappableTextView: UITextView, UITextViewDelegate {
     @objc func textViewTapped(recognizer: UITapGestureRecognizer) {
         let location = recognizer.location(in: self)
         guard let textPosition = closestPosition(to: location) else { return }
-        guard let attributes = textStyling(at: textPosition, in: .backward) else { return }
+        guard let attributes = convertFromOptionalNSAttributedStringKeyDictionary(textStyling(at: textPosition, in: .backward)) else { return }
 
-        if let url = attributes[NSAttributedStringKey.link.rawValue] as? URL {
+        if let url = attributes[NSAttributedString.Key.link.rawValue] as? URL {
             linkDelegate?.linkTapped(url)
         }
     }
@@ -67,4 +67,10 @@ class TappableTextView: UITextView, UITextViewDelegate {
         linkDelegate?.linkTapped(URL)
         return false
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromOptionalNSAttributedStringKeyDictionary(_ input: [NSAttributedString.Key: Any]?) -> [String: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

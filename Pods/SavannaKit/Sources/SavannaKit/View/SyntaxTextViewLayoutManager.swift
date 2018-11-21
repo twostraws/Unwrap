@@ -20,9 +20,9 @@ public enum EditorPlaceholderState {
 	case inactive
 }
 
-public extension NSAttributedStringKey {
+public extension NSAttributedString.Key {
 	
-	static public let editorPlaceholder = NSAttributedStringKey("editorPlaceholder")
+	static public let editorPlaceholder = NSAttributedString.Key("editorPlaceholder")
 
 }
 

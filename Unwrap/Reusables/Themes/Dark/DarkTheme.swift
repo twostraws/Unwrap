@@ -18,7 +18,7 @@ public struct DarkTheme: SourceCodeTheme {
     public let backgroundColor = Color.darkGray
     public let font = Unwrap.codeFont
 
-    public func globalAttributes() -> [NSAttributedStringKey: Any] {
+    public func globalAttributes() -> [NSAttributedString.Key: Any] {
         return [.font: Unwrap.codeFont, .foregroundColor: UIColor.white]
     }
 

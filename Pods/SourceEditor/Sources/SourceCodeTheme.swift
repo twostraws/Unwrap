@@ -17,9 +17,9 @@ public protocol SourceCodeTheme: SyntaxColorTheme {
 
 extension SourceCodeTheme {
 	
-	public func globalAttributes() -> [NSAttributedStringKey: Any] {
+	public func globalAttributes() -> [NSAttributedString.Key: Any] {
 		
-		var attributes = [NSAttributedStringKey: Any]()
+		var attributes = [NSAttributedString.Key: Any]()
 		
 		attributes[.font] = font
 		attributes[.foregroundColor] = Color.white
@@ -27,8 +27,8 @@ extension SourceCodeTheme {
 		return attributes
 	}
 	
-	public func attributes(for token: SavannaKit.Token) -> [NSAttributedStringKey: Any] {
-		var attributes = [NSAttributedStringKey: Any]()
+	public func attributes(for token: SavannaKit.Token) -> [NSAttributedString.Key: Any] {
+		var attributes = [NSAttributedString.Key: Any]()
 		
 		if let token = token as? SimpleSourceCodeToken {
 			attributes[.foregroundColor] = color(for: token.type)
