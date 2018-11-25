@@ -11,7 +11,7 @@
         "func count(to: Int) {\n\tfor i in 1...to {\n\t\tprint(\"I'm counting: \\(i)\")\n\t}\n}",
         "func check(age: Int) {\n\tif age >= 18 {\n\t\tprint(\"You're an adult.\")\n\t} else {\n\t\tprint(\"You're a minor.\")\n\t}\n}\ncheck(age: 18)",
         "func square(numbers: [Int]) {\n\tfor number in numbers {\n\t\tlet squared = number * number\n\t\tprint(\"\\(number) squared is \\(squared).\")\n\t}\n}\nsquare(numbers: [2, 3, 4])",
-        "func makeBand(names: [String]) {\n\tprint(\"Let's start a band...\")\\n\\tfor name in names {\n\t\tprint(\"\\(name) wants to join!\")\n\t}\n}\nmakeBand(names: [\"John\", \"Paul\"])"
+        "func makeBand(names: [String]) {\n\tprint(\"Let's start a band...\")\n\tfor name in names {\n\t\tprint(\"\\(name) wants to join!\")\n\t}\n}\nmakeBand(names: [\"John\", \"Paul\"])"
     ],
     "wrong": [
         "func calculateWages(people: Int) {\n\tlet total = people * 30_000\n\tprint(\"The total is \\(total)\")\n}\ncalculatewages(people: 10)",
