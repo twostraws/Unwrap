@@ -56,7 +56,7 @@ class AlertViewController: UIViewController, Storyboarded {
         titleLabel.text = title
         bodyLabel.attributedText = body
 
-        // If we have an alternate title then use it, otheriwise hide the alternate action and deactivate the constraint that spaces it to the OK button,
+        // If we have an alternate title then use it, otherwise hide the alternate action and deactivate the constraint that spaces it to the OK button,
         if let alternate = alternateTitle {
             alternateButton.setTitle(alternate, for: .normal)
         } else {

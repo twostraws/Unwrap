@@ -18,6 +18,7 @@
         "var sorted = \"false\"",
         "var zoomed = 0",
         "var isLoaded = 1",
-        "var isHidden = \"yes\""
+        "var isHidden = \"yes\"",
+        "var isEnabled = 0.0"
     ]
 }

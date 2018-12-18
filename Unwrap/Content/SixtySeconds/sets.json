@@ -2,7 +2,7 @@
     "title": "Sets",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This set will contain two items – true or false?",
+    "question": "This will create a set with two items – true or false?",
     "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
     "syntaxHighlighting": true,
     "correct": [
