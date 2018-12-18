@@ -2,7 +2,7 @@
     "title": "Enum raw values",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select all statements that are true about enums with raw values.",
+    "question": "Which of these statements about enums with raw values are true?",
     "hint": "Raw values let us give each of our enum cases a value so they are more than just names.",
     "syntaxHighlighting": false,
     "correct": [

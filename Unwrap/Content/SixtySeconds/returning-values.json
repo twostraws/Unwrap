@@ -2,7 +2,7 @@
     "title": "Returning values",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Make sure the function name, parameter name, and return type are all correct.",
     "syntaxHighlighting": true,
     "correct": [

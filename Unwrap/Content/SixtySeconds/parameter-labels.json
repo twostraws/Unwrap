@@ -2,7 +2,7 @@
     "title": "Parameter labels",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Look closely at the parameter names: external comes first, then internal.",
     "syntaxHighlighting": true,
     "correct": [

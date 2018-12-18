@@ -2,7 +2,7 @@
     "title": "Doubles and booleans",
     "postscript": "You will sometimes see another type called <code>Float</code>. This is similar to <code>Double</code>, but is less accurate because it uses less storage to store numbers.",
     "reviewType": "multipleSelection",
-    "question": "Select all the Boolean values.",
+    "question": "Which of these lines create Booleans?",
     "hint": "Booleans are any value that contain true or false.",
     "syntaxHighlighting": true,
     "correct": [

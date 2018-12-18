@@ -2,7 +2,7 @@
     "title": "Initializers",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Make sure all properties have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [

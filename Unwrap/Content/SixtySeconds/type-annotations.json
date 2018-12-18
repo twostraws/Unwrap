@@ -2,7 +2,7 @@
     "title": "Type annotations",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select the lines that create Doubles.",
+    "question": "Which of these lines create Doubles?",
     "hint": "Doubles are any value that contain decimal data, or with the explicit typecast <code>Double<\/code>.",
     "syntaxHighlighting": true,
     "correct": [

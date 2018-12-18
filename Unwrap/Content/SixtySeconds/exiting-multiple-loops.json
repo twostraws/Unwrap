@@ -2,7 +2,7 @@
     "title": "Exiting multiple loops",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select all statements that are true about multiple loops.",
+    "question": "Which of these statements about multiple loops are true?",
     "hint": "Exiting multiple loops is done by using <code>break<\/code> with a loop label.",
     "syntaxHighlighting": false,
     "correct": [

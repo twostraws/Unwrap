@@ -2,7 +2,7 @@
     "title": "Tuples",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select all statements that are true about tuples.",
+    "question": "Which of these statements about tuples are true?",
     "hint": "Tuples are fixed in size and the types can't be changed after they are created.",
     "syntaxHighlighting": false,
     "correct": [

@@ -2,7 +2,7 @@
     "title": "Property observers",
     "postscript": "Alongside <code>didSet</code>, Swift also has <code>willSet</code> – it's called just before a property's value changes.",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "<code>didSet</code> is the most common property observer, and is triggered when a property's value has just changed.",
     "syntaxHighlighting": true,
     "correct": [

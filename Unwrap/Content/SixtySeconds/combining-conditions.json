@@ -11,7 +11,7 @@
         "let a = 10\nlet b = 10\n\nif a >= 10 && b <= 10 {\n\tprint(\"Hello, Swift!\")\n}\n",
         "let test = false\n\nif test == false {\n\tprint(\"Hello, Swift!\")\n}",
         "let name1 = \"Charlotte\"\nlet name2 = \"Sophie\"\n\nif name1 == \"Paul\" || name2 == \"Sophie\" {\n\tprint(\"Hello, Swift!\")\n}",
-        "let age1 = 18\nlet age2 = 21\n\nif age1 >= 18 || age1 <= 18 {\n\tprint(\"Hello, Swift!\")\n}",
+        "let age1 = 18\nlet age2 = 21\n\nif age1 >= 18 || age1 <= 18 {\n\tprint(\"Hello, Swift!\")\n}"
     ],
     "wrong": [
         "let age1 = 18\nlet age2 = 21\n\nif age1 > 18 || age1 < 18 {\n\tprint(\"Hello, Swift!\")\n}",

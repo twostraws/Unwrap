@@ -2,7 +2,7 @@
     "title": "Dictionaries",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select the lines that create dictionaries.",
+    "question": "Which of these lines create dictionaries?",
     "hint": "Arrays can hold any number of items, including duplicates, and preserve their order. Sets are preferred when you don't want duplicate items and when order doesn't matter. Tuples are preferred when you want limited items of specific types and names.",
     "syntaxHighlighting": true,
     "correct": [

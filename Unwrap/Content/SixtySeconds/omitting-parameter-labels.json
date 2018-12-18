@@ -2,7 +2,7 @@
     "title": "Omitting parameter labels",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Function and parameter names are case-sensitive.",
     "syntaxHighlighting": true,
     "correct": [

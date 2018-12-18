@@ -2,7 +2,7 @@
     "title": "String interpolation",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select the lines that use string interpolation.",
+    "question": "Which of these lines use string interpolation?",
     "hint": "String interpolation starts with a backslash, then contains a value inside parentheses.",
     "syntaxHighlighting": true,
     "correct": [

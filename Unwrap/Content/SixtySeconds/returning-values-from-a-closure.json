@@ -2,7 +2,7 @@
     "title": "Returning values from a closure",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Make sure the value that is returned matches what is expected.",
     "syntaxHighlighting": true,
     "correct": [

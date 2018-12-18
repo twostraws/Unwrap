@@ -2,7 +2,7 @@
     "title": "Referring to the current instance",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
     "syntaxHighlighting": true,
     "correct": [

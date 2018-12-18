@@ -2,7 +2,7 @@
     "title": "Operators and conditions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Swift won't let you mix different data types.",
     "syntaxHighlighting": true,
     "correct": [

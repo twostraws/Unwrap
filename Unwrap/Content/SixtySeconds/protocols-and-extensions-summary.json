@@ -2,7 +2,7 @@
     "title": "Protocols and extensions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Only extensions contain method implementations. To conform to a protocol, all types must implement the protocol's methods.",
     "syntaxHighlighting": true,
     "correct": [

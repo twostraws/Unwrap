@@ -2,7 +2,7 @@
     "title": "Infinite loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these loops will never end?",
+    "question": "This loop will never end – true or false?",
     "hint": "Infinite loops are commonly made using <code>while true<\/code> but other conditions can also work.",
     "syntaxHighlighting": true,
     "correct": [

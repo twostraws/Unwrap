@@ -2,7 +2,7 @@
     "title": "Constants",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Select the lines that create variables.",
+    "question": "Which of these lines create variables?",
     "hint": "Variables are created using <code>var<\/code>, whereas constants are created using <code>let<\/code>.",
     "syntaxHighlighting": true,
     "correct": [

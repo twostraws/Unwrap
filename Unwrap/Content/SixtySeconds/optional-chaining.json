@@ -2,7 +2,7 @@
     "title": "Optional chaining",
     "postscript": "You can chain as many things as you need. For example, <code>someOptionalArray?.first?.lowercased()</code>.",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "It might sound obvious, but optional chaining may only be used with optionals.",
     "syntaxHighlighting": true,
     "correct": [

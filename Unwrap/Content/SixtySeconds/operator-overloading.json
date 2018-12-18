@@ -2,7 +2,7 @@
     "title": "Operator overloading",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these will Swift allow?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Swift is a type-safe language, so it won't let you mix types by accident.",
     "syntaxHighlighting": true,
     "correct": [

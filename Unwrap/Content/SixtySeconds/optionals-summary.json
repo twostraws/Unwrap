@@ -2,7 +2,7 @@
     "title": "Optionals: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Watch out for basic syntax errors.",
     "syntaxHighlighting": true,
     "correct": [

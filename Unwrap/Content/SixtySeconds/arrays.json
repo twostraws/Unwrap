@@ -2,7 +2,7 @@
     "title": "Arrays",
     "postscript": "If your array is empty, even reading <code>array[0]</code> will cause your app to crash. Be careful!",
     "reviewType": "multipleSelection",
-    "question": "Select the lines that create arrays.",
+    "question": "Which of these lines create arrays?",
     "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>",
     "syntaxHighlighting": true,
     "correct": [

@@ -2,7 +2,7 @@
     "title": "Protocols",
     "postscript": "You can use <code>{ get set }</code> in your protocols to make read-write variables, or just <code>{ get }</code> to make read-only variables. Using just <code>{ set }</code> is not allowed.",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid protocols?",
+    "question": "This is a valid protocol – true or false?",
     "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
     "syntaxHighlighting": true,
     "correct": [

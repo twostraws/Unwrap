@@ -2,7 +2,7 @@
     "title": "Strings and integers",
     "postscript": "Strings are case sensitive, which means \"Swift\" is not the same string as \"swift\".",
     "reviewType": "multipleSelection",
-    "question": "Select all the integers.",
+    "question": "Which code creates an integer?",
     "hint": "Swift gives variables the string type when their values are enclosed in quotes, regardless of what the value is.",
     "syntaxHighlighting": true,
     "correct": [

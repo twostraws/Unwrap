@@ -2,7 +2,7 @@
     "title": "Methods",
     "postscript": "Methods work just like regular functions, so they can accept any parameters you want and return values. It's not required, but almost everyone puts properties before methods in their structs.",
     "reviewType": "singleSelection",
-    "question": "Which of these are valid in Swift?",
+    "question": "This code is valid Swift – true or false?",
     "hint": "Make sure each method returns what it says it will return.",
     "syntaxHighlighting": true,
     "correct": [
