@@ -6,7 +6,7 @@
     "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Diary {\n\tvar entries: String\n\tmutating func add(entry: String) {\n\t\tentries += \"\\(entry)\\n\"\n\t}\n}",
+        "struct Diary {\n\tvar entries: String\n\tmutating func add(entry: String) {\n\t\tentries += \"\\(entry)\n\"\n\t}\n}",
         "struct Bicycle {\n\tvar currentGear: Int\n\tmutating func changeGear(to newGear: Int) {\n\t\tcurrentGear = newGear\n\t\tprint(\"I'm now in gear \\(currentGear).\")\n\t}\n}",
         "struct Book {\n\tvar totalPages: Int\n\tvar pagesLeftToRead = 0\n\tmutating func read(pages: Int) {\n\t\tif pages < pagesLeftToRead {\n\t\t\tpagesLeftToRead -= pages\n\t\t} else {\n\t\t\tpagesLeftToRead = 0\n\t\t\tprint(\"I'm done!\")\n\t\t}\n\t}\n}",
         "struct BankAccount {\n\tvar balance: Int\n\tmutating func donateToCharity(amount: Int) {\n\t\tbalance -= amount\n\t}\n}",

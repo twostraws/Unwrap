@@ -8,7 +8,7 @@
     "correct": [
         "struct User {\n\tvar name = \"Anonymous\"\n\tvar age: Int\n}\nlet twostraws = User(name: \"Paul\", age: 38)",
         "struct Player {\n\tvar name: String\n\tvar position: String\n}\nlet harry = Player(name: \"Harry Kane\", position: \"Forward\")",
-        "struct ChessPiece {\\n\\tvar name: String\\n\\tvar value: Int\\n}",
+        "struct ChessPiece {\n\tvar name: String\n\tvar value: Int\n}",
         "struct Phone {\n\tvar manufacturer: String\n\tvar screenSize: Double\n}",
         "struct WeatherForecast {\n\tvar dayNumber: Int\n\tvar temperature: Int\n}\nlet monday = WeatherForecast(dayNumber: 1, temperature: 25)",
         "struct Book {\n\tvar title: String\n\tvar author = \"Unknown\"\n\tvar pageCount = 0\n}"
