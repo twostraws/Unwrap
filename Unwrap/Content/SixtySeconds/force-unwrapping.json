@@ -11,7 +11,7 @@
         "func describe(array: [String]?) {\n\tlet unwrapped = array!\n\tprint(\"The array has \\(unwrapped.count) items.\")\n}\ndescribe(array: [])",
         "let legoBricksSold: Int? = 400_000_000_000\nlet numberSold = legoBricksSold!",
         "func league(for skillLevel: Int) -> Int? {\n\tswitch skillLevel {\n\tcase 1:\n\t\tfallthrough\n\tcase 2:\n\t\treturn 3\n\tcase 3:\n\t\treturn 2\n\tcase 4:\n\t\treturn 1\n\tdefault:\n\t\treturn nil\n\t}\n}\nlet allocatedLeague = league(for: 3)!",
-        "let age: Int = 21\nlet allowedMessage: String? = age > 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!"
+        "let age: Int = 21\nlet allowedMessage: String? = age >= 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!"
     ],
     "wrong": [
         "let score = \"babylon5\"\nlet scoreInt = Int(score)!",
