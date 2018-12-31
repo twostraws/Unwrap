@@ -7,7 +7,7 @@
     "syntaxHighlighting": true,
     "correct": [
         "let capitals = [\"England\": \"London\", \"Wales\": \"Cardiff\"]\nlet scotlandCapital = capitals[\"Scotland\"]",
-        "let characters = [\"Captain\": \"Malcom\", \"Engineer\": \"Kaylee\"]\nlet captain = characters[\"Captain\"]",
+        "let characters = [\"Captain\": \"Malcolm\", \"Engineer\": \"Kaylee\"]\nlet captain = characters[\"Captain\"]",
         "let planets = [1: \"Mercury\", 2: \"Venus\"]\nlet venus = planets[2, default: \"Planet X\"]",
         "let olympics = [2012: \"London\", 2016: \"Rio\", 2020: \"Tokyo\"]\nlet london = olympics[2012]",
         "let books = [\"Austen\": \"Pride and Prejudice\"]\nlet dickens = books[\"Dickens\", default: \"Unknown\"]",
