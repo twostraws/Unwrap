@@ -61,8 +61,8 @@
 	},
 	{
 		"question": "This code should walk, cycle, or drive somewhere depending on the distance.",
-		"hint": "Get the order correct: walking is for shor distances, driving is for long distances, and cycling for everything else.",
-		"code": "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\\\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")"
+		"hint": "Get the order correct: walking is for short distances, driving is for long distances, and cycling for everything else.",
+		"code": "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")"
 	},
 	{
 		"question": "This code should track how many times a baseball player has swung their bat.",

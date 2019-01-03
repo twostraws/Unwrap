@@ -301,8 +301,6 @@ final class User: Codable {
                 fatalError("Unknown badge criterion: \(badge.criterion)")
             }
         }
-
-        return false
     }
 
     /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.

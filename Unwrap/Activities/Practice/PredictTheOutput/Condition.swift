@@ -73,8 +73,6 @@ struct Condition: Decodable {
         default:
             fatalError("Unknown check: \(check)")
         }
-
-        return true
     }
 
     private func resolveCheck(_ string: String, with operators: [String]) -> String {
