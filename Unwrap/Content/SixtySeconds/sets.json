@@ -8,7 +8,7 @@
     "correct": [
         "var colors: Set([\"Red\", \"Green\", \"Red\"])",
         "var scores = Set([9, 10])",
-        "var ratings: Set([1, 1, 1, 2, 2, 2])",
+        "var ratings = Set([1, 1, 1, 2, 2, 2])",
         "var attendees = Set([100, 100, 101, 100])",
         "var readings = Set([true, false, true, true])",
         "var names = Set([\"John\", \"Paul\"])"
