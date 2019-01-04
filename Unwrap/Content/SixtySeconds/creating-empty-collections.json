@@ -16,7 +16,7 @@
     "wrong": [
         "var friends = Set[String]()",
         "var mountainHeights = [String, Int]()",
-        "var episodeNames = String()",
+        "var episodeNames = Array()",
         "var measurements = [Double]",
         "var wines = Dictionary<String: String>()",
         "var badges = Set<>()"

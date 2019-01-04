@@ -2,22 +2,22 @@
     "title": "Complex types: Summary",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of these lines make variables?",
+    "question": "Which of these lines make an array, dictionary, set, or tuple?",
     "hint": "Make sure the type annotations match what's placed inside.",
     "syntaxHighlighting": true,
     "correct": [
-        "var username = \"twostraws\"",
+        "let credentials = [\"username\": \"twostraws\"]",
         "var scores = [100, 90, 85]",
-        "var usedWords = Set([\"hello\", \"world\"])",
-        "var redCars: Int = 22",
-        "var episodeCount = 300",
-        "var isConnected = true"
+        "let usedWords = Set([\"hello\", \"world\"])",
+        "var fibonacci = (1, 1, 2, 3, 5, 8)",
+        "let episodes = [String]()",
+        "var names = [\"Beyoncé\", \"Jay-Z\"]"
     ],
     "wrong": [
         "let isConfigured = false",
-        "let goldMedalist = \"Heidi Joakim\"",
-        "let averageScore: Double = 4.2",
-        "var repeatCount: Bool = 0",
+        "let ages: Int = [26, 28, 39]",
+        "let winners: [String] = (\"David\", \"Jason\", \"Michelle\")",
+        "var repeatCount = [String: Int]",
         "var unreadMessages: Int = \"12\"",
         "var lotteryNumbers = Set(11, 23, 44)"
     ]

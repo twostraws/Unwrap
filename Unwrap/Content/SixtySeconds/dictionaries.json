@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create dictionaries?",
-    "hint": "Arrays can hold any number of items, including duplicates, and preserve their order. Sets are preferred when you don't want duplicate items and when order doesn't matter. Tuples are preferred when you want limited items of specific types and names.",
+    "hint": "Dictionaries use opening and closing brackets to start and end, use colons to separate each key from its value, and use commas between items.",
     "syntaxHighlighting": true,
     "correct": [
         "let scores = [\"Sophie\": 100]",
