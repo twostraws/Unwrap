@@ -16,25 +16,27 @@ class SpotTheErrorDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     /// The current question they are solving, along with hints and solutions.
     var practiceData: SpotTheErrorPractice
 
-    // Stores whether we are currently showing the question or the showing the answers.
+    /// Stores whether we are currently showing the question or the showing the answers.
     var isShowingAnswers = false
 
-    // The currently selected error line, if any.
+    /// The currently selected error line, if any.
     var selectedAnswer: Int? {
         didSet {
             delegate?.selectionChanged()
         }
     }
 
-    // Returns true when the user selected the correct line.
+    /// Returns true when the user selected the correct line.
     var isUserCorrect: Bool {
         return selectedAnswer == practiceData.lineNumber
     }
 
+    /// The default initializer
     init(practiceData: SpotTheErrorPractice) {
         self.practiceData = practiceData
     }
 
+    /// Maps table row count directly to however many lines of code we have
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return practiceData.code.count
     }
@@ -67,7 +69,7 @@ class SpotTheErrorDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         return cell
     }
 
-    // Stop the user from even thinking about changing their selections once they've shown the answers.
+    /// Stops the user from even thinking about changing their selections once they've shown the answers.
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         if isShowingAnswers {
             return false
@@ -76,7 +78,7 @@ class SpotTheErrorDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    // Stop the user from changing their selections once they've shown the answers.
+    /// Stops the user from changing their selections once they've shown the answers.
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if isShowingAnswers {
             return nil

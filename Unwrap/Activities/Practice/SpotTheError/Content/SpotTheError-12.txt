@@ -12,4 +12,4 @@ func FUNCTION_NAME(PARAM_NAME: Int, type: String) -> String {
     }
     return RETURN_NAME
 }
-print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE, type: TYPE_PARAM))
+print(FUNCTION_NAME(PARAM_NAME: INPUT_VALUE, type: "TYPE_PARAM"))
