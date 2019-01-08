@@ -15,7 +15,7 @@
     ],
     "wrong": [
         "let sciFi = \"Babylon \" + 9",
-        "let height = 10\nlet weight = 20\nheight > weight",
+        "let height = 10\nlet weight = 20\nheight <> weight",
         "let testsTaken = 10\ntestsTaken += 1",
         "var poorRating = 0....10",
         "let rank = 4\nif rank <= 10 {\nprint(You're in the top 10!)\n}",

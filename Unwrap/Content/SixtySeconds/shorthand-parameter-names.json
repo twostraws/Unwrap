@@ -10,7 +10,7 @@
         "Swift can infer the return type.",
         "If there is only one line of code, you can skip writing <code>return<\/code>",
         "Shorthand parameters are written as <code>$0<\/code>, <code>$1<\/code> and so on.",
-        "When use shorthand parameters you don't list the parameters you accept.",
+        "When using shorthand parameters you don't list the parameters you accept.",
         "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves."
     ],
     "wrong": [

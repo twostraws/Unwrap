@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true about structs?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "Structs let us group together properties and methods, and are used very commonly in Swift.",
     "syntaxHighlighting": false,
     "correct": [
         "Structs can have as many or as few properties as you need.",

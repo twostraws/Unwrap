@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "Lazy properties are an important performance optimization, because they let us run code only once and only when it's needed.",
     "syntaxHighlighting": false,
     "correct": [
         "Lazy properties are created only when first accessed.",

@@ -3,7 +3,7 @@
     "postscript": "Static methods work the same way as static methods – just write <code>static func yourMethod()</code> rather than <code>func yourMethod()</code>.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift – true or false?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "Static properties and methods must be called on the struct that owns them, rather than on instances of that struct.",
     "syntaxHighlighting": true,
     "correct": [
         "struct Amplifier {\n\tstatic let maximumVolume = 11\n\tvar currentVolume: Int\n}",

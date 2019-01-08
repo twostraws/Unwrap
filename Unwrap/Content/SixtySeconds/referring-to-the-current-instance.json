@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift – true or false?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "If you need to refer to a local property to distinguish it from a method parameter, use <code>self.propertyName</code>.",
     "syntaxHighlighting": true,
     "correct": [
         "struct District {\n\tvar number: Int\n\tvar supervisor: String\n\tinit(number: Int, supervisor: String) {\n\t\tself.number = number\n\t\tself.supervisor = supervisor\n\t}\n}\nlet district = District(number: 9, supervisor: \"Unknown\")",

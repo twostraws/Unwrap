@@ -6,7 +6,7 @@
     "hint": "Make sure all the parameters and return values have the correct types.",
     "syntaxHighlighting": true,
     "correct": [
-        "let awesomeTalk = {\n\tprint(\"Here's a great talk!\")\n}\nfunc deliverTalk(_ name: String, type: () -> Void) {\n\tprint(\"My talk is called \\(name)\")\n\ttype()\n}\ndeliverTalk(\"My Awesome Talk\", type: awesomeTalk)",
+        "let awesomeTalk = {\n\tprint(\"Here's a great talk!\")\n}\nfunc deliverTalk(name: String, type: () -> Void) {\n\tprint(\"My talk is called \\(name)\")\n\ttype()\n}\ndeliverTalk(name: \"My Awesome Talk\", type: awesomeTalk)",
         "let swanDive = {\n\tprint(\"SWAN DIVE!\")\n}\nfunc performDive(type dive: () -> Void) {\n\tprint(\"I'm climbing up to the top\")\n\tdive()\n}\nperformDive(type: swanDive)",
         "let helicopterTravel = {\n\tprint(\"Get to the chopper!\")\n}\nfunc travel(by travelMeans: () -> Void) {\n\tprint(\"Let's go on vacation...\")\n\ttravelMeans()\n}\ntravel(by: helicopterTravel)",
         "var payCash = {\n\tprint(\"Here's the money.\")\n}\nfunc buyClothes(item: String, using payment: () -> Void) {\n\tprint(\"I'll take this \\(item).\")\n\tpayment()\n}\nbuyClothes(item: \"jacket\", using: payCash)",
