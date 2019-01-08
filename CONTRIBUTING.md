@@ -75,7 +75,7 @@ I want to go into detail on the key parts of each app tab, starting with Home �
 
 This table includes two important parts: a `StatusView` that renders their current rank image and a progress ring around it, and a `BadgeCollectionViewCell` that embeds a collection view inside the table view.
 
-The `StatusView` was originally implemented using a simple `CAShapeLayer` for drawing the activity ring, but that has a problem: because this same `StatusView` is used when awarding points, it’s likely that the user will score more points that necessary to advance to the next rank. Using a `CAShapeLayer` doesn’t allow us to render the activity ring beyond 100%, so this now uses `MKRingProgressView`.
+The `StatusView` was originally implemented using a simple `CAShapeLayer` for drawing the activity ring, but that has a problem: because this same `StatusView` is used when awarding points, it’s likely that the user will score more points than necessary to advance to the next rank. Using a `CAShapeLayer` doesn’t allow us to render the activity ring beyond 100%, so this now uses `MKRingProgressView`.
 
 The collection view is used as a single row in the table so that we can show badges in a free-flowing grid. This causes a little complexity because we need to make `BadgeTableViewCell` conform to `UserTracking` so that badges appear unlocked as soon as they are earned, but it’s nothing difficult.
 
