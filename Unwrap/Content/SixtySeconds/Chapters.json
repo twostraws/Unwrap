@@ -31,7 +31,7 @@
 	{
 		"name": "Operators and conditions",
 		"sections": [
-			"Arithmetic Operators",
+			"Arithmetic operators",
 			"Operator overloading",
 			"Compound assignment operators",
 			"Comparison operators",
