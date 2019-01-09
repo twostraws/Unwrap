@@ -38,6 +38,10 @@
 		51259E8D21885FC90092D96B /* combining-conditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8921885FC90092D96B /* combining-conditions.html */; };
 		51259E8E21885FC90092D96B /* combining-conditions.png in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8A21885FC90092D96B /* combining-conditions.png */; };
 		5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */; };
+		514BF46821E6670000DE1483 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 514BF46721E6670000DE1483 /* glossary.json */; };
+		514BF46A21E6691A00DE1483 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF46921E6691A00DE1483 /* GlossaryViewController.swift */; };
+		514BF46C21E6693100DE1483 /* GlossaryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */; };
+		514BF46E21E6698C00DE1483 /* GlossaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF46D21E6698C00DE1483 /* GlossaryEntry.swift */; };
 		5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153F49120EF7430009E829D /* LearnCoordinator.swift */; };
 		5153F49420EF761B009E829D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153F49320EF761B009E829D /* HomeCoordinator.swift */; };
 		5153F49620EF762B009E829D /* PracticeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153F49520EF762B009E829D /* PracticeCoordinator.swift */; };
@@ -633,6 +637,10 @@
 		51259E8921885FC90092D96B /* combining-conditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "combining-conditions.html"; sourceTree = "<group>"; };
 		51259E8A21885FC90092D96B /* combining-conditions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combining-conditions.png"; sourceTree = "<group>"; };
 		5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectReviewViewController.swift; sourceTree = "<group>"; };
+		514BF46721E6670000DE1483 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glossary.json; sourceTree = "<group>"; };
+		514BF46921E6691A00DE1483 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
+		514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryDataSource.swift; sourceTree = "<group>"; };
+		514BF46D21E6698C00DE1483 /* GlossaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryEntry.swift; sourceTree = "<group>"; };
 		5153F49120EF7430009E829D /* LearnCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCoordinator.swift; sourceTree = "<group>"; };
 		5153F49320EF761B009E829D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		5153F49520EF762B009E829D /* PracticeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCoordinator.swift; sourceTree = "<group>"; };
@@ -1260,6 +1268,16 @@
 			path = Help;
 			sourceTree = "<group>";
 		};
+		514BF46F21E6859400DE1483 /* Glossary */ = {
+			isa = PBXGroup;
+			children = (
+				514BF46921E6691A00DE1483 /* GlossaryViewController.swift */,
+				514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */,
+				514BF46D21E6698C00DE1483 /* GlossaryEntry.swift */,
+			);
+			path = Glossary;
+			sourceTree = "<group>";
+		};
 		5156459220E116EE00CED877 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,6 +1287,7 @@
 				5156459620E116EE00CED877 /* FontAwesomeIcons.xcassets */,
 				5156459420E116EE00CED877 /* Ranks.xcassets */,
 				51053A072113804E00B28328 /* Tour.xcassets */,
+				514BF46721E6670000DE1483 /* glossary.json */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -1477,6 +1496,7 @@
 		51C5641B20CCB7D30093030C /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				514BF46F21E6859400DE1483 /* Glossary */,
 				51FE120B20E252A800F29889 /* Study */,
 				518FAE7520E4231B007F4675 /* Review */,
 				5153F49120EF7430009E829D /* LearnCoordinator.swift */,
@@ -2261,6 +2281,7 @@
 				51FE140120E25F1200F29889 /* optional-try.png in Resources */,
 				51FE14F420E25F1200F29889 /* protocols.html in Resources */,
 				51FE13E120E25F1200F29889 /* closures-with-multiple-parameters.html in Resources */,
+				514BF46821E6670000DE1483 /* glossary.json in Resources */,
 				51FE139D20E25F1100F29889 /* tuples.mp4 in Resources */,
 				51FE13C720E25F1200F29889 /* parameter-labels.png in Resources */,
 				511FD6BC21073B210023E92C /* Help.json in Resources */,
@@ -2745,6 +2766,7 @@
 				51A6D62420E651DA00FB6B46 /* TypeGenerating.swift in Sources */,
 				51A4476721089FF0005D8665 /* BadgeCollectionViewCell.swift in Sources */,
 				511FD6BA21073A6B0023E92C /* HelpItem.swift in Sources */,
+				514BF46A21E6691A00DE1483 /* GlossaryViewController.swift in Sources */,
 				51A6D63320E6531F00FB6B46 /* Condition.swift in Sources */,
 				51CC1391206560A600F37A67 /* ShapeView.swift in Sources */,
 				5153F4AA20EFCD9F009E829D /* AnswerHandling.swift in Sources */,
@@ -2787,6 +2809,7 @@
 				510539F8211300D400B28328 /* UIImage-Sharing.swift in Sources */,
 				518F004920EA2D730073AE57 /* PredictTheOutputPractice.swift in Sources */,
 				51A6D66C20E696A300FB6B46 /* SpotTheErrorPractice.swift in Sources */,
+				514BF46E21E6698C00DE1483 /* GlossaryEntry.swift in Sources */,
 				51C5642520CCB8350093030C /* ChallengesViewController.swift in Sources */,
 				51596DEC20EE1C9F00952ADC /* WordCollectionViewCell.swift in Sources */,
 				51A6D62320E651DA00FB6B46 /* DoubleNames.swift in Sources */,
@@ -2815,6 +2838,7 @@
 				51FE120D20E2532100F29889 /* StudyTextView.swift in Sources */,
 				51CC13972065714F00F37A67 /* UIView-FadeIn.swift in Sources */,
 				518F004B20EA2FE90073AE57 /* PredictTheOutputViewController.swift in Sources */,
+				514BF46C21E6693100DE1483 /* GlossaryDataSource.swift in Sources */,
 				51862E5A20CE12330086CD1B /* User.swift in Sources */,
 				511FD6A92105E6B00023E92C /* NewsViewController.swift in Sources */,
 				51596DEA20EE04EF00952ADC /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,

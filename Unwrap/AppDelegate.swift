@@ -6,6 +6,7 @@
 //  Copyright © 2018 Hacking with Swift.
 //
 
+import AVKit
 import UIKit
 
 @UIApplicationMain
@@ -25,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         /// We want the tab bar controller to handle our launch options so we can jump right too various tabs as needed.
         tabBarController?.handle(launchOptions)
+
+        /// If a user has requested to play a movie, always play sound
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
 
         return true
     }

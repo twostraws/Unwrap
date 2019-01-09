@@ -18,6 +18,9 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     /// Stores the user's current score for a practice sequence. Gets reset to 0 when a new practice session starts.
     var currentScore = 0
 
+    /// Whether or not the user can have multiple attempts at questions
+    let retriesAllowed = true
+
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true

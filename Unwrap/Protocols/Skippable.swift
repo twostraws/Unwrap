@@ -10,6 +10,9 @@ import UIKit
 
 /// Implemented by coordinators that allow users to skip sections of the current activity.
 protocol Skippable {
+    /// Whether or not the user can have multiple attempts at questions
+    var retriesAllowed: Bool { get }
+
     func skipReviewing()
     func skipPracticing()
 }

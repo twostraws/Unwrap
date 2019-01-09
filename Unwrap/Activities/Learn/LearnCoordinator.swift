@@ -15,6 +15,9 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     var navigationController: CoordinatedNavigationController
     var activeStudyReview: StudyReview!
 
+    /// Whether or not the user can have multiple attempts at questions
+    let retriesAllowed = true
+
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true
@@ -24,6 +27,12 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         viewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]
+    }
+
+    /// Shows the list of common Swift terms
+    func showGlossary() {
+        let vc = GlossaryViewController.instantiate()
+        navigationController.pushViewController(vc, animated: true)
     }
 
     /// Triggered when we already have a study view controller configured and ready to go, so we just show it.

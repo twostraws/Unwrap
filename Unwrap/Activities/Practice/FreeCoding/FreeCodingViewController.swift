@@ -79,17 +79,33 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
     @IBAction func checkAnswer(_ sender: Any) {
         let result = practiceData.check(answer: textView.text)
 
-        if isShowingAnswer {
-            coordinator?.answerSubmitted(from: self, wasCorrect: result.isCorrect)
+        if result.isCorrect == false && coordinator?.retriesAllowed == true {
+            skipOrRetry()
         } else {
-            isShowingAnswer = true
-
-            if result.isCorrect {
-                answerButton.correctAnswer()
+            if isShowingAnswer {
+                coordinator?.answerSubmitted(from: self, wasCorrect: result.isCorrect)
             } else {
-                answerButton.wrongAnswer()
+                isShowingAnswer = true
+
+                if result.isCorrect {
+                    answerButton.correctAnswer()
+                } else {
+                    answerButton.wrongAnswer()
+                }
             }
         }
+    }
+
+    /// Give users the choice of trying again or skipping
+    func skipOrRetry() {
+        let ac = UIAlertController(title: "That's not quite right!", message: "Check your code carefully, and try going for the simplest solution that works.", preferredStyle: .alert)
+
+        ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self] action in
+            self?.answerButton.backgroundColor = UIColor(bundleName: "Primary")
+            self?.answerButton.setImage(nil, for: .normal)
+        })
+
+        present(ac, animated: true)
     }
 
     /// Allows users to dismiss the keyboard when they are ready, so they can tap submit

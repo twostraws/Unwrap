@@ -1,0 +1,526 @@
+[
+  {
+    "term": "@autoclosure",
+    "description": "An attribute attached to function parameters that are closures, which asks Swift to silently wrap any code using it in a closure rather than requiring users to do it by hand. This is used rarely, but it's important in the <code>assert()</code> function."
+  },
+  {
+    "term": "@escaping",
+    "description": "An attribute attached to function parameters that are closures, which tells Swift the closure will be used after the function has returned. This will in turn cause Swift to store the closure safely so that it doesn't get destroyed prematurely."
+  },
+  {
+    "term": "@objc",
+    "description": "An attribute used to mark methods and properties that must be accessible to Objective-C code. Swift does not make its code accessible to Objective-C by default to avoid making the code larger than it needs to be."
+  },
+  {
+    "term": "@objcMembers",
+    "description": "An attribute used to mark classes where all properties and methods must be accessible to Objective-C code. Swift does not make its code accessible to Objective-C by default to avoid making the code larger than it needs to be."
+  },
+  {
+    "term": "Access control",
+    "description": "A set of keywords that control how properties may be accessed by other code. <code>open<\/code> means the property can be accessed and overridden from anywhere, <code>public<\/code> means the property may be accessed from anywhere but overridden only within the module it came from, <code>internal<\/code> means the property may be accessed from anywhere inside the same module, <code>fileprivate<\/code> means the property may be accessed from anywhere inside the same file, and <code>private<\/code> means the property may be accessed from anywhere inside the same type."
+  },
+  {
+    "term": "ABI",
+    "description": "The description of how the Swift compiler produces binaries: how data structures are laid out in memory and accessed, how functions are called, and so on."
+  },
+  {
+    "term": "API",
+    "description": "The collection of classes, structs, methods, and properties exposed by a library to solve a particular problem. Short for Application Programming Interface."
+  },
+  {
+    "term": "Argument",
+    "description": "The name for a value that is being passed into a function, to be used inside the function. For example, in <code>sayHello(to: \"Paul\")<\/code> the <code>to<\/code> part is an argument. Many people just say \"parameter\" rather than \"argument\", but argument is technically correct."
+  },
+  {
+    "term": "Array",
+    "description": "A sequential collection of values of any type, such as an array of names in a band."
+  },
+  {
+    "term": "Associated type",
+    "description": "A missing type in a protocol that must be specified by whatever type is conforming to the protocol. Associated types allow us to have flexibility when adding conformances: we can say that to conform to our protocol you must have an array of items, but we don't care what the data type of those items is. Associated types are written as one word in Swift: <code>associatedtype<\/code>."
+  },
+  {
+    "term": "Associated value",
+    "description": "A value that has been added to an enum case to provide some extra meaning. For example, you might have an enum case saying the weather is windy, then add an associated value saying <em>how<\/em> windy."
+  },
+  {
+    "term": "Block",
+    "description": "Can mean any chunk of code that starts with { and ends with } (\"a code block\"), but \"block\" is also the Objective-C name for closures."
+  },
+  {
+    "term": "Boolean",
+    "description": "A data type that stores either true or false."
+  },
+  {
+    "term": "Brace",
+    "description": "The name for opening and closing curly brackets, { and }."
+  },
+  {
+    "term": "Bracket",
+    "description": "The name for opening and closing square brackets, [ and ]"
+  },
+  {
+    "term": "Break",
+    "description": "A keyword that exit the current loop. If used with a labeled statement, e.g. <code>break myLoop<\/code>, it will break out of the specified block."
+  },
+  {
+    "term": "Capturing values",
+    "description": "The name for the process of closures keeping a reference to values that are used inside the closure but were created outside. This is different from <em>copying<\/em>: the closure refers to the original values, not its own copies, so if the original values change then the closure's values change too."
+  },
+  {
+    "term": "CaseIterable",
+    "description": "A Swift protocol that can be applied to enums. If the enum has cases with no associated values, the compiler will generate an <code>allCases<\/code> array that lets you loop over the cases in the enum."
+  },
+  {
+    "term": "CGFloat",
+    "description": "A floating-point number that may be equivalent to a <code>Double<\/code> or <code>Float<\/code> depending on the platform."
+  },
+  {
+    "term": "Class",
+    "description": "A custom data type that can have one or more properties and one or more methods. Unlike structs, classes are <em>reference types<\/em>."
+  },
+  {
+    "term": "Class inheritance",
+    "description": "The ability for one class to build on another, inheriting all its methods and properties. Some languages allow one class to inherit from multiple parents, but Swift does not."
+  },
+  {
+    "term": "Closure",
+    "description": "An anonymous function that automatically keeps a reference to any values it uses that were declared outside the function."
+  },
+  {
+    "term": "Codable",
+    "description": "A protocol that allows easy conversion between a struct or a class and JSON or XML."
+  },
+  {
+    "term": "Collection",
+    "description": "A Swift protocol that is used by sequences types you can traverse multiple times without destroying them or affecting the collection, such as arrays and dictionaries."
+  },
+  {
+    "term": "Comparable",
+    "description": "A common Swift protocol that says conforming types can be placed into an order using <code>&lt;<\/code>."
+  },
+  {
+    "term": "Compiler directive",
+    "description": "One of several special pieces of code written using a <code>#<\/code>, that act as instructions to the compiler. For example, compiler directives can check whether we're targeting the simulator or not, and compile one of two code variants."
+  },
+  {
+    "term": "Compound assignment operator",
+    "description": "An operator that modifies a value and assigns it back to the original variable at the same time. For example, <code>score += 1<\/code> adds 1 to the current value of <code>score<\/code>."
+  },
+  {
+    "term": "Computed property",
+    "description": "Any property that does not have a simple storage area for its value, and instead is calculated each time the property is accessed by running some code."
+  },
+  {
+    "term": "Condition",
+    "description": "Any check that evaluates to true or false using an <code>if<\/code> statement. You can provide code to run when your condition is true, as well as an <code>else<\/code block to run when your condition is false."
+  },
+  {
+    "term": "Conditional conformance",
+    "description": "The ability to say that a type conforms to a protocol only if specific conditions are met. For example, Swift's arrays conform to <code>Equatable<\/code> only if their element also conforms to <code>Equatable<\/code>."
+  },
+  {
+    "term": "Constant",
+    "description": "Any named piece of data in your code that may not change when your program runs."
+  },
+  {
+    "term": "Continue",
+    "description": "A keyword that exits the current iteration of a loop, causing the loop to start its next iteration immediately. If used with a labeled statement, e.g. <code>continue myLoop<\/code>, it will continue the specified block."
+  },
+  {
+    "term": "Controller",
+    "description": "A part of your program that handles logic. Part of the Model-View-Controller architecture."
+  },
+  {
+    "term": "Data",
+    "description": "A type that holds any kind of binary data."
+  },
+  {
+    "term": "Default case",
+    "description": "A special case for <code>switch<\/code> blocks that will match all other values."
+  },
+  {
+    "term": "Default parameter",
+    "description": "A function parameter that has a default value attached, to allow callers not to provide it and get reasonable behavior. For example, <code>func checkSettings(debugMode: Bool = true)<\/code> can be called as <code>checkSettings(debugMode: true)<\/code> or <code>checkSettings(debugMode: false)<\/code>, but also as <code>checkSettings()<\/code> – missing a <code>debugMode<\/code> value will assume true, because that's the default value."
+  },
+  {
+    "term": "Defer",
+    "description": "A keyword that allows us to schedule work for when the current scope is exited."
+  },
+  {
+    "term": "Deinitializer",
+    "description": "A special method that is called when an instance of a class is being destroyed. These may not accept parameters, and do not exist on structs."
+  },
+  {
+    "term": "Dictionary",
+    "description": "A high-performance, unordered collection of values stored using a key for fast access."
+  },
+  {
+    "term": "Double",
+    "description": "A high-precision floating-point number, such as 3.1, or 3.141592654."
+  },
+  {
+    "term": "Enum",
+    "description": "A set of named values that are easier to remember and safer than just using strings or integers. For example, you might create an enum of directions, using north, south, east, and west – this is much nicer than using 0, 1, 2, and 3, for example. Short for \"enumeration\". Pronounced as \"ee-numb\", but \"ee-noom\" is an accepted variation."
+  },
+  {
+    "term": "Equatable",
+    "description": "A common Swift protocol that says conforming types can be compared for equality using <code>==<\/code>."
+  },
+  {
+    "term": "Expression",
+    "description": "Some code that evaluates to a value. For example, <code>12 * 12<\/code> evaluates to 144."
+  },
+  {
+    "term": "Extension",
+    "description": "A set of additional methods and computed properties that are added to a concrete type, such as <code>Int<\/code>."
+  },
+  {
+    "term": "Failable initializer",
+    "description": "An initializer that returns an optional value, because initialization might have failed for some reason. These are written as <code>init?()<\/code> or <code>init!()<\/code>."
+  },
+  {
+    "term": "Final class",
+    "description": "A class that may not be inherited from by anything else."
+  },
+  {
+    "term": "Float",
+    "description": "A low-precision floating-point number, such as 3.1, or 3.141592654."
+  },
+  {
+    "term": "For loop",
+    "description": "A loop that counts through all values in a sequence, such as an array or a range."
+  },
+  {
+    "term": "Force unwrap",
+    "description": "The process of using the value inside an optional without checking it exists first. If the optional is empty – if it has no value – force unwrapping will crash your code."
+  },
+  {
+    "term": "Framework",
+    "description": "A collection of code that you are using. Frameworks differ from libraries in that frameworks usually take over control of their operation, and call back to you when they need information."
+  },
+  {
+    "term": "Function",
+    "description": "A named section of your code that performs a specific, reusable task. You might pass in parameters to the function to customize how it runs, and it might return one or more values that are the result of its work."
+  },
+  {
+    "term": "Functional programming",
+    "description": "A programming approach that favors sending and receiving immutable data to and from functions, avoiding side effects, and composing functions together."
+  },
+  {
+    "term": "Generics",
+    "description": "The ability for one type or function to be used with a variety of data types. For example, Swift's arrays are generic, because you can make an array that stores integers, an array that stores strings, and so on."
+  },
+  {
+    "term": "guard",
+    "description": "A piece of Swift syntax that checks whether a condition is true, and forces you to exit the current scope immediately if it is not. This is commonly used as <code>guard let</code>, which checks whether an optional has a value, and, if it does, creates a new constant for that optional's value so it can be used safely. If it has no value, the <code>guard<\/code> condition fails and you must exit the current scope."
+  },
+  {
+    "term": "Hashable",
+    "description": "A common Swift protocol that says conforming types can be represented using hash values."
+  },
+  {
+    "term": "Higher-order function",
+    "description": "A function that accepts another function as a parameter, or sends back a function as its return value."
+  },
+  {
+    "term": "if let",
+    "description": "A piece of Swift syntax that checks whether an optional has a value, and, if it does, creates a new constant for that optional's value so it can be used safely. If it has no value, the <code>if<\/code> condition fails and you can run an <code>else<\/code> block instead."
+  },
+  {
+    "term": "Implicitly unwrapped optional",
+    "description": "A special Swift optional that may or may not contain a value, but does not need to be checked before use. If you attempt to use an implicitly unwrapped optional that has no value, your app will crash."
+  },
+  {
+    "term": "Indirect enum",
+    "description": "An enum that is compiled specially so that it can reference itself in its associated values. For example, if you had a linked list enum that needed to reference another linked list item as an associated value, this would need to be indirect."
+  },
+  {
+    "term": "Infinite loop",
+    "description": "A loop that never ends until you say so. This is most commonly done using a boolean variable set to true – you can set it to false as soon as you want the loop to end."
+  },
+  {
+    "term": "Initializer",
+    "description": "A special method that gets run to create an instance of a struct or class. You can have many initializers, and in the case of classes may call parent initializers inside your own initializer."
+  },
+  {
+    "term": "inout parameter",
+    "description": "A function parameter that, when changed inside the function, remains changed <em>outside<\/em> the function."
+  },
+  {
+    "term": "Integer",
+    "description": "A whole number, such as 5, 55, or 55 million."
+  },
+  {
+    "term": "Keypath",
+    "description": "A way of referring to properties without actually reading them."
+  },
+  {
+    "term": "Keyword",
+    "description": "Any word that has specific meaning as a Swift construct, such as <code>class<\/code>, <code>continue<\/code>, and <code>try<\/code>."
+  },
+  {
+    "term": "Labeled statement",
+    "description": "A name attached to a specific block of code, such as a loop or a condition, allowing you to break out of it specifically even if you are inside other blocks. For example, if you are inside a loop that's inside a loop that's inside a third loop, you could exit the outermost loop."
+  },
+  {
+    "term": "Library",
+    "description": "A collection of code that you are using. Libraries differ from frameworks in that libraries are just collections of classes, structs, enums, and so on, for you to use however you want."
+  },
+  {
+    "term": "Memberwise initializer",
+    "description": "An initialer for structs that is automatically generated by the Swift compiler, requiring that all properties must have a value. If you implement your own initializer inside the struct the memberwise initializer will no longer be generated by Swift."
+  },
+  {
+    "term": "Method",
+    "description": "A function that belongs to a struct or a class."
+  },
+  {
+    "term": "Model",
+    "description": "A part of your program that stores data. Part of the Model-View-Controller architecture."
+  },
+  {
+    "term": "Multi-line strings",
+    "description": "A string that spans multiple lines. Multi-line strings in Swift must start and end with three double quotes on their own line."
+  },
+  {
+    "term": "Mutating method",
+    "description": "A method on a struct that will change one of the properties of the struct. This must be used because only variable structs can have mutating methods called on them. Mutating methods are not required for classes, where every method can be mutating without the keyword."
+  },
+  {
+    "term": "Nested type",
+    "description": "A class or a struct that is defined inside another class or struct."
+  },
+  {
+    "term": "Nil",
+    "description": "Swift's term for missing data. An optional that has no value will be set to nil."
+  },
+  {
+    "term": "Nil coalescing",
+    "description": "An operator in Swift, written as <code>??<\/code>, that uses the value from an optional if it has one, or a default value otherwise."
+  },
+  {
+    "term": "Non-throwing function",
+    "description": "A function that cannot throw errors. These must not be marked using <code>throws<\/code>, and must not use the <code>throw<\/code> keyword."
+  },
+  {
+    "term": "Objective-C",
+    "description": "Apple's first programming language, and the forerunner to Swift."
+  },
+  {
+    "term": "Operand",
+    "description": "The values that work alongside an operator. For example, in <code>2 + 3<\/code> the 2 and 3 are operands."
+  },
+  {
+    "term": "Operator",
+    "description": "Any symbol that acts as a function on values to its left and\/or right. For example, <code>+<\/code> is an operator that adds two values together."
+  },
+  {
+    "term": "Operator overloading",
+    "description": "The ability for one operator, such as <code>+<\/code> to do multiple things depending on how it's used. For example, <code>1 + 1<\/code> is an integer addition, but <code>\"Hello \" + \"Paul\"<\/code> will join the strings together."
+  },
+  {
+    "term": "Optional",
+    "description": "A type that wraps another type, such as <code>String<\/code> or <code>Int<\/code>, but adds the ability to store no value at all. \"No value\" is different from all regular integer values, including zero. Swift uses optionals heavily as a way of providing runtime safety, and the compiler forces us to use them correctly."
+  },
+  {
+    "term": "Optional chaining",
+    "description": "The ability to use multiple optional methods or properties in a single line of code. If any of them are nil then execution of that line will stop, but if they all succeed then you will get an optional value back. For example, <code>user?.name?.uppercased()<\/code>."
+  },
+  {
+    "term": "Override method",
+    "description": "A class's method that has the same name, parameters, and return type as a method on the class's parent class. The <code>override<\/code> keyword tells the Swift compiler you understand that you are changing the behavior."
+  },
+  {
+    "term": "Parameter",
+    "description": "The name for a value that has been passed into a function, to be used inside the function. For example, in <code>func sayHello(to: String)<\/code>, the <code>to<\/code> part is a parameter."
+  },
+  {
+    "term": "Parameter label",
+    "description": "Custom names assigned to function parameters that affect the way they are used externally. For example, in <code>sayHello(to name: String)<\/code>, people calling the function will say <code>sayHello(to: \"Paul\")<\/code>, but inside the function you would refer to <code>name<\/code>."
+  },
+  {
+    "term": "Parenthesis",
+    "description": "The name for opening and closing rounded brackets, ( and )."
+  },
+  {
+    "term": "Polymorphism",
+    "description": "The ability for an object to appear as and be used as multiple different types. For example, a <code>Labrador<\/code> class instance could also be used as a <code>Dog<\/code> and <code>Mammal<\/code> if you had defined those as parent classes."
+  },
+  {
+    "term": "Property observer",
+    "description": "Code added to a property using <code>willSet<\/code> and <code>didSet<\/code>, that gets called whenever a property is being changed."
+  },
+  {
+    "term": "Protocol",
+    "description": "A list of criteria that a type must conform to, such as property names and methods. Protocols allow us to treat many objects the same way, because they implement all the behavior required to make the protocol work."
+  },
+  {
+    "term": "Protocol extension",
+    "description": "A set of additional methods and computed properties that are added to a protocol, such as <code>Equatable<\/code>."
+  },
+  {
+    "term": "Protocol inheritance",
+    "description": "The ability for one protocol to inherit requirements from another protocol. For example, the <code>Comparable<\/code> protocol inherits from <code>Equatable<\/code>."
+  },
+  {
+    "term": "Protocol-oriented programming",
+    "description": "An approach to programming that favors code re-use through protocol extensions, providing the benefits of multiple inheritance without some of the complexity. Specifically, protocol-oriented programming (POP) cannot add stored properties to a type, so there is less cruft."
+  },
+  {
+    "term": "Range",
+    "description": "Ranges span the distance between two values, up to and sometimes including the final value. This is mostly used with numbers: <code>1..<4<\/code> includes the numbers 1, 2, and 3, whereas the range <code>1...4<\/code> includes the numbers 1, 2, 3, and 4. Ranges can also be made from other data types, such as dates."
+  },
+  {
+    "term": "Raw strings",
+    "description": "The ability to specify custom string delimiters for situations when you want to use backslashes and quote marks without them having their regular meaning."
+  },
+  {
+    "term": "Raw value",
+    "description": "A simple underlying data type that enum values can be mapped to for the purpose of loading and saving. For example, you might say that the planets Mercury, Venus, and Earth have the integer raw values 1, 2, and 3."
+  },
+  {
+    "term": "Reference type",
+    "description": "Any type that stores its data indirectly in memory, with the variable or constant really just being a pointer (or <em>reference<\/em>) to that piece of memory. If you point a second variable to a reference type, it will point at the same data in memory as the original reference, so the data is shared."
+  },
+  {
+    "term": "Repeat loop",
+    "description": "A loop that will continue executing as long as its condition is true. If its condition starts false, it will still execute at least once."
+  },
+  {
+    "term": "Rethrowing functions",
+    "description": "A function that uses the <code>rethrows<\/code> keyword so that it throws errors only if the closure it accepts throws errors."
+  },
+  {
+    "term": "Return type",
+    "description": "The type of data that a function says it will return. Swift always enforces this, so if you say you will return a string you must do so."
+  },
+  {
+    "term": "Runtime",
+    "description": "When your code is running, as opposed to <em>compile time<\/em>, which is when the code is being built."
+  },
+  {
+    "term": "Scope",
+    "description": "A region of code where variables and constants are valid. Each time you use an opening brace you start a new scope: all previous variables and constants remain valid in that scope, but any that are declared <em>inside<\/em> that scope are only valid until the scope ends with a closing brace."
+  },
+  {
+    "term": "Selector",
+    "description": "A way of referring to functions without actually calling them, usually for the purpose of calling them later on."
+  },
+  {
+    "term": "Serialization",
+    "description": "The process of converting objects into text or binary, and vice versa. For example, converting an array of users into JSON, or converting JSON into an array of users."
+  },
+  {
+    "term": "Set",
+    "description": "A high-performance, unordered collection of values of any type that conforms to the <code>Hashable<\/code> protocol."
+  },
+  {
+    "term": "Shorthand parameter name",
+    "description": "Special parameter names made available inside closures, written as a dollar sign the numbers starting from 0. For example, if a closure accepts a <code>name<\/code> string and an <code>age<\/code> integer, you could refer to the string as <code>$0<\/code> and the age as <code>$1<\/code>. Note: you may not mix and match shorthand syntax with regular syntax."
+  },
+  {
+    "term": "Statement",
+    "description": "Some code that performs an action, such as <code>print(age)<\/code>."
+  },
+  {
+    "term": "Static method",
+    "description": "A method that is shared across all instances of a struct or class, rather than unique to each instance. Because this is not run on a specific instance of a struct or class, it cannot access any properties that are not also marked <code>static<\/code>."
+  },
+  {
+    "term": "Static property",
+    "description": "A property that is shared across all instances of a struct or class, rather than unique to each instance."
+  },
+  {
+    "term": "StaticString",
+    "description": "A specialized form of Swift's <code>String<\/code> that must be hand-typed – you must literally type the string directly into your code rather than using string interpolation."
+  },
+  {
+    "term": "String",
+    "description": "A collection of letters, such as \"Hello\"."
+  },
+  {
+    "term": "String interpolation",
+    "description": "The ability for Swift to insert the values of variables and constants into strings, such as \"Hello, \\(name).\""
+  },
+  {
+    "term": "Struct",
+    "description": "A custom data type that can have one or more properties and one or more methods. Unlike classes, structs are <em>value types<\/em>."
+  },
+  {
+    "term": "Subscript",
+    "description": "Special methods that are used with collections, and provide easy access to read and write values in the collection. For example, <code>someArray[3]</code> is a subscript, as is <code>someDictionary[\"name\"]</code>."
+  },
+  {
+    "term": "Switch case",
+    "description": "A system of evaluating multiple conditions in one block of code. For example, you might use <code>switch age<\/code> to evaluate the <code>age<\/code> variable, then have cases for 0 to 10, 10 to 20, 20 to 30, and so on. Switch blocks must be exhaustive in Swift, which means they must have cases to cover all possible values."
+  },
+  {
+    "term": "Syntactic sugar",
+    "description": "The name for special Swift syntax that is designed to mask complexity. The name comes from the idea that it's better to create short and sweet syntax that does the same as longer syntax. For example, <code>[String]<\/code> is syntactic sugar for <code>Array&lt;String&gt;<\/code>."
+  },
+  {
+    "term": "Synthesize",
+    "description": "The name for when the Swift compiler generates code on your behalf. For example, if you say that a custom struct conforms to <code>Equatable<\/code>, and all its properties already conform to <code>Equatable<\/code>, then Swift can synthesize a <code>==<\/code> function for it."
+  },
+  {
+    "term": "Ternary operator",
+    "description": "An operator that works with three values, written in Swift as <code>? :<\/code>. For example, <code>isEnabled ? 10 : 100<\/code> will return 10 if <code>isEnabled<\/code> is true, and 100 if it's false."
+  },
+  {
+    "term": "Throwing function",
+    "description": "A function that has the ability to throw errors. These must be marked using the <code>throws<\/code> keyword in Swift, and called using <code>try<\/code>."
+  },
+  {
+    "term": "Trailing closure syntax",
+    "description": "The ability for functions that accept a closure as their final parameter to have that closure specified after the function's parentheses, which usually helps make the function call easier to read."
+  },
+  {
+    "term": "try catch",
+    "description": "The ability to run throwing functions and catch any errors that occur. You must start using a <code>do<\/code> block, then call any throwing methods inside that using <code>try<\/code>, and finally add one or more <code>catch<\/code> blocks to catch any errors. Writing a <code>catch<\/code> block to catch all errors is sometimes called a Pokémon catch, because \"you gotta catch 'em all.\""
+  },
+  {
+    "term": "Tuple",
+    "description": "A fixed-size collection of values of any type, like an anonymous struct. Pronounced as \"tyoo-pull\" or \"too-pull\", or sometimes even \"tupple\"."
+  },
+  {
+    "term": "Type alias",
+    "description": "A type alias is the ability to specify what type should fill an associated type. This is usually not needed, because Swift can figure out the type alias just by looking at properties used with the associated type. Type aliases are written as one word in Swift: <code>typealias<\/code>."
+  },
+  {
+    "term": "Type inference",
+    "description": "The ability for Swift's compiler to figure out what kind of data type should be assigned to each of your variables and constants, so you don't have to explicitly state it."
+  },
+  {
+    "term": "Typecasting",
+    "description": "The ability to treat an object of one type as an object of a different type. This is needed when you know more information about the Swift compiler, such as when you instantiate a view controller from a storyboard."
+  },
+  {
+    "term": "Unwrapping optionals",
+    "description": "The process of checking whether there is a value inside an optional, and, if there is, extracting that value so it can be used safely."
+  },
+  {
+    "term": "Value type",
+    "description": "Any type that stores its data directly in memory. If you point a second variable to a value type it will always copies the data in its entirety, rather than allowing it to be shared."
+  },
+  {
+    "term": "Variable",
+    "description": "Any named piece of data in your code that may change when your program runs."
+  },
+  {
+    "term": "Variadic function",
+    "description": "A function that takes one or more values of a specific type, separated by commas. The <code>print()<\/code> function is variadic, because you can write <code>print(1)<\/code> to print a single value, or <code>print(1, 2, 3, 4, 5, 6, 7, 8)<\/code> to print many."
+  },
+  {
+    "term": "View",
+    "description": "A part of your program that shows visible results to your user. Part of the Model-View-Controller architecture."
+  },
+  {
+    "term": "Void",
+    "description": "The absence of a value. Used most commonly to refer to the return types of functions that return nothing."
+  },
+  {
+    "term": "While loop",
+    "description": "A loop that will continue executing as long as its condition is true. If its condition starts false, it won't execute even once."
+  }
+]
