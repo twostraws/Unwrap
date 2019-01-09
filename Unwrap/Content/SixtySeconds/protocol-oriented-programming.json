@@ -6,7 +6,7 @@
     "hint": "Protocols never provide implementations; that's done by extensions.",
     "syntaxHighlighting": false,
     "correct": [
-        "Protocols specify what methods and properies conforming types must have.",
+        "Protocols specify what methods and properties conforming types must have.",
         "You can create one protocol by inheriting from others.",
         "You can write extensions for protocols to provide default implementations.",
         "Protocols can mark properties as read-only or read-write.",

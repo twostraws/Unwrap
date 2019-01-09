@@ -2,8 +2,8 @@
     "title": "Final classes",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code defines a valid class – true or false?",
-    "hint": "All properties must have a value before the initializer ends.",
+    "question": "This code defines two valid classes using inheritance – true or false?",
+    "hint": "Classes can inherit only from non-final classes.",
     "syntaxHighlighting": true,
     "correct": [
         "class Game { }\nfinal class BoardGame: Game { }",

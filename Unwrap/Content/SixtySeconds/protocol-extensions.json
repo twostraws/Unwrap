@@ -3,7 +3,7 @@
     "postscript": "One type can conform to as many protocols as you want.",
     "reviewType": "singleSelection",
     "question": "This extension correctly implements a method from its protocol – true or false?",
-    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "hint": "The extension's method name, including its parameters and return type, must be identical to the protocol's.",
     "syntaxHighlighting": true,
     "correct": [
         "protocol Mammal {\n\tfunc eat()\n}\nextension Mammal {\n\tfunc eat() {\n\t\tprint(\"Time for dinner!\")\n\t}\n}",

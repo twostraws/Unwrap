@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code will print \"Success\" – true or false?",
-    "hint": "<code>else<\/code> blocks are executed if the condition is false and that Swift won't let you compare different types of data.",
+    "hint": "<code>else<\/code> blocks are executed if the condition is false, and Swift won't let you compare different types of data.",
     "syntaxHighlighting": true,
     "correct": [
         "let age = 21\nif age > 18 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",

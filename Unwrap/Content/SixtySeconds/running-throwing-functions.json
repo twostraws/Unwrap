@@ -1,6 +1,6 @@
 {
     "title": "Running throwing functions",
-    "postscript": "You can have multiple catch blocks to hande individual errors if you want, but you do need to catch all possible errors at some point otherwise your code won't build.",
+    "postscript": "You can have multiple catch blocks to handle individual errors if you want, but you do need to catch all possible errors at some point otherwise your code won't build.",
     "reviewType": "multipleSelection",
     "question": "Which of the following are true?",
     "hint": "Start a throwing block using <code>do<\/code>, mark each throwing line with <code>try<\/code> and catch errors using <code>catch<\/code>.",

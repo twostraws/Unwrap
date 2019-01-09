@@ -3,7 +3,7 @@
     "postscript": "The <code>deinit</code> method doesn't have parentheses after it, because it never takes parameters. So, always write <code>deinit</code> rather than <code>deinit()</code>.",
     "reviewType": "singleSelection",
     "question": "This code will print a message when an instance of the type is destroyed – true or false?",
-    "hint": "All properties must have a value before the initializer ends.",
+    "hint": "Structs cannot have deinitializers.",
     "syntaxHighlighting": true,
     "correct": [
         "class IceCream {\n\tdeinit {\n\t\tprint(\"No more icecream :(\")\n\t}\n}",

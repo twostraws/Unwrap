@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code demonstrates using nil coalescing with optionals – true or false?",
-    "hint": "The code inside <code>if let<\/code> will only be run if there was a value inside your optional.",
+    "hint": "The data type on the left of <code>??</code> must be the same as the data type on the right.",
     "syntaxHighlighting": true,
     "correct": [
         "var captain: String? = \"Kathryn Janeway\"\nlet name = captain ?? \"Anonymous\"",

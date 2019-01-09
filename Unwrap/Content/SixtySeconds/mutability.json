@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift – true or false?",
-    "hint": "All properties must have a value before the initializer ends.",
+    "hint": "The mutating keyword must be used on structs where a property is being changed.",
     "syntaxHighlighting": true,
     "correct": [
         "class Light {\n\tvar onState = false\n\tfunc toggle() {\n\t\tif onState {\n\t\t\tonState = false\n\t\t} else {\n\t\t\tonState = true\n\t\t}\n\t\tprint(\"Click\")\n\t}\n}\nlet light = Light()\nlight.toggle()",

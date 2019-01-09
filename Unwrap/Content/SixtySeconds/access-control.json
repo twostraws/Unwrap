@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift – true or false?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "Make sure that <code>private</code> properties aren't accessed from outside their struct.",
     "syntaxHighlighting": true,
     "correct": [
         "struct Contributor {\n\tprivate var name = \"Anonymous\"\n}\nlet paul = Contributor()",

@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is a valid extension – true or false?",
-    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "hint": "Extensions can add methods and computed properties, but not stored properties.",
     "syntaxHighlighting": true,
     "correct": [
         "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}",

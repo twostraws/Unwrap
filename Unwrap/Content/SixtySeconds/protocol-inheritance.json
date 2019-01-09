@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code demonstrates protocol inheritance – true or false?",
-    "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
+    "hint": "Pay attention to the way each protocol is defined – is each one a valid protocol?",
     "syntaxHighlighting": true,
     "correct": [
         "protocol CarriesPassengers {\n\tvar passengerCount: Int { get set }\n}\nprotocol CarriesCargo {\n\tvar cargoCapacity: Int { get set }\n}\nprotocol Boat: CarriesPassengers, CarriesCargo {\n\tvar name: String { get set }\n}",

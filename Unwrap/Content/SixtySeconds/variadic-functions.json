@@ -3,7 +3,7 @@
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true about variadic functions?",
-    "hint": "Variadic parameters because much like regular ones, except they are converted to an array inside the function.",
+    "hint": "Variadic parameters behave much like regular ones, except they are converted to an array inside the function.",
     "syntaxHighlighting": false,
     "correct": [
         "A variadic parameter is written with three dots after its name: <code>Int...<\/code>",
