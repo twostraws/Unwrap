@@ -2,7 +2,7 @@
     "title": "Unwrapping with guard",
     "postscript": "It's common to use both <code>if let</code> and <code>guard let</code> to unwrap optionals into a constant of the same name. For example, <code>guard let name = name else { return }</code>",
     "reviewType": "singleSelection",
-    "question": "This code print a message – true or false?",
+    "question": "This code will print a message – true or false?",
     "hint": "If your <code>guard let<\/code> condition fails, you must exit the current method, loop, or condition before the <code>else</code> block ends.",
     "syntaxHighlighting": true,
     "correct": [
