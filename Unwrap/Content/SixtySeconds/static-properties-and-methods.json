@@ -1,6 +1,6 @@
 {
     "title": "Static properties and methods",
-    "postscript": "Static methods work the same way as static methods – just write <code>static func yourMethod()</code> rather than <code>func yourMethod()</code>.",
+    "postscript": "Static methods work the same way as static properties – just write <code>static func yourMethod()</code> rather than <code>func yourMethod()</code>.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift – true or false?",
     "hint": "Static properties and methods must be called on the struct that owns them, rather than on instances of that struct.",
