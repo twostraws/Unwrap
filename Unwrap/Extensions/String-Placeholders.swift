@@ -56,7 +56,6 @@ extension String {
         output = randomStringResult.output
         names.append(contentsOf: randomStringResult.names)
         namesNatural.append(contentsOf: randomStringResult.namesNatural)
-        
 
         // Replace all instances of RANDOM_STRING_VALUE with a random string from the correct set of options.
 
@@ -156,7 +155,6 @@ extension String {
 
         return output
     }
-
 
     /// Creates an integer variable with a random name.
     fileprivate func resolveRandomIntName(input: String) -> (output: String, names: [String], namesNatural: [String]) {
