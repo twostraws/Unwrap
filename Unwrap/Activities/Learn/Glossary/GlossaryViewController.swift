@@ -15,7 +15,7 @@ class GlossaryViewController: UITableViewController, Storyboarded {
         super.viewDidLoad()
 
         title = "Glossary"
-
+        navigationItem.largeTitleDisplayMode = .never
         tableView.dataSource = dataSource
     }
 }
