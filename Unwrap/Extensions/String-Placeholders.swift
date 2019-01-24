@@ -110,7 +110,7 @@ extension String {
 
         if split.count == 2 {
             // we have a filter!
-            return self.applyingFilter(split[1])
+            return split[0].applyingFilter(split[1])
         } else {
             return self
         }
