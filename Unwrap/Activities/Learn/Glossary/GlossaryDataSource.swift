@@ -8,10 +8,15 @@
 
 import UIKit
 
+/// Loads glossary entries from JSON and displays them grouped alphabetically.
 class GlossaryDataSource: NSObject, UITableViewDataSource {
+    /// Stores all glossary entries grouped by their first letter
     var sortedEntries = [String: [GlossaryEntry]]()
+
+    /// Stores the alphabetical letters we want to show along the right edge
     var sectionTitles = [String]()
 
+    /// Loads the glossary definitions from JSON and groups them alphabetically
     override init() {
         let entries = Bundle.main.decode([GlossaryEntry].self, from: "glossary.json")
         sortedEntries = Dictionary(grouping: entries) { String($0.term.prefix(1)).uppercased() }

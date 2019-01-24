@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Manages all the rows in the Help table view, handing taps back to a delegate where appropriate.
 class HelpDataSource: NSObject, UITableViewDataSource {
     weak var delegate: TappableTextViewDelegate?
     let items = Bundle.main.decode([HelpItem].self, from: "Help.json")
