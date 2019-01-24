@@ -33,7 +33,7 @@ After the Activities group you’ll find Extensions, which contain app-wide exte
 
 - **BundleLoading.swift** includes methods and initializers for various types that load content directly from the bundle. For example, `Data`, `String`, `UIImage` and `UIColor` all contain `bundleName:` initializers that retrieve content from the bundle or crash on failure. Loading from the bundle should never fail, so this helps stop accidental typos.
 - **String-Attributed.swift** includes a handful of methods for converting `String` to `NSAttributedString`. These are useful when you have minimal markup to parse, or when doing syntax highlighting.
-- **String-Placeholders.swift** turns code strings with special placeholders, such as `RANDOM_STRING_VALUE_0`, into finished code. This is used to randomize the code in Predict the Output and Tap to Code so the user isn’t always face with exactly the same code.
+- **String-Placeholders.swift** turns code strings with special placeholders, such as `RANDOM_STRING_VALUE_0`, into finished code. This is used to randomize the code in Predict the Output and Tap to Code so the user isn’t always faced with exactly the same code.
 - **String-Variables.swift** turns a string of code into a string of homogenized code through a process of anonymization.  This is used in the Free Coding practice so that minor differences in code – did they use `var` when they could have used `let`? Did they name their struct `Bike` rather than `Bicycle`? – are ignored.
 - **UIButton-Types.swift** contains default styling for the buttons in the app: primary and secondary buttons, plus methods that color them as correct and wrong as needed.
 - **UITableViewCell-Styling.swift** contains the same sort of theming for table view cells.
@@ -71,7 +71,7 @@ It’s the job of coordinators to manage the flow inside the application, so ide
 
 ## Home
 
-I want to go into detail on the key parts of each app tab, starting with Home – the one users see when the app launches. This is main responsible for showing a single table view that provides details of the user’s learning progress so far: how many points they have, what rank they are, and what badges they have unlocked.
+I want to go into detail on the key parts of each app tab, starting with Home – the one users see when the app launches. This is mainly responsible for showing a single table view that provides details of the user’s learning progress so far: how many points they have, what rank they are, and what badges they have unlocked.
 
 This table includes two important parts: a `StatusView` that renders their current rank image and a progress ring around it, and a `BadgeCollectionViewCell` that embeds a collection view inside the table view.
 
@@ -164,14 +164,14 @@ This is a nice and easy practice activity: we load some prewritten code, shuffle
 
 The only real complexity here is that some lines of code – specifically things like `}` or `} else {` – might appear several times in the same code, and there is no way of telling which is which. To avoid this problem entirely, when checking answers all leading whitespace is removed and the code is converted to a string, which means any lone closing brace can be used anywhere.
 
-This one should be easy to write new examples for, but please make sure there is only *one* solution to each problem. This means there should be no ambiguity as to the order each line of code must appear.
+This one should be easy to write new examples for, but please make sure there is only *one* solution to each problem. This means there should be no ambiguity as to the order in which each line of code must appear.
 
 
 ## Spot the Error
 
-This practice activity reads some example code and inserts one small error that users must fine.
+This practice activity reads some example code and inserts one small error that users must identify.
 
-This might not sound too hard, but in fact we need to be extraordinarily careful so that the error is clearly identifiable. As a result, it reads one of 12 different code samples – each with randomization elements inside to keep users on their toes – but each code sample follows a specific structure:
+This might sound trivial, but in all seriousness we need to be extraordinarily careful so that the error is presented clearly. As a result, it reads one of 12 different code samples (with randomization elements inside to keep users on their toes!), each with its own specific structure:
 
 - It starts by defining a function that accepts an integer parameter and returns a string.
 - That function must be called as the final line of code.
@@ -188,14 +188,14 @@ Because those rules are adhered to strictly, this activity can apply many differ
 
 Each code sample is stored in its own file, largely because I found JSON’s lack of line break support too hard to work with here. 
 
-Once you understand how these things are structured, you ought to be able to add new examples fairly easily.
+Once you understand how these things are structured, it should be fairly straightforward to add new examples of your own.
 
 
 ### Tap to Code
 
-This is practice activity shows a jumbled up series of code parts and asks users to arrange them correctly.
+This is a practice activity that shows a jumbled up series of code parts and asks users to arrange them correctly.
 
-In theory this is easy, but in practice it is complicated greatly by the fact that it uses drag and drop. This requires a fair chunk of boilerplate code, but it’s important to allow users to change their mind without having to remove and re-add lots of things.
+In theory this is easy; however, in practice, using drag and drop complicates things. Although a fair chunk of boilerplate code is required, it’s valuable, as it allows the user to change his or her mind without needing to remove and re-add lots of items.
 
 To make this a little easier to follow, I’ve split the core of the implementation into two parts: `TapToCodeDataSource` is responsible for all the collection view drag and drop shenanigans, whereas `TapToCodeModel` handles all the underlying data.
 

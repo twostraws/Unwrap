@@ -2,7 +2,7 @@
     "title": "Exiting loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print print some text – true or false?",
+    "question": "This loop will print some text – true or false?",
     "hint": "Calling <code>break<\/code> skips the remainder of the current loop.",
     "syntaxHighlighting": true,
     "correct": [
