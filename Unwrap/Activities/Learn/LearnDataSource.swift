@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Manages all the rows in the Home table view.
+/// Manages all the rows in the Learn table view.
 class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     weak var delegate: LearnViewController?
 
