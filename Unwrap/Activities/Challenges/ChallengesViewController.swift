@@ -23,6 +23,9 @@ class ChallengesViewController: UITableViewController, Storyboarded, UserTrackin
         title = "Challenges"
         registerForUserChanges()
         tableView.dataSource = dataSource
+
+        NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: UIApplication.willEnterForegroundNotification, object: nil)
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
