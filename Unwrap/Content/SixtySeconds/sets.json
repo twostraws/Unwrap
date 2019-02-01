@@ -6,7 +6,7 @@
     "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
     "syntaxHighlighting": true,
     "correct": [
-        "var colors: Set([\"Red\", \"Green\", \"Red\"])",
+        "var colors = Set([\"Red\", \"Green\", \"Red\"])",
         "var scores = Set([9, 10])",
         "var ratings = Set([1, 1, 1, 2, 2, 2])",
         "var attendees = Set([100, 100, 101, 100])",
