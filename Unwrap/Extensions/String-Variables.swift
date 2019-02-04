@@ -35,7 +35,7 @@ extension String {
         replaced = replaced.anonymizingComponent("for ([A-Za-z_][A-Za-z0-9_]*) in", replacementWrapper: "@")
 
         // Anonymize function parameters.
-        replaced = replaced.anonymizingComponent("func +[A-Za-z_][A-Za-z0-9_]* *\\((?:([A-Za-z_][A-Za-z0-9_]* *[A-Za-z_][A-Za-z0-9_]*) *: *[A-Za-z_][A-Za-z0-9_]*,? *)*", replacementWrapper: "%")
+        replaced = replaced.anonymizingComponent("func +[A-Za-z_][A-Za-z0-9_]* *\\((?:([A-Za-z_]*[A-Za-z0-9_]* *[A-Za-z_][A-Za-z0-9_]*) *: *[A-Za-z_][A-Za-z0-9_]*,? *)*", replacementWrapper: "%")
 
         // Anonymize function names.
         replaced = replaced.anonymizingComponent("func +([A-Za-z_][A-Za-z0-9_]*)", replacementWrapper: "#")

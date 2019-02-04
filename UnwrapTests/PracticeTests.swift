@@ -17,6 +17,8 @@ class PracticeTests: XCTestCase {
 
         let correctAnswers = [
             "func compare(string1 str: String, against other: String) -> Bool {\nreturn str.lowercased() == other.lowercased()\n}",
+            "func compare(a: String, b: String) -> Bool {\nreturn a.lowercased() == b.lowercased()\n}",
+            "func compare(a1: String, b1: String) -> Bool {\nreturn a1.lowercased() == b1.lowercased()\n}",
             "func checkSame(string1: String, string2: String) -> Bool {\nreturn string1.lowercased() == string2.lowercased()\n}",
             "\nfunc checkIdentical(stringA : String, stringB : String)  ->  Bool  {\n\n\treturn stringA.lowercased()  ==  stringB.lowercased()\n\n}\n",
             "func compare(thing1 :String,thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased(){\nreturn true\n} else {\nreturn false\n}\n}",
@@ -35,6 +37,9 @@ class PracticeTests: XCTestCase {
 
             // This doesn't force the strings to match cases.
             "func check(string1 str: String, against other: String) -> Bool {\nreturn str == other\n}",
+            
+            // This uses invalid parameter names.
+            "func check(1: String, 2: String) -> Bool {\nreturn 1 == 2\n}",            
 
             // This has weird parameter syntax; just broken Swift.
             "func check(wotsit string1 str: String, against other: String) -> Bool {\nreturn str == other\n}"
