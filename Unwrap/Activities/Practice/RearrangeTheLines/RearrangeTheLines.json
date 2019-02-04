@@ -107,7 +107,7 @@
 	{
 		"question": "This code should add a <code>clamped()</code> method to <code>Int</code> that makes sure its value is between a minimum and maximum.",
 		"hint": "If you clamp the number 5 between 3 and 8, you'll get back 5.",
-		"code": "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}\n"
+		"code": "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}"
 	},
 	{
 		"question": "This code should create a protocol then add a default method implementation.",
