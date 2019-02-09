@@ -31,9 +31,9 @@ As far as I know the app is feature complete, but there are likely to be errors 
 
 Any help you can offer with this project is most welcome, and trust me: there are opportunities big and small, so that someone with only a few weeks of Swift experience can help.
 
-**However, before you start please read the LICENSE.md and CONTRIBUTING.md files inside this repository.** Although I want to make Unwrap available under an open-source license as soon as I can, right now it’s released under a really restrictive license to avoid clones, scams, and confused users. So, please read the LICENSE.md file before you contribute anything.
+**However, before you start please read the LICENSE.md and CONTRIBUTING.md files inside this repository.** Although I want to make Unwrap available under an open-source license as soon as I can, right now it’s released under a really restrictive license to avoid clones, scams, and confused users. So, please read the [LICENSE.md](https://github.com/twostraws/Unwrap/blob/master/LICENSE.md) file before you contribute anything.
 
-If you’d like to help, here are some suggestions ordered from most easy to most difficult. I’ve added documentation to most if not all of the code, but there’s also a separate document in this repository called CONTRIBUTING.md that documents how the code is structured and how it works.
+If you’d like to help, here are some suggestions ordered from most easy to most difficult. I’ve added documentation to most if not all of the code, but there’s also a separate document in this repository called [CONTRIBUTING.md](https://github.com/twostraws/Unwrap/blob/master/CONTRIBUTING.md) that documents how the code is structured and how it works.
 
 
 ### Easy
@@ -60,14 +60,14 @@ If you’d like to help, here are some suggestions ordered from most easy to mos
 2. I’ve added the basics of theme support, but it’s not implemented or tested yet. This could be expanded to work everywhere, and new themes could be added.
 3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. To resolve this we could switch to building the UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code. 
 
-Again, please make sure you read the LICENSE.md and CONTRIBUTING.md files before you start just to avoid problems.
+Again, please make sure you read the [LICENSE.md](https://github.com/twostraws/Unwrap/blob/master/LICENSE.md) and [CONTRIBUTING.md](https://github.com/twostraws/Unwrap/blob/master/CONTRIBUTING.md) files before you start just to avoid problems.
 
 
 ## Credits
 
 Unwrap was designed and built by Paul Hudson. Hacking with Swift, Swift in Sixty Seconds, Unwrap, and the Unwrap logo are all copyright © Paul Hudson 2018.
 
-Unwrap is built using some third-party frameworks and fonts: DZNEmptyDataSet, Font Awesome, MKRingProgressView, QuickLayout, SavannaKit, SDWebImage, SourceEditor, and SwiftEntryKit. Their licenses are stored inside their respective Pods directories, and are repeated inside the app’s credits screen.
+Unwrap is built using some third-party frameworks and fonts: [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet), [Font Awesome](https://fontawesome.com/), [MKRingProgressView](https://github.com/maxkonovalov/MKRingProgressView), [QuickLayout](https://github.com/huri000/QuickLayout), [SavannaKit](https://github.com/louisdh/savannakit), [SDWebImage](https://github.com/SDWebImage/SDWebImage), [SourceEditor](https://github.com/louisdh/source-editor), and [SwiftEntryKit](https://github.com/huri000/SwiftEntryKit). Their licenses are stored inside their respective Pods directories, and are repeated inside the app’s credits screen.
 
 Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries. 
 
