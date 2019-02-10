@@ -2,12 +2,12 @@
 
 There are lots of ways you can help build this app, and everyone is welcome regardless of skill level and experience. 
 
-I already included suggestions for new contributors in the README.md, so here I want to walk you through the way the app is structured to help you understand how it fits together.
+I already included suggestions for new contributors in the [README.md](https://github.com/twostraws/Unwrap/blob/master/README.md), so here I want to walk you through the way the app is structured to help you understand how it fits together.
 
 
 ## Before you begin…
 
-Make sure you also read and understand LICENSE.md. There is also a code of conduct in CODE_OF_CONDUCT.md that helps ensure contributions take place in a harassment-free environment.
+Make sure you also read and understand [LICENSE.md](https://github.com/twostraws/Unwrap/blob/master/LICENSE.md). There is also a code of conduct in [CODE_OF_CONDUCT.md](https://github.com/twostraws/Unwrap/blob/master/CODE_OF_CONDUCT.md) that helps ensure contributions take place in a harassment-free environment.
 
 If you have questions about the code, about making commits, or even if you’re not sure how to open pull requests to get your code merged, that’s OK – just tweet me [@twostraws](https://twitter.com/twostraws) and I’ll try to help. Everyone is welcome here, even if it’s their first time working in a team project.
 
@@ -268,7 +268,7 @@ That being said, there are some things you should be aware of:
 
 ## Before you commit code…
 
-Contributors are very welcome, and I’ve tried to include a range of suggestions for things you can try both here and in the README.md file. However, before you commit any code please make sure you have at least done the following:
+Contributors are very welcome, and I’ve tried to include a range of suggestions for things you can try both here and in the [README.md](https://github.com/twostraws/Unwrap/blob/master/README.md) file. However, before you commit any code please make sure you have at least done the following:
 
 1. Run SwiftLint to make sure you fix any major styling errors.
 2. Run all the tests and make sure they pass.
