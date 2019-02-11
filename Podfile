@@ -14,6 +14,7 @@ target 'Unwrap' do
   pod 'MKRingProgressView', '~> 2.0'
   pod 'SourceEditor', :git => 'https://github.com/louisdh/source-editor.git', :branch => 'master'
   pod 'DZNEmptyDataSet', '~> 1.8'
+  pod 'SwiftLint', '0.27.0'
 
   target 'UnwrapTests' do
     inherit! :search_paths
