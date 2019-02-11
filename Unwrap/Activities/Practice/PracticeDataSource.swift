@@ -11,7 +11,7 @@ import UIKit
 /// Manages all the rows in the Practice table view.
 class PracticeDataSource: NSObject, UITableViewDataSource {
     /// The complete list of practice activities we want to show to users.
-    var activities: [PracticeActivity.Type] = [FreeCodingPractice.self, PredictTheOutputPractice.self, RearrangeTheLinesPractice.self, SpotTheErrorPractice.self, TapToCodePractice.self, TypeCheckerPractice.self]
+    var activities: [PracticeActivity.Type] = [ReviewPractice.self, FreeCodingPractice.self, PredictTheOutputPractice.self, RearrangeTheLinesPractice.self, SpotTheErrorPractice.self, TapToCodePractice.self, TypeCheckerPractice.self]
 
     override init() {
         // sort the activities by title; will be useful when translations are added
