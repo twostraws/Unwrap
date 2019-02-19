@@ -37,9 +37,9 @@ class PracticeTests: XCTestCase {
 
             // This doesn't force the strings to match cases.
             "func check(string1 str: String, against other: String) -> Bool {\nreturn str == other\n}",
-            
+
             // This uses invalid parameter names.
-            "func check(1: String, 2: String) -> Bool {\nreturn 1 == 2\n}",            
+            "func check(1: String, 2: String) -> Bool {\nreturn 1 == 2\n}",
 
             // This has weird parameter syntax; just broken Swift.
             "func check(wotsit string1 str: String, against other: String) -> Bool {\nreturn str == other\n}"
