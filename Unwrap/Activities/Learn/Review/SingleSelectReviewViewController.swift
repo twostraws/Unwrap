@@ -10,7 +10,7 @@ import SavannaKit
 import SourceEditor
 import UIKit
 
-class SingleSelectReviewViewController: ReviewViewController, Storyboarded, Sequenced {
+class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     struct Answer {
         var text: String
         var isCorrect: Bool
@@ -22,9 +22,6 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded, Sequ
     @IBOutlet var answerButtons: UIStackView!
     @IBOutlet var trueButton: UIButton!
     @IBOutlet var falseButton: UIButton!
-
-    /// The current question in the answer sequence.
-    var questionNumber = 1
 
     /// The array of all answers in the whole sequence. Tracking this allows us to ensure questions don't repeat.
     var answers = [Answer]()

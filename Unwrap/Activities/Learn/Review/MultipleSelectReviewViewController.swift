@@ -18,13 +18,17 @@ class MultipleSelectReviewViewController: ReviewViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Review"
+        title = getTitle()
         dataSource = MultipleSelectReviewDataSource(review: review)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.isEditing = true
 
         prompt.attributedText = review.question.fromSimpleHTML()
+    }
+
+    func getTitle() -> String {
+        return "Review"
     }
 
     override func viewDidAppear(_ animated: Bool) {

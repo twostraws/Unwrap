@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController, AlertShowing {
-    var coordinator: (Skippable & AnswerHandling & AlertHandling)?
+class ReviewViewController: UIViewController, AlertShowing, PracticingViewController {
+    var coordinator: (AnswerHandling & Skippable)?
+
+    var questionNumber = 1
+
+    var practiceType = "review"
 
     var sectionName = ""
     var review: StudyReview!
