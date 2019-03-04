@@ -10,6 +10,7 @@ PODS:
     - SavannaKit (~> 0.9)
   - SwiftEntryKit (0.8.4):
     - QuickLayout (= 2.1.1)
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - SDWebImage (~> 4.0)
   - SourceEditor (from `https://github.com/louisdh/source-editor.git`, branch `master`)
   - SwiftEntryKit (= 0.8.4)
+  - SwiftLint (= 0.27.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - SavannaKit
     - SDWebImage
     - SwiftEntryKit
+    - SwiftLint
 
 EXTERNAL SOURCES:
   SourceEditor:
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SourceEditor: 4d590385d642c812d08a91941a4bfc90eccf20af
   SwiftEntryKit: f0dd54bb0fb9f234738cd15a32365265cb975be8
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 58dfa3156b1ec7afb55cafc0c8dc414091a10dcf
+PODFILE CHECKSUM: 683b15c20169641a3df515f1b9c38295411cc238
 
 COCOAPODS: 1.5.3
