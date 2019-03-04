@@ -1,5 +1,5 @@
 # Unwrap
-**Copyright (c) 2018 Paul Hudson**
+**Copyright (c) 2019 Paul Hudson**
 
 My hope is to release Unwrap under an open source license at some point, partly so that folks can use this code to build their own apps, and partly because it means anyone can help improve this app for everyone.
 
