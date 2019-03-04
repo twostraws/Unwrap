@@ -144,6 +144,7 @@ final class User: Codable {
 
     // MARK: Methods
     init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
         updateStreak()
     }
 
@@ -168,6 +169,8 @@ final class User: Codable {
         readNewsCount = try container.decode(Int.self, forKey: .readNewsCount)
 
         theme = try container.decode(String.self, forKey: .theme)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
 
         updateStreak()
     }
@@ -304,7 +307,7 @@ final class User: Codable {
     }
 
     /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.
-    func updateStreak() {
+    @objc func updateStreak() {
         let today = Date()
         guard lastStreakEntry.isSameDay(as: today) == false else { return }
 
