@@ -10,7 +10,7 @@
         "let spaceships = [\"Serenity\", \"Enterprise\"]\nspaceships.contains(\"Serenity\")",
         "var usedNumbers = [Int]()\nfor i in 1...10 {\n\tusedNumbers.append(i)\n}\nusedNumbers.count > 5",
         "let marines = [\"Apone\", \"Hicks\", \"Vasquez\"]\nmarines.contains(\"Hicks\")",
-        "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.index(of: \"Whist\") == 2",
+        "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.firstIndex(of: \"Whist\") == 2",
         "var results = [true, true, false, true]\nresults.remove(at: 2)\nresults.count == 3"
     ],
     "wrong": [
@@ -27,7 +27,7 @@
             "reason": ""
         },
         {
-            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
+            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.firstIndex(of: \"A New Hope\") == 4",
             "reason": ""
         },
         {

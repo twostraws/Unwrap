@@ -10,7 +10,7 @@
         "let userAge: Int? = 38\nif let age = userAge {\n\tprint(\"You are \\(age) years old.\")\n}",
         "var favoriteMovie: String? = nil\nfavoriteMovie = \"The Life of Brian\"\nif let movie = favoriteMovie {\n\tprint(\"Your favorite movie is \\(movie).\")\n} else {\n\tprint(\"You don't have a favorite movie.\")\n}",
         "let currentDestination: String? = nil\nif let destination = currentDestination {\n\tprint(\"We're walking to \\(destination).\")\n} else {\n\tprint(\"We're just wandering.\")\n}",
-        "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
+        "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.firstIndex(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
         "var winner: String? = nil\nwinner = \"Daley Thompson\"\nif let name = winner {\n\tprint(\"And the winner is... \\(name)!\")\n}"
     ],
     "wrong": [

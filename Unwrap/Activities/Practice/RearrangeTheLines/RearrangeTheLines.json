@@ -122,7 +122,7 @@
 	{
 		"question": "This code should print out the location of \"Red\" in an array of albums.",
 		"hint": "You can only print the position of \"Red\" if it was found.",
-		"code": "let albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: \"Red\") {\n\tprint(\"Found Red at position \\(position).\")\n} else {\n\tprint(\"Red wasn't in the array.\")\n}"
+		"code": "let albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.firstIndex(of: \"Red\") {\n\tprint(\"Found Red at position \\(position).\")\n} else {\n\tprint(\"Red wasn't in the array.\")\n}"
 	},
 	{
 		"question": "This code should create then call a function that doubles a number, or returns nil if it's missing.",

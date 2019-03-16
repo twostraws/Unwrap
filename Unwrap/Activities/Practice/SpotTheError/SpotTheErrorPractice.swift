@@ -69,7 +69,7 @@ struct SpotTheErrorPractice: PracticeActivity {
 
         case .badReturnType:
             // returning Int/Double/Float rather than String
-            lineNumber = lines.index(of: "    return RETURN_NAME")
+            lineNumber = lines.firstIndex(of: "    return RETURN_NAME")
 
             switch Int.random(in: 0..<3) {
             case 0:
@@ -127,7 +127,7 @@ struct SpotTheErrorPractice: PracticeActivity {
 
         case .missingReturnType:
             // deleting -> String
-            lineNumber = lines.index(of: "    return RETURN_NAME")
+            lineNumber = lines.firstIndex(of: "    return RETURN_NAME")
             output = code.replacingOccurrences(of: " -> String", with: "")
 
         case .missingReturnValue:
