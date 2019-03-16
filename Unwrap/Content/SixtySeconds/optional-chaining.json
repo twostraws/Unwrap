@@ -1,8 +1,8 @@
 {
     "title": "Optional chaining",
-    "postscript": "You can chain as many things as you need. For example, <code>someOptionalArray?.first?.lowercased()</code>.",
+    "postscript": "You can chain as many things as you need. For example, <code>someOptionalArray?.first?.lowercased()<\/code>.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "It might sound obvious, but optional chaining may only be used with optionals.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "let songs: [String]? = [String]()\nlet finalSong = songs?.last?.uppercased()"
     ],
     "wrong": [
-        "func loadForecast(for dayNumber: Int) -> String {\n\tprint(\"Forecast unavailable.\")\n\treturn nil\n}\nlet forecast = loadForecast(for: 3)?.uppercased()",
-        "let captains = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
-        "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",
-        "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
-        "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",
-        "let attendees: [String] = [String]()\nlet firstInLine = attendees?.first?.uppercased()"
+        {
+            "answer": "func loadForecast(for dayNumber: Int) -> String {\n\tprint(\"Forecast unavailable.\")\n\treturn nil\n}\nlet forecast = loadForecast(for: 3)?.uppercased()",
+            "reason": ""
+        },
+        {
+            "answer": "let captains = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
+            "reason": ""
+        },
+        {
+            "answer": "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",
+            "reason": ""
+        },
+        {
+            "answer": "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
+            "reason": ""
+        },
+        {
+            "answer": "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",
+            "reason": ""
+        },
+        {
+            "answer": "let attendees: [String] = [String]()\nlet firstInLine = attendees?.first?.uppercased()",
+            "reason": ""
+        }
     ]
 }

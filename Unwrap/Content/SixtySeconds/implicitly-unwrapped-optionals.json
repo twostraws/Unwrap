@@ -14,11 +14,29 @@
         "If you try to use an implicitly unwrapped optional when it is <code>nil<\/code>, your code crashes."
     ],
     "wrong": [
-        "<code>String?<\/code> and <code>String!<\/code> behave the same.",
-        "<code>String?<\/code> can be <code>nil<\/code>, but <code>String!<\/code> can't.",
-        "Arrays can't be optional",
-        "You shouldn't pass optionals into functions",
-        "You can't use both <code>String!<\/code> and <code>String?<\/code> in the same program.",
-        "Once an optional has a value, you can't set it back to <code>nil<\/code>."
+        {
+            "answer": "<code>String?<\/code> and <code>String!<\/code> behave the same.",
+            "reason": ""
+        },
+        {
+            "answer": "<code>String?<\/code> can be <code>nil<\/code>, but <code>String!<\/code> can't.",
+            "reason": ""
+        },
+        {
+            "answer": "Arrays can't be optional",
+            "reason": ""
+        },
+        {
+            "answer": "You shouldn't pass optionals into functions",
+            "reason": ""
+        },
+        {
+            "answer": "You can't use both <code>String!<\/code> and <code>String?<\/code> in the same program.",
+            "reason": ""
+        },
+        {
+            "answer": "Once an optional has a value, you can't set it back to <code>nil<\/code>.",
+            "reason": ""
+        }
     ]
 }

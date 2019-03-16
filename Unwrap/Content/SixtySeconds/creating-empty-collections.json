@@ -14,11 +14,29 @@
         "var answers = [Bool]()"
     ],
     "wrong": [
-        "var friends = Set[String]()",
-        "var mountainHeights = [String, Int]()",
-        "var episodeNames = Array()",
-        "var measurements = [Double]",
-        "var wines = Dictionary<String: String>()",
-        "var badges = Set<>()"
+        {
+            "answer": "var friends = Set[String]()",
+            "reason": "The correct syntax is Set<String>()."
+        },
+        {
+            "answer": "var mountainHeights = [String, Int]()",
+            "reason": "The correct syntax is <code>[String: Int]</code>"
+        },
+        {
+            "answer": "var episodeNames = Array()",
+            "reason": "You must tell Swift what kind of data the array will hold."
+        },
+        {
+            "answer": "var measurements = [Double]",
+            "reason": "When creating a new empty array you must place empty parentheses after the type, e.g. <code>[Double]()</code>."
+        },
+        {
+            "answer": "var wines = Dictionary<String: String>()",
+            "reason": "The correct syntax is either <code>Dictionary<String, String>()</code> or <code>[String: String]()</code>"
+        },
+        {
+            "answer": "var badges = Set<>()",
+            "reason": "You must tell Swift what kind of data the set will hold."
+        }
     ]
 }

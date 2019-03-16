@@ -2,7 +2,7 @@
     "title": "Optionals: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Watch out for basic syntax errors.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "let owlVariety: String? = nil\nprint(owlVariety ?? \"Unknown owl\")\n"
     ],
     "wrong": [
-        "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]\nlet upperRingo = names.last.uppercased()\n",
-        "enum NetworkError: Error {\n\tcase insecure\n\tcase noWifi\n}\nfunc downloadData(from url: String) -> String {\n\tif url.hasPrefix(\"https:\/\/\") {\n\t\treturn \"This is the best Swift site ever!\"\n\t} else {\n\t\tthrow NetworkError.insecure\n\t}\n}\nif let data = try? downloadData(from: \"https:\/\/www.hackingwithswift.com\") {\n\tprint(data)\n} else {\n\tprint(\"Unable to fetch the data.\")\n}",
-        "struct Furniture { }\nstruct DeckChair: Furniture { }\nlet chair = DeckChair()\nif let furniture = chair as? Furniture {\n\tprint(\"This is furniture.\")\n}\n",
-        "let birthYear: Int? = nil\nlet year = birthYear ? \"Unknown\"\n",
-        "func brewBeer(to strength: Double?) {\n\tguard strength = strength else { return }\n\tprint(\"Let's brew some beer!\")\n}\nbrewBeer(to: 5.5)",
-        "let doctor: String? = \"Dr Singh\"\nlet assignedDoctor: String = doctor?\n"
+        {
+            "answer": "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]\nlet upperRingo = names.last.uppercased()\n",
+            "reason": ""
+        },
+        {
+            "answer": "enum NetworkError: Error {\n\tcase insecure\n\tcase noWifi\n}\nfunc downloadData(from url: String) -> String {\n\tif url.hasPrefix(\"https:\/\/\") {\n\t\treturn \"This is the best Swift site ever!\"\n\t} else {\n\t\tthrow NetworkError.insecure\n\t}\n}\nif let data = try? downloadData(from: \"https:\/\/www.hackingwithswift.com\") {\n\tprint(data)\n} else {\n\tprint(\"Unable to fetch the data.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Furniture { }\nstruct DeckChair: Furniture { }\nlet chair = DeckChair()\nif let furniture = chair as? Furniture {\n\tprint(\"This is furniture.\")\n}\n",
+            "reason": ""
+        },
+        {
+            "answer": "let birthYear: Int? = nil\nlet year = birthYear ? \"Unknown\"\n",
+            "reason": ""
+        },
+        {
+            "answer": "func brewBeer(to strength: Double?) {\n\tguard strength = strength else { return }\n\tprint(\"Let's brew some beer!\")\n}\nbrewBeer(to: 5.5)",
+            "reason": ""
+        },
+        {
+            "answer": "let doctor: String? = \"Dr Singh\"\nlet assignedDoctor: String = doctor?\n",
+            "reason": ""
+        }
     ]
 }

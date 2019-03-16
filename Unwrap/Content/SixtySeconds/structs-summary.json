@@ -14,11 +14,29 @@
         "Computed properties let us run code to return a value."
     ],
     "wrong": [
-        "You may either have stored properties or computed properties, but not both.",
-        "Structs may not use constant properties.",
-        "You can combine <code>public<\/code> and <code>private<\/code> in a single property.",
-        "The <code>self<\/code> keyword must not be used inside initializers.",
-        "You must always write your own initializer for structs.",
-        "Structs can't have lazy properties."
+        {
+            "answer": "You may either have stored properties or computed properties, but not both.",
+            "reason": ""
+        },
+        {
+            "answer": "Structs may not use constant properties.",
+            "reason": ""
+        },
+        {
+            "answer": "You can combine <code>public<\/code> and <code>private<\/code> in a single property.",
+            "reason": ""
+        },
+        {
+            "answer": "The <code>self<\/code> keyword must not be used inside initializers.",
+            "reason": ""
+        },
+        {
+            "answer": "You must always write your own initializer for structs.",
+            "reason": ""
+        },
+        {
+            "answer": "Structs can't have lazy properties.",
+            "reason": ""
+        }
     ]
 }

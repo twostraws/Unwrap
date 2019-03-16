@@ -1,6 +1,6 @@
 {
     "title": "Doubles and booleans",
-    "postscript": "You will sometimes see another type called <code>Float</code>. This is similar to <code>Double</code>, but is less accurate because it uses less storage to store numbers.",
+    "postscript": "You will sometimes see another type called <code>Float<\/code>. This is similar to <code>Double<\/code>, but is less accurate because it uses less storage to store numbers.",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create Booleans?",
     "hint": "Booleans are any value that contain true or false.",
@@ -14,11 +14,29 @@
         "var isReady = false"
     ],
     "wrong": [
-        "var isSaved = \"true\"",
-        "var sorted = \"false\"",
-        "var zoomed = 0",
-        "var isLoaded = 1",
-        "var isHidden = \"yes\"",
-        "var isEnabled = 0.0"
+        {
+            "answer": "var isSaved = \"true\"",
+            "reason": "Although this uses <code>true</code>, it's inside double quotes so this creates a string."
+        },
+        {
+            "answer": "var sorted = \"false\"",
+            "reason": "Although this uses <code>false</code>, it's inside double quotes so this creates a string."
+        },
+        {
+            "answer": "var zoomed = 0",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "var isLoaded = 1",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "var isHidden = \"yes\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "var isEnabled = 0.0",
+            "reason": "This creates a double."
+        }
     ]
 }

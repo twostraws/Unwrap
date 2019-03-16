@@ -14,11 +14,29 @@
         "Lazy properties are a performance optimization."
     ],
     "wrong": [
-        "Lazy properties never do any work.",
-        "Lazy properties only work with strings.",
-        "Lazy properties are created when your app finishes.",
-        "Lazy properties act like property observers.",
-        "Lazy properties must be created using <code>self<\/code>",
-        "Lazy properties can use trailing closure syntax."
+        {
+            "answer": "Lazy properties never do any work.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties only work with strings.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties are created when your app finishes.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties act like property observers.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties must be created using <code>self<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties can use trailing closure syntax.",
+            "reason": ""
+        }
     ]
 }

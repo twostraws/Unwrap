@@ -2,7 +2,7 @@
     "title": "Trailing closure syntax",
     "postscript": "Trailing closure syntax might seem obscure or perhaps a bit weird at first, but it's used very commonly in Swift.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "When using trailing closure syntax, you remove the final parameter name entirely and write your code after the function in braces.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "func makeCake(instructions: () -> Void) {\n\tprint(\"Wash hands\")\n\tprint(\"Collect ingredients\")\n\tinstructions()\n\tprint(\"Here's your cake!\")\n}\nmakeCake {\n\tprint(\"Mix egg and flour\")\n}"
     ],
     "wrong": [
-        "func clean(tasks: () -> Void) {\n\tprint(\"It's time to clean the house.\")\n\ttasks()\n}\nclean [\n\tprint(\"I'm going to clean the kitchen.\")\n\tprint(\"I'm going to tidy the study.\")\n\tprint(\"I'm going to nuke the kids' room.\")\n]",
-        "func assembleToy(instruction: () -> Void) {\n\tinstructions()\n\tprint(\"It's done!\")\n}\nassembleToy {\n\tprint(\"Grok the glib\")\n\tprint(\"Flop the flip\")\n\tprint(\"Click the clack\")\n}",
-        "func brewTea(steps: ()) {\n\tprint(\"Get tea\")\n\tprint(\"Get milk\")\n\tprint(\"Get sugar\")\n\tsteps()\n}\nbrewTea {\n\tprint(\"Brew tea in teapot.\")\n\tprint(\"Add milk to cup\")\n\tprint(\"Pour tea into cup\")\n\tprint(\"Add sugar to taste.\")\n}",
-        "func knitSweater(then: () -> Void) {\n\tprint(\"Buy wool\")\n\tfor _ in 1...100 {\n\t\tprint(\"Knit knit knit...\")\n\t}\n\taction()\n}\nknitSweater {\n\tprint(\"Who wants to buy a sweater?\")\n}",
-        "func phoneFriend(conversation: () -> Void) {\n\tprint(\"Calling 555-1234...\")\n\tconversation()\n}\nphoneFriend:\n\tprint(\"Hello!\")\n\tprint(\"A foreign prince wants to give you $5 million.\")\n\tprint(\"What are your bank details?\")",
-        "func holdClass(name: String, lesson: () -> Void) {\n\tprint(\"Welcome to \\(name)!\")\n\tlesson()\n\tprint(\"Make sure your homework is done by next week.\")\n}\nholdClass(\"Philosophy 101\", lesson:) {\n\tprint(\"All we are is dust in the wind, dude.\")\n}"
+        {
+            "answer": "func clean(tasks: () -> Void) {\n\tprint(\"It's time to clean the house.\")\n\ttasks()\n}\nclean [\n\tprint(\"I'm going to clean the kitchen.\")\n\tprint(\"I'm going to tidy the study.\")\n\tprint(\"I'm going to nuke the kids' room.\")\n]",
+            "reason": ""
+        },
+        {
+            "answer": "func assembleToy(instruction: () -> Void) {\n\tinstructions()\n\tprint(\"It's done!\")\n}\nassembleToy {\n\tprint(\"Grok the glib\")\n\tprint(\"Flop the flip\")\n\tprint(\"Click the clack\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func brewTea(steps: ()) {\n\tprint(\"Get tea\")\n\tprint(\"Get milk\")\n\tprint(\"Get sugar\")\n\tsteps()\n}\nbrewTea {\n\tprint(\"Brew tea in teapot.\")\n\tprint(\"Add milk to cup\")\n\tprint(\"Pour tea into cup\")\n\tprint(\"Add sugar to taste.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func knitSweater(then: () -> Void) {\n\tprint(\"Buy wool\")\n\tfor _ in 1...100 {\n\t\tprint(\"Knit knit knit...\")\n\t}\n\taction()\n}\nknitSweater {\n\tprint(\"Who wants to buy a sweater?\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func phoneFriend(conversation: () -> Void) {\n\tprint(\"Calling 555-1234...\")\n\tconversation()\n}\nphoneFriend:\n\tprint(\"Hello!\")\n\tprint(\"A foreign prince wants to give you $5 million.\")\n\tprint(\"What are your bank details?\")",
+            "reason": ""
+        },
+        {
+            "answer": "func holdClass(name: String, lesson: () -> Void) {\n\tprint(\"Welcome to \\(name)!\")\n\tlesson()\n\tprint(\"Make sure your homework is done by next week.\")\n}\nholdClass(\"Philosophy 101\", lesson:) {\n\tprint(\"All we are is dust in the wind, dude.\")\n}",
+            "reason": ""
+        }
     ]
 }

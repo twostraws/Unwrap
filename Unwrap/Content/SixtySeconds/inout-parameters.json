@@ -14,11 +14,29 @@
         "Changing Inout parameters inside a function changes them outside too."
     ],
     "wrong": [
-        "Inout parameters must be integers.",
-        "Inout parameters can be constants.",
-        "Inout parameters must be passed in using <code>#<\/code>",
-        "You may use up to three inout parameters.",
-        "You can't use inout parameters in throwing functions.",
-        "You can mark return values as being inout."
+        {
+            "answer": "Inout parameters must be integers.",
+            "reason": ""
+        },
+        {
+            "answer": "Inout parameters can be constants.",
+            "reason": ""
+        },
+        {
+            "answer": "Inout parameters must be passed in using <code>#<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "You may use up to three inout parameters.",
+            "reason": ""
+        },
+        {
+            "answer": "You can't use inout parameters in throwing functions.",
+            "reason": ""
+        },
+        {
+            "answer": "You can mark return values as being inout.",
+            "reason": ""
+        }
     ]
 }

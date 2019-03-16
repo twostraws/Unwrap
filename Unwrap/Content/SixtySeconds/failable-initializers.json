@@ -1,8 +1,8 @@
 {
     "title": "Failable initializers",
-    "postscript": "<code>Double(someString)</code> converts a string to a double similarly to <code>Int(someString)</code>, but <code>Bool(someString)</code> is special: it looks for exactly \"true\" or \"false\" otherwise it returns nil.",
+    "postscript": "<code>Double(someString)<\/code> converts a string to a double similarly to <code>Int(someString)<\/code>, but <code>Bool(someString)<\/code> is special: it looks for exactly \"true\" or \"false\" otherwise it returns nil.",
     "reviewType": "singleSelection",
-    "question": "This code will result in a constant set to <code>nil<\/code> – true or false?",
+    "question": "This code will result in a constant set to <code>nil<\/code> \u2013\u00a0true or false?",
     "hint": "The result will be <code>nil<\/code> when a failable initializer fails.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "class Hotel {\n\tvar starRating: Int\n\tinit?(rating: Int) {\n\t\tif rating <= 1 {\n\t\t\tprint(\"This probably has bed bugs.\")\n\t\t\treturn nil\n\t\t}\n\t\tself.starRating = rating\n\t}\n}\nlet hotelElan = Hotel(rating: 1)"
     ],
     "wrong": [
-        "var examResult = \"100\"\nlet convertedExamResult = Int(examResult)",
-        "var highestJump = \"2.45\"\nlet convertedHighestJump = Double(highestJump)",
-        "var hasForcePowers = \"true\"\nlet convertedHasForcePowers = Bool(hasForcePowers)",
-        "struct Language {\n\tvar code: String\n\tinit?(code: String) {\n\t\tif code.hasPrefix(\"en-\") {\n\t\t\tself.code = code\n\t\t} else {\n\t\t\tprint(\"Sorry, only English variants are supported.\" )\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet language = Language(code: \"en-GB\")",
-        "struct Website {\n\tvar url: String\n\tinit?(url: String) {\n\t\tif url.hasPrefix(\"http\") {\n\t\t\tself.url = url\n\t\t} else {\n\t\t\tprint(\"Invalid website URL.\")\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet site = Website(url: \"https:\/\/www.hackingwithswift.com\")",
-        "class Camel {\n\tvar humps: Int\n\tinit?(humpCount: Int) {\n\t\tguard humpCount <= 2 else { return nil }\n\t\thumps = humpCount\n\t}\n}\nlet horse = Camel(humpCount: 0)"
+        {
+            "answer": "var examResult = \"100\"\nlet convertedExamResult = Int(examResult)",
+            "reason": ""
+        },
+        {
+            "answer": "var highestJump = \"2.45\"\nlet convertedHighestJump = Double(highestJump)",
+            "reason": ""
+        },
+        {
+            "answer": "var hasForcePowers = \"true\"\nlet convertedHasForcePowers = Bool(hasForcePowers)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Language {\n\tvar code: String\n\tinit?(code: String) {\n\t\tif code.hasPrefix(\"en-\") {\n\t\t\tself.code = code\n\t\t} else {\n\t\t\tprint(\"Sorry, only English variants are supported.\" )\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet language = Language(code: \"en-GB\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Website {\n\tvar url: String\n\tinit?(url: String) {\n\t\tif url.hasPrefix(\"http\") {\n\t\t\tself.url = url\n\t\t} else {\n\t\t\tprint(\"Invalid website URL.\")\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet site = Website(url: \"https:\/\/www.hackingwithswift.com\")",
+            "reason": ""
+        },
+        {
+            "answer": "class Camel {\n\tvar humps: Int\n\tinit?(humpCount: Int) {\n\t\tguard humpCount <= 2 else { return nil }\n\t\thumps = humpCount\n\t}\n}\nlet horse = Camel(humpCount: 0)",
+            "reason": ""
+        }
     ]
 }

@@ -14,11 +14,29 @@
         "var repeatCount = 82"
     ],
     "wrong": [
-        "var winner = \"Miguel\"",
-        "var currentSong = \"Rainbow to the Stars\"",
-        "var age = \"23\"",
-        "var dogBreed = \"samoyed\"",
-        "var sizeInInches = \"27\"",
-        "var selectedWood = \"mahogany\""
+        {
+            "answer": "var winner = \"Miguel\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "var currentSong = \"Rainbow to the Stars\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "var age = \"23\"",
+            "reason": "Even though this has a number inside the quotes, this still creates a string."
+        },
+        {
+            "answer": "var dogBreed = \"samoyed\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "var sizeInInches = \"27\"",
+            "reason": "Even though this has a number inside the quotes, this still creates a string."
+        },
+        {
+            "answer": "var selectedWood = \"mahogany\"",
+            "reason": "This creates a string."
+        }
     ]
 }

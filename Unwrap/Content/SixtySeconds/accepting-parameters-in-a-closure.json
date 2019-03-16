@@ -2,7 +2,7 @@
     "title": "Accepting parameters in a closure",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Parameters to closures don't have external names, and must have a type specified.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var sendMessage = { (message: String) in\n\tif message != \"\" {\n\t\tprint(\"Sending to Twitter: \\(message)\")\n\t} else {\n\t\tprint(\"Your message was empty.\")\n\t}\n}"
     ],
     "wrong": [
-        "let calculateResult = { (answer) in\n\tif answer == 42 {\n\t\tprint(\"You're correct!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
-        "printDocument = { (copies: Int) in\n\tfor _ in 1...copies {\n\t\tprint(\"Printing document...\")\n\t}\n}",
-        "let watchTV = { (channel: String) in\n\tprint(\"I'm going to watch some \\(channel)\")\n}\nwatch_TV(\"BBC News\")",
-        "var shareWinnings = { (amount: Double) in\n\tlet half = amount \/ 2.0\n\tprint(\"It's \\(half) for me and \\(half) for you.\")\n}\nshareWinnings(\"50\")",
-        "var pickFruit = { (name: String) in\n\tswitch name {\n\tcase strawberry:\n\t\tfallthrough\n\tcase raspberry:\n\t\tprint(\"Strawberries and raspberries are half price!\")\n\tdefault:\n\t\tprint(\"We don't have those.\")\n\t}\n}\n\npickFruit(\"strawberry\")",
-        "var cutGrass = { (length currentLength: Double) in\n\tswitch currentLength {\n\tcase 0...1:\n\t\tprint(\"That's too short\")\n\tcase 1...3:\n\t\tprint(\"It's already the right length\")\n\tdefault:\n\t\tprint(\"That's perfect.\")\n\t}\n}"
+        {
+            "answer": "let calculateResult = { (answer) in\n\tif answer == 42 {\n\t\tprint(\"You're correct!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "printDocument = { (copies: Int) in\n\tfor _ in 1...copies {\n\t\tprint(\"Printing document...\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let watchTV = { (channel: String) in\n\tprint(\"I'm going to watch some \\(channel)\")\n}\nwatch_TV(\"BBC News\")",
+            "reason": ""
+        },
+        {
+            "answer": "var shareWinnings = { (amount: Double) in\n\tlet half = amount \/ 2.0\n\tprint(\"It's \\(half) for me and \\(half) for you.\")\n}\nshareWinnings(\"50\")",
+            "reason": ""
+        },
+        {
+            "answer": "var pickFruit = { (name: String) in\n\tswitch name {\n\tcase strawberry:\n\t\tfallthrough\n\tcase raspberry:\n\t\tprint(\"Strawberries and raspberries are half price!\")\n\tdefault:\n\t\tprint(\"We don't have those.\")\n\t}\n}\n\npickFruit(\"strawberry\")",
+            "reason": ""
+        },
+        {
+            "answer": "var cutGrass = { (length currentLength: Double) in\n\tswitch currentLength {\n\tcase 0...1:\n\t\tprint(\"That's too short\")\n\tcase 1...3:\n\t\tprint(\"It's already the right length\")\n\tdefault:\n\t\tprint(\"That's perfect.\")\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

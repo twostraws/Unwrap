@@ -14,11 +14,29 @@
         "If the last parameter to a function is a closure, you can use trailing closure syntax."
     ],
     "wrong": [
-        "If any parameter to a function is a closure, you can use trailing closure syntax.",
-        "Swift provides shorthand parameter names like <code>#0<\/code> and <code>#1<\/code>",
-        "Closures must always return boolean true or false.",
-        "You can't create arrays of closures.",
-        "Closures must only use variables declared inside them.",
-        "Closures don't work with dictionaries."
+        {
+            "answer": "If any parameter to a function is a closure, you can use trailing closure syntax.",
+            "reason": ""
+        },
+        {
+            "answer": "Swift provides shorthand parameter names like <code>#0<\/code> and <code>#1<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Closures must always return boolean true or false.",
+            "reason": ""
+        },
+        {
+            "answer": "You can't create arrays of closures.",
+            "reason": ""
+        },
+        {
+            "answer": "Closures must only use variables declared inside them.",
+            "reason": ""
+        },
+        {
+            "answer": "Closures don't work with dictionaries.",
+            "reason": ""
+        }
     ]
 }

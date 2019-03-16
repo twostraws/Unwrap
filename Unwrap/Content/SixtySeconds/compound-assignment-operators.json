@@ -14,11 +14,29 @@
         "var result = 100\nresult \/= 10"
     ],
     "wrong": [
-        "let result = 11\nresult -= 1",
-        "let result = 2\nresult *= 5",
-        "let result = 20\nresult \/= 2",
-        "var result = 0\nresult *= 10",
-        "var result = 21\nresult -= 10",
-        "var result = 3\nresult *= 3"
+        {
+            "answer": "let result = 11\nresult -= 1",
+            "reason": "This attempts to modify a constant."
+        },
+        {
+            "answer": "let result = 2\nresult *= 5",
+            "reason": "This attempts to modify a constant."
+        },
+        {
+            "answer": "let result = 20\nresult \/= 2",
+            "reason": "This attempts to modify a constant."
+        },
+        {
+            "answer": "var result = 0\nresult *= 10",
+            "reason": "0 multiplied by 10 is 0."
+        },
+        {
+            "answer": "var result = 21\nresult -= 10",
+            "reason": "This will set <code>result</code> to 11."
+        },
+        {
+            "answer": "var result = 3\nresult *= 3",
+            "reason": "This will set <code>result</code> to 9."
+        }
     ]
 }

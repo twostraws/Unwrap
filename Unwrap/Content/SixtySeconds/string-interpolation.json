@@ -14,11 +14,29 @@
         "var forecast = \"Today's weather will be \\(weather)\""
     ],
     "wrong": [
-        "var error = \"Error, please try again.\"",
-        "var str = \"Hello, playground!\"",
-        "var message = \"Installation failed: \\{reason}.\"",
-        "var versionString = \"You're using v(version)\"",
-        "var engine = \"Your engine is (size)cc\"",
-        "var formattedHeight = \"You are (size)cm\""
+        {
+            "answer": "var error = \"Error, please try again.\"",
+            "reason": ""
+        },
+        {
+            "answer": "var str = \"Hello, playground!\"",
+            "reason": ""
+        },
+        {
+            "answer": "var message = \"Installation failed: \\{reason}.\"",
+            "reason": ""
+        },
+        {
+            "answer": "var versionString = \"You're using v(version)\"",
+            "reason": ""
+        },
+        {
+            "answer": "var engine = \"Your engine is (size)cc\"",
+            "reason": ""
+        },
+        {
+            "answer": "var formattedHeight = \"You are (size)cm\"",
+            "reason": ""
+        }
     ]
 }

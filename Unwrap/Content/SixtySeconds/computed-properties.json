@@ -1,24 +1,42 @@
 {
     "title": "Computed properties",
-    "postscript": "Computed properties must always have a type annotation, and must always be created using <code>var</code> rather than <code>let</code>.",
+    "postscript": "Computed properties must always have a type annotation, and must always be created using <code>var<\/code> rather than <code>let<\/code>.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Computed properties must always return a value.",
     "syntaxHighlighting": true,
     "correct": [
         "struct Swordfighter {\n\tvar name: String\n\tvar introduction: String {\n\t\treturn \"Hello, my name is \\(name).\"\n\t}\n}\nlet inigo = Swordfighter(name: \"Inigo Montoya\")",
         "struct Toy {\n\tvar color: String\n\tvar isForGirls: Bool {\n\t\tif color == \"Pink\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
         "struct Investor {\n\tvar age: Int\n\tvar investmentPlan: String {\n\t\tif age < 30 {\n\t\t\treturn \"Shares\"\n\t\t} else if age < 60 {\n\t\t\treturn \"Equities\"\n\t\t} else {\n\t\t\treturn \"Bonds\"\n\t\t}\n\t}\n}\nlet investor = Investor(age: 38)\nprint(investor.investmentPlan)",
-        "struct Medicine {\n\tvar amount: Int\n\tvar frequency: Int\n\tvar dosage: String {\n\t\treturn \"Take \\(amount) pills \\(frequency) ties a day.\"\n\t}\n}",
+        "struct Medicine {\n\tvar amount: Int\n\tvar frequency: Int\n\tvar dosage: String {\n\t\treturn \"Take \\(amount) pills \\(frequency) times a day.\"\n\t}\n}",
         "struct Wine {\n\tvar age: Int\n\tvar isVintage: Bool\n\tvar price: Int {\n\t\tif isVintage {\n\t\t\treturn age + 20\n\t\t} else {\n\t\t\treturn age + 5\n\t\t}\n\t}\n}\nlet malbec = Wine(age: 2, isVintage: true)\nprint(malbec.price)",
         "struct Keyboard {\n\tvar isMechanical = false\n\tvar noiseLevel: Int {\n\t\tif isMechanical {\n\t\t\treturn 11\n\t\t} else {\n\t\t\treturn 3\n\t\t}\n\t}\n}\nlet majestouch = Keyboard(isMechanical: true)\nprint(majestouch.noiseLevel)"
     ],
     "wrong": [
-        "struct Sunglasses {\n\tvar protectionLevel: Int\n\tvar visionTest: String {\n\t\tif protectionLevel < 3 {\n\t\t\treturn \"These aren't very dark\"\n\t\t} else if protectionLevel < 6 {\n\t\t\treturn \"These are just right\"\n\t\t} else if protectionLevel < 10 {\n\t\t\treturn \"Who turned the lights out?\"\n\t\t}\n\t}\n}",
-        "struct City {\n\tvar population: String\n\tvar description: String {\n\t\tif population < 100_000 {\n\t\t\treturn \"This is a small city.\"\n\t\t} else if population < 1_000_000 {\n\t\t\treturn \"This is a medium-sized city.\"\n\t\t} else {\n\t\t\treturn \"This is a large city.\"\n\t\t}\n\t}\n}\nlet tokyo = City(population: 12_000_000)",
-        "struct Code {\n\tvar language: String\n\tvar containsErrors = false\n\tvar report {\n\t\tif containsErrors {\n\t\t\treturn \"This \\(language) code has bugs!\"\n\t\t} else {\n\t\t\treturn \"This looks good to me.\"\n\t\t}\n\t}\n}",
-        "struct Candle {\n\tvar burnLength: Int\n\tvar alreadyBurned = 0\n\tlet burnRemaining: Int {\n\t\treturn burnLength - alreadyBurned\n\t}\n}",
-        "struct Dog {\n\tvar breed: String\n\tvar cuteness: Int\n\tvar rating: String {\n\t\tif cuteness < 3 {\n\t\t\tprint(\"That's a cute dog!\")\n\t\t} else if cuteness < 7 {\n\t\t\tprint(\"That's a really cute dog!\")\n\t\t} else {\n\t\t\tprint(\"That a super cute dog!\")\n\t\t}\n\t}\n}\nlet luna = Dog(breed: \"Samoyed\", cuteness: 11)\nprint(luna.rating)",
-        "struct Race {\n\tvar distance: Int\n\tvar runners = 0\n\tvar description = String {\n\t\treturn \"This is a \\(distance)km race with \\(runners) runners.\"\n\t}\n}\nlet londonMarathon = Race(distance: 42, runners: 40_000)"
+        {
+            "answer": "struct Sunglasses {\n\tvar protectionLevel: Int\n\tvar visionTest: String {\n\t\tif protectionLevel < 3 {\n\t\t\treturn \"These aren't very dark\"\n\t\t} else if protectionLevel < 6 {\n\t\t\treturn \"These are just right\"\n\t\t} else if protectionLevel < 10 {\n\t\t\treturn \"Who turned the lights out?\"\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct City {\n\tvar population: String\n\tvar description: String {\n\t\tif population < 100_000 {\n\t\t\treturn \"This is a small city.\"\n\t\t} else if population < 1_000_000 {\n\t\t\treturn \"This is a medium-sized city.\"\n\t\t} else {\n\t\t\treturn \"This is a large city.\"\n\t\t}\n\t}\n}\nlet tokyo = City(population: 12_000_000)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Code {\n\tvar language: String\n\tvar containsErrors = false\n\tvar report {\n\t\tif containsErrors {\n\t\t\treturn \"This \\(language) code has bugs!\"\n\t\t} else {\n\t\t\treturn \"This looks good to me.\"\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Candle {\n\tvar burnLength: Int\n\tvar alreadyBurned = 0\n\tlet burnRemaining: Int {\n\t\treturn burnLength - alreadyBurned\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Dog {\n\tvar breed: String\n\tvar cuteness: Int\n\tvar rating: String {\n\t\tif cuteness < 3 {\n\t\t\tprint(\"That's a cute dog!\")\n\t\t} else if cuteness < 7 {\n\t\t\tprint(\"That's a really cute dog!\")\n\t\t} else {\n\t\t\tprint(\"That a super cute dog!\")\n\t\t}\n\t}\n}\nlet luna = Dog(breed: \"Samoyed\", cuteness: 11)\nprint(luna.rating)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Race {\n\tvar distance: Int\n\tvar runners = 0\n\tvar description = String {\n\t\treturn \"This is a \\(distance)km race with \\(runners) runners.\"\n\t}\n}\nlet londonMarathon = Race(distance: 42, runners: 40_000)",
+            "reason": ""
+        }
     ]
 }

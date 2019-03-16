@@ -2,7 +2,7 @@
     "title": "Creating your own structs",
     "postscript": "In Swift we write the names of types such as Int, String, and MyStruct with a capitalized first letter, and the names of variables and constants with a lowercase first letter.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "When you create an instance of a struct, Swift will ask you to provide values for all its properties. These parameters must have the same names as the properties themselves, and must be in the same order they were defined.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "struct Book {\n\tvar title: String\n\tvar author = \"Unknown\"\n\tvar pageCount = 0\n}"
     ],
     "wrong": [
-        "struct Order {\n\tvar customerID: Int\n\tvar itemID: Int\n}\nlet order = Order(customer: 143, item: 556)",
-        "struct LeviJeans {\n\tvar fitNumber: Int\n\tvar waist: Int\n\tvar leg: Int\n}\nlet jeans = LeviJeans(fitNumber: \"501\", waist: \"34\", leg: \"32\")",
-        "struct Cup {\n\tvar size: Int\n\tvar color = White\n}",
-        "struct RubiksCube {\n\tvar size = 3\n}\nlet large = RubiksCube(5)",
-        "struct Dog (\n\tvar name: String\n\tvar breed: String\n)",
-        "struct Boat {\n\tname: String\n\thomePort: String\n\tmaxSpeed: Int\n}"
+        {
+            "answer": "struct Order {\n\tvar customerID: Int\n\tvar itemID: Int\n}\nlet order = Order(customer: 143, item: 556)",
+            "reason": ""
+        },
+        {
+            "answer": "struct LeviJeans {\n\tvar fitNumber: Int\n\tvar waist: Int\n\tvar leg: Int\n}\nlet jeans = LeviJeans(fitNumber: \"501\", waist: \"34\", leg: \"32\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Cup {\n\tvar size: Int\n\tvar color = White\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct RubiksCube {\n\tvar size = 3\n}\nlet large = RubiksCube(5)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Dog (\n\tvar name: String\n\tvar breed: String\n)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Boat {\n\tname: String\n\thomePort: String\n\tmaxSpeed: Int\n}",
+            "reason": ""
+        }
     ]
 }

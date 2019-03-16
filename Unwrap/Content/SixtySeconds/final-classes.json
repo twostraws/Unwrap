@@ -2,7 +2,7 @@
     "title": "Final classes",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code defines two valid classes using inheritance – true or false?",
+    "question": "This code defines two valid classes using inheritance \u2013\u00a0true or false?",
     "hint": "Classes can inherit only from non-final classes.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "class Hat { }\nclass Fez: Hat { }"
     ],
     "wrong": [
-        "class Pen { }\nclass Bic { }",
-        "final class GemStone { }\nclass Diamond: GemStone { }",
-        "final class Landmark { }\nfinal class Monument: Landmark { }",
-        "struct Massage { }\nclass HeadMassage: Massage { }",
-        "class MusicPlayer { }\nstruct RecordPlayer: MusicPlayer { }",
-        "class Movie { }\nfinal struct Comedy: Movie { }"
+        {
+            "answer": "class Pen { }\nclass Bic { }",
+            "reason": ""
+        },
+        {
+            "answer": "final class GemStone { }\nclass Diamond: GemStone { }",
+            "reason": ""
+        },
+        {
+            "answer": "final class Landmark { }\nfinal class Monument: Landmark { }",
+            "reason": ""
+        },
+        {
+            "answer": "struct Massage { }\nclass HeadMassage: Massage { }",
+            "reason": ""
+        },
+        {
+            "answer": "class MusicPlayer { }\nstruct RecordPlayer: MusicPlayer { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Movie { }\nfinal struct Comedy: Movie { }",
+            "reason": ""
+        }
     ]
 }

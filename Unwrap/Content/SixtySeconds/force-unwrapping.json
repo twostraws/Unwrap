@@ -14,11 +14,29 @@
         "let age: Int = 21\nlet allowedMessage: String? = age >= 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!"
     ],
     "wrong": [
-        "let score = \"babylon5\"\nlet scoreInt = Int(score)!",
-        "struct Starship {\n\tvar name: String? = \"Unknown\"\n\tvar maxWarpSpeed: Double?\n}\nlet voyager = Starship()\nlet maxWarp = voyager.maxWarpSpeed!",
-        "let password: String? = nil\nlet unwrappedPassword = password!",
-        "func goals(for player: String) -> Int? {\n\tprint(\"Sorry, the system is down right now.\")\n\treturn nil\n}\nlet harryGoals = goals(for: \"Harry Kane\")!",
-        "class Player {\n\tvar name: String = \"Anonymous\"\n\tvar salary: Int?\n}\nlet player = Player()\nlet salary = player.salary!",
-        "func population(of city: String) -> Int? {\n\tif city == \"Paris\" {\n\t\treturn 2_200_000\n\t}\n\treturn nil\n}\nlet pop = population(of: \"Tokyo\")!"
+        {
+            "answer": "let score = \"babylon5\"\nlet scoreInt = Int(score)!",
+            "reason": ""
+        },
+        {
+            "answer": "struct Starship {\n\tvar name: String? = \"Unknown\"\n\tvar maxWarpSpeed: Double?\n}\nlet voyager = Starship()\nlet maxWarp = voyager.maxWarpSpeed!",
+            "reason": ""
+        },
+        {
+            "answer": "let password: String? = nil\nlet unwrappedPassword = password!",
+            "reason": ""
+        },
+        {
+            "answer": "func goals(for player: String) -> Int? {\n\tprint(\"Sorry, the system is down right now.\")\n\treturn nil\n}\nlet harryGoals = goals(for: \"Harry Kane\")!",
+            "reason": ""
+        },
+        {
+            "answer": "class Player {\n\tvar name: String = \"Anonymous\"\n\tvar salary: Int?\n}\nlet player = Player()\nlet salary = player.salary!",
+            "reason": ""
+        },
+        {
+            "answer": "func population(of city: String) -> Int? {\n\tif city == \"Paris\" {\n\t\treturn 2_200_000\n\t}\n\treturn nil\n}\nlet pop = population(of: \"Tokyo\")!",
+            "reason": ""
+        }
     ]
 }

@@ -6,7 +6,7 @@
     "hint": "Variadic parameters behave much like regular ones, except they are converted to an array inside the function.",
     "syntaxHighlighting": false,
     "correct": [
-        "A variadic parameter is written with three dots after its name: <code>Int...<\/code>",
+        "A variadic parameter is written with three dots after its type: <code>Int...<\/code>",
         "Variadic parameters can potentially receive hundreds of values.",
         "Variadic parameters can potentially receive zero values.",
         "Variadic parameters are converted into arrays inside your function.",
@@ -14,11 +14,29 @@
         "You can write your own variadic functions."
     ],
     "wrong": [
-        "Variadic functions only work with integers.",
-        "Variadic parameters must always have at least one value.",
-        "Variadic functions are slower than regular functions.",
-        "You can pass an array in place of a variadic parameter.",
-        "Variadic functions must always return a value.",
-        "Variadic functions must always omit external parameter labels."
+        {
+            "answer": "Variadic functions only work with integers.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic parameters must always have at least one value.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic functions are slower than regular functions.",
+            "reason": ""
+        },
+        {
+            "answer": "You can pass an array in place of a variadic parameter.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic functions must always return a value.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic functions must always omit external parameter labels.",
+            "reason": ""
+        }
     ]
 }

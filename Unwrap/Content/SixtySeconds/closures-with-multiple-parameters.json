@@ -2,7 +2,7 @@
     "title": "Closures with multiple parameters",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Closures don't use parameter labels.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "func getTransport(destination: String, method: (String, Int) -> Bool) {\n\tlet maxCost = 10\n\tlet result = method(destination, maxCost)\n\tif result {\n\t\tprint(\"OK, you can travel.\")\n\t} else {\n\t\tprint(\"Sorry, you need more money.\")\n\t}\n}"
     ],
     "wrong": [
-        "func takeTest(topic: String, test: (Int)) {\n\tlet minutes = 120\n\tprint(\"Today's test is on \\(topic).\")\n\tprint(\"You have \\(minutes) minutes.\")\n\ttest(minutes)\n}",
-        "func buyDevices(name: String, count: Int, configurator: () -> String) {\n\tprint(\"I'm buying \\(count)x\\(name).\")\n\tfor _ in 0..<count {\n\t\tlet configuredDevice = configurator(name)\n\t\tprint(configuredDevice)\n\t}\n}",
-        "func runBarbecue(foods: [String], grillTechnique: (String, Int) -> Void) {\n\tlet spiceLevel = \"10\"\n\tfor food in foods {\n\t\tgrillTechnique(food, spiceLevel)\n\t}\n}",
-        "func raceCar(with closure: (String, String) -> String) {\n\tlet driver = \"Lewis Hamilton\"\n\tlet team = \"Mercedes\"\n\tlet raceResult = closure(driver)\n\tprint(\"The result is in: \\(raceResult)!\")\n}",
-        "func printDocument(_ document: String, configurationCheck: (String Int) -> Bool) {\n\tlet copies = 1\n\tlet isAllowed = configurationCheck(document, copies)\n\tif isAllowed {\n\t\tprint(\"Printing now.\")\n\t} else {\n\t\tprint(\"That document can't be printed.\")\n\t}\n}",
-        "func makeSandwich(type sandwichType: String, condimentClosure: (String) -> String) {\n\tprint(\"First you make a basic \\(sandwichType) sandwich.\")\n\tprint(\"Next, you add condiments...\")\n\tlet newSandwichType = condimentClosure(type: sandwichType)\n\tprint(\"Now you have a \\(newSandwichType).\")\n}"
+        {
+            "answer": "func takeTest(topic: String, test: (Int)) {\n\tlet minutes = 120\n\tprint(\"Today's test is on \\(topic).\")\n\tprint(\"You have \\(minutes) minutes.\")\n\ttest(minutes)\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func buyDevices(name: String, count: Int, configurator: () -> String) {\n\tprint(\"I'm buying \\(count)x\\(name).\")\n\tfor _ in 0..<count {\n\t\tlet configuredDevice = configurator(name)\n\t\tprint(configuredDevice)\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func runBarbecue(foods: [String], grillTechnique: (String, Int) -> Void) {\n\tlet spiceLevel = \"10\"\n\tfor food in foods {\n\t\tgrillTechnique(food, spiceLevel)\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func raceCar(with closure: (String, String) -> String) {\n\tlet driver = \"Lewis Hamilton\"\n\tlet team = \"Mercedes\"\n\tlet raceResult = closure(driver)\n\tprint(\"The result is in: \\(raceResult)!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func printDocument(_ document: String, configurationCheck: (String Int) -> Bool) {\n\tlet copies = 1\n\tlet isAllowed = configurationCheck(document, copies)\n\tif isAllowed {\n\t\tprint(\"Printing now.\")\n\t} else {\n\t\tprint(\"That document can't be printed.\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func makeSandwich(type sandwichType: String, condimentClosure: (String) -> String) {\n\tprint(\"First you make a basic \\(sandwichType) sandwich.\")\n\tprint(\"Next, you add condiments...\")\n\tlet newSandwichType = condimentClosure(type: sandwichType)\n\tprint(\"Now you have a \\(newSandwichType).\")\n}",
+            "reason": ""
+        }
     ]
 }

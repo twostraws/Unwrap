@@ -2,7 +2,7 @@
     "title": "Conditions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code will print \"Success\" – true or false?",
+    "question": "This code will print \"Success\" \u2013\u00a0true or false?",
     "hint": "<code>else<\/code> blocks are executed if the condition is false, and Swift won't let you compare different types of data.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "let teaStrength = 5\nif teaStrength >= 4 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}"
     ],
     "wrong": [
-        "let sharkCount: Int = 21\nif sharkCount < 21 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-        "let passwordLength = 5\nif passwordLength <= 5 {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-        "let isAvailable: Bool = false\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-        "var actualWage: Int = 22_000\nvar medianWage: Double = 22_000\nif actualWage >= medianWage {\n\tprint(\"Success\")\n}",
-        "var favoriteColor = \"Red\"\nif favoriteColor == \"red\" {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-        "var cupsOfCoffee = \"4\"\nif cupsOfCoffee >= 3 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}"
+        {
+            "answer": "let sharkCount: Int = 21\nif sharkCount < 21 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "<code>sharkCount</code> is equal to 21, so this will print \"Failure\"."
+        },
+        {
+            "answer": "let passwordLength = 5\nif passwordLength <= 5 {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
+            "reason": "<code>passwordLength</code> is equal to 5, so this will print \"Failure\"."
+        },
+        {
+            "answer": "let isAvailable: Bool = false\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "<code>isAvailable</code> is false, so this will print \"Failure\"."
+        },
+        {
+            "answer": "var actualWage: Int = 22_000\nvar medianWage: Double = 22_000\nif actualWage >= medianWage {\n\tprint(\"Success\")\n}",
+            "reason": "This attempts to compare an integer to a double, which is invalid."
+        },
+        {
+            "answer": "var favoriteColor = \"Red\"\nif favoriteColor == \"red\" {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "Strings are case-sensitive, so comparing \"Red\" to \"red\" will fail."
+        },
+        {
+            "answer": "var cupsOfCoffee = \"4\"\nif cupsOfCoffee >= 3 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "This attempts to compare a string and an integer, which is invalid."
+        }
     ]
 }

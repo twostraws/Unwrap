@@ -14,11 +14,29 @@
         "var address = [\"road\": \"Park Lane\", \"city\": \"Cardiff\"]"
     ],
     "wrong": [
-        "let password = \"fr0sti3s\"",
-        "let isVisible = true",
-        "let location = (\"road\": \"Park Lane\", \"city\": \"Cardiff\")",
-        "var place = [\"road\", \"Park Lane\", \"city\", \"Cardiff\"]",
-        "var speed = 60.75",
-        "var books = [\"The Jungle Book\"]"
+        {
+            "answer": "let password = \"fr0sti3s\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "let isVisible = true",
+            "reason": "This creates a Boolean."
+        },
+        {
+            "answer": "let location = (\"road\": \"Park Lane\", \"city\": \"Cardiff\")",
+            "reason": "This creates a tuple."
+        },
+        {
+            "answer": "var place = [\"road\", \"Park Lane\", \"city\", \"Cardiff\"]",
+            "reason": "This creates an array."
+        },
+        {
+            "answer": "var speed = 60.75",
+            "reason": "This creates a double."
+        },
+        {
+            "answer": "var books = [\"The Jungle Book\"]",
+            "reason": "This creates an array."
+        }
     ]
 }

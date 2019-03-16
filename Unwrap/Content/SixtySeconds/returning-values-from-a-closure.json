@@ -2,23 +2,41 @@
     "title": "Returning values from a closure",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Make sure the value that is returned matches what is expected.",
     "syntaxHighlighting": true,
     "correct": [
         "let writeEssay = { (topic: String) -> String in\n\treturn \"Here's an essay on \\(topic).\"\n}",
-        "let measureSize = { (inches: Int) -> String in\n\tswitch inches {\n\tcase 0...26:\n\t\treturn \"XS\"\n\tcase 27...30:\n\t\treturn \"S\"\n\tcase 31...34:\n\t\treturn \"M\"\n\tcase 34...36:\n\t\treturn \"L\"\n\tdefault:\n\t\treturn \"XL\"\n\t}\n}\nmeasureSize(36)",
+        "let measureSize = { (inches: Int) -> String in\n\tswitch inches {\n\tcase 0...26:\n\t\treturn \"XS\"\n\tcase 27...30:\n\t\treturn \"S\"\n\tcase 31...34:\n\t\treturn \"M\"\n\tcase 35...38:\n\t\treturn \"L\"\n\tdefault:\n\t\treturn \"XL\"\n\t}\n}\nmeasureSize(36)",
         "let bakeBirthdayCake = { (name: String) -> Int in\n\tprint(\"I've made a cake for \\(name); here's the bill.\")\n\treturn 50\n}",
         "var costToShootMovie = { (location: String) -> Int in\n\tif location == \"UK\" {\n\t\treturn 1_000_000\n\t} else if location == \"US\" {\n\t\treturn 5_000_000\n\t} else {\n\t\treturn 500_000\n\t}\n}",
         "var difficultyRating = { (trick: String) -> Int in\n\tif trick == \"ollie\" {\n\t\treturn 1\n\t} else if trick == \"Yoyo Plant\" {\n\t\treturn 3\n\t} else if trick == \"900\" {\n\t\treturn 5\n\t} else {\n\t\treturn 0\n\t}\n}\nprint(difficultyRating(\"ollie\"))",
         "var flyDrone = { (hasPermit: Bool) -> Bool in\n\tif hasPermit {\n\t\tprint(\"Let's find somewhere safe!\")\n\t\treturn true\n\t}\n\tprint(\"That's against the law.\")\n\treturn false\n}"
     ],
     "wrong": [
-        "let shovelSnow = { (depth) -> String in\n\tif depth < 1 {\n\t\treturn \"OK, I can do this...\"\n\t} else {\n\t\treturn \"I need some help!\"\n\t}\n}",
-        "let goSurfing = { (waveHeight: Int) in\n\tif waveHeight < 5 {\n\t\treturn \"Let's go!\"\n\t} else if waveHeight < 10 {\n\t\treturn \"This could be tricky\"\n\t} else if waveHeight < 20 {\n\t\treturn \"Only a pro could do that\"\n\t} else {\n\t\treturn \"No way!\"\n\t}\n}",
-        "let convertNumerals = { (numeral: String) -> String in\n\tswitch numeral {\n\tcase \"I\":\n\t\treturn \"1\"\n\tcase \"II\":\n\t\treturn \"2\"\n\tcase \"III\":\n\t\treturn \"3\"\n\t}\n}\nprint(convertNumerals(\"II\"))",
-        "func callNumber = { (number: Int) -> String in\n\treturn \"Calling now...\"\n}",
-        "var buyMagazine = { (name: String) -> Int in\n\tlet amount = 10\n\tprint(\"\\(name) costs \\(amount)\")\n\treturn amount\n}\nbuyMagazine(name: \"Wired\")",
-        "var goToWork = { (hours: String) -> Bool in\n\tprint(\"I'm going to work\")\n\tfor _ in 1...hours {\n\t\tprint(\"I'm chatting to friends on Facebook.\")\n\t}\n\tprint(\"I'm going home\")\n\treturn true\n}"
+        {
+            "answer": "let shovelSnow = { (depth) -> String in\n\tif depth < 1 {\n\t\treturn \"OK, I can do this...\"\n\t} else {\n\t\treturn \"I need some help!\"\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let goSurfing = { (waveHeight: Int) in\n\tif waveHeight < 5 {\n\t\treturn \"Let's go!\"\n\t} else if waveHeight < 10 {\n\t\treturn \"This could be tricky\"\n\t} else if waveHeight < 20 {\n\t\treturn \"Only a pro could do that\"\n\t} else {\n\t\treturn \"No way!\"\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let convertNumerals = { (numeral: String) -> String in\n\tswitch numeral {\n\tcase \"I\":\n\t\treturn \"1\"\n\tcase \"II\":\n\t\treturn \"2\"\n\tcase \"III\":\n\t\treturn \"3\"\n\t}\n}\nprint(convertNumerals(\"II\"))",
+            "reason": ""
+        },
+        {
+            "answer": "func callNumber = { (number: Int) -> String in\n\treturn \"Calling now...\"\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var buyMagazine = { (name: String) -> Int in\n\tlet amount = 10\n\tprint(\"\\(name) costs \\(amount)\")\n\treturn amount\n}\nbuyMagazine(name: \"Wired\")",
+            "reason": ""
+        },
+        {
+            "answer": "var goToWork = { (hours: String) -> Bool in\n\tprint(\"I'm going to work\")\n\tfor _ in 1...hours {\n\t\tprint(\"I'm chatting to friends on Facebook.\")\n\t}\n\tprint(\"I'm going home\")\n\treturn true\n}",
+            "reason": ""
+        }
     ]
 }

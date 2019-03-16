@@ -2,7 +2,7 @@
     "title": "Protocols and extensions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Only extensions contain method implementations. To conform to a protocol, all types must implement the protocol's methods.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "protocol Paintable { }\nprotocol Tileable { }\nstruct Wall: Paintable, Tileable { }"
     ],
     "wrong": [
-        "protocol TravelsThroughTime {\n\tmutating func travel(to year: Int)\n}\nprotocol BiggerOnTheInside {\n\tfunc findSwimmingPool()\n}\nprotocol TARDIS: TravelsThroughTime BiggerOnTheInside {\n\tvar doctorNumber: Int { get set }\n}",
-        "protocol Ridable\nprotocol Trainable\nprotocol Dog: Trainable",
-        "protocol HasPages {\n\tvar pageCount: Int\n}\nprotocol HasTableOfContents {\n\tvar titles: [String]\n}\nprotocol Book: HasPages, HasTableOfContents {\n\tvar author: String\n}",
-        "protocol NotAMoon { }\nprotocol HasExhaustPort { }\nstruct DeathStar: NotAMoon HasExhaustPort { }",
-        "protocol CanFly {\n\tvar maximumFlightSpeed: Int { get set }\n}\nprotocol CanDrive {\n\tvar maximumDrivingSpeed: Int { get set }\n}\nstruct FlyingCar: CanFly, CanDrive { }",
-        "protocol Adjustable {\n\tmutating func adjustValue(by amount)\n}"
+        {
+            "answer": "protocol TravelsThroughTime {\n\tmutating func travel(to year: Int)\n}\nprotocol BiggerOnTheInside {\n\tfunc findSwimmingPool()\n}\nprotocol TARDIS: TravelsThroughTime BiggerOnTheInside {\n\tvar doctorNumber: Int { get set }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Ridable\nprotocol Trainable\nprotocol Dog: Trainable",
+            "reason": ""
+        },
+        {
+            "answer": "protocol HasPages {\n\tvar pageCount: Int\n}\nprotocol HasTableOfContents {\n\tvar titles: [String]\n}\nprotocol Book: HasPages, HasTableOfContents {\n\tvar author: String\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol NotAMoon { }\nprotocol HasExhaustPort { }\nstruct DeathStar: NotAMoon HasExhaustPort { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol CanFly {\n\tvar maximumFlightSpeed: Int { get set }\n}\nprotocol CanDrive {\n\tvar maximumDrivingSpeed: Int { get set }\n}\nstruct FlyingCar: CanFly, CanDrive { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Adjustable {\n\tmutating func adjustValue(by amount)\n}",
+            "reason": ""
+        }
     ]
 }

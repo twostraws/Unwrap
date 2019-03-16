@@ -32,7 +32,7 @@ class TapToCodeDataSource: NSObject, UICollectionViewDataSource, UICollectionVie
 
     /// Stores whether the user is able to check their answer – becomes true when all code components have been used.
     var readyToCheck: Bool {
-        return model.allWords.count == 0
+        return model.allWords.isEmpty
     }
 
     /// Returns whether the user has used all the code correctly or not.

@@ -15,7 +15,14 @@ extension UIViewController {
         var attributes = EKAttributes()
         attributes.displayDuration = .infinity
 
-        let widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.9)
+        let widthConstraint: EKAttributes.PositionConstraints.Edge
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            widthConstraint = EKAttributes.PositionConstraints.Edge.constant(value: 400)
+        } else {
+            widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.9)
+        }
+
         let heightConstraint = EKAttributes.PositionConstraints.Edge.intrinsic
         attributes.positionConstraints.size = .init(width: widthConstraint, height: heightConstraint)
         attributes.screenInteraction = .dismiss

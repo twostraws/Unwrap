@@ -174,6 +174,7 @@
 		51D8FE7120ED3879004DFF83 /* TapToCodeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */; };
 		51D8FE7320ED3BF6004DFF83 /* TapToCodePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */; };
 		51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D8FE7420EE040F004DFF83 /* TapToCode.json */; };
+		51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1D78222D9648005CB620 /* WrongAnswer.swift */; };
 		51DDE52221107B170056020E /* PredictTheOutputAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */; };
 		51EFBEF3210CFED100211A8D /* String-Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF2210CFED100211A8D /* String-Attributed.swift */; };
 		51EFBEF5210D010300211A8D /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF4210D010300211A8D /* CreditsViewController.swift */; };
@@ -783,6 +784,7 @@
 		51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodeQuestion.swift; sourceTree = "<group>"; };
 		51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodePractice.swift; sourceTree = "<group>"; };
 		51D8FE7420EE040F004DFF83 /* TapToCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapToCode.json; sourceTree = "<group>"; };
+		51DB1D78222D9648005CB620 /* WrongAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongAnswer.swift; sourceTree = "<group>"; };
 		51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictTheOutputAnswer.swift; sourceTree = "<group>"; };
 		51EFBEF2210CFED100211A8D /* String-Attributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Attributed.swift"; sourceTree = "<group>"; };
 		51EFBEF4210D010300211A8D /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -1704,6 +1706,7 @@
 				5156459020E1163500CED877 /* StudyViewController.swift */,
 				51FE120C20E2532100F29889 /* StudyTextView.swift */,
 				51FE151D20E2814E00F29889 /* StudyReview.swift */,
+				51DB1D78222D9648005CB620 /* WrongAnswer.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -2903,6 +2906,7 @@
 				51862E5E20CE2C300086CD1B /* Formatted.swift in Sources */,
 				5189D9D720EA4AAC00E6E1D3 /* UIButton-Types.swift in Sources */,
 				51A447632107EF18005D8665 /* BadgeTableViewCell.swift in Sources */,
+				51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */,
 				51A6D62720E651DA00FB6B46 /* FloatNames.swift in Sources */,
 				51A6D66820E6953100FB6B46 /* CodeErrorType.swift in Sources */,
 				51B87CDE210B35C600FE773A /* User-StaticProperties.swift in Sources */,
@@ -3130,7 +3134,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3148,7 +3152,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

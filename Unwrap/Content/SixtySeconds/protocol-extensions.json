@@ -2,7 +2,7 @@
     "title": "Protocol extensions",
     "postscript": "One type can conform to as many protocols as you want.",
     "reviewType": "singleSelection",
-    "question": "This extension correctly implements a method from its protocol – true or false?",
+    "question": "This extension correctly implements a method from its protocol \u2013\u00a0true or false?",
     "hint": "The extension's method name, including its parameters and return type, must be identical to the protocol's.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "protocol Hamster {\n\tvar name: String { get set }\n\tfunc runInWheel(minutes: Int)\n}\nextension Hamster {\n\tfunc runInWheel(minutes: Int) {\n\t\tprint(\"\\(name) is going for a run.\")\n\t\tfor _ in 0..<minutes {\n\t\t\tprint(\"Whirr whirr whirr\")\n\t\t}\n\t}\n}"
     ],
     "wrong": [
-        "protocol SuperHeroMovie {\n\tfunc writeScript() -> String\n}\nextension SuperHeroMovie {\n\tfunc makeScript() -> String {\n\t\treturn \"\"\"\n\t\tLots of special effects,\n\t\tsome half-baked jokes,\n\t\tand a hint of another\n\t\tsequel at the end.\n\t\t\"\"\"\n\t}\n}",
-        "protocol Chef {\n\tfunc getRecipes() -> [String]\n}\nextension Chief {\n\tfunc getRecipes() -> [String] {\n\t\treturn [\"Macaroni Cheese\"]\n\t}\n}",
-        "protocol DogTrainer {\n\tfunc train(dog: String) {\n\t\tprint(\"We'll make \\(dog) behave in no time!\")\n\t}\n}",
-        "protocol SmartPhone {\n\tfunc makeCall(to name { get set })\n}\nextension SmartPhone {\n\tfunc makeCall(to name: String) {\n\t\tprint(\"Dialling \\(name)...\")\n\t}\n}",
-        "protocol Club {\n\tfunc organizeMeeting(day: String)\n}\nextension Club {\n\toverride func organizeMeeting(day: String) {\n\t\tprint(\"We're going to meet on \\(day).\")\n\t}\n}",
-        "protocol Bartender {\n\tfunc makeDrink\n}\nextension Bartender {\n\tfunc makeDrink(name: String) {\n\t\tprint(\"One \\(name) coming right up.\")\n\t}\n}"
+        {
+            "answer": "protocol SuperHeroMovie {\n\tfunc writeScript() -> String\n}\nextension SuperHeroMovie {\n\tfunc makeScript() -> String {\n\t\treturn \"\"\"\n\t\tLots of special effects,\n\t\tsome half-baked jokes,\n\t\tand a hint of another\n\t\tsequel at the end.\n\t\t\"\"\"\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Chef {\n\tfunc getRecipes() -> [String]\n}\nextension Chief {\n\tfunc getRecipes() -> [String] {\n\t\treturn [\"Macaroni Cheese\"]\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol DogTrainer {\n\tfunc train(dog: String) {\n\t\tprint(\"We'll make \\(dog) behave in no time!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol SmartPhone {\n\tfunc makeCall(to name { get set })\n}\nextension SmartPhone {\n\tfunc makeCall(to name: String) {\n\t\tprint(\"Dialling \\(name)...\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Club {\n\tfunc organizeMeeting(day: String)\n}\nextension Club {\n\toverride func organizeMeeting(day: String) {\n\t\tprint(\"We're going to meet on \\(day).\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Bartender {\n\tfunc makeDrink\n}\nextension Bartender {\n\tfunc makeDrink(name: String) {\n\t\tprint(\"One \\(name) coming right up.\")\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

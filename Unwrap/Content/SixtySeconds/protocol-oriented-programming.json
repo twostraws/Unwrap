@@ -14,11 +14,29 @@
         "You can write extensions for Swift's built-in protocols."
     ],
     "wrong": [
-        "Protocols can contain method implementations.",
-        "Properties must always be read-write.",
-        "Protocols can define their own protocols internally.",
-        "Only structs can conform to protocols.",
-        "Each data type can conform to only one protocol.",
-        "You can write extensions for protocols that don't exist."
+        {
+            "answer": "Protocols can contain method implementations.",
+            "reason": ""
+        },
+        {
+            "answer": "Properties must always be read-write.",
+            "reason": ""
+        },
+        {
+            "answer": "Protocols can define their own protocols internally.",
+            "reason": ""
+        },
+        {
+            "answer": "Only structs can conform to protocols.",
+            "reason": ""
+        },
+        {
+            "answer": "Each data type can conform to only one protocol.",
+            "reason": ""
+        },
+        {
+            "answer": "You can write extensions for protocols that don't exist.",
+            "reason": ""
+        }
     ]
 }

@@ -14,11 +14,29 @@
         "Lines in a poem."
     ],
     "wrong": [
-        "A person's name.",
-        "A list of all usernames on Twitter.",
-        "A list of words that are valid in Scrabble.",
-        "A user's address.",
-        "The current temperature.",
-        "Whether or not your user is logged in."
+        {
+            "answer": "A person's name.",
+            "reason": "This is best stored as a string."
+        },
+        {
+            "answer": "A list of all usernames on Twitter.",
+            "reason": "There are very many of these, but they are always unique – a better choice is a set."
+        },
+        {
+            "answer": "A list of words that are valid in Scrabble.",
+            "reason": "There are very many of these, but they are always unique – a better choice is a set."
+        },
+        {
+            "answer": "A user's address.",
+            "reason": "It would be hard to remember which position was their city, state, or country, and cause problems if you made changes in the future."
+        },
+        {
+            "answer": "The current temperature.",
+            "reason": "This is best stored as a double."
+        },
+        {
+            "answer": "Whether or not your user is logged in.",
+            "reason": "This is best stored as a Boolean."
+        }
     ]
 }

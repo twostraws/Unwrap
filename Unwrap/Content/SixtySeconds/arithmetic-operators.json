@@ -14,11 +14,29 @@
         "var result = 7 - 1 - 1"
     ],
     "wrong": [
-        "let result = 2.5 * 2",
-        "let result = 12 % 6",
-        "let result = 10 \/ 2.0",
-        "var result = 2 + 2 + 1.0",
-        "var result = 2 + 2 + 2",
-        "var result = 12 - 8"
+        {
+            "answer": "let result = 2.5 * 2",
+            "reason": "This will create a double, not an integer."
+        },
+        {
+            "answer": "let result = 12 % 6",
+            "reason": "This will set <code>result</code> to be 0."
+        },
+        {
+            "answer": "let result = 10 \/ 2.0",
+            "reason": "This will create a double, not an integer."
+        },
+        {
+            "answer": "var result = 2 + 2 + 1.0",
+            "reason": "This will create a double, not an integer."
+        },
+        {
+            "answer": "var result = 2 + 2 + 2",
+            "reason": "This will set <code>result</code> to 6."
+        },
+        {
+            "answer": "var result = 12 - 8",
+            "reason": "This will set <code>result</code> to 4."
+        }
     ]
 }

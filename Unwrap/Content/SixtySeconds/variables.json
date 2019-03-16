@@ -14,11 +14,29 @@
         "var dinosaur = \"T-Rex\""
     ],
     "wrong": [
-        "user = \"twostraws\"",
-        "status = \"success\"",
-        "favoriteColor = \"green\"",
-        "message = \"Good morning, Dave!\"",
-        "spaceship = \"Nostromo\"",
-        "city = \"Paris\""
+        {
+            "answer": "user = \"twostraws\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        },
+        {
+            "answer": "status = \"success\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        },
+        {
+            "answer": "favoriteColor = \"green\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        },
+        {
+            "answer": "message = \"Good morning, Dave!\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        },
+        {
+            "answer": "spaceship = \"Nostromo\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        },
+        {
+            "answer": "city = \"Paris\"",
+            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+        }
     ]
 }

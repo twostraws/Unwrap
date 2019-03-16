@@ -2,7 +2,7 @@
     "title": "While loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop prints five lines of text – true or false?",
+    "question": "This loop prints five lines of text\u00a0\u2013 true or false?",
     "hint": "Watch out for text that is printed only when a condition is satisfied.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var cats: Int = 0\nwhile cats < 10 {\n\tcats += 1\n\tprint(\"I'm getting another cat.\")\n\tif cats == 4 {\n\t\tprint(\"Enough cats!\")\n\t\tcats = 10\n\t}\n}"
     ],
     "wrong": [
-        "while 0 < 5 {\n\tprint(\"I'm counting to 5!\")\n}",
-        "var page: Int = 0\nwhile page <= 5 {\n\tpage += 1\n\tprint(\"I'm reading page \\(page).\")\n}",
-        "let bottles = 10\nwhile bottles > 0 {\n\tbottles -= 2\n\tprint(\"\\(bottles) green bottles.\")\n}",
-        "var speed = 50\nwhile speed <= 55 {\n\tprint(\"Accelerating to \\(speed)\")\n\tspeed += 1\n}",
-        "var itemsSold: Int = 0\nwhile itemsSold < 5000 {\n\titemsSold += 100\n\tif itemsSold % 1000 == 1000 {\n\t\tprint(\"\\(itemsSold) items sold - a big milestone!\")\n\t}\n}",
-        "var pianoLesson = 1\nwhile pianoLesson < 5 {\n\tprint(\"This is lesson \\(pianoLesson)\")\n\tpianoLesson += 1\n}"
+        {
+            "answer": "while 0 < 5 {\n\tprint(\"I'm counting to 5!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var page: Int = 0\nwhile page <= 5 {\n\tpage += 1\n\tprint(\"I'm reading page \\(page).\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let bottles = 10\nwhile bottles > 0 {\n\tbottles -= 2\n\tprint(\"\\(bottles) green bottles.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var speed = 50\nwhile speed <= 55 {\n\tprint(\"Accelerating to \\(speed)\")\n\tspeed += 1\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var itemsSold: Int = 0\nwhile itemsSold < 5000 {\n\titemsSold += 100\n\tif itemsSold % 1000 == 1000 {\n\t\tprint(\"\\(itemsSold) items sold - a big milestone!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var pianoLesson = 1\nwhile pianoLesson < 5 {\n\tprint(\"This is lesson \\(pianoLesson)\")\n\tpianoLesson += 1\n}",
+            "reason": ""
+        }
     ]
 }

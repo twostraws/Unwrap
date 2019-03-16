@@ -14,11 +14,29 @@
         "var state = \"game over\""
     ],
     "wrong": [
-        "let numberOfBooks = 6",
-        "let cpuType = \"Intel\"",
-        "let isOverflowing: Bool = \"true\"",
-        "var isActive: Bool = 0",
-        "var password: String = 12345",
-        "var depthInMeters: Int = 10.0"
+        {
+            "answer": "let numberOfBooks = 6",
+            "reason": "This creates a constant."
+        },
+        {
+            "answer": "let cpuType = \"Intel\"",
+            "reason": "This creates a constant."
+        },
+        {
+            "answer": "let isOverflowing: Bool = \"true\"",
+            "reason": "This creates a constant."
+        },
+        {
+            "answer": "var isActive: Bool = 0",
+            "reason": "This attempts to assign an integer to a Boolean, which is invalid in Swift."
+        },
+        {
+            "answer": "var password: String = 12345",
+            "reason": "This attempts to assign an integer to a string, which is invalid in Swift."
+        },
+        {
+            "answer": "var depthInMeters: Int = 10.0",
+            "reason": "This attempts to assign a double to an integer, which is invalid in Swift."
+        }
     ]
 }

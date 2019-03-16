@@ -14,11 +14,29 @@
         "var populationMillions = 12.5"
     ],
     "wrong": [
-        "let month = 6",
-        "let speed = 50",
-        "let city = \"Tokyo\"",
-        "let size = \"14.0\"",
-        "let mode = \"writing\"",
-        "let tweeted = false"
+        {
+            "answer": "let month = 6",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "let speed = 50",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "let city = \"Tokyo\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "let size = \"14.0\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "let mode = \"writing\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "let tweeted = false",
+            "reason": "This creates a Boolean."
+        }
     ]
 }

@@ -1,6 +1,6 @@
 {
     "title": "Arrays",
-    "postscript": "If your array is empty, even reading <code>array[0]</code> will cause your app to crash. Be careful!",
+    "postscript": "If your array is empty, even reading <code>array[0]<\/code> will cause your app to crash. Be careful!",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create arrays?",
     "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>",
@@ -14,11 +14,29 @@
         "var cities: [String] = [\"London\", \"Paris\", \"New York\"]"
     ],
     "wrong": [
-        "let age = 26",
-        "let breeds = {\"Labrador\", \"Chihuahua\"}",
-        "let status = false, true, true, true",
-        "let height = \"14.0\"",
-        "let characters: [Int] = [\"Doctor Who\"]",
-        "let playlistSizes = (100, 200, 300)"
+        {
+            "answer": "let age = 26",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "let breeds = {\"Labrador\", \"Chihuahua\"}",
+            "reason": "Arrays start and end with square brackets, [ and ], rather than braces."
+        },
+        {
+            "answer": "let status = false, true, true, true",
+            "reason": "Arrays start and end with square brackets."
+        },
+        {
+            "answer": "let height = \"14.0\"",
+            "reason": "This creates a string."
+        },
+        {
+            "answer": "let characters: [Int] = [\"Doctor Who\"]",
+            "reason": "This attempts to place a string array into an integer array, which is invalid in Swift."
+        },
+        {
+            "answer": "let playlistSizes = (100, 200, 300)",
+            "reason": "Arrays start and end with square brackets, [ and ], rather than parentheses."
+        }
     ]
 }

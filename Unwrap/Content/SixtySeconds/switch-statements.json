@@ -7,18 +7,36 @@
     "syntaxHighlighting": false,
     "correct": [
         "Switch statements are often clearer to read than multiple <code>if<\/code> conditions.",
-        "Code from other cases will not be run without using <code>fallthrough<\/code>",
-        "You must list all outcomes as <code>case<\/code> statements.",
+        "Code from the following case will be run if you use <code>fallthrough<\/code>",
+        "You must list all outcomes as <code>case<\/code> statements or use <code>default<\/code>.",
         "You place the value you want to check at the start.",
         "The default case is written as <code>default:<\/code> rather than <code>case default:<\/code>",
         "If you want to match all other values, use <code>default<\/code>"
     ],
     "wrong": [
-        "Switch statements don't work with integers.",
-        "The default case is always needed.",
-        "You may only use <code>fallthrough<\/code> once.",
-        "Switch statements work best with constants.",
-        "You can have a maximum of 10 cases.",
-        "Switch statements make your code run more slowly."
+        {
+            "answer": "Switch statements don't work with integers.",
+            "reason": "Switch statements work just fine with integers."
+        },
+        {
+            "answer": "The default case is always needed.",
+            "reason": "This default case is not needed if you already cover all other cases, such as with an enum."
+        },
+        {
+            "answer": "You may only use <code>fallthrough<\/code> once.",
+            "reason": "You can use <code>fallthrough</code> as many times as you want."
+        },
+        {
+            "answer": "Switch statements work best with constants.",
+            "reason": "Switch statements work just fine with variables."
+        },
+        {
+            "answer": "You can have a maximum of 10 cases.",
+            "reason": "You may have as many cases as you want."
+        },
+        {
+            "answer": "Switch statements make your code run more slowly.",
+            "reason": "Switch statements have no special impact on performance compared to other options."
+        }
     ]
 }

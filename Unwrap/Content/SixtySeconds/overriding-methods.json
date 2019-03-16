@@ -1,8 +1,8 @@
 {
     "title": "Overriding methods",
-    "postscript": "It’s an error to override a method that doesn’t exist in the parent class.",
+    "postscript": "It\u2019s an error to override a method that doesn\u2019t exist in the parent class.",
     "reviewType": "singleSelection",
-    "question": "This code will print some sort of output – true or false?",
+    "question": "This code will print some sort of output \u2013\u00a0true or false?",
     "hint": "Subclasses must use <code>override<\/code> to change methods from their parents.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "class Composer {\n\tfunc composeMusic() {\n\t\tprint(\"Here's some music I wrote.\")\n\t}\n}\nclass OperaComposer: Composer {\n\toverride func composeMusic() {\n\t\tprint(\"Here's an opera I wrote.\")\n\t}\n}\nlet verdi = OperaComposer()\nverdi.composeMusic()"
     ],
     "wrong": [
-        "class Doctor {\n\tfunc operate() {\n\t\tprint(\"I can't do that.\")\n\t}\n}\nclass Surgeon {\n\toverride func operate() {\n\t\tprint(\"OK, let's go!\")\n\t}\n}\nlet doogieHowser = Doctor()\ndoogieHowser.operate()",
-        "class Building {\n\toverride func build() {\n\t\tprint(\"This will take a couple of months.\")\n\t}\n}\nclass Skyscraper: Building {\n\toverride func build() {\n\t\tprint(\"This will take a year.\")\n\t}\n}\nlet shanghaiTower = Skyscraper()\nshanghaiTower.build()",
-        "class Airplane: Jet {\n\tfunc takeOff() {\n\t\tprint(\"Fasten your seatbelts.\")\n\t}\n}\nclass Jet: Airplane {\n\toverride func takeOff() {\n\t\tprint(\"Someone call Kenny Loggins, because we're going into the danger zone!\")\n\t}\n}\nlet f14 = Jet()\nf14.takeOff()",
-        "class Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your popcorn ready!\")\n\t}\n}\nclass IMAXCinema: Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your eardrums ready!\")\n\t}\n}\nlet londonIMAX = IMAXCinema()\nlondonIMAX.showMovie()",
-        "class Store {\n\tfunc restock() -> String {\n\t\treturn \"Fill up the empty shelves\"\n\t}\n}\nclass GroceryStore: Store {\n\toverride func restock() -> String {\n\t\treturn \"We need to buy more food.\"\n\t}\n}\nlet tesco = GroceryStore()\ntesco.restock()",
-        "class Exercise {\n\tfunc describe() {\n\t}\n}\nclass ChinUps: Exercise {\n\toverride func describe() {\n\t}\n}\nlet firstRep = ChinUps()\nfirstRep.describe()"
+        {
+            "answer": "class Doctor {\n\tfunc operate() {\n\t\tprint(\"I can't do that.\")\n\t}\n}\nclass Surgeon {\n\toverride func operate() {\n\t\tprint(\"OK, let's go!\")\n\t}\n}\nlet doogieHowser = Doctor()\ndoogieHowser.operate()",
+            "reason": ""
+        },
+        {
+            "answer": "class Building {\n\toverride func build() {\n\t\tprint(\"This will take a couple of months.\")\n\t}\n}\nclass Skyscraper: Building {\n\toverride func build() {\n\t\tprint(\"This will take a year.\")\n\t}\n}\nlet shanghaiTower = Skyscraper()\nshanghaiTower.build()",
+            "reason": ""
+        },
+        {
+            "answer": "class Airplane: Jet {\n\tfunc takeOff() {\n\t\tprint(\"Fasten your seatbelts.\")\n\t}\n}\nclass Jet: Airplane {\n\toverride func takeOff() {\n\t\tprint(\"Someone call Kenny Loggins, because we're going into the danger zone!\")\n\t}\n}\nlet f14 = Jet()\nf14.takeOff()",
+            "reason": ""
+        },
+        {
+            "answer": "class Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your popcorn ready!\")\n\t}\n}\nclass IMAXCinema: Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your eardrums ready!\")\n\t}\n}\nlet londonIMAX = IMAXCinema()\nlondonIMAX.showMovie()",
+            "reason": ""
+        },
+        {
+            "answer": "class Store {\n\tfunc restock() -> String {\n\t\treturn \"Fill up the empty shelves\"\n\t}\n}\nclass GroceryStore: Store {\n\toverride func restock() -> String {\n\t\treturn \"We need to buy more food.\"\n\t}\n}\nlet tesco = GroceryStore()\ntesco.restock()",
+            "reason": ""
+        },
+        {
+            "answer": "class Exercise {\n\tfunc describe() {\n\t}\n}\nclass ChinUps: Exercise {\n\toverride func describe() {\n\t}\n}\nlet firstRep = ChinUps()\nfirstRep.describe()",
+            "reason": ""
+        }
     ]
 }

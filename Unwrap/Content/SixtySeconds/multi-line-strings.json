@@ -2,7 +2,7 @@
     "title": "Multi-line strings",
     "postscript": "You can write \"\\n\" in any string to add a line break inside your text.",
     "reviewType": "singleSelection",
-    "question": "This code creates multi-line strings correctly – true or false?",
+    "question": "This code creates multi-line strings correctly \u2013\u00a0true or false?",
     "hint": "Multi-line strings start and end with triple quote marks, but those quotes must not have text on the same line.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var tennyson = \"\"\"\nTis better to have loved\nand lost than never\n to have loved at all\n\"\"\""
     ],
     "wrong": [
-        "var coleridge = \"\"\"\nWater, water, everywhere\nand not a drop to drink\"\"\"",
-        "var eliot = \"This is the way the world ends\nNot with a bang but with a whimper\"",
-        "var lear = \"The Owl and the Pussy-cat went to sea\nIn a beautiful pea-green boat,\nThey took some honey, and plenty of money,\nWrapped up in a five-pound note.\"",
-        "var henley = \"\"\"I am the master of my fate\nI am the captain of my soul\"\"\"",
-        "var brooke = \"\"If I should die,\nthink only this of me\nThere is some corner of a foreign field\nThat is forever England.\"",
-        "var shelley = \"My name is Ozymandias, King of Kings\nLook on my works, ye mighty, and despair!\""
+        {
+            "answer": "var coleridge = \"\"\"\nWater, water, everywhere\nand not a drop to drink\"\"\"",
+            "reason": "The final three quotes must be on a line by themselves."
+        },
+        {
+            "answer": "var eliot = \"This is the way the world ends\nNot with a bang but with a whimper\"",
+            "reason": "Multi-line strings must start and end with three double quotes on lines by themselves."
+        },
+        {
+            "answer": "var lear = \"The Owl and the Pussy-cat went to sea\nIn a beautiful pea-green boat,\nThey took some honey, and plenty of money,\nWrapped up in a five-pound note.\"",
+            "reason": "Multi-line strings must start and end with three double quotes on lines by themselves."
+        },
+        {
+            "answer": "var henley = \"\"\"I am the master of my fate\nI am the captain of my soul\"\"\"",
+            "reason": "The final three quotes must be on a line by themselves."
+        },
+        {
+            "answer": "var brooke = \"\"If I should die,\nthink only this of me\nThere is some corner of a foreign field\nThat is forever England.\"",
+            "reason": "Multi-line strings must start and end with three double quotes on lines by themselves."
+        },
+        {
+            "answer": "var shelley = \"My name is Ozymandias, King of Kings\nLook on my works, ye mighty, and despair!\"",
+            "reason": "Multi-line strings must start and end with three double quotes on lines by themselves."
+        }
     ]
 }

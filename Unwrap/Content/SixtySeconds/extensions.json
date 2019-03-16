@@ -2,7 +2,7 @@
     "title": "Extensions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is a valid extension – true or false?",
+    "question": "This code is a valid extension \u2013\u00a0true or false?",
     "hint": "Extensions can add methods and computed properties, but not stored properties.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "extension String {\n\tfunc isUppercased() -> Bool {\n\t\treturn self == self.uppercased()\n\t}\n}"
     ],
     "wrong": [
-        "extension Int {\n\tvar isEven {\n\t\treturn self % 2 == 0\n\t}\n}",
-        "extension String {\n\tfunc append(_ other: String) {\n\t\tself += other\n\t}\n}",
-        "extension Bool {\n\tfunc toggled() -> Bool {\n\t\tif self = true {\n\t\t\treturn false\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-        "ext Array {\n\tfunc summarize() {\n\t\tprint(\"The array has \\(count) items. They are:\")\n\t\tfor item in self {\n\t\t\tprint(item)\n\t\t}\n\t}\n}",
-        "extension Int {\n\ttimes(_ action: () -> Void) {\n\t\tfor _ in 0..<self {\n\t\t\taction()\n\t\t}\n\t}\n}",
-        "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tself == 42\n\t}\n}"
+        {
+            "answer": "extension Int {\n\tvar isEven {\n\t\treturn self % 2 == 0\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "extension String {\n\tfunc append(_ other: String) {\n\t\tself += other\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "extension Bool {\n\tfunc toggled() -> Bool {\n\t\tif self = true {\n\t\t\treturn false\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "ext Array {\n\tfunc summarize() {\n\t\tprint(\"The array has \\(count) items. They are:\")\n\t\tfor item in self {\n\t\t\tprint(item)\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "extension Int {\n\ttimes(_ action: () -> Void) {\n\t\tfor _ in 0..<self {\n\t\t\taction()\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tself == 42\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

@@ -1,8 +1,8 @@
 {
     "title": "Static properties and methods",
-    "postscript": "Static methods work the same way as static properties – just write <code>static func yourMethod()</code> rather than <code>func yourMethod()</code>.",
+    "postscript": "Static methods work the same way as static properties \u2013 just write <code>static func yourMethod()<\/code> rather than <code>func yourMethod()<\/code>.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Static properties and methods must be called on the struct that owns them, rather than on instances of that struct.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "struct LegoBrick {\n\tstatic var numberMade = 0\n\tvar shape: String\n\tvar color: String\n\tinit(shape: String, color: String) {\n\t\tself.shape = shape\n\t\tself.color = color\n\t\tLegoBrick.numberMade += 1\n\t}\n}"
     ],
     "wrong": [
-        "struct Person {\n\tstatic var population = 0\n\tvar name: String\n\tinit(personName: String) {\n\t\tname = personName\n\t\tpopulation += 1\n\t}\n}",
-        "struct Cat {\n\tstatic let allCats = [Cat]()\n\tinit() {\n\t\tCat.allCats.append(self)\n\t}\n\tstatic func chorus() {\n\t\tfor _ in allCats {\n\t\t\tprint(\"Meow!\")\n\t\t}\n\t}\n}",
-        "struct Marathon {\n\tstatic distance = 42\n\tvar name: String\n\tvar location: String\n}",
-        "struct Raffle {\n\tvar ticketsUsed = 0\n\tvar name: String\n\tvar tickets: Int\n\tinit(name: String, tickets: Int) {\n\t\tself.name = name\n\t\tself.tickets = tickets\n\t\tRaffle.ticketsUsed += tickets\n\t}\n}",
-        "struct Question {\n\tstatic let answer = 42\n\tvar questionText = \"Unknown\"\n\tinit(questionText: String, answer: String) {\n\t\tself.questionText = questionText\n\t\tself.answer = answer\n\t}\n}",
-        "struct PlayingCards {\n\tstatic let deckSize\n\tvar pictureStyle: String\n}"
+        {
+            "answer": "struct Person {\n\tstatic var population = 0\n\tvar name: String\n\tinit(personName: String) {\n\t\tname = personName\n\t\tpopulation += 1\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Cat {\n\tstatic let allCats = [Cat]()\n\tinit() {\n\t\tCat.allCats.append(self)\n\t}\n\tstatic func chorus() {\n\t\tfor _ in allCats {\n\t\t\tprint(\"Meow!\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Marathon {\n\tstatic distance = 42\n\tvar name: String\n\tvar location: String\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Raffle {\n\tvar ticketsUsed = 0\n\tvar name: String\n\tvar tickets: Int\n\tinit(name: String, tickets: Int) {\n\t\tself.name = name\n\t\tself.tickets = tickets\n\t\tRaffle.ticketsUsed += tickets\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct Question {\n\tstatic let answer = 42\n\tvar questionText = \"Unknown\"\n\tinit(questionText: String, answer: String) {\n\t\tself.questionText = questionText\n\t\tself.answer = answer\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct PlayingCards {\n\tstatic let deckSize\n\tvar pictureStyle: String\n}",
+            "reason": ""
+        }
     ]
 }

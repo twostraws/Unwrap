@@ -2,7 +2,7 @@
     "title": "Sets",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This will create a set with two items – true or false?",
+    "question": "This will create a set with two items \u2013 true or false?",
     "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var names = Set([\"John\", \"Paul\"])"
     ],
     "wrong": [
-        "let users = [\"Taylor\", \"Adele\"]",
-        "let cats = [\"Burmese\", \"Siamese\", \"Persian\"]",
-        "let earthquakeStrengths = Set(1, 1, 2, 2)",
-        "let staffReviews = Set([1, 2, 1, 2, 3])",
-        "let averageHeights = Set([1.71, 1.72, 1.73])",
-        "let playlistSizes = Set([1000])"
+        {
+            "answer": "let users = [\"Taylor\", \"Adele\"]",
+            "reason": "This creates an array, not a set."
+        },
+        {
+            "answer": "let cats = [\"Burmese\", \"Siamese\", \"Persian\"]",
+            "reason": "This creates an array, not a set."
+        },
+        {
+            "answer": "let earthquakeStrengths = Set(1, 1, 2, 2)",
+            "reason": "To create a set you must pass in an array of items rather than just loose integers."
+        },
+        {
+            "answer": "let staffReviews = Set([1, 2, 1, 2, 3])",
+            "reason": "Sets do not contain duplicate items, so this set will contain the numbers 1, 2, and 3 – it has three items rather than two."
+        },
+        {
+            "answer": "let averageHeights = Set([1.71, 1.72, 1.73])",
+            "reason": "This set will contain three items rather than two."
+        },
+        {
+            "answer": "let playlistSizes = Set([1000])",
+            "reason": "This set will contain one item rather than two."
+        }
     ]
 }

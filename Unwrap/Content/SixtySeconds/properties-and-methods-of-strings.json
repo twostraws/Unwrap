@@ -1,6 +1,6 @@
 {
     "title": "Properties and methods of strings",
-    "postscript": "One of the most useful methods of strings is <code>contains()</code>, which returns true if the string contains another string. For example, <code>\"world\".contains(\"orl\")</code> is true.",
+    "postscript": "One of the most useful methods of strings is <code>contains()<\/code>, which returns true if the string contains another string. For example, <code>\"world\".contains(\"orl\")<\/code> is true.",
     "reviewType": "multipleSelection",
     "question": "Which of these are true?",
     "hint": "Strings are case-sensitive by default, so ABC is different from Abc and aBc.",
@@ -14,11 +14,29 @@
         "var str = \"\"\nfor i in 1...5 {\n\tstr += \"\\(i)\"\n}\nstr.count == 5"
     ],
     "wrong": [
-        "var singer = \"Taylor Swift\"\nsinger.hasPrefix(\"TAY\")",
-        "var favoriteIceCream = \"choc chip\"\nfavoriteIceCream.count > 10",
-        "var superHero = \"Mario\"\nsuperHero.uppercased() == \"Mario\"",
-        "let definitelyTrue = \"Fox in sox\"\ndefinitelyTrue.contains(\"socks\")",
-        "let shoes = \"Jimmy Choo\"\nshoes.contains(Choo)",
-        "let content = \"Europe\"\ncontinent.contains(\"Europe\")"
+        {
+            "answer": "var singer = \"Taylor Swift\"\nsinger.hasPrefix(\"TAY\")",
+            "reason": ""
+        },
+        {
+            "answer": "var favoriteIceCream = \"choc chip\"\nfavoriteIceCream.count > 10",
+            "reason": ""
+        },
+        {
+            "answer": "var superHero = \"Mario\"\nsuperHero.uppercased() == \"Mario\"",
+            "reason": ""
+        },
+        {
+            "answer": "let definitelyTrue = \"Fox in sox\"\ndefinitelyTrue.contains(\"socks\")",
+            "reason": ""
+        },
+        {
+            "answer": "let shoes = \"Jimmy Choo\"\nshoes.contains(Choo)",
+            "reason": ""
+        },
+        {
+            "answer": "let content = \"Europe\"\ncontinent.contains(\"Europe\")",
+            "reason": ""
+        }
     ]
 }

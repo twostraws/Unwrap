@@ -2,7 +2,7 @@
     "title": "Creating basic closures",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Closures don't take parameters in parentheses, and they are case-sensitive just like regular functions.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var connectVPN = {\n\tprint(\"Connected!\")\n}\nconnectVPN()"
     ],
     "wrong": [
-        "let upgrade() = {\n\tprint(\"Upgrading...\")\n}\nupgrade()",
-        "let sing {\n\tprint(\"Tralala\")\n}\nsing()",
-        "takeCruise = {\n\tprint(\"A week of vacation!\")\n}",
-        "var meetFriends = {\n\tprint(\"Let's watch a movie\")\n}\nmeetfriends()",
-        "var paintPicture() {\n\tprint(\"Where are my watercolors?\")\n}",
-        "var signAutograph(to name: String) = {\n\tprint(\"To \\(name), my #1 fan\")\n}\nsignAutograph(to: \"Lisa\")"
+        {
+            "answer": "let upgrade() = {\n\tprint(\"Upgrading...\")\n}\nupgrade()",
+            "reason": ""
+        },
+        {
+            "answer": "let sing {\n\tprint(\"Tralala\")\n}\nsing()",
+            "reason": ""
+        },
+        {
+            "answer": "takeCruise = {\n\tprint(\"A week of vacation!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var meetFriends = {\n\tprint(\"Let's watch a movie\")\n}\nmeetfriends()",
+            "reason": ""
+        },
+        {
+            "answer": "var paintPicture() {\n\tprint(\"Where are my watercolors?\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var signAutograph(to name: String) = {\n\tprint(\"To \\(name), my #1 fan\")\n}\nsignAutograph(to: \"Lisa\")",
+            "reason": ""
+        }
     ]
 }

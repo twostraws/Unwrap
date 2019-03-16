@@ -2,8 +2,8 @@
     "title": "Combining conditions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code will print a message – true or false?",
-    "hint": "Remember that both sides of <code>&&</code> must be true in order for the whole condition to be true.",
+    "question": "This code will print a message \u2013 true or false?",
+    "hint": "Remember that both sides of <code>&&<\/code> must be true in order for the whole condition to be true.",
     "syntaxHighlighting": true,
     "correct": [
         "let a = true\nlet b = true\n\nif a && b {\n\tprint(\"Hello, Swift!\")\n}",
@@ -14,11 +14,29 @@
         "let age1 = 18\nlet age2 = 21\n\nif age1 >= 18 || age1 <= 18 {\n\tprint(\"Hello, Swift!\")\n}"
     ],
     "wrong": [
-        "let age1 = 18\nlet age2 = 21\n\nif age1 > 18 || age1 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
-        "let score1 = 23\nlet score2 = 18\n\nif score1 > 18 | score2 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
-        "let rating = \"5\"\n\nif rating > 4 {\n\tprint(\"Hello, Swift!\")\n}",
-        "let average1 = 5.0\nlet average2 = 4.0\n\nif average1 > 5.0 && average2 > 4.0 {\n\tprint(\"Hello, Swift!\")\n}",
-        "let loggedIn = true\nlet authorized = false\n\nif loggedIn && authorized {\n\tprint(\"Hello, Swift!\")\n}",
-        "let loggedIn = true\nlet authorized = false\n\nif loggedIn == false && authorized == false {\n\tprint(\"Hello, Swift!\")\n}"
+        {
+            "answer": "let age1 = 18\nlet age2 = 21\n\nif age1 > 18 || age1 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "<code>age1</code> is exactly 18, not greater than or less than 18."
+        },
+        {
+            "answer": "let score1 = 23\nlet score2 = 18\n\nif score1 > 18 | score2 < 18 {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "Combining conditions is written as <code>||</code> with two pipe symbols, not <code>|</code> with one."
+        },
+        {
+            "answer": "let rating = \"5\"\n\nif rating > 4 {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "This attempts to compare a string and an integer, which is invalid."
+        },
+        {
+            "answer": "let average1 = 5.0\nlet average2 = 4.0\n\nif average1 > 5.0 && average2 > 4.0 {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "<code>average1</code> is exactly equal to 5.0, and <code>average2</code> is exactly equal to 4.0, so neither of these conditions are true."
+        },
+        {
+            "answer": "let loggedIn = true\nlet authorized = false\n\nif loggedIn && authorized {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "Although <code>loggedIn</code> is true <code>authorized</code> is not, and <code>&&</code> requires both sides to be true."
+        },
+        {
+            "answer": "let loggedIn = true\nlet authorized = false\n\nif loggedIn == false && authorized == false {\n\tprint(\"Hello, Swift!\")\n}",
+            "reason": "<code>loggedIn</code> is true, and this condition explicitly checks for <code>loggedIn</code> to be false."
+        }
     ]
 }

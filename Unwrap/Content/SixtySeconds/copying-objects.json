@@ -2,7 +2,7 @@
     "title": "Copying objects",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code prints the same output twice – true or false?",
+    "question": "This code prints the same output twice \u2013\u00a0true or false?",
     "hint": "When you copy a struct, the original and the copy are different things with their own properties.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "class Hospital {\n\tvar onCallStaff = [String]()\n}\nvar londonCentral = Hospital()\nvar londonWest = londonCentral\nlondonCentral.onCallStaff.append(\"Dr Harlan\")\nlondonWest.onCallStaff.append(\"Dr Haskins\")\nprint(londonCentral.onCallStaff.count)\nprint(londonWest.onCallStaff.count)"
     ],
     "wrong": [
-        "class Statue {\n\tvar sculptor = \"Unknown\"\n}\nvar venusDeMilo = Statue()\nvenusDeMilo.sculptor = \"Alexandros of Antioch\"\nvar david = Statue()\ndavid.sculptor = \"Michaelangelo\"\nprint(venusDeMilo.sculptor)\nprint(david.sculptor)",
-        "class Ewok {\n\tvar fluffinessPercentage = 100\n}\nvar chirpa = Ewok()\nvar wicket = Ewok()\nchirpa.fluffinessPercentage = 90\nprint(wicket.fluffinessPercentage)\nprint(chirpa.fluffinessPercentage)",
-        "struct GalacticaCrew {\n\tvar isCylon = false\n}\nvar starbuck = GalacticaCrew()\nvar tyrol = starbuck\ntyrol.isCylon = true\nprint(starbuck.isCylon)\nprint(tyrol.isCylon)",
-        "class Queen {\n\tvar isMotherOfDragons = false\n}\nvar elizabeth = Queen()\nvar daenerys = Queen()\ndaenerys.isMotherOfDragons = true\nprint(elizabeth.isMotherOfDragons)\nprint(daenerys.isMotherOfDragons)",
-        "struct Calculator {\n\tvar currentTotal = 0\n}\nvar baseModel = Calculator()\nvar casio = baseModel\nvar texas = baseModel\ncasio.currentTotal = 556\ntexas.currentTotal = 384\nprint(casio.currentTotal)\nprint(texas.currentTotal)",
-        "class BasketballPlayer {\n\tvar height = 200.0\n}\nvar lebron = BasketballPlayer()\nlebron.height = 203.0\nvar curry = BasketballPlayer()\ncurry.height = 190\nprint(lebron.height)\nprint(curry.height)"
+        {
+            "answer": "class Statue {\n\tvar sculptor = \"Unknown\"\n}\nvar venusDeMilo = Statue()\nvenusDeMilo.sculptor = \"Alexandros of Antioch\"\nvar david = Statue()\ndavid.sculptor = \"Michaelangelo\"\nprint(venusDeMilo.sculptor)\nprint(david.sculptor)",
+            "reason": ""
+        },
+        {
+            "answer": "class Ewok {\n\tvar fluffinessPercentage = 100\n}\nvar chirpa = Ewok()\nvar wicket = Ewok()\nchirpa.fluffinessPercentage = 90\nprint(wicket.fluffinessPercentage)\nprint(chirpa.fluffinessPercentage)",
+            "reason": ""
+        },
+        {
+            "answer": "struct GalacticaCrew {\n\tvar isCylon = false\n}\nvar starbuck = GalacticaCrew()\nvar tyrol = starbuck\ntyrol.isCylon = true\nprint(starbuck.isCylon)\nprint(tyrol.isCylon)",
+            "reason": ""
+        },
+        {
+            "answer": "class Queen {\n\tvar isMotherOfDragons = false\n}\nvar elizabeth = Queen()\nvar daenerys = Queen()\ndaenerys.isMotherOfDragons = true\nprint(elizabeth.isMotherOfDragons)\nprint(daenerys.isMotherOfDragons)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Calculator {\n\tvar currentTotal = 0\n}\nvar baseModel = Calculator()\nvar casio = baseModel\nvar texas = baseModel\ncasio.currentTotal = 556\ntexas.currentTotal = 384\nprint(casio.currentTotal)\nprint(texas.currentTotal)",
+            "reason": ""
+        },
+        {
+            "answer": "class BasketballPlayer {\n\tvar height = 200.0\n}\nvar lebron = BasketballPlayer()\nlebron.height = 203.0\nvar curry = BasketballPlayer()\ncurry.height = 190\nprint(lebron.height)\nprint(curry.height)",
+            "reason": ""
+        }
     ]
 }

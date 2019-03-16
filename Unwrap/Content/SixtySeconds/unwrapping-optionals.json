@@ -2,7 +2,7 @@
     "title": "Unwrapping optionals",
     "postscript": "You can only unwrap optionals. Trying to unwrap non-optional values will cause an error.",
     "reviewType": "singleSelection",
-    "question": "This code will print a message – true or false?",
+    "question": "This code will print a message \u2013 true or false?",
     "hint": "The code inside <code>if let<\/code> will only be run if there was a value inside your optional.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var winner: String? = nil\nwinner = \"Daley Thompson\"\nif let name = winner {\n\tprint(\"And the winner is... \\(name)!\")\n}"
     ],
     "wrong": [
-        "var score: Int = nil\nscore = 556\nif let playerScore = score {\n\tprint(\"You scored \\(playerScore) points.\")\n}",
-        "let favoriteTennisPlayer: String? = \"Andy Murray\"\nif let player {\n\tprint(\"Let's watch \\(player)'s highlights video on YouTube.\")\n}",
-        "let menuItems: [String]? = [\"Pizza\", \"Pasta\"]\nif let items = menuItems {\n\tprint(\"There are \\(menuItems.count) items to choose from.\")\n}",
-        "var weatherForecast: String = \"sunny\"\nif let forecast = weatherForecast {\n\tprint(\"The forecast is \\(forecast).\")\n} else {\n\tprint(\"No forecast available.\")\n}",
-        "let tableHeight: Double? = 100\nif tableHeight > 85.0 {\n\tprint(\"The table is too high.\")\n}",
-        "var bestScore: Int? = nil\nbestScore = 101\nif bestScore > 100 {\n\tprint(\"You got a high score!\")\n} else {\n\tprint(\"Better luck next time.\")\n}"
+        {
+            "answer": "var score: Int = nil\nscore = 556\nif let playerScore = score {\n\tprint(\"You scored \\(playerScore) points.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let favoriteTennisPlayer: String? = \"Andy Murray\"\nif let player {\n\tprint(\"Let's watch \\(player)'s highlights video on YouTube.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let menuItems: [String]? = [\"Pizza\", \"Pasta\"]\nif let items = menuItems {\n\tprint(\"There are \\(menuItems.count) items to choose from.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var weatherForecast: String = \"sunny\"\nif let forecast = weatherForecast {\n\tprint(\"The forecast is \\(forecast).\")\n} else {\n\tprint(\"No forecast available.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let tableHeight: Double? = 100\nif tableHeight > 85.0 {\n\tprint(\"The table is too high.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var bestScore: Int? = nil\nbestScore = 101\nif bestScore > 100 {\n\tprint(\"You got a high score!\")\n} else {\n\tprint(\"Better luck next time.\")\n}",
+            "reason": ""
+        }
     ]
 }

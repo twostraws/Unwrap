@@ -2,8 +2,8 @@
     "title": "Nil coalescing",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code demonstrates using nil coalescing with optionals – true or false?",
-    "hint": "The data type on the left of <code>??</code> must be the same as the data type on the right.",
+    "question": "This code demonstrates using nil coalescing with optionals \u2013\u00a0true or false?",
+    "hint": "The data type on the left of <code>??<\/code> must be the same as the data type on the right.",
     "syntaxHighlighting": true,
     "correct": [
         "var captain: String? = \"Kathryn Janeway\"\nlet name = captain ?? \"Anonymous\"",
@@ -14,11 +14,29 @@
         "let distanceRan: Double? = 0.5\nlet distance: Double = distanceRan ?? 0"
     ],
     "wrong": [
-        "let jeansNumber: Int? = nil\nlet jeans = jeansNumber ? 501",
-        "let userID: Int? = 556\nlet id = userID ?? \"Unknown\"",
-        "let painter: String = \"Leonardo da Vinci\"\nvar artist: String = painter ?? \"Unknown\"",
-        "let numberSum: Double? = 0.0\nlet sum: Double = numberSum ??",
-        "var conferenceName: String? = \"WWDC\"\nvar conference: String = conferenceName ?? nil",
-        "var bestPony: String? = \"Pinkie Pie\"\nlet selectedPony: String? == bestPony ?? nil"
+        {
+            "answer": "let jeansNumber: Int? = nil\nlet jeans = jeansNumber ? 501",
+            "reason": ""
+        },
+        {
+            "answer": "let userID: Int? = 556\nlet id = userID ?? \"Unknown\"",
+            "reason": ""
+        },
+        {
+            "answer": "let painter: String = \"Leonardo da Vinci\"\nvar artist: String = painter ?? \"Unknown\"",
+            "reason": ""
+        },
+        {
+            "answer": "let numberSum: Double? = 0.0\nlet sum: Double = numberSum ??",
+            "reason": ""
+        },
+        {
+            "answer": "var conferenceName: String? = \"WWDC\"\nvar conference: String = conferenceName ?? nil",
+            "reason": ""
+        },
+        {
+            "answer": "var bestPony: String? = \"Pinkie Pie\"\nlet selectedPony: String? == bestPony ?? nil",
+            "reason": ""
+        }
     ]
 }

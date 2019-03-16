@@ -2,7 +2,7 @@
     "title": "Capturing values",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
     "hint": "Make sure the parameters passed into the function, and passed into the closure it returns, are correct.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "func visitPlaces() -> (String) -> Void {\n\tvar places = [String: Int]()\n\treturn {\n\t\tplaces[$0, default: 0] += 1\n\t\tlet timesVisited = places[$0, default: 0]\n\t\tprint(\"Number of times I've visited \\($0): \\(timesVisited).\")\n\t}\n}\nlet visit = visitPlaces()\nvisit(\"London\")\nvisit(\"New York\")\nvisit(\"London\")"
     ],
     "wrong": [
-        "func takeMedicine(name: String) -> () -> Bool {\n\tvar pillsLeft = 30\n\treturn {\n\t\tif pillsLeft > 0 {\n\t\t\tpillsLeft -= 1\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\n\ntakeMedicine()",
-        "func translate(String) -> (String) -> String {\n\treturn {\n\t\tif language == \"French\" {\n\t\t\tif $0 == \"Hello\" {\n\t\t\t\treturn \"Bonjour\"\n\t\t\t} else {\n\t\t\t\treturn \"\\($0) is unknown.\"\n\t\t\t}\n\t\t} else {\n\t\t\treturn \"Unknown language.\"\n\t\t}\n\t}\n}\nlet translator = translate(language: \"French\")\nlet french = translator(\"Hello\")",
-        "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
-        "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
-        "func handOutBusinessCards() -> () -> Void {\n\tlet number = 0\n\treturn {\n\t\tnumber += 1\n\t\tprint(\"Number handed out: \\(number)\")\n\t}\n}\nlet handOut = handOutBusinessCards()\nhandOut()\nhandOut()",
-        "func findTallest() -> (String, Double) -> (String) {\n\tvar tallestName = \"\"\n\tvar tallestHeight = 0\n\treturn {\n\t\tif $1 > tallestHeight {\n\t\t\ttallestName = $0\n\t\t\ttallestHeight = $1\n\t\t}\n\t\treturn tallestName\n\t}\n}\nlet tallest = findTallest()\nvar tallestName = tallest(\"Hannah\", 1.72)\ntallestName = tallest(\"Christina\", 1.68)"
+        {
+            "answer": "func takeMedicine(name: String) -> () -> Bool {\n\tvar pillsLeft = 30\n\treturn {\n\t\tif pillsLeft > 0 {\n\t\t\tpillsLeft -= 1\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\n\ntakeMedicine()",
+            "reason": ""
+        },
+        {
+            "answer": "func translate(String) -> (String) -> String {\n\treturn {\n\t\tif language == \"French\" {\n\t\t\tif $0 == \"Hello\" {\n\t\t\t\treturn \"Bonjour\"\n\t\t\t} else {\n\t\t\t\treturn \"\\($0) is unknown.\"\n\t\t\t}\n\t\t} else {\n\t\t\treturn \"Unknown language.\"\n\t\t}\n\t}\n}\nlet translator = translate(language: \"French\")\nlet french = translator(\"Hello\")",
+            "reason": ""
+        },
+        {
+            "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
+            "reason": ""
+        },
+        {
+            "answer": "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
+            "reason": ""
+        },
+        {
+            "answer": "func handOutBusinessCards() -> () -> Void {\n\tlet number = 0\n\treturn {\n\t\tnumber += 1\n\t\tprint(\"Number handed out: \\(number)\")\n\t}\n}\nlet handOut = handOutBusinessCards()\nhandOut()\nhandOut()",
+            "reason": ""
+        },
+        {
+            "answer": "func findTallest() -> (String, Double) -> (String) {\n\tvar tallestName = \"\"\n\tvar tallestHeight = 0\n\treturn {\n\t\tif $1 > tallestHeight {\n\t\t\ttallestName = $0\n\t\t\ttallestHeight = $1\n\t\t}\n\t\treturn tallestName\n\t}\n}\nlet tallest = findTallest()\nvar tallestName = tallest(\"Hannah\", 1.72)\ntallestName = tallest(\"Christina\", 1.68)",
+            "reason": ""
+        }
     ]
 }

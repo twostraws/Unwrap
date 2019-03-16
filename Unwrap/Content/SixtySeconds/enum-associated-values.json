@@ -14,11 +14,29 @@
         "enum Class { case law(level: Int) }"
     ],
     "wrong": [
-        "case BandMember(role: String)",
-        "enum SocialMedia case twitter(username: Int)",
-        "enum Status { case read }",
-        "enum role { case administrator }",
-        "let chosenHobby = case hobby(name: String) }",
-        "let furniture = [chair, table, couch]"
+        {
+            "answer": "case BandMember(role: String)",
+            "reason": "This is missing an enum around the case."
+        },
+        {
+            "answer": "enum SocialMedia case twitter(username: Int)",
+            "reason": "This is missing opening and closing braces around the cases."
+        },
+        {
+            "answer": "enum Status { case read }",
+            "reason": "This enum has no cases with associated values."
+        },
+        {
+            "answer": "enum role { case administrator }",
+            "reason": "This enum has no cases with associated values."
+        },
+        {
+            "answer": "let chosenHobby = case hobby(name: String) }",
+            "reason": "This is invalid Swift."
+        },
+        {
+            "answer": "let furniture = [chair, table, couch]",
+            "reason": "This creates an array."
+        }
     ]
 }

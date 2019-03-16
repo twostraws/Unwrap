@@ -2,7 +2,7 @@
     "title": "Initializers",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Make sure all properties have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "struct Dictionary {\n\tvar words = Set<String>()\n}\nlet dictionary = Dictionary()"
     ],
     "wrong": [
-        "struct Wine {\n\tvar grape: String\n\tvar region: String\n}\nlet malbec = Wine(grapes: \"Malbec\", region: \"Cahors\")",
-        "struct Book {\n\tvar title: String\n\tvar author: String\n\tinit(bookTitle: String) {\n\t\ttitle = bookTitle\n\t}\n}\nlet book = Book(bookTitle: \"Beowulf\")",
-        "struct Sport {\n\tvar name: String\n\tvar isOlympicSport: Bool\n}\nlet chessBoxing = Sport(name: \"Chessboxing\", isOlympicSport: \"false\")",
-        "struct Media {\n\tvar type: String\n\tvar users: Int\n\tinit() {\n\t\t\n\t}\n}\nlet tv = Media(type: \"Television\", users: 10_000_000)",
-        "struct Tree {\n\tvar type: String\n\tvar hasFruit: Bool\n\tfunc init() {\n\t\ttype = \"Cherry\"\n\t\thasFruit = true\n\t}\n}\nlet cherryTree = Tree()",
-        "struct Starship {\n\tvar name: String\n\tvar maxWarp: Double\n\tinit(starshipName: String) {\n\t\tname = starshipName\n\t}\n}\nlet voyager = Starship(starshipName: \"Voyager\")"
+        {
+            "answer": "struct Wine {\n\tvar grape: String\n\tvar region: String\n}\nlet malbec = Wine(grapes: \"Malbec\", region: \"Cahors\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Book {\n\tvar title: String\n\tvar author: String\n\tinit(bookTitle: String) {\n\t\ttitle = bookTitle\n\t}\n}\nlet book = Book(bookTitle: \"Beowulf\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Sport {\n\tvar name: String\n\tvar isOlympicSport: Bool\n}\nlet chessBoxing = Sport(name: \"Chessboxing\", isOlympicSport: \"false\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Media {\n\tvar type: String\n\tvar users: Int\n\tinit() {\n\t\t\n\t}\n}\nlet tv = Media(type: \"Television\", users: 10_000_000)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Tree {\n\tvar type: String\n\tvar hasFruit: Bool\n\tfunc init() {\n\t\ttype = \"Cherry\"\n\t\thasFruit = true\n\t}\n}\nlet cherryTree = Tree()",
+            "reason": ""
+        },
+        {
+            "answer": "struct Starship {\n\tvar name: String\n\tvar maxWarp: Double\n\tinit(starshipName: String) {\n\t\tname = starshipName\n\t}\n}\nlet voyager = Starship(starshipName: \"Voyager\")",
+            "reason": ""
+        }
     ]
 }

@@ -14,11 +14,29 @@
         "Classes and structs treat mutability differently."
     ],
     "wrong": [
-        "Structs can also use inheritance, but only in special circumstances.",
-        "You may inherit from multiple classes if you want.",
-        "The <code>override<\/code> keyword must be used in all methods of a child class.",
-        "Classes do not have access control keywords such as <code>private<\/code>",
-        "Classes must always have initializers.",
-        "If you want others to inherit from your classes, you must mark it <code>nonfinal<\/code>"
+        {
+            "answer": "Structs can also use inheritance, but only in special circumstances.",
+            "reason": ""
+        },
+        {
+            "answer": "You may inherit from multiple classes if you want.",
+            "reason": ""
+        },
+        {
+            "answer": "The <code>override<\/code> keyword must be used in all methods of a child class.",
+            "reason": ""
+        },
+        {
+            "answer": "Classes do not have access control keywords such as <code>private<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Classes must always have initializers.",
+            "reason": ""
+        },
+        {
+            "answer": "If you want others to inherit from your classes, you must mark it <code>nonfinal<\/code>",
+            "reason": ""
+        }
     ]
 }

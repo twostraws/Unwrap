@@ -2,8 +2,8 @@
     "title": "Access control",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
-    "hint": "Make sure that <code>private</code> properties aren't accessed from outside their struct.",
+    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "hint": "Make sure that <code>private<\/code> properties aren't accessed from outside their struct.",
     "syntaxHighlighting": true,
     "correct": [
         "struct Contributor {\n\tprivate var name = \"Anonymous\"\n}\nlet paul = Contributor()",
@@ -14,11 +14,29 @@
         "struct School {\n\tvar staffNames: [String]\n\tprivate var studentNames: [String]\n\tinit(staff: String...) {\n\t\tself.staffNames = staff\n\t\tself.studentNames = [String]()\n\t}\n}\nlet royalHigh = School(staff: \"Mrs Hughes\")"
     ],
     "wrong": [
-        "struct Toy {\n\tvar customerPrice: Double\n\tprivate var actualPrice: Int\n\tinit(price: Int) {\n\t\tactualPrice = price\n\t\tcustomerPrice = actualPrice * 2\n\t}\n}\nlet buzz = Toy(price: 10)",
-        "struct RebelBase {\n\tprivate var location: String\n\tprivate var peopleCount: Int\n\tinit(location: String, people: Int) {\n\t\tself.location = location\n\t\tself.people = peopleCount\n\t}\n}\nlet base = RebelBase(location: \"Yavin\", people: 1000)",
-        "struct FacebookUser {\n\tprivate var privatePosts: [String]\n\tpublic var publicPosts: [String]\n}\nlet user = FacebookUser()",
-        "struct SecretAgent {\n\tprivate var actualName: String\n\tpublic var codeName: String\n\tinit(name: String, codeName: String) {\n\t\tself.actualName = name\n\t\tself.codeName = codeName\n\t}\n}\nlet bond = SecretAgent(name: \"James Bond\", codeName: 007)",
-        "struct Doctor {\n\tvar name: String\n\tvar location: String\n\tprivate var currentPatient = \"No one\"\n}\nlet drJones = Doctor(name: \"Esther Jones\", location: \"Bristol\")",
-        "struct Order {\n\tprivate var id: Int\n\tinit(id: Int) {\n\t\tself.id = id\n\t}\n}\nlet order = Order(id: \"1\")"
+        {
+            "answer": "struct Toy {\n\tvar customerPrice: Double\n\tprivate var actualPrice: Int\n\tinit(price: Int) {\n\t\tactualPrice = price\n\t\tcustomerPrice = actualPrice * 2\n\t}\n}\nlet buzz = Toy(price: 10)",
+            "reason": ""
+        },
+        {
+            "answer": "struct RebelBase {\n\tprivate var location: String\n\tprivate var peopleCount: Int\n\tinit(location: String, people: Int) {\n\t\tself.location = location\n\t\tself.people = peopleCount\n\t}\n}\nlet base = RebelBase(location: \"Yavin\", people: 1000)",
+            "reason": ""
+        },
+        {
+            "answer": "struct FacebookUser {\n\tprivate var privatePosts: [String]\n\tpublic var publicPosts: [String]\n}\nlet user = FacebookUser()",
+            "reason": ""
+        },
+        {
+            "answer": "struct SecretAgent {\n\tprivate var actualName: String\n\tpublic var codeName: String\n\tinit(name: String, codeName: String) {\n\t\tself.actualName = name\n\t\tself.codeName = codeName\n\t}\n}\nlet bond = SecretAgent(name: \"James Bond\", codeName: 007)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Doctor {\n\tvar name: String\n\tvar location: String\n\tprivate var currentPatient = \"No one\"\n}\nlet drJones = Doctor(name: \"Esther Jones\", location: \"Bristol\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Order {\n\tprivate var id: Int\n\tinit(id: Int) {\n\t\tself.id = id\n\t}\n}\nlet order = Order(id: \"1\")",
+            "reason": ""
+        }
     ]
 }

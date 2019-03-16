@@ -14,11 +14,29 @@
         "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves."
     ],
     "wrong": [
-        "Shorthand syntax can only be used with integers.",
-        "Shorthand syntax provides up to three parameters automatically.",
-        "Shorthand syntax can only be used with Swift's built-in functions like <code>print()<\/code>",
-        "Shorthand parameters are written as <code>#0<\/code>, <code>#1<\/code> and so on.",
-        "You must always list the parameters you accept when using shorthand syntax.",
-        "Shorthand parameters can't be used with string interpolation."
+        {
+            "answer": "Shorthand syntax can only be used with integers.",
+            "reason": ""
+        },
+        {
+            "answer": "Shorthand syntax provides up to three parameters automatically.",
+            "reason": ""
+        },
+        {
+            "answer": "Shorthand syntax can only be used with Swift's built-in functions like <code>print()<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Shorthand parameters are written as <code>#0<\/code>, <code>#1<\/code> and so on.",
+            "reason": ""
+        },
+        {
+            "answer": "You must always list the parameters you accept when using shorthand syntax.",
+            "reason": ""
+        },
+        {
+            "answer": "Shorthand parameters can't be used with string interpolation.",
+            "reason": ""
+        }
     ]
 }

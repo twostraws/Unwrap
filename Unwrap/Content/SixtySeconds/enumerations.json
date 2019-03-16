@@ -14,11 +14,29 @@
         "Genres of movies."
     ],
     "wrong": [
-        "Usernames.",
-        "Passwords.",
-        "A list of cities you have visited.",
-        "Heights of objects.",
-        "Average student exam scores.",
-        "Whether or not your user is logged in."
+        {
+            "answer": "Usernames.",
+            "reason": "These are best stored as strings."
+        },
+        {
+            "answer": "Passwords.",
+            "reason": "These are best stored as encrypted strings."
+        },
+        {
+            "answer": "A list of cities you have visited.",
+            "reason": "This is best stored as an array of strings."
+        },
+        {
+            "answer": "Heights of objects.",
+            "reason": "These are best stored as doubles."
+        },
+        {
+            "answer": "Average student exam scores.",
+            "reason": "These are best stored as doubles."
+        },
+        {
+            "answer": "An email address.",
+            "reason": "These are best stored as strings."
+        }
     ]
 }

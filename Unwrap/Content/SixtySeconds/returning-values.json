@@ -2,7 +2,7 @@
     "title": "Returning values",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Make sure the function name and return type are both correct.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "func allTestsPassed(tests: [Bool]) -> Bool {\n\tfor test in tests {\n\t\tif test == false {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}"
     ],
     "wrong": [
-        "func burnCandles(count: Int) -> Int {\n\tfor _ in 1...count {\n\t\tprint(\"I'm lighting a candle\")\n\t}\n\treturn true\n}",
-        "func check(scores: [Int]) {\n\tfor score in scores {\n\t\tif score < 80 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\ncheck(scores: [100, 90, 100, 85])",
-        "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
-        "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",
-        "func paintHouse(color: String) -> Bool {\n\tif color == \"tartan\" {\n\t\treturn false\n\t}\n}",
-        "func giveDog(food: String) -> String {\n\tif food == \"treat\" {\n\t\t\"The dog ate it\"\n\t} else {\n\t\t\"The dog stared in disgust\"\n\t}\n}"
+        {
+            "answer": "func burnCandles(count: Int) -> Int {\n\tfor _ in 1...count {\n\t\tprint(\"I'm lighting a candle\")\n\t}\n\treturn true\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func check(scores: [Int]) {\n\tfor score in scores {\n\t\tif score < 80 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\ncheck(scores: [100, 90, 100, 85])",
+            "reason": ""
+        },
+        {
+            "answer": "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func paintHouse(color: String) -> Bool {\n\tif color == \"tartan\" {\n\t\treturn false\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func giveDog(food: String) -> String {\n\tif food == \"treat\" {\n\t\t\"The dog ate it\"\n\t} else {\n\t\t\"The dog stared in disgust\"\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

@@ -11,14 +11,32 @@
         "let usedWords = Set([\"hello\", \"world\"])",
         "var fibonacci = (1, 1, 2, 3, 5, 8)",
         "let episodes = [String]()",
-        "var names = [\"Beyoncé\", \"Jay-Z\"]"
+        "var names = [\"Beyonc\u00e9\", \"Jay-Z\"]"
     ],
     "wrong": [
-        "let isConfigured = false",
-        "let ages: Int = [26, 28, 39]",
-        "let winners: [String] = (\"David\", \"Jason\", \"Michelle\")",
-        "var repeatCount = [String: Int]",
-        "var unreadMessages: Int = \"12\"",
-        "var lotteryNumbers = Set(11, 23, 44)"
+        {
+            "answer": "let isConfigured = false",
+            "reason": "This creates a Boolean."
+        },
+        {
+            "answer": "let ages: Int = [26, 28, 39]",
+            "reason": "This attempts to place an array of integers into a single integer, which is invalid."
+        },
+        {
+            "answer": "let winners: [String] = (\"David\", \"Jason\", \"Raquel\")",
+            "reason": "This attempts to place a tuple of strings into an array of strings."
+        },
+        {
+            "answer": "var repeatCount = [String: Int]",
+            "reason": "This is invalid Swift – it needs parentheses after <code>[String: Int]</code>"
+        },
+        {
+            "answer": "var unreadMessages: Int = \"12\"",
+            "reason": "This attempts to place a string into an integer."
+        },
+        {
+            "answer": "var lotteryNumbers = Set(11, 23, 44)",
+            "reason": "To create a set you must pass it an array of values rather than just some loose numbers."
+        }
     ]
 }

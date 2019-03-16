@@ -2,7 +2,7 @@
     "title": "Creating your own classes",
     "postscript": "If a class has properties, it needs an initializer. The only exception is if all properties have default values, in which case an initializer isn't needed.",
     "reviewType": "singleSelection",
-    "question": "This code defines a valid class – true or false?",
+    "question": "This code defines a valid class \u2013\u00a0true or false?",
     "hint": "All properties must have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "class Empty { }\nlet nothing = Empty()"
     ],
     "wrong": [
-        "class Painting {\n\tvar title: String\n\tvar artist: String\n\tvar paintType: String\n\tfunc init(title: String, artist: String, paintType: String) {\n\t\tself.title = title\n\t\tself.artist = artist\n\t\tself.paintType = paintType\n\t}\n}",
-        "class Image {\n\tvar filename: String\n\tvar isAnimated: Bool\n\tinit(filename: String, isAnimated: Bool) {\n\t\tfilename = filename\n\t\tisAnimated = isAnimated\n\t}\n}",
-        "class Singer {\n\tvar name: String\n\tvar favoriteSong: String\n\tinit(name: String, song: String) {\n\t\tself.name = name\n\t\tself.song = song\n\t}\n}\nlet taylor = Singer(name: \"Taylor Swift\", song: \"Blank Space\")",
-        "struct Poll {\n\tvar question: String\n\tvar option1: String\n\tvar option2: String\n\tvar votes: [Int]\n}\nlet question = \"Jet black or rose gold?\"\nlet poll = Poll(question: question, option1: \"Jet black\", option2: \"Rose gold\", votes: [0, 0, 0, 0, 1, 0, 1])",
-        "struct Sandwich {\n\tvar name: String\n\tvar fillings: [String]\n}\nlet blt = Sandwich(name: \"BLT\", fillings: [\"Bacon\", \"Lettuce\", \"Tomato\"])",
-        "class Attendee {\n\tvar badgeNumber = 0\n\tvar name = \"Anonymous\"\n\tvar company = \"Unknown\"\n\tinit(badge: Int) {\n\t\tself.badgeNumber = badgeNumber\n\t}\n}"
+        {
+            "answer": "class Painting {\n\tvar title: String\n\tvar artist: String\n\tvar paintType: String\n\tfunc init(title: String, artist: String, paintType: String) {\n\t\tself.title = title\n\t\tself.artist = artist\n\t\tself.paintType = paintType\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "class Image {\n\tvar filename: String\n\tvar isAnimated: Bool\n\tinit(filename: String, isAnimated: Bool) {\n\t\tfilename = filename\n\t\tisAnimated = isAnimated\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "class Singer {\n\tvar name: String\n\tvar favoriteSong: String\n\tinit(name: String, song: String) {\n\t\tself.name = name\n\t\tself.song = song\n\t}\n}\nlet taylor = Singer(name: \"Taylor Swift\", song: \"Blank Space\")",
+            "reason": ""
+        },
+        {
+            "answer": "struct Poll {\n\tvar question: String\n\tvar option1: String\n\tvar option2: String\n\tvar votes: [Int]\n}\nlet question = \"Jet black or rose gold?\"\nlet poll = Poll(question: question, option1: \"Jet black\", option2: \"Rose gold\", votes: [0, 0, 0, 0, 1, 0, 1])",
+            "reason": ""
+        },
+        {
+            "answer": "struct Sandwich {\n\tvar name: String\n\tvar fillings: [String]\n}\nlet blt = Sandwich(name: \"BLT\", fillings: [\"Bacon\", \"Lettuce\", \"Tomato\"])",
+            "reason": ""
+        },
+        {
+            "answer": "class Attendee {\n\tvar badgeNumber = 0\n\tvar name = \"Anonymous\"\n\tvar company = \"Unknown\"\n\tinit(badge: Int) {\n\t\tself.badgeNumber = badgeNumber\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

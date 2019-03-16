@@ -2,7 +2,7 @@
     "title": "The ternary operator",
     "postscript": "Although some coders love using the ternary operator, it's best to avoid it because it doesn't make your code very clear.",
     "reviewType": "singleSelection",
-    "question": "This code will print \"Success\" – true or false?",
+    "question": "This code will print \"Success\" \u2013 true or false?",
     "hint": "The part after the question mark is executed if the condition is true, the part after the colon if it's false, and Swift won't let you compare different types of data.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "let sides = 5\nprint(sides <= 6 ? \"Success\" : \"Failure\")"
     ],
     "wrong": [
-        "let isRecyclable = false\nprint(isRecyclable == true ? \"Success\" : \"Failure\")",
-        "let highScore = 90\nlet actualScore = 89\nprint(actualScore > highScore ? \"Success\" : \"Failure\")",
-        "let storageSpace = 500\nprint(storageSpace > 1000 ? \"Success\" : \"Failure\")",
-        "var retweets = \"100\"\nprint(retweets > 10 ? \"Success\" : \"Failure\")",
-        "var averagePages: Double = 10.01\nprint(averagePages == 10 ? \"Success\" : \"Failure\")",
-        "var singers = [\"Taylor Swift\"]\nprint(singers == \"Taylor Swift\" ? \"Success\" : \"Failure\")"
+        {
+            "answer": "let isRecyclable = false\nprint(isRecyclable == true ? \"Success\" : \"Failure\")",
+            "reason": "<code>isRecyclable</code> is false, so this will print \"Failure\"."
+        },
+        {
+            "answer": "let highScore = 90\nlet actualScore = 89\nprint(actualScore > highScore ? \"Success\" : \"Failure\")",
+            "reason": "<code>actualScore</code> is less than <code>highScore</code> so this will print \"Failure\"."
+        },
+        {
+            "answer": "let storageSpace = 500\nprint(storageSpace > 1000 ? \"Success\" : \"Failure\")",
+            "reason": "<code>storageSpace</code> is less than 1000, so this will print \"Failure\"."
+        },
+        {
+            "answer": "var retweets = \"100\"\nprint(retweets > 10 ? \"Success\" : \"Failure\")",
+            "reason": "This attempts to compare a string and an integer, which is invalid."
+        },
+        {
+            "answer": "var averagePages: Double = 10.01\nprint(averagePages == 10 ? \"Success\" : \"Failure\")",
+            "reason": "<code>averagePages</code> is 10.01, and this condition checks for exactly 10, so this will print \"Failure\"."
+        },
+        {
+            "answer": "var singers = [\"Taylor Swift\"]\nprint(singers == \"Taylor Swift\" ? \"Success\" : \"Failure\")",
+            "reason": "This attempts to compare a string and an array of strings, which is invalid."
+        }
     ]
 }

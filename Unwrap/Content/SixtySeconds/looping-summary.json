@@ -2,7 +2,7 @@
     "title": "Looping: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Infinite loops are commonly made using <code>while true<\/code> but other conditions can also work.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "for _ in 1...3 {\n\tprint(\"Happy birthday to you\")\n}\nprint(\"Happy birthday dear Taylor\")\nprint(\"Happy birthday to you\")"
     ],
     "wrong": [
-        "for in 1...3 {\n\tprint(\"There's no place like home\")\n}",
-        "for number in (2, 3, 5) {\n\tprint(\"\\(number) is a prime number.\")\n}",
-        "outer: for i in 1...10 {\n\tfor i in 1...10 {\n\t\tlet product = i * j\n\t\tprint(\"Product is \\(product)\")\n\t\tbreak outer\n\t}\n}",
-        "var booksToRead = 0\nwhile booksToRead {\n\tprint(\"You still have books to read!\")\n}",
-        "var username = \"twostraws\"\nrepeat {\n\tprint(\"Your username is \\(username)\")\n} while username",
-        "var population = 7_500_000_000\nrepeat {\n\tprint(\"More babies have been born.\")\n\tpopulation *= 1.0001\n} while true"
+        {
+            "answer": "for in 1...3 {\n\tprint(\"There's no place like home\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "for number in (2, 3, 5) {\n\tprint(\"\\(number) is a prime number.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "outer: for i in 1...10 {\n\tfor i in 1...10 {\n\t\tlet product = i * j\n\t\tprint(\"Product is \\(product)\")\n\t\tbreak outer\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var booksToRead = 0\nwhile booksToRead {\n\tprint(\"You still have books to read!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var username = \"twostraws\"\nrepeat {\n\tprint(\"Your username is \\(username)\")\n} while username",
+            "reason": ""
+        },
+        {
+            "answer": "var population = 7_500_000_000\nrepeat {\n\tprint(\"More babies have been born.\")\n\tpopulation *= 1.0001\n} while true",
+            "reason": ""
+        }
     ]
 }

@@ -14,11 +14,29 @@
         "Tuples store values together in a single value."
     ],
     "wrong": [
-        "Tuples are the same as arrays.",
-        "Tuples can only hold strings.",
-        "All values in a tuple must be unique.",
-        "Tuples must always be created as variables.",
-        "Tuples cannot hold multi-line strings.",
-        "No one really understands tuples."
+        {
+            "answer": "Tuples are the same as arrays.",
+            "reason": "Tuples cannot grow in size like arrays can."
+        },
+        {
+            "answer": "Tuples can only hold strings.",
+            "reason": "Tuples can hold any kind of data you want."
+        },
+        {
+            "answer": "All values in a tuple must be unique.",
+            "reason": "Tuples may have duplicate values."
+        },
+        {
+            "answer": "Tuples must always be created as variables.",
+            "reason": "There's no reason tuples can't be constant."
+        },
+        {
+            "answer": "Tuples cannot hold multi-line strings.",
+            "reason": "Tuples are perfectly capable of holding multi-line strings."
+        },
+        {
+            "answer": "No one really understands tuples.",
+            "reason": "Once you spend a little time with them, tuples aren't too hard to understand – honest!"
+        }
     ]
 }

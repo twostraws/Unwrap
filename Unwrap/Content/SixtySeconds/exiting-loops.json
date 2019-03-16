@@ -2,7 +2,7 @@
     "title": "Exiting loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print some text – true or false?",
+    "question": "This loop will print some text \u2013\u00a0true or false?",
     "hint": "Calling <code>break<\/code> skips the remainder of the current loop.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "for i in 1...15 {\n\tif i % 3 == 0 {\n\t\tif i % 5 == 0 {\n\t\t\tprint(\"\\(i) is a multiple of both 3 and 5.\")\n\t\t}\n\t}\n}"
     ],
     "wrong": [
-        "for i in 1..<10 {\n\tif i == 10 {\n\t\tprint(\"Found number 10!\")\n\t}\n}",
-        "for name in [\"John\", \"Paul\", \"George\"] {\n\tbreak\n\tprint(\"Welcome, \\(name)!\")\n}",
-        "var isActive = false\nwhile isActive {\n\tprint(\"Checking for user input...\")\n}",
-        "repeat while true {\n\tprint(\"Fetching updates\")\n}",
-        "var counter: Int = 1\nwhile counter < 100 {\n\tcounter += 10\n\tif counter % 10 == 5 {\n\t\tprint(\"Matching number found\")\n\t}\n}",
-        "var password = \"1\"\nrepeat {\n\tpassword += \"1\"\n\tif password == \"11111\" {\n\t\tprint(\"That's a terrible password.\")\n\t\tbreak\n\t}\n} while true"
+        {
+            "answer": "for i in 1..<10 {\n\tif i == 10 {\n\t\tprint(\"Found number 10!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "for name in [\"John\", \"Paul\", \"George\"] {\n\tbreak\n\tprint(\"Welcome, \\(name)!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var isActive = false\nwhile isActive {\n\tprint(\"Checking for user input...\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "repeat while true {\n\tprint(\"Fetching updates\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var counter: Int = 1\nwhile counter < 100 {\n\tcounter += 10\n\tif counter % 10 == 5 {\n\t\tprint(\"Matching number found\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var password = \"1\"\nrepeat {\n\tpassword += \"1\"\n\tif password == \"11111\" {\n\t\tprint(\"That's a terrible password.\")\n\t}\n\tbreak\n} while true",
+            "reason": ""
+        }
     ]
 }

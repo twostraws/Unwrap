@@ -14,11 +14,29 @@
         "You don't need to use raw values."
     ],
     "wrong": [
-        "Raw values are required for enums.",
-        "Raw values can't be used directly.",
-        "If you give one case a value you must give them all values.",
-        "Raw values make enums into dictionaries.",
-        "Raw values must always be strings.",
-        "Raw values and associated values are the same."
+        {
+            "answer": "Raw values are required for enums.",
+            "reason": "Raw values are optional."
+        },
+        {
+            "answer": "Raw values can't be used directly.",
+            "reason": "You can read them if you want, or create enum instances from them."
+        },
+        {
+            "answer": "If you give one case a value you must give them all values.",
+            "reason": "Swift is able to infer values based on the ones you provide."
+        },
+        {
+            "answer": "Raw values make enums into dictionaries.",
+            "reason": "Enums with raw values are still just enums."
+        },
+        {
+            "answer": "Raw values must always be strings.",
+            "reason": "You can something else if you wish, such as integers."
+        },
+        {
+            "answer": "Raw values and associated values are the same.",
+            "reason": "Associated values attach extra data to an enum case; raw values are underlying data types for each case."
+        }
     ]
 }

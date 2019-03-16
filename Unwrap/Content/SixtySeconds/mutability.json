@@ -2,7 +2,7 @@
     "title": "Mutability",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "The mutating keyword must be used on structs where a property is being changed.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "struct Barbecue {\n\tvar charcoalBricks = 20\n\tmutating func addBricks(_ number: Int) {\n\t\tcharcoalBricks += number\n\t}\n}\nvar barbecue = Barbecue()\nbarbecue.addBricks(4)"
     ],
     "wrong": [
-        "class School {\n\tlet students = 200\n\tfunc expel(student: String, for reason: String) {\n\t\tprint(\"\\(student) has been expelled for \\(reason).\")\n\t\tstudents -= 1\n\t}\n}\nlet school = School()\nschool.expel(student: \"Jason\", for: \"coding during class\")",
-        "class SewingMachine {\n\tvar itemsMade = 0\n\tmutating func makeBag(count: Int) {\n\t\titemsMade += count\n\t}\n}\nvar machine = SewingMachine()\nmachine.makeBag(count: 1)",
-        "struct Kindergarten {\n\tvar numberOfScreamingKids = 30\n\tmutating func handOutIceCream() {\n\t\tnumberOfScreamingKids = 0\n\t}\n}\nlet kindergarten = Kindergarten()\nkindergarten.handOutIceCream()",
-        "struct Piano {\n\tvar untunedKeys = 3\n\tfunc tune() {\n\t\tif untunedKeys > 0 {\n\t\t\tuntunedKeys -= 1\n\t\t}\n\t}\n}\nvar piano = Piano()\npiano.tune()",
-        "struct Park {\n\tvar numberOfFlowers = 1000\n\tfunc plantFlowers() {\n\t\tnumberOfFlowers += 50\n\t}\n}\nlet park = Park()\npark.plantFlowers()",
-        "class Beach {\n\tvar lifeguards = 10\n\tmutating func addLifeguards(count: Int) {\n\t\tlifeguards += count\n\t}\n}\nvar beach = Beach()\nbeach.addLifeguards(count: 2)"
+        {
+            "answer": "class School {\n\tlet students = 200\n\tfunc expel(student: String, for reason: String) {\n\t\tprint(\"\\(student) has been expelled for \\(reason).\")\n\t\tstudents -= 1\n\t}\n}\nlet school = School()\nschool.expel(student: \"Jason\", for: \"coding during class\")",
+            "reason": ""
+        },
+        {
+            "answer": "class SewingMachine {\n\tvar itemsMade = 0\n\tmutating func makeBag(count: Int) {\n\t\titemsMade += count\n\t}\n}\nvar machine = SewingMachine()\nmachine.makeBag(count: 1)",
+            "reason": ""
+        },
+        {
+            "answer": "struct Kindergarten {\n\tvar numberOfScreamingKids = 30\n\tmutating func handOutIceCream() {\n\t\tnumberOfScreamingKids = 0\n\t}\n}\nlet kindergarten = Kindergarten()\nkindergarten.handOutIceCream()",
+            "reason": ""
+        },
+        {
+            "answer": "struct Piano {\n\tvar untunedKeys = 3\n\tfunc tune() {\n\t\tif untunedKeys > 0 {\n\t\t\tuntunedKeys -= 1\n\t\t}\n\t}\n}\nvar piano = Piano()\npiano.tune()",
+            "reason": ""
+        },
+        {
+            "answer": "struct Park {\n\tvar numberOfFlowers = 1000\n\tfunc plantFlowers() {\n\t\tnumberOfFlowers += 50\n\t}\n}\nlet park = Park()\npark.plantFlowers()",
+            "reason": ""
+        },
+        {
+            "answer": "class Beach {\n\tvar lifeguards = 10\n\tmutating func addLifeguards(count: Int) {\n\t\tlifeguards += count\n\t}\n}\nvar beach = Beach()\nbeach.addLifeguards(count: 2)",
+            "reason": ""
+        }
     ]
 }

@@ -2,7 +2,7 @@
     "title": "For loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print three lines of text – true or false?",
+    "question": "This loop will print three lines of text \u2013\u00a0true or false?",
     "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "for number in [2, 3, 5] {\n\tprint(\"\\(number) is a prime number.\")\n}"
     ],
     "wrong": [
-        "print(\"Haters gonna \")\nfor _ in 1...4 {\n\tprint(\"hate\")\n}",
-        "let albums = [\"1989\", \"Red\"]\nfor album in albums {\n\tprint(\"\\(album) was a great album!\")\n}",
-        "for i in 1...8 {\n\tif i < 3 {\n\t\tprint(\"\\(i) is a small number\")\n\t}\n}",
-        "for _ in 0...3 {\n\tprint(\"Hip hip hurray!\")\n}",
-        "var speeds = (65, 58, 72)\nfor speed in speeds {\n\tprint(\"You were driving at \\(speed)km\/h.\")\n}",
-        "for beatle in \"John\", \"Paul\", \"Ringo\" {\n\tprint(\"\\(beatle) was in the Beatles\")\n}"
+        {
+            "answer": "print(\"Haters gonna \")\nfor _ in 1...4 {\n\tprint(\"hate\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let albums = [\"1989\", \"Red\"]\nfor album in albums {\n\tprint(\"\\(album) was a great album!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "for i in 1...8 {\n\tif i < 3 {\n\t\tprint(\"\\(i) is a small number\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "for _ in 0...3 {\n\tprint(\"Hip hip hurray!\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var speeds = (65, 58, 72)\nfor speed in speeds {\n\tprint(\"You were driving at \\(speed)km\/h.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "for beatle in \"John\", \"Paul\", \"Ringo\" {\n\tprint(\"\\(beatle) was in the Beatles\")\n}",
+            "reason": ""
+        }
     ]
 }

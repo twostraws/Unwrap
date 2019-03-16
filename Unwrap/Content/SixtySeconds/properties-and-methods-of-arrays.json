@@ -1,8 +1,8 @@
 {
     "title": "Properties and methods of arrays",
-    "postscript": "Like strings, arrays also have a <code>contains()</code> method: <code>[1, 2, 3].contains(2)</code> is true.",
+    "postscript": "Like strings, arrays also have a <code>contains()<\/code> method: <code>[1, 2, 3].contains(2)<\/code> is true.",
     "reviewType": "singleSelection",
-    "question": "This code will evaluate as true – true or false?",
+    "question": "This code will evaluate as true \u2013 true or false?",
     "hint": "Watch out for constants.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var results = [true, true, false, true]\nresults.remove(at: 2)\nresults.count == 3"
     ],
     "wrong": [
-        "let composers = [\"Mozart\", \"Bach\", \"Beethoven\"]\ncomposers.append(\"Chopin\")\ncomposers.count == 4",
-        "var breeds = [\"Corgi\", \"Labrador\", \"Samoyed\"]\nbreeds.contains(\"corgi\")",
-        "var fibonacci = [1, 1, 2, 3, 5, 8]\nfibonacci.sorted() == [1, 2, 3, 5, 8]",
-        "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
-        "let heights = [1.0, 1.2, 1.15, 1.39]\nheights.remove(at: 0)\nheights.count == 3",
-        "var examScores = [100, 95, 92]\nexamScores.insert(98)"
+        {
+            "answer": "let composers = [\"Mozart\", \"Bach\", \"Beethoven\"]\ncomposers.append(\"Chopin\")\ncomposers.count == 4",
+            "reason": ""
+        },
+        {
+            "answer": "var breeds = [\"Corgi\", \"Labrador\", \"Samoyed\"]\nbreeds.contains(\"corgi\")",
+            "reason": ""
+        },
+        {
+            "answer": "var fibonacci = [1, 1, 2, 3, 5, 8]\nfibonacci.sorted() == [1, 2, 3, 5, 8]",
+            "reason": ""
+        },
+        {
+            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
+            "reason": ""
+        },
+        {
+            "answer": "let heights = [1.0, 1.2, 1.15, 1.39]\nheights.remove(at: 0)\nheights.count == 3",
+            "reason": ""
+        },
+        {
+            "answer": "var examScores = [100, 95, 92]\nexamScores.insert(98)",
+            "reason": ""
+        }
     ]
 }

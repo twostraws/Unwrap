@@ -1,9 +1,9 @@
 {
     "title": "Property observers",
-    "postscript": "Alongside <code>didSet</code>, Swift also has <code>willSet</code> – it's called just before a property's value changes.",
+    "postscript": "Alongside <code>didSet<\/code>, Swift also has <code>willSet<\/code> \u2013\u00a0it's called just before a property's value changes.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
-    "hint": "<code>didSet</code> is the most common property observer, and is triggered when a property's value has just changed.",
+    "question": "This code is valid Swift \u2013 true or false?",
+    "hint": "<code>didSet<\/code> is the most common property observer, and is triggered when a property's value has just changed.",
     "syntaxHighlighting": true,
     "correct": [
         "struct Game {\n\tvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"Your score is now \\(score).\")\n\t\t}\n\t}\n}",
@@ -14,11 +14,29 @@
         "struct Person {\n\tvar clothes: String {\n\t\tdidSet {\n\t\t\tprint(\"I'm changing to \\(clothes)\")\n\t\t}\n\t}\n}"
     ],
     "wrong": [
-        "struct Dog {\n\tvar age {\n\t\tdidSet {\n\t\t\tlet dogAge = age * 7\n\t\t\tprint(\"I'm now \\(dogAge) in dog years.\")\n\t\t}\n\t}\n}",
-        "struct StepCounter {\n\tvar steps: Int {\n\t\thasSet {\n\t\t\tprint(\"You've walked \\(steps) steps - good job!\")\n\t\t}\n\t}\n}",
-        "struct FuzzyClock {\n\tvar hour: Int {\n\t\tdset {\n\t\t\tif hour < 12 {\n\t\t\t\tprint(\"It's morning\")\n\t\t\t} else if hour < 18 {\n\t\t\t\tprint(\"It's the afternoon\")\n\t\t\t} else {\n\t\t\t\tprint(\"It's the evening.\")\n\t\t\t}\n\t\t}\n\t}\n}",
-        "struct FootballMatch {\n\tlet homeTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Yay - we scored!\")\n\t\t}\n\t}\n\tlet awayTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Boo - they scored!\")\n\t\t}\n\t}\n}",
-        "enum Student {\n\tvar name: String\n\tvar debt: Int {\n\t\tdidSet {\n\t\t\tif debt < 5_000 {\n\t\t\t\tprint(\"This is great!\")\n\t\t\t} else if debt < 20_000 {\n\t\t\t\tprint(\"This is OK.\")\n\t\t\t} else {\n\t\t\t\tprint(\"Can I fake my own death?\")\n\t\t\t}\n\t\t}\n\t}\n}",
-        "struct House {\n\tvar numberOfOccupants: Int {\n\t\tdidSet:\n\t\t\tprint(\"\\(numberOfOccupants) people live here now.\")\n\t}\n}"
+        {
+            "answer": "struct Dog {\n\tvar age {\n\t\tdidSet {\n\t\t\tlet dogAge = age * 7\n\t\t\tprint(\"I'm now \\(dogAge) in dog years.\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct StepCounter {\n\tvar steps: Int {\n\t\thasSet {\n\t\t\tprint(\"You've walked \\(steps) steps - good job!\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct FuzzyClock {\n\tvar hour: Int {\n\t\tdset {\n\t\t\tif hour < 12 {\n\t\t\t\tprint(\"It's morning\")\n\t\t\t} else if hour < 18 {\n\t\t\t\tprint(\"It's the afternoon\")\n\t\t\t} else {\n\t\t\t\tprint(\"It's the evening.\")\n\t\t\t}\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct FootballMatch {\n\tlet homeTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Yay - we scored!\")\n\t\t}\n\t}\n\tlet awayTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Boo - they scored!\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "enum Student {\n\tvar name: String\n\tvar debt: Int {\n\t\tdidSet {\n\t\t\tif debt < 5_000 {\n\t\t\t\tprint(\"This is great!\")\n\t\t\t} else if debt < 20_000 {\n\t\t\t\tprint(\"This is OK.\")\n\t\t\t} else {\n\t\t\t\tprint(\"Can I fake my own death?\")\n\t\t\t}\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "struct House {\n\tvar numberOfOccupants: Int {\n\t\tdidSet:\n\t\t\tprint(\"\\(numberOfOccupants) people live here now.\")\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

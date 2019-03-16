@@ -10,6 +10,7 @@ import UIKit
 
 struct Answer {
     var text: String
+    var subtitle: String
     var isCorrect: Bool
     var isSelected: Bool
 }

@@ -29,7 +29,7 @@ struct StudyReview: Decodable {
     var correct: [String]
 
     /// An array of wrong answers.
-    var wrong: [String]
+    var wrong: [WrongAnswer]
 
     /// When set to true syntax highlight this text at runtime; when set to false, just bold <code> blocks;.
     var syntaxHighlighting: Bool

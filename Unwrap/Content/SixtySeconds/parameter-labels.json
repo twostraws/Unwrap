@@ -2,7 +2,7 @@
     "title": "Parameter labels",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift – true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Look closely at the parameter names: external comes first, then internal.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "func countDown(from start: Int) {\n\tvar current = start\n\twhile current >= 0 {\n\t\tprint(\"\\(current)...\")\n\t\tcurrent -= 1\n\t}\n}\ncountDown(from: 10)"
     ],
     "wrong": [
-        "func isWorkingDay(day name: Int) -> Bool {\n\tif day == \"Saturday\" {\n\t\treturn false\n\t}\n\tif day == \"Sunday\" {\n\t\treturn false\n\t}\n\treturn true\n}",
-        "func drive(to: String) {\n\tprint(\"I'm going to \\(destination) in my car.\")\n}",
-        "func add(numbers input sum: [Int]) -> Int {\n\tvar total = 0\n\tfor number in input {\n\t\ttotal += number\n\t}\n\treturn total\n}",
-        "func putCriminals(place: String) -> String {\n\tif place == \"jail\" {\n\t\treturn \"You'll be out tomorrow\"\n\t} else {\n\t\treturn \"You'll be out in a decade\"\n\t}\n}\nputCriminals(in: \"jail\")",
-        "func accelerate(to speed: Int) -> String {\n\tif to > 80 {\n\t\treturn \"No way - that's too fast!\"\n\t} else {\n\t\treturn \"OK, here goes...\"\n\t}\n}",
-        "func isMultipleOf100(number input: Int) -> Bool {\n\tif number % 100 == 0 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}"
+        {
+            "answer": "func isWorkingDay(day name: Int) -> Bool {\n\tif day == \"Saturday\" {\n\t\treturn false\n\t}\n\tif day == \"Sunday\" {\n\t\treturn false\n\t}\n\treturn true\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func drive(to: String) {\n\tprint(\"I'm going to \\(destination) in my car.\")\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func add(numbers input sum: [Int]) -> Int {\n\tvar total = 0\n\tfor number in input {\n\t\ttotal += number\n\t}\n\treturn total\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func putCriminals(place: String) -> String {\n\tif place == \"jail\" {\n\t\treturn \"You'll be out tomorrow\"\n\t} else {\n\t\treturn \"You'll be out in a decade\"\n\t}\n}\nputCriminals(in: \"jail\")",
+            "reason": ""
+        },
+        {
+            "answer": "func accelerate(to speed: Int) -> String {\n\tif to > 80 {\n\t\treturn \"No way - that's too fast!\"\n\t} else {\n\t\treturn \"OK, here goes...\"\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "func isMultipleOf100(number input: Int) -> Bool {\n\tif number % 100 == 0 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
+            "reason": ""
+        }
     ]
 }

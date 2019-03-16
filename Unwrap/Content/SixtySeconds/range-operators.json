@@ -14,11 +14,29 @@
         "3..<30"
     ],
     "wrong": [
-        "1..<5",
-        "4..<5",
-        "6...10",
-        "1...3",
-        "50...55",
-        "7...15"
+        {
+            "answer": "1..<5",
+            "reason": "This contains the numbers 1, 2, 3, and 4."
+        },
+        {
+            "answer": "4..<5",
+            "reason": "This contains the number 4."
+        },
+        {
+            "answer": "6...10",
+            "reason": "This contains the numbers 6, 7, 8, 9, and 10."
+        },
+        {
+            "answer": "1...3",
+            "reason": "This contains the numbers 1, 2, and 3."
+        },
+        {
+            "answer": "50...55",
+            "reason": "This contains the numbers 50, 51, 52, 53, 54, and 55."
+        },
+        {
+            "answer": "7...15",
+            "reason": "This contains the numbers 7, 8, 9, 10, 11, 12, 13, 14, and 15."
+        }
     ]
 }

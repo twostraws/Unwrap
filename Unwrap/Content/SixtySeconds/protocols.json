@@ -1,8 +1,8 @@
 {
     "title": "Protocols",
-    "postscript": "You can use <code>{ get set }</code> in your protocols to make read-write variables, or just <code>{ get }</code> to make read-only variables. Using just <code>{ set }</code> is not allowed.",
+    "postscript": "You can use <code>{ get set }<\/code> in your protocols to make read-write variables, or just <code>{ get }<\/code> to make read-only variables. Using just <code>{ set }<\/code> is not allowed.",
     "reviewType": "singleSelection",
-    "question": "This is a valid protocol – true or false?",
+    "question": "This is a valid protocol \u2013 true or false?",
     "hint": "Protocols can declare properties as read-only, but not write-only.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "protocol Singable {\n\tvar lyrics: [String] { get set }\n\tvar notes: [String] { get set }\n}"
     ],
     "wrong": [
-        "struct Knittable {\n\tvar needleSizes: [Double] { get set }\n}",
-        "protocol Strokeable {\n\tfluffiness: Int { get }\n}",
-        "protocol Buildable {\n\tvar numberOfBricks: Int { set }\n\tvar materials: [String] { set }\n}",
-        "protocol Swimmable {\n\tvar depth { get }\n}",
-        "protocol Liftable {\n\tvar weight: Double get set\n}",
-        "protocol Mailable {\n\tvar width: Double { get, set }\n\tvar height: Double { get, set }\n}"
+        {
+            "answer": "struct Knittable {\n\tvar needleSizes: [Double] { get set }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Strokeable {\n\tfluffiness: Int { get }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Buildable {\n\tvar numberOfBricks: Int { set }\n\tvar materials: [String] { set }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Swimmable {\n\tvar depth { get }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Liftable {\n\tvar weight: Double get set\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Mailable {\n\tvar width: Double { get, set }\n\tvar height: Double { get, set }\n}",
+            "reason": ""
+        }
     ]
 }

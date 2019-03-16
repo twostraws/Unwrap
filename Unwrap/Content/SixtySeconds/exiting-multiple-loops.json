@@ -14,11 +14,29 @@
         "You can embed one loop inside another."
     ],
     "wrong": [
-        "You may have only one labeled loop.",
-        "Nesting can only be used with <code>for<\/code> loops.",
-        "Loop labels look like this: <code>myLoop {<\/code>",
-        "You can exit up to two loops at a time.",
-        "You can only break out of loops inside a condition.",
-        "You can write <code>break 3<\/code> to break out of two loops."
+        {
+            "answer": "You may have only one labeled loop.",
+            "reason": ""
+        },
+        {
+            "answer": "Nesting can only be used with <code>for<\/code> loops.",
+            "reason": ""
+        },
+        {
+            "answer": "Loop labels look like this: <code>myLoop {<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "You can exit up to two loops at a time.",
+            "reason": ""
+        },
+        {
+            "answer": "You can only break out of loops inside a condition.",
+            "reason": ""
+        },
+        {
+            "answer": "You can write <code>break 3<\/code> to break out of two loops.",
+            "reason": ""
+        }
     ]
 }

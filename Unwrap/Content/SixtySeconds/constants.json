@@ -14,11 +14,29 @@
         "let tweeted = false"
     ],
     "wrong": [
-        "var score = 1000",
-        "loggedIn = false",
-        "var status = \"success\"",
-        "height = 172.1",
-        "var season = \"summer\"",
-        "var isRead = true"
+        {
+            "answer": "var score = 1000",
+            "reason": "This creates a variable."
+        },
+        {
+            "answer": "loggedIn = false",
+            "reason": "This modifies an existing variable."
+        },
+        {
+            "answer": "var status = \"success\"",
+            "reason": "This creates a variable."
+        },
+        {
+            "answer": "height = 172.1",
+            "reason": "This modifies an existing variable."
+        },
+        {
+            "answer": "var season = \"summer\"",
+            "reason": "This creates a variable."
+        },
+        {
+            "answer": "var isRead = true",
+            "reason": "This creates a variable."
+        }
     ]
 }

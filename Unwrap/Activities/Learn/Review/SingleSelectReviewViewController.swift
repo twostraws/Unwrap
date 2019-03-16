@@ -13,6 +13,7 @@ import UIKit
 class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     struct Answer {
         var text: String
+        var subtitle: String
         var isCorrect: Bool
     }
 
@@ -46,8 +47,8 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
 
         if answers.isEmpty {
             // this is the first review screen; set up the answers here
-            answers += review.correct.map { Answer(text: $0, isCorrect: true) }
-            answers += review.wrong.map { Answer(text: $0, isCorrect: false) }
+            answers += review.correct.map { Answer(text: $0, subtitle: "", isCorrect: true) }
+            answers += review.wrong.map { Answer(text: $0.answer, subtitle: $0.reason, isCorrect: false) }
             answers.shuffle()
         }
 
@@ -74,13 +75,23 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
                 selected.correctAnswer()
             } else {
                 selected.wrongAnswer()
+                addReasonToTitle()
             }
         } else {
             if currentAnswer.isCorrect {
                 selected.wrongAnswer()
+                addReasonToTitle()
             } else {
                 selected.correctAnswer()
             }
+        }
+    }
+
+    /// If their answer is wrong and we have some explanatory text explaining why it's wrong, show it.
+    func addReasonToTitle() {
+        if !currentAnswer.subtitle.isEmpty {
+            let newString = "\(review.question)\n\n\(currentAnswer.subtitle)"
+            prompt.attributedText = newString.fromSimpleHTML()
         }
     }
 }

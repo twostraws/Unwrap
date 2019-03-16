@@ -2,7 +2,7 @@
     "title": "Repeat loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This is a valid <code>repeat<\/code> loop – true or false?",
+    "question": "This is a valid <code>repeat<\/code> loop \u2013 true or false?",
     "hint": "Watch out for text that is printed only when a condition is satisfied.",
     "syntaxHighlighting": true,
     "correct": [
@@ -14,11 +14,29 @@
         "var number = 0\nrepeat {\n\tnumber += 2\n\tprint(\"\\(number) is an even number.\")\n} while number < 20"
     ],
     "wrong": [
-        "let people = 0\nrepeat {\n\tpeople += 1\n\tprint(\"There's space another person\")\n} while people < 10\nprint(\"We're full!\")",
-        "for i in 1...10 {\n\tprint(\"\\(i)...\")\n}\nprint(\"Ready or not, here I come!\")",
-        "var days = 365\nwhile days {\n\tprint(\"There are \\(days) until my birthday!\")\n\tdays -= 1\n}",
-        "var doubles = 0\nvar value = 1\nwhile {\n\tdoubles += 1\n\tvalue *= 2\n\tprint(\"Value is \\(value)\")\n} repeat doubles < 10",
-        "var testRuns = 0\nrepeat while testRuns < 10 {\n\tprint(\"Testing!\")\n\ttestRuns += 1\n}",
-        "let partyBags = 20\nrepeat {\n\tprint(\"Here's your party bag\")\n\tpartyBags -= 1\n} while partyBags > 0"
+        {
+            "answer": "let people = 0\nrepeat {\n\tpeople += 1\n\tprint(\"There's space another person\")\n} while people < 10\nprint(\"We're full!\")",
+            "reason": ""
+        },
+        {
+            "answer": "for i in 1...10 {\n\tprint(\"\\(i)...\")\n}\nprint(\"Ready or not, here I come!\")",
+            "reason": ""
+        },
+        {
+            "answer": "var days = 365\nwhile days {\n\tprint(\"There are \\(days) until my birthday!\")\n\tdays -= 1\n}",
+            "reason": ""
+        },
+        {
+            "answer": "var doubles = 0\nvar value = 1\nwhile {\n\tdoubles += 1\n\tvalue *= 2\n\tprint(\"Value is \\(value)\")\n} repeat doubles < 10",
+            "reason": ""
+        },
+        {
+            "answer": "var testRuns = 0\nrepeat while testRuns < 10 {\n\tprint(\"Testing!\")\n\ttestRuns += 1\n}",
+            "reason": ""
+        },
+        {
+            "answer": "let partyBags = 20\nrepeat {\n\tprint(\"Here's your party bag\")\n\tpartyBags -= 1\n} while partyBags > 0",
+            "reason": ""
+        }
     ]
 }
