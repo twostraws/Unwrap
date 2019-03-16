@@ -50,10 +50,16 @@
 			"var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
 			"letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
 			"letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
-			"letvar filtered:[Int] = numbers.filter{num in return num == 5}\nprint(filtered.count)",
+            "letvar filtered:[Int] = numbers.filter{return $0 == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{return $0 == 5}.count\nprint(total)",
+			"letvar filtered:[Int] = x numbers.filter{num in return num == 5}\nprint(filtered.count)",
 			"letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
 			"letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
 			"letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)",
+            "letvar filtered:[Int] = x numbers.filter{num in num == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in num == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{num in\nnum == 5\n}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
 			"var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
 		]
 	},
@@ -63,12 +69,75 @@
 		"startingCode": "let numbers = [1, 3, 5, 7, 9]",
 		"answers": [
 			"var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
-			"var newArray:[Int] = [Int]()\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+			"var newArray:[Int] = [Int]()\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
 			"var newArray:[Int] = []\nfor number in numbers{\nnewArray.append(number * 2)\n}",
-			"var newArray:[Int] = []\nfor number in numbers{\nlet doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+			"var newArray:[Int] = []\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
 			"letvar newArray:[Int] = numbers.map{$0 * 2}",
 			"letvar newArray:[Int] = numbers.map{num in return num * 2}",
-			"letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}"
+			"letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}",
+            "var newArray:[Int] = [Int]()\nfor i in 0..<newArray.count{\n\tnewArray.append(numbers[i] * 2)\n}",
+            "var newArray:[Int] = [Int]()\nfor i in 0..<newArray.count{\n\tletvar doubled = numbers[i] * 2\n\tnewArray.append(doubled)\n}"
 		]
-	}
+	},
+    {
+        "question": "Write code that creates an array containing all the people with the first name Terry.",
+        "hint": "You can solve this using a <code>for</code> loop.",
+        "startingCode": "let names = [\"Terry Jones\", \"John Terry\", \"Terry Crews\", \"Terry Farrell\", \"Samuel Terry\"]",
+        "answers": [
+            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
+            "letvar parsed2:[String] = names.filter{return $0.hasPrefix(\"Terry\")}",
+            "letvar parsed3:[String] = names.filter {name in\n\treturn name.hasPrefix(\"Terry\")\n}",
+            "letvar parsed2:[String] = names.filter{$0.hasPrefix(\"Terry\")}",
+            "letvar parsed3:[String] = names.filter {name in\n\tname.hasPrefix(\"Terry\")\n}",
+            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n"
+        ]
+    },
+    {
+        "question": "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value.",
+        "hint": "You can solve this using a <code>for</code> loop.",
+        "startingCode": "",
+        "answers": [
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
+        ]
+    },
+    {
+        "question": "Write code that creates an array of all the items in <code>words</code>, capitalized. So, your finished array should contain THE, RAIN, IN, SPAIN.",
+        "hint": "You can solve this using a <code>for</code> loop.",
+        "startingCode": "let words = [\"The\", \"rain\", \"in\", \"Spain\"]",
+        "answers": [
+            "var uppercased1:[String] = [String]()\nfor word in words {\n\tuppercased1.append(word.uppercased())\n}",
+            "var uppercased2:[String] = [String]()\nfor word in words {\n\tletvar upper = word.uppercased()\n\tuppercased2.append(upper)\n}",
+            "letvar uppercased3:[String] = words.map {$0.uppercased()}",
+            "letvar uppercased3:[String] = words.map {return $0.uppercased()}",
+            "letvar uppercased4:[String] = words.map {word in\n\treturn word.uppercased()\n}",
+            "letvar uppercased4:[String] = words.map {word in return word.uppercased()\n}",
+            "letvar uppercased4:[String] = words.map {word in\n\tword.uppercased()\n}",
+            "letvar uppercased4:[String] = words.map {word in word.uppercased()\n}",
+            "var uppercased5:[String] = [String]()\nfor i in 0..<words.count {\n\tletvar uppercased = words[i].uppercased()\n\tuppercased5.append(uppercased)\n}",
+            "var uppercased6:[String] = [String]()\nfor i in 0..<words.count {\n\tuppercased5.append(words[i].uppercased())\n}"
+        ]
+    },
+    {
+        "question": "Write code that loops from 1 through 100 to create an array of all even numbers.",
+        "hint": "You'll need to use the division remainder operator, <code>%</code>.",
+        "startingCode": "",
+        "answers": [
+            "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
+            "var even2:[Int] = [Int]()\nfor i in 1...100 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven2.append(i)\n\t}\n}",
+            "var even3:[Int] = [Int]()\nfor i in 1..<101 {\n\tif i % 2 == 0 {\n\t\teven3.append(i)\n\t}\n}",
+            "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
+            "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
+            "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
+            "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { return num in num % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
+            "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
+            "letvar even9:[Int] = (1..<101).filter { return num in num % 2 == 0 }"
+        ]
+    }
 ]
