@@ -156,6 +156,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
     /// Shows how the user is progressing through levels.
     func makeStatistic(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
+        cell.textLabel?.textColor = nil
 
         switch indexPath.row {
         case 0:
