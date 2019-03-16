@@ -65,6 +65,33 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 4 {
+            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+            return 550
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 4 {
+            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+            return 550
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
+
+    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 4 {
+            if let cell = cell as? BadgeTableViewCell {
+                cell.applyLayoutWorkaround()
+            }
+        }
+    }
+
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shareScorePath = IndexPath(row: 4, section: 1)

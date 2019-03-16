@@ -222,8 +222,13 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         cell.collectionView.dataSource = badgeDataSource
         cell.collectionView.delegate = badgeDataSource
+
+        /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+        cell.layoutIfNeeded()
+
         //Storyboard doesn't override isAccessibilityElement for UITesting, setting it here
         cell.isAccessibilityElement = true
+
         return cell
     }
 }
