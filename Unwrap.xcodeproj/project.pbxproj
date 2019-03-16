@@ -95,7 +95,6 @@
 		518FAE7720E4269E007F4675 /* MultipleSelectReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518FAE7620E4269E007F4675 /* MultipleSelectReviewViewController.swift */; };
 		518FAE7920E433A5007F4675 /* MultipleSelectReviewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518FAE7820E433A5007F4675 /* MultipleSelectReviewDataSource.swift */; };
 		5192241C210E2767007D7D74 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192241B210E2767007D7D74 /* DarkTheme.swift */; };
-		5192587120E2A46500A85704 /* Swift42.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192587020E2A46500A85704 /* Swift42.swift */; };
 		5192587320E3A11200A85704 /* NSAttributedString-Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192587220E3A11200A85704 /* NSAttributedString-Formatting.swift */; };
 		519CD3D020EBA208007110BD /* RearrangeTheLines.json in Resources */ = {isa = PBXBuildFile; fileRef = 519CD3CF20EBA208007110BD /* RearrangeTheLines.json */; };
 		519CD3D220EBA35B007110BD /* RearrangeTheLinesPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D120EBA35B007110BD /* RearrangeTheLinesPractice.swift */; };
@@ -176,6 +175,7 @@
 		51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D8FE7420EE040F004DFF83 /* TapToCode.json */; };
 		51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1D78222D9648005CB620 /* WrongAnswer.swift */; };
 		51DDE52221107B170056020E /* PredictTheOutputAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */; };
+		51E35647223CE43400C05881 /* Float-Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E35646223CE43400C05881 /* Float-Random.swift */; };
 		51EFBEF3210CFED100211A8D /* String-Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF2210CFED100211A8D /* String-Attributed.swift */; };
 		51EFBEF5210D010300211A8D /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF4210D010300211A8D /* CreditsViewController.swift */; };
 		51EFBEF8210D067A00211A8D /* Credits.md in Resources */ = {isa = PBXBuildFile; fileRef = 51EFBEF7210D067A00211A8D /* Credits.md */; };
@@ -699,7 +699,6 @@
 		518FAE7620E4269E007F4675 /* MultipleSelectReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectReviewViewController.swift; sourceTree = "<group>"; };
 		518FAE7820E433A5007F4675 /* MultipleSelectReviewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectReviewDataSource.swift; sourceTree = "<group>"; };
 		5192241B210E2767007D7D74 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
-		5192587020E2A46500A85704 /* Swift42.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift42.swift; sourceTree = "<group>"; };
 		5192587220E3A11200A85704 /* NSAttributedString-Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString-Formatting.swift"; sourceTree = "<group>"; };
 		519CD3CF20EBA208007110BD /* RearrangeTheLines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RearrangeTheLines.json; sourceTree = "<group>"; };
 		519CD3D120EBA35B007110BD /* RearrangeTheLinesPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearrangeTheLinesPractice.swift; sourceTree = "<group>"; };
@@ -786,6 +785,7 @@
 		51D8FE7420EE040F004DFF83 /* TapToCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapToCode.json; sourceTree = "<group>"; };
 		51DB1D78222D9648005CB620 /* WrongAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongAnswer.swift; sourceTree = "<group>"; };
 		51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictTheOutputAnswer.swift; sourceTree = "<group>"; };
+		51E35646223CE43400C05881 /* Float-Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float-Random.swift"; sourceTree = "<group>"; };
 		51EFBEF2210CFED100211A8D /* String-Attributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Attributed.swift"; sourceTree = "<group>"; };
 		51EFBEF4210D010300211A8D /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		51EFBEF7210D067A00211A8D /* Credits.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Credits.md; sourceTree = "<group>"; };
@@ -1592,7 +1592,6 @@
 				51CC13662065607C00F37A67 /* Main.storyboard */,
 				51CC136B2065607F00F37A67 /* LaunchScreen.storyboard */,
 				51CC136E2065607F00F37A67 /* Info.plist */,
-				5192587020E2A46500A85704 /* Swift42.swift */,
 				511FD6B221065BF80023E92C /* Unwrap.swift */,
 			);
 			path = Unwrap;
@@ -1663,6 +1662,7 @@
 				5153F49920EF8581009E829D /* UITableViewCell-Styling.swift */,
 				5153F4AD20F007EF009E829D /* UIViewController-Alerts.swift */,
 				511FD6B02105F07A0023E92C /* URL-String.swift */,
+				51E35646223CE43400C05881 /* Float-Random.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2843,7 +2843,6 @@
 				51C5642D20CCC5480093030C /* Chapter.swift in Sources */,
 				5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */,
 				51A4476B2108A108005D8665 /* Badge.swift in Sources */,
-				5192587120E2A46500A85704 /* Swift42.swift in Sources */,
 				51C5642920CCC2520093030C /* LearnDataSource.swift in Sources */,
 				511FD6C62107CE9C0023E92C /* AlertHandling.swift in Sources */,
 				510539F8211300D400B28328 /* UIImage-Sharing.swift in Sources */,
@@ -2895,6 +2894,7 @@
 				51EFBEFA210D111400211A8D /* NSRegularExpression-HardCoded.swift in Sources */,
 				5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */,
 				51CC13632065607C00F37A67 /* AppDelegate.swift in Sources */,
+				51E35647223CE43400C05881 /* Float-Random.swift in Sources */,
 				51CC139D2065AB8500F37A67 /* GradientView.swift in Sources */,
 				511FD6AD2105E72C0023E92C /* NewsCoordinator.swift in Sources */,
 				5153F49E20EF93CF009E829D /* TypeCheckerViewController.swift in Sources */,
