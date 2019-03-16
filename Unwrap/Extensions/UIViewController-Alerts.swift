@@ -17,10 +17,11 @@ extension UIViewController {
 
         let widthConstraint: EKAttributes.PositionConstraints.Edge
 
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            widthConstraint = EKAttributes.PositionConstraints.Edge.constant(value: 400)
-        } else {
+        // If we're on phone we want the alert to take up 90% of the view width, but for everything else a fixed width is fine.
+        if UIDevice.current.userInterfaceIdiom == .phone {
             widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.9)
+        } else {
+            widthConstraint = EKAttributes.PositionConstraints.Edge.constant(value: 400)
         }
 
         let heightConstraint = EKAttributes.PositionConstraints.Edge.intrinsic
