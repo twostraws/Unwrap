@@ -16,7 +16,7 @@
 	},
 	{
 		"question": "This code should count piano lessons.",
-		"hint": "You should modify <code>pianoLesson</code> only after printing the message.",
+		"hint": "Make sure you modify <code>pianoLesson</code> only after printing the message.",
 		"code": "var pianoLesson = 1\nwhile pianoLesson < 5 {\n\tprint(\"This is lesson \\(pianoLesson)\")\n\tpianoLesson += 1\n}"
 	},
 	{
@@ -56,18 +56,18 @@
 	},
 	{
 		"question": "This code should define a closure, create a function that can use the closure, then call it.",
-		"hint": "The output should be \"I'm learning Swift\" then \"Hey, this is fun!\"",
-		"code": "var learnWithUnwrap = {\n\tprint(\"Hey, this is fun!\")\n}\nfunc learnSwift(using approach: () -> Void) {\n\tprint(\"I'm learning Swift\")\n\tapproach()\n}\nlearnSwift(using: learnWithUnwrap)"
+		"hint": "The output should be \"I made real apps!\"",
+		"code": "let learnWithProjects = {\n\treturn \"I made real apps!\"\n}\nfunc learnSwift(using approach: () -> String) {\n\tlet result = approach()\n\tprint(result)\n}\nlearnSwift(using: learnWithProjects)"
 	},
 	{
 		"question": "This code should walk, cycle, or drive somewhere depending on the distance.",
-		"hint": "Get the order correct: walking is for short distances, driving is for long distances, and cycling for everything else.",
+		"hint": "Make sure you get the order correct: walking is for short distances, cycling for medium distances, and driving for long distances.",
 		"code": "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")"
 	},
 	{
 		"question": "This code should track how many times a baseball player has swung their bat.",
-		"hint": "This uses capturing, so make sure <code>strikes</code> is declared before you return from <code>swingBat()</code>.",
-		"code": "func swingBat() -> () -> Void {\n\tvar strikes = 0\n\treturn {\n\t\tstrikes += 1\n\t\tif strikes >= 3 {\n\t\t\tprint(\"You're out!\")\n\t\t} else {\n\t\t\tprint(\"Strike \\(strikes)\")\n\t\t}\n\t}\n}\nlet swing = swingBat()\nswing()"
+		"hint": "This uses capturing, so make sure <code>swingCount</code> is declared before you return from <code>swingBat()</code>.",
+		"code": "func swingBat() -> () -> Void {\n\tvar swingCount = 0\n\treturn {\n\t\tswingCount += 1\n\t\tif swingCount >= 3 {\n\t\t\tprint(\"You're out!\")\n\t\t} else {\n\t\t\tprint(\"Strike \\(swingCount)\")\n\t\t}\n\t}\n}\nlet swing = swingBat()\nswing()"
 	},
 	{
 		"question": "This code should create a <code>User</code> struct and an instance of it.",
@@ -112,7 +112,7 @@
 	{
 		"question": "This code should create a protocol then add a default method implementation.",
 		"hint": "Make sure you create the protocol before extending it.",
-		"code": "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up – energize!\")\n\t}\n}"
+		"code": "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up – energize!\")\n\t}\n}"
 	},
 	{
 		"question": "This code should print out someone's favorite movie if they have one.",
@@ -125,14 +125,14 @@
 		"code": "let albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: \"Red\") {\n\tprint(\"Found Red at position \\(position).\")\n} else {\n\tprint(\"Red wasn't in the array.\")\n}"
 	},
 	{
-		"question": "This code should create a function that doubles a number, or returns nil if it's missing.",
+		"question": "This code should create then call a function that doubles a number, or returns nil if it's missing.",
 		"hint": "The <code>guard</code> statement should be the first thing inside <code>double()</code>.",
-		"code": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}"
+		"code": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nif let doubled = double(number: 5) {\n\tprint(\"The result was \\(doubled).\")\n}"
 	},
 	{
 		"question": "This code should create two classes, then print a fact.",
 		"hint": "Create the <code>Bird</code> class first.",
-		"code": "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Eagle()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This bird has an unknown wingspan.\")\n\t}\n}"
+		"code": "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Bird()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The eagle's wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This eagle has an unknown wingspan.\")\n\t}\n}"
 	},
 	{
 		"question": "This code should mow grass to a specific height if it was provided.",
