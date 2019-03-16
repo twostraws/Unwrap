@@ -14,6 +14,7 @@ extension UITableViewCell {
         backgroundColor = UIColor(bundleName: "ReviewCorrect")
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
+        detailTextLabel?.textColor = .white
         tintColor = .white
     }
 
@@ -22,6 +23,7 @@ extension UITableViewCell {
         backgroundColor = UIColor(bundleName: "ReviewWrong")
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
+        detailTextLabel?.textColor = .white
         tintColor = .white
     }
 
