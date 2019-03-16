@@ -26,8 +26,7 @@ struct RearrangeTheLinesPractice: PracticeActivity {
 
     init() {
         let items = Bundle.main.decode([RearrangeTheLinesQuestion].self, from: "RearrangeTheLines.json")
-        let shuffledItems = items.shuffled()
-        let selectedItem = shuffledItems[0]
+        let selectedItem = items[Unwrap.getEntropy() % items.count]
 
         question = selectedItem.question
         hint = selectedItem.hint

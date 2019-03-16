@@ -31,10 +31,10 @@ struct SpotTheErrorPractice: PracticeActivity {
     static let icon = UIImage(bundleName: "Practice-SpotTheError")
 
     init() {
-        var items = Bundle.main.decode([SpotTheErrorQuestion].self, from: "SpotTheError.json")
-        items.shuffle()
+        let items = Bundle.main.decode([SpotTheErrorQuestion].self, from: "SpotTheError.json")
+        let selectedItem = items[Unwrap.getEntropy() % items.count]
 
-        let generatedErrors = generate(from: items[0])
+        let generatedErrors = generate(from: selectedItem)
         code = generatedErrors.code.lines
         error = generatedErrors.error
         lineNumber = generatedErrors.lineNumber

@@ -29,9 +29,9 @@ struct PredictTheOutputPractice: PracticeActivity {
 
     init() {
         let items = Bundle.main.decode([PredictTheOutputQuestion].self, from: "PredictTheOutput.json")
-        let shuffledItems = items.shuffled()
+        let selectedItem = items[Unwrap.getEntropy() % items.count]
 
-        (code, answer) = resolve(question: shuffledItems[0])
+        (code, answer) = resolve(question: selectedItem)
     }
 
     /// Takes a single PredictTheOutputQuestion instance, resolving all its placeholders fully. This allows these questions to appear in a variety of different forms by re-using the same underlying structure.

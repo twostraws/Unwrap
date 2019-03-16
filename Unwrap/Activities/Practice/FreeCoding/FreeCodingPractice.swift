@@ -30,12 +30,13 @@ struct FreeCodingPractice: PracticeActivity {
     /// Loads a single FreeCodingQuestion into an activity. If testMode is true then it always chooses the first question so we can run a fixed test against it.
     init(testMode: Bool = false) {
         var items = Bundle.main.decode([FreeCodingQuestion].self, from: "FreeCoding.json")
+        let selectedItem: FreeCodingQuestion
 
-        if testMode == false {
-            items.shuffle()
+        if testMode {
+            selectedItem = items[0]
+        } else {
+            selectedItem = items[Unwrap.getEntropy() % items.count]
         }
-
-        let selectedItem = items[0]
 
         question = selectedItem.question
         hint = selectedItem.hint

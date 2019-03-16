@@ -26,8 +26,7 @@ class TapToCodePractice: PracticeActivity {
 
     init() {
         let items = Bundle.main.decode([TapToCodeQuestion].self, from: "TapToCode.json")
-        let shuffledItems = items.shuffled()
-        let selectedItem = shuffledItems[0]
+        let selectedItem = items[Unwrap.getEntropy() % items.count]
 
         (question, components, existingCode) = (selectedItem.question, selectedItem.components, selectedItem.existingCode)
     }
