@@ -6,12 +6,30 @@
     "hint": "The four differences between classes and structs are inheritance, copying, deinitializers, and mutability.",
     "syntaxHighlighting": false,
     "correct": [
-        "One class can inherit from another class.",
-        "A child class can override a method from its parent class.",
-        "You can declare a class as <code>final<\/code> to stop subclasses of it being created.",
-        "Deinitializers run when an instance of a class is destroyed.",
-        "Two variables can point at the same class data.",
-        "Classes and structs treat mutability differently."
+        {
+            "answer": "One class can inherit from another class.",
+            "reason": ""
+        },
+        {
+            "answer": "A child class can override a method from its parent class.",
+            "reason": ""
+        },
+        {
+            "answer": "You can declare a class as <code>final<\/code> to stop subclasses of it being created.",
+            "reason": ""
+        },
+        {
+            "answer": "Deinitializers run when an instance of a class is destroyed.",
+            "reason": ""
+        },
+        {
+            "answer": "Two variables can point at the same class data.",
+            "reason": ""
+        },
+        {
+            "answer": "Classes and structs treat mutability differently.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

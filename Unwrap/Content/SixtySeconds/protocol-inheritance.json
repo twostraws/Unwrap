@@ -2,16 +2,34 @@
     "title": "Protocol inheritance",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code demonstrates protocol inheritance \u2013\u00a0true or false?",
-    "hint": "Pay attention to the way each protocol is defined \u2013\u00a0is each one a valid protocol?",
+    "question": "This code demonstrates protocol inheritance \u2013 true or false?",
+    "hint": "Pay attention to the way each protocol is defined \u2013 is each one a valid protocol?",
     "syntaxHighlighting": true,
     "correct": [
-        "protocol CarriesPassengers {\n\tvar passengerCount: Int { get set }\n}\nprotocol CarriesCargo {\n\tvar cargoCapacity: Int { get set }\n}\nprotocol Boat: CarriesPassengers, CarriesCargo {\n\tvar name: String { get set }\n}",
-        "protocol LikesTravel {\n\tfunc visit(place: String)\n}\nprotocol BuySouvenirs {\n\tfunc buy(item: String)\n}\nprotocol Tourist: LikesTravel, BuySouvenirs { }",
-        "protocol MakesDiagnoses {\n\tfunc evaluate(patient: String) -> String\n}\nprotocol PrescribesMedicine {\n\tfunc prescribe(drug: String)\n}\nprotocol Doctor: MakesDiagnoses, PrescribesMedicine { }",
-        "protocol GivesOrders {\n\tfunc makeItSo()\n}\nprotocol OrdersDrinks {\n\tfunc teaEarlGrey(hot: Bool)\n}\nprotocol StarshipCaptain: GivesOrders, OrdersDrinks { }",
-        "protocol HasMindTricks {\n\tfunc waveHandMystically()\n}\nprotocol UsesForce {\n\tfunc raiseXWing()\n}\nprotocol JediKnight: HasMindTricks, UsesForce { }",
-        "protocol TimeTraveler {\n\tfunc travel(to year: Int)\n}\nprotocol HuntsPeople {\n\tfunc locateJohnConnor()\n}\nprotocol Terminator: TimeTraveler, HuntsPeople { }"
+        {
+            "answer": "protocol CarriesPassengers {\n\tvar passengerCount: Int { get set }\n}\nprotocol CarriesCargo {\n\tvar cargoCapacity: Int { get set }\n}\nprotocol Boat: CarriesPassengers, CarriesCargo {\n\tvar name: String { get set }\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol LikesTravel {\n\tfunc visit(place: String)\n}\nprotocol BuySouvenirs {\n\tfunc buy(item: String)\n}\nprotocol Tourist: LikesTravel, BuySouvenirs { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol MakesDiagnoses {\n\tfunc evaluate(patient: String) -> String\n}\nprotocol PrescribesMedicine {\n\tfunc prescribe(drug: String)\n}\nprotocol Doctor: MakesDiagnoses, PrescribesMedicine { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol GivesOrders {\n\tfunc makeItSo()\n}\nprotocol OrdersDrinks {\n\tfunc teaEarlGrey(hot: Bool)\n}\nprotocol StarshipCaptain: GivesOrders, OrdersDrinks { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol HasMindTricks {\n\tfunc waveHandMystically()\n}\nprotocol UsesForce {\n\tfunc raiseXWing()\n}\nprotocol JediKnight: HasMindTricks, UsesForce { }",
+            "reason": ""
+        },
+        {
+            "answer": "protocol TimeTraveler {\n\tfunc travel(to year: Int)\n}\nprotocol HuntsPeople {\n\tfunc locateJohnConnor()\n}\nprotocol Terminator: TimeTraveler, HuntsPeople { }",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

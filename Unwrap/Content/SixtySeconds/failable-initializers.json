@@ -2,16 +2,34 @@
     "title": "Failable initializers",
     "postscript": "<code>Double(someString)<\/code> converts a string to a double similarly to <code>Int(someString)<\/code>, but <code>Bool(someString)<\/code> is special: it looks for exactly \"true\" or \"false\" otherwise it returns nil.",
     "reviewType": "singleSelection",
-    "question": "This code will result in a constant set to <code>nil<\/code> \u2013\u00a0true or false?",
+    "question": "This code will result in a constant set to <code>nil<\/code> \u2013 true or false?",
     "hint": "The result will be <code>nil<\/code> when a failable initializer fails.",
     "syntaxHighlighting": true,
     "correct": [
-        "var rating = \"5 stars\"\nlet convertedRating = Int(rating)",
-        "var powerUsage = \"0,1\"\nlet convertedPowerUsage = Double(powerUsage)",
-        "var enabled = \"False\"\nlet convertedEnabled = Bool(enabled)",
-        "struct Password {\n\tvar text: String\n\tinit?(input: String) {\n\t\tif input.count < 6 {\n\t\t\tprint(\"Password too short.\")\n\t\t\treturn nil\n\t\t}\n\t\ttext = input\n\t}\n}\nlet password = Password(input: \"hell0\")",
-        "struct DEFCONRating {\n\tvar number: Int\n\tinit?(number: Int) {\n\t\tguard number > 0 else { return nil }\n\t\tguard number <= 5 else { return nil }\n\t\tself.number = number\n\t}\n}\nlet defcon = DEFCONRating(number: 6)",
-        "class Hotel {\n\tvar starRating: Int\n\tinit?(rating: Int) {\n\t\tif rating <= 1 {\n\t\t\tprint(\"This probably has bed bugs.\")\n\t\t\treturn nil\n\t\t}\n\t\tself.starRating = rating\n\t}\n}\nlet hotelElan = Hotel(rating: 1)"
+        {
+            "answer": "var rating = \"5 stars\"\nlet convertedRating = Int(rating)",
+            "reason": "Creating an integer from an invalid string will fail."
+        },
+        {
+            "answer": "var powerUsage = \"0,1\"\nlet convertedPowerUsage = Double(powerUsage)",
+            "reason": "Creating a double from an invalid string will fail."
+        },
+        {
+            "answer": "var enabled = \"False\"\nlet convertedEnabled = Bool(enabled)",
+            "reason": "Creating a Boolean from an invalid string might fail."
+        },
+        {
+            "answer": "struct Password {\n\tvar text: String\n\tinit?(input: String) {\n\t\tif input.count < 6 {\n\t\t\tprint(\"Password too short.\")\n\t\t\treturn nil\n\t\t}\n\t\ttext = input\n\t}\n}\nlet password = Password(input: \"hell0\")",
+            "reason": "This creates a <code>Password<\/code> struct using a string that is too short, so the initializer will return nil."
+        },
+        {
+            "answer": "struct DEFCONRating {\n\tvar number: Int\n\tinit?(number: Int) {\n\t\tguard number > 0 else { return nil }\n\t\tguard number <= 5 else { return nil }\n\t\tself.number = number\n\t}\n}\nlet defcon = DEFCONRating(number: 6)",
+            "reason": "This creates a <code>DEFCONRating<\/code> above 5, so the initializer will return nil."
+        },
+        {
+            "answer": "class Hotel {\n\tvar starRating: Int\n\tinit?(rating: Int) {\n\t\tif rating <= 1 {\n\t\t\tprint(\"This probably has bed bugs.\")\n\t\t\treturn nil\n\t\t}\n\t\tself.starRating = rating\n\t}\n}\nlet hotelElan = Hotel(rating: 1)",
+            "reason": "This creates a <code>Hotel<\/code> class with a rating of 1, which will fail and return nil."
+        }
     ],
     "wrong": [
         {

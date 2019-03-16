@@ -6,12 +6,30 @@
     "hint": "Function and parameter names are case-sensitive.",
     "syntaxHighlighting": true,
     "correct": [
-        "func bounceOnTrampoline(times: Int) {\n\tfor _ in 1...times {\n\t\tprint(\"Boing!\")\n\t}\n}",
-        "func evaluateJavaScript(_ input: String) {\n\tprint(\"Yup, that's JavaScript alright.\")\n}",
-        "func sumItems(_ items: [Int]) -> Int {\n\tvar total = 0\n\tfor item in items {\n\t\ttotal += item\n\t}\n\treturn total\n}",
-        "func greet(_ name: String) {\n\tprint(\"Hi, \\(name)!\")\n}",
-        "func climbMountain(_ name: String) {\n\tprint(\"I'm going to climb \\(name).\")\n}\nclimbMountain(\"Everest\")",
-        "func square(_ number: Int) -> Int {\n\treturn number * number\n}"
+        {
+            "answer": "func bounceOnTrampoline(times: Int) {\n\tfor _ in 1...times {\n\t\tprint(\"Boing!\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func evaluateJavaScript(_ input: String) {\n\tprint(\"Yup, that's JavaScript alright.\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func sumItems(_ items: [Int]) -> Int {\n\tvar total = 0\n\tfor item in items {\n\t\ttotal += item\n\t}\n\treturn total\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func greet(_ name: String) {\n\tprint(\"Hi, \\(name)!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func climbMountain(_ name: String) {\n\tprint(\"I'm going to climb \\(name).\")\n}\nclimbMountain(\"Everest\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func square(_ number: Int) -> Int {\n\treturn number * number\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

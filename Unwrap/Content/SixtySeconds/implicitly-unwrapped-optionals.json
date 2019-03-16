@@ -6,12 +6,30 @@
     "hint": "Both <code>String?<\/code> and <code>String!<\/code> might have a value or might not.",
     "syntaxHighlighting": false,
     "correct": [
-        "Optionals allow us to represent the absence of a value.",
-        "A <code>String?<\/code> must be unwrapped before use.",
-        "A <code>String!<\/code> does not need to be unwrapped before use.",
-        "Swift uses <code>nil<\/code> to represent the absence of a value.",
-        "You can use <code>if let<\/code> or <code>guard let<\/code> to unwrap optionals.",
-        "If you try to use an implicitly unwrapped optional when it is <code>nil<\/code>, your code crashes."
+        {
+            "answer": "Optionals allow us to represent the absence of a value.",
+            "reason": ""
+        },
+        {
+            "answer": "A <code>String?<\/code> must be unwrapped before use.",
+            "reason": ""
+        },
+        {
+            "answer": "A <code>String!<\/code> does not need to be unwrapped before use.",
+            "reason": ""
+        },
+        {
+            "answer": "Swift uses <code>nil<\/code> to represent the absence of a value.",
+            "reason": ""
+        },
+        {
+            "answer": "You can use <code>if let<\/code> or <code>guard let<\/code> to unwrap optionals.",
+            "reason": ""
+        },
+        {
+            "answer": "If you try to use an implicitly unwrapped optional when it is <code>nil<\/code>, your code crashes.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

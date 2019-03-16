@@ -6,12 +6,30 @@
     "hint": "Start a throwing block using <code>do<\/code>, mark each throwing line with <code>try<\/code> and catch errors using <code>catch<\/code>.",
     "syntaxHighlighting": false,
     "correct": [
-        "Throwing functions must be called using <code>try<\/code>",
-        "Throwing functions must be marked with <code>throws<\/code>",
-        "Swift won't let you run an error-throwing function by accident.",
-        "Use <code>do<\/code> to start a section of code that calls throwing functions.",
-        "If any errors are thrown, execution immediately jumps to the <code>catch<\/code> block.",
-        "You can mark any function as throwing."
+        {
+            "answer": "Throwing functions must be called using <code>try<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Throwing functions must be marked with <code>throws<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Swift won't let you run an error-throwing function by accident.",
+            "reason": ""
+        },
+        {
+            "answer": "Use <code>do<\/code> to start a section of code that calls throwing functions.",
+            "reason": ""
+        },
+        {
+            "answer": "If any errors are thrown, execution immediately jumps to the <code>catch<\/code> block.",
+            "reason": ""
+        },
+        {
+            "answer": "You can mark any function as throwing.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

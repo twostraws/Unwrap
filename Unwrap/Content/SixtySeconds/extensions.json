@@ -2,16 +2,34 @@
     "title": "Extensions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is a valid extension \u2013\u00a0true or false?",
+    "question": "This code is a valid extension \u2013 true or false?",
     "hint": "Extensions can add methods and computed properties, but not stored properties.",
     "syntaxHighlighting": true,
     "correct": [
-        "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}",
-        "extension String {\n\tfunc withPrefix(_ prefix: String) -> String {\n\t\tif self.hasPrefix(prefix) { return self }\n\t\treturn \"\\(prefix)\\(self)\"\n\t}\n}",
-        "extension String {\n\tvar isLong: Bool {\n\t\treturn count > 25\n\t}\n}",
-        "extension Double {\n\tvar isNegative: Bool {\n\t\treturn self < 0\n\t}\n}",
-        "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}",
-        "extension String {\n\tfunc isUppercased() -> Bool {\n\t\treturn self == self.uppercased()\n\t}\n}"
+        {
+            "answer": "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}",
+            "reason": "This is a valid extension on <code>Int<\/code>."
+        },
+        {
+            "answer": "extension String {\n\tfunc withPrefix(_ prefix: String) -> String {\n\t\tif self.hasPrefix(prefix) { return self }\n\t\treturn \"\\(prefix)\\(self)\"\n\t}\n}",
+            "reason": "This is a valid extension on <code>String<\/code>."
+        },
+        {
+            "answer": "extension String {\n\tvar isLong: Bool {\n\t\treturn count > 25\n\t}\n}",
+            "reason": "This is a valid extension on <code>String<\/code>."
+        },
+        {
+            "answer": "extension Double {\n\tvar isNegative: Bool {\n\t\treturn self < 0\n\t}\n}",
+            "reason": "This is a valid extension on <code>Double<\/code>."
+        },
+        {
+            "answer": "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}",
+            "reason": "This is a valid extension on <code>Int<\/code>."
+        },
+        {
+            "answer": "extension String {\n\tfunc isUppercased() -> Bool {\n\t\treturn self == self.uppercased()\n\t}\n}",
+            "reason": "This is a valid extension on <code>String<\/code>."
+        }
     ],
     "wrong": [
         {

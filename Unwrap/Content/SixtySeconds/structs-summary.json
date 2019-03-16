@@ -6,12 +6,30 @@
     "hint": "Structs let us group together properties and methods, and are used very commonly in Swift.",
     "syntaxHighlighting": false,
     "correct": [
-        "Structs can have as many or as few properties as you need.",
-        "Structs can have custom initializers.",
-        "Strings and arrays are both structs.",
-        "Methods that change properties must be marked <code>mutating<\/code>",
-        "You can share properties and methods across all instances of a struct using <code>static<\/code>",
-        "Computed properties let us run code to return a value."
+        {
+            "answer": "Structs can have as many or as few properties as you need.",
+            "reason": ""
+        },
+        {
+            "answer": "Structs can have custom initializers.",
+            "reason": ""
+        },
+        {
+            "answer": "Strings and arrays are both structs.",
+            "reason": ""
+        },
+        {
+            "answer": "Methods that change properties must be marked <code>mutating<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "You can share properties and methods across all instances of a struct using <code>static<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Computed properties let us run code to return a value.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

@@ -2,16 +2,34 @@
     "title": "Infinite loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will never end \u2013\u00a0true or false?",
+    "question": "This loop will never end \u2013 true or false?",
     "hint": "Infinite loops are commonly made using <code>while true<\/code> but other conditions can also work.",
     "syntaxHighlighting": true,
     "correct": [
-        "while true {\n\tprint(\"Fakers gonna fake\")\n}",
-        "var loggedIn = true\nwhile loggedIn {\n\tprint(\"Waiting for user input...\")\n}",
-        "var counter = 1\nrepeat {\n\tprint(\"Counting: \\(counter)\")\n\tcounter += 2\n} while counter != 10",
-        "var isVisible = true\nwhile isVisible == true {\n\tisVisible = false\n\tif isVisible == false {\n\t\tisVisible = true\n\t}\n}",
-        "var passengerCount = 0\nrepeat {\n\tprint(\"There are \\(passengerCount) passengers\")\n\tpassengerCount *= 2\n} while passengerCount < 10",
-        "var starWarsSpinOffs = 0\nwhile true {\n\tprint(\"It's time for another spin-off!\")\n\tstarWarsSpinOffs += 1\n}"
+        {
+            "answer": "while true {\n\tprint(\"Fakers gonna fake\")\n}",
+            "reason": "This is an infinite loop."
+        },
+        {
+            "answer": "var loggedIn = true\nwhile loggedIn {\n\tprint(\"Waiting for user input...\")\n}",
+            "reason": "This is an infinite loop because <code>loggedIn<\/code> will never become false."
+        },
+        {
+            "answer": "var counter = 1\nrepeat {\n\tprint(\"Counting: \\(counter)\")\n\tcounter += 2\n} while counter != 10",
+            "reason": "This is an infinite loop because <code>counter<\/code> will reach 7, then 9, then 11, then continue upwards without ever reaching 10."
+        },
+        {
+            "answer": "var isVisible = true\nwhile isVisible == true {\n\tisVisible = false\n\tif isVisible == false {\n\t\tisVisible = true\n\t}\n}",
+            "reason": "This is an infinite loop because <code>isVisible<\/code> will always be true."
+        },
+        {
+            "answer": "var passengerCount = 0\nrepeat {\n\tprint(\"There are \\(passengerCount) passengers\")\n\tpassengerCount *= 2\n} while passengerCount < 10",
+            "reason": "This is an infinite loop because <code>passengerCount<\/code> will always be 0 – multiplying 0 by 2 still makes 0."
+        },
+        {
+            "answer": "var starWarsSpinOffs = 0\nwhile true {\n\tprint(\"It's time for another spin-off!\")\n\tstarWarsSpinOffs += 1\n}",
+            "reason": "This is an infinite loop because <code>starWarsSpinOffs<\/code> will never become false."
+        }
     ],
     "wrong": [
         {

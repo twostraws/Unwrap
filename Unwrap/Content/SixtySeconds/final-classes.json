@@ -2,16 +2,34 @@
     "title": "Final classes",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code defines two valid classes using inheritance \u2013\u00a0true or false?",
+    "question": "This code defines two valid classes using inheritance \u2013 true or false?",
     "hint": "Classes can inherit only from non-final classes.",
     "syntaxHighlighting": true,
     "correct": [
-        "class Game { }\nfinal class BoardGame: Game { }",
-        "class Magazine { }\nfinal class FashionMagazine: Magazine { }",
-        "class Shoes { }\nfinal class KittenHeels: Shoes { }",
-        "class Furniture { }\nclass Couch: Furniture { }",
-        "class Player { }\nclass Barbarian: Player { }",
-        "class Hat { }\nclass Fez: Hat { }"
+        {
+            "answer": "class Game { }\nfinal class BoardGame: Game { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Magazine { }\nfinal class FashionMagazine: Magazine { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Shoes { }\nfinal class KittenHeels: Shoes { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Furniture { }\nclass Couch: Furniture { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Player { }\nclass Barbarian: Player { }",
+            "reason": ""
+        },
+        {
+            "answer": "class Hat { }\nclass Fez: Hat { }",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

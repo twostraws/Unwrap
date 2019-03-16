@@ -6,12 +6,30 @@
     "hint": "Swift is a type-safe language, so it won't let you mix types by accident.",
     "syntaxHighlighting": true,
     "correct": [
-        "let result = 100 + 1",
-        "let result = \"Hello\" + \"!\"",
-        "let result = 5.0 * 5.2",
-        "var result = [\"Red\", \"Green\"] + [\"Blue\"]",
-        "var result = 100 \/ 10",
-        "var result = 20 % 3"
+        {
+            "answer": "let result = 100 + 1",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let result = \"Hello\" + \"!\"",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let result = 5.0 * 5.2",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var result = [\"Red\", \"Green\"] + [\"Blue\"]",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var result = 100 \/ 10",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var result = 20 % 3",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {
@@ -36,7 +54,7 @@
         },
         {
             "answer": "var result = 3 ** 8",
-            "reason": "<code>**</code> is not a built-in operator in Swift."
+            "reason": "<code>**<\/code> is not a built-in operator in Swift."
         }
     ]
 }

@@ -6,12 +6,30 @@
     "hint": "Variables are created using <code>var<\/code>, whereas constants are created using <code>let<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "let age = 26",
-        "let enabled = true",
-        "let username = \"twostraws\"",
-        "let width = 14.0",
-        "let password = \"fr0sti3s\"",
-        "let tweeted = false"
+        {
+            "answer": "let age = 26",
+            "reason": "This creates a constant called <code>age<\/code>."
+        },
+        {
+            "answer": "let enabled = true",
+            "reason": "This creates a constant called <code>enabled<\/code>."
+        },
+        {
+            "answer": "let username = \"twostraws\"",
+            "reason": "This creates a constant called <code>username<\/code>."
+        },
+        {
+            "answer": "let width = 14.0",
+            "reason": "This creates a constant called <code>width<\/code>."
+        },
+        {
+            "answer": "let password = \"fr0sti3s\"",
+            "reason": "This creates a constant called <code>password<\/code>."
+        },
+        {
+            "answer": "let tweeted = false",
+            "reason": "This creates a constant called <code>tweeted<\/code>."
+        }
     ],
     "wrong": [
         {

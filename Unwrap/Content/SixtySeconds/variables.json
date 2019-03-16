@@ -6,37 +6,55 @@
     "hint": "New variables are only created when you use the <code>var<\/code> keyword.",
     "syntaxHighlighting": true,
     "correct": [
-        "var str = \"Hello, playground\"",
-        "var name = \"Sophie\"",
-        "var address = \"321 Park Lane\"",
-        "var operatingSystem = \"macOS\"",
-        "var pirate = \"LeChuck\"",
-        "var dinosaur = \"T-Rex\""
+        {
+            "answer": "var str = \"Hello, playground\"",
+            "reason": "This creates a variable called <code>str<\/code>."
+        },
+        {
+            "answer": "var name = \"Sophie\"",
+            "reason": "This creates a variable called <code>name<\/code>."
+        },
+        {
+            "answer": "var address = \"321 Park Lane\"",
+            "reason": "This creates a variable called <code>address<\/code>."
+        },
+        {
+            "answer": "var operatingSystem = \"macOS\"",
+            "reason": "This creates a variable called <code>operatingSystem<\/code>."
+        },
+        {
+            "answer": "var pirate = \"LeChuck\"",
+            "reason": "This creates a variable called <code>pirate<\/code>."
+        },
+        {
+            "answer": "var dinosaur = \"T-Rex\"",
+            "reason": "This creates a variable called <code>dinosaur<\/code>."
+        }
     ],
     "wrong": [
         {
             "answer": "user = \"twostraws\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
             "answer": "status = \"success\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
             "answer": "favoriteColor = \"green\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
             "answer": "message = \"Good morning, Dave!\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
             "answer": "spaceship = \"Nostromo\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
             "answer": "city = \"Paris\"",
-            "reason": "This needs to start with <code>var</code> in order to create a new variable."
+            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         }
     ]
 }

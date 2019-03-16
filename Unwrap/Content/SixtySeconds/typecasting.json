@@ -2,16 +2,34 @@
     "title": "Typecasting",
     "postscript": "Trying to convert between unrelated types such as from <code>String<\/code> to <code>Int<\/code> will always fail. On the other hand, casting from something to itself, such as from <code>Int<\/code> to <code>Int<\/code>, will always succeed.",
     "reviewType": "singleSelection",
-    "question": "This code will print some output \u2013\u00a0true or false?",
+    "question": "This code will print some output \u2013 true or false?",
     "hint": "Swift can only typecast between related types.",
     "syntaxHighlighting": true,
     "correct": [
-        "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Eagle()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This bird has an unknown wingspan.\")\n\t}\n}",
-        "class CitrusFruit {\n\tvar averagePH = 3.0\n}\nclass Orange: CitrusFruit { }\nlet citrus = Orange()\nif let orange = citrus as? Orange {\n\tprint(\"This orange has a pH of \\(orange.averagePH).\")\n}",
-        "let flavor = \"apple and mango\"\nif let taste = flavor as? String {\n\tprint(\"We added \\(taste).\")\n}",
-        "class Reading {\n\tvar value = 0.0\n}\nclass TemperatureReading: Reading { }\nlet temperature = TemperatureReading()\nif let reading = temperature as? Reading {\n\tprint(\"The reading is \\(reading.value).\")\n}",
-        "class Person {\n\tvar name = \"Taylor Swift\"\n}\nclass User: Person { }\nlet taylor = User()\nif let user = taylor as? User {\n\tprint(\"\\(user.name) is a user.\")\n}",
-        "class Transport { }\nclass Train: Transport {\n\tvar type = \"public\"\n}\nclass Car: Transport {\n\tvar type = \"private\"\n}\nlet travelPlans = [Train(), Car(), Train()]\nfor plan in travelPlans {\n\tif let train = plan as? Train {\n\t\tprint(\"We're taking \\(train.type) transport.\")\n\t}\n}"
+        {
+            "answer": "class Bird {\n\tvar wingspan: Double? = nil\n}\nclass Eagle: Bird { }\nlet bird = Eagle()\nif let eagle = bird as? Eagle {\n\tif let wingspan = eagle.wingspan {\n\t\tprint(\"The wingspan is \\(wingspan).\")\n\t} else {\n\t\tprint(\"This bird has an unknown wingspan.\")\n\t}\n}",
+            "reason": "This code will print some output."
+        },
+        {
+            "answer": "class CitrusFruit {\n\tvar averagePH = 3.0\n}\nclass Orange: CitrusFruit { }\nlet citrus = Orange()\nif let orange = citrus as? Orange {\n\tprint(\"This orange has a pH of \\(orange.averagePH).\")\n}",
+            "reason": "This code will print some output."
+        },
+        {
+            "answer": "let flavor = \"apple and mango\"\nif let taste = flavor as? String {\n\tprint(\"We added \\(taste).\")\n}",
+            "reason": "This code will print some output."
+        },
+        {
+            "answer": "class Reading {\n\tvar value = 0.0\n}\nclass TemperatureReading: Reading { }\nlet temperature = TemperatureReading()\nif let reading = temperature as? Reading {\n\tprint(\"The reading is \\(reading.value).\")\n}",
+            "reason": "This code will print some output."
+        },
+        {
+            "answer": "class Person {\n\tvar name = \"Taylor Swift\"\n}\nclass User: Person { }\nlet taylor = User()\nif let user = taylor as? User {\n\tprint(\"\\(user.name) is a user.\")\n}",
+            "reason": "This code will print some output."
+        },
+        {
+            "answer": "class Transport { }\nclass Train: Transport {\n\tvar type = \"public\"\n}\nclass Car: Transport {\n\tvar type = \"private\"\n}\nlet travelPlans = [Train(), Car(), Train()]\nfor plan in travelPlans {\n\tif let train = plan as? Train {\n\t\tprint(\"We're taking \\(train.type) transport.\")\n\t}\n}",
+            "reason": "This code will print some output."
+        }
     ],
     "wrong": [
         {

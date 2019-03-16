@@ -6,12 +6,30 @@
     "hint": "Swift takes the safety of your code seriously, which means it will make sure all possibilities are handled.",
     "syntaxHighlighting": false,
     "correct": [
-        "Switch statements are often clearer to read than multiple <code>if<\/code> conditions.",
-        "Code from the following case will be run if you use <code>fallthrough<\/code>",
-        "You must list all outcomes as <code>case<\/code> statements or use <code>default<\/code>.",
-        "You place the value you want to check at the start.",
-        "The default case is written as <code>default:<\/code> rather than <code>case default:<\/code>",
-        "If you want to match all other values, use <code>default<\/code>"
+        {
+            "answer": "Switch statements are often clearer to read than multiple <code>if<\/code> conditions.",
+            "reason": "They help us by focusing on one specific check, rathe than many possible checks."
+        },
+        {
+            "answer": "Code from the following case will be run if you use <code>fallthrough<\/code>.",
+            "reason": "By default Swift will stop executing code in a switch block once it reaches the end of a case that was matched."
+        },
+        {
+            "answer": "You must list all outcomes as <code>case<\/code> statements or use <code>default<\/code>.",
+            "reason": "Switch statements must be exhaustive in Swift, which means that all possible cases are catered for."
+        },
+        {
+            "answer": "You place the value you want to check at the start.",
+            "reason": "Switch statements require some sort of value to check at the beginning."
+        },
+        {
+            "answer": "The default case is written as <code>default:<\/code> rather than <code>case default:<\/code>.",
+            "reason": "You omit the <code>case<\/code> keyword for the default case."
+        },
+        {
+            "answer": "If you want to match all other values, use <code>default<\/code>.",
+            "reason": "This acts as a catch-all for unmatched cases."
+        }
     ],
     "wrong": [
         {
@@ -24,7 +42,7 @@
         },
         {
             "answer": "You may only use <code>fallthrough<\/code> once.",
-            "reason": "You can use <code>fallthrough</code> as many times as you want."
+            "reason": "You can use <code>fallthrough<\/code> as many times as you want."
         },
         {
             "answer": "Switch statements work best with constants.",

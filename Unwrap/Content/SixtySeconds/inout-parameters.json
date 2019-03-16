@@ -2,16 +2,34 @@
     "title": "inout parameters",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of the following are true?",
+    "question": "Which of these are true?",
     "hint": "<code>inout<\/code> parameters must be marked in your function wherever those functions are called.",
     "syntaxHighlighting": false,
     "correct": [
-        "Inout parameters are marked using the <code>inout<\/code> keyword.",
-        "Inout parameters must be passed in using <code>&<\/code>",
-        "Inout parameters must be variables.",
-        "Regular parameters are passed into functions as constants.",
-        "You can pass several parameters as inout if you want.",
-        "Changing Inout parameters inside a function changes them outside too."
+        {
+            "answer": "Inout parameters are marked using the <code>inout<\/code> keyword.",
+            "reason": ""
+        },
+        {
+            "answer": "Inout parameters must be passed in using <code>&<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Inout parameters must be variables.",
+            "reason": ""
+        },
+        {
+            "answer": "Regular parameters are passed into functions as constants.",
+            "reason": ""
+        },
+        {
+            "answer": "You can pass several parameters as inout if you want.",
+            "reason": ""
+        },
+        {
+            "answer": "Changing Inout parameters inside a function changes them outside too.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

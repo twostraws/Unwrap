@@ -6,12 +6,30 @@
     "hint": "Make sure the value that is returned matches what is expected.",
     "syntaxHighlighting": true,
     "correct": [
-        "let writeEssay = { (topic: String) -> String in\n\treturn \"Here's an essay on \\(topic).\"\n}",
-        "let measureSize = { (inches: Int) -> String in\n\tswitch inches {\n\tcase 0...26:\n\t\treturn \"XS\"\n\tcase 27...30:\n\t\treturn \"S\"\n\tcase 31...34:\n\t\treturn \"M\"\n\tcase 35...38:\n\t\treturn \"L\"\n\tdefault:\n\t\treturn \"XL\"\n\t}\n}\nmeasureSize(36)",
-        "let bakeBirthdayCake = { (name: String) -> Int in\n\tprint(\"I've made a cake for \\(name); here's the bill.\")\n\treturn 50\n}",
-        "var costToShootMovie = { (location: String) -> Int in\n\tif location == \"UK\" {\n\t\treturn 1_000_000\n\t} else if location == \"US\" {\n\t\treturn 5_000_000\n\t} else {\n\t\treturn 500_000\n\t}\n}",
-        "var difficultyRating = { (trick: String) -> Int in\n\tif trick == \"ollie\" {\n\t\treturn 1\n\t} else if trick == \"Yoyo Plant\" {\n\t\treturn 3\n\t} else if trick == \"900\" {\n\t\treturn 5\n\t} else {\n\t\treturn 0\n\t}\n}\nprint(difficultyRating(\"ollie\"))",
-        "var flyDrone = { (hasPermit: Bool) -> Bool in\n\tif hasPermit {\n\t\tprint(\"Let's find somewhere safe!\")\n\t\treturn true\n\t}\n\tprint(\"That's against the law.\")\n\treturn false\n}"
+        {
+            "answer": "let writeEssay = { (topic: String) -> String in\n\treturn \"Here's an essay on \\(topic).\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let measureSize = { (inches: Int) -> String in\n\tswitch inches {\n\tcase 0...26:\n\t\treturn \"XS\"\n\tcase 27...30:\n\t\treturn \"S\"\n\tcase 31...34:\n\t\treturn \"M\"\n\tcase 35...38:\n\t\treturn \"L\"\n\tdefault:\n\t\treturn \"XL\"\n\t}\n}\nmeasureSize(36)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let bakeBirthdayCake = { (name: String) -> Int in\n\tprint(\"I've made a cake for \\(name); here's the bill.\")\n\treturn 50\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var costToShootMovie = { (location: String) -> Int in\n\tif location == \"UK\" {\n\t\treturn 1_000_000\n\t} else if location == \"US\" {\n\t\treturn 5_000_000\n\t} else {\n\t\treturn 500_000\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var difficultyRating = { (trick: String) -> Int in\n\tif trick == \"ollie\" {\n\t\treturn 1\n\t} else if trick == \"Yoyo Plant\" {\n\t\treturn 3\n\t} else if trick == \"900\" {\n\t\treturn 5\n\t} else {\n\t\treturn 0\n\t}\n}\nprint(difficultyRating(\"ollie\"))",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var flyDrone = { (hasPermit: Bool) -> Bool in\n\tif hasPermit {\n\t\tprint(\"Let's find somewhere safe!\")\n\t\treturn true\n\t}\n\tprint(\"That's against the law.\")\n\treturn false\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

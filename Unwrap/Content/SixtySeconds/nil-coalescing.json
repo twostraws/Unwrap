@@ -2,16 +2,34 @@
     "title": "Nil coalescing",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code demonstrates using nil coalescing with optionals \u2013\u00a0true or false?",
+    "question": "This code demonstrates using nil coalescing with optionals \u2013 true or false?",
     "hint": "The data type on the left of <code>??<\/code> must be the same as the data type on the right.",
     "syntaxHighlighting": true,
     "correct": [
-        "var captain: String? = \"Kathryn Janeway\"\nlet name = captain ?? \"Anonymous\"",
-        "let lightsaberColor: String? = \"green\"\nlet color = lightsaberColor ?? \"blue\"",
-        "let planetNumber: Int? = 426\nvar destination = planetNumber ?? 3",
-        "var selectedYear: Int? = nil\nlet actualYear = selectedYear ?? 1989",
-        "var userOptedIn: Bool? = nil\nvar optedIn = userOptedIn ?? false",
-        "let distanceRan: Double? = 0.5\nlet distance: Double = distanceRan ?? 0"
+        {
+            "answer": "var captain: String? = \"Kathryn Janeway\"\nlet name = captain ?? \"Anonymous\"",
+            "reason": ""
+        },
+        {
+            "answer": "let lightsaberColor: String? = \"green\"\nlet color = lightsaberColor ?? \"blue\"",
+            "reason": ""
+        },
+        {
+            "answer": "let planetNumber: Int? = 426\nvar destination = planetNumber ?? 3",
+            "reason": ""
+        },
+        {
+            "answer": "var selectedYear: Int? = nil\nlet actualYear = selectedYear ?? 1989",
+            "reason": ""
+        },
+        {
+            "answer": "var userOptedIn: Bool? = nil\nvar optedIn = userOptedIn ?? false",
+            "reason": ""
+        },
+        {
+            "answer": "let distanceRan: Double? = 0.5\nlet distance: Double = distanceRan ?? 0",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

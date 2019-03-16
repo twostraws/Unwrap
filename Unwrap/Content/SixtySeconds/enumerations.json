@@ -6,12 +6,30 @@
     "hint": "Enums let you define fixed groups of items so you don't risk typos while using them.",
     "syntaxHighlighting": false,
     "correct": [
-        "Days of the week.",
-        "Months of the year.",
-        "Error types.",
-        "Directions (north, south, etc).",
-        "Suits in a deck of cards.",
-        "Genres of movies."
+        {
+            "answer": "Days of the week.",
+            "reason": "There are only seven days in the week, so they make a great choice for enums."
+        },
+        {
+            "answer": "Months of the year.",
+            "reason": "There are only 12 months in the year, so they make a great choice for enums."
+        },
+        {
+            "answer": "Error types.",
+            "reason": "There are only a fixed number of errors you can issue, so they make a great choice for enums."
+        },
+        {
+            "answer": "Directions (north, south, etc).",
+            "reason": "There are only so many named directions, so they make a great choice for enums."
+        },
+        {
+            "answer": "Suits in a deck of cards.",
+            "reason": "There are only four suits in a deck of cards, so they make a great choice for enums."
+        },
+        {
+            "answer": "Genres of movies.",
+            "reason": "There is a fixed number of movie genres, so they make a great choice for enums."
+        }
     ],
     "wrong": [
         {

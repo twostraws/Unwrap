@@ -6,12 +6,30 @@
     "hint": "Exiting multiple loops is done by using <code>break<\/code> with a loop label.",
     "syntaxHighlighting": false,
     "correct": [
-        "A loop inside a loop is called a nested loop.",
-        "Using <code>break<\/code> by itself exits the current loop only.",
-        "Loop labels look like this: <code>myLoop:<\/code>",
-        "You can exit more than one loop at a time.",
-        "You can break out of a labeled loop whenever you need.",
-        "You can embed one loop inside another."
+        {
+            "answer": "A loop inside a loop is called a nested loop.",
+            "reason": ""
+        },
+        {
+            "answer": "Using <code>break<\/code> by itself exits the current loop only.",
+            "reason": ""
+        },
+        {
+            "answer": "Loop labels look like this: <code>myLoop:<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "You can exit more than one loop at a time.",
+            "reason": ""
+        },
+        {
+            "answer": "You can break out of a labeled loop whenever you need.",
+            "reason": ""
+        },
+        {
+            "answer": "You can embed one loop inside another.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

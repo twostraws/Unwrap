@@ -6,12 +6,30 @@
     "hint": "Protocols never provide implementations; that's done by extensions.",
     "syntaxHighlighting": false,
     "correct": [
-        "Protocols specify what methods and properties conforming types must have.",
-        "You can create one protocol by inheriting from others.",
-        "You can write extensions for protocols to provide default implementations.",
-        "Protocols can mark properties as read-only or read-write.",
-        "Each type can conform to as many protocols as you want.",
-        "You can write extensions for Swift's built-in protocols."
+        {
+            "answer": "Protocols specify what methods and properties conforming types must have.",
+            "reason": ""
+        },
+        {
+            "answer": "You can create one protocol by inheriting from others.",
+            "reason": ""
+        },
+        {
+            "answer": "You can write extensions for protocols to provide default implementations.",
+            "reason": ""
+        },
+        {
+            "answer": "Protocols can mark properties as read-only or read-write.",
+            "reason": ""
+        },
+        {
+            "answer": "Each type can conform to as many protocols as you want.",
+            "reason": ""
+        },
+        {
+            "answer": "You can write extensions for Swift's built-in protocols.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

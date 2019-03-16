@@ -6,12 +6,30 @@
     "hint": "Doubles are any value that contain decimal data, or with the explicit typecast <code>Double<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "var score: Double = 1000",
-        "var depth = 10.2",
-        "var sales: Double = 100_000",
-        "var average = 32.0",
-        "var distance: Double = 320",
-        "var populationMillions = 12.5"
+        {
+            "answer": "var score: Double = 1000",
+            "reason": "Swift understands that 1000 here refers to the floating-point value 1000.0 rather than an integer."
+        },
+        {
+            "answer": "var depth = 10.2",
+            "reason": "This creates a double called <code>depth<\/code>."
+        },
+        {
+            "answer": "var sales: Double = 100_000",
+            "reason": "Swift understands that 100_000 here refers to the floating-point value 100_000.0 rather than an integer."
+        },
+        {
+            "answer": "var average = 32.0",
+            "reason": "This creates a double called <code>average<\/code>."
+        },
+        {
+            "answer": "var distance: Double = 320",
+            "reason": "Swift understands that 320 here refers to the floating-point value 320.0 rather than an integer."
+        },
+        {
+            "answer": "var populationMillions = 12.5",
+            "reason": "This creates a double called <code>populationMillions<\/code>."
+        }
     ],
     "wrong": [
         {

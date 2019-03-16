@@ -6,12 +6,30 @@
     "hint": "Associated values let you attach extra properties to any or all of your enum cases.",
     "syntaxHighlighting": true,
     "correct": [
-        "enum Activity { case reading(bookTitle: String) }",
-        "enum Forecast { case cloudy(coverage: Int) }",
-        "enum Sport { case running(distance: Int) }",
-        "enum Building { case skyscraper(floors: Int) }",
-        "enum Instruments { case piano(isElectric: Bool) }",
-        "enum Class { case law(level: Int) }"
+        {
+            "answer": "enum Activity { case reading(bookTitle: String) }",
+            "reason": "This creates a case called <code>reading<\/code> with the associated value <code>bookTitle<\/code>."
+        },
+        {
+            "answer": "enum Forecast { case cloudy(coverage: Int) }",
+            "reason": "This creates a case called <code>cloudy<\/code> with the associated value <code>coverage<\/code>."
+        },
+        {
+            "answer": "enum Sport { case running(distance: Int) }",
+            "reason": "This creates a case called <code>running<\/code> with the associated value <code>distance<\/code>."
+        },
+        {
+            "answer": "enum Building { case skyscraper(floors: Int) }",
+            "reason": "This creates a case called <code>skyscraper<\/code> with the associated value <code>floors<\/code>."
+        },
+        {
+            "answer": "enum Instruments { case piano(isElectric: Bool) }",
+            "reason": "This creates a case called <code>piano<\/code> with the associated value <code>isElectric<\/code>."
+        },
+        {
+            "answer": "enum CharacterClass { case paladin(level: Int) }",
+            "reason": "This creates a case called <code>paladin<\/code> with the associated value <code>level<\/code>."
+        }
     ],
     "wrong": [
         {

@@ -6,12 +6,30 @@
     "hint": "Swift won't let you mix different data types.",
     "syntaxHighlighting": true,
     "correct": [
-        "let tvShow = \"Breaking \" + \"Bad\"",
-        "let height = 10\nlet width = 20\nheight < width",
-        "let passingGrade = 70...100",
-        "var average = 10.0\naverage += 1.1",
-        "let yourScore = 20\nvar highScore = 15\nif yourScore >= highScore {\nprint(\"You got the high score!\")\n}",
-        "var age = 18\nswitch age {\ncase 0...8:\n\tfallthrough\ncase 9..<18:\n\tprint(\"You're still a minor\")\ndefault:\n\tprint(\"You're an adult\")\n}"
+        {
+            "answer": "let tvShow = \"Breaking \" + \"Bad\"",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let height = 10\nlet width = 20\nheight < width",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let passingGrade = 70...100",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var average = 10.0\naverage += 1.1",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let yourScore = 20\nvar highScore = 15\nif yourScore >= highScore {\nprint(\"You got the high score!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var age = 18\nswitch age {\ncase 0...8:\n\tfallthrough\ncase 9..<18:\n\tprint(\"You're still a minor\")\ndefault:\n\tprint(\"You're an adult\")\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {
@@ -20,7 +38,7 @@
         },
         {
             "answer": "let height = 10\nlet weight = 20\nheight <> weight",
-            "reason": "<code><></code> is not one of Swift's built-in operators."
+            "reason": "<code><><\/code> is not one of Swift's built-in operators."
         },
         {
             "answer": "let testsTaken = 10\ntestsTaken += 1",
@@ -28,11 +46,11 @@
         },
         {
             "answer": "var poorRating = 0....10",
-            "reason": "<code>....</code> – with four dots – is not one of Swift's built-in operators. The closed-range operator is <code>...</code>, with three dots."
+            "reason": "<code>....<\/code> \u2013 with four dots \u2013 is not one of Swift's built-in operators. The closed-range operator is <code>...<\/code>, with three dots."
         },
         {
             "answer": "let rank = 4\nif rank <= 10 {\nprint(You're in the top 10!)\n}",
-            "reason": "The text inside the call to <code>print()</code> must be inside quote marks."
+            "reason": "The text inside the call to <code>print()<\/code> must be inside quote marks."
         },
         {
             "answer": "let numberOfCats = 1\nswitch numberOfCats {\ncase 0:\n\tprint(\"You have no cats\")\ncase 1...3:\n\tprint(\"You have some cats\")\ncase 4..<10:\n\tprint(\"You have many cats!\")\n}",

@@ -11,11 +11,11 @@ import SourceEditor
 import UIKit
 
 class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
-    struct Answer {
-        var text: String
-        var subtitle: String
-        var isCorrect: Bool
-    }
+//    struct Answer {
+//        var text: String
+//        var subtitle: String
+//        var isCorrect: Bool
+//    }
 
     @IBOutlet var prompt: UILabel!
     @IBOutlet var code: SyntaxTextView!
@@ -47,8 +47,8 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
 
         if answers.isEmpty {
             // this is the first review screen; set up the answers here
-            answers += review.correct.map { Answer(text: $0, subtitle: "", isCorrect: true) }
-            answers += review.wrong.map { Answer(text: $0.answer, subtitle: $0.reason, isCorrect: false) }
+            answers += review.correct.map { Answer(text: $0.answer, subtitle: $0.reason, isCorrect: true, isSelected: false) }
+            answers += review.wrong.map { Answer(text: $0.answer, subtitle: $0.reason, isCorrect: false, isSelected: false) }
             answers.shuffle()
         }
 

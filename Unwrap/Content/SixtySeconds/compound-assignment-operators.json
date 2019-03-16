@@ -6,12 +6,30 @@
     "hint": "Watch out for constants!",
     "syntaxHighlighting": true,
     "correct": [
-        "var result = 10\nresult += 0",
-        "var result = 20\nresult \/= 2",
-        "var result = 1\nresult *= 10",
-        "var result = 21\nresult -= 11",
-        "var result = 5\nresult *= 2",
-        "var result = 100\nresult \/= 10"
+        {
+            "answer": "var result = 10\nresult += 0",
+            "reason": "This adds 0 to 10, which makes 10."
+        },
+        {
+            "answer": "var result = 20\nresult \/= 2",
+            "reason": "This divides 20 by 2, which makes 10."
+        },
+        {
+            "answer": "var result = 1\nresult *= 10",
+            "reason": "This multiplies 1 by 10, which makes 10."
+        },
+        {
+            "answer": "var result = 21\nresult -= 11",
+            "reason": "This subtracts 11 from 21, which makes 10."
+        },
+        {
+            "answer": "var result = 5\nresult *= 2",
+            "reason": "This multiplies 5 by 2, which makes 10."
+        },
+        {
+            "answer": "var result = 100\nresult \/= 10",
+            "reason": "This divides 100 by 10, which makes 10."
+        }
     ],
     "wrong": [
         {
@@ -32,11 +50,11 @@
         },
         {
             "answer": "var result = 21\nresult -= 10",
-            "reason": "This will set <code>result</code> to 11."
+            "reason": "This will set <code>result<\/code> to 11."
         },
         {
             "answer": "var result = 3\nresult *= 3",
-            "reason": "This will set <code>result</code> to 9."
+            "reason": "This will set <code>result<\/code> to 9."
         }
     ]
 }

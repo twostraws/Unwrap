@@ -2,16 +2,34 @@
     "title": "Deinitializers",
     "postscript": "The <code>deinit<\/code> method doesn't have parentheses after it, because it never takes parameters. So, always write <code>deinit<\/code> rather than <code>deinit()<\/code>.",
     "reviewType": "singleSelection",
-    "question": "This code will print a message when an instance of the type is destroyed \u2013\u00a0true or false?",
+    "question": "This code will print a message when an instance of the type is destroyed \u2013 true or false?",
     "hint": "Structs cannot have deinitializers.",
     "syntaxHighlighting": true,
     "correct": [
-        "class IceCream {\n\tdeinit {\n\t\tprint(\"No more icecream :(\")\n\t}\n}",
-        "class Job {\n\tdeinit {\n\t\tprint(\"I quit!\")\n\t}\n}",
-        "class Lightsaber {\n\tdeinit {\n\t\tprint(\"Fssshhp!\")\n\t}\n}",
-        "class Firefly {\n\tdeinit {\n\t\tprint(\"I'm still annoyed that this was cancelled.\")\n\t}\n}",
-        "class MagicSpell {\n\tdeinit {\n\t\tprint(\"Good job, Hermione!\")\n\t}\n}",
-        "class DisneyMovie {\n\tdeinit {\n\t\tprint(\"Relax, there'll be another in a year.\")\n\t}\n}"
+        {
+            "answer": "class IceCream {\n\tdeinit {\n\t\tprint(\"No more icecream :(\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>IceCream<\/code> is destroyed."
+        },
+        {
+            "answer": "class Job {\n\tdeinit {\n\t\tprint(\"I quit!\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>Job<\/code> is destroyed."
+        },
+        {
+            "answer": "class Lightsaber {\n\tdeinit {\n\t\tprint(\"Fssshhp!\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>Lightsaber<\/code> is destroyed."
+        },
+        {
+            "answer": "class Firefly {\n\tdeinit {\n\t\tprint(\"I'm still annoyed that this was cancelled.\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>Firefly<\/code> is destroyed."
+        },
+        {
+            "answer": "class MagicSpell {\n\tdeinit {\n\t\tprint(\"Good job, Hermione!\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>MagicSpell<\/code> is destroyed."
+        },
+        {
+            "answer": "class DisneyMovie {\n\tdeinit {\n\t\tprint(\"Relax, there'll be another in a year.\")\n\t}\n}",
+            "reason": "This will print a message when an instance of <code>DisneyMovie<\/code> is destroyed."
+        }
     ],
     "wrong": [
         {

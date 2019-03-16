@@ -6,12 +6,30 @@
     "hint": "You'll need to do a tiny bit of arithmetic in your head here.",
     "syntaxHighlighting": true,
     "correct": [
-        "a < b",
-        "c >= a",
-        "a + 1 < c",
-        "a + 2 == b + 1",
-        "a != c",
-        "a == a"
+        {
+            "answer": "a < b",
+            "reason": "1 is less than 2."
+        },
+        {
+            "answer": "c >= a",
+            "reason": "3 is greater than or equal to 1."
+        },
+        {
+            "answer": "a + 1 < c",
+            "reason": "1 plus 1 is less than 3."
+        },
+        {
+            "answer": "a + 2 == b + 1",
+            "reason": "1 plus 2 is equal to 2 plus 1."
+        },
+        {
+            "answer": "a != c",
+            "reason": "1 is not equal to 3."
+        },
+        {
+            "answer": "a == a",
+            "reason": "1 is equal to 1."
+        }
     ],
     "wrong": [
         {

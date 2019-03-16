@@ -2,16 +2,34 @@
     "title": "Class inheritance",
     "postscript": "Your classes may inherit from only one parent.",
     "reviewType": "singleSelection",
-    "question": "This code demonstrates valid class inheritance \u2013\u00a0true or false?",
+    "question": "This code demonstrates valid class inheritance \u2013 true or false?",
     "hint": "All properties must have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [
-        "class Bicycle {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t}\n}\nclass MountainBike: Bicycle {\n\tvar tireThickness: Double\n\tinit(color: String, tireThickness: Double) {\n\t\tself.tireThickness = tireThickness\n\t\tsuper.init(color: color)\n\t}\n}",
-        "class Printer {\n\tvar cost: Int\n\tinit(cost: Int) {\n\t\tself.cost = cost\n\t}\n}\nclass LaserPrinter: Printer {\n\tvar model: String\n\tinit(model: String, cost: Int) {\n\t\tself.model = model\n\t\tsuper.init(cost: cost)\n\t}\n}",
-        "class Product {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Book: Product {\n\tvar isbn: String\n\tinit(name: String, isbn: String) {\n\t\tself.isbn = isbn\n\t\tsuper.init(name: name)\n\t}\n}",
-        "class Shape {\n\tvar sides: Int\n\tinit(sides: Int) {\n\t\tself.sides = sides\n\t}\n}\nclass Rectangle: Shape {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t\tsuper.init(sides: 4)\n\t}\n}",
-        "class Instrument {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Piano: Instrument {\n\tvar isElectric: Bool\n\tinit(isElectric: Bool) {\n\t\tself.isElectric = isElectric\n\t\tsuper.init(name: \"Piano\")\n\t}\n}",
-        "class Handbag {\n\tvar price: Int\n\tinit(price: Int) {\n\t\tself.price = price\n\t}\n}\nclass DesignerHandbag: Handbag {\n\tvar brand: String\n\tinit(brand: String, price: Int) {\n\t\tself.brand = brand\n\t\tsuper.init(price: price)\n\t}\n}"
+        {
+            "answer": "class Bicycle {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t}\n}\nclass MountainBike: Bicycle {\n\tvar tireThickness: Double\n\tinit(color: String, tireThickness: Double) {\n\t\tself.tireThickness = tireThickness\n\t\tsuper.init(color: color)\n\t}\n}",
+            "reason": "This shows the class <code>MountainBike<\/code> inheriting from <code>Bicycle<\/code>."
+        },
+        {
+            "answer": "class Printer {\n\tvar cost: Int\n\tinit(cost: Int) {\n\t\tself.cost = cost\n\t}\n}\nclass LaserPrinter: Printer {\n\tvar model: String\n\tinit(model: String, cost: Int) {\n\t\tself.model = model\n\t\tsuper.init(cost: cost)\n\t}\n}",
+            "reason": "This shows the class <code>LaserPrinter<\/code> inheriting from <code>Printer<\/code>."
+        },
+        {
+            "answer": "class Product {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Book: Product {\n\tvar isbn: String\n\tinit(name: String, isbn: String) {\n\t\tself.isbn = isbn\n\t\tsuper.init(name: name)\n\t}\n}",
+            "reason": "This shows the class <code>Book<\/code> inheriting from <code>Product<\/code>."
+        },
+        {
+            "answer": "class Shape {\n\tvar sides: Int\n\tinit(sides: Int) {\n\t\tself.sides = sides\n\t}\n}\nclass Rectangle: Shape {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t\tsuper.init(sides: 4)\n\t}\n}",
+            "reason": "This shows the class <code>Rectangle<\/code> inheriting from <code>Shape<\/code>."
+        },
+        {
+            "answer": "class Instrument {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Piano: Instrument {\n\tvar isElectric: Bool\n\tinit(isElectric: Bool) {\n\t\tself.isElectric = isElectric\n\t\tsuper.init(name: \"Piano\")\n\t}\n}",
+            "reason": "This shows the class <code>Piano<\/code> inheriting from <code>Instrument<\/code>."
+        },
+        {
+            "answer": "class Handbag {\n\tvar price: Int\n\tinit(price: Int) {\n\t\tself.price = price\n\t}\n}\nclass DesignerHandbag: Handbag {\n\tvar brand: String\n\tinit(brand: String, price: Int) {\n\t\tself.brand = brand\n\t\tsuper.init(price: price)\n\t}\n}",
+            "reason": "This shows the class <code>DesignerHandbag<\/code> inheriting from <code>Handbag<\/code>."
+        }
     ],
     "wrong": [
         {

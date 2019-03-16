@@ -2,16 +2,34 @@
     "title": "Computed properties",
     "postscript": "Computed properties must always have a type annotation, and must always be created using <code>var<\/code> rather than <code>let<\/code>.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Computed properties must always return a value.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Swordfighter {\n\tvar name: String\n\tvar introduction: String {\n\t\treturn \"Hello, my name is \\(name).\"\n\t}\n}\nlet inigo = Swordfighter(name: \"Inigo Montoya\")",
-        "struct Toy {\n\tvar color: String\n\tvar isForGirls: Bool {\n\t\tif color == \"Pink\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-        "struct Investor {\n\tvar age: Int\n\tvar investmentPlan: String {\n\t\tif age < 30 {\n\t\t\treturn \"Shares\"\n\t\t} else if age < 60 {\n\t\t\treturn \"Equities\"\n\t\t} else {\n\t\t\treturn \"Bonds\"\n\t\t}\n\t}\n}\nlet investor = Investor(age: 38)\nprint(investor.investmentPlan)",
-        "struct Medicine {\n\tvar amount: Int\n\tvar frequency: Int\n\tvar dosage: String {\n\t\treturn \"Take \\(amount) pills \\(frequency) times a day.\"\n\t}\n}",
-        "struct Wine {\n\tvar age: Int\n\tvar isVintage: Bool\n\tvar price: Int {\n\t\tif isVintage {\n\t\t\treturn age + 20\n\t\t} else {\n\t\t\treturn age + 5\n\t\t}\n\t}\n}\nlet malbec = Wine(age: 2, isVintage: true)\nprint(malbec.price)",
-        "struct Keyboard {\n\tvar isMechanical = false\n\tvar noiseLevel: Int {\n\t\tif isMechanical {\n\t\t\treturn 11\n\t\t} else {\n\t\t\treturn 3\n\t\t}\n\t}\n}\nlet majestouch = Keyboard(isMechanical: true)\nprint(majestouch.noiseLevel)"
+        {
+            "answer": "struct Swordfighter {\n\tvar name: String\n\tvar introduction: String {\n\t\treturn \"Hello, my name is \\(name).\"\n\t}\n}\nlet inigo = Swordfighter(name: \"Inigo Montoya\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Toy {\n\tvar color: String\n\tvar isForGirls: Bool {\n\t\tif color == \"Pink\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Investor {\n\tvar age: Int\n\tvar investmentPlan: String {\n\t\tif age < 30 {\n\t\t\treturn \"Shares\"\n\t\t} else if age < 60 {\n\t\t\treturn \"Equities\"\n\t\t} else {\n\t\t\treturn \"Bonds\"\n\t\t}\n\t}\n}\nlet investor = Investor(age: 38)\nprint(investor.investmentPlan)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Medicine {\n\tvar amount: Int\n\tvar frequency: Int\n\tvar dosage: String {\n\t\treturn \"Take \\(amount) pills \\(frequency) times a day.\"\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Wine {\n\tvar age: Int\n\tvar isVintage: Bool\n\tvar price: Int {\n\t\tif isVintage {\n\t\t\treturn age + 20\n\t\t} else {\n\t\t\treturn age + 5\n\t\t}\n\t}\n}\nlet malbec = Wine(age: 2, isVintage: true)\nprint(malbec.price)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Keyboard {\n\tvar isMechanical = false\n\tvar noiseLevel: Int {\n\t\tif isMechanical {\n\t\t\treturn 11\n\t\t} else {\n\t\t\treturn 3\n\t\t}\n\t}\n}\nlet majestouch = Keyboard(isMechanical: true)\nprint(majestouch.noiseLevel)",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

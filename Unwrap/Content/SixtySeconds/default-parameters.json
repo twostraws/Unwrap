@@ -2,16 +2,34 @@
     "title": "Default parameters",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Look closely at the type of the parameters and the default values being used.",
     "syntaxHighlighting": true,
     "correct": [
-        "func parkCar(_ type: String, automatically: Bool = true) {\n\tif automatically {\n\t\tprint(\"Nice - my \\(type) parked itself!\")\n\t} else {\n\t\tprint(\"I guess I'll have to do it.\")\n\t}\n}\nparkCar(\"Tesla\")",
-        "func calculateWages(payBand: Int, isOvertime: Bool = false) -> Int {\n\tvar pay = 10_000 * payBand\n\tif isOvertime {\n\t\tpay *= 2\n\t}\n\treturn pay\n}\ncalculateWages(payBand: 5, isOvertime: true)",
-        "func scoreGoal(overheadKick: Bool = false) {\n\tif overheadKick {\n\t\tprint(\"Wow - amazing!\")\n\t} else {\n\t\tprint(\"Great goal!\")\n\t}\n}\nscoreGoal(overheadKick: true)",
-        "func playGame(name: String, cheat: Bool = false) {\n\tif cheat {\n\t\tprint(\"Let's play \\(name); I bet I win!\")\n\t} else {\n\t\tprint(\"Let's play \\(name)!\")\n\t}\n}",
-        "func packLunchbox(number: Int, healthy: Bool = true) {\n\tfor _ in 0..<number {\n\t\tif healthy {\n\t\t\tprint(\"I'm packing a healthy lunchbox.\")\n\t\t} else {\n\t\t\tprint(\"Pizza for everyone!\")\n\t\t}\n\t}\n}",
-        "func runRace(distance: Int = 10) {\n\tif distance < 5 {\n\t\tprint(\"This should be easy!\")\n\t} else if distance < 10 {\n\t\tprint(\"This should be a nice challenge.\")\n\t} else {\n\t\tprint(\"Let's do this!\")\n\t}\n}"
+        {
+            "answer": "func parkCar(_ type: String, automatically: Bool = true) {\n\tif automatically {\n\t\tprint(\"Nice - my \\(type) parked itself!\")\n\t} else {\n\t\tprint(\"I guess I'll have to do it.\")\n\t}\n}\nparkCar(\"Tesla\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func calculateWages(payBand: Int, isOvertime: Bool = false) -> Int {\n\tvar pay = 10_000 * payBand\n\tif isOvertime {\n\t\tpay *= 2\n\t}\n\treturn pay\n}\ncalculateWages(payBand: 5, isOvertime: true)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func scoreGoal(overheadKick: Bool = false) {\n\tif overheadKick {\n\t\tprint(\"Wow - amazing!\")\n\t} else {\n\t\tprint(\"Great goal!\")\n\t}\n}\nscoreGoal(overheadKick: true)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func playGame(name: String, cheat: Bool = false) {\n\tif cheat {\n\t\tprint(\"Let's play \\(name); I bet I win!\")\n\t} else {\n\t\tprint(\"Let's play \\(name)!\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func packLunchbox(number: Int, healthy: Bool = true) {\n\tfor _ in 0..<number {\n\t\tif healthy {\n\t\t\tprint(\"I'm packing a healthy lunchbox.\")\n\t\t} else {\n\t\t\tprint(\"Pizza for everyone!\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func runRace(distance: Int = 10) {\n\tif distance < 5 {\n\t\tprint(\"This should be easy!\")\n\t} else if distance < 10 {\n\t\tprint(\"This should be a nice challenge.\")\n\t} else {\n\t\tprint(\"Let's do this!\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

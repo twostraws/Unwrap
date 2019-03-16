@@ -26,10 +26,10 @@ struct StudyReview: Decodable {
     var hint: String
 
     /// An array of correct answers.
-    var correct: [String]
+    var correct: [ReasonedAnswer]
 
     /// An array of wrong answers.
-    var wrong: [WrongAnswer]
+    var wrong: [ReasonedAnswer]
 
     /// When set to true syntax highlight this text at runtime; when set to false, just bold <code> blocks;.
     var syntaxHighlighting: Bool

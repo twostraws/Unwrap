@@ -6,12 +6,30 @@
     "hint": "Only extensions contain method implementations. To conform to a protocol, all types must implement the protocol's methods.",
     "syntaxHighlighting": true,
     "correct": [
-        "protocol Identifiable {\n\tvar id: Int { get set }\n}",
-        "protocol SuitableForKids {\n\tvar minimumAge: Int { get set }\n\tvar maximumAge: Int { get set }\n}\nprotocol SupportsMultiplePlayers {\n\tvar minimumPlayers: Int { get set }\n\tvar maximumPlayers: Int { get set }\n}\nstruct FamilyBoardGame: SuitableForKids, SupportsMultiplePlayers {\n\tvar minimumAge = 3\n\tvar maximumAge = 110\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n}",
-        "protocol Inflatable {\n\tmutating func refillAir()\n}\nextension Inflatable {\n\tmutating func refillAir() {\n\t\tprint(\"Refilling the air.\")\n\t}\n}",
-        "extension Collection {\n\tfunc describe() {\n\t\tif count == 1 {\n\t\t\tprint(\"There is 1 item.\")\n\t\t} else {\n\t\t\tprint(\"There are \\(count) items.\")\n\t\t}\n\t}\n}",
-        "protocol HasAge {\n\tvar age: Int { get set }\n\tmutating func celebrateBirthday()\n}",
-        "protocol Paintable { }\nprotocol Tileable { }\nstruct Wall: Paintable, Tileable { }"
+        {
+            "answer": "protocol Identifiable {\n\tvar id: Int { get set }\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "protocol SuitableForKids {\n\tvar minimumAge: Int { get set }\n\tvar maximumAge: Int { get set }\n}\nprotocol SupportsMultiplePlayers {\n\tvar minimumPlayers: Int { get set }\n\tvar maximumPlayers: Int { get set }\n}\nstruct FamilyBoardGame: SuitableForKids, SupportsMultiplePlayers {\n\tvar minimumAge = 3\n\tvar maximumAge = 110\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "protocol Inflatable {\n\tmutating func refillAir()\n}\nextension Inflatable {\n\tmutating func refillAir() {\n\t\tprint(\"Refilling the air.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "extension Collection {\n\tfunc describe() {\n\t\tif count == 1 {\n\t\t\tprint(\"There is 1 item.\")\n\t\t} else {\n\t\t\tprint(\"There are \\(count) items.\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "protocol HasAge {\n\tvar age: Int { get set }\n\tmutating func celebrateBirthday()\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "protocol Paintable { }\nprotocol Tileable { }\nstruct Wall: Paintable, Tileable { }",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

@@ -6,12 +6,30 @@
     "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Diary {\n\tvar entries: String\n\tmutating func add(entry: String) {\n\t\tentries += \"\\(entry)\"\n\t}\n}",
-        "struct Bicycle {\n\tvar currentGear: Int\n\tmutating func changeGear(to newGear: Int) {\n\t\tcurrentGear = newGear\n\t\tprint(\"I'm now in gear \\(currentGear).\")\n\t}\n}",
-        "struct Book {\n\tvar totalPages: Int\n\tvar pagesLeftToRead = 0\n\tmutating func read(pages: Int) {\n\t\tif pages < pagesLeftToRead {\n\t\t\tpagesLeftToRead -= pages\n\t\t} else {\n\t\t\tpagesLeftToRead = 0\n\t\t\tprint(\"I'm done!\")\n\t\t}\n\t}\n}",
-        "struct BankAccount {\n\tvar balance: Int\n\tmutating func donateToCharity(amount: Int) {\n\t\tbalance -= amount\n\t}\n}",
-        "struct Surgeon {\n\tvar operationsPerformed = 0\n\tmutating func operate(on patient: String) {\n\t\tprint(\"Nurse, hand me the scalpel!\")\n\t\toperationsPerformed += 1\n\t}\n}",
-        "struct Delorean {\n\tvar speed = 0\n\tmutating func accelerate() {\n\t\tspeed += 1\n\t\tif speed == 88 {\n\t\t\ttravelThroughTime()\n\t\t}\n\t}\n\tfunc travelThroughTime() {\n\t\tprint(\"Where we're going we don't need roads.\")\n\t}\n}"
+        {
+            "answer": "struct Diary {\n\tvar entries: String\n\tmutating func add(entry: String) {\n\t\tentries += \"\\(entry)\"\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Bicycle {\n\tvar currentGear: Int\n\tmutating func changeGear(to newGear: Int) {\n\t\tcurrentGear = newGear\n\t\tprint(\"I'm now in gear \\(currentGear).\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Book {\n\tvar totalPages: Int\n\tvar pagesLeftToRead = 0\n\tmutating func read(pages: Int) {\n\t\tif pages < pagesLeftToRead {\n\t\t\tpagesLeftToRead -= pages\n\t\t} else {\n\t\t\tpagesLeftToRead = 0\n\t\t\tprint(\"I'm done!\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct BankAccount {\n\tvar balance: Int\n\tmutating func donateToCharity(amount: Int) {\n\t\tbalance -= amount\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Surgeon {\n\tvar operationsPerformed = 0\n\tmutating func operate(on patient: String) {\n\t\tprint(\"Nurse, hand me the scalpel!\")\n\t\toperationsPerformed += 1\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Delorean {\n\tvar speed = 0\n\tmutating func accelerate() {\n\t\tspeed += 1\n\t\tif speed == 88 {\n\t\t\ttravelThroughTime()\n\t\t}\n\t}\n\tfunc travelThroughTime() {\n\t\tprint(\"Where we're going we don't need roads.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

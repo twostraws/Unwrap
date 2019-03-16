@@ -6,12 +6,30 @@
     "hint": "It might sound obvious, but optional chaining may only be used with optionals.",
     "syntaxHighlighting": true,
     "correct": [
-        "let shoppingList = [\"eggs\", \"tomatoes\", \"grapes\"]\nlet firstItem = shoppingList.first?.appending(\" are on my shopping list\")",
-        "let favoriteColors = [\"Paul\": \"Red\", \"Charlotte\": \"Pink\"]\nlet charlotteColor = favoriteColors[\"Charlotte\"]?.lowercased()",
-        "func albumReleased(in year: Int) -> String? {\n\tswitch year {\n\tcase 2006: return \"Taylor Swift\"\n\tcase 2008: return \"Fearless\"\n\tcase 2010: return \"Speak Now\"\n\tcase 2012: return \"Red\"\n\tcase 2014: return \"1989\"\n\tcase 2017: return \"Reputation\"\n\tdefault: return nil\n\t}\n}\nlet album = albumReleased(in: 2006)?.uppercased()",
-        "let racers = [\"Hamilton\", \"Verstappen\", \"Vettel\"]\nlet winnerWasVE = racers.first?.hasPrefix(\"Ve\")",
-        "let capitals = [\"Scotland\": \"Edinburgh\", \"Wales\": \"Cardiff\"]\nlet scottishCapital = capitals[\"Scotland\"]?.uppercased()",
-        "let songs: [String]? = [String]()\nlet finalSong = songs?.last?.uppercased()"
+        {
+            "answer": "let shoppingList = [\"eggs\", \"tomatoes\", \"grapes\"]\nlet firstItem = shoppingList.first?.appending(\" are on my shopping list\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let favoriteColors = [\"Paul\": \"Red\", \"Charlotte\": \"Pink\"]\nlet charlotteColor = favoriteColors[\"Charlotte\"]?.lowercased()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func albumReleased(in year: Int) -> String? {\n\tswitch year {\n\tcase 2006: return \"Taylor Swift\"\n\tcase 2008: return \"Fearless\"\n\tcase 2010: return \"Speak Now\"\n\tcase 2012: return \"Red\"\n\tcase 2014: return \"1989\"\n\tcase 2017: return \"Reputation\"\n\tdefault: return nil\n\t}\n}\nlet album = albumReleased(in: 2006)?.uppercased()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let racers = [\"Hamilton\", \"Verstappen\", \"Vettel\"]\nlet winnerWasVE = racers.first?.hasPrefix(\"Ve\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let capitals = [\"Scotland\": \"Edinburgh\", \"Wales\": \"Cardiff\"]\nlet scottishCapital = capitals[\"Scotland\"]?.uppercased()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let songs: [String]? = [String]()\nlet finalSong = songs?.last?.uppercased()",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

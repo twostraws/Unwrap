@@ -2,16 +2,34 @@
     "title": "Exiting loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print some text \u2013\u00a0true or false?",
+    "question": "This loop will print some text \u2013 true or false?",
     "hint": "Calling <code>break<\/code> skips the remainder of the current loop.",
     "syntaxHighlighting": true,
     "correct": [
-        "for i in 1...10 {\n\tif i == 8 {\n\t\tprint(\"Found number 8!\")\n\t}\n}",
-        "var counter = 0\nwhile counter < 5 {\n\tcounter += 1\n\tprint(\"Counting: \\(counter)\")\n}",
-        "repeat {\n\tprint(\"Hello, world!\")\n} while false",
-        "var people = 2\nwhile people < 10 {\n\tpeople += 2\n\tif people == 10 {\n\t\tprint(\"We got 10 people.\")\n\t}\n}",
-        "for person in [\"Taylor\", \"Justin\", \"Adele\"] {\n\tprint(\"Hello, \\(person)!\")\n}",
-        "for i in 1...15 {\n\tif i % 3 == 0 {\n\t\tif i % 5 == 0 {\n\t\t\tprint(\"\\(i) is a multiple of both 3 and 5.\")\n\t\t}\n\t}\n}"
+        {
+            "answer": "for i in 1...10 {\n\tif i == 8 {\n\t\tprint(\"Found number 8!\")\n\t}\n}",
+            "reason": "This code will print some text."
+        },
+        {
+            "answer": "var counter = 0\nwhile counter < 5 {\n\tcounter += 1\n\tprint(\"Counting: \\(counter)\")\n}",
+            "reason": "This code will print some text."
+        },
+        {
+            "answer": "repeat {\n\tprint(\"Hello, world!\")\n} while false",
+            "reason": "This code will print some text."
+        },
+        {
+            "answer": "var people = 2\nwhile people < 10 {\n\tpeople += 2\n\tif people == 10 {\n\t\tprint(\"We got 10 people.\")\n\t}\n}",
+            "reason": "This code will print some text."
+        },
+        {
+            "answer": "for person in [\"Taylor\", \"Justin\", \"Adele\"] {\n\tprint(\"Hello, \\(person)!\")\n}",
+            "reason": "This code will print some text."
+        },
+        {
+            "answer": "for i in 1...15 {\n\tif i % 3 == 0 {\n\t\tif i % 5 == 0 {\n\t\t\tprint(\"\\(i) is a multiple of both 3 and 5.\")\n\t\t}\n\t}\n}",
+            "reason": "This code will print some text."
+        }
     ],
     "wrong": [
         {

@@ -1,17 +1,35 @@
 {
     "title": "Final test",
-    "postscript": "You can go back and re-read any of these chapters whenever you want \u2013\u00a0keep your Swift skills fresh!",
+    "postscript": "You can go back and re-read any of these chapters whenever you want \u2013 keep your Swift skills fresh!",
     "reviewType": "multipleSelection",
     "question": "Which of these statements are true?",
     "hint": "These questions are taken from a variety of chapters \u2013 you might need to re-read one of them if you're not sure about an answer.",
     "syntaxHighlighting": false,
     "correct": [
-        "Strings are case-sensitive.",
-        "Closures can capture values around them.",
-        "Structs are copied differently from classes.",
-        "Enums can have associated values.",
-        "Variadic functions take any number of parameters.",
-        "Throwing functions must be called using <code>try<\/code>."
+        {
+            "answer": "Strings are case-sensitive.",
+            "reason": ""
+        },
+        {
+            "answer": "Closures can capture values around them.",
+            "reason": ""
+        },
+        {
+            "answer": "Structs are copied differently from classes.",
+            "reason": ""
+        },
+        {
+            "answer": "Enums can have associated values.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic functions take any number of parameters.",
+            "reason": ""
+        },
+        {
+            "answer": "Throwing functions must be called using <code>try<\/code>.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

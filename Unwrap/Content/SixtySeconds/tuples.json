@@ -6,12 +6,30 @@
     "hint": "Tuples are fixed in size and the types can't be changed after they are created.",
     "syntaxHighlighting": false,
     "correct": [
-        "Tuples are fixed in size.",
-        "You can't change the types of tuple items.",
-        "You can access tuple items using numerical positions.",
-        "You can name tuple items.",
-        "Tuples are created by placing items inside parentheses.",
-        "Tuples store values together in a single value."
+        {
+            "answer": "Tuples are fixed in size.",
+            "reason": ""
+        },
+        {
+            "answer": "You can't change the types of tuple items.",
+            "reason": ""
+        },
+        {
+            "answer": "You can access tuple items using numerical positions.",
+            "reason": ""
+        },
+        {
+            "answer": "You can name tuple items.",
+            "reason": ""
+        },
+        {
+            "answer": "Tuples are created by placing items inside parentheses.",
+            "reason": ""
+        },
+        {
+            "answer": "Tuples store values together in a single value.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {
@@ -36,7 +54,7 @@
         },
         {
             "answer": "No one really understands tuples.",
-            "reason": "Once you spend a little time with them, tuples aren't too hard to understand – honest!"
+            "reason": "Once you spend a little time with them, tuples aren't too hard to understand \u2013 honest!"
         }
     ]
 }

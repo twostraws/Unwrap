@@ -6,12 +6,30 @@
     "hint": "Lazy properties are an important performance optimization, because they let us run code only once and only when it's needed.",
     "syntaxHighlighting": false,
     "correct": [
-        "Lazy properties are created only when first accessed.",
-        "You can assign lazy properties by calling a method.",
-        "Lazy properties are created using the <code>lazy<\/code> keyword.",
-        "Lazy properties can be used inside any kind of structs.",
-        "A lazy property can be an instance of a different struct.",
-        "Lazy properties are a performance optimization."
+        {
+            "answer": "Lazy properties are created only when first accessed.",
+            "reason": ""
+        },
+        {
+            "answer": "You can assign lazy properties by calling a method.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties are created using the <code>lazy<\/code> keyword.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties can be used inside any kind of structs.",
+            "reason": ""
+        },
+        {
+            "answer": "A lazy property can be an instance of a different struct.",
+            "reason": ""
+        },
+        {
+            "answer": "Lazy properties are a performance optimization.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

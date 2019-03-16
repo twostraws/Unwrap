@@ -6,12 +6,30 @@
     "hint": "Many people call <code>!<\/code> the crash operator because it might crash your app, and it's no different with <code>try!<\/code>.",
     "syntaxHighlighting": false,
     "correct": [
-        "If you use <code>try<\/code> you must either catch the error or mark your function as <code>throws<\/code>",
-        "Using <code>try?<\/code> converts a function's return value into an optional.",
-        "If you use <code>try!<\/code> and your call throws an error, your code crashes.",
-        "When using <code>try<\/code> you must catch all errors that can be thrown.",
-        "You can combine <code>try?<\/code> with <code>if let<\/code>",
-        "Functions that throw errors must be marked <code>throws<\/code>."
+        {
+            "answer": "If you use <code>try<\/code> you must either catch the error or mark your function as <code>throws<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Using <code>try?<\/code> converts a function's return value into an optional.",
+            "reason": ""
+        },
+        {
+            "answer": "If you use <code>try!<\/code> and your call throws an error, your code crashes.",
+            "reason": ""
+        },
+        {
+            "answer": "When using <code>try<\/code> you must catch all errors that can be thrown.",
+            "reason": ""
+        },
+        {
+            "answer": "You can combine <code>try?<\/code> with <code>if let<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Functions that throw errors must be marked <code>throws<\/code>.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

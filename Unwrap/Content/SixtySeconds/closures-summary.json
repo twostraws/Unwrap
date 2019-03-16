@@ -6,12 +6,30 @@
     "hint": "Closures can accept parameters and return values, just like regular functions.",
     "syntaxHighlighting": false,
     "correct": [
-        "Closures can accept parameters.",
-        "Closures can return values.",
-        "Swift provides shorthand parameter names like <code>$0<\/code> and <code>$1<\/code>",
-        "If you use external values in  your closure they will be captured.",
-        "You can pass closures into functions as parameters.",
-        "If the last parameter to a function is a closure, you can use trailing closure syntax."
+        {
+            "answer": "Closures can accept parameters.",
+            "reason": ""
+        },
+        {
+            "answer": "Closures can return values.",
+            "reason": ""
+        },
+        {
+            "answer": "Swift provides shorthand parameter names like <code>$0<\/code> and <code>$1<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "If you use external values in  your closure they will be captured.",
+            "reason": ""
+        },
+        {
+            "answer": "You can pass closures into functions as parameters.",
+            "reason": ""
+        },
+        {
+            "answer": "If the last parameter to a function is a closure, you can use trailing closure syntax.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

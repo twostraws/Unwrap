@@ -6,12 +6,30 @@
     "hint": "Watch out for text that is printed only when a condition is satisfied.",
     "syntaxHighlighting": true,
     "correct": [
-        "var bagels = 5\nrepeat {\n\tprint(\"Someone ate a bagel!\")\n\tbagels -= 1\n} while bagels > 0",
-        "var encores = 0\nrepeat {\n\tprint(\"Let's play that piece again.\")\n\tencores += 1\n} while encores < 3",
-        "var frogs = 4\nrepeat {\n\tfor _ in 1...frogs {\n\t\tprint(\"Ribbit!\")\n\t}\n} while false",
-        "var scales = [\"A\", \"B\", \"C\", \"D\", \"E\"]\nvar scaleCounter = 0\nrepeat {\n\tprint(\"Play the \\(scales[scaleCounter]) scale\")\n\tscaleCounter += 1\n} while scaleCounter < 3",
-        "var countdown: Int = 5\nrepeat {\n\tprint(\"\\(countdown)...\")\n\tcountdown -= 1\n} while countdown > 0\nprint(\"Lift off!\")",
-        "var number = 0\nrepeat {\n\tnumber += 2\n\tprint(\"\\(number) is an even number.\")\n} while number < 20"
+        {
+            "answer": "var bagels = 5\nrepeat {\n\tprint(\"Someone ate a bagel!\")\n\tbagels -= 1\n} while bagels > 0",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        },
+        {
+            "answer": "var encores = 0\nrepeat {\n\tprint(\"Let's play that piece again.\")\n\tencores += 1\n} while encores < 3",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        },
+        {
+            "answer": "var frogs = 4\nrepeat {\n\tfor _ in 1...frogs {\n\t\tprint(\"Ribbit!\")\n\t}\n} while false",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        },
+        {
+            "answer": "var scales = [\"A\", \"B\", \"C\", \"D\", \"E\"]\nvar scaleCounter = 0\nrepeat {\n\tprint(\"Play the \\(scales[scaleCounter]) scale\")\n\tscaleCounter += 1\n} while scaleCounter < 3",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        },
+        {
+            "answer": "var countdown: Int = 5\nrepeat {\n\tprint(\"\\(countdown)...\")\n\tcountdown -= 1\n} while countdown > 0\nprint(\"Lift off!\")",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        },
+        {
+            "answer": "var number = 0\nrepeat {\n\tnumber += 2\n\tprint(\"\\(number) is an even number.\")\n} while number < 20",
+            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+        }
     ],
     "wrong": [
         {

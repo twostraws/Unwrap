@@ -2,16 +2,34 @@
     "title": "Copying objects",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code prints the same output twice \u2013\u00a0true or false?",
+    "question": "This code prints the same output twice \u2013 true or false?",
     "hint": "When you copy a struct, the original and the copy are different things with their own properties.",
     "syntaxHighlighting": true,
     "correct": [
-        "class Hairdresser {\n\tvar clients = [String]()\n}\nvar tim = Hairdresser()\ntim.clients.append(\"Jess\")\nvar dave = tim\ndave.clients.append(\"Sam\")\nprint(tim.clients.count)\nprint(dave.clients.count)",
-        "class Author {\n\tvar name = \"Anonymous\"\n}\nvar dickens = Author()\ndickens.name = \"Charles Dickens\"\nvar austen = dickens\nausten.name = \"Jane Austen\"\nprint(dickens.name)\nprint(austen.name)",
-        "class Starship {\n\tvar maxWarp = 9.0\n}\nvar voyager = Starship()\nvoyager.maxWarp = 9.975\nvar enterprise = voyager\nenterprise.maxWarp = 9.6\nprint(voyager.maxWarp)\nprint(enterprise.maxWarp)",
-        "class Magazine {\n\tvar pageCount = 132\n}\nvar example = Magazine()\nvar wired = example\nwired.pageCount = 164\nvar vogue = example\nvogue.pageCount = 128\nprint(wired.pageCount)\nprint(vogue.pageCount)",
-        "class Hater {\n\tvar isHating = true\n}\nvar hater1 = Hater()\nvar hater2 = hater1\nhater1.isHating = false\nprint(hater1.isHating)\nprint(hater2.isHating)",
-        "class Hospital {\n\tvar onCallStaff = [String]()\n}\nvar londonCentral = Hospital()\nvar londonWest = londonCentral\nlondonCentral.onCallStaff.append(\"Dr Harlan\")\nlondonWest.onCallStaff.append(\"Dr Haskins\")\nprint(londonCentral.onCallStaff.count)\nprint(londonWest.onCallStaff.count)"
+        {
+            "answer": "class Hairdresser {\n\tvar clients = [String]()\n}\nvar tim = Hairdresser()\ntim.clients.append(\"Jess\")\nvar dave = tim\ndave.clients.append(\"Sam\")\nprint(tim.clients.count)\nprint(dave.clients.count)",
+            "reason": ""
+        },
+        {
+            "answer": "class Author {\n\tvar name = \"Anonymous\"\n}\nvar dickens = Author()\ndickens.name = \"Charles Dickens\"\nvar austen = dickens\nausten.name = \"Jane Austen\"\nprint(dickens.name)\nprint(austen.name)",
+            "reason": ""
+        },
+        {
+            "answer": "class Starship {\n\tvar maxWarp = 9.0\n}\nvar voyager = Starship()\nvoyager.maxWarp = 9.975\nvar enterprise = voyager\nenterprise.maxWarp = 9.6\nprint(voyager.maxWarp)\nprint(enterprise.maxWarp)",
+            "reason": ""
+        },
+        {
+            "answer": "class Magazine {\n\tvar pageCount = 132\n}\nvar example = Magazine()\nvar wired = example\nwired.pageCount = 164\nvar vogue = example\nvogue.pageCount = 128\nprint(wired.pageCount)\nprint(vogue.pageCount)",
+            "reason": ""
+        },
+        {
+            "answer": "class Hater {\n\tvar isHating = true\n}\nvar hater1 = Hater()\nvar hater2 = hater1\nhater1.isHating = false\nprint(hater1.isHating)\nprint(hater2.isHating)",
+            "reason": ""
+        },
+        {
+            "answer": "class Hospital {\n\tvar onCallStaff = [String]()\n}\nvar londonCentral = Hospital()\nvar londonWest = londonCentral\nlondonCentral.onCallStaff.append(\"Dr Harlan\")\nlondonWest.onCallStaff.append(\"Dr Haskins\")\nprint(londonCentral.onCallStaff.count)\nprint(londonWest.onCallStaff.count)",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

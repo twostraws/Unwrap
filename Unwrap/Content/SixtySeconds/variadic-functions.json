@@ -6,12 +6,30 @@
     "hint": "Variadic parameters behave much like regular ones, except they are converted to an array inside the function.",
     "syntaxHighlighting": false,
     "correct": [
-        "A variadic parameter is written with three dots after its type: <code>Int...<\/code>",
-        "Variadic parameters can potentially receive hundreds of values.",
-        "Variadic parameters can potentially receive zero values.",
-        "Variadic parameters are converted into arrays inside your function.",
-        "<code>print()<\/code> is a variadic function.",
-        "You can write your own variadic functions."
+        {
+            "answer": "A variadic parameter is written with three dots after its type: <code>Int...<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic parameters can potentially receive hundreds of values.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic parameters can potentially receive zero values.",
+            "reason": ""
+        },
+        {
+            "answer": "Variadic parameters are converted into arrays inside your function.",
+            "reason": ""
+        },
+        {
+            "answer": "<code>print()<\/code> is a variadic function.",
+            "reason": ""
+        },
+        {
+            "answer": "You can write your own variadic functions.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

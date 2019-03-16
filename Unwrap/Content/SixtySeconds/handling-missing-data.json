@@ -6,12 +6,30 @@
     "hint": "Optionals are useful when you might not know some information or it might not exist.",
     "syntaxHighlighting": false,
     "correct": [
-        "The position of an item in an array.",
-        "Someone's middle name.",
-        "Someone's birthday if you know it.",
-        "The capital city of a country your user just typed in.",
-        "The current destination of a car's satellite navigation system.",
-        "The year a user last went on a boat."
+        {
+            "answer": "The position of an item in an array.",
+            "reason": "The item may or may not exist in the array."
+        },
+        {
+            "answer": "Someone's middle name.",
+            "reason": "A person may or may not have a middle name"
+        },
+        {
+            "answer": "Someone's birthday if you know it.",
+            "reason": "You might not know their birthday."
+        },
+        {
+            "answer": "The capital city of a country your user just typed in.",
+            "reason": "The user may have made a mistake with their typing and the country might not exist."
+        },
+        {
+            "answer": "The current destination of a car's satellite navigation system.",
+            "reason": "There may or may not be a current destination set."
+        },
+        {
+            "answer": "The year a user last went on a boat.",
+            "reason": "The user might not have ever been on a boat."
+        }
     ],
     "wrong": [
         {

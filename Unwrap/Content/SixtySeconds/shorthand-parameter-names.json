@@ -6,12 +6,30 @@
     "hint": "You either list your parameters and return value, or you use shorthand syntax - Swift won't allow you to use both.",
     "syntaxHighlighting": false,
     "correct": [
-        "Swift can infer the parameters the closure accepts.",
-        "Swift can infer the return type.",
-        "If there is only one line of code, you can skip writing <code>return<\/code>",
-        "Shorthand parameters are written as <code>$0<\/code>, <code>$1<\/code> and so on.",
-        "When using shorthand parameters you don't list the parameters you accept.",
-        "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves."
+        {
+            "answer": "Swift can infer the parameters the closure accepts.",
+            "reason": ""
+        },
+        {
+            "answer": "Swift can infer the return type.",
+            "reason": ""
+        },
+        {
+            "answer": "If there is only one line of code, you can skip writing <code>return<\/code>",
+            "reason": ""
+        },
+        {
+            "answer": "Shorthand parameters are written as <code>$0<\/code>, <code>$1<\/code> and so on.",
+            "reason": ""
+        },
+        {
+            "answer": "When using shorthand parameters you don't list the parameters you accept.",
+            "reason": ""
+        },
+        {
+            "answer": "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves.",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

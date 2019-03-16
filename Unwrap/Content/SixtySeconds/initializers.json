@@ -6,12 +6,30 @@
     "hint": "Make sure all properties have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Country {\n\tvar name: String\n\tvar usesImperialMeasurements: Bool\n\tinit(countryName: String) {\n\t\tname = countryName\n\t\tlet imperialCountries = [\"Liberia\", \"Myanmar\", \"USA\"]\n\t\tif imperialCountries.contains(name) {\n\t\t\tusesImperialMeasurements = true\n\t\t} else {\n\t\t\tusesImperialMeasurements = false\n\t\t}\n\t}\n}",
-        "struct PowerTool {\n\tvar name: String\n\tvar cost: Int\n}\nlet drill = PowerTool(name: \"Hammer Drill\", cost: 80)",
-        "struct Message {\n\tvar from: String\n\tvar to: String\n\tvar content: String\n\tinit() {\n\t\tfrom = \"Unknown\"\n\t\tto = \"Unknown\"\n\t\tcontent = \"Yo\"\n\t}\n}\nlet message = Message()",
-        "struct Cabinet {\n\tvar height: Double\n\tvar width: Double\n\tvar area: Double\n\tinit (itemHeight: Double, itemWidth: Double) {\n\t\theight = itemHeight\n\t\twidth = itemWidth\n\t\tarea = height * width\n\t}\n}\nlet drawers = Cabinet(itemHeight: 1.4, itemWidth: 1.0)",
-        "struct Experiment {\n\tvar cost = 0\n}\nlet lhc = Experiment(cost: 13_250_000_000)",
-        "struct Dictionary {\n\tvar words = Set<String>()\n}\nlet dictionary = Dictionary()"
+        {
+            "answer": "struct Country {\n\tvar name: String\n\tvar usesImperialMeasurements: Bool\n\tinit(countryName: String) {\n\t\tname = countryName\n\t\tlet imperialCountries = [\"Liberia\", \"Myanmar\", \"USA\"]\n\t\tif imperialCountries.contains(name) {\n\t\t\tusesImperialMeasurements = true\n\t\t} else {\n\t\t\tusesImperialMeasurements = false\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct PowerTool {\n\tvar name: String\n\tvar cost: Int\n}\nlet drill = PowerTool(name: \"Hammer Drill\", cost: 80)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Message {\n\tvar from: String\n\tvar to: String\n\tvar content: String\n\tinit() {\n\t\tfrom = \"Unknown\"\n\t\tto = \"Unknown\"\n\t\tcontent = \"Yo\"\n\t}\n}\nlet message = Message()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Cabinet {\n\tvar height: Double\n\tvar width: Double\n\tvar area: Double\n\tinit (itemHeight: Double, itemWidth: Double) {\n\t\theight = itemHeight\n\t\twidth = itemWidth\n\t\tarea = height * width\n\t}\n}\nlet drawers = Cabinet(itemHeight: 1.4, itemWidth: 1.0)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Experiment {\n\tvar cost = 0\n}\nlet lhc = Experiment(cost: 13_250_000_000)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Dictionary {\n\tvar words = Set<String>()\n}\nlet dictionary = Dictionary()",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

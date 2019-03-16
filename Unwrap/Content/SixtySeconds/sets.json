@@ -6,12 +6,30 @@
     "hint": "Sets are similar to arrays, except they can't contain duplicate items and are unordered.",
     "syntaxHighlighting": true,
     "correct": [
-        "var colors = Set([\"Red\", \"Green\", \"Red\"])",
-        "var scores = Set([9, 10])",
-        "var ratings = Set([1, 1, 1, 2, 2, 2])",
-        "var attendees = Set([100, 100, 101, 100])",
-        "var readings = Set([true, false, true, true])",
-        "var names = Set([\"John\", \"Paul\"])"
+        {
+            "answer": "var colors = Set([\"Red\", \"Green\", \"Red\"])",
+            "reason": "Sets must contain unique items, so the second \"Red\" will be discarded."
+        },
+        {
+            "answer": "var scores = Set([9, 10])",
+            "reason": "This creates a set containing 9 and 10."
+        },
+        {
+            "answer": "var ratings = Set([1, 1, 1, 2, 2, 2])",
+            "reason": "Sets must contain unique items, so the second and subsequent instances of 1 and 2 will be discarded."
+        },
+        {
+            "answer": "var attendees = Set([100, 100, 101, 100])",
+            "reason": "Sets must contain unique items, so the second and subsequent instances of 100 will be discarded."
+        },
+        {
+            "answer": "var readings = Set([true, false, true, true])",
+            "reason": "Sets must contain unique items, so the second and subsequent instances of <code>true</code> will be discarded."
+        },
+        {
+            "answer": "var names = Set([\"Sean\", \"Paul\"])",
+            "reason": "This creates a set of Sean and Paul."
+        }
     ],
     "wrong": [
         {
@@ -28,7 +46,7 @@
         },
         {
             "answer": "let staffReviews = Set([1, 2, 1, 2, 3])",
-            "reason": "Sets do not contain duplicate items, so this set will contain the numbers 1, 2, and 3 – it has three items rather than two."
+            "reason": "Sets do not contain duplicate items, so this set will contain the numbers 1, 2, and 3 \u2013 it has three items rather than two."
         },
         {
             "answer": "let averageHeights = Set([1.71, 1.72, 1.73])",

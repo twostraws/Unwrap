@@ -2,16 +2,34 @@
     "title": "Writing functions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Function names and variable names are case-sensitive.",
     "syntaxHighlighting": true,
     "correct": [
-        "func printWelcome() {\n\tprint(\"Hi there!\")\n}\nprintWelcome()",
-        "func showHelp() {\n\tprint(\"Welcome to MyApp.\")\n\tprint(\"Click the button to start.\")\n}\nshowHelp()",
-        "func shareToTwitter() {\n\tprint(\"Sharing...\")\n}\nshareToTwitter()",
-        "func doNothing() { }\ndoNothing()",
-        "func playMusic() {\n\tprint(\"Here's some Ed Sheeran.\")\n}",
-        "func listOriginalStarWarsMovies() {\n\tfor i in 4...6 {\n\t\tprint(\"Episode \\(i)\")\n\t}\n}"
+        {
+            "answer": "func printWelcome() {\n\tprint(\"Hi there!\")\n}\nprintWelcome()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func showHelp() {\n\tprint(\"Welcome to MyApp.\")\n\tprint(\"Click the button to start.\")\n}\nshowHelp()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func shareToTwitter() {\n\tprint(\"Sharing...\")\n}\nshareToTwitter()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func doNothing() { }\ndoNothing()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func playMusic() {\n\tprint(\"Here's some Ed Sheeran.\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func listOriginalStarWarsMovies() {\n\tfor i in 4...6 {\n\t\tprint(\"Episode \\(i)\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

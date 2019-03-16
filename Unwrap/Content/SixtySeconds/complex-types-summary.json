@@ -6,12 +6,30 @@
     "hint": "Make sure the type annotations match what's placed inside.",
     "syntaxHighlighting": true,
     "correct": [
-        "let credentials = [\"username\": \"twostraws\"]",
-        "var scores = [100, 90, 85]",
-        "let usedWords = Set([\"hello\", \"world\"])",
-        "var fibonacci = (1, 1, 2, 3, 5, 8)",
-        "let episodes = [String]()",
-        "var names = [\"Beyonc\u00e9\", \"Jay-Z\"]"
+        {
+            "answer": "let credentials = [\"username\": \"twostraws\"]",
+            "reason": "This creates a dictionary."
+        },
+        {
+            "answer": "var scores = [100, 90, 85]",
+            "reason": "This creates an array."
+        },
+        {
+            "answer": "let usedWords = Set([\"hello\", \"world\"])",
+            "reason": "This creates a set."
+        },
+        {
+            "answer": "var fibonacci = (1, 1, 2, 3, 5, 8)",
+            "reason": "This creates a tuple."
+        },
+        {
+            "answer": "let episodes = [String]()",
+            "reason": "This creates an empty array."
+        },
+        {
+            "answer": "var names = [\"Beyonc\u00e9\", \"Jay-Z\"]",
+            "reason": "This creates an array."
+        }
     ],
     "wrong": [
         {
@@ -28,7 +46,7 @@
         },
         {
             "answer": "var repeatCount = [String: Int]",
-            "reason": "This is invalid Swift – it needs parentheses after <code>[String: Int]</code>"
+            "reason": "This is invalid Swift \u2013 it needs parentheses after <code>[String: Int]<\/code>."
         },
         {
             "answer": "var unreadMessages: Int = \"12\"",

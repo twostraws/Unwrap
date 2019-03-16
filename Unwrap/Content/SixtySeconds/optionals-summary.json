@@ -6,12 +6,30 @@
     "hint": "Watch out for basic syntax errors.",
     "syntaxHighlighting": true,
     "correct": [
-        "let cat: String? = \"Toby\"\nif let cat = cat {\n\tprint(\"The cat's name is \\(cat).\")\n}\n",
-        "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)",
-        "struct Dog {\n\tvar name: String\n\tinit?(name: String) {\n\t\tguard name == \"Lassie\" else {\n\t\t\tprint(\"Sorry, wrong dog!\")\n\t\t\treturn nil\n\t\t}\n\t\tself.name = name\n\t}\n}\nlet dog = Dog(name: \"Fido\")",
-        "let coffee: String? = \"Cappuccino\"\nlet unwrappedCoffee: String = coffee!\n",
-        "func process(order: String) {\n\tprint(\"OK, I'll get your \\(order).\")\n}\nlet pizzaRequest: String! = \"pizza\"\nprocess(order: pizzaRequest)",
-        "let owlVariety: String? = nil\nprint(owlVariety ?? \"Unknown owl\")\n"
+        {
+            "answer": "let cat: String? = \"Toby\"\nif let cat = cat {\n\tprint(\"The cat's name is \\(cat).\")\n}\n",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Dog {\n\tvar name: String\n\tinit?(name: String) {\n\t\tguard name == \"Lassie\" else {\n\t\t\tprint(\"Sorry, wrong dog!\")\n\t\t\treturn nil\n\t\t}\n\t\tself.name = name\n\t}\n}\nlet dog = Dog(name: \"Fido\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let coffee: String? = \"Cappuccino\"\nlet unwrappedCoffee: String = coffee!\n",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func process(order: String) {\n\tprint(\"OK, I'll get your \\(order).\")\n}\nlet pizzaRequest: String! = \"pizza\"\nprocess(order: pizzaRequest)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let owlVariety: String? = nil\nprint(owlVariety ?? \"Unknown owl\")\n",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

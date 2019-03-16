@@ -6,12 +6,30 @@
     "hint": "Arrays can hold any number of items, including duplicates, and preserve their order. Sets are preferred when you don't want duplicate items and when order doesn't matter. Tuples are preferred when you want limited items of specific types and names.",
     "syntaxHighlighting": false,
     "correct": [
-        "High scores for a video game.",
-        "Monthly height measurements for a child.",
-        "A weather forecast for the next 10 days.",
-        "Messages in a chat program.",
-        "Songs in an album.",
-        "Lines in a poem."
+        {
+            "answer": "High scores for a video game.",
+            "reason": "There can be many high scores, and they don't need to be unique."
+        },
+        {
+            "answer": "Monthly height measurements for a child.",
+            "reason": "You can add a new item to the array every month."
+        },
+        {
+            "answer": "A weather forecast for the next 10 days.",
+            "reason": "There would be one item in the array for each day."
+        },
+        {
+            "answer": "Messages in a chat program.",
+            "reason": "There can be many messages, and they don't need to be unique."
+        },
+        {
+            "answer": "Songs in an album.",
+            "reason": "There can be many songs, and they don't need to be unique."
+        },
+        {
+            "answer": "Lines in a poem.",
+            "reason": "There can be many songs, and they don't need to be unique."
+        }
     ],
     "wrong": [
         {
@@ -20,11 +38,11 @@
         },
         {
             "answer": "A list of all usernames on Twitter.",
-            "reason": "There are very many of these, but they are always unique – a better choice is a set."
+            "reason": "There are very many of these, but they are always unique \u2013 a better choice is a set."
         },
         {
             "answer": "A list of words that are valid in Scrabble.",
-            "reason": "There are very many of these, but they are always unique – a better choice is a set."
+            "reason": "There are very many of these, but they are always unique \u2013 a better choice is a set."
         },
         {
             "answer": "A user's address.",

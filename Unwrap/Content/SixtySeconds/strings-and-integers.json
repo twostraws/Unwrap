@@ -6,12 +6,30 @@
     "hint": "Swift gives variables the string type when their values are enclosed in quotes, regardless of what the value is.",
     "syntaxHighlighting": true,
     "correct": [
-        "var rating = 5",
-        "var power = 9001",
-        "var speed = 65",
-        "var mortgageRemaining = 100_000",
-        "var highScore = 328_556",
-        "var repeatCount = 82"
+        {
+            "answer": "var rating = 5",
+            "reason": "This creates an integer called <code>rating<\/code>."
+        },
+        {
+            "answer": "var power = 9001",
+            "reason": "This creates an integer called <code>power<\/code>."
+        },
+        {
+            "answer": "var speed = 88",
+            "reason": "This creates an integer called <code>speed<\/code>."
+        },
+        {
+            "answer": "var mortgageRemaining = 100_000",
+            "reason": "This creates an integer called <code>mortgageRemaining<\/code>."
+        },
+        {
+            "answer": "var highScore = 328_556",
+            "reason": "This creates an integer called <code>highScore<\/code>."
+        },
+        {
+            "answer": "var repeatCount = 82",
+            "reason": "This creates an integer called <code>repeatCount<\/code>."
+        }
     ],
     "wrong": [
         {

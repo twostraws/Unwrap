@@ -2,16 +2,34 @@
     "title": "Functions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Check function names, parameters, and return values carefully.",
     "syntaxHighlighting": true,
     "correct": [
-        "func showStartPrompt() {\n\tprint(\"Tap the screen to begin\")\n}",
-        "func recordPodcast(name: String, length: Int) {\n\tif length > 60 {\n\t\tprint(\"That's too long!\")\n\t} else {\n\t\tprint(\"Recording \\(name)...\")\n\t}\n}",
-        "func sumOfFactors(for number: Int) -> Int {\n\tvar sum = 0\n\tfor i in 1...number {\n\t\tif number % i == 0 {\n\t\t\tsum += i\n\t\t}\n\t}\n\treturn sum\n}\nlet sum = sumOfFactors(for: 100)",
-        "func driveCar(_ type: String) {\n\tprint(\"I'm test driving a \\(type)\")\n}\ndriveCar(\"Ferrari\")",
-        "func play(games: String...) {\n\tfor game in games {\n\t\tprint(\"Let's play \\(game)!\")\n\t}\n}\nplay(games: \"Chess\")",
-        "enum ReadingErrors: Error {\n\tcase tooBoring\n}\nfunc readBook(isFiction: Bool = true) throws {\n\tif isFiction {\n\t\tprint(\"Story time!\")\n\t} else {\n\t\tthrow ReadingErrors.tooBoring\n\t}\n}"
+        {
+            "answer": "func showStartPrompt() {\n\tprint(\"Tap the screen to begin\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func recordPodcast(name: String, length: Int) {\n\tif length > 60 {\n\t\tprint(\"That's too long!\")\n\t} else {\n\t\tprint(\"Recording \\(name)...\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func sumOfFactors(for number: Int) -> Int {\n\tvar sum = 0\n\tfor i in 1...number {\n\t\tif number % i == 0 {\n\t\t\tsum += i\n\t\t}\n\t}\n\treturn sum\n}\nlet sum = sumOfFactors(for: 100)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func driveCar(_ type: String) {\n\tprint(\"I'm test driving a \\(type)\")\n}\ndriveCar(\"Ferrari\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func play(games: String...) {\n\tfor game in games {\n\t\tprint(\"Let's play \\(game)!\")\n\t}\n}\nplay(games: \"Chess\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "enum ReadingErrors: Error {\n\tcase tooBoring\n}\nfunc readBook(isFiction: Bool = true) throws {\n\tif isFiction {\n\t\tprint(\"Story time!\")\n\t} else {\n\t\tthrow ReadingErrors.tooBoring\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

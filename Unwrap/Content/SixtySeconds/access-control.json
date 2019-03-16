@@ -2,16 +2,34 @@
     "title": "Access control",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Make sure that <code>private<\/code> properties aren't accessed from outside their struct.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Contributor {\n\tprivate var name = \"Anonymous\"\n}\nlet paul = Contributor()",
-        "struct Person {\n\tprivate var socialSecurityNumber: String\n\tinit(ssn: String) {\n\t\tsocialSecurityNumber = ssn\n\t}\n}\nlet sarah = Person(ssn: \"555-55-5555\")",
-        "struct Office {\n\tprivate var passCode: String\n\tvar address: String\n\tvar employees: [String]\n\tinit(address: String, employees: [String]) {\n\t\tself.address = address\n\t\tself.employees = employees\n\t\tself.passCode = \"SEKRIT\"\n\t}\n}\nlet monmouthStreet = Office(address: \"30 Monmouth St\", employees: [\"Paul Hudson\"])",
-        "struct App {\n\tvar name: String\n\tprivate var sales = 0\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nlet spotify = App(name: \"Spotify\")",
-        "struct Customer {\n\tvar name: String\n\tprivate var creditCardNumber: Int\n\tinit(name: String, creditCard: Int) {\n\t\tself.name = name\n\t\tself.creditCardNumber = creditCard\n\t}\n}\nlet lottie = Customer(name: \"Lottie Knights\", creditCard: 1234567890)",
-        "struct School {\n\tvar staffNames: [String]\n\tprivate var studentNames: [String]\n\tinit(staff: String...) {\n\t\tself.staffNames = staff\n\t\tself.studentNames = [String]()\n\t}\n}\nlet royalHigh = School(staff: \"Mrs Hughes\")"
+        {
+            "answer": "struct Contributor {\n\tprivate var name = \"Anonymous\"\n}\nlet paul = Contributor()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Person {\n\tprivate var socialSecurityNumber: String\n\tinit(ssn: String) {\n\t\tsocialSecurityNumber = ssn\n\t}\n}\nlet sarah = Person(ssn: \"555-55-5555\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Office {\n\tprivate var passCode: String\n\tvar address: String\n\tvar employees: [String]\n\tinit(address: String, employees: [String]) {\n\t\tself.address = address\n\t\tself.employees = employees\n\t\tself.passCode = \"SEKRIT\"\n\t}\n}\nlet monmouthStreet = Office(address: \"30 Monmouth St\", employees: [\"Paul Hudson\"])",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct App {\n\tvar name: String\n\tprivate var sales = 0\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nlet spotify = App(name: \"Spotify\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Customer {\n\tvar name: String\n\tprivate var creditCardNumber: Int\n\tinit(name: String, creditCard: Int) {\n\t\tself.name = name\n\t\tself.creditCardNumber = creditCard\n\t}\n}\nlet lottie = Customer(name: \"Lottie Knights\", creditCard: 1234567890)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct School {\n\tvar staffNames: [String]\n\tprivate var studentNames: [String]\n\tinit(staff: String...) {\n\t\tself.staffNames = staff\n\t\tself.studentNames = [String]()\n\t}\n}\nlet royalHigh = School(staff: \"Mrs Hughes\")",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

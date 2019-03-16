@@ -41,7 +41,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
         let wrongAnswers = 8 - correctAnswers
 
         for index in 0..<correctAnswers {
-            answers.append(Answer(text: review.correct[index], subtitle: "", isCorrect: true, isSelected: false))
+            answers.append(Answer(text: review.correct[index].answer, subtitle: review.correct[index].reason, isCorrect: true, isSelected: false))
         }
 
         for index in 0..<wrongAnswers {
@@ -72,7 +72,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
 
         // set the detail text label contents here to make sure we participate fully in Auto Layout cell sizing
         if isShowingAnswers {
-            cell.detailTextLabel?.text = answer.subtitle
+            cell.detailTextLabel?.attributedText = answer.subtitle.fromSimpleHTML()
         }
 
         return cell

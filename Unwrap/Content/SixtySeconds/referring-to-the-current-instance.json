@@ -6,12 +6,30 @@
     "hint": "If you need to refer to a local property to distinguish it from a method parameter, use <code>self.propertyName<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct District {\n\tvar number: Int\n\tvar supervisor: String\n\tinit(number: Int, supervisor: String) {\n\t\tself.number = number\n\t\tself.supervisor = supervisor\n\t}\n}\nlet district = District(number: 9, supervisor: \"Unknown\")",
-        "struct Cottage {\n\tvar rooms: Int\n\tvar rating = 5\n\tinit(rooms: Int) {\n\t\tself.rooms = rooms\n\t}\n}\nlet bailbrookHouse = Cottage(rooms: 4)",
-        "struct Character {\n\tvar name: String\n\tvar actor: String\n\tvar probablyGoingToDie: Bool\n\tinit(name: String, actor: String) {\n\t\tself.name = name\n\t\tself.actor = actor\n\t\tif self.actor == \"Sean Bean\" {\n\t\t\tprobablyGoingToDie = true\n\t\t} else {\n\t\t\tprobablyGoingToDie = false\n\t\t}\n\t}\n}",
-        "struct Kitchen {\n\tvar utensils: [String]\n\tinit(utensils: [String]) {\n\t\tself.utensils = utensils\n\t}\n}",
-        "struct Conference {\n\tvar name: String\n\tvar location: String\n\tinit(name: String, location: String) {\n\t\tself.name = name\n\t\tself.location = location\n\t}\n}\nlet wwdc = Conference(name: \"WWDC\", location: \"San Jose\")",
-        "struct SuperHero {\n\tvar nickname: String\n\tvar powers: [String]\n\tinit(nickname: String, superPowers: [String]) {\n\t\tself.nickname = nickname\n\t\tself.powers = superPowers\n\t}\n}\nlet batman = SuperHero(nickname: \"The Caped Crusader\", superPowers: [\"He's really rich\"])"
+        {
+            "answer": "struct District {\n\tvar number: Int\n\tvar supervisor: String\n\tinit(number: Int, supervisor: String) {\n\t\tself.number = number\n\t\tself.supervisor = supervisor\n\t}\n}\nlet district = District(number: 9, supervisor: \"Unknown\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Cottage {\n\tvar rooms: Int\n\tvar rating = 5\n\tinit(rooms: Int) {\n\t\tself.rooms = rooms\n\t}\n}\nlet bailbrookHouse = Cottage(rooms: 4)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Character {\n\tvar name: String\n\tvar actor: String\n\tvar probablyGoingToDie: Bool\n\tinit(name: String, actor: String) {\n\t\tself.name = name\n\t\tself.actor = actor\n\t\tif self.actor == \"Sean Bean\" {\n\t\t\tprobablyGoingToDie = true\n\t\t} else {\n\t\t\tprobablyGoingToDie = false\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Kitchen {\n\tvar utensils: [String]\n\tinit(utensils: [String]) {\n\t\tself.utensils = utensils\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Conference {\n\tvar name: String\n\tvar location: String\n\tinit(name: String, location: String) {\n\t\tself.name = name\n\t\tself.location = location\n\t}\n}\nlet wwdc = Conference(name: \"WWDC\", location: \"San Jose\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct SuperHero {\n\tvar nickname: String\n\tvar powers: [String]\n\tinit(nickname: String, superPowers: [String]) {\n\t\tself.nickname = nickname\n\t\tself.powers = superPowers\n\t}\n}\nlet batman = SuperHero(nickname: \"The Caped Crusader\", superPowers: [\"He's really rich\"])",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

@@ -6,12 +6,30 @@
     "hint": "Make sure the function name and return type are both correct.",
     "syntaxHighlighting": true,
     "correct": [
-        "func read(books: [String]) -> Bool {\n\tfor book in books {\n\t\tprint(\"I'm reading \\(book)\")\n\t}\n\treturn true\n}",
-        "func isEveryoneAdult(ages: [Int]) -> Bool {\n\tfor age in ages {\n\t\tif age < 18 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\nisEveryoneAdult(ages: [10, 20, 16, 24])",
-        "func format(number: Int) -> String {\n\treturn \"The number is \\(number)\"\n}",
-        "func countMultiplesOf10(numbers: [Int]) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\ncountMultiplesOf10(numbers: [5, 10, 15, 20, 25])",
-        "func writeToLog(message: String) -> Bool {\n\tif message != \"\" {\n\t\tprint(\"Log: \\(message)\")\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
-        "func allTestsPassed(tests: [Bool]) -> Bool {\n\tfor test in tests {\n\t\tif test == false {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}"
+        {
+            "answer": "func read(books: [String]) -> Bool {\n\tfor book in books {\n\t\tprint(\"I'm reading \\(book)\")\n\t}\n\treturn true\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func isEveryoneAdult(ages: [Int]) -> Bool {\n\tfor age in ages {\n\t\tif age < 18 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\nisEveryoneAdult(ages: [10, 20, 16, 24])",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func format(number: Int) -> String {\n\treturn \"The number is \\(number)\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func countMultiplesOf10(numbers: [Int]) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\ncountMultiplesOf10(numbers: [5, 10, 15, 20, 25])",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func writeToLog(message: String) -> Bool {\n\tif message != \"\" {\n\t\tprint(\"Log: \\(message)\")\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func allTestsPassed(tests: [Bool]) -> Bool {\n\tfor test in tests {\n\t\tif test == false {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

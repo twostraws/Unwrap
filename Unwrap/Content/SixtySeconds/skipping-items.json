@@ -2,16 +2,34 @@
     "title": "Skipping items",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print at least five lines of text \u2013\u00a0true or false?",
+    "question": "This loop will print at least five lines of text \u2013 true or false?",
     "hint": "Calling <code>break<\/code> skips the remainder of the current loop, but calling <code>continue<\/code> skips only the current item.",
     "syntaxHighlighting": true,
     "correct": [
-        "for i in 1...15 {\n\tlet square = i * i\n\tif i == 8 {\n\t\tcontinue\n\t}\n\tprint(\"\\(i) squared is \\(square)\")\n}",
-        "let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21]\nvar position = 0\nwhile position <= 7 {\n\tlet value = fibonacci[position]\n\tposition += 1\n\tif value < 2 {\n\t   continue\n\t}\n\tprint(\"Fibonacci number \\(position) is \\(value)\")\n}",
-        "var counting = 0\nwhile counting <= 20 {\n\tcounting += 1\n\tif counting > 5 {\n\t\tcontinue\n\t}\n\tprint(\"\\(counting)...\")\n}\nprint(\"Ready or not, here I come!\")",
-        "var carsProduced = 0\nrepeat {\n\tcarsProduced += 1\n\tif carsProduced % 2 == 0 {\n\t\tcontinue\n\t}\n\tprint(\"Another car was built.\")\n} while carsProduced < 20",
-        "for i in 1...100 {\n\tif 100 % i == 0 {\n\t\tprint(\"100 divides evenly into \\(i)\")\n\t} else {\n\t\tcontinue\n\t}\n}",
-        "var distanceFlown = 0\nwhile true {\n\tdistanceFlown += 100\n\tif distanceFlown == 500 {\n\t\tcontinue\n\t}\n\tprint(distanceFlown)\n\tif distanceFlown == 1000 {\n\t\tbreak\n\t}\n}"
+        {
+            "answer": "for i in 1...15 {\n\tlet square = i * i\n\tif i == 8 {\n\t\tcontinue\n\t}\n\tprint(\"\\(i) squared is \\(square)\")\n}",
+            "reason": "This code will print at least five lines of text."
+        },
+        {
+            "answer": "let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21]\nvar position = 0\nwhile position <= 7 {\n\tlet value = fibonacci[position]\n\tposition += 1\n\tif value < 2 {\n\t   continue\n\t}\n\tprint(\"Fibonacci number \\(position) is \\(value)\")\n}",
+            "reason": "This code will print at least five lines of text."
+        },
+        {
+            "answer": "var counting = 0\nwhile counting <= 20 {\n\tcounting += 1\n\tif counting > 5 {\n\t\tcontinue\n\t}\n\tprint(\"\\(counting)...\")\n}\nprint(\"Ready or not, here I come!\")",
+            "reason": "This code will print at least five lines of text."
+        },
+        {
+            "answer": "var carsProduced = 0\nrepeat {\n\tcarsProduced += 1\n\tif carsProduced % 2 == 0 {\n\t\tcontinue\n\t}\n\tprint(\"Another car was built.\")\n} while carsProduced < 20",
+            "reason": "This code will print at least five lines of text."
+        },
+        {
+            "answer": "for i in 1...100 {\n\tif 100 % i == 0 {\n\t\tprint(\"100 divides evenly into \\(i)\")\n\t} else {\n\t\tcontinue\n\t}\n}",
+            "reason": "This code will print at least five lines of text."
+        },
+        {
+            "answer": "var distanceFlown = 0\nwhile true {\n\tdistanceFlown += 100\n\tif distanceFlown == 500 {\n\t\tcontinue\n\t}\n\tprint(distanceFlown)\n\tif distanceFlown == 1000 {\n\t\tbreak\n\t}\n}",
+            "reason": "This code will print at least five lines of text."
+        }
     ],
     "wrong": [
         {

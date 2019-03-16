@@ -3,15 +3,33 @@
     "postscript": "If your array is empty, even reading <code>array[0]<\/code> will cause your app to crash. Be careful!",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create arrays?",
-    "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>",
+    "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>.",
     "syntaxHighlighting": true,
     "correct": [
-        "var singers = [\"Taylor\", \"Adele\", \"Justin\"]",
-        "var scores: [Int] = [10, 12, 9]",
-        "var averages = [98.5, 97.1, 99.9]",
-        "var temperatures = [32.0]",
-        "var readings: [Bool] = [false, false, true, false]",
-        "var cities: [String] = [\"London\", \"Paris\", \"New York\"]"
+        {
+            "answer": "var singers = [\"Taylor\", \"Adele\", \"Justin\"]",
+            "reason": "This creates an array of three strings."
+        },
+        {
+            "answer": "var scores: [Int] = [10, 12, 9]",
+            "reason": "This creates an array of three integers."
+        },
+        {
+            "answer": "var averages = [98.5, 97.1, 99.9]",
+            "reason": "This creates an array of three doubles."
+        },
+        {
+            "answer": "var temperatures = [32.0]",
+            "reason": "This creates an array of one double."
+        },
+        {
+            "answer": "var readings: [Bool] = [false, false, true, false]",
+            "reason": "This creates an array of four Booleans."
+        },
+        {
+            "answer": "var cities: [String] = [\"London\", \"Paris\", \"New York\"]",
+            "reason": "This creates an array of three strings."
+        }
     ],
     "wrong": [
         {

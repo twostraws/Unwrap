@@ -6,12 +6,30 @@
     "hint": "Raw values let us give each of our enum cases a value so they are more than just names.",
     "syntaxHighlighting": false,
     "correct": [
-        "Raw values let us give meaning to enum cases.",
-        "Raw values let us create enum values dynamically.",
-        "Integer raw values count from 0 automatically.",
-        "You can give each case specific values if you want.",
-        "You can use integers for raw values.",
-        "You don't need to use raw values."
+        {
+            "answer": "Raw values let us give meaning to enum cases.",
+            "reason": "They let us say that <code>earth<\/code> has an underlying value of 3, for example."
+        },
+        {
+            "answer": "Raw values let us create enum values dynamically.",
+            "reason": "We can create an enum from its raw value."
+        },
+        {
+            "answer": "Integer raw values count from 0 automatically.",
+            "reason": "You can modify this to something specific if you want."
+        },
+        {
+            "answer": "You can give each case specific values if you want.",
+            "reason": "This is optional, but it gives us fine-grained control when needed."
+        },
+        {
+            "answer": "You can use integers for raw values.",
+            "reason": "Integers are one of the most common raw value types."
+        },
+        {
+            "answer": "You don't need to use raw values.",
+            "reason": "Raw values are entirely optional."
+        }
     ],
     "wrong": [
         {

@@ -6,12 +6,30 @@
     "hint": "Make sure the type annotations match what's placed inside!",
     "syntaxHighlighting": true,
     "correct": [
-        "var name = \"Rumpelstiltskin\"",
-        "var depth = 10.2",
-        "var isActive = true",
-        "var score: Double = 10",
-        "var isEnabled: Bool = false",
-        "var state = \"game over\""
+        {
+            "answer": "var name = \"Rumpelstiltskin\"",
+            "reason": "This creates a variable called <code>name<\/code>."
+        },
+        {
+            "answer": "var depth = 10000",
+            "reason": "This creates a variable called <code>depth<\/code>."
+        },
+        {
+            "answer": "var isActive = true",
+            "reason": "This creates a variable called <code>isActive<\/code>."
+        },
+        {
+            "answer": "var score: Double = 10",
+            "reason": "This creates a variable called <code>score<\/code>."
+        },
+        {
+            "answer": "var isEnabled: Bool = false",
+            "reason": "This creates a variable called <code>isEnabled<\/code>."
+        },
+        {
+            "answer": "var state = \"game over\"",
+            "reason": "This creates a variable called <code>state<\/code>."
+        }
     ],
     "wrong": [
         {

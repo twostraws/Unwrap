@@ -2,16 +2,34 @@
     "title": "Creating your own structs",
     "postscript": "In Swift we write the names of types such as Int, String, and MyStruct with a capitalized first letter, and the names of variables and constants with a lowercase first letter.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "When you create an instance of a struct, Swift will ask you to provide values for all its properties. These parameters must have the same names as the properties themselves, and must be in the same order they were defined.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct User {\n\tvar name = \"Anonymous\"\n\tvar age: Int\n}\nlet twostraws = User(name: \"Paul\", age: 38)",
-        "struct Player {\n\tvar name: String\n\tvar position: String\n}\nlet harry = Player(name: \"Harry Kane\", position: \"Forward\")",
-        "struct ChessPiece {\n\tvar name: String\n\tvar value: Int\n}",
-        "struct Phone {\n\tvar manufacturer: String\n\tvar screenSize: Double\n}",
-        "struct WeatherForecast {\n\tvar dayNumber: Int\n\tvar temperature: Int\n}\nlet monday = WeatherForecast(dayNumber: 1, temperature: 25)",
-        "struct Book {\n\tvar title: String\n\tvar author = \"Unknown\"\n\tvar pageCount = 0\n}"
+        {
+            "answer": "struct User {\n\tvar name = \"Anonymous\"\n\tvar age: Int\n}\nlet twostraws = User(name: \"Paul\", age: 38)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Player {\n\tvar name: String\n\tvar position: String\n}\nlet harry = Player(name: \"Harry Kane\", position: \"Forward\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct ChessPiece {\n\tvar name: String\n\tvar value: Int\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Phone {\n\tvar manufacturer: String\n\tvar screenSize: Double\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct WeatherForecast {\n\tvar dayNumber: Int\n\tvar temperature: Int\n}\nlet monday = WeatherForecast(dayNumber: 1, temperature: 25)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Book {\n\tvar title: String\n\tvar author = \"Unknown\"\n\tvar pageCount = 0\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

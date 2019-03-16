@@ -2,16 +2,34 @@
     "title": "Accepting parameters in a closure",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Parameters to closures don't have external names, and must have a type specified.",
     "syntaxHighlighting": true,
     "correct": [
-        "let rowBoat = { (distance: Int) in\n\tfor _ in 1...distance {\n\t\tprint(\"I'm rowing 1km.\")\n\t}\n}\nrowBoat(5)",
-        "let makeReservation = { (people: Int) in\n\tprint(\"I'd like a table for \\(people), please.\")\n}",
-        "let fixCar = { (problem: String) in\n\tprint(\"I fixed the \\(problem).\")\n}",
-        "var click = { (button: Int) in\n\tif button >= 0 {\n\t\tprint(\"Button \\(button) was clicked.\")\n\t} else {\n\t\tprint(\"That button doesn't exist.\")\n\t}\n}",
-        "var cleanRoom = { (name: String) in\n\tprint(\"I'm cleaning the \\(name).\")\n}\ncleanRoom(\"kitchen\")",
-        "var sendMessage = { (message: String) in\n\tif message != \"\" {\n\t\tprint(\"Sending to Twitter: \\(message)\")\n\t} else {\n\t\tprint(\"Your message was empty.\")\n\t}\n}"
+        {
+            "answer": "let rowBoat = { (distance: Int) in\n\tfor _ in 1...distance {\n\t\tprint(\"I'm rowing 1km.\")\n\t}\n}\nrowBoat(5)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let makeReservation = { (people: Int) in\n\tprint(\"I'd like a table for \\(people), please.\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let fixCar = { (problem: String) in\n\tprint(\"I fixed the \\(problem).\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var click = { (button: Int) in\n\tif button >= 0 {\n\t\tprint(\"Button \\(button) was clicked.\")\n\t} else {\n\t\tprint(\"That button doesn't exist.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var cleanRoom = { (name: String) in\n\tprint(\"I'm cleaning the \\(name).\")\n}\ncleanRoom(\"kitchen\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var sendMessage = { (message: String) in\n\tif message != \"\" {\n\t\tprint(\"Sending to Twitter: \\(message)\")\n\t} else {\n\t\tprint(\"Your message was empty.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

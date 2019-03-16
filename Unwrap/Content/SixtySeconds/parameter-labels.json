@@ -6,12 +6,30 @@
     "hint": "Look closely at the parameter names: external comes first, then internal.",
     "syntaxHighlighting": true,
     "correct": [
-        "func sayHello(to name: String) {\n\tprint(\"Hello, \\(name)!\")\n}",
-        "func writeReview(for book: String) {\n\tprint(\"\\(book) was a great book!\")\n}",
-        "func numberOfTims(in array: [String]) -> Int {\n\tvar count = 0\n\tfor name in array {\n\t\tif name == \"Tim\" {\n\t\t\tcount += 1\n\t\t}\n\t}\n\treturn count\n}",
-        "func increaseVolume(for device: String) -> String {\n\treturn \"\\(device) is now louder\"\n}",
-        "func isPassingGrade(for scores: [Int]) -> Bool {\n\tvar total = 0\n\tfor score in scores {\n\t\ttotal += score\n\t}\n\tif total >= 500 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
-        "func countDown(from start: Int) {\n\tvar current = start\n\twhile current >= 0 {\n\t\tprint(\"\\(current)...\")\n\t\tcurrent -= 1\n\t}\n}\ncountDown(from: 10)"
+        {
+            "answer": "func sayHello(to name: String) {\n\tprint(\"Hello, \\(name)!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func writeReview(for book: String) {\n\tprint(\"\\(book) was a great book!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func numberOfTims(in array: [String]) -> Int {\n\tvar count = 0\n\tfor name in array {\n\t\tif name == \"Tim\" {\n\t\t\tcount += 1\n\t\t}\n\t}\n\treturn count\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func increaseVolume(for device: String) -> String {\n\treturn \"\\(device) is now louder\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func isPassingGrade(for scores: [Int]) -> Bool {\n\tvar total = 0\n\tfor score in scores {\n\t\ttotal += score\n\t}\n\tif total >= 500 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func countDown(from start: Int) {\n\tvar current = start\n\twhile current >= 0 {\n\t\tprint(\"\\(current)...\")\n\t\tcurrent -= 1\n\t}\n}\ncountDown(from: 10)",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

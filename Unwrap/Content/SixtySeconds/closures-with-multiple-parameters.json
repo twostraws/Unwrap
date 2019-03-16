@@ -2,16 +2,34 @@
     "title": "Closures with multiple parameters",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Closures don't use parameter labels.",
     "syntaxHighlighting": true,
     "correct": [
-        "func authenticate(algorithm: (String, String) -> Bool) {\n\tprint(\"Authenticating user\")\n\tlet username = \"twostraws\"\n\tlet password = \"fr0sties\"\n\tlet result = algorithm(username, password)\n\tif result {\n\t\tprint(\"You're in!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
-        "func playSong(instrumentClosure: (String, Int) -> Void) {\n\tlet song = \"Stairway to Heaven\"\n\tlet volume = 11\n\tprint(\"I'm going to play \\(song)...\")\n\tinstrumentClosure(song, volume)\n}",
-        "func sleep(haveDream: () -> String) {\n\tprint(\"Yawn... time for bed.\")\n\tlet dream = haveDream()\n\tprint(\"I had a dream about \\(dream).\")\n}",
-        "func sendNewsletter(getRecipients: () -> [String]) {\n\tlet recipients = getRecipients()\n\tfor person in recipients {\n\t\tprint(\"I'm sending an email to \\(person)\")\n\t}\n}",
-        "func fadeOut(completion: () -> Void) {\n\tprint(\"Making the screen dim...\")\n\tcompletion()\n}",
-        "func getTransport(destination: String, method: (String, Int) -> Bool) {\n\tlet maxCost = 10\n\tlet result = method(destination, maxCost)\n\tif result {\n\t\tprint(\"OK, you can travel.\")\n\t} else {\n\t\tprint(\"Sorry, you need more money.\")\n\t}\n}"
+        {
+            "answer": "func authenticate(algorithm: (String, String) -> Bool) {\n\tprint(\"Authenticating user\")\n\tlet username = \"twostraws\"\n\tlet password = \"fr0sties\"\n\tlet result = algorithm(username, password)\n\tif result {\n\t\tprint(\"You're in!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func playSong(instrumentClosure: (String, Int) -> Void) {\n\tlet song = \"Stairway to Heaven\"\n\tlet volume = 11\n\tprint(\"I'm going to play \\(song)...\")\n\tinstrumentClosure(song, volume)\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func sleep(haveDream: () -> String) {\n\tprint(\"Yawn... time for bed.\")\n\tlet dream = haveDream()\n\tprint(\"I had a dream about \\(dream).\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func sendNewsletter(getRecipients: () -> [String]) {\n\tlet recipients = getRecipients()\n\tfor person in recipients {\n\t\tprint(\"I'm sending an email to \\(person)\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func fadeOut(completion: () -> Void) {\n\tprint(\"Making the screen dim...\")\n\tcompletion()\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func getTransport(destination: String, method: (String, Int) -> Bool) {\n\tlet maxCost = 10\n\tlet result = method(destination, maxCost)\n\tif result {\n\t\tprint(\"OK, you can travel.\")\n\t} else {\n\t\tprint(\"Sorry, you need more money.\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

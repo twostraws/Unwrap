@@ -1,17 +1,35 @@
 {
     "title": "Property observers",
-    "postscript": "Alongside <code>didSet<\/code>, Swift also has <code>willSet<\/code> \u2013\u00a0it's called just before a property's value changes.",
+    "postscript": "Alongside <code>didSet<\/code>, Swift also has <code>willSet<\/code> \u2013 it's called just before a property's value changes.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
     "hint": "<code>didSet<\/code> is the most common property observer, and is triggered when a property's value has just changed.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Game {\n\tvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"Your score is now \\(score).\")\n\t\t}\n\t}\n}",
-        "struct BankAccount {\n\tvar name: String\n\tvar isMillionnaire = false\n\tvar balance: Int {\n\t\tdidSet {\n\t\t\tif balance > 1_000_000 {\n\t\t\t\tisMillionnaire = true\n\t\t\t} else {\n\t\t\t\tisMillionnaire = false\n\t\t\t}\n\t\t}\n\t}\n}",
-        "struct FishTank {\n\tvar capacity: Int\n\tvar fishCount: Int {\n\t\tdidSet {\n\t\t\tif fishCount > capacity {\n\t\t\t\tprint(\"You have too many fish!\")\n\t\t\t}\n\t\t}\n\t}\n}",
-        "struct App {\n\tvar name: String\n\tvar isOnSale: Bool {\n\t\tdidSet {\n\t\t\tif isOnSale {\n\t\t\t\tprint(\"Go and download my app!\")\n\t\t\t} else {\n\t\t\t\tprint(\"Maybe download it later.\")\n\t\t\t}\n\t\t}\n\t}\n}",
-        "struct Child {\n\tvar name: String\n\tvar age: Int {\n\t\tdidSet {\n\t\t\tprint(\"Happy birthday, \\(name)!\")\n\t\t}\n\t}\n}",
-        "struct Person {\n\tvar clothes: String {\n\t\tdidSet {\n\t\t\tprint(\"I'm changing to \\(clothes)\")\n\t\t}\n\t}\n}"
+        {
+            "answer": "struct Game {\n\tvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"Your score is now \\(score).\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct BankAccount {\n\tvar name: String\n\tvar isMillionnaire = false\n\tvar balance: Int {\n\t\tdidSet {\n\t\t\tif balance > 1_000_000 {\n\t\t\t\tisMillionnaire = true\n\t\t\t} else {\n\t\t\t\tisMillionnaire = false\n\t\t\t}\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct FishTank {\n\tvar capacity: Int\n\tvar fishCount: Int {\n\t\tdidSet {\n\t\t\tif fishCount > capacity {\n\t\t\t\tprint(\"You have too many fish!\")\n\t\t\t}\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct App {\n\tvar name: String\n\tvar isOnSale: Bool {\n\t\tdidSet {\n\t\t\tif isOnSale {\n\t\t\t\tprint(\"Go and download my app!\")\n\t\t\t} else {\n\t\t\t\tprint(\"Maybe download it later.\")\n\t\t\t}\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Child {\n\tvar name: String\n\tvar age: Int {\n\t\tdidSet {\n\t\t\tprint(\"Happy birthday, \\(name)!\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Person {\n\tvar clothes: String {\n\t\tdidSet {\n\t\t\tprint(\"I'm changing to \\(clothes)\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

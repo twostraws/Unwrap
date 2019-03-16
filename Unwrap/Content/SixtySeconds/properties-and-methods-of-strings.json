@@ -6,12 +6,30 @@
     "hint": "Strings are case-sensitive by default, so ABC is different from Abc and aBc.",
     "syntaxHighlighting": true,
     "correct": [
-        "let quote = \"Time is an illusion. Lunchtime doubly so.\"\nquote.contains(\"Lunch\")",
-        "let song = \"Shake it Off\"\nsong.uppercased().contains(\"SHAKE\")",
-        "var mac = \"iMac\"\nmac.hasPrefix(\"i\")",
-        "let username = \"twostraws\"\nusername.uppercased() == \"TWOSTRAWS\"",
-        "let joke = \"What's red and smells like blue paint? Red paint.\"\njoke.count > 10",
-        "var str = \"\"\nfor i in 1...5 {\n\tstr += \"\\(i)\"\n}\nstr.count == 5"
+        {
+            "answer": "let quote = \"Time is an illusion. Lunchtime doubly so.\"\nquote.contains(\"Lunch\")",
+            "reason": ""
+        },
+        {
+            "answer": "let song = \"Shake it Off\"\nsong.uppercased().contains(\"SHAKE\")",
+            "reason": ""
+        },
+        {
+            "answer": "var mac = \"iMac\"\nmac.hasPrefix(\"i\")",
+            "reason": ""
+        },
+        {
+            "answer": "let username = \"twostraws\"\nusername.uppercased() == \"TWOSTRAWS\"",
+            "reason": ""
+        },
+        {
+            "answer": "let joke = \"What's red and smells like blue paint? Red paint.\"\njoke.count > 10",
+            "reason": ""
+        },
+        {
+            "answer": "var str = \"\"\nfor i in 1...5 {\n\tstr += \"\\(i)\"\n}\nstr.count == 5",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

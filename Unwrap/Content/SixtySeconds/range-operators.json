@@ -6,12 +6,30 @@
     "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
     "syntaxHighlighting": false,
     "correct": [
-        "0...5",
-        "5...10",
-        "3..<6",
-        "5..<6",
-        "1...8",
-        "3..<30"
+        {
+            "answer": "0...5",
+            "reason": "<code>0...5<\/code> is up to and including 5."
+        },
+        {
+            "answer": "5...10",
+            "reason": "Ranges include their start value, so this range will include 5."
+        },
+        {
+            "answer": "3..<6",
+            "reason": "This range ends at 5."
+        },
+        {
+            "answer": "5..<6",
+            "reason": "Ranges include their start value, so this range will include 5."
+        },
+        {
+            "answer": "1...8",
+            "reason": "This range includes 5."
+        },
+        {
+            "answer": "3..<30",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

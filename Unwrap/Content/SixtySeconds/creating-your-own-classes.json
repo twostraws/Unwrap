@@ -2,16 +2,34 @@
     "title": "Creating your own classes",
     "postscript": "If a class has properties, it needs an initializer. The only exception is if all properties have default values, in which case an initializer isn't needed.",
     "reviewType": "singleSelection",
-    "question": "This code defines a valid class \u2013\u00a0true or false?",
+    "question": "This code defines a valid class \u2013 true or false?",
     "hint": "All properties must have a value before the initializer ends.",
     "syntaxHighlighting": true,
     "correct": [
-        "class TIE {\n\tvar name: String\n\tvar speed: Int\n\tinit(name: String, speed: Int) {\n\t\tself.name = name\n\t\tself.speed = speed\n\t}\n}\nlet fighter = TIE(name: \"TIE Fighter\", speed: 50)\nlet interceptor = TIE(name: \"TIE Interceptor\", speed: 70)",
-        "class Podcast {\n\tvar hosts: [String]\n\tinit(hosts: [String]) {\n\t\tself.hosts = hosts\n\t}\n}",
-        "class BoardGame {\n\tvar name: String\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}",
-        "class VideoGame {\n\tvar hero: String\n\tvar enemy: String\n\tinit(heroName: String, enemyName: String) {\n\t\tself.hero = heroName\n\t\tself.enemy = enemyName\n\t}\n}\nlet monkeyIsland = VideoGame(heroName: \"Guybrush Threepwood\", enemyName: \"LeChuck\")",
-        "class ThemePark {\n\tvar entryPrice: Int\n\tvar rides: [String]\n\tinit(rides: [String]) {\n\t\tself.rides = rides\n\t\tself.entryPrice = rides.count * 2\n\t}\n}",
-        "class Empty { }\nlet nothing = Empty()"
+        {
+            "answer": "class TIE {\n\tvar name: String\n\tvar speed: Int\n\tinit(name: String, speed: Int) {\n\t\tself.name = name\n\t\tself.speed = speed\n\t}\n}\nlet fighter = TIE(name: \"TIE Fighter\", speed: 50)\nlet interceptor = TIE(name: \"TIE Interceptor\", speed: 70)",
+            "reason": "This code defines a valid class called <code>TIE<\/code>."
+        },
+        {
+            "answer": "class Podcast {\n\tvar hosts: [String]\n\tinit(hosts: [String]) {\n\t\tself.hosts = hosts\n\t}\n}",
+            "reason": "This code defines a valid class called <code>Podcast<\/code>."
+        },
+        {
+            "answer": "class BoardGame {\n\tvar name: String\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}",
+            "reason": "This code defines a valid class called <code>BoardGame<\/code>."
+        },
+        {
+            "answer": "class VideoGame {\n\tvar hero: String\n\tvar enemy: String\n\tinit(heroName: String, enemyName: String) {\n\t\tself.hero = heroName\n\t\tself.enemy = enemyName\n\t}\n}\nlet monkeyIsland = VideoGame(heroName: \"Guybrush Threepwood\", enemyName: \"LeChuck\")",
+            "reason": "This code defines a valid class called <code>VideoGame<\/code>."
+        },
+        {
+            "answer": "class ThemePark {\n\tvar entryPrice: Int\n\tvar rides: [String]\n\tinit(rides: [String]) {\n\t\tself.rides = rides\n\t\tself.entryPrice = rides.count * 2\n\t}\n}",
+            "reason": "This code defines a valid class called <code>ThemePark<\/code>."
+        },
+        {
+            "answer": "class Empty { }\nlet nothing = Empty()",
+            "reason": "This code defines a valid class called <code>Empty<\/code>."
+        }
     ],
     "wrong": [
         {

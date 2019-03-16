@@ -6,12 +6,30 @@
     "hint": "The mutating keyword must be used on structs where a property is being changed.",
     "syntaxHighlighting": true,
     "correct": [
-        "class Light {\n\tvar onState = false\n\tfunc toggle() {\n\t\tif onState {\n\t\t\tonState = false\n\t\t} else {\n\t\t\tonState = true\n\t\t}\n\t\tprint(\"Click\")\n\t}\n}\nlet light = Light()\nlight.toggle()",
-        "class Sun {\n\tvar isNova = false\n\tfunc goNova() {\n\t\tisNova = true\n\t}\n}\nlet sun = Sun()\nsun.goNova()",
-        "class Phasers {\n\tvar energyLevel = 100\n\tfunc firePhasers() {\n\t\tif energyLevel > 10 {\n\t\t\tprint(\"Firing!\")\n\t\t\tenergyLevel -= 10\n\t\t}\n\t}\n}\nvar phasers = Phasers()\nphasers.firePhasers()",
-        "class Pizza {\n\tprivate var toppings = [String]()\n\tfunc add(topping: String) {\n\t\ttoppings.append(topping)\n\t}\n}\nvar pizza = Pizza()\npizza.add(topping: \"Mushrooms\")",
-        "struct Code {\n\tvar numberOfBugs = 100\n\tmutating func fixBug() {\n\t\tnumberOfBugs += 3\n\t}\n}\nvar code = Code()\ncode.fixBug()",
-        "struct Barbecue {\n\tvar charcoalBricks = 20\n\tmutating func addBricks(_ number: Int) {\n\t\tcharcoalBricks += number\n\t}\n}\nvar barbecue = Barbecue()\nbarbecue.addBricks(4)"
+        {
+            "answer": "class Light {\n\tvar onState = false\n\tfunc toggle() {\n\t\tif onState {\n\t\t\tonState = false\n\t\t} else {\n\t\t\tonState = true\n\t\t}\n\t\tprint(\"Click\")\n\t}\n}\nlet light = Light()\nlight.toggle()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "class Sun {\n\tvar isNova = false\n\tfunc goNova() {\n\t\tisNova = true\n\t}\n}\nlet sun = Sun()\nsun.goNova()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "class Phasers {\n\tvar energyLevel = 100\n\tfunc firePhasers() {\n\t\tif energyLevel > 10 {\n\t\t\tprint(\"Firing!\")\n\t\t\tenergyLevel -= 10\n\t\t}\n\t}\n}\nvar phasers = Phasers()\nphasers.firePhasers()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "class Pizza {\n\tprivate var toppings = [String]()\n\tfunc add(topping: String) {\n\t\ttoppings.append(topping)\n\t}\n}\nvar pizza = Pizza()\npizza.add(topping: \"Mushrooms\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Code {\n\tvar numberOfBugs = 100\n\tmutating func fixBug() {\n\t\tnumberOfBugs += 3\n\t}\n}\nvar code = Code()\ncode.fixBug()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Barbecue {\n\tvar charcoalBricks = 20\n\tmutating func addBricks(_ number: Int) {\n\t\tcharcoalBricks += number\n\t}\n}\nvar barbecue = Barbecue()\nbarbecue.addBricks(4)",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

@@ -6,12 +6,30 @@
     "hint": "If you try to force unwrap an optional that holds nil, your app will crash.",
     "syntaxHighlighting": true,
     "correct": [
-        "func title(for page: Int) -> String? {\n\tguard page >= 1 else {\n\t\treturn nil\n\t}\n\tlet pageCount = 132\n\tif page < pageCount {\n\t\treturn \"Page \\(page)\"\n\t} else {\n\t\treturn nil\n\t}\n}\nlet pageTitle = title(for: 16)!",
-        "struct User {\n\tvar name: String?\n\tvar age: Int?\n}\nlet taylor = User(name: \"Taylor\", age: 26)\nlet taylorAge = taylor.age!",
-        "func describe(array: [String]?) {\n\tlet unwrapped = array!\n\tprint(\"The array has \\(unwrapped.count) items.\")\n}\ndescribe(array: [])",
-        "let legoBricksSold: Int? = 400_000_000_000\nlet numberSold = legoBricksSold!",
-        "func league(for skillLevel: Int) -> Int? {\n\tswitch skillLevel {\n\tcase 1:\n\t\tfallthrough\n\tcase 2:\n\t\treturn 3\n\tcase 3:\n\t\treturn 2\n\tcase 4:\n\t\treturn 1\n\tdefault:\n\t\treturn nil\n\t}\n}\nlet allocatedLeague = league(for: 3)!",
-        "let age: Int = 21\nlet allowedMessage: String? = age >= 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!"
+        {
+            "answer": "func title(for page: Int) -> String? {\n\tguard page >= 1 else {\n\t\treturn nil\n\t}\n\tlet pageCount = 132\n\tif page < pageCount {\n\t\treturn \"Page \\(page)\"\n\t} else {\n\t\treturn nil\n\t}\n}\nlet pageTitle = title(for: 16)!",
+            "reason": ""
+        },
+        {
+            "answer": "struct User {\n\tvar name: String?\n\tvar age: Int?\n}\nlet taylor = User(name: \"Taylor\", age: 26)\nlet taylorAge = taylor.age!",
+            "reason": ""
+        },
+        {
+            "answer": "func describe(array: [String]?) {\n\tlet unwrapped = array!\n\tprint(\"The array has \\(unwrapped.count) items.\")\n}\ndescribe(array: [])",
+            "reason": ""
+        },
+        {
+            "answer": "let legoBricksSold: Int? = 400_000_000_000\nlet numberSold = legoBricksSold!",
+            "reason": ""
+        },
+        {
+            "answer": "func league(for skillLevel: Int) -> Int? {\n\tswitch skillLevel {\n\tcase 1:\n\t\tfallthrough\n\tcase 2:\n\t\treturn 3\n\tcase 3:\n\t\treturn 2\n\tcase 4:\n\t\treturn 1\n\tdefault:\n\t\treturn nil\n\t}\n}\nlet allocatedLeague = league(for: 3)!",
+            "reason": ""
+        },
+        {
+            "answer": "let age: Int = 21\nlet allowedMessage: String? = age >= 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

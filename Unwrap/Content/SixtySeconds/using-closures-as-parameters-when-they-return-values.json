@@ -2,16 +2,34 @@
     "title": "Using closures as parameters when they return values",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Make sure closures are called with their correct name.",
     "syntaxHighlighting": true,
     "correct": [
-        "func encrypt(password: String, using algorithm: (String) -> String) {\n\tprint(\"Encrypting password...\")\n\tlet result = algorithm(password)\n\tprint(\"The result is \\(result)\")\n}\nencrypt(password: \"t4ylor\") { (password: String) in\n\tprint(\"Using top secret encryption!\")\n\treturn \"SECRET\" + password + \"SECRET\"\n}",
-        "func manipulate(numbers: [Int], using algorithm: (Int) -> Int) {\n\tfor number in numbers {\n\t\tlet result = algorithm(number)\n\t\tprint(\"Manipulating \\(number) produced \\(result)\")\n\t}\n}\nmanipulate(numbers: [1, 2, 3]) { number in\n\treturn number * number\n}",
-        "func activateAI(_ ai: () -> String) {\n\tprint(\"Let's see what this thing can do...\")\n\tlet result = ai()\n\tprint(result)\n}\nactivateAI {\n\treturn \"Come with me if you want to live.\"\n}",
-        "func increaseBankBalance(start: Double, interestCalculator: () -> Double) {\n\tprint(\"Your current balance is \\(start).\")\n\tlet interestRate = interestCalculator()\n\tlet withInterest = start * interestRate\n\tprint(\"You now have \\(withInterest).\")\n}\nincreaseBankBalance(start: 200.0) {\n\treturn 1.01\n}",
-        "func playSong(_ name: String, notes: () -> String) {\n\tprint(\"I'm going to play \\(name).\")\n\tlet playedNotes = notes()\n\tprint(playedNotes)\n}\nplaySong(\"Mary Had a Little Lamb\") {\n\treturn \"EDCDEEEDDDEGG\"\n}",
-        "func loadData(input: () -> String) {\n\tprint(\"Loading...\")\n\tlet str = input()\n\tprint(\"Loaded: \\(str)\")\n}\nloadData {\n\treturn \"He thrusts his fists against the posts\"\n}"
+        {
+            "answer": "func encrypt(password: String, using algorithm: (String) -> String) {\n\tprint(\"Encrypting password...\")\n\tlet result = algorithm(password)\n\tprint(\"The result is \\(result)\")\n}\nencrypt(password: \"t4ylor\") { (password: String) in\n\tprint(\"Using top secret encryption!\")\n\treturn \"SECRET\" + password + \"SECRET\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func manipulate(numbers: [Int], using algorithm: (Int) -> Int) {\n\tfor number in numbers {\n\t\tlet result = algorithm(number)\n\t\tprint(\"Manipulating \\(number) produced \\(result)\")\n\t}\n}\nmanipulate(numbers: [1, 2, 3]) { number in\n\treturn number * number\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func activateAI(_ ai: () -> String) {\n\tprint(\"Let's see what this thing can do...\")\n\tlet result = ai()\n\tprint(result)\n}\nactivateAI {\n\treturn \"Come with me if you want to live.\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func increaseBankBalance(start: Double, interestCalculator: () -> Double) {\n\tprint(\"Your current balance is \\(start).\")\n\tlet interestRate = interestCalculator()\n\tlet withInterest = start * interestRate\n\tprint(\"You now have \\(withInterest).\")\n}\nincreaseBankBalance(start: 200.0) {\n\treturn 1.01\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func playSong(_ name: String, notes: () -> String) {\n\tprint(\"I'm going to play \\(name).\")\n\tlet playedNotes = notes()\n\tprint(playedNotes)\n}\nplaySong(\"Mary Had a Little Lamb\") {\n\treturn \"EDCDEEEDDDEGG\"\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func loadData(input: () -> String) {\n\tprint(\"Loading...\")\n\tlet str = input()\n\tprint(\"Loaded: \\(str)\")\n}\nloadData {\n\treturn \"He thrusts his fists against the posts\"\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

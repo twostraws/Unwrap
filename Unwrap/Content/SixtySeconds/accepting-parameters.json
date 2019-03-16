@@ -2,16 +2,34 @@
     "title": "Accepting parameters",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Function names and their parameters are case-sensitive.",
     "syntaxHighlighting": true,
     "correct": [
-        "func format(number: Int) {\n\tprint(\"The number is \\(number).\")\n}\nformat(number: 32)",
-        "func sendTweet(text: String) {\n\tprint(\"Posting to Twitter: \\(text)\")\n}",
-        "func count(to: Int) {\n\tfor i in 1...to {\n\t\tprint(\"I'm counting: \\(i)\")\n\t}\n}",
-        "func check(age: Int) {\n\tif age >= 18 {\n\t\tprint(\"You're an adult.\")\n\t} else {\n\t\tprint(\"You're a minor.\")\n\t}\n}\ncheck(age: 18)",
-        "func square(numbers: [Int]) {\n\tfor number in numbers {\n\t\tlet squared = number * number\n\t\tprint(\"\\(number) squared is \\(squared).\")\n\t}\n}\nsquare(numbers: [2, 3, 4])",
-        "func makeBand(names: [String]) {\n\tprint(\"Let's start a band...\")\n\tfor name in names {\n\t\tprint(\"\\(name) wants to join!\")\n\t}\n}\nmakeBand(names: [\"John\", \"Paul\"])"
+        {
+            "answer": "func format(number: Int) {\n\tprint(\"The number is \\(number).\")\n}\nformat(number: 32)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func sendTweet(text: String) {\n\tprint(\"Posting to Twitter: \\(text)\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func count(to: Int) {\n\tfor i in 1...to {\n\t\tprint(\"I'm counting: \\(i)\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func check(age: Int) {\n\tif age >= 18 {\n\t\tprint(\"You're an adult.\")\n\t} else {\n\t\tprint(\"You're a minor.\")\n\t}\n}\ncheck(age: 18)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func square(numbers: [Int]) {\n\tfor number in numbers {\n\t\tlet squared = number * number\n\t\tprint(\"\\(number) squared is \\(squared).\")\n\t}\n}\nsquare(numbers: [2, 3, 4])",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func makeBand(names: [String]) {\n\tprint(\"Let's start a band...\")\n\tfor name in names {\n\t\tprint(\"\\(name) wants to join!\")\n\t}\n}\nmakeBand(names: [\"John\", \"Paul\"])",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

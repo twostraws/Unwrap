@@ -6,12 +6,30 @@
     "hint": "The <code>%<\/code> operator calculates division remainder",
     "syntaxHighlighting": true,
     "correct": [
-        "let result = 5 + 0",
-        "let result = 20 \/ 4",
-        "let result = 11 - 6",
-        "var result = 11 % 6",
-        "var result = 1 * 5",
-        "var result = 7 - 1 - 1"
+        {
+            "answer": "let result = 5 + 0",
+            "reason": "5 plus 0 makes 5."
+        },
+        {
+            "answer": "let result = 20 \/ 4",
+            "reason": "20 divided by 4 makes 5."
+        },
+        {
+            "answer": "let result = 11 - 6",
+            "reason": "11 minus 6 makes 5."
+        },
+        {
+            "answer": "var result = 11 % 6",
+            "reason": "11 divides into 6 once, leaving remainder 5."
+        },
+        {
+            "answer": "var result = 1 * 5",
+            "reason": "1 multiplied by 5 makes 5."
+        },
+        {
+            "answer": "var result = 7 - 1 - 1",
+            "reason": "7 minus 1, minus another 1, makes five."
+        }
     ],
     "wrong": [
         {
@@ -20,7 +38,7 @@
         },
         {
             "answer": "let result = 12 % 6",
-            "reason": "This will set <code>result</code> to be 0."
+            "reason": "This will set <code>result<\/code> to be 0."
         },
         {
             "answer": "let result = 10 \/ 2.0",
@@ -32,11 +50,11 @@
         },
         {
             "answer": "var result = 2 + 2 + 2",
-            "reason": "This will set <code>result</code> to 6."
+            "reason": "This will set <code>result<\/code> to 6."
         },
         {
             "answer": "var result = 12 - 8",
-            "reason": "This will set <code>result</code> to 4."
+            "reason": "This will set <code>result<\/code> to 4."
         }
     ]
 }

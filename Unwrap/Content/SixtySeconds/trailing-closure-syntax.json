@@ -2,16 +2,34 @@
     "title": "Trailing closure syntax",
     "postscript": "Trailing closure syntax might seem obscure or perhaps a bit weird at first, but it's used very commonly in Swift.",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "When using trailing closure syntax, you remove the final parameter name entirely and write your code after the function in braces.",
     "syntaxHighlighting": true,
     "correct": [
-        "func tendGarden(activities: () -> Void) {\n\tprint(\"I love gardening\")\n\tactivities()\n}\ntendGarden {\n\tprint(\"Let's grow some roses!\")\n}",
-        "func repeatAction(count: Int, action: () -> Void) {\n\tfor _ in 0..<count {\n\t\taction()\n\t}\n}\nrepeatAction(count: 5) {\n\tprint(\"Hello, world!\")\n}",
-        "func doTricks(_ tricks: () -> Void) {\n\tprint(\"Start recording now!\")\n\ttricks()\n\tprint(\"Did you get all that?\")\n}",
-        "func goOnVacation(to destination: String, _ activities: () -> Void) {\n\tprint(\"Packing bags...\")\n\tprint(\"Getting on plane to \\(destination)...\")\n\tactivities()\n\tprint(\"Time to go home!\")\n}\ngoOnVacation(to: \"Mexico\") {\n\tprint(\"Go sightseeing\")\n\tprint(\"Relax in sun\")\n\tprint(\"Go hiking\")\n}",
-        "func goCamping(then action: () -> Void) {\n\tprint(\"We're going camping!\")\n\taction()\n}\ngoCamping {\n\tprint(\"Sing songs\")\n\tprint(\"Put up tent\")\n\tprint(\"Attempt to sleep\")\n}",
-        "func makeCake(instructions: () -> Void) {\n\tprint(\"Wash hands\")\n\tprint(\"Collect ingredients\")\n\tinstructions()\n\tprint(\"Here's your cake!\")\n}\nmakeCake {\n\tprint(\"Mix egg and flour\")\n}"
+        {
+            "answer": "func tendGarden(activities: () -> Void) {\n\tprint(\"I love gardening\")\n\tactivities()\n}\ntendGarden {\n\tprint(\"Let's grow some roses!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func repeatAction(count: Int, action: () -> Void) {\n\tfor _ in 0..<count {\n\t\taction()\n\t}\n}\nrepeatAction(count: 5) {\n\tprint(\"Hello, world!\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func doTricks(_ tricks: () -> Void) {\n\tprint(\"Start recording now!\")\n\ttricks()\n\tprint(\"Did you get all that?\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func goOnVacation(to destination: String, _ activities: () -> Void) {\n\tprint(\"Packing bags...\")\n\tprint(\"Getting on plane to \\(destination)...\")\n\tactivities()\n\tprint(\"Time to go home!\")\n}\ngoOnVacation(to: \"Mexico\") {\n\tprint(\"Go sightseeing\")\n\tprint(\"Relax in sun\")\n\tprint(\"Go hiking\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func goCamping(then action: () -> Void) {\n\tprint(\"We're going camping!\")\n\taction()\n}\ngoCamping {\n\tprint(\"Sing songs\")\n\tprint(\"Put up tent\")\n\tprint(\"Attempt to sleep\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func makeCake(instructions: () -> Void) {\n\tprint(\"Wash hands\")\n\tprint(\"Collect ingredients\")\n\tinstructions()\n\tprint(\"Here's your cake!\")\n}\nmakeCake {\n\tprint(\"Mix egg and flour\")\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

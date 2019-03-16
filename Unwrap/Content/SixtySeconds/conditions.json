@@ -2,29 +2,47 @@
     "title": "Conditions",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code will print \"Success\" \u2013\u00a0true or false?",
+    "question": "This code will print \"Success\" \u2013 true or false?",
     "hint": "<code>else<\/code> blocks are executed if the condition is false, and Swift won't let you compare different types of data.",
     "syntaxHighlighting": true,
     "correct": [
-        "let age = 21\nif age > 18 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-        "let name = \"Taylor\"\nif name == \"Paul\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-        "let orderAmount = 200\nif orderAmount >= 200 {\n\tprint(\"Success\")\n}",
-        "var city = \"Tokyo\"\nif city == \"Madrid\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-        "let employeeCount = 50\nif employeeCount == 50 {\n\tprint(\"Success\")\n}",
-        "let teaStrength = 5\nif teaStrength >= 4 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}"
+        {
+            "answer": "let age = 21\nif age > 18 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "This will print \"Success\" because <code>age<\/code> is over 18."
+        },
+        {
+            "answer": "let name = \"Taylor\"\nif name == \"Paul\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
+            "reason": "This will print \"Success\" because <code>name<\/code> is not \"Paul\"."
+        },
+        {
+            "answer": "let orderAmount = 200\nif orderAmount >= 200 {\n\tprint(\"Success\")\n}",
+            "reason": "This will print \"Success\" because <code>orderAmount<\/code> is equal to 200."
+        },
+        {
+            "answer": "var city = \"Tokyo\"\nif city == \"Madrid\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
+            "reason": "This will print \"Success\" because <code>city<\/code> is not \"Madrid\"."
+        },
+        {
+            "answer": "let employeeCount = 50\nif employeeCount == 50 {\n\tprint(\"Success\")\n}",
+            "reason": "This will print \"Success\" because <code>employeeCount<\/code> is equal to 50."
+        },
+        {
+            "answer": "let teaStrength = 5\nif teaStrength >= 4 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
+            "reason": "This will print \"Success\" because <code>teaStrength<\/code> is over 4."
+        }
     ],
     "wrong": [
         {
             "answer": "let sharkCount: Int = 21\nif sharkCount < 21 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "<code>sharkCount</code> is equal to 21, so this will print \"Failure\"."
+            "reason": "<code>sharkCount<\/code> is equal to 21, so this will print \"Failure\"."
         },
         {
             "answer": "let passwordLength = 5\nif passwordLength <= 5 {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-            "reason": "<code>passwordLength</code> is equal to 5, so this will print \"Failure\"."
+            "reason": "<code>passwordLength<\/code> is equal to 5, so this will print \"Failure\"."
         },
         {
             "answer": "let isAvailable: Bool = false\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "<code>isAvailable</code> is false, so this will print \"Failure\"."
+            "reason": "<code>isAvailable<\/code> is false, so this will print \"Failure\"."
         },
         {
             "answer": "var actualWage: Int = 22_000\nvar medianWage: Double = 22_000\nif actualWage >= medianWage {\n\tprint(\"Success\")\n}",

@@ -6,12 +6,30 @@
     "hint": "The code inside <code>if let<\/code> will only be run if there was a value inside your optional.",
     "syntaxHighlighting": true,
     "correct": [
-        "let song: String? = \"Shake it Off\"\nif let unwrappedSong = song {\n\tprint(\"The name has \\(unwrappedSong.count) letters.\")\n}",
-        "let userAge: Int? = 38\nif let age = userAge {\n\tprint(\"You are \\(age) years old.\")\n}",
-        "var favoriteMovie: String? = nil\nfavoriteMovie = \"The Life of Brian\"\nif let movie = favoriteMovie {\n\tprint(\"Your favorite movie is \\(movie).\")\n} else {\n\tprint(\"You don't have a favorite movie.\")\n}",
-        "let currentDestination: String? = nil\nif let destination = currentDestination {\n\tprint(\"We're walking to \\(destination).\")\n} else {\n\tprint(\"We're just wandering.\")\n}",
-        "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.firstIndex(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
-        "var winner: String? = nil\nwinner = \"Daley Thompson\"\nif let name = winner {\n\tprint(\"And the winner is... \\(name)!\")\n}"
+        {
+            "answer": "let song: String? = \"Shake it Off\"\nif let unwrappedSong = song {\n\tprint(\"The name has \\(unwrappedSong.count) letters.\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "let userAge: Int? = 38\nif let age = userAge {\n\tprint(\"You are \\(age) years old.\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "var favoriteMovie: String? = nil\nfavoriteMovie = \"The Life of Brian\"\nif let movie = favoriteMovie {\n\tprint(\"Your favorite movie is \\(movie).\")\n} else {\n\tprint(\"You don't have a favorite movie.\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "let currentDestination: String? = nil\nif let destination = currentDestination {\n\tprint(\"We're walking to \\(destination).\")\n} else {\n\tprint(\"We're just wandering.\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "var winner: String? = nil\nwinner = \"Daley Thompson\"\nif let name = winner {\n\tprint(\"And the winner is... \\(name)!\")\n}",
+            "reason": "This code will print a message."
+        }
     ],
     "wrong": [
         {

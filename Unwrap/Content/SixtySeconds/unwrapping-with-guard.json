@@ -6,12 +6,30 @@
     "hint": "If your <code>guard let<\/code> condition fails, you must exit the current method, loop, or condition before the <code>else<\/code> block ends.",
     "syntaxHighlighting": true,
     "correct": [
-        "func validate(password: String?) -> Bool {\n\tguard let password = password else {\n\t\treturn false\n\t}\n\tif password == \"fr0sties\" {\n\t\tprint(\"Authenticated successfully!\")\n\t\treturn true\n\t}\n\treturn false\n}\nvalidate(password: \"fr0sties\")",
-        "func test(number: Int?) {\n\tguard let number = number else { return }\n\tprint(\"Number is \\(number)\")\n}\ntest(number: 42)",
-        "func isLongEnough(_ string: String?) -> Bool {\n\tguard let string = string else { return false }\n\tif string.count >= 8 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif isLongEnough(\"Mario Odyssey\") {\n\tprint(\"Let's play that!\")\n}",
-        "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}",
-        "func uppercase(string: String?) -> String? {\n\tguard let string = string else {\n\t\treturn nil\n\t}\n\treturn string.uppercased()\n}\nif let result = uppercase(string: \"Hello\") {\n\tprint(result)\n}",
-        "func describe(occupation: String?) {\n\tguard let occupation = occupation else {\n\t\tprint(\"You don't have a job.\")\n\t\treturn\n\t}\n\tprint(\"You are an \\(occupation).\")\n}\nlet job = \"engineer\"\ndescribe(occupation: job)"
+        {
+            "answer": "func validate(password: String?) -> Bool {\n\tguard let password = password else {\n\t\treturn false\n\t}\n\tif password == \"fr0sties\" {\n\t\tprint(\"Authenticated successfully!\")\n\t\treturn true\n\t}\n\treturn false\n}\nvalidate(password: \"fr0sties\")",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "func test(number: Int?) {\n\tguard let number = number else { return }\n\tprint(\"Number is \\(number)\")\n}\ntest(number: 42)",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "func isLongEnough(_ string: String?) -> Bool {\n\tguard let string = string else { return false }\n\tif string.count >= 8 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif isLongEnough(\"Mario Odyssey\") {\n\tprint(\"Let's play that!\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "func uppercase(string: String?) -> String? {\n\tguard let string = string else {\n\t\treturn nil\n\t}\n\treturn string.uppercased()\n}\nif let result = uppercase(string: \"Hello\") {\n\tprint(result)\n}",
+            "reason": "This code will print a message."
+        },
+        {
+            "answer": "func describe(occupation: String?) {\n\tguard let occupation = occupation else {\n\t\tprint(\"You don't have a job.\")\n\t\treturn\n\t}\n\tprint(\"You are an \\(occupation).\")\n}\nlet job = \"engineer\"\ndescribe(occupation: job)",
+            "reason": "This code will print a message."
+        }
     ],
     "wrong": [
         {

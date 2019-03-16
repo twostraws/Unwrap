@@ -6,12 +6,30 @@
     "hint": "Make sure each method returns what it says it will return.",
     "syntaxHighlighting": true,
     "correct": [
-        "struct Pokemon {\n\tvar name: String\n\tfunc attack(with attackType: String) {\n\t\tprint(\"\\(name) uses \\(attackType)!\")\n\t}\n}",
-        "struct Car {\n\tvar maxSpeed: Int\n\tfunc accelerate(to speed: Int) {\n\t\tif speed > maxSpeed {\n\t\t\tprint(\"That's too fast!\")\n\t\t} else {\n\t\t\tprint(\"OK, let's go!\")\n\t\t}\n\t}\n}",
-        "struct XWing {\n\tvar callSign: String\n\tfunc startTrenchRun() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\tprint(\"I'm going to blow up the Death Star!\")\n\t\t\treturn true\n\t\t} else {\n\t\t\tprint(\"I'm hit!\")\n\t\t\treturn false\n\t\t}\n\t}\n}",
-        "struct Singer {\n\tvar signatureSong: String\n\tfunc sing() {\n\t\tprint(\"Who wants to hear \\(signatureSong)?\")\n\t}\n}",
-        "struct User {\n\tvar name: String\n\tvar street: String\n\tvar city: String\n\tvar postalCode: String\n\tfunc printAddress() -> String {\n\t\treturn \"\"\"\n\t\t\\(name)\n\t\t\\(street)\n\t\t\\(city)\n\t\t\\(postalCode)\n\t\t\"\"\"\n\t}\n}",
-        "struct Venue {\n\tvar name: String\n\tvar maximumCapacity: Int\n\tfunc makeBooking(for people: Int) {\n\t\tif people > maximumCapacity {\n\t\t\tprint(\"Sorry, we can only accommodate \\(maximumCapacity).\")\n\t\t} else {\n\t\t\tprint(\"\\(name) is all yours!\")\n\t\t}\n\t}\n}"
+        {
+            "answer": "struct Pokemon {\n\tvar name: String\n\tfunc attack(with attackType: String) {\n\t\tprint(\"\\(name) uses \\(attackType)!\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Car {\n\tvar maxSpeed: Int\n\tfunc accelerate(to speed: Int) {\n\t\tif speed > maxSpeed {\n\t\t\tprint(\"That's too fast!\")\n\t\t} else {\n\t\t\tprint(\"OK, let's go!\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct XWing {\n\tvar callSign: String\n\tfunc startTrenchRun() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\tprint(\"I'm going to blow up the Death Star!\")\n\t\t\treturn true\n\t\t} else {\n\t\t\tprint(\"I'm hit!\")\n\t\t\treturn false\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Singer {\n\tvar signatureSong: String\n\tfunc sing() {\n\t\tprint(\"Who wants to hear \\(signatureSong)?\")\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct User {\n\tvar name: String\n\tvar street: String\n\tvar city: String\n\tvar postalCode: String\n\tfunc printAddress() -> String {\n\t\treturn \"\"\"\n\t\t\\(name)\n\t\t\\(street)\n\t\t\\(city)\n\t\t\\(postalCode)\n\t\t\"\"\"\n\t}\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "struct Venue {\n\tvar name: String\n\tvar maximumCapacity: Int\n\tfunc makeBooking(for people: Int) {\n\t\tif people > maximumCapacity {\n\t\t\tprint(\"Sorry, we can only accommodate \\(maximumCapacity).\")\n\t\t} else {\n\t\t\tprint(\"\\(name) is all yours!\")\n\t\t}\n\t}\n}",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

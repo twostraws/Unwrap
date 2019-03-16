@@ -2,16 +2,34 @@
     "title": "For loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print three lines of text \u2013\u00a0true or false?",
+    "question": "This loop will print three lines of text \u2013 true or false?",
     "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
     "syntaxHighlighting": true,
     "correct": [
-        "let count = 1...3\nfor _ in count {\n\tprint(\"There's no place like home.\")\n}",
-        "var names = [\"John\", \"Sophie\", \"Lottie\"]\nfor name in names {\n\tprint(\"Hello, \\(name)!\")\n}",
-        "for i in 4...6 {\n\tprint(\"Star Wars: Episode \\(i)\")\n}",
-        "var numbers = [1, 2, 3, 4, 5, 6]\nfor number in numbers {\n\tif number % 2 == 0 {\n\t\tprint(number)\n\t}\n}",
-        "let score = 100\nfor count in 10..<13 {\n\tprint(\"I'm counting to \\(count)\")\n}",
-        "for number in [2, 3, 5] {\n\tprint(\"\\(number) is a prime number.\")\n}"
+        {
+            "answer": "let count = 1...3\nfor _ in count {\n\tprint(\"There's no place like home.\")\n}",
+            "reason": "This code will print three lines of text."
+        },
+        {
+            "answer": "var names = [\"John\", \"Sophie\", \"Lottie\"]\nfor name in names {\n\tprint(\"Hello, \\(name)!\")\n}",
+            "reason": "This code will print three lines of text."
+        },
+        {
+            "answer": "for i in 4...6 {\n\tprint(\"Star Wars: Episode \\(i)\")\n}",
+            "reason": "This code will print three lines of text."
+        },
+        {
+            "answer": "var numbers = [1, 2, 3, 4, 5, 6]\nfor number in numbers {\n\tif number % 2 == 0 {\n\t\tprint(number)\n\t}\n}",
+            "reason": "This code will print three lines of text."
+        },
+        {
+            "answer": "let score = 100\nfor count in 10..<13 {\n\tprint(\"I'm counting to \\(count)\")\n}",
+            "reason": "This code will print three lines of text."
+        },
+        {
+            "answer": "for number in [2, 3, 5] {\n\tprint(\"\\(number) is a prime number.\")\n}",
+            "reason": "This code will print three lines of text."
+        }
     ],
     "wrong": [
         {

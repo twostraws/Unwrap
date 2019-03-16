@@ -6,12 +6,30 @@
     "hint": "Watch out for constants.",
     "syntaxHighlighting": true,
     "correct": [
-        "let tens = [30, 20, 10]\ntens.sorted() == [10, 20, 30]",
-        "let spaceships = [\"Serenity\", \"Enterprise\"]\nspaceships.contains(\"Serenity\")",
-        "var usedNumbers = [Int]()\nfor i in 1...10 {\n\tusedNumbers.append(i)\n}\nusedNumbers.count > 5",
-        "let marines = [\"Apone\", \"Hicks\", \"Vasquez\"]\nmarines.contains(\"Hicks\")",
-        "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.firstIndex(of: \"Whist\") == 2",
-        "var results = [true, true, false, true]\nresults.remove(at: 2)\nresults.count == 3"
+        {
+            "answer": "let tens = [30, 20, 10]\ntens.sorted() == [10, 20, 30]",
+            "reason": ""
+        },
+        {
+            "answer": "let spaceships = [\"Serenity\", \"Enterprise\"]\nspaceships.contains(\"Serenity\")",
+            "reason": ""
+        },
+        {
+            "answer": "var usedNumbers = [Int]()\nfor i in 1...10 {\n\tusedNumbers.append(i)\n}\nusedNumbers.count > 5",
+            "reason": ""
+        },
+        {
+            "answer": "let marines = [\"Apone\", \"Hicks\", \"Vasquez\"]\nmarines.contains(\"Hicks\")",
+            "reason": ""
+        },
+        {
+            "answer": "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.index(of: \"Whist\") == 2",
+            "reason": ""
+        },
+        {
+            "answer": "var results = [true, true, false, true]\nresults.remove(at: 2)\nresults.count == 3",
+            "reason": ""
+        }
     ],
     "wrong": [
         {
@@ -27,7 +45,7 @@
             "reason": ""
         },
         {
-            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.firstIndex(of: \"A New Hope\") == 4",
+            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
             "reason": ""
         },
         {

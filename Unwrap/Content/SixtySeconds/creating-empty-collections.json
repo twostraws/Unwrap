@@ -6,12 +6,30 @@
     "hint": "Arrays and dictionaries can be made in two different ways, for example <code>[Int]<\/code> or <code>Array<Int><\/code> both create arrays.",
     "syntaxHighlighting": true,
     "correct": [
-        "var authorAges = [String: Int]()",
-        "var temperatures = [Double]()",
-        "var states = Set<String>()",
-        "var favoriteColors = Dictionary<String, String>()",
-        "var scores = Array<Int>()",
-        "var answers = [Bool]()"
+        {
+            "answer": "var authorAges = [String: Int]()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var temperatures = [Double]()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var states = Set<String>()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var favoriteColors = Dictionary<String, String>()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var scores = Array<Int>()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var answers = [Bool]()",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {
@@ -20,7 +38,7 @@
         },
         {
             "answer": "var mountainHeights = [String, Int]()",
-            "reason": "The correct syntax is <code>[String: Int]</code>"
+            "reason": "The correct syntax is <code>[String: Int]<\/code>."
         },
         {
             "answer": "var episodeNames = Array()",
@@ -28,11 +46,11 @@
         },
         {
             "answer": "var measurements = [Double]",
-            "reason": "When creating a new empty array you must place empty parentheses after the type, e.g. <code>[Double]()</code>."
+            "reason": "When creating a new empty array you must place empty parentheses after the type, e.g. <code>[Double]()<\/code>."
         },
         {
             "answer": "var wines = Dictionary<String: String>()",
-            "reason": "The correct syntax is either <code>Dictionary<String, String>()</code> or <code>[String: String]()</code>"
+            "reason": "The correct syntax is either <code>Dictionary<String, String>()<\/code> or <code>[String: String]()<\/code>."
         },
         {
             "answer": "var badges = Set<>()",

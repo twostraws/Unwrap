@@ -6,12 +6,30 @@
     "hint": "Make sure the returned closure accepts the right parameters and returns the right data type, if any.",
     "syntaxHighlighting": true,
     "correct": [
-        "func createDoubler() -> (Int) -> Int {\n\treturn {\n\t\treturn $0 * 2\n\t}\n}\nlet doubler = createDoubler()\nprint(doubler(2))",
-        "func makeGreeting(language: String) -> (String) -> Void {\n\tif language == \"French\" {\n\t\treturn {\n\t\t\tprint(\"Bonjour, \\($0)!\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"Hello, \\($0)!\")\n\t\t}\n\t}\n}\nlet greeting = makeGreeting(language: \"English\")\ngreeting(\"Paul\")",
-        "func createAgeCheck(strict: Bool) -> (Int) -> Bool {\n\tif strict {\n\t\treturn {\n\t\t\tif $0 <= 21 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tif $0 <= 18 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n}\nlet ageCheck = createAgeCheck(strict: true)\nlet result = ageCheck(20)\nprint(result)",
-        "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")",
-        "func createValidator() -> (String) -> Bool {\n\treturn {\n\t\tif $0 == \"twostraws\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\nlet validator = createValidator()\nprint(validator(\"twostraws\"))",
-        "func makeRecorder(media: String) -> () -> String {\n\tswitch media {\n\tcase \"podcast\":\n\t\treturn {\n\t\t\treturn \"I'm recording a podcast\"\n\t\t}\n\tdefault:\n\t\treturn {\n\t\t\treturn \"I'm recording a video\"\n\t\t}\n\t}\n}\nlet recorder = makeRecorder(media: \"podcast\")\nprint(recorder())"
+        {
+            "answer": "func createDoubler() -> (Int) -> Int {\n\treturn {\n\t\treturn $0 * 2\n\t}\n}\nlet doubler = createDoubler()\nprint(doubler(2))",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func makeGreeting(language: String) -> (String) -> Void {\n\tif language == \"French\" {\n\t\treturn {\n\t\t\tprint(\"Bonjour, \\($0)!\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"Hello, \\($0)!\")\n\t\t}\n\t}\n}\nlet greeting = makeGreeting(language: \"English\")\ngreeting(\"Paul\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func createAgeCheck(strict: Bool) -> (Int) -> Bool {\n\tif strict {\n\t\treturn {\n\t\t\tif $0 <= 21 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tif $0 <= 18 {\n\t\t\t\treturn true\n\t\t\t} else {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n}\nlet ageCheck = createAgeCheck(strict: true)\nlet result = ageCheck(20)\nprint(result)",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func createTravelMethod(distance: Int) -> (String) -> Void {\n\tif distance < 5 {\n\t\treturn {\n\t\t\tprint(\"I'm walking to \\($0).\")\n\t\t}\n\t} else if distance < 20 {\n\t\treturn {\n\t\t\tprint(\"I'm cycling to \\($0).\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm driving to \\($0).\")\n\t\t}\n\t}\n}\nlet travelMethod = createTravelMethod(distance: 15)\ntravelMethod(\"London\")",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func createValidator() -> (String) -> Bool {\n\treturn {\n\t\tif $0 == \"twostraws\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\nlet validator = createValidator()\nprint(validator(\"twostraws\"))",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "func makeRecorder(media: String) -> () -> String {\n\tswitch media {\n\tcase \"podcast\":\n\t\treturn {\n\t\t\treturn \"I'm recording a podcast\"\n\t\t}\n\tdefault:\n\t\treturn {\n\t\t\treturn \"I'm recording a video\"\n\t\t}\n\t}\n}\nlet recorder = makeRecorder(media: \"podcast\")\nprint(recorder())",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {

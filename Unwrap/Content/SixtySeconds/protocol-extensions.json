@@ -2,16 +2,34 @@
     "title": "Protocol extensions",
     "postscript": "One type can conform to as many protocols as you want.",
     "reviewType": "singleSelection",
-    "question": "This extension correctly implements a method from its protocol \u2013\u00a0true or false?",
+    "question": "This extension correctly implements a method from its protocol \u2013 true or false?",
     "hint": "The extension's method name, including its parameters and return type, must be identical to the protocol's.",
     "syntaxHighlighting": true,
     "correct": [
-        "protocol Mammal {\n\tfunc eat()\n}\nextension Mammal {\n\tfunc eat() {\n\t\tprint(\"Time for dinner!\")\n\t}\n}",
-        "protocol Fencer {\n\tfunc fenceFoil()\n}\nextension Fencer {\n\tfunc fenceFoil() {\n\t\tprint(\"En garde!\")\n\t}\n}",
-        "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up - energize!\")\n\t}\n}",
-        "protocol Anime {\n\tvar availableLanguages: [String] { get set }\n\tfunc watch(in language: String)\n}\nextension Anime {\n\tfunc watch(in language: String) {\n\t\tif availableLanguages.contains(language) {\n\t\t\tprint(\"Now playing in \\(language)\")\n\t\t} else {\n\t\t\tprint(\"Unrecognized language.\")\n\t\t}\n\t}\n}",
-        "protocol Politician {\n\tvar isDirty: Bool { get set }\n\tfunc takeBribe()\n}\nextension Politician {\n\tfunc takeBribe() {\n\t\tif isDirty {\n\t\t\tprint(\"Thank you very much!\")\n\t\t} else {\n\t\t\tprint(\"Someone call the police!\")\n\t\t}\n\t}\n}",
-        "protocol Hamster {\n\tvar name: String { get set }\n\tfunc runInWheel(minutes: Int)\n}\nextension Hamster {\n\tfunc runInWheel(minutes: Int) {\n\t\tprint(\"\\(name) is going for a run.\")\n\t\tfor _ in 0..<minutes {\n\t\t\tprint(\"Whirr whirr whirr\")\n\t\t}\n\t}\n}"
+        {
+            "answer": "protocol Mammal {\n\tfunc eat()\n}\nextension Mammal {\n\tfunc eat() {\n\t\tprint(\"Time for dinner!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Fencer {\n\tfunc fenceFoil()\n}\nextension Fencer {\n\tfunc fenceFoil() {\n\t\tprint(\"En garde!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up - energize!\")\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Anime {\n\tvar availableLanguages: [String] { get set }\n\tfunc watch(in language: String)\n}\nextension Anime {\n\tfunc watch(in language: String) {\n\t\tif availableLanguages.contains(language) {\n\t\t\tprint(\"Now playing in \\(language)\")\n\t\t} else {\n\t\t\tprint(\"Unrecognized language.\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Politician {\n\tvar isDirty: Bool { get set }\n\tfunc takeBribe()\n}\nextension Politician {\n\tfunc takeBribe() {\n\t\tif isDirty {\n\t\t\tprint(\"Thank you very much!\")\n\t\t} else {\n\t\t\tprint(\"Someone call the police!\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        },
+        {
+            "answer": "protocol Hamster {\n\tvar name: String { get set }\n\tfunc runInWheel(minutes: Int)\n}\nextension Hamster {\n\tfunc runInWheel(minutes: Int) {\n\t\tprint(\"\\(name) is going for a run.\")\n\t\tfor _ in 0..<minutes {\n\t\t\tprint(\"Whirr whirr whirr\")\n\t\t}\n\t}\n}",
+            "reason": ""
+        }
     ],
     "wrong": [
         {

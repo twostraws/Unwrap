@@ -6,12 +6,30 @@
     "hint": "Protocols can declare properties as read-only, but not write-only.",
     "syntaxHighlighting": true,
     "correct": [
-        "protocol Purchaseable {\n\tvar price: Double { get set }\n\tvar currency: String { get set }\n}",
-        "protocol Learnable {\n\tvar difficulty: Int { get }\n}",
-        "protocol Climbable {\n\tvar height: Double { get }\n\tvar gradient: Int { get }\n}",
-        "protocol Washable {\n\tvar dirtinessLevel: Int { get set }\n}",
-        "protocol Plantable {\n\tvar requirements: [String] { get set }\n}",
-        "protocol Singable {\n\tvar lyrics: [String] { get set }\n\tvar notes: [String] { get set }\n}"
+        {
+            "answer": "protocol Purchaseable {\n\tvar price: Double { get set }\n\tvar currency: String { get set }\n}",
+            "reason": "This is a valid protocol."
+        },
+        {
+            "answer": "protocol Learnable {\n\tvar difficulty: Int { get }\n}",
+            "reason": "This is a valid protocol."
+        },
+        {
+            "answer": "protocol Climbable {\n\tvar height: Double { get }\n\tvar gradient: Int { get }\n}",
+            "reason": "This is a valid protocol."
+        },
+        {
+            "answer": "protocol Washable {\n\tvar dirtinessLevel: Int { get set }\n}",
+            "reason": "This is a valid protocol."
+        },
+        {
+            "answer": "protocol Plantable {\n\tvar requirements: [String] { get set }\n}",
+            "reason": "This is a valid protocol."
+        },
+        {
+            "answer": "protocol Singable {\n\tvar lyrics: [String] { get set }\n\tvar notes: [String] { get set }\n}",
+            "reason": "This is a valid protocol."
+        }
     ],
     "wrong": [
         {

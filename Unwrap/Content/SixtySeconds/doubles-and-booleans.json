@@ -6,21 +6,39 @@
     "hint": "Booleans are any value that contain true or false.",
     "syntaxHighlighting": true,
     "correct": [
-        "var loggedIn = true",
-        "var isVisible = false",
-        "var dressHasPockets = true",
-        "var animated = false",
-        "var isEncrypted = true",
-        "var isReady = false"
+        {
+            "answer": "var loggedIn = true",
+            "reason": "This creates a Boolean with the name <code>loggedIn<\/code>."
+        },
+        {
+            "answer": "var isVisible = false",
+            "reason": "This creates a Boolean with the name <code>isVisible<\/code>."
+        },
+        {
+            "answer": "var dressHasPockets = true",
+            "reason": "This creates a Boolean with the name <code>dressHasPockets<\/code>."
+        },
+        {
+            "answer": "var animated = false",
+            "reason": "This creates a Boolean with the name <code>animated<\/code>."
+        },
+        {
+            "answer": "var isEncrypted = true",
+            "reason": "This creates a Boolean with the name <code>isEncrypted<\/code>."
+        },
+        {
+            "answer": "var isReady = false",
+            "reason": "This creates a Boolean with the name <code>isReady<\/code>."
+        }
     ],
     "wrong": [
         {
             "answer": "var isSaved = \"true\"",
-            "reason": "Although this uses <code>true</code>, it's inside double quotes so this creates a string."
+            "reason": "Although this uses <code>true<\/code>, it's inside double quotes so this creates a string."
         },
         {
             "answer": "var sorted = \"false\"",
-            "reason": "Although this uses <code>false</code>, it's inside double quotes so this creates a string."
+            "reason": "Although this uses <code>false<\/code>, it's inside double quotes so this creates a string."
         },
         {
             "answer": "var zoomed = 0",

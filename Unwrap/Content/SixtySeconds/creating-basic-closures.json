@@ -2,16 +2,34 @@
     "title": "Creating basic closures",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This code is valid Swift \u2013\u00a0true or false?",
+    "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Closures don't take parameters in parentheses, and they are case-sensitive just like regular functions.",
     "syntaxHighlighting": true,
     "correct": [
-        "let greetUser = {\n\tprint(\"Hi there!\")\n}\ngreetUser()",
-        "let walkDog = {\n\tprint(\"Let's go to the park\")\n}",
-        "let learnSwift = {\n\tprint(\"Closures are like functions\")\n}\nlearnSwift()",
-        "var takeMedicine = {\n\tprint(\"I feel a little better\")\n}",
-        "var castVote = {\n\tprint(\"I voted!\")\n}\ncastVote()",
-        "var connectVPN = {\n\tprint(\"Connected!\")\n}\nconnectVPN()"
+        {
+            "answer": "let greetUser = {\n\tprint(\"Hi there!\")\n}\ngreetUser()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let walkDog = {\n\tprint(\"Let's go to the park\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "let learnSwift = {\n\tprint(\"Closures are like functions\")\n}\nlearnSwift()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var takeMedicine = {\n\tprint(\"I feel a little better\")\n}",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var castVote = {\n\tprint(\"I voted!\")\n}\ncastVote()",
+            "reason": "This code is valid Swift."
+        },
+        {
+            "answer": "var connectVPN = {\n\tprint(\"Connected!\")\n}\nconnectVPN()",
+            "reason": "This code is valid Swift."
+        }
     ],
     "wrong": [
         {
