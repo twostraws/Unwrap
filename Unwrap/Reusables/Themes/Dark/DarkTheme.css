@@ -39,6 +39,7 @@ div.container p {
 pre.code {
 	background-color: #2F2F34;
 	color: white;
+    font-family: "Menlo";
 }
 
 code {

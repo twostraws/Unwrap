@@ -60,6 +60,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
         let answer = answers[indexPath.row]
 
         if review.syntaxHighlighting == true {
+            cell.textLabel?.font = Unwrap.codeFont
             cell.textLabel?.attributedText = answer.text.syntaxHighlighted()
         } else {
             cell.textLabel?.attributedText = answer.text.fromSimpleHTML()

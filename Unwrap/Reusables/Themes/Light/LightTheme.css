@@ -43,6 +43,7 @@ div.continue p {
 pre.code {
 	background-color: #f0f0f0;
 	color: black;
+    font-family: "Menlo";
 }
 
 code {
