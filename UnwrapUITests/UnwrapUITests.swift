@@ -9,7 +9,6 @@
 import XCTest
 
 class UnwrapUITests: XCTestCase {
-
     override func setUp() {
         super.setUp()
 
@@ -28,6 +27,7 @@ class UnwrapUITests: XCTestCase {
         super.tearDown()
     }
 
+    /// Check that all fundamental components on the home screen exist
     func testHomeViewControllerExists() {
         let app = XCUIApplication()
         let tabBarsQuery = XCUIApplication().tabBars
@@ -42,22 +42,7 @@ class UnwrapUITests: XCTestCase {
         XCTAssertTrue(app.tables.cells["Badges"].exists)
     }
 
-    //Check that trying to share score displays the ActivityView on the HomeViewController
-    func testShareScoreShows() {
-        let app = XCUIApplication()
-
-        app.tables.cells["Stat"].staticTexts["Share Score"].tap()
-
-        //Delay ActivityViewController to verify the right buttons exist
-        let predicate = NSPredicate(format: "exists == 1")
-        let query = app.collectionViews.cells.collectionViews.containing(.button, identifier: "More").element
-
-        expectation(for: predicate, evaluatedWith: query, handler: nil)
-
-        waitForExpectations(timeout: 3, handler: nil)
-    }
-
-    //Check that tapping Help on the HomeViewController and then Credit show the correct controllers
+    /// Check that tapping Help on the HomeViewController and then Credit show the correct controllers
     func testHelpAndCreditShow() {
         let app = XCUIApplication()
         let tabBarsQuery = XCUIApplication().tabBars
@@ -75,5 +60,4 @@ class UnwrapUITests: XCTestCase {
 
         XCTAssert(app.navigationBars["Credits"].exists)
     }
-
 }
