@@ -23,7 +23,27 @@ extension String {
 
     /// An epic series of replacements to make some piece of code homogenized and anonymized so that variable names, function names, whitespace, etc, don't matter.
     func toAnonymizedVariables() -> String {
-        var replaced = self
+        var replaced = self.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if replaced.isEmpty {
+            return replaced
+        }
+
+        // Homogenize brace style.
+        replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
+        replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
+
+        // Always place a line break immediately after an opening brace
+        replaced = replaced.replacingOccurrences(of: "\\{(.)", with: "{\n$1", options: .regularExpression)
+
+        // Make sure there's a line break immediately before a closing brace
+        replaced = replaced.replacingOccurrences(of: "(.)\\}", with: "$1\n}", options: .regularExpression)
+
+        // Strip any whitespace off the start of lines…
+        replaced = replaced.replacingOccurrences(of: "\n[ \t]*", with: "\n", options: .regularExpression)
+
+        // …and the end of lines
+        replaced = replaced.replacingOccurrences(of: "[ \t]*\n", with: "\n", options: .regularExpression)
 
         // Replace semi-colons with line breaks in the unlikely event folks try to put multiple statements on a single line.
         replaced = replaced.replacingOccurrences(of: ";", with: "\n")
@@ -36,6 +56,9 @@ extension String {
 
         // Anonymize function parameters.
         replaced = replaced.anonymizingComponent("func +[A-Za-z_][A-Za-z0-9_]* *\\((?:([A-Za-z_]*[A-Za-z0-9_]* *[A-Za-z_][A-Za-z0-9_]*) *: *[A-Za-z_][A-Za-z0-9_]*,? *)*", replacementWrapper: "%")
+
+        // Anonymize a closure parameter if one was provided. (This only handles single parameters, but that's enough here.)
+        replaced = replaced.anonymizingComponent("\\{\n([A-Za-z_][A-Za-z0-9_]*) in", replacementWrapper: "§")
 
         // Anonymize function names.
         replaced = replaced.anonymizingComponent("func +([A-Za-z_][A-Za-z0-9_]*)", replacementWrapper: "#")
@@ -57,13 +80,9 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "Dictionary<String, Int>", with: "[String: Int]")
         replaced = replaced.replacingOccurrences(of: "Dictionary<String, Double>", with: "[String: Double]")
 
-        // Now remove any excess space from each line; we don't care how they indent.
+        // Now do one last pass to remove any excess space from each line; we don't care how they indent.
         let lines = replaced.lines.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         replaced = lines.joined(separator: "\n")
-
-        // Homogenize brace style.
-        replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
-        replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
 
         return replaced
     }

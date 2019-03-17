@@ -12,8 +12,18 @@ import XCTest
 /// Tests that practice activities work correctly.
 class PracticeTests: XCTestCase {
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding() {
-        let test = FreeCodingPractice(testMode: true)
+    func testFreeCoding1() {
+        let question = "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use."
+        let answers = [
+            "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.uppercased() == input2.uppercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.uppercased() == input2.uppercased()\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}else{\nreturn false\n}\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}\n}"
+        ]
+
+        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "func compare(string1 str: String, against other: String) -> Bool {\nreturn str.lowercased() == other.lowercased()\n}",
@@ -43,6 +53,63 @@ class PracticeTests: XCTestCase {
 
             // This has weird parameter syntax; just broken Swift.
             "func check(wotsit string1 str: String, against other: String) -> Bool {\nreturn str == other\n}"
+        ]
+
+        // Make sure all correct answers assert true.
+        for answer in correctAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+        }
+
+        // Make sure all wrong answers assert false.
+        for answer in wrongAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+        }
+    }
+
+    /// Compares various correct answers against a known question to make sure Free Coding is stable.
+    func testFreeCoding2() {
+        let question = "Write code that loops from 1 through 100 to create an array of all even numbers."
+        let answers = [
+            "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
+            "var even2:[Int] = [Int]()\nfor i in 1...100 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven2.append(i)\n\t}\n}",
+            "var even3:[Int] = [Int]()\nfor i in 1..<101 {\n\tif i % 2 == 0 {\n\t\teven3.append(i)\n\t}\n}",
+            "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
+            "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
+            "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
+            "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
+            "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
+            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
+        ]
+
+        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
+
+        let correctAnswers = [
+            "let evens = (1...100).filter { someNumber in return someNumber % 2 == 0 }",
+            "let evens = (1...100).filter { someNumber in someNumber % 2 == 0 }",
+            "let evens = (1...100).filter { return $0 % 2 == 0 }",
+            "let evens = (1...100).filter { $0 % 2 == 0 }",
+            "let evens = (1...100).filter {\n$0 % 2 == 0 }",
+            "let evens = (1...100).filter {\n$0 % 2 == 0\n}",
+            "let evens = (1...100).filter {$0 % 2 == 0\n}",
+            "let evens = (1...100).filter {\n\t$0 % 2 == 0\n}",
+            "let evens = (1...100).filter {\n\n\n\n return $0 % 2 == 0\n\n\n\n\n }"
+        ]
+
+        let wrongAnswers = [
+            // This doesn't count high enough
+            "let evens = (1..<100).filter { someNumber in return someNumber % 2 == 0 }",
+
+            // This misses the "in"
+            "let evens = (1...100).filter { someNumber return someNumber % 2 == 0 }",
+
+            // This uses shorthand syntax as well as named parameters
+            "let evens = (1...100).filter { someNumber in return $0 % 2 == 0 }"
         ]
 
         // Make sure all correct answers assert true.

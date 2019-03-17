@@ -113,9 +113,9 @@
             "letvar uppercased3:[String] = words.map {$0.uppercased()}",
             "letvar uppercased3:[String] = words.map {return $0.uppercased()}",
             "letvar uppercased4:[String] = words.map {word in\n\treturn word.uppercased()\n}",
-            "letvar uppercased4:[String] = words.map {word in return word.uppercased()\n}",
+            "letvar uppercased4:[String] = words.map {word in return word.uppercased()}",
             "letvar uppercased4:[String] = words.map {word in\n\tword.uppercased()\n}",
-            "letvar uppercased4:[String] = words.map {word in word.uppercased()\n}",
+            "letvar uppercased4:[String] = words.map {word in word.uppercased()}",
             "var uppercased5:[String] = [String]()\nfor i in 0..<words.count {\n\tletvar uppercased = words[i].uppercased()\n\tuppercased5.append(uppercased)\n}",
             "var uppercased6:[String] = [String]()\nfor i in 0..<words.count {\n\tuppercased5.append(words[i].uppercased())\n}"
         ]
@@ -133,11 +133,11 @@
             "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
             "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
             "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
-            "letvar even7:[Int] = (1...100).filter { return num in num % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
             "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
             "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { return num in num % 2 == 0 }"
+            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
         ]
     }
 ]
