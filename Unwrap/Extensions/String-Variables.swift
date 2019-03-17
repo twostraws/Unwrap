@@ -58,7 +58,7 @@ extension String {
         replaced = replaced.anonymizingComponent("func +[A-Za-z_][A-Za-z0-9_]* *\\((?:([A-Za-z_]*[A-Za-z0-9_]* *[A-Za-z_][A-Za-z0-9_]*) *: *[A-Za-z_][A-Za-z0-9_]*,? *)*", replacementWrapper: "%")
 
         // Anonymize a closure parameter if one was provided. (This only handles single parameters, but that's enough here.)
-        replaced = replaced.anonymizingComponent("\\{\n([A-Za-z_][A-Za-z0-9_]*) in", replacementWrapper: "§")
+        replaced = replaced.anonymizingComponent("\\{\n+([A-Za-z_][A-Za-z0-9_]*) in", replacementWrapper: "§")
 
         // Anonymize function names.
         replaced = replaced.anonymizingComponent("func +([A-Za-z_][A-Za-z0-9_]*)", replacementWrapper: "#")
