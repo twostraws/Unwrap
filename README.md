@@ -22,7 +22,7 @@ At some point hopefully soon Unwrap will be available to download for free on th
 
 ## Trying it yourself
 
-Unwrap is written using Xcode 10.1 and Swift 4.2. All the CocoaPods are checked in to this repository, so you should be able to clone this and build it immediately by opening `Unwrap.xcworkspace`.
+Unwrap is written using Xcode 10.2 and Swift 5.0. All the CocoaPods are checked in to this repository, so you should be able to clone this and build it immediately by opening `Unwrap.xcworkspace`.
 
 As far as I know the app is feature complete, but there are likely to be errors all over the place at least to begin with – if you hit problems, either building or running the app, please let me know.
 
