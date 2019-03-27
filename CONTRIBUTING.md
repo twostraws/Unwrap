@@ -14,9 +14,9 @@ If you have questions about the code, about making commits, or even if you’re 
 
 ## Tools
 
-Unwrap was built using Xcode 9.3 and Swift 4.1. I know that some of you will immediately try and run it using Xcode 10/Swift 4.2, but please hold back if you can – I used 4.1 in case I’m able to release before 4.2 is generally available, and will upgrade to 4.2 as soon as it’s released.
+Unwrap was built using Xcode 10.2 and Swift 5.0.
 
-You will also need to install SwiftLint so you can check all its tests pass when you make a change, and optionally also CocoaPods if you need to re-install the pods for some reason. Broadly speaking it’s preferable that you don’t upgrade pod versions just for fun – if there’s some particular feature or improvement that’s worthwhile let’s talk it over first.
+The project uses SwiftLint, so please check all its tests pass when you make a change. You may need to install CocoaPods if you need to re-install the pods for some reason. Broadly speaking it’s preferable that you don’t upgrade pod versions just for fun – if there’s some particular feature or improvement that’s worthwhile let’s talk it over first.
 
 Unwrap uses a *lot* of JSON – you should bookmark something like <https://jsonformatter.org> so you can check your JSON is correct easily. Annoyingly, JSON does not allow real line breaks in strings (they are encoded as `\n`), or comments. So, be prepared to read some fairly long strings in JSON! 
 
@@ -53,9 +53,7 @@ Moving on, the `Reusables` group stores a a handful of reusable components such 
 
 The `User` group contains three files, all of which combine together to make the `User` class. This is a singleton because there can only ever be one user, and it’s shared across the app. This class is split into three files mainly to make it easier to understand – this one class handles everything to do with user data, so there’s a lot to it.
 
-Finally, outside all the groups, is the main tab bar controller responsible for setting up the coordinators in each of its five tabs. You’ll also see Swift42.swift, which contains a number of shims that let me use some Swift 4.2 code inside Swift 4.1, and Unwrap.swift, which is a tiny enum containing some static constants that are used throughout the app.
-
-**Note:** Along with mostly removing Swift42.swift, when we migrate to Xcode 10 we’ll be able to use the Large Title style for attributed strings in Interface Builder. This is absent in Xcode 9.4, so Heading 1 is used in lieu.
+Finally, outside all the groups, is the main tab bar controller responsible for setting up the coordinators in each of its five tabs. You’ll also see Unwrap.swift, which is a tiny enum containing some static constants that are used throughout the app.
 
 
 ## Navigation
@@ -104,6 +102,7 @@ The Practice tab is by far the most complex, mostly because it encompasses multi
 3. All are locked until the user has read a particular chapter of the book; this is stored the practice activity’s `lockedUntil` property.
 
 Let’s dive in to each of the practice activities…
+
 
 ### Free Coding
 

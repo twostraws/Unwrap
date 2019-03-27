@@ -2201,7 +2201,7 @@
 				TargetAttributes = {
 					51CC135E2065607C00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
 								enabled = 0;
@@ -2210,12 +2210,12 @@
 					};
 					51CC13722065607F00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = 51CC135E2065607C00F37A67;
 					};
 					51CC137D2065607F00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = 51CC135E2065607C00F37A67;
 					};
 				};
@@ -3134,6 +3134,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3152,6 +3153,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -3172,6 +3174,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
 			};
@@ -3193,6 +3196,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
 			};
@@ -3213,6 +3217,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Unwrap;
 			};
@@ -3233,6 +3238,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Unwrap;
 			};

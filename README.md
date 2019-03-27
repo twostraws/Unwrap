@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/iOS-11.3+-blue.svg" />
-    <img src="https://img.shields.io/badge/Swift-4.2-brightgreen.svg" />
+    <img src="https://img.shields.io/badge/iOS-12.0+-blue.svg" />
+    <img src="https://img.shields.io/badge/Swift-5.0-brightgreen.svg" />
     <a href="https://twitter.com/twostraws">
         <img src="https://img.shields.io/badge/Contact-@twostraws-lightgrey.svg?style=flat" alt="Twitter: @twostraws" />
     </a>
@@ -65,7 +65,7 @@ Again, please make sure you read the LICENSE.md and CONTRIBUTING.md files before
 
 ## Credits
 
-Unwrap was designed and built by Paul Hudson. Hacking with Swift, Swift in Sixty Seconds, Unwrap, and the Unwrap logo are all copyright © Paul Hudson 2018.
+Unwrap was designed and built by Paul Hudson. Hacking with Swift, Swift in Sixty Seconds, Unwrap, and the Unwrap logo are all copyright © Paul Hudson 2019.
 
 Unwrap is built using some third-party frameworks and fonts: [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet), [Font Awesome](https://fontawesome.com/), [MKRingProgressView](https://github.com/maxkonovalov/MKRingProgressView), [QuickLayout](https://github.com/huri000/QuickLayout), [SavannaKit](https://github.com/louisdh/savannakit), [SDWebImage](https://github.com/SDWebImage/SDWebImage), [SourceEditor](https://github.com/louisdh/source-editor), and [SwiftEntryKit](https://github.com/huri000/SwiftEntryKit). Their licenses are stored inside their respective Pods directories, and are repeated inside the app’s credits screen.
 

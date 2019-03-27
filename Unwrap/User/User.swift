@@ -86,7 +86,7 @@ final class User: Codable {
 
     /// The users current rank number.
     var rankNumber: Int {
-        let rank = User.rankLevels.index { $0 > totalPoints }
+        let rank = User.rankLevels.firstIndex { $0 > totalPoints }
         return (rank ?? 1)
     }
 
