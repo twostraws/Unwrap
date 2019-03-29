@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Protocols specify what methods and properties conforming types must have.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "You can create one protocol by inheriting from others.",
-            "reason": ""
+            "reason": "You can even inherit from multiple protocols if you want to."
         },
         {
             "answer": "You can write extensions for protocols to provide default implementations.",
-            "reason": ""
+            "reason": "This lets us share code more easily."
         },
         {
             "answer": "Protocols can mark properties as read-only or read-write.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Each type can conform to as many protocols as you want.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "You can write extensions for Swift's built-in protocols.",
-            "reason": ""
+            "reason": "This lets us add functionality very quickly."
         }
     ],
     "wrong": [
         {
             "answer": "Protocols can contain method implementations.",
-            "reason": ""
+            "reason": "Only extensions can contain method implementations."
         },
         {
             "answer": "Properties must always be read-write.",
-            "reason": ""
+            "reason": "They can also be read-only."
         },
         {
             "answer": "Protocols can define their own protocols internally.",
-            "reason": ""
+            "reason": "Protocols cannot contain other protocols."
         },
         {
             "answer": "Only structs can conform to protocols.",
-            "reason": ""
+            "reason": "Any type can conform to protocols."
         },
         {
             "answer": "Each data type can conform to only one protocol.",
-            "reason": ""
+            "reason": "You can conform to as many as you need."
         },
         {
             "answer": "You can write extensions for protocols that don't exist.",
-            "reason": ""
+            "reason": "This is not possible in Swift."
         }
     ]
 }

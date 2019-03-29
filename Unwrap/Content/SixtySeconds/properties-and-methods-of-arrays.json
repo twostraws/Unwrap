@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "let tens = [30, 20, 10]\ntens.sorted() == [10, 20, 30]",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         },
         {
             "answer": "let spaceships = [\"Serenity\", \"Enterprise\"]\nspaceships.contains(\"Serenity\")",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         },
         {
             "answer": "var usedNumbers = [Int]()\nfor i in 1...10 {\n\tusedNumbers.append(i)\n}\nusedNumbers.count > 5",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         },
         {
             "answer": "let marines = [\"Apone\", \"Hicks\", \"Vasquez\"]\nmarines.contains(\"Hicks\")",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         },
         {
             "answer": "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.index(of: \"Whist\") == 2",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         },
         {
             "answer": "var results = [true, true, false, true]\nresults.remove(at: 2)\nresults.count == 3",
-            "reason": ""
+            "reason": "This code will evaluate as true."
         }
     ],
     "wrong": [
         {
             "answer": "let composers = [\"Mozart\", \"Bach\", \"Beethoven\"]\ncomposers.append(\"Chopin\")\ncomposers.count == 4",
-            "reason": ""
+            "reason": "This is invalid Swift – you can't append to a constant array."
         },
         {
             "answer": "var breeds = [\"Corgi\", \"Labrador\", \"Samoyed\"]\nbreeds.contains(\"corgi\")",
-            "reason": ""
+            "reason": "This will evaluate as false, because strings are case-sensitive in Swift."
         },
         {
             "answer": "var fibonacci = [1, 1, 2, 3, 5, 8]\nfibonacci.sorted() == [1, 2, 3, 5, 8]",
-            "reason": ""
+            "reason": "This will evaluate as false, because the sorted array is missing the second 1."
         },
         {
             "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
-            "reason": ""
+            "reason": "\"A New Hope\" exists at index 0."
         },
         {
             "answer": "let heights = [1.0, 1.2, 1.15, 1.39]\nheights.remove(at: 0)\nheights.count == 3",
-            "reason": ""
+            "reason": "You can't remove items from a constant array."
         },
         {
             "answer": "var examScores = [100, 95, 92]\nexamScores.insert(98)",
-            "reason": ""
+            "reason": "This is invalid Swift, because the <code>insert()<\/code> method must also be told where to insert the item."
         }
     ]
 }

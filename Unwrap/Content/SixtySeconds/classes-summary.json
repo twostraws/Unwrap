@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "One class can inherit from another class.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "A child class can override a method from its parent class.",
-            "reason": ""
+            "reason": "Swift requires that we use the <code>override<\/code> keyword to make this clear."
         },
         {
             "answer": "You can declare a class as <code>final<\/code> to stop subclasses of it being created.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Deinitializers run when an instance of a class is destroyed.",
-            "reason": ""
+            "reason": "This happens only with classes, not with structs."
         },
         {
             "answer": "Two variables can point at the same class data.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Classes and structs treat mutability differently.",
-            "reason": ""
+            "reason": "This is correct."
         }
     ],
     "wrong": [
         {
             "answer": "Structs can also use inheritance, but only in special circumstances.",
-            "reason": ""
+            "reason": "Structs can never use inheritance."
         },
         {
             "answer": "You may inherit from multiple classes if you want.",
-            "reason": ""
+            "reason": "Swift supports inheriting from only one class."
         },
         {
             "answer": "The <code>override<\/code> keyword must be used in all methods of a child class.",
-            "reason": ""
+            "reason": "This keyword must be used only for methods that exist on a parent class."
         },
         {
             "answer": "Classes do not have access control keywords such as <code>private<\/code>",
-            "reason": ""
+            "reason": "They have the same access control keywords as structs."
         },
         {
             "answer": "Classes must always have initializers.",
-            "reason": ""
+            "reason": "They only need initializers if you don't give their properties default values."
         },
         {
             "answer": "If you want others to inherit from your classes, you must mark it <code>nonfinal<\/code>",
-            "reason": ""
+            "reason": "The default behavior of classes is to be open for inheritance."
         }
     ]
 }

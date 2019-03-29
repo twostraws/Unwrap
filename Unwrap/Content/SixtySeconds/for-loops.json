@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "print(\"Haters gonna \")\nfor _ in 1...4 {\n\tprint(\"hate\")\n}",
-            "reason": ""
+            "reason": "This will print four lines of text."
         },
         {
             "answer": "let albums = [\"1989\", \"Red\"]\nfor album in albums {\n\tprint(\"\\(album) was a great album!\")\n}",
-            "reason": ""
+            "reason": "This will print two lines of text."
         },
         {
             "answer": "for i in 1...8 {\n\tif i < 3 {\n\t\tprint(\"\\(i) is a small number\")\n\t}\n}",
-            "reason": ""
+            "reason": "This will print two lines of text."
         },
         {
             "answer": "for _ in 0...3 {\n\tprint(\"Hip hip hurray!\")\n}",
-            "reason": ""
+            "reason": "This will print four lines of text."
         },
         {
             "answer": "var speeds = (65, 58, 72)\nfor speed in speeds {\n\tprint(\"You were driving at \\(speed)km\/h.\")\n}",
-            "reason": ""
+            "reason": "You cannot loop over a tuple like this."
         },
         {
             "answer": "for beatle in \"John\", \"Paul\", \"Ringo\" {\n\tprint(\"\\(beatle) was in the Beatles\")\n}",
-            "reason": ""
+            "reason": "This is invalid Swift – those names need to be in an array in order for this to work."
         }
     ]
 }

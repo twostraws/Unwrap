@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Structs can have as many or as few properties as you need.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Structs can have custom initializers.",
-            "reason": ""
+            "reason": "Custom initializers usually replace the default memberwise initialiser."
         },
         {
             "answer": "Strings and arrays are both structs.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Methods that change properties must be marked <code>mutating<\/code>",
-            "reason": ""
+            "reason": "Swift won't let you change a struct's properties unless you mark the method as mutating."
         },
         {
             "answer": "You can share properties and methods across all instances of a struct using <code>static<\/code>",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Computed properties let us run code to return a value.",
-            "reason": ""
+            "reason": "This is correct."
         }
     ],
     "wrong": [
         {
-            "answer": "You may either have stored properties or computed properties, but not both.",
-            "reason": ""
+            "answer": "A struct may either have stored properties or computed properties, but not both.",
+            "reason": "You can mix and match the two however you want."
         },
         {
             "answer": "Structs may not use constant properties.",
-            "reason": ""
+            "reason": "Constant properties work just fine with structs."
         },
         {
-            "answer": "You can combine <code>public<\/code> and <code>private<\/code> in a single property.",
-            "reason": ""
+            "answer": "The <code>filepublic<\/code> access level allows us to modify a property from anywhere in our program.",
+            "reason": "There is no such access level."
         },
         {
             "answer": "The <code>self<\/code> keyword must not be used inside initializers.",
-            "reason": ""
+            "reason": "You can use <code>self<\/code> freely in initializers."
         },
         {
             "answer": "You must always write your own initializer for structs.",
-            "reason": ""
+            "reason": "You can rely on Swift's default memberwise initializer a lot of the time."
         },
         {
             "answer": "Structs can't have lazy properties.",
-            "reason": ""
+            "reason": "They can use lazy properties just fine."
         }
     ]
 }

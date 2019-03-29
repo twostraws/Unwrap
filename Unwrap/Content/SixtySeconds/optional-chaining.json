@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func loadForecast(for dayNumber: Int) -> String {\n\tprint(\"Forecast unavailable.\")\n\treturn nil\n}\nlet forecast = loadForecast(for: 3)?.uppercased()",
-            "reason": ""
+            "reason": "The <code>loadForecast()<\/code> function does not return an optional string."
         },
         {
             "answer": "let captains = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
-            "reason": ""
+            "reason": "The <code>captains<\/code> array is optional, so this should read <code>captains?.last?.count<\/code>."
         },
         {
             "answer": "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",
-            "reason": ""
+            "reason": "Accessing the <code>first<\/code> property returns an optional, so this should read <code>credentials.first?.lowercased()<\/code>."
         },
         {
             "answer": "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
-            "reason": ""
+            "reason": "Accessing a dictionary key is optional, so this should read <code>oposites[\"light\"]?.uppercased()<\/code>."
         },
         {
             "answer": "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",
-            "reason": ""
+            "reason": "The <code>count<\/code> property is not optional, so this should read <code>names.last?.count<\/code>."
         },
         {
             "answer": "let attendees: [String] = [String]()\nlet firstInLine = attendees?.first?.uppercased()",
-            "reason": ""
+            "reason": "The <code>attendees<\/code> array is not optional, so this should read <code>attendees.first?.uppercased<\/code>."
         }
     ]
 }

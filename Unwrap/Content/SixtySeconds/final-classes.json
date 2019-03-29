@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "class Game { }\nfinal class BoardGame: Game { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         },
         {
             "answer": "class Magazine { }\nfinal class FashionMagazine: Magazine { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         },
         {
             "answer": "class Shoes { }\nfinal class KittenHeels: Shoes { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         },
         {
             "answer": "class Furniture { }\nclass Couch: Furniture { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         },
         {
             "answer": "class Player { }\nclass Barbarian: Player { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         },
         {
             "answer": "class Hat { }\nclass Fez: Hat { }",
-            "reason": ""
+            "reason": "This creates one class and another that inherits from it."
         }
     ],
     "wrong": [
         {
             "answer": "class Pen { }\nclass Bic { }",
-            "reason": ""
+            "reason": "This creates two classes, but doesn't use inheritance."
         },
         {
             "answer": "final class GemStone { }\nclass Diamond: GemStone { }",
-            "reason": ""
+            "reason": "This attempts to inherit from a final class, which is not allowed."
         },
         {
             "answer": "final class Landmark { }\nfinal class Monument: Landmark { }",
-            "reason": ""
+            "reason": "This attempts to inherit from a final class, which is not allowed."
         },
         {
             "answer": "struct Massage { }\nclass HeadMassage: Massage { }",
-            "reason": ""
+            "reason": "Inheritance is not possible with structs, only classes."
         },
         {
             "answer": "class MusicPlayer { }\nstruct RecordPlayer: MusicPlayer { }",
-            "reason": ""
+            "reason": "Inheritance is not possible with structs, only classes."
         },
         {
             "answer": "class Movie { }\nfinal struct Comedy: Movie { }",
-            "reason": ""
+            "reason": "Inheritance is not possible with structs, only classes."
         }
     ]
 }

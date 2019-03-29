@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Order {\n\tvar customerID: Int\n\tvar itemID: Int\n}\nlet order = Order(customer: 143, item: 556)",
-            "reason": ""
+            "reason": "The second property is named <code>itemID<\/code>, not <code>item<\/code>."
         },
         {
             "answer": "struct LeviJeans {\n\tvar fitNumber: Int\n\tvar waist: Int\n\tvar leg: Int\n}\nlet jeans = LeviJeans(fitNumber: \"501\", waist: \"34\", leg: \"32\")",
-            "reason": ""
+            "reason": "This attempts to assign strings to integers."
         },
         {
             "answer": "struct Cup {\n\tvar size: Int\n\tvar color = White\n}",
-            "reason": ""
+            "reason": "<code>White<\/code> doesn't have any meaning; strings should be enclosed in quote marks."
         },
         {
             "answer": "struct RubiksCube {\n\tvar size = 3\n}\nlet large = RubiksCube(5)",
-            "reason": ""
+            "reason": "This is missing the <code>size<\/code> parameter label."
         },
         {
             "answer": "struct Dog (\n\tvar name: String\n\tvar breed: String\n)",
-            "reason": ""
+            "reason": "This uses parentheses rather than braces."
         },
         {
             "answer": "struct Boat {\n\tname: String\n\thomePort: String\n\tmaxSpeed: Int\n}",
-            "reason": ""
+            "reason": "This is missing the <code>var<\/code> keyword."
         }
     ]
 }

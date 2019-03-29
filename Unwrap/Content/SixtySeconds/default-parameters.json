@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func goToWarp(speed: Int) {\n\tif speed > 9 {\n\t\tprint(\"The engines cannae take any more!\")\n\t} else {\n\t\tprint(\"Going to warp \\(speed)...\")\n\t}\n}\n\ngoToWarp()",
-            "reason": ""
+            "reason": "This calls the <code>goToWarp()<\/code> function without passing in its parameter."
         },
         {
             "answer": "func brushTeeth(useFloss: Bool = true) {\n\tif floss {\n\t\tprint(\"I'm flossing first.\")\n\t}\n\tprint(\"I'm brushing my teeth.\")\n}",
-            "reason": ""
+            "reason": "The parameter is called <code>useFloss<\/code> not <code>floss<\/code>."
         },
         {
             "answer": "func playGolf(holes: String = 18) {\n\tprint(\"Let's play \\(holes) holes of golf.\")\n}\nplayGolf()",
-            "reason": ""
+            "reason": "This calls the <code>playGolf()<\/code> function without passing in its parameter."
         },
         {
             "answer": "func takePicture(withFlash flash Bool = true) {\n\tif flash {\n\t\tprint(\"I'm taking a photo with flash\")\n\t} else {\n\t\tprint(\"I'm taking a photo\")\n\t}\n}",
-            "reason": ""
+            "reason": "The syntax <code>withFlash flash Bool = true<\/code> is invalid, because it's missing a colon."
         },
         {
             "answer": "func eatMeal(withDessert: Bool = true) {\n\tif withDessert {\n\t\tprint(\"All the best meals include dessert.\")\n\t} else {\n\t\tprint(\"Bah... maybe next time.\")\n\t}\n}\neatMeal(dessert: true)",
-            "reason": ""
+            "reason": "This calls the <code>eatMeal()<\/code> function with the wrong parameter name."
         },
         {
             "answer": "func fireArrow(skillLevel: Int = 1) -> String {\n\tswitch skillLevel {\n\tcase 1...3:\n\t\tprint(\"You missed the target.\")\n\tcase 4...7:\n\t\tprint(\"You hit the target.\")\n\tcase 8...10:\n\t\tprint(\"Great shot!\")\n\t}\n}",
-            "reason": ""
+            "reason": "This function must return a string."
         }
     ]
 }

@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Strings are case-sensitive.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Closures can capture values around them.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Structs are copied differently from classes.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Enums can have associated values.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Variadic functions take any number of parameters.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Throwing functions must be called using <code>try<\/code>.",
-            "reason": ""
+            "reason": "This is correct."
         }
     ],
     "wrong": [
         {
             "answer": "Functions inside structs are called closures.",
-            "reason": ""
+            "reason": "They are called methods."
         },
         {
             "answer": "Swift automatically generates the shorthand parameter names <code>#0<\/code>, <code>#1<\/code>, and so on.",
-            "reason": ""
+            "reason": "They are named <code>$0<\/code> rather than <code>#0<\/code>."
         },
         {
             "answer": "Classes may not contain private methods.",
-            "reason": ""
+            "reason": "Classes are perfectly able to contain private methods."
         },
         {
             "answer": "You can make a new struct by inheriting from any other structs that are not declared using <code>final<\/code>.",
-            "reason": ""
+            "reason": "Structs cannot use inheritance."
         },
         {
             "answer": "Extensions can only be used on protocols.",
-            "reason": ""
+            "reason": "You can also extend specific types."
         },
         {
             "answer": "<code>String<\/code> and <code>String!<\/code> are the same thing.",
-            "reason": ""
+            "reason": "Implicitly unwrapped optionals such as <code>String!<\/code> might be nil."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "class Doctor {\n\tfunc operate() {\n\t\tprint(\"I can't do that.\")\n\t}\n}\nclass Surgeon {\n\toverride func operate() {\n\t\tprint(\"OK, let's go!\")\n\t}\n}\nlet doogieHowser = Doctor()\ndoogieHowser.operate()",
-            "reason": ""
+            "reason": "The <code>Surgeon<\/code> class cannot use <code>override<\/code> because it doesn't inherit from anything."
         },
         {
             "answer": "class Building {\n\toverride func build() {\n\t\tprint(\"This will take a couple of months.\")\n\t}\n}\nclass Skyscraper: Building {\n\toverride func build() {\n\t\tprint(\"This will take a year.\")\n\t}\n}\nlet shanghaiTower = Skyscraper()\nshanghaiTower.build()",
-            "reason": ""
+            "reason": "The <code>Building<\/code> class cannot use <code>override<\/code> because it doesn't inherit from anything."
         },
         {
             "answer": "class Airplane: Jet {\n\tfunc takeOff() {\n\t\tprint(\"Fasten your seatbelts.\")\n\t}\n}\nclass Jet: Airplane {\n\toverride func takeOff() {\n\t\tprint(\"Someone call Kenny Loggins, because we're going into the danger zone!\")\n\t}\n}\nlet f14 = Jet()\nf14.takeOff()",
-            "reason": ""
+            "reason": "This attempts to make one class inherit from another, and the other class inherit from the first, which is not valid Swift."
         },
         {
             "answer": "class Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your popcorn ready!\")\n\t}\n}\nclass IMAXCinema: Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your eardrums ready!\")\n\t}\n}\nlet londonIMAX = IMAXCinema()\nlondonIMAX.showMovie()",
-            "reason": ""
+            "reason": "The <code>showMovie()<\/code> method of <code>IMAXCinema<\/code> must be declared using <code>override<\/code>."
         },
         {
             "answer": "class Store {\n\tfunc restock() -> String {\n\t\treturn \"Fill up the empty shelves\"\n\t}\n}\nclass GroceryStore: Store {\n\toverride func restock() -> String {\n\t\treturn \"We need to buy more food.\"\n\t}\n}\nlet tesco = GroceryStore()\ntesco.restock()",
-            "reason": ""
+            "reason": "Although this code is valid, it not print any output."
         },
         {
             "answer": "class Exercise {\n\tfunc describe() {\n\t}\n}\nclass ChinUps: Exercise {\n\toverride func describe() {\n\t}\n}\nlet firstRep = ChinUps()\nfirstRep.describe()",
-            "reason": ""
+            "reason": "Although this code is valid, it not print any output."
         }
     ]
 }

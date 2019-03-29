@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Lazy properties are created only when first accessed.",
-            "reason": ""
+            "reason": "This is exactly how lazy properties work."
         },
         {
             "answer": "You can assign lazy properties by calling a method.",
-            "reason": ""
+            "reason": "This can help keep your code more organized."
         },
         {
             "answer": "Lazy properties are created using the <code>lazy<\/code> keyword.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Lazy properties can be used inside any kind of structs.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "A lazy property can be an instance of a different struct.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Lazy properties are a performance optimization.",
-            "reason": ""
+            "reason": "They are created only when needed, and so might never be created."
         }
     ],
     "wrong": [
         {
             "answer": "Lazy properties never do any work.",
-            "reason": ""
+            "reason": "Lazy properties can be accessed just like regular properties."
         },
         {
             "answer": "Lazy properties only work with strings.",
-            "reason": ""
+            "reason": "You can use any data type you need."
         },
         {
             "answer": "Lazy properties are created when your app finishes.",
-            "reason": ""
+            "reason": "They are created when first accessed."
         },
         {
             "answer": "Lazy properties act like property observers.",
-            "reason": ""
+            "reason": "Lazy properties are quite different from property observers."
         },
         {
             "answer": "Lazy properties must be created using <code>self<\/code>",
-            "reason": ""
+            "reason": "They are created using <code>lazy<\/code>."
         },
         {
             "answer": "Lazy properties can use trailing closure syntax.",
-            "reason": ""
+            "reason": "Only functions and methods can use trailing closure syntax."
         }
     ]
 }

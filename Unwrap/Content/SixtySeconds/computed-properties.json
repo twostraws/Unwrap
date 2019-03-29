@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Sunglasses {\n\tvar protectionLevel: Int\n\tvar visionTest: String {\n\t\tif protectionLevel < 3 {\n\t\t\treturn \"These aren't very dark\"\n\t\t} else if protectionLevel < 6 {\n\t\t\treturn \"These are just right\"\n\t\t} else if protectionLevel < 10 {\n\t\t\treturn \"Who turned the lights out?\"\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "If <code>protectionLevel<\/code> is set to a number greater than 10 then <code>visionTest<\/code> won't return a value."
         },
         {
             "answer": "struct City {\n\tvar population: String\n\tvar description: String {\n\t\tif population < 100_000 {\n\t\t\treturn \"This is a small city.\"\n\t\t} else if population < 1_000_000 {\n\t\t\treturn \"This is a medium-sized city.\"\n\t\t} else {\n\t\t\treturn \"This is a large city.\"\n\t\t}\n\t}\n}\nlet tokyo = City(population: 12_000_000)",
-            "reason": ""
+            "reason": "This attempts to check the <code>population<\/code> string against various integers."
         },
         {
             "answer": "struct Code {\n\tvar language: String\n\tvar containsErrors = false\n\tvar report {\n\t\tif containsErrors {\n\t\t\treturn \"This \\(language) code has bugs!\"\n\t\t} else {\n\t\t\treturn \"This looks good to me.\"\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "Computed properties must always have an explicit type."
         },
         {
             "answer": "struct Candle {\n\tvar burnLength: Int\n\tvar alreadyBurned = 0\n\tlet burnRemaining: Int {\n\t\treturn burnLength - alreadyBurned\n\t}\n}",
-            "reason": ""
+            "reason": "Constants cannot be computed properties."
         },
         {
             "answer": "struct Dog {\n\tvar breed: String\n\tvar cuteness: Int\n\tvar rating: String {\n\t\tif cuteness < 3 {\n\t\t\tprint(\"That's a cute dog!\")\n\t\t} else if cuteness < 7 {\n\t\t\tprint(\"That's a really cute dog!\")\n\t\t} else {\n\t\t\tprint(\"That a super cute dog!\")\n\t\t}\n\t}\n}\nlet luna = Dog(breed: \"Samoyed\", cuteness: 11)\nprint(luna.rating)",
-            "reason": ""
+            "reason": "This computed property prints strings rather than returning them."
         },
         {
             "answer": "struct Race {\n\tvar distance: Int\n\tvar runners = 0\n\tvar description = String {\n\t\treturn \"This is a \\(distance)km race with \\(runners) runners.\"\n\t}\n}\nlet londonMarathon = Race(distance: 42, runners: 40_000)",
-            "reason": ""
+            "reason": "The syntax <code>var description = String<\/code> is invalid."
         }
     ]
 }

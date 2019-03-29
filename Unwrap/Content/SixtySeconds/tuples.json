@@ -8,27 +8,27 @@
     "correct": [
         {
             "answer": "Tuples are fixed in size.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "You can't change the types of tuple items.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "You can access tuple items using numerical positions.",
-            "reason": ""
+            "reason": "This is correct, although using names is usually easier."
         },
         {
             "answer": "You can name tuple items.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Tuples are created by placing items inside parentheses.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Tuples store values together in a single value.",
-            "reason": ""
+            "reason": "This is correct."
         }
     ],
     "wrong": [

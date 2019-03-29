@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "A variadic parameter is written with three dots after its type: <code>Int...<\/code>",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Variadic parameters can potentially receive hundreds of values.",
-            "reason": ""
+            "reason": "They are all given to us as a single array."
         },
         {
             "answer": "Variadic parameters can potentially receive zero values.",
-            "reason": ""
+            "reason": "The array we're given might be empty."
         },
         {
             "answer": "Variadic parameters are converted into arrays inside your function.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "<code>print()<\/code> is a variadic function.",
-            "reason": ""
+            "reason": "You can pass in as many values as you want, separated by commas."
         },
         {
             "answer": "You can write your own variadic functions.",
-            "reason": ""
+            "reason": "Just place three dots after the type of one of your parameters."
         }
     ],
     "wrong": [
         {
             "answer": "Variadic functions only work with integers.",
-            "reason": ""
+            "reason": "You can use any type you want."
         },
         {
             "answer": "Variadic parameters must always have at least one value.",
-            "reason": ""
+            "reason": "You can pass in no values if you want."
         },
         {
             "answer": "Variadic functions are slower than regular functions.",
-            "reason": ""
+            "reason": "There is no performance difference between the two."
         },
         {
             "answer": "You can pass an array in place of a variadic parameter.",
-            "reason": ""
+            "reason": "You must always pass values individually, separated by commas."
         },
         {
             "answer": "Variadic functions must always return a value.",
-            "reason": ""
+            "reason": "They are no different from regular functions, which means they don't have to return a value."
         },
         {
             "answer": "Variadic functions must always omit external parameter labels.",
-            "reason": ""
+            "reason": "They are no different from regular functions, which means they have the same rules for parameter labels."
         }
     ]
 }

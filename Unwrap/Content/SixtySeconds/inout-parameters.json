@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Inout parameters are marked using the <code>inout<\/code> keyword.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Inout parameters must be passed in using <code>&<\/code>",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Inout parameters must be variables.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Regular parameters are passed into functions as constants.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "You can pass several parameters as inout if you want.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Changing Inout parameters inside a function changes them outside too.",
-            "reason": ""
+            "reason": "This statement is correct."
         }
     ],
     "wrong": [
         {
             "answer": "Inout parameters must be integers.",
-            "reason": ""
+            "reason": "Inout parameters can be any kind of data type."
         },
         {
             "answer": "Inout parameters can be constants.",
-            "reason": ""
+            "reason": "Inout parameters must be variable, so they can be changed."
         },
         {
             "answer": "Inout parameters must be passed in using <code>#<\/code>",
-            "reason": ""
+            "reason": "This is invalid syntax in Swift."
         },
         {
             "answer": "You may use up to three inout parameters.",
-            "reason": ""
+            "reason": "You may use as many inout parameters as you need."
         },
         {
             "answer": "You can't use inout parameters in throwing functions.",
-            "reason": ""
+            "reason": "Inout parameters work in all types of functions, including throwing ones."
         },
         {
             "answer": "You can mark return values as being inout.",
-            "reason": ""
+            "reason": "Return values are new values being sent back, rather than existing values being passed in."
         }
     ]
 }

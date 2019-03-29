@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "Closures can accept parameters.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Closures can return values.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Swift provides shorthand parameter names like <code>$0<\/code> and <code>$1<\/code>",
-            "reason": ""
+            "reason": "There can potentially be any number of these, but usually anything past <code>$2<\/code> is too hard to remember."
         },
         {
-            "answer": "If you use external values in  your closure they will be captured.",
-            "reason": ""
+            "answer": "If you use external values in your closure they will be captured.",
+            "reason": "This is called closure capturing."
         },
         {
             "answer": "You can pass closures into functions as parameters.",
-            "reason": ""
+            "reason": "Closures act like integers, strings, or any other type."
         },
         {
             "answer": "If the last parameter to a function is a closure, you can use trailing closure syntax.",
-            "reason": ""
+            "reason": "This can help make your code easier to read."
         }
     ],
     "wrong": [
         {
             "answer": "If any parameter to a function is a closure, you can use trailing closure syntax.",
-            "reason": ""
+            "reason": "You can use trailing closure syntax only if the final parameter is a closure."
         },
         {
             "answer": "Swift provides shorthand parameter names like <code>#0<\/code> and <code>#1<\/code>",
-            "reason": ""
+            "reason": "They are named <code>$0<\/code> and <code>$1<\/code>."
         },
         {
             "answer": "Closures must always return boolean true or false.",
-            "reason": ""
+            "reason": "They can return whatever you need them to return."
         },
         {
             "answer": "You can't create arrays of closures.",
-            "reason": ""
+            "reason": "You can do this just fine."
         },
         {
             "answer": "Closures must only use variables declared inside them.",
-            "reason": ""
+            "reason": "They can also capture external values."
         },
         {
             "answer": "Closures don't work with dictionaries.",
-            "reason": ""
+            "reason": "Closures work fine with dictionaries."
         }
     ]
 }

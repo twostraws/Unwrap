@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func sendMessage() {\n\tprint(\"Sending message...\")\n}\nsendmessage()",
-            "reason": ""
+            "reason": "Function names are case-sensitive."
         },
         {
             "answer": "func shipOrders() {\n\tlet orders = [1, 2, 3, 4, 5]\n\tfor order in orders {\n\t\tprint(\"Shipping order \\(id)\")\n\t}\n}\nshipOrders()",
-            "reason": ""
+            "reason": "This is invalid because <code>id<\/code> is not defined anywhere."
         },
         {
             "answer": "applyFix() {\n\tprint(\"The fix is applied!\")\n}",
-            "reason": ""
+            "reason": "This is missing the <code>func<\/code> keyword."
         },
         {
             "answer": "func study {\n\tprint(\"It's time to study.\")\n\tprint(\"I'm studying!\")\n\tprint(\"Bored now; time for Netflix.\")\n}\nstudy()",
-            "reason": ""
+            "reason": "This is missing parentheses after <code>func study<\/code>."
         },
         {
             "answer": "func readUserInput() {\n\twhile true {\n\t\tprint(\"Reading user input...\")\n\t\tbreak\n\t}\nreadUserInput()",
-            "reason": ""
+            "reason": "This is missing a closing brace."
         },
         {
             "answer": "func scoreGoal() {\n\tprint(\"Gooooaaaal!\")\n}\nscoreGoal(1)\nscoreGoal(2)\nscoreGoal(3)",
-            "reason": ""
+            "reason": "This attempts to pass parameters to a function that accepts no parameters."
         }
     ]
 }

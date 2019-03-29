@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "let quote = \"Time is an illusion. Lunchtime doubly so.\"\nquote.contains(\"Lunch\")",
-            "reason": ""
+            "reason": "This is true."
         },
         {
             "answer": "let song = \"Shake it Off\"\nsong.uppercased().contains(\"SHAKE\")",
-            "reason": ""
+            "reason": "This is true."
         },
         {
             "answer": "var mac = \"iMac\"\nmac.hasPrefix(\"i\")",
-            "reason": ""
+            "reason": "This is true."
         },
         {
             "answer": "let username = \"twostraws\"\nusername.uppercased() == \"TWOSTRAWS\"",
-            "reason": ""
+            "reason": "This is true."
         },
         {
             "answer": "let joke = \"What's red and smells like blue paint? Red paint.\"\njoke.count > 10",
-            "reason": ""
+            "reason": "This is true."
         },
         {
             "answer": "var str = \"\"\nfor i in 1...5 {\n\tstr += \"\\(i)\"\n}\nstr.count == 5",
-            "reason": ""
+            "reason": "This is true."
         }
     ],
     "wrong": [
         {
             "answer": "var singer = \"Taylor Swift\"\nsinger.hasPrefix(\"TAY\")",
-            "reason": ""
+            "reason": "This is false, because strings are case-sensitive in Swift."
         },
         {
             "answer": "var favoriteIceCream = \"choc chip\"\nfavoriteIceCream.count > 10",
-            "reason": ""
+            "reason": "This is false, because \"choc chip\" is only nine characters."
         },
         {
             "answer": "var superHero = \"Mario\"\nsuperHero.uppercased() == \"Mario\"",
-            "reason": ""
+            "reason": "This is false, because strings are case-sensitive in Swift."
         },
         {
             "answer": "let definitelyTrue = \"Fox in sox\"\ndefinitelyTrue.contains(\"socks\")",
-            "reason": ""
+            "reason": "This is false, because the string we're looking for doesn't exist in <code>definitelyTrue<\/code>."
         },
         {
             "answer": "let shoes = \"Jimmy Choo\"\nshoes.contains(Choo)",
-            "reason": ""
+            "reason": "This is invalid Swift – \"Choo\" must be surrounded by quote marks."
         },
         {
             "answer": "let content = \"Europe\"\ncontinent.contains(\"Europe\")",
-            "reason": ""
+            "reason": "This is invalid Swift – the constant's name is spelled differently."
         }
     ]
 }

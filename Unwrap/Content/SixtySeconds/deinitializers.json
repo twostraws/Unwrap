@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "class Meal {\n\tdealloc {\n\t\tprint(\"Please send over the bill.\")\n\t}\n}",
-            "reason": ""
+            "reason": "<code>dealloc<\/code> is invalid; we need to use <code>deinit<\/code>."
         },
         {
             "answer": "class Election {\n\tinit() {\n\t\tprint(\"And the winner is...\")\n\t}\n}",
-            "reason": ""
+            "reason": "This class does not have a deinitializer."
         },
         {
             "answer": "struct Olympics {\n\tfunc deinit() {\n\t\tprint(\"And now for the closing ceremony.\")\n\t}\n}",
-            "reason": ""
+            "reason": "You don't write parentheses after <code>deinit<\/code>."
         },
         {
             "answer": "struct Fairytale {\n\tdeinit {\n\t\tprint(\"And they lived happily ever after.\")\n\t}\n}",
-            "reason": ""
+            "reason": "Structs may not have deinitializers."
         },
         {
             "answer": "class PhoneCall {\n\tfunc deinit {\n\t\tprint(\"Bye!\")\n\t}\n}",
-            "reason": ""
+            "reason": "You don't write <code>func<\/code> before a deinitializer."
         },
         {
             "answer": "class MarketingFlyer {\n\tdeinit() {\n\t\tprint(\"You're going straight into recycling.\")\n\t}\n}",
-            "reason": ""
+            "reason": "You don't write parentheses after <code>deinit<\/code>."
         }
     ]
 }

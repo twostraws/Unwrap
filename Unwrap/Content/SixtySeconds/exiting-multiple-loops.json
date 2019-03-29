@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "A loop inside a loop is called a nested loop.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Using <code>break<\/code> by itself exits the current loop only.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "Loop labels look like this: <code>myLoop:<\/code>",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "You can exit more than one loop at a time.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "You can break out of a labeled loop whenever you need.",
-            "reason": ""
+            "reason": "This statement is correct."
         },
         {
             "answer": "You can embed one loop inside another.",
-            "reason": ""
+            "reason": "This statement is correct."
         }
     ],
     "wrong": [
         {
             "answer": "You may have only one labeled loop.",
-            "reason": ""
+            "reason": "You may have as many labeled loops as you need."
         },
         {
             "answer": "Nesting can only be used with <code>for<\/code> loops.",
-            "reason": ""
+            "reason": "You can nest <code>while<\/code> loops too, if you want."
         },
         {
             "answer": "Loop labels look like this: <code>myLoop {<\/code>",
-            "reason": ""
+            "reason": "They are written as <code>loopName:<\/code> followed by your regular loop code."
         },
         {
             "answer": "You can exit up to two loops at a time.",
-            "reason": ""
+            "reason": "You can exit more loops than that if you need to, although it's possible your code is a little dubious at that point."
         },
         {
             "answer": "You can only break out of loops inside a condition.",
-            "reason": ""
+            "reason": "You can break out of loops outside of conditions just fine."
         },
         {
             "answer": "You can write <code>break 3<\/code> to break out of two loops.",
-            "reason": ""
+            "reason": "We use names rather than numbers for breaking out of a specific loops."
         }
     ]
 }

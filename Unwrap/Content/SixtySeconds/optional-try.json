@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "If you use <code>try<\/code> you must either catch the error or mark your function as <code>throws<\/code>",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Using <code>try?<\/code> converts a function's return value into an optional.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "If you use <code>try!<\/code> and your call throws an error, your code crashes.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "When using <code>try<\/code> you must catch all errors that can be thrown.",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "You can combine <code>try?<\/code> with <code>if let<\/code>",
-            "reason": ""
+            "reason": "This is correct."
         },
         {
             "answer": "Functions that throw errors must be marked <code>throws<\/code>.",
-            "reason": ""
+            "reason": "This is correct."
         }
     ],
     "wrong": [
         {
             "answer": "You can use <code>try?!<\/code> to combine <code>try?<\/code> and <code>try!<\/code>",
-            "reason": ""
+            "reason": "This does not exist in Swift."
         },
         {
             "answer": "If you use <code>try?<\/code> and your call throws an error, your code crashes.",
-            "reason": ""
+            "reason": "If the calls throws an error you'll get back nil."
         },
         {
             "answer": "If you use <code>try<\/code> and know your function won't throw errors, you don't need to catch anything.",
-            "reason": ""
+            "reason": "Swift will force you to catch all errors."
         },
         {
             "answer": "Functions that might throw errors must be marked <code>throws?<\/code>",
-            "reason": ""
+            "reason": "They must be marked <code>throws<\/code>."
         },
         {
             "answer": "Throwing functions must never call other throwing functions.",
-            "reason": ""
+            "reason": "They can call other functions freely, throwing or otherwise."
         },
         {
             "answer": "Throwing functions can throw multiple errors using tuples.",
-            "reason": ""
+            "reason": "We must throw exactly one error at a time."
         }
     ]
 }
