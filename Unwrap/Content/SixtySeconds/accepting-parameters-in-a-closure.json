@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "let calculateResult = { (answer) in\n\tif answer == 42 {\n\t\tprint(\"You're correct!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
-            "reason": ""
+            "reason": "Swift is unable to figure out what type of data <code>answer</code> is."
         },
         {
             "answer": "printDocument = { (copies: Int) in\n\tfor _ in 1...copies {\n\t\tprint(\"Printing document...\")\n\t}\n}",
-            "reason": ""
+            "reason": "This is missing <code>let</code> or <code>var</code> before <code>printDocument()</code>"
         },
         {
             "answer": "let watchTV = { (channel: String) in\n\tprint(\"I'm going to watch some \\(channel)\")\n}\nwatch_TV(\"BBC News\")",
-            "reason": ""
+            "reason": "This creates a closure called <code>watchTV</code> but tries to call it using <code>watch_TV()</code>."
         },
         {
             "answer": "var shareWinnings = { (amount: Double) in\n\tlet half = amount \/ 2.0\n\tprint(\"It's \\(half) for me and \\(half) for you.\")\n}\nshareWinnings(\"50\")",
-            "reason": ""
+            "reason": "This closure must accept a <code>Double</code> as its parameter, but is being sent a string."
         },
         {
             "answer": "var pickFruit = { (name: String) in\n\tswitch name {\n\tcase strawberry:\n\t\tfallthrough\n\tcase raspberry:\n\t\tprint(\"Strawberries and raspberries are half price!\")\n\tdefault:\n\t\tprint(\"We don't have those.\")\n\t}\n}\n\npickFruit(\"strawberry\")",
-            "reason": ""
+            "reason": "This is trying to do matches on strings, but doesn't wrap \"strawberry\" or \"raspberry\" in quote marks."
         },
         {
             "answer": "var cutGrass = { (length currentLength: Double) in\n\tswitch currentLength {\n\tcase 0...1:\n\t\tprint(\"That's too short\")\n\tcase 1...3:\n\t\tprint(\"It's already the right length\")\n\tdefault:\n\t\tprint(\"That's perfect.\")\n\t}\n}",
-            "reason": ""
+            "reason": "Closures cannot use external parameter labels."
         }
     ]
 }

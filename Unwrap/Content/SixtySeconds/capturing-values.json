@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func takeMedicine(name: String) -> () -> Bool {\n\tvar pillsLeft = 30\n\treturn {\n\t\tif pillsLeft > 0 {\n\t\t\tpillsLeft -= 1\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\n\ntakeMedicine()",
-            "reason": ""
+            "reason": "The <code>takeMedicine()</code> function expects to be given a name string, but none is provided."
         },
         {
             "answer": "func translate(String) -> (String) -> String {\n\treturn {\n\t\tif language == \"French\" {\n\t\t\tif $0 == \"Hello\" {\n\t\t\t\treturn \"Bonjour\"\n\t\t\t} else {\n\t\t\t\treturn \"\\($0) is unknown.\"\n\t\t\t}\n\t\t} else {\n\t\t\treturn \"Unknown language.\"\n\t\t}\n\t}\n}\nlet translator = translate(language: \"French\")\nlet french = translator(\"Hello\")",
-            "reason": ""
+            "reason": "The <code>translate</code> function is missing a name for its parameter."
         },
         {
             "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
-            "reason": ""
+            "reason": "The closure referencees a parameter, <code>$0</code>, but it doesn't take any parameters."
         },
         {
             "answer": "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
-            "reason": ""
+            "reason": "This calls <code>makeTrivialEncrypter()</code> with a parameter when it expects none, and returns a closure that uses a parameter when it doesn't have one."
         },
         {
             "answer": "func handOutBusinessCards() -> () -> Void {\n\tlet number = 0\n\treturn {\n\t\tnumber += 1\n\t\tprint(\"Number handed out: \\(number)\")\n\t}\n}\nlet handOut = handOutBusinessCards()\nhandOut()\nhandOut()",
-            "reason": ""
+            "reason": "<code>number</code> was declared as a constant, so we can't use <code>+=</code> with it."
         },
         {
             "answer": "func findTallest() -> (String, Double) -> (String) {\n\tvar tallestName = \"\"\n\tvar tallestHeight = 0\n\treturn {\n\t\tif $1 > tallestHeight {\n\t\t\ttallestName = $0\n\t\t\ttallestHeight = $1\n\t\t}\n\t\treturn tallestName\n\t}\n}\nlet tallest = findTallest()\nvar tallestName = tallest(\"Hannah\", 1.72)\ntallestName = tallest(\"Christina\", 1.68)",
-            "reason": ""
+            "reason": "<code>$1</code> is a <code>Double</code>, but this code attempts to compare it against <code>tallestHeight</code>, which is an <code>Int</code>."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Toy {\n\tvar customerPrice: Double\n\tprivate var actualPrice: Int\n\tinit(price: Int) {\n\t\tactualPrice = price\n\t\tcustomerPrice = actualPrice * 2\n\t}\n}\nlet buzz = Toy(price: 10)",
-            "reason": ""
+            "reason": "<code>actualPrice</code> is an <code>Int</code> and multiplying it by 2 makes another <code>Int</code>, but Swift won't let us assign that integer to a <code>Double</code>."
         },
         {
             "answer": "struct RebelBase {\n\tprivate var location: String\n\tprivate var peopleCount: Int\n\tinit(location: String, people: Int) {\n\t\tself.location = location\n\t\tself.people = peopleCount\n\t}\n}\nlet base = RebelBase(location: \"Yavin\", people: 1000)",
-            "reason": ""
+            "reason": "This attempts to set a property called <code>people</code>, but no such property exists."
         },
         {
             "answer": "struct FacebookUser {\n\tprivate var privatePosts: [String]\n\tpublic var publicPosts: [String]\n}\nlet user = FacebookUser()",
-            "reason": ""
+            "reason": "This has a private property, so Swift is unable to generate its memberwise initializer for us."
         },
         {
             "answer": "struct SecretAgent {\n\tprivate var actualName: String\n\tpublic var codeName: String\n\tinit(name: String, codeName: String) {\n\t\tself.actualName = name\n\t\tself.codeName = codeName\n\t}\n}\nlet bond = SecretAgent(name: \"James Bond\", codeName: 007)",
-            "reason": ""
+            "reason": "The <code>codeName</code> property is marked as a string, but the code attempts to use an integer."
         },
         {
             "answer": "struct Doctor {\n\tvar name: String\n\tvar location: String\n\tprivate var currentPatient = \"No one\"\n}\nlet drJones = Doctor(name: \"Esther Jones\", location: \"Bristol\")",
-            "reason": ""
+            "reason": "This has a private property, so Swift is unable to generate its memberwise initializer for us."
         },
         {
             "answer": "struct Order {\n\tprivate var id: Int\n\tinit(id: Int) {\n\t\tself.id = id\n\t}\n}\nlet order = Order(id: \"1\")",
-            "reason": ""
+            "reason": "The initializer expects an <code>Int</code> but is given a <code>String</code>."
         }
     ]
 }
