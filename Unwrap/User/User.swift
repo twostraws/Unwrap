@@ -23,7 +23,7 @@ final class User: Codable {
 
         case scoreShareCount
         case latestNewsArticle
-        case readNewsCount
+        case articlesRead
 
         case theme
     }
@@ -57,10 +57,15 @@ final class User: Codable {
     var latestNewsArticle = 0
 
     /// The number of times the user has read a news article.
-    var readNewsCount = 0
+    var readNewsCount: Int {
+        return articlesRead.count
+    }
 
     /// Tracks the currently enabled theme.
     var theme = "Light"
+
+    /// Tracks which articles the user has read.
+    var articlesRead = Set<URL>()
 
     // MARK: Computed properties
 
@@ -166,7 +171,7 @@ final class User: Codable {
 
         scoreShareCount = try container.decode(Int.self, forKey: .scoreShareCount)
         latestNewsArticle = try container.decode(Int.self, forKey: .latestNewsArticle)
-        readNewsCount = try container.decode(Int.self, forKey: .readNewsCount)
+        articlesRead = try container.decode(Set<URL>.self, forKey: .articlesRead)
 
         theme = try container.decode(String.self, forKey: .theme)
 
@@ -210,10 +215,15 @@ final class User: Codable {
         statusChanged()
     }
 
-    /// Triggered when the user reads any news story
-    func readNewsStory() {
-        readNewsCount += 1
+    /// Triggered when the user reads any news story.
+    func readNewsStory(forURL url: URL) {
+        articlesRead.insert(url)
         statusChanged()
+    }
+
+    /// Triggered when checking if the user read a news story.
+    func hasReadNewsStory(forURL url: URL) -> Bool {
+        return articlesRead.contains(url)
     }
 
     /// Sends an app-wide notification that the user's data has changed somehow, so all listening objects can update.

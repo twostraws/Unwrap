@@ -137,8 +137,8 @@ class BadgeTests: XCTestCase {
             throw TestErrors.badBadge
         }
 
-        for _ in 1...targetCount {
-            user.readNewsStory()
+        for a in 1...targetCount {
+            user.readNewsStory(forURL: URL(fileURLWithPath: String(a)))
         }
 
         XCTAssertTrue(user.isBadgeEarned(readerBadge), "Reading \(targetCount) news stories should unlock the badge \(readerBadge.name).")
