@@ -35,15 +35,15 @@ class NewsCoordinator: Coordinator {
     }
 
     /// Triggered when we already have a Safari view controller configured and ready to go, so we just show it.
-    func startReading(using viewController: UIViewController) {
+    func startReading(using viewController: UIViewController, withURL url: URL) {
         navigationController.present(viewController, animated: true)
-        User.current.readNewsStory()
+        User.current.readNewsStory(forURL: url)
     }
 
     /// Creates, configures, and presents a Safari view controller for a specific article.
     func read(_ article: NewsArticle) {
         let viewController = readViewController(for: article)
-        startReading(using: viewController)
+        startReading(using: viewController, withURL: article.url)
     }
 
     /// Loads the Hacking with Swift store.

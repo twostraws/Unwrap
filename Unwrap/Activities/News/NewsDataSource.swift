@@ -76,18 +76,27 @@ class NewsDataSource: NSObject, UITableViewDataSource {
             fatalError("Unable to dequeue cell.")
         }
 
-        let article = articles[indexPath.row]
-        cell.textLabel?.text = article.title
-        cell.detailTextLabel?.text = article.strap
+        guard let newsCell = cell as? NewsTableViewCell else {
+            fatalError("Unable to create cell as a NewsTableViewCell.")
+        }
 
-        cell.imageView?.sd_cancelCurrentImageLoad()
-        cell.imageView?.sd_setImage(with: article.mainImage, placeholderImage: UIImage(bundleName: "News-Placeholder"))
+        let article = articles[indexPath.row]
+
+        if User.current.hasReadNewsStory(forURL: article.url) {
+            newsCell.readNotification.alpha = 0
+        }
+
+        newsCell.textLabel?.text = article.title
+        newsCell.detailTextLabel?.text = article.strap
+
+        newsCell.imageView?.sd_cancelCurrentImageLoad()
+        newsCell.imageView?.sd_setImage(with: article.mainImage, placeholderImage: UIImage(bundleName: "News-Placeholder"))
 
         // draw a micro-width border around images so that white images don't just spill over to the rest of the cell
-        cell.imageView?.layer.borderWidth = 1 / UIScreen.main.scale
-        cell.imageView?.layer.borderColor = UIColor.lightGray.cgColor
+        newsCell.imageView?.layer.borderWidth = 1 / UIScreen.main.scale
+        newsCell.imageView?.layer.borderColor = UIColor.lightGray.cgColor
 
-        return cell
+        return newsCell
     }
 
     /// Lets our own read articles without digging directly into the articles array.

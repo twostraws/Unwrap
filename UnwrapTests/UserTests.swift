@@ -101,8 +101,8 @@ class UserTests: XCTestCase {
         let user = User()
         let targetCount = 3
 
-        for _ in 1...targetCount {
-            user.readNewsStory()
+        for i in 1...targetCount {
+            user.readNewsStory(forURL: URL(fileURLWithPath: String(i)))
         }
 
         XCTAssert(user.readNewsCount == targetCount, "Reading one news story should be stored correctly.")
