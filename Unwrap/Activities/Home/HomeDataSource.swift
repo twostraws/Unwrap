@@ -204,8 +204,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
             cell.textLabel?.text = "Best Streak"
             cell.textLabel?.textColor = nil
-            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-            cell.accessibilityLabel = "Your best streak count is \(User.current.streakDays)"
+            cell.detailTextLabel?.text = "\(User.current.bestStreak)"
+            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
             //UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell

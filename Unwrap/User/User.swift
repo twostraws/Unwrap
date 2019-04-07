@@ -330,6 +330,9 @@ final class User: Codable {
         } else {
             // reset back to 1, because they obviously launched the app today
             streakDays = 1
+            lastStreakEntry = today
         }
+
+        save()
     }
 }
