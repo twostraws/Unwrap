@@ -64,6 +64,13 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         alert.completionWithItemsHandler = handleScoreSharingResult
+
+        // if we're on iPad there is nowhere sensible to anchor this from, so just center it
+        if let popOver = alert.popoverPresentationController {
+            popOver.sourceView = self.navigationController.view
+            popOver.sourceRect = CGRect(x: self.navigationController.view.frame.midX, y: self.navigationController.view.frame.midY, width: 0, height: 0)
+        }
+
         navigationController.present(alert, animated: true)
     }
 
@@ -76,6 +83,13 @@ class HomeCoordinator: Coordinator, AlertShowing {
                 let text = "I earned the badge \(badge.name) in Unwrap. Download it here: \(Unwrap.appURL)"
 
                 let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+
+                // if we're on iPad there is nowhere sensible to anchor this from, so just center it
+                if let popOver = alert.popoverPresentationController {
+                    popOver.sourceView = self.navigationController.view
+                    popOver.sourceRect = CGRect(x: self.navigationController.view.frame.midX, y: self.navigationController.view.frame.midY, width: 0, height: 0)
+                }
+
                 self.navigationController.present(alert, animated: true)
             }
         } else {
