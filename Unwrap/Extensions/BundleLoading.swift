@@ -80,7 +80,7 @@ extension String {
 
         // Scale up fonts based on Dynamic Type.
         let metrics = UIFontMetrics(forTextStyle: .body)
-        let scaledSize = metrics.scaledValue(for: 180)
+        let scaledSize = metrics.scaledValue(for: 140)
         styleContents = styleContents.replacingOccurrences(of: "[FONTSIZE]", with: "\(scaledSize)")
 
         // Force images to be the natural screen width.
