@@ -25,7 +25,7 @@ extension User {
             keyName = liveKeyName
         }
 
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
         if let data = defaults.data(forKey: keyName) {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -48,7 +48,7 @@ extension User {
             keyName = User.liveKeyName
         }
 
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
 
@@ -61,7 +61,7 @@ extension User {
 
     /// Destroys any existing user so we can be sure we have a blank slate when testing.
     static func destroyTestUser() {
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
         defaults.removeObject(forKey: testKeyName)
     }
 }
