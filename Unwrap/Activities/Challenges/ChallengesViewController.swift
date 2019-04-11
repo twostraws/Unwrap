@@ -36,6 +36,7 @@ class ChallengesViewController: UITableViewController, Storyboarded, UserTrackin
     }
 
     func userDataChanged() {
+        NSUbiquitousKeyValueStore.default.synchronize()
         tableView.reloadData()
     }
 

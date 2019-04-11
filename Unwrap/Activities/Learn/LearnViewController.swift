@@ -32,6 +32,7 @@ class LearnViewController: UITableViewController, Storyboarded, UserTracking, UI
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
+        NSUbiquitousKeyValueStore.default.synchronize()
         tableView.reloadData()
     }
 

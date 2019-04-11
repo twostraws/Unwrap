@@ -21,6 +21,7 @@ class BadgeTableViewCell: UITableViewCell, UserTracking {
     }
 
     func userDataChanged() {
+        NSUbiquitousKeyValueStore.default.synchronize()
         collectionView.reloadData()
     }
 

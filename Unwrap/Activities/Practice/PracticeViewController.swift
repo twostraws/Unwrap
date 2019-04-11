@@ -27,6 +27,7 @@ class PracticeViewController: UITableViewController, Storyboarded, UserTracking 
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
+        NSUbiquitousKeyValueStore.default.synchronize()
         tableView.reloadData()
     }
 

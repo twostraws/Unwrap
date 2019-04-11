@@ -69,6 +69,7 @@ class StatusView: UIImageView, UserTracking {
 
     /// Redraw both the activity ring and rank image when the user data changed. This can occur statically (redraw on the homescreen when points are awarded) or dynamically (redraw on the awards screen while the user is watching.)
     func userDataChanged() {
+        NSUbiquitousKeyValueStore.default.synchronize()
         if useTemplateImages {
             imageView.image = User.current.rankImage.withRenderingMode(.alwaysTemplate)
         } else {
