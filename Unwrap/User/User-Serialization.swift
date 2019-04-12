@@ -9,13 +9,13 @@
 import UIKit
 
 extension User {
-    /// The UserDefaults key where the real user is stored.
+    /// The NSUbiquitousKeyValueStore key where the real user is stored.
     fileprivate static var liveKeyName: String { return "User" }
 
-    /// The UserDefaults key where the test user is stored so we don't break the live user when running tests.
+    /// The NSUbiquitousKeyValueStore key where the test user is stored so we don't break the live user when running tests.
     fileprivate static var testKeyName: String { return "TestUser" }
 
-    /// Loads a user from UserDefaults, or returns nil if there was none.
+    /// Loads a user from NSUbiquitousKeyValueStore, or returns nil if there was none.
     static func load(testMode: Bool = false) -> User? {
         let keyName: String
 
@@ -38,7 +38,7 @@ extension User {
         return nil
     }
 
-    /// Saves a user to user defaults.
+    /// Saves a user to NSUbiquitousKeyValueStore.
     func save(testMode: Bool = false) {
         let keyName: String
 
