@@ -41,12 +41,12 @@ extension UIViewController {
     func showFirstTimeAlert(name: String, title: String, message: String) {
         let defaultsName = "Shown\(name)"
 
-        if UserDefaults.standard.bool(forKey: defaultsName) == false {
+        if NSUbiquitousKeyValueStore.default.bool(forKey: defaultsName) == false {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
 
-            UserDefaults.standard.set(true, forKey: defaultsName)
+            NSUbiquitousKeyValueStore.default.set(true, forKey: defaultsName)
         }
     }
 }

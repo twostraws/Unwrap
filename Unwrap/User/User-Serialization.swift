@@ -26,6 +26,7 @@ extension User {
         }
 
         let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
         if let data = defaults.data(forKey: keyName) {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -54,6 +55,7 @@ extension User {
 
         if let encodedUser = try? encoder.encode(self) {
             defaults.set(encodedUser, forKey: keyName)
+            defaults.synchronize()
         } else {
             print("Failed to save user.")
         }

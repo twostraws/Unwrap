@@ -36,8 +36,13 @@ class ChallengesViewController: UITableViewController, Storyboarded, UserTrackin
     }
 
     func userDataChanged() {
-        NSUbiquitousKeyValueStore.default.synchronize()
         tableView.reloadData()
+    }
+
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
     }
 
     /// This either starts today's challenge (if they haven't done it already), or shares their score.

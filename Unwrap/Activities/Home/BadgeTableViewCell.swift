@@ -21,8 +21,13 @@ class BadgeTableViewCell: UITableViewCell, UserTracking {
     }
 
     func userDataChanged() {
-        NSUbiquitousKeyValueStore.default.synchronize()
         collectionView.reloadData()
+    }
+
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
     }
 
     /// This is a dubious hack, but it's the best I can do right now. When the badges collection view is created, it likes to be made at the same size as the storyboard, and so the cells inside the collection will have only five columns or so – even when run on an iPad where there is much more space. This forces the collection view to reload when it's shown, which in turn makes it correctly take up all space.
