@@ -5,8 +5,7 @@
 //  Created by Paul Hudson on 09/08/2018.
 //  Copyright © 2018 Hacking with Swift.
 //
-import SavannaKit
-import SourceEditor
+import Sourceful
 import UIKit
 
 /// The view controller that handles Free Coding practice activities.

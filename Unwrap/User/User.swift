@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hacking with Swift.
 //
 
-import SourceEditor
+import Sourceful
 import UIKit
 
 final class User: Codable {

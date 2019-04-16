@@ -1,55 +1,51 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
-  - MKRingProgressView (2.2)
-  - QuickLayout (2.1.1)
-  - SavannaKit (0.9.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - SourceEditor (1.0.1):
-    - SavannaKit (~> 0.9)
-  - SwiftEntryKit (0.8.4):
-    - QuickLayout (= 2.1.1)
-  - SwiftLint (0.27.0)
+  - MKRingProgressView (2.2.2)
+  - QuickLayout (3.0.0)
+  - SDWebImage (5.0.1):
+    - SDWebImage/Core (= 5.0.1)
+  - SDWebImage/Core (5.0.1)
+  - Sourceful (0.2.0)
+  - SwiftEntryKit (1.0.1):
+    - QuickLayout (= 3.0.0)
+  - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8)
-  - MKRingProgressView (~> 2.0)
-  - SDWebImage (~> 4.0)
-  - SourceEditor (from `https://github.com/louisdh/source-editor.git`, branch `master`)
-  - SwiftEntryKit (= 0.8.4)
-  - SwiftLint (= 0.27.0)
+  - MKRingProgressView (~> 2.2.2)
+  - SDWebImage (~> 5.0)
+  - Sourceful (from `https://github.com/twostraws/Sourceful.git`, branch `master`)
+  - SwiftEntryKit (~> 1.0)
+  - SwiftLint (= 0.31.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DZNEmptyDataSet
     - MKRingProgressView
     - QuickLayout
-    - SavannaKit
     - SDWebImage
     - SwiftEntryKit
     - SwiftLint
 
 EXTERNAL SOURCES:
-  SourceEditor:
+  Sourceful:
     :branch: master
-    :git: https://github.com/louisdh/source-editor.git
+    :git: https://github.com/twostraws/Sourceful.git
 
 CHECKOUT OPTIONS:
-  SourceEditor:
-    :commit: fd7d83470c8830c78b722b515192d50a8c39759e
-    :git: https://github.com/louisdh/source-editor.git
+  Sourceful:
+    :commit: 50ed0519ea86e80012e32232f765b2a43b2e0112
+    :git: https://github.com/twostraws/Sourceful.git
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  MKRingProgressView: 6a8eb219f65d1f7ac27ad1986a4f42160b2f7640
-  QuickLayout: 9af2b7fd89a6552828f51a5aba28d1bcdb8b340c
-  SavannaKit: 920c240bde011900df8156200a960dad3ee5edfd
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SourceEditor: 4d590385d642c812d08a91941a4bfc90eccf20af
-  SwiftEntryKit: f0dd54bb0fb9f234738cd15a32365265cb975be8
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  MKRingProgressView: b558eff66a648bd77b11f61cfc5603ae96008077
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
+  Sourceful: 7be20b8682d4919a1be65369385e1e52f5be38bd
+  SwiftEntryKit: 3f55c0b8e676afe24a3703237bcac68372891c56
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 683b15c20169641a3df515f1b9c38295411cc238
+PODFILE CHECKSUM: 472cdfa7e43ed677541ea9efedfb99b6c1014153
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

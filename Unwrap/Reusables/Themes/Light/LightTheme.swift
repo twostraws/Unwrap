@@ -6,8 +6,7 @@
 //  Copyright © 2018 Hacking with Swift.
 //
 
-import SavannaKit
-import SourceEditor
+import Sourceful
 import UIKit
 
 /// A source code theme that has a light background and dark text. This is the default.

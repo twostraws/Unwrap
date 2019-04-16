@@ -6,8 +6,7 @@
 //  Copyright © 2018 Hacking with Swift.
 //
 
-import SavannaKit
-import SourceEditor
+import Sourceful
 import UIKit
 
 /// The view controller that handles Predict the Output practice activities.
