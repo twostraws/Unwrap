@@ -151,7 +151,7 @@ final class User: Codable {
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
         updateStreak()
-    }
+     }
 
     /// Implement Decodable's initializer in an extension so we don't lose the built-in one: https://www.hackingwithswift.com/example-code/language/how-to-add-a-custom-initializer-to-a-struct-without-losing-its-memberwise-initializer
     ///
@@ -178,6 +178,11 @@ final class User: Codable {
         NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
 
         updateStreak()
+    }
+
+    /// Triggered by Zephyr to run private method, statusChanged()
+    func cloudUpdate() {
+        statusChanged()
     }
 
     /// Triggered when the user has finished learning
@@ -212,6 +217,10 @@ final class User: Codable {
     func completedChallenge(score: Int) {
         let result = ChallengeResult(date: Date(), score: score)
         dailyChallenges.insert(result, at: 0)
+        statusChanged()
+    }
+    /// Triggered when cloud update shows difference in score
+    func retrievedCloud(score: Int) {
         statusChanged()
     }
 
@@ -335,4 +344,5 @@ final class User: Codable {
 
         save()
     }
+
 }
