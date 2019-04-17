@@ -30,6 +30,12 @@ class PracticeViewController: UITableViewController, Storyboarded, UserTracking 
         tableView.reloadData()
     }
 
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
+    }
+
     /// When the user selects a practice activity, pull it out from our data source and ask the coordinator to kick it off.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let activity = dataSource.activity(at: indexPath.row)

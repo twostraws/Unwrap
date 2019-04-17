@@ -35,6 +35,12 @@ class LearnViewController: UITableViewController, Storyboarded, UserTracking, UI
         tableView.reloadData()
     }
 
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
+    }
+
     func startStudying(title: String) {
         coordinator?.startStudying(title: title)
     }

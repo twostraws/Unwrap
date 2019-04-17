@@ -39,6 +39,12 @@ class ChallengesViewController: UITableViewController, Storyboarded, UserTrackin
         tableView.reloadData()
     }
 
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
+    }
+
     /// This either starts today's challenge (if they haven't done it already), or shares their score.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {

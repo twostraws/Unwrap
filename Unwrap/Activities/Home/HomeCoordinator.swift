@@ -17,7 +17,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// True when this is the first time the app has been launched.
     var isFirstRun: Bool {
-        return UserDefaults.standard.bool(forKey: HomeCoordinator.firstRunDefaultsKey) == false
+        return NSUbiquitousKeyValueStore.default.bool(forKey: HomeCoordinator.firstRunDefaultsKey) == false
     }
 
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
@@ -39,7 +39,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
                 viewController.presentAsAlert()
 
                 // Mark that we've run the app at least once.
-                UserDefaults.standard.set(true, forKey: HomeCoordinator.firstRunDefaultsKey)
+                NSUbiquitousKeyValueStore.default.set(true, forKey: HomeCoordinator.firstRunDefaultsKey)
             }
         }
     }

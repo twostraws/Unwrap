@@ -105,6 +105,13 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
-        tableView.reloadData()
+       tableView.reloadData()
+    }
+
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
+
     }
 }

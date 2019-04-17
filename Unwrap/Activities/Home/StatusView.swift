@@ -92,4 +92,10 @@ class StatusView: UIImageView, UserTracking {
         currentRankFraction = User.current.rankFraction
         currentTotalPoints = User.current.totalPoints
     }
+
+    func userCloudDataChanged() {
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
+        userDataChanged()
+    }
 }

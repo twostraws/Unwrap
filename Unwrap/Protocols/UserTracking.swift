@@ -16,11 +16,17 @@ extension Notification.Name {
 /// A method that conforming types must implement in order to be notified when the user's data has changed.
 @objc protocol UserTracking {
     @objc func userDataChanged()
+    @objc func userCloudDataChanged()
 }
 
 extension UserTracking {
     /// A method that sets up this object to be notified when user data changes. Conforming types should not need to override this implementation.
     func registerForUserChanges() {
+        let defaults = NSUbiquitousKeyValueStore.default
+
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: .userStatusChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userCloudDataChanged), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: nil)
+        defaults.synchronize()
+
     }
 }

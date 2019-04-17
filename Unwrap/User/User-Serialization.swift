@@ -9,13 +9,13 @@
 import UIKit
 
 extension User {
-    /// The UserDefaults key where the real user is stored.
+    /// The NSUbiquitousKeyValueStore key where the real user is stored.
     fileprivate static var liveKeyName: String { return "User" }
 
-    /// The UserDefaults key where the test user is stored so we don't break the live user when running tests.
+    /// The NSUbiquitousKeyValueStore key where the test user is stored so we don't break the live user when running tests.
     fileprivate static var testKeyName: String { return "TestUser" }
 
-    /// Loads a user from UserDefaults, or returns nil if there was none.
+    /// Loads a user from NSUbiquitousKeyValueStore, or returns nil if there was none.
     static func load(testMode: Bool = false) -> User? {
         let keyName: String
 
@@ -25,7 +25,8 @@ extension User {
             keyName = liveKeyName
         }
 
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
+        defaults.synchronize()
         if let data = defaults.data(forKey: keyName) {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -38,7 +39,7 @@ extension User {
         return nil
     }
 
-    /// Saves a user to user defaults.
+    /// Saves a user to NSUbiquitousKeyValueStore.
     func save(testMode: Bool = false) {
         let keyName: String
 
@@ -48,12 +49,13 @@ extension User {
             keyName = User.liveKeyName
         }
 
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
 
         if let encodedUser = try? encoder.encode(self) {
             defaults.set(encodedUser, forKey: keyName)
+            defaults.synchronize()
         } else {
             print("Failed to save user.")
         }
@@ -61,7 +63,7 @@ extension User {
 
     /// Destroys any existing user so we can be sure we have a blank slate when testing.
     static func destroyTestUser() {
-        let defaults = UserDefaults.standard
+        let defaults = NSUbiquitousKeyValueStore.default
         defaults.removeObject(forKey: testKeyName)
     }
 }
