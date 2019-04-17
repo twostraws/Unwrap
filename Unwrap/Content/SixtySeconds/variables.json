@@ -41,7 +41,7 @@
             "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {
-            "answer": "favoriteColor = \"green\"",
+            "answer": "favoriteColor = \"heliotrope\"",
             "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
         },
         {

@@ -42,7 +42,7 @@
         },
         {
             "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
-            "reason": "The closure referencees a parameter, <code>$0</code>, but it doesn't take any parameters."
+            "reason": "The closure references a parameter, <code>$0</code>, but it doesn't take any parameters."
         },
         {
             "answer": "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
