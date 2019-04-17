@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "enum AgeError: Error {\n\tcase underAge\n\tcase unknownAge\n}\nfunc buyAlcohol(age: Int) {\n\tif age >= 18 {\n\t\tprint(\"OK.\")\n\t} else {\n\t\tthrow AgeError.underAge\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>buyAlcohol()<\/code> function cannot throw errors, because it is not marked using <code>throws<\/code>."
         },
         {
             "answer": "enum ChargeError {\n\tcase noCable\n\tcase noPower\n}\nfunc chargePhone(atHome: Bool) throws {\n\tif atHome {\n\t\tprint(\"Phone is charging...\")\n\t} else {\n\t\tthrow ChargeError.noPower\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>ChargeError<\/code> enum does not conform to <code>Error<\/code>."
         },
         {
             "answer": "enum WifiError: Error {\n\tcase noNetwork\n\tcase noSignal\n}\nfunc connectToWifi(_ password: String) throws {\n\tif password == \"\" {\n\t\tthrow WifiError.badPassword\n\t}\n\tprint(\"You're connected.\")\n}",
-            "reason": ""
+            "reason": "The <code>WifiError<\/code> enum doesn't define a <code>badPassword<\/code> case."
         },
         {
             "answer": "enum MeasureError: Error {\n\tcase unknownItem\n}\nfunc measure(itemName: String) throws -> Double {\n\tswitch itemName {\n\tcase \"bookcase\":\n\t\treturn 2.0\n\tcase \"chair\":\n\t\treturn 1.0\n\tcase \"child\":\n\t\treturn 1.3\n\tcase \"adult\":\n\t\treturn 1.75\n\t}\n}",
-            "reason": ""
+            "reason": "The switch block is not exhaustive."
         },
         {
             "answer": "enum BuildingError: Error {\n\tcase tooHigh\n\tcase tooLow\n}\nfunc constructBuilding(floors: Int) throws {\n\tif height < 10 {\n\t\tthrow BuildingError.tooLow\n\t} else if height > 500 {\n\t\tthrow BuildingError.tooHigh\n\t}\n\tprint(\"Perfect - let's get building!\")\n}",
-            "reason": ""
+            "reason": "The <code>height<\/code> variable was not defined."
         },
         {
             "answer": "enum ArrayError: Error {\n\tcase negateIndex\n}\nfunc readItem(_ index: Int, from array: [String]) -> String {\n\tif index < 0 {\n\t\tthrow ArrayError.negateIndex\n\t}\n\treturn array[index]\n}",
-            "reason": ""
+            "reason": "The <code>readItem()<\/code> function cannot throw errors, because it is not marked using <code>throws<\/code>."
         }
     ]
 }

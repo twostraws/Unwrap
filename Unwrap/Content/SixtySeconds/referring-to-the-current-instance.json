@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Cat {\n\tvar name: String\n\tvar breed: String\n\tvar meowVolume: Int\n\tinit(name: String, breed: String) {\n\t\tself.name = name\n\t\tself.breed = breed\n\t}\n}\nlet toby = Cat(name: \"Toby\", breed: \"Burmese\")",
-            "reason": ""
+            "reason": "Initializers cannot finish until all properties have a value, and in this case <code>meowVolume<\/code> has not been set."
         },
         {
             "answer": "struct Parent {\n\tvar numberOfKids: Int\n\tvar tirednessPercent: Int\n\tinit (kids: Int) {\n\t\tself.numberOfKids = kids\n\t}\n}\nlet james = Parent(kids: 2)",
-            "reason": ""
+            "reason": "Initializers cannot finish until all properties have a value, and in this case <code>tirednessPercent<\/code> has not been set."
         },
         {
             "answer": "struct Computer {\n\tvar cpus: Int\n\tvar ramGB: Int\n\tinit(cpus: Int, ram: Int) {\n\t\tself.cpus = cpus\n\t\tself.ram = ram\n\t}\n}",
-            "reason": ""
+            "reason": "This attempts to set a property called <code>ram<\/code>, but the property is in fact called <code>ramGB<\/code>."
         },
         {
             "answer": "struct Language {\n\tvar nameEnglish: String\n\tvar nameLocal: String\n\tvar speakerCount: Int\n\tinit(english: String, local: String, speakerCount: Int) {\n\t\tself.nameEnglish = english\n\t\tself.nameLocal = local\n\t\tself.speakerCount = speakerCount\n\t}\n}\nlet french = Language(nameEnglish: \"French\", nameLocal: \"fran\u00e7ais\", speakerCount: 220_000_000)",
-            "reason": ""
+            "reason": "The initializer has the parameter name <code>local<\/code>, not <code>nameLocal<\/code>."
         },
         {
             "answer": "struct Bus {\n\tvar routeNumber: String\n\tinit(route: Int) {\n\t\tself.routeNumber = route\n\t}\n}",
-            "reason": ""
+            "reason": "This attempts to assign an integer to a string property."
         },
         {
             "answer": "struct Framework {\n\tvar name: String\n\tvar language: String\n\tfunc init(name: String, language: String) {\n\t\tself.name = name\n\t\tself.language = language\n\t}\n}\nlet vapor = Framework(name: \"Vapor\", language: \"Swift\")",
-            "reason": ""
+            "reason": "Initializers must not have <code>func<\/code> written before them."
         }
     ]
 }

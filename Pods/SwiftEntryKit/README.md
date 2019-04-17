@@ -54,28 +54,28 @@
 
 ## Overview
 
-SwiftEntryKit is a simple and versatile pop-up presenter written in Swift.
+SwiftEntryKit is a simple and versatile content presenter written in Swift.
 
 ### Features
 
-Banners or Pop-Ups are called *Entries*.
+Banners or pop-ups are called *Entries*.
 
-- The entries are displayed in a separated UIWindow (of type EKWindow), so the user is able to navigate the app freely while entries are being displayed in a non intrusive manner.
-- The kit offers some beautiful [presets](#presets) that can be themed with your app colors and fonts.
+- Entries are displayed inside a separate UIWindow (of type EKWindow), so users are able to navigate the app freely while entries are being displayed in a non intrusive manner.
+- The kit offers beautiful [presets](#presets) that can be themed with your app colors and fonts.
 - **Customization**: Entries are highly customizable
   - [x] Can be [positioned](#display-position) either at the top, center, or the bottom of the screen.
-  - [x] Can be displayed within or outside the screen's safe area.
+  - [x] Can be displayed within or outside the screen safe area.
   - [x] Can be stylized: have a [border](#border), [drop-shadow](#shadow) and [round corners](#round-corners).
-  - [x] Their content's and the screen's background can be blurred, dimmed, colored or have a gradient [style](#background-style).
-  - [x] Transition [animations](#animations) are customizable - Entrance, Exit and Pop (by another entry).
+  - [x] Their content and the surrounding background can be blurred, dimmed, colored or have a gradient [style](#background-style).
+  - [x] Transition [animations](#animations) are customizable - entrance, exit and pop (by another entry).
   - [x] The [user interaction](#user-interaction) with the entry or the screen can be intercepted.
   - [x] Entries can be enqueued or override previous entries using the [precedence](#precedence) attribute.
-  - [x] Entries have [display priority](#display-priority) attribute. That means that an entry can be dismissed only be other entry with equal or higher priority. 
-  - [x] Entries have an optional rubber banding effect in panning.
+  - [x] Entries have [display priority](#display-priority) attribute. That means that an entry can be dismissed only be other entry with an equal or higher priority. 
+  - [x] Entries have an optional rubber banding effect while panning.
   - [x] Entries can be optionally dismissed using a simple [swipe gesture](#swiping-and-rubber-banding).
   - [x] Entries can be optionally injected with [lifecycle events](#lifecycle-events): *will* and *did* appear/disappear.
   - [x] The [status bar style](#status-bar) is settable for the display duration of the entry.
-  - [x] SwiftEntryKit supports [custom views](#custom-view-usage-example) as well.
+  - [x] Supports [navigation controllers](#presets) & [custom views](#custom-view-usage-example) as well!
 
 ## Example Project
 
@@ -98,9 +98,13 @@ Cloning from https://github.com/huri000/SwiftEntryKit.git also setups QuickLayou
 
 ### Presets
 
-Toasts | Notes | Floats | Popups | Alerts | Forms | Rating
---- | --- | --- | --- | --- | --- | --- 
-![toasts_example](https://github.com/huri000/assets/blob/master/swift-entrykit/toasts.gif) | ![notes_example](https://github.com/huri000/assets/blob/master/swift-entrykit/notes.gif) | ![floats_example](https://github.com/huri000/assets/blob/master/swift-entrykit/floats.gif) | ![popup_example](https://github.com/huri000/assets/blob/master/swift-entrykit/popups.gif) | ![alert_example](https://github.com/huri000/assets/blob/master/swift-entrykit/alerts.gif) | ![form_example](https://github.com/huri000/assets/blob/master/swift-entrykit/forms.gif) | ![rating](https://github.com/huri000/assets/blob/master/swift-entrykit/rating.gif)
+| Toasts | Notes | Floats | Popups |
+| --- | --- | --- | --- |
+| ![toasts_example](https://github.com/huri000/assets/blob/master/swift-entrykit/toasts.gif) | ![notes_example](https://github.com/huri000/assets/blob/master/swift-entrykit/notes.gif) | ![floats_example](https://github.com/huri000/assets/blob/master/swift-entrykit/floats.gif) | ![popup_example](https://github.com/huri000/assets/blob/master/swift-entrykit/popups.gif) |
+
+| Alerts | Forms | Rating | More... |
+| --- | --- | --- | --- |
+| ![alert_example](https://github.com/huri000/assets/blob/master/swift-entrykit/alerts.gif) | ![form_example](https://github.com/huri000/assets/blob/master/swift-entrykit/forms.gif) | ![rating_example](https://github.com/huri000/assets/blob/master/swift-entrykit/rating.gif) | ![custom_example](https://github.com/huri000/assets/blob/master/swift-entrykit/custom.gif) |
 
 ### Playground
 
@@ -123,8 +127,9 @@ The Playground Screen | Top Toast Sample
 
 ## Installation
 
-SwiftEntryKit is compatible with Swift 4.2 as of release *0.8.1*. 
-Developers who use lower Swift version can install release *0.7.2*.
+- SwiftEntryKit is compatible with Swift 5 as of release *1.0.0*. 
+- SwiftEntryKit is compatible with Swift 4.2 as of release *0.8.1*. 
+- Developers who use lower Swift version should install release *0.7.2*.
 
 ### CocoaPods
 
@@ -141,7 +146,7 @@ source 'https://github.com/cocoapods/specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftEntryKit', '0.8.4'
+pod 'SwiftEntryKit', '1.0.1'
 ```
 
 Then, run the following command:
@@ -164,7 +169,7 @@ $ brew install carthage
 To integrate SwiftEntryKit into your Xcode project using Carthage, specify the following in your `Cartfile`:
 
 ```ogdl
-github "huri000/SwiftEntryKit" == 0.8.4
+github "huri000/SwiftEntryKit" == 1.0.1
 ```
 
 ## Usage
@@ -362,7 +367,7 @@ attributes.positionConstraints.verticalOffset = 10
 
 Autorotation - whether the entry autorotates along with the orientation of the device. Defaults to `true`.
 ```Swift
-attributes.positionConstraints.isRotationEnabled = false
+attributes.positionConstraints.rotation.isEnabled = false
 ```
 
 Keyboard Releation - used to bind an entry to the keyboard once the keyboard is displayed.
@@ -841,7 +846,7 @@ Orientation Change Demonstration |
 ![orientation_change](https://github.com/huri000/assets/blob/master/swift-entrykit/orientation.gif)
 
 ### Swift and Objective-C Interoperability
-SwiftEntryKit's API uses the Swift language exclusive syntax (enums, associated values, and more). 
+SwiftEntryKit's APIs use the Swift language exclusive syntax (enums, associated values, and more). 
 Therefore, `SwiftEntryKit` cannot be referenced directly from an Objective-C file (*.m*, *.h* or *.mm*).
 
 Yet, it is pretty easy to integrate SwiftEntryKit into an Objective-C project using a simple *.swift* class that is a sort of adapter between `SwiftEntryKit` and your Objective-C code.

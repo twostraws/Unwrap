@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "class School {\n\tlet students = 200\n\tfunc expel(student: String, for reason: String) {\n\t\tprint(\"\\(student) has been expelled for \\(reason).\")\n\t\tstudents -= 1\n\t}\n}\nlet school = School()\nschool.expel(student: \"Jason\", for: \"coding during class\")",
-            "reason": ""
+            "reason": "The <code>students<\/code> property has been marked as a constant, so it can't be modified."
         },
         {
             "answer": "class SewingMachine {\n\tvar itemsMade = 0\n\tmutating func makeBag(count: Int) {\n\t\titemsMade += count\n\t}\n}\nvar machine = SewingMachine()\nmachine.makeBag(count: 1)",
-            "reason": ""
+            "reason": "The <code>mutating</code> keyword is not allowed with classes."
         },
         {
             "answer": "struct Kindergarten {\n\tvar numberOfScreamingKids = 30\n\tmutating func handOutIceCream() {\n\t\tnumberOfScreamingKids = 0\n\t}\n}\nlet kindergarten = Kindergarten()\nkindergarten.handOutIceCream()",
-            "reason": ""
+            "reason": "This attempts to call a mutating method on a constant struct instance."
         },
         {
             "answer": "struct Piano {\n\tvar untunedKeys = 3\n\tfunc tune() {\n\t\tif untunedKeys > 0 {\n\t\t\tuntunedKeys -= 1\n\t\t}\n\t}\n}\nvar piano = Piano()\npiano.tune()",
-            "reason": ""
+            "reason": "The <code>tune()<\/code> method attempts to modify the <code>untunedKeys<\/code> property, but it isn't marked as <code>mutating<\/code>."
         },
         {
             "answer": "struct Park {\n\tvar numberOfFlowers = 1000\n\tfunc plantFlowers() {\n\t\tnumberOfFlowers += 50\n\t}\n}\nlet park = Park()\npark.plantFlowers()",
-            "reason": ""
+            "reason": "The <code>plantFlowers()<\/code> method attempts to modify the <code>numberOfFlowers<\/code> property, but it isn't marked as <code>mutating<\/code>."
         },
         {
             "answer": "class Beach {\n\tvar lifeguards = 10\n\tmutating func addLifeguards(count: Int) {\n\t\tlifeguards += count\n\t}\n}\nvar beach = Beach()\nbeach.addLifeguards(count: 2)",
-            "reason": ""
+            "reason": "The <code>mutating</code> keyword is not allowed with classes."
         }
     ]
 }

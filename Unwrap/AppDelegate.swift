@@ -3,7 +3,7 @@
 //  Unwrap
 //
 //  Created by Paul Hudson on 09/08/2018.
-//  Copyright © 2018 Hacking with Swift.
+//  Copyright © 2019 Hacking with Swift.
 //
 
 import AVKit
@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window?.backgroundColor = .white
+
+        // Instantiate UserDefaults keys to be monitored
+        let defaults = UserDefaults()
+        defaults.register(defaults: ["User": NSData(), "Test User": NSData(), "ZephyrSyncKey": String()])
+
+        // Uncomment the following line to see Zephyr debug info in the console
+        // Zephyr.debugEnabled = true
+
+        // We're going to tell Zephyr which keys to monitor.
+        Zephyr.addKeysToBeMonitored(keys: ["User", "Test User", "ZephyrSyncKey"])
+
+        Zephyr.sync(keys: ["User", "Test User", "ZephyrSyncKey"])
 
         // Load the existing user if we already have one, or create a new one for the first run.
         User.current = User.load() ?? User()
@@ -35,5 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         tabBarController?.handle(shortcutItem: shortcutItem)
+    }
+
+    func applicationDidBecomeActive(_: UIApplication) {
     }
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "class Museum {\n\tvar name = \"National Museum\"\n}\nclass HistoryMuseum: Museum { }\nclass ToyMuseum: Museum { }\nlet museum = ToyMuseum()\nif let unwrappedMuseum = museum as? HistoryMuseum {\n\tprint(\"This is the \\(unwrappedMuseum.name).\")\n}",
-            "reason": ""
+            "reason": "<code>museum<\/code> is an instance of <code>ToyMuseum<\/code>, not <code>HistoryMuseum<\/code>, so the typecast will fail."
         },
         {
             "answer": "class Phone {\n\tvar model = \"Unknown\"\n}\nclass Smartphone { }\nlet iPhone = Smartphone()\nif let phone = iPhone as? Phone {\n\tprint(\"The model is: \\(phone.model).\")\n}",
-            "reason": ""
+            "reason": "<code>iPhone<\/code> is an instance of <code>SmartPhone<\/code>, not an instance of <code>Phone<\/code>, so the typecast will fail."
         },
         {
             "answer": "class Glasses {\n\tvar isShortSighted = true\n}\nstruct Sunglasses: Glasses { }\nlet shades = Sunglasses()\nif let glasses = shades as? Glasses {\n\tif glasses.isShortSighted {\n\t\tprint(\"These sunglasses are for shortsighted people.\")\n\t} else {\n\t\tprint(\"These sunglasses are for longsighted people.\")\n\t}\n}",
-            "reason": ""
+            "reason": "<code>Sunglasses<\/code> is a struct, and cannot use class inheritance."
         },
         {
             "answer": "class Sport { }\nclass Swimming: Sport {\n\tvar distance = 100\n}\nlet swimming = Sport()\nif let sport as? Swimming {\n\tprint(\"The distance is \\(sport.distance).\")\n}",
-            "reason": ""
+            "reason": "This code has several problems, not least that <code>sport<\/code> is undefined."
         },
         {
             "answer": "var socialMediaSite = \"Twitter\"\nif let site = socialMediaSite as? Int {\n\tprint(\"The site is \\(site)\")\n}",
-            "reason": ""
+            "reason": "Typecasting a string to an integer always fails."
         },
         {
-            "answer": "let distances = [23, 28, 22]\nif let stringDistances = distances as [String] {\n\tfor distance in stringDistances {\n\t\tprint(\"The distance was \\(distance).\")\n\t}\n}\n",
-            "reason": ""
+            "answer": "let distances = [23, 28, 22]\nif let stringDistances = distances as [String] {\n\tfor distance in stringDistances {\n\t\tprint(\"The distance was \\(distance).\")\n\t}\n}",
+            "reason": "Typecasting an integer array to a string array always fails."
         }
     ]
 }

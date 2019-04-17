@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "var score: Int = nil\nscore = 556\nif let playerScore = score {\n\tprint(\"You scored \\(playerScore) points.\")\n}",
-            "reason": ""
+            "reason": "This attempts to assign <code>nil<\/code> to a non-optional integer."
         },
         {
             "answer": "let favoriteTennisPlayer: String? = \"Andy Murray\"\nif let player {\n\tprint(\"Let's watch \\(player)'s highlights video on YouTube.\")\n}",
-            "reason": ""
+            "reason": "<code>if let<\/code> needs to bind an optional to a new, unwrapped name, such as <code>if let player = player<\/code>."
         },
         {
             "answer": "let menuItems: [String]? = [\"Pizza\", \"Pasta\"]\nif let items = menuItems {\n\tprint(\"There are \\(menuItems.count) items to choose from.\")\n}",
-            "reason": ""
+            "reason": "This attempts to use <code>menuItems<\/code> inside the <code>if let<\/code>, when really it should use <code>items<\/code>."
         },
         {
             "answer": "var weatherForecast: String = \"sunny\"\nif let forecast = weatherForecast {\n\tprint(\"The forecast is \\(forecast).\")\n} else {\n\tprint(\"No forecast available.\")\n}",
-            "reason": ""
+            "reason": "This attempts to use <code>if let<\/code> to unwrap <code>weatherForecast<\/code>, which is not optional."
         },
         {
             "answer": "let tableHeight: Double? = 100\nif tableHeight > 85.0 {\n\tprint(\"The table is too high.\")\n}",
-            "reason": ""
+            "reason": "This attempts to compare an optional <code>Double<\/code> against 85, which is not possible."
         },
         {
             "answer": "var bestScore: Int? = nil\nbestScore = 101\nif bestScore > 100 {\n\tprint(\"You got a high score!\")\n} else {\n\tprint(\"Better luck next time.\")\n}",
-            "reason": ""
+            "reason": "This attempts to compare an optional <code>Int<\/code> against 100, which is not possible."
         }
     ]
 }

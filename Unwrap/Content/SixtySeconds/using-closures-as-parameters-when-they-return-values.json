@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func bakeCookies(number: Int, secretIngredient: () -> String) {\n\tfor _ in 0..<number {\n\t\tprint(\"Adding butter...\")\n\t\tprint(\"Adding flour...\")\n\t\tprint(\"Adding sugar...\")\n\t\tprint(\"Adding egg...\")\n\t\tlet extra = secretIngredient()\n\t\tprint(extra)\n\t}\n}\nbakeCookies(5) {\n\treturn \"Adding vanilla extract\"\n}",
-            "reason": ""
+            "reason": "The call to <code>bakeCookies()<\/code> is missing the <code>number<\/code> parameter label."
         },
         {
             "answer": "func goShopping(for item: String, decisionHandler: (String) -> Bool) {\n\tprint(\"I'm going to buy \\(item)\")\n\tif decisionHandler() == true {\n\t\tprint(\"Great! I bought them.\")\n\t} else {\n\t\tprint(\"Maybe next time...\")\n\t}\n}\ngoShopping(for: \"shoes\") { item in\n\tif item == \"shoes\" {\n\t\treturn false\n\t} else {\n\t\treturn true\n\t}\n}",
-            "reason": ""
+            "reason": "The call to <code>decisionHandler()<\/code> is missing its parameter."
         },
         {
-            "answer": "func playMusic(randomizer: () -> String) {\n\tlet music = randomizer\n\tprint(\"\\(music) is playing.\")\n}\nplayMusic {\n\tprint(\"Sorry, I only have one playlist!\")\n\treturn \"Taylor Swift\"\n}",
-            "reason": ""
+            "answer": "func playMusic(randomizer: () -> String) {\n\tprint(\"\\(random()) is playing.\")\n}\nplayMusic {\n\tprint(\"Sorry, I only have one playlist!\")\n\treturn \"Taylor Swift\"\n}",
+            "reason": "This tries to call <code>random<\/code>, when it ought to call <code>randomizer()<\/code>."
         },
         {
             "answer": "func printGreeting(for usernameLoader: (String) -> String) {\n\tlet username = usernameLoader()\n\tprint(\"Hello, \\(username)!\")\n}\nprintGreeting {\n\treturn \"twostraws\"\n}",
-            "reason": ""
+            "reason": "This does not pass in a parameter when calling <code>usernameLoader<\/code>."
         },
         {
             "answer": "func scoreToGrade(score: Int, gradeMapping: (Int) -> String) {\n\tprint(\"Your score was \\(score)%.\")\n\tlet result = gradeMapping(score)\n\tprint(\"That's a \\(result).\")\n}\nscoreToGrade(score: 80) { (grade: Int) in\n\tif grade < 85 {\n\t\treturn \"Fail\"\n\t}\n}",
-            "reason": ""
+            "reason": "The call to <code>scoreToGrade()<\/code> must return a value."
         },
         {
             "answer": "func teachLesson(name: String, topic: () -> String) {\n\tprint(\"Welcome to \\(name).\")\n\tprint(\"Please take out your laptops and be quiet at the back.\")\n\ttopic()\n\tprint(\"See you tomorrow!\")\n}\nteachLesson(name: \"Swift 101\") {\n\tprint(\"Swift is a modern language that can be used to make apps on iOS and more.\")\n}",
-            "reason": ""
+            "reason": "Whatever is given as a closure to <code>teachLesson<\/code> must return a string."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Wine {\n\tvar grape: String\n\tvar region: String\n}\nlet malbec = Wine(grapes: \"Malbec\", region: \"Cahors\")",
-            "reason": ""
+            "reason": "The <code>Wine<\/code> struct has a <code>grape<\/code> property, but this attempts to create an instance using <code>grapes<\/code>."
         },
         {
             "answer": "struct Book {\n\tvar title: String\n\tvar author: String\n\tinit(bookTitle: String) {\n\t\ttitle = bookTitle\n\t}\n}\nlet book = Book(bookTitle: \"Beowulf\")",
-            "reason": ""
+            "reason": "This code does not provide a value for the <code>author<\/code> property."
         },
         {
             "answer": "struct Sport {\n\tvar name: String\n\tvar isOlympicSport: Bool\n}\nlet chessBoxing = Sport(name: \"Chessboxing\", isOlympicSport: \"false\")",
-            "reason": ""
+            "reason": "The <code>isOlympicSport<\/code> property is a Boolean, but this attempts to create a <code>Sport<\/code> instance by providing with a string."
         },
         {
             "answer": "struct Media {\n\tvar type: String\n\tvar users: Int\n\tinit() {\n\t\t\n\t}\n}\nlet tv = Media(type: \"Television\", users: 10_000_000)",
-            "reason": ""
+            "reason": "This has a custom initializer that does not provide values for the two properties."
         },
         {
             "answer": "struct Tree {\n\tvar type: String\n\tvar hasFruit: Bool\n\tfunc init() {\n\t\ttype = \"Cherry\"\n\t\thasFruit = true\n\t}\n}\nlet cherryTree = Tree()",
-            "reason": ""
+            "reason": "<code>init()<\/code> should not have the <code>func<\/code> keyword before it."
         },
         {
             "answer": "struct Starship {\n\tvar name: String\n\tvar maxWarp: Double\n\tinit(starshipName: String) {\n\t\tname = starshipName\n\t}\n}\nlet voyager = Starship(starshipName: \"Voyager\")",
-            "reason": ""
+            "reason": "This code does not provide a value for the <code>maxWarp<\/code> property."
         }
     ]
 }

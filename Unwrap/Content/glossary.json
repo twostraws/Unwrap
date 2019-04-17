@@ -4,6 +4,22 @@
     "description": "An attribute attached to function parameters that are closures, which asks Swift to silently wrap any code using it in a closure rather than requiring users to do it by hand. This is used rarely, but it's important in the <code>assert()</code> function."
   },
   {
+    "term": "@available",
+    "description": "An attribute attached to types or functions that mark them as being available or unavailable to specific versions of Swift or operating systems."
+  },
+  {
+    "term": "@discardableResult",
+    "description": "An attribute attached to methods that return a value, marking the return value as safe to ignore if the caller wants to. When this is not used, Swift will show a warning if you don't do something with the function's return value."
+  },
+  {
+    "term": "@dynamicCallable",
+    "description": "An attribute attached to types to mark them as being directly callable, primarily so that Swift can interact more easily with dynamic languages such as Python."
+  },
+  {
+    "term": "@dynamicMemberLookup",
+    "description": "An attribute attached to types to mark them as being able to handle undefined properties using special methods, primarily so that Swift can interact more easily with dynamic languages such as Python."
+  },
+  {
     "term": "@escaping",
     "description": "An attribute attached to function parameters that are closures, which tells Swift the closure will be used after the function has returned. This will in turn cause Swift to store the closure safely so that it doesn't get destroyed prematurely."
   },
@@ -14,6 +30,10 @@
   {
     "term": "@objcMembers",
     "description": "An attribute used to mark classes where all properties and methods must be accessible to Objective-C code. Swift does not make its code accessible to Objective-C by default to avoid making the code larger than it needs to be."
+  },
+  {
+    "term": "@unknown",
+    "description": "An attribute attached to the default case of <code>switch<\/code> blocks that allows code to handle enum cases that may be added at some point in the future, without breaking source compatibility."
   },
   {
     "term": "Access control",
@@ -41,7 +61,7 @@
   },
   {
     "term": "Associated value",
-    "description": "A value that has been added to an enum case to provide some extra meaning. For example, you might have an enum case saying the weather is windy, then add an associated value saying <em>how<\/em> windy."
+    "description": "A value that has been added to an enum case to provide some extra meaning. For example, you might have an enum case saying the weather is windy, then add an associated value saying how windy."
   },
   {
     "term": "Block",
@@ -65,7 +85,7 @@
   },
   {
     "term": "Capturing values",
-    "description": "The name for the process of closures keeping a reference to values that are used inside the closure but were created outside. This is different from <em>copying<\/em>: the closure refers to the original values, not its own copies, so if the original values change then the closure's values change too."
+    "description": "The name for the process of closures keeping a reference to values that are used inside the closure but were created outside. This is different from copying: the closure refers to the original values, not its own copies, so if the original values change then the closure's values change too."
   },
   {
     "term": "CaseIterable",
@@ -77,7 +97,7 @@
   },
   {
     "term": "Class",
-    "description": "A custom data type that can have one or more properties and one or more methods. Unlike structs, classes are <em>reference types<\/em>."
+    "description": "A custom data type that can have one or more properties and one or more methods. Unlike structs, classes are reference types."
   },
   {
     "term": "Class inheritance",
@@ -245,7 +265,7 @@
   },
   {
     "term": "inout parameter",
-    "description": "A function parameter that, when changed inside the function, remains changed <em>outside<\/em> the function."
+    "description": "A function parameter that, when changed inside the function, remains changed outside the function."
   },
   {
     "term": "Integer",
@@ -262,6 +282,10 @@
   {
     "term": "Labeled statement",
     "description": "A name attached to a specific block of code, such as a loop or a condition, allowing you to break out of it specifically even if you are inside other blocks. For example, if you are inside a loop that's inside a loop that's inside a third loop, you could exit the outermost loop."
+  },
+  {
+    "term": "Lazy",
+    "description": "A keyword that marks a property as being created only when it is first accessed. This is a performance optimization, because it means if the property is never accessed the work required to calculate its value is never done."
   },
   {
     "term": "Library",
@@ -381,7 +405,7 @@
   },
   {
     "term": "Reference type",
-    "description": "Any type that stores its data indirectly in memory, with the variable or constant really just being a pointer (or <em>reference<\/em>) to that piece of memory. If you point a second variable to a reference type, it will point at the same data in memory as the original reference, so the data is shared."
+    "description": "Any type that stores its data indirectly in memory, with the variable or constant really just being a pointer (or reference) to that piece of memory. If you point a second variable to a reference type, it will point at the same data in memory as the original reference, so the data is shared."
   },
   {
     "term": "Repeat loop",
@@ -397,11 +421,11 @@
   },
   {
     "term": "Runtime",
-    "description": "When your code is running, as opposed to <em>compile time<\/em>, which is when the code is being built."
+    "description": "When your code is running, as opposed to compile time, which is when the code is being built."
   },
   {
     "term": "Scope",
-    "description": "A region of code where variables and constants are valid. Each time you use an opening brace you start a new scope: all previous variables and constants remain valid in that scope, but any that are declared <em>inside<\/em> that scope are only valid until the scope ends with a closing brace."
+    "description": "A region of code where variables and constants are valid. Each time you use an opening brace you start a new scope: all previous variables and constants remain valid in that scope, but any that are declared inside that scope are only valid until the scope ends with a closing brace."
   },
   {
     "term": "Selector",
@@ -445,7 +469,7 @@
   },
   {
     "term": "Struct",
-    "description": "A custom data type that can have one or more properties and one or more methods. Unlike classes, structs are <em>value types<\/em>."
+    "description": "A custom data type that can have one or more properties and one or more methods. Unlike classes, structs are value types."
   },
   {
     "term": "Subscript",
