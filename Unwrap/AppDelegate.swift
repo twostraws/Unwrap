@@ -19,18 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Instantiate UserDefaults keys to be monitored
         let defaults = UserDefaults()
-        defaults.register(defaults: ["User": NSData(), "Test User": NSData(), "ZephyrSyncKey": String()])
+        defaults.register(defaults: ["User": NSData(), "Test User": NSData()])
 
         // Uncomment the following line to see Zephyr debug info in the console
         // Zephyr.debugEnabled = true
 
         // We're going to tell Zephyr which keys to monitor.
-        Zephyr.addKeysToBeMonitored(keys: ["User", "Test User", "ZephyrSyncKey"])
+        Zephyr.addKeysToBeMonitored(keys: ["User", "Test User"])
 
-        Zephyr.sync(keys: ["User", "Test User", "ZephyrSyncKey"])
+        Zephyr.sync(keys: ["User", "Test User"])
 
         // Load the existing user if we already have one, or create a new one for the first run.
         User.current = User.load() ?? User()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(cloudDataChanged), name: Zephyr.keysDidChangeOnCloudNotification, object: nil)
 
         /// Send in the main tab bar controller, which can create our initial coordinators.
         tabBarController = MainTabBarController()
@@ -49,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController?.handle(shortcutItem: shortcutItem)
     }
 
-    func applicationDidBecomeActive(_: UIApplication) {
+    @objc func cloudDataChanged() {
+        User.current = User.load()
+        User.current.cloudUpdate()
     }
 }
-

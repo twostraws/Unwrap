@@ -180,7 +180,7 @@ final class User: Codable {
         updateStreak()
     }
 
-    /// Triggered by Zephyr to run private method, statusChanged()
+    /// Triggered by new data coming from iCloud; pass it straight on to statusChanged() so all our UI refreshes.
     func cloudUpdate() {
         statusChanged()
     }
@@ -238,7 +238,7 @@ final class User: Codable {
         // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
         NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
 
-        // write the change out to disk at the next available chance; again, we don't want to do this immediately to avoid reading and writing at the same time
+        // Write the change out to disk at the next available chance; again, we don't want to do this immediately to avoid reading and writing at the same time.
         DispatchQueue.main.async {
             User.current.save()
         }
@@ -342,4 +342,3 @@ final class User: Codable {
     }
 
 }
-

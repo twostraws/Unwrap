@@ -10,3 +10,4 @@ disabled_rules: # rule identifiers to exclude from running
   - unused_setter_value
 excluded: # paths to ignore during linting. overridden by `included`.
   - Pods
+  - Unwrap/User/Zephyr.swift
