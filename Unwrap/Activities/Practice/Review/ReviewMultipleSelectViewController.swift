@@ -9,7 +9,6 @@
 import UIKit
 
 class ReviewMultipleSelectViewController: MultipleSelectReviewViewController {
-
     @objc override func skip() {
         coordinator?.skipPracticing()
     }

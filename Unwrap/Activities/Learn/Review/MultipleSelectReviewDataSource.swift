@@ -73,7 +73,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
 
         // set the detail text label contents here to make sure we participate fully in Auto Layout cell sizing
         if isShowingAnswers {
-            cell.detailTextLabel?.attributedText = answer.subtitle.fromSimpleHTML()
+            cell.detailTextLabel?.attributedText = answer.subtitle.fromSimpleHTML().formattedAsExplanation()
         }
 
         return cell
@@ -98,7 +98,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
                 if answer.isCorrect {
                     cell.wrongAnswer()
                 } else {
-                    cell.unknownAnswer()
+                    cell.correctAnswer()
                 }
             }
         }

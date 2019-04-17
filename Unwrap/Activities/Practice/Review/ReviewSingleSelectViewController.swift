@@ -9,7 +9,6 @@
 import UIKit
 
 class ReviewSingleSelectViewController: SingleSelectReviewViewController {
-
     @objc override func skip() {
         coordinator?.skipPracticing()
     }

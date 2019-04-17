@@ -68,23 +68,26 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
                 selected.correctAnswer()
             } else {
                 selected.wrongAnswer()
-                addReasonToTitle()
             }
         } else {
             if currentAnswer.isCorrect {
                 selected.wrongAnswer()
-                addReasonToTitle()
             } else {
                 selected.correctAnswer()
             }
         }
+
+        addReasonToTitle()
     }
 
     /// If their answer is wrong and we have some explanatory text explaining why it's wrong, show it.
     func addReasonToTitle() {
         if !currentAnswer.subtitle.isEmpty {
-            let newString = "\(review.question)\n\n\(currentAnswer.subtitle)"
-            prompt.attributedText = newString.fromSimpleHTML()
+            let newTopString = NSMutableAttributedString(attributedString: "\(review.question)\n\n".fromSimpleHTML())
+            let newBottomString = currentAnswer.subtitle.fromSimpleHTML().formattedAsExplanation()
+
+            newTopString.append(newBottomString)
+            prompt.attributedText = newTopString
         }
     }
 }
