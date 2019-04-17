@@ -180,6 +180,11 @@ final class User: Codable {
         updateStreak()
     }
 
+    /// Triggered by Zephyr to run private method, statusChanged()
+    func cloudUpdate() {
+        statusChanged()
+    }
+
     /// Triggered when the user has finished learning
     /// one topic.
     func learnedSection(_ topic: String) {
@@ -335,4 +340,6 @@ final class User: Codable {
 
         save()
     }
+
 }
+

@@ -589,6 +589,7 @@
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
 		81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
+		FEBC8E7F2267573B00A33F05 /* Zephyr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBC8E7E2267573B00A33F05 /* Zephyr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1204,6 +1205,7 @@
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnwrapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBC8E7E2267573B00A33F05 /* Zephyr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zephyr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1373,6 +1375,7 @@
 		51862E5820CE11B40086CD1B /* User */ = {
 			isa = PBXGroup;
 			children = (
+				FEBC8E7E2267573B00A33F05 /* Zephyr.swift */,
 				51862E5920CE12330086CD1B /* User.swift */,
 				51B87CD6210B270800FE773A /* User-Serialization.swift */,
 				51B87CDD210B35C600FE773A /* User-StaticProperties.swift */,
@@ -2209,6 +2212,9 @@
 							com.apple.SafariKeychain = {
 								enabled = 0;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					51CC13722065607F00F37A67 = {
@@ -2866,6 +2872,7 @@
 				51A6D62520E651DA00FB6B46 /* BoolNames.swift in Sources */,
 				51596DFD20EE995F00952ADC /* CountingLabel.swift in Sources */,
 				51ADAEA520CE9004000D9DCF /* ChallengeResult.swift in Sources */,
+				FEBC8E7F2267573B00A33F05 /* Zephyr.swift in Sources */,
 				51CC1395206568DE00F37A67 /* UIBezierPath-Logo.swift in Sources */,
 				51596DFF20EEBA1700952ADC /* AwardType.swift in Sources */,
 				5156459120E1163500CED877 /* StudyViewController.swift in Sources */,
@@ -3127,6 +3134,7 @@
 			baseConfigurationReference = BB24D72F99ED46CE1F202A82 /* Pods-Unwrap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Unwrap/Unwrap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Unwrap/Info.plist;
@@ -3146,6 +3154,7 @@
 			baseConfigurationReference = 879EE4E91437B6378BB24AE1 /* Pods-Unwrap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Unwrap/Unwrap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Unwrap/Info.plist;
