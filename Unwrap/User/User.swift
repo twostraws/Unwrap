@@ -180,6 +180,11 @@ final class User: Codable {
         updateStreak()
     }
 
+    /// Triggered by Zephyr to run private method, statusChanged()
+    func cloudUpdate() {
+        statusChanged()
+    }
+
     /// Triggered when the user has finished learning
     /// one topic.
     func learnedSection(_ topic: String) {
@@ -287,7 +292,7 @@ final class User: Codable {
             }
 
             return conditionChapter.bundleNameSections.reduce(true) {
-                $0 && hasReviewed($1.bundleName)
+                return $0 && hasReviewed($1.bundleName)
             }
         } else if badge.criterion == "practice" {
             let practiceBadgeCount = 10
@@ -335,4 +340,6 @@ final class User: Codable {
 
         save()
     }
+
 }
+
