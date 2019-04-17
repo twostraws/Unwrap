@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.register(defaults: ["User": NSData(), "Test User": NSData(), "ZephyrSyncKey": String()])
 
         // Uncomment the following line to see Zephyr debug info in the console
-        Zephyr.debugEnabled = true
+        // Zephyr.debugEnabled = true
 
         // We're going to tell Zephyr which keys to monitor.
         Zephyr.addKeysToBeMonitored(keys: ["User", "Test User", "ZephyrSyncKey"])
