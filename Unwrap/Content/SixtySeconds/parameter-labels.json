@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func isWorkingDay(day name: Int) -> Bool {\n\tif day == \"Saturday\" {\n\t\treturn false\n\t}\n\tif day == \"Sunday\" {\n\t\treturn false\n\t}\n\treturn true\n}",
-            "reason": ""
+            "reason": "<code>isWorkingDay()<\/code> says that the internal name of its parameter is <code>name<\/code>, but it uses <code>day<\/code>."
         },
         {
             "answer": "func drive(to: String) {\n\tprint(\"I'm going to \\(destination) in my car.\")\n}",
-            "reason": ""
+            "reason": "<code>drive()<\/code> says that the internal name of its parameter is <code>to<\/code>, but it uses <code>destination<\/code>."
         },
         {
             "answer": "func add(numbers input sum: [Int]) -> Int {\n\tvar total = 0\n\tfor number in input {\n\t\ttotal += number\n\t}\n\treturn total\n}",
-            "reason": ""
+            "reason": "<code>add()<\/code> has three labels for its parameter, which is invalid."
         },
         {
             "answer": "func putCriminals(place: String) -> String {\n\tif place == \"jail\" {\n\t\treturn \"You'll be out tomorrow\"\n\t} else {\n\t\treturn \"You'll be out in a decade\"\n\t}\n}\nputCriminals(in: \"jail\")",
-            "reason": ""
+            "reason": "<code>putCriminals()<\/code> takes one parameter that is labeled <code>place<\/code>, but it's called as <code>putCriminals(in:)<\/code>."
         },
         {
             "answer": "func accelerate(to speed: Int) -> String {\n\tif to > 80 {\n\t\treturn \"No way - that's too fast!\"\n\t} else {\n\t\treturn \"OK, here goes...\"\n\t}\n}",
-            "reason": ""
+            "reason": "<code>accelerate()<\/code> says that the internal name of its parameter is <code>speed<\/code>, but it uses <code>to<\/code>."
         },
         {
             "answer": "func isMultipleOf100(number input: Int) -> Bool {\n\tif number % 100 == 0 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
-            "reason": ""
+            "reason": "<code>isMultipleOf100()<\/code> says that the internal name of its parameter is <code>input<\/code>, but it uses <code>number<\/code>."
         }
     ]
 }

@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "func title(for page: Int) -> String? {\n\tguard page >= 1 else {\n\t\treturn nil\n\t}\n\tlet pageCount = 132\n\tif page < pageCount {\n\t\treturn \"Page \\(page)\"\n\t} else {\n\t\treturn nil\n\t}\n}\nlet pageTitle = title(for: 16)!",
-            "reason": ""
+            "reason": "This code will not crash."
         },
         {
             "answer": "struct User {\n\tvar name: String?\n\tvar age: Int?\n}\nlet taylor = User(name: \"Taylor\", age: 26)\nlet taylorAge = taylor.age!",
-            "reason": ""
+            "reason": "This code will not crash."
         },
         {
             "answer": "func describe(array: [String]?) {\n\tlet unwrapped = array!\n\tprint(\"The array has \\(unwrapped.count) items.\")\n}\ndescribe(array: [])",
-            "reason": ""
+            "reason": "This code will not crash."
         },
         {
             "answer": "let legoBricksSold: Int? = 400_000_000_000\nlet numberSold = legoBricksSold!",
-            "reason": ""
+            "reason": "This code will not crash."
         },
         {
             "answer": "func league(for skillLevel: Int) -> Int? {\n\tswitch skillLevel {\n\tcase 1:\n\t\tfallthrough\n\tcase 2:\n\t\treturn 3\n\tcase 3:\n\t\treturn 2\n\tcase 4:\n\t\treturn 1\n\tdefault:\n\t\treturn nil\n\t}\n}\nlet allocatedLeague = league(for: 3)!",
-            "reason": ""
+            "reason": "This code will not crash."
         },
         {
             "answer": "let age: Int = 21\nlet allowedMessage: String? = age >= 21 ? \"Welcome!\" : nil\nlet result = allowedMessage!",
-            "reason": ""
+            "reason": "This code will not crash."
         }
     ],
     "wrong": [
         {
             "answer": "let score = \"babylon5\"\nlet scoreInt = Int(score)!",
-            "reason": ""
+            "reason": "Converting a non-numeric string to an integer will return <code>nil<\/code>, and force unwrapping that will crash."
         },
         {
             "answer": "struct Starship {\n\tvar name: String? = \"Unknown\"\n\tvar maxWarpSpeed: Double?\n}\nlet voyager = Starship()\nlet maxWarp = voyager.maxWarpSpeed!",
-            "reason": ""
+            "reason": "<code>maxWarpSpeed<\/code> will be set to <code>nil<\/code>, and force unwrapping that will crash."
         },
         {
             "answer": "let password: String? = nil\nlet unwrappedPassword = password!",
-            "reason": ""
+            "reason": "<code>password<\/code> is set to <code>nil<\/code>, and force unwrapping that will crash."
         },
         {
             "answer": "func goals(for player: String) -> Int? {\n\tprint(\"Sorry, the system is down right now.\")\n\treturn nil\n}\nlet harryGoals = goals(for: \"Harry Kane\")!",
-            "reason": ""
+            "reason": "The <code>goals()<\/code> function will return <code>nil<\/code>, and force unwrapping that will crash."
         },
         {
             "answer": "class Player {\n\tvar name: String = \"Anonymous\"\n\tvar salary: Int?\n}\nlet player = Player()\nlet salary = player.salary!",
-            "reason": ""
+            "reason": "<code>salary<\/code> will be set to <code>nil<\/code>, and force unwrapping that will crash."
         },
         {
             "answer": "func population(of city: String) -> Int? {\n\tif city == \"Paris\" {\n\t\treturn 2_200_000\n\t}\n\treturn nil\n}\nlet pop = population(of: \"Tokyo\")!",
-            "reason": ""
+            "reason": "The <code>population()<\/code> function will return <code>nil<\/code>, and force unwrapping that will crash."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "protocol TravelsThroughTime {\n\tmutating func travel(to year: Int)\n}\nprotocol BiggerOnTheInside {\n\tfunc findSwimmingPool()\n}\nprotocol TARDIS: TravelsThroughTime BiggerOnTheInside {\n\tvar doctorNumber: Int { get set }\n}",
-            "reason": ""
+            "reason": "The two protocols that <code>TARDIS<\/code> conforms to should be separated by commas."
         },
         {
             "answer": "protocol Ridable\nprotocol Trainable\nprotocol Dog: Trainable",
-            "reason": ""
+            "reason": "The <code>Dog<\/code> protocol needs to have empty braces."
         },
         {
             "answer": "protocol HasPages {\n\tvar pageCount: Int\n}\nprotocol HasTableOfContents {\n\tvar titles: [String]\n}\nprotocol Book: HasPages, HasTableOfContents {\n\tvar author: String\n}",
-            "reason": ""
+            "reason": "All three properties here must have <code>{ get }<\/code> or <code>{ get set }<\/code> after them."
         },
         {
             "answer": "protocol NotAMoon { }\nprotocol HasExhaustPort { }\nstruct DeathStar: NotAMoon HasExhaustPort { }",
-            "reason": ""
+            "reason": "The two protocols that <code>DeathStar<\/code> conforms to should be separated by commas."
         },
         {
             "answer": "protocol CanFly {\n\tvar maximumFlightSpeed: Int { get set }\n}\nprotocol CanDrive {\n\tvar maximumDrivingSpeed: Int { get set }\n}\nstruct FlyingCar: CanFly, CanDrive { }",
-            "reason": ""
+            "reason": "The <code>FlyingCar<\/code> struct does not conform to the two protocols it says it does because it doesn't have the required properties."
         },
         {
             "answer": "protocol Adjustable {\n\tmutating func adjustValue(by amount)\n}",
-            "reason": ""
+            "reason": "The <code>adjustValue()<\/code> method is missing a type annotation for its parameter."
         }
     ]
 }

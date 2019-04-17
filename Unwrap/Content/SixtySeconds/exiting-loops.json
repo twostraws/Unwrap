@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "for i in 1..<10 {\n\tif i == 10 {\n\t\tprint(\"Found number 10!\")\n\t}\n}",
-            "reason": ""
+            "reason": "This prints some output only if <code>i<\/code> reaches 10, but the loop does not count up to 10."
         },
         {
             "answer": "for name in [\"John\", \"Paul\", \"George\"] {\n\tbreak\n\tprint(\"Welcome, \\(name)!\")\n}",
-            "reason": ""
+            "reason": "This breaks out of the loop immediately, meaning that the <code>print()<\/code> code is never reached."
         },
         {
             "answer": "var isActive = false\nwhile isActive {\n\tprint(\"Checking for user input...\")\n}",
-            "reason": ""
+            "reason": "The loop condition is false, so the loop doesn't execute even once."
         },
         {
             "answer": "repeat while true {\n\tprint(\"Fetching updates\")\n}",
-            "reason": ""
+            "reason": "<code>repeat while<\/code> is invalid syntax."
         },
         {
             "answer": "var counter: Int = 1\nwhile counter < 100 {\n\tcounter += 10\n\tif counter % 10 == 5 {\n\t\tprint(\"Matching number found\")\n\t}\n}",
-            "reason": ""
+            "reason": "<code>counter<\/code> starts at 1 and increments by 10 each time the loop goes around, so it will never have a remainder of 5."
         },
         {
             "answer": "var password = \"1\"\nrepeat {\n\tpassword += \"1\"\n\tif password == \"11111\" {\n\t\tprint(\"That's a terrible password.\")\n\t}\n\tbreak\n} while true",
-            "reason": ""
+            "reason": "<code>break<\/code> will be hit the first time the loop executes, causing it to exit before any output is printed."
         }
     ]
 }

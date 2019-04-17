@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "let shovelSnow = { (depth) -> String in\n\tif depth < 1 {\n\t\treturn \"OK, I can do this...\"\n\t} else {\n\t\treturn \"I need some help!\"\n\t}\n}",
-            "reason": ""
+            "reason": "This doesn't tell Swift what data type <code>depth<\/code> will be."
         },
         {
             "answer": "let goSurfing = { (waveHeight: Int) in\n\tif waveHeight < 5 {\n\t\treturn \"Let's go!\"\n\t} else if waveHeight < 10 {\n\t\treturn \"This could be tricky\"\n\t} else if waveHeight < 20 {\n\t\treturn \"Only a pro could do that\"\n\t} else {\n\t\treturn \"No way!\"\n\t}\n}",
-            "reason": ""
+            "reason": "This doesn't tell Swift what data type will be returned."
         },
         {
             "answer": "let convertNumerals = { (numeral: String) -> String in\n\tswitch numeral {\n\tcase \"I\":\n\t\treturn \"1\"\n\tcase \"II\":\n\t\treturn \"2\"\n\tcase \"III\":\n\t\treturn \"3\"\n\t}\n}\nprint(convertNumerals(\"II\"))",
-            "reason": ""
+            "reason": "The switch statement does not cover all possible cases."
         },
         {
             "answer": "func callNumber = { (number: Int) -> String in\n\treturn \"Calling now...\"\n}",
-            "reason": ""
+            "reason": "This uses invalid syntax – to create a closure this should use <code>let callNumber<\/code> or <code>var callNumber<\/code>."
         },
         {
             "answer": "var buyMagazine = { (name: String) -> Int in\n\tlet amount = 10\n\tprint(\"\\(name) costs \\(amount)\")\n\treturn amount\n}\nbuyMagazine(name: \"Wired\")",
-            "reason": ""
+            "reason": "We don't use parameter names when calling a closure."
         },
         {
             "answer": "var goToWork = { (hours: String) -> Bool in\n\tprint(\"I'm going to work\")\n\tfor _ in 1...hours {\n\t\tprint(\"I'm chatting to friends on Facebook.\")\n\t}\n\tprint(\"I'm going home\")\n\treturn true\n}",
-            "reason": ""
+            "reason": "This attempts to create a range from 1 through to a string, which is not valid."
         }
     ]
 }

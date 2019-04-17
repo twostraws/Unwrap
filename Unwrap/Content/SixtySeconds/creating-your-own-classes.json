@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "class Painting {\n\tvar title: String\n\tvar artist: String\n\tvar paintType: String\n\tfunc init(title: String, artist: String, paintType: String) {\n\t\tself.title = title\n\t\tself.artist = artist\n\t\tself.paintType = paintType\n\t}\n}",
-            "reason": ""
+            "reason": "<code>init()</code> must not have the <code>func<\/code> keyword before it."
         },
         {
             "answer": "class Image {\n\tvar filename: String\n\tvar isAnimated: Bool\n\tinit(filename: String, isAnimated: Bool) {\n\t\tfilename = filename\n\t\tisAnimated = isAnimated\n\t}\n}",
-            "reason": ""
+            "reason": "Because the parameters and properties have the same names, Swift requires that we use <code>self.<\/code> to distinguish the properties."
         },
         {
             "answer": "class Singer {\n\tvar name: String\n\tvar favoriteSong: String\n\tinit(name: String, song: String) {\n\t\tself.name = name\n\t\tself.song = song\n\t}\n}\nlet taylor = Singer(name: \"Taylor Swift\", song: \"Blank Space\")",
-            "reason": ""
+            "reason": "This class has a property called <code>favoriteSong<\/code>, but the rest of the code uses <code>song<\/code> instead."
         },
         {
             "answer": "struct Poll {\n\tvar question: String\n\tvar option1: String\n\tvar option2: String\n\tvar votes: [Int]\n}\nlet question = \"Jet black or rose gold?\"\nlet poll = Poll(question: question, option1: \"Jet black\", option2: \"Rose gold\", votes: [0, 0, 0, 0, 1, 0, 1])",
-            "reason": ""
+            "reason": "This is a struct, not a class."
         },
         {
             "answer": "struct Sandwich {\n\tvar name: String\n\tvar fillings: [String]\n}\nlet blt = Sandwich(name: \"BLT\", fillings: [\"Bacon\", \"Lettuce\", \"Tomato\"])",
-            "reason": ""
+            "reason": "This is a struct, not a class."
         },
         {
             "answer": "class Attendee {\n\tvar badgeNumber = 0\n\tvar name = \"Anonymous\"\n\tvar company = \"Unknown\"\n\tinit(badge: Int) {\n\t\tself.badgeNumber = badgeNumber\n\t}\n}",
-            "reason": ""
+            "reason": "This attempts to assign a property to itself; it should probably read <code>badgeNumber = badge<\/code>."
         }
     ]
 }

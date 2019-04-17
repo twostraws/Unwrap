@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func username(for id: Int?) -> String {\n\tguard let id = id else {\n\t\treturn nil\n\t}\n\tif id == 1989 {\n\t\treturn \"Taylor Swift\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let user = username(for: 1989) {\n\tprint(\"Hello, \\(user)!\")\n}",
-            "reason": ""
+            "reason": "This code acts as if <code>username<\/code> returns an optional string; it does not."
         },
         {
             "answer": "func verify(age: Int?) -> Bool {\n\tguard age >= 18 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif verify(age: 28) {\n\tprint(\"You're old enough.\")\n} else {\n\tprint(\"Come back in a few years.\")\n}",
-            "reason": ""
+            "reason": "<code>guard<\/code> must be followed by <code>else<\/code>."
         },
         {
             "answer": "func playOpera(by composer: String?) -> String? {\n\tlet composer = composer else {\n\t\treturn \"Please specify a composer.\"\n\t}\n\tif composer == \"Mozart\" {\n\t\treturn \"Le nozze di Figaro\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let opera = playOpera(by: \"Mozart\") {\n\tprint(opera)\n}",
-            "reason": ""
+            "reason": "<code>let composer = composer else<\/code> should read <code>guard let composer = composer else<\/code>."
         },
         {
             "answer": "func plantTree(_ type: String?) {\n\tguard let type else {\n\t\treturn\n\t}\n\tprint(\"Planting a \\(type).\")\n}\nplantTree(\"willow\")",
-            "reason": ""
+            "reason": "This needs to provide a name for the unwrapped <code>type<\/code> parameter, such as <code>guard let type = type else<\/code>."
         },
         {
             "answer": "func playScale(name: String?) {\n\tguard let name = name {\n\t\treturn\n\t}\n\tprint(\"Playing the \\(name) scale.\")\n}\nplayScale(name: \"C\")",
-            "reason": ""
+            "reason": "<code>guard<\/code> must be followed by <code>else<\/code>."
         },
         {
             "answer": "func add3(to number: Int) -> Int {\n\tguard let number = number else {\n\t\treturn 3\n\t}\n\treturn number + 3\n}\nlet added = add3(to: 5)\nprint(added)",
-            "reason": ""
+            "reason": "The <code>number<\/code> parameter is not optional, so we can't use <code>guard let<\/code> to unwrap it."
         }
     ]
 }

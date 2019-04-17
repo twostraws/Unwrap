@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "for in 1...3 {\n\tprint(\"There's no place like home\")\n}",
-            "reason": ""
+            "reason": "This is missing a name between <code>for<\/code> and <code>in<\/code>"
         },
         {
             "answer": "for number in (2, 3, 5) {\n\tprint(\"\\(number) is a prime number.\")\n}",
-            "reason": ""
+            "reason": "This attempts to loop over a tuple."
         },
         {
             "answer": "outer: for i in 1...10 {\n\tfor i in 1...10 {\n\t\tlet product = i * j\n\t\tprint(\"Product is \\(product)\")\n\t\tbreak outer\n\t}\n}",
-            "reason": ""
+            "reason": "<code>j<\/code> is not defined; <code>i<\/code> is used twice."
         },
         {
             "answer": "var booksToRead = 0\nwhile booksToRead {\n\tprint(\"You still have books to read!\")\n}",
-            "reason": ""
+            "reason": "<code>while booksToRead<\/code> is an invalid condition; it should probably be <code>while booksToRead > 0<\/code>."
         },
         {
             "answer": "var username = \"twostraws\"\nrepeat {\n\tprint(\"Your username is \\(username)\")\n} while username",
-            "reason": ""
+            "reason": "<code>while username<\/code> is an invalid condition."
         },
         {
             "answer": "var population = 7_500_000_000\nrepeat {\n\tprint(\"More babies have been born.\")\n\tpopulation *= 1.0001\n} while true",
-            "reason": ""
+            "reason": "This attempts to multiple an <code>Int<\/code> by a <code>Double<\/code>."
         }
     ]
 }

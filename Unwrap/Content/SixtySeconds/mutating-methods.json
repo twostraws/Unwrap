@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Tree {\n\tvar height: Int\n\tmutating func grow() {\n\t\theight *= 1.001\n\t}\n}",
-            "reason": ""
+            "reason": "This code attempts to multiply an <code>Int<\/code> by a <code>Double<\/code>, which is not allowed."
         },
         {
             "answer": "struct Stapler {\n\tvar stapleCount: Int\n\tfunc staple() {\n\t\tif stapleCount > 0 {\n\t\t\tstapleCount -= 1\n\t\t\tprint(\"It's stapled!\")\n\t\t} else {\n\t\t\tprint(\"Please refill me.\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>staple()<\/code> method modifies a struct's property without being marked <code>mutating<\/code>."
         },
         {
             "answer": "struct Singer {\n\tvar name: String\n\tvar bankBalance: Double\n\tmutating func goOnTour(venues: Int) {\n\t\tprint(\"Come and see \\(name) live on stage!\")\n\t\tbankBalance += venues * 100_000\n\t}\n}",
-            "reason": ""
+            "reason": "<code>bankBalance<\/code> is a <code>Double<\/code>, and <code>venues * 100_000<\/code> will be an <code>Int<\/code>; it's not possible to add one to the other."
         },
         {
             "answer": "struct MeetingRoom {\n\tvar isBooked = true\n\tmutating book(for name: String) {\n\t\tif isBooked {\n\t\t\tprint(\"Sorry, the meeting room is already taken.\")\n\t\t} else {\n\t\t\tisBooked = true\n\t\t\tprint(\"It's reserved for \\(name).\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>book()<\/code> method is missing the <code>func<\/code> keyword."
         },
         {
             "answer": "struct Car {\n\tlet mileage: Int\n\tmutating func drive(distance: Int) {\n\t\tmileage += distance\n\t}\n}",
-            "reason": ""
+            "reason": "<code>mileage<\/code> is declared as a constant, so it can't be changed."
         },
         {
             "answer": "struct Switch {\n\tvar isOn: Bool\n\tmutating func toggle {\n\t\tif isOn {\n\t\t\tisOn == false\n\t\t} else {\n\t\t\tisOn == true\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>toggle()<\/code> method is missing parentheses."
         }
     ]
 }

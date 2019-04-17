@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]\nlet upperRingo = names.last.uppercased()\n",
-            "reason": ""
+            "reason": "The <code>last<\/code> property is optional, so this needs to be written as <code>names.last?.uppercased()<\/code>"
         },
         {
             "answer": "enum NetworkError: Error {\n\tcase insecure\n\tcase noWifi\n}\nfunc downloadData(from url: String) -> String {\n\tif url.hasPrefix(\"https:\/\/\") {\n\t\treturn \"This is the best Swift site ever!\"\n\t} else {\n\t\tthrow NetworkError.insecure\n\t}\n}\nif let data = try? downloadData(from: \"https:\/\/www.hackingwithswift.com\") {\n\tprint(data)\n} else {\n\tprint(\"Unable to fetch the data.\")\n}",
-            "reason": ""
+            "reason": "The <code>downloadData()<\/code> method cannot throw errors because it is not marked with <code>throws<\/code>."
         },
         {
             "answer": "struct Furniture { }\nstruct DeckChair: Furniture { }\nlet chair = DeckChair()\nif let furniture = chair as? Furniture {\n\tprint(\"This is furniture.\")\n}\n",
-            "reason": ""
+            "reason": "This attempts to use inheritance with structs, which do not support inheritance."
         },
         {
             "answer": "let birthYear: Int? = nil\nlet year = birthYear ? \"Unknown\"\n",
-            "reason": ""
+            "reason": "The nil coalescing operator is <code>??<\/code>, not <code>?<\/code>."
         },
         {
             "answer": "func brewBeer(to strength: Double?) {\n\tguard strength = strength else { return }\n\tprint(\"Let's brew some beer!\")\n}\nbrewBeer(to: 5.5)",
-            "reason": ""
+            "reason": "This code is missing <code>let<\/code> in <code>guard strength = strength<\/code>; it should be <code>guard let strength = strength<\/code>."
         },
         {
             "answer": "let doctor: String? = \"Dr Singh\"\nlet assignedDoctor: String = doctor?\n",
-            "reason": ""
+            "reason": "<code>doctor?<\/code> is invalid syntax."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "while false {\n\tprint(\"Players gonna play\")\n}",
-            "reason": ""
+            "reason": "The loop condition is false, so this loop won't execute even once."
         },
         {
             "answer": "var isActive = false\nwhile isActive {\n\tprint(\"Checking for new data\")\n}",
-            "reason": ""
+            "reason": "The loop condition is false, so this loop won't execute even once."
         },
         {
             "answer": "var kids = 1\nrepeat {\n\tprint(\"Kids in the class: \\(kids)\")\n\tkids += 1\n} while kids != 10",
-            "reason": ""
+            "reason": "When <code>kids<\/code> reaches 10 this loop will terminate."
         },
         {
             "answer": "var isRead = false\nwhile isRead {\n\tisRead = true\n\tprint(\"You read this message.\")\n}",
-            "reason": ""
+            "reason": "The loop condition is false, so this loop won't execute even once."
         },
         {
             "answer": "var securityHoles = 1\nrepeat {\n\tprint(\"Security hole reported!\")\n\tsecurityHoles += 1\n} while securityHoles < 10",
-            "reason": ""
+            "reason": "When <code>securityHoles<\/code> reaches 10 this loop will terminate."
         },
         {
             "answer": "var exCharacters = 0\nvar bookSeries = \"Game of Thrones\"\nwhile true {\n\tprint(\"It's time for someone else to go\")\n\texCharacters += \"1\"\n}",
-            "reason": ""
+            "reason": "This attempts to add a string to an integer, which is invalid."
         }
     ]
 }

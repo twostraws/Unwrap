@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "var examResult = \"100\"\nlet convertedExamResult = Int(examResult)",
-            "reason": ""
+            "reason": "This will result in a constant to set 100."
         },
         {
             "answer": "var highestJump = \"2.45\"\nlet convertedHighestJump = Double(highestJump)",
-            "reason": ""
+            "reason": "This will result in a constant set to 2.45."
         },
         {
             "answer": "var hasForcePowers = \"true\"\nlet convertedHasForcePowers = Bool(hasForcePowers)",
-            "reason": ""
+            "reason": "This will result in a constant set to true."
         },
         {
             "answer": "struct Language {\n\tvar code: String\n\tinit?(code: String) {\n\t\tif code.hasPrefix(\"en-\") {\n\t\t\tself.code = code\n\t\t} else {\n\t\t\tprint(\"Sorry, only English variants are supported.\" )\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet language = Language(code: \"en-GB\")",
-            "reason": ""
+            "reason": "This will result in a constant that holds a <code>Language?<\/code>."
         },
         {
             "answer": "struct Website {\n\tvar url: String\n\tinit?(url: String) {\n\t\tif url.hasPrefix(\"http\") {\n\t\t\tself.url = url\n\t\t} else {\n\t\t\tprint(\"Invalid website URL.\")\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet site = Website(url: \"https:\/\/www.hackingwithswift.com\")",
-            "reason": ""
+            "reason": "This will result in a constant that holds a <code>Website?<\/code>."
         },
         {
             "answer": "class Camel {\n\tvar humps: Int\n\tinit?(humpCount: Int) {\n\t\tguard humpCount <= 2 else { return nil }\n\t\thumps = humpCount\n\t}\n}\nlet horse = Camel(humpCount: 0)",
-            "reason": ""
+            "reason": "This will result in a constant that holds a <code>Camel?<\/code>."
         }
     ]
 }

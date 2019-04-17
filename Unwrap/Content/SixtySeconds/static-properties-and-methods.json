@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Person {\n\tstatic var population = 0\n\tvar name: String\n\tinit(personName: String) {\n\t\tname = personName\n\t\tpopulation += 1\n\t}\n}",
-            "reason": ""
+            "reason": "Referencing a static property inside a regular method isn't allowed; this should use <code>Person.population<\/code>."
         },
         {
             "answer": "struct Cat {\n\tstatic let allCats = [Cat]()\n\tinit() {\n\t\tCat.allCats.append(self)\n\t}\n\tstatic func chorus() {\n\t\tfor _ in allCats {\n\t\t\tprint(\"Meow!\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>allCats<\/code> is a constant, and can't be modified."
         },
         {
             "answer": "struct Marathon {\n\tstatic distance = 42\n\tvar name: String\n\tvar location: String\n}",
-            "reason": ""
+            "reason": "<code>distance<\/code> must be declared <code>var<\/code> or <code>let<\/code>"
         },
         {
             "answer": "struct Raffle {\n\tvar ticketsUsed = 0\n\tvar name: String\n\tvar tickets: Int\n\tinit(name: String, tickets: Int) {\n\t\tself.name = name\n\t\tself.tickets = tickets\n\t\tRaffle.ticketsUsed += tickets\n\t}\n}",
-            "reason": ""
+            "reason": "<code>ticketsUsed<\/code> is not declared as a static property."
         },
         {
             "answer": "struct Question {\n\tstatic let answer = 42\n\tvar questionText = \"Unknown\"\n\tinit(questionText: String, answer: String) {\n\t\tself.questionText = questionText\n\t\tself.answer = answer\n\t}\n}",
-            "reason": ""
+            "reason": "This code has several problems, not least that <code>answer<\/code> is a constant static integer."
         },
         {
             "answer": "struct PlayingCards {\n\tstatic let deckSize\n\tvar pictureStyle: String\n}",
-            "reason": ""
+            "reason": "<code>deckSize<\/code> needs a type annotation."
         }
     ]
 }

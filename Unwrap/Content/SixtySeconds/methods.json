@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct WaterBottle {\n\tvar capacity: Int\n\trefill() {\n\t\tprint(\"Refilling up to \\(capacity)ml.\")\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>refill()<\/code> method is missing the <code>func<\/code> keyword."
         },
         {
             "answer": "struct Event {\n\tticketPrices = [100, 200, 500]\n\tfunc buyTickets(type: Int) {\n\t\tlet cost = ticketPrices[type]\n\t\tprint(\"That'll be $\\(cost), please.\")\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>ticketPrices<\/code> property is missing <code>var<\/code> or <code>let<\/code> in front of it."
         },
         {
             "answer": "func Desk {\n\tvar isAdjustable: Bool\n\tfunc adjust(to newHeight: Int) {\n\t\tif isAdjustable {\n\t\t\tprint(\"Adjusting now...\")\n\t\t} else {\n\t\t\tprint(\"That isn't possible.\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>func Desk<\/code> is invalid; it should be <code>struct Desk<\/code> or something else."
         },
         {
             "answer": "struct Student {\n\tvar name: String\n\tvar sleepy: Bool\n\tfunc study {\n\t\tif sleepy {\n\t\t\tprint(\"I'm too tired right now.\")\n\t\t} else {\n\t\t\tprint(\"I'm hitting the books!\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>study()<\/code> method is missing parentheses."
         },
         {
             "answer": "struct House {\n\tvar isExpensiveArea = \"false\"\n\tvar numberOfRooms: Int\n\tmethod estimatePrice() -> Int {\n\t\tif isExpensiveArea == true {\n\t\t\treturn numberOfRooms * 100_000\n\t\t} else {\n\t\t\treturn numberOfRooms * 50_000\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>isExpensiveArea<\/code> property is a string, but it's being treated like a Boolean."
         },
         {
             "answer": "struct Jewellery {\n\tvar price: Double\n\tfunc estimateInsurance() -> Double {\n\t\tprice \/ 50.0\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>estimateInsurance()<\/code> method is missing the <code>return<\/code> keyword."
         }
     ]
 }

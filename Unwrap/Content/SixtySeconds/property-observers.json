@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Dog {\n\tvar age {\n\t\tdidSet {\n\t\t\tlet dogAge = age * 7\n\t\t\tprint(\"I'm now \\(dogAge) in dog years.\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>age<\/code> is missing a type annotation."
         },
         {
             "answer": "struct StepCounter {\n\tvar steps: Int {\n\t\thasSet {\n\t\t\tprint(\"You've walked \\(steps) steps - good job!\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>hasSet<\/code> should be <code>didSet<\/code>."
         },
         {
             "answer": "struct FuzzyClock {\n\tvar hour: Int {\n\t\tdset {\n\t\t\tif hour < 12 {\n\t\t\t\tprint(\"It's morning\")\n\t\t\t} else if hour < 18 {\n\t\t\t\tprint(\"It's the afternoon\")\n\t\t\t} else {\n\t\t\t\tprint(\"It's the evening.\")\n\t\t\t}\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>dset<\/code> should be <code>didSet<\/code>."
         },
         {
             "answer": "struct FootballMatch {\n\tlet homeTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Yay - we scored!\")\n\t\t}\n\t}\n\tlet awayTeamScore: Int {\n\t\tdidSet {\n\t\t\tprint(\"Boo - they scored!\")\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "You can't attach a property observer to a constant, because it will never change."
         },
         {
             "answer": "enum Student {\n\tvar name: String\n\tvar debt: Int {\n\t\tdidSet {\n\t\t\tif debt < 5_000 {\n\t\t\t\tprint(\"This is great!\")\n\t\t\t} else if debt < 20_000 {\n\t\t\t\tprint(\"This is OK.\")\n\t\t\t} else {\n\t\t\t\tprint(\"Can I fake my own death?\")\n\t\t\t}\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "This attempts to add stored properties to an enum, which isn't possible."
         },
         {
             "answer": "struct House {\n\tvar numberOfOccupants: Int {\n\t\tdidSet:\n\t\t\tprint(\"\\(numberOfOccupants) people live here now.\")\n\t}\n}",
-            "reason": ""
+            "reason": "<code>didSet:<\/code> should be <code>didSet {<\/code>."
         }
     ]
 }
