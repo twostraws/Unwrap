@@ -28,7 +28,7 @@
         },
         {
             "answer": "3..<30",
-            "reason": ""
+            "reason": "This range includes 5."
         }
     ],
     "wrong": [

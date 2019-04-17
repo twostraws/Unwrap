@@ -50,11 +50,11 @@
         },
         {
             "answer": "var conferenceName: String? = \"WWDC\"\nvar conference: String = conferenceName ?? nil",
-            "reason": ""
+            "reason": "This code could result in trying to assign <code>nil<\/code> to <code>conference<\/code>, which is not allowed."
         },
         {
             "answer": "var bestPony: String? = \"Pinkie Pie\"\nlet selectedPony: String? == bestPony ?? nil",
-            "reason": ""
+            "reason": "This code uses <code>==<\/code> rather than <code>=<\/code>."
         }
     ]
 }

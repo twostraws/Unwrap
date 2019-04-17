@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func takeTest(topic: String, test: (Int)) {\n\tlet minutes = 120\n\tprint(\"Today's test is on \\(topic).\")\n\tprint(\"You have \\(minutes) minutes.\")\n\ttest(minutes)\n}",
-            "reason": ""
+            "reason": "The <code>test<\/code> parameter is specified as a tuple with an integer inside, not a closure."
         },
         {
             "answer": "func buyDevices(name: String, count: Int, configurator: () -> String) {\n\tprint(\"I'm buying \\(count)x\\(name).\")\n\tfor _ in 0..<count {\n\t\tlet configuredDevice = configurator(name)\n\t\tprint(configuredDevice)\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>configurator<\/code> closure is specified as accepting no parameters, but this code tries to call it with the <code>name<\/code> string."
         },
         {
             "answer": "func runBarbecue(foods: [String], grillTechnique: (String, Int) -> Void) {\n\tlet spiceLevel = \"10\"\n\tfor food in foods {\n\t\tgrillTechnique(food, spiceLevel)\n\t}\n}",
-            "reason": ""
+            "reason": "<code>grillTechnique</code> is marked as a closure that accepts a string and an integer, but this code attempts to call it using two strings."
         },
         {
             "answer": "func raceCar(with closure: (String, String) -> String) {\n\tlet driver = \"Lewis Hamilton\"\n\tlet team = \"Mercedes\"\n\tlet raceResult = closure(driver)\n\tprint(\"The result is in: \\(raceResult)!\")\n}",
-            "reason": ""
+            "reason": "<code>closure<\/code> is marked as accepting two parameters, but this code attempts to call it using only one."
         },
         {
             "answer": "func printDocument(_ document: String, configurationCheck: (String Int) -> Bool) {\n\tlet copies = 1\n\tlet isAllowed = configurationCheck(document, copies)\n\tif isAllowed {\n\t\tprint(\"Printing now.\")\n\t} else {\n\t\tprint(\"That document can't be printed.\")\n\t}\n}",
-            "reason": ""
+            "reason": "<code>configurationCheck<\/code> is declared as <code>(String Int)<\/code>, which is invalid – it should be <code>(String, Int)<\/code>."
         },
         {
             "answer": "func makeSandwich(type sandwichType: String, condimentClosure: (String) -> String) {\n\tprint(\"First you make a basic \\(sandwichType) sandwich.\")\n\tprint(\"Next, you add condiments...\")\n\tlet newSandwichType = condimentClosure(type: sandwichType)\n\tprint(\"Now you have a \\(newSandwichType).\")\n}",
-            "reason": ""
+            "reason": "We don't use parameter names when calling a closure."
         }
     ]
 }

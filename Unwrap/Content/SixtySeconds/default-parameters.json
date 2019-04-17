@@ -42,7 +42,7 @@
         },
         {
             "answer": "func playGolf(holes: String = 18) {\n\tprint(\"Let's play \\(holes) holes of golf.\")\n}\nplayGolf()",
-            "reason": "This calls the <code>playGolf()<\/code> function without passing in its parameter."
+            "reason": "The <code>playGolf()<\/code> function takes a <code>String<\/code> parameter, but uses a default value of an integer."
         },
         {
             "answer": "func takePicture(withFlash flash Bool = true) {\n\tif flash {\n\t\tprint(\"I'm taking a photo with flash\")\n\t} else {\n\t\tprint(\"I'm taking a photo\")\n\t}\n}",

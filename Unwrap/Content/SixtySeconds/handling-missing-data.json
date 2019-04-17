@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "The sum of 10 numbers.",
-            "reason": ""
+            "reason": "Arithmetic like this always has an answer, even if that answer is 0."
         },
         {
             "answer": "The length of a string.",
-            "reason": ""
+            "reason": "All strings, even empty ones, have a length."
         },
         {
             "answer": "An array of all languages spoken in your country.",
-            "reason": ""
+            "reason": "Even if there were a country where no one lived, the array would still exist - it would just be empty."
         },
         {
             "answer": "The number of pages in a book.",
-            "reason": ""
+            "reason": "All books have a page count; even if all the pages are removed it would just have a page count of 0."
         },
         {
             "answer": "The international dialling code for a country.",
-            "reason": ""
+            "reason": "All countries have an international dialling code."
         },
         {
             "answer": "The population of a city.",
-            "reason": ""
+            "reason": "All cities have a population count; even a deserted city has a population count of 0."
         }
     ]
 }

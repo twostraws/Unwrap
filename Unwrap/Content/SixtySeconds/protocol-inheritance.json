@@ -8,53 +8,53 @@
     "correct": [
         {
             "answer": "protocol CarriesPassengers {\n\tvar passengerCount: Int { get set }\n}\nprotocol CarriesCargo {\n\tvar cargoCapacity: Int { get set }\n}\nprotocol Boat: CarriesPassengers, CarriesCargo {\n\tvar name: String { get set }\n}",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         },
         {
             "answer": "protocol LikesTravel {\n\tfunc visit(place: String)\n}\nprotocol BuySouvenirs {\n\tfunc buy(item: String)\n}\nprotocol Tourist: LikesTravel, BuySouvenirs { }",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         },
         {
             "answer": "protocol MakesDiagnoses {\n\tfunc evaluate(patient: String) -> String\n}\nprotocol PrescribesMedicine {\n\tfunc prescribe(drug: String)\n}\nprotocol Doctor: MakesDiagnoses, PrescribesMedicine { }",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         },
         {
             "answer": "protocol GivesOrders {\n\tfunc makeItSo()\n}\nprotocol OrdersDrinks {\n\tfunc teaEarlGrey(hot: Bool)\n}\nprotocol StarshipCaptain: GivesOrders, OrdersDrinks { }",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         },
         {
             "answer": "protocol HasMindTricks {\n\tfunc waveHandMystically()\n}\nprotocol UsesForce {\n\tfunc raiseXWing()\n}\nprotocol JediKnight: HasMindTricks, UsesForce { }",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         },
         {
             "answer": "protocol TimeTraveler {\n\tfunc travel(to year: Int)\n}\nprotocol HuntsPeople {\n\tfunc locateJohnConnor()\n}\nprotocol Terminator: TimeTraveler, HuntsPeople { }",
-            "reason": ""
+            "reason": "This code correctly demonstrates protocol inheritance."
         }
     ],
     "wrong": [
         {
             "answer": "protocol HasEngine {\n\tfunc startEngine()\n}\nprotocol HasTrunk {\n\tfunc openTrunk()\n}\nstruct Car: HasEngine, HasTrunk { }",
-            "reason": ""
+            "reason": "Although <code>Car<\/code> conforms to both protocols, there is no protocol inheritance here – neither protocol builds on the other."
         },
         {
             "answer": "protocol HasRooms {\n\tvar roomCount: Int { get set }\n}\nprotocol ServesFood {\n\tvar openingTime: Int { get set }\n}\nprotocol Hotel: HasRooms ServesFood {\n\tvar starRating: Int { get set }\n}",
-            "reason": ""
+            "reason": "This is missing a comma between the two protocols that <code>Hotel<\/code> inherits from; it should be <code>protocol Hotel: HasRooms, ServesFood<\/code>."
         },
         {
             "answer": "protocol Readable {\n\tfunc read() -> String\n}\nprotocol Writeable {\n\tfunc write(string: String)\n}\nprotocol NetworkSocket: Readable, Writeable",
-            "reason": ""
+            "reason": "Even empty protocols like <code>NetworkSocket<\/code> must still have empty braces, <code>{ }</code>."
         },
         {
             "answer": "protocol Buyable {\n\tvar cost: Int\n}\nprotocol Sellable {\n\tfunc findBuyers() -> [String]\n}\nprotocol FineArt: Buyable, Sellable { }",
-            "reason": ""
+            "reason": "The <code>cost<\/code> property must have <code>{ get }<\/code> or <code>{ get set }<\/code> after it."
         },
         {
             "answer": "protocol Scoreable {\n\tfunc add\n}\nprotocol Winnable {\n\tfunc makeWinningSpeech\n}\nprotocol Competitor: Scoreable, Winnable { }",
-            "reason": ""
+            "reason": "The <code>add()<\/code> and <code>makeWinningSpeech()<\/code> methods are missing parentheses."
         },
         {
             "answer": "struct Collectible {\n\tvar rarity: Int { get set }\n}\nstruct Tradeable {\n\tvar condition: String { get }\n}\nprotocol ClassicToy: Collectible, Tradeable { }",
-            "reason": ""
+            "reason": "This attempts to make a protocol inherit from a struct, which is not allowed."
         }
     ]
 }

@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "struct Knittable {\n\tvar needleSizes: [Double] { get set }\n}",
-            "reason": ""
+            "reason": "This is a struct, not a protocol."
         },
         {
             "answer": "protocol Strokeable {\n\tfluffiness: Int { get }\n}",
-            "reason": ""
+            "reason": "<code>fluffiness<\/code> should be declared using <code>var<\/code>."
         },
         {
             "answer": "protocol Buildable {\n\tvar numberOfBricks: Int { set }\n\tvar materials: [String] { set }\n}",
-            "reason": ""
+            "reason": "It's not possible to create set-only properties in Swift."
         },
         {
             "answer": "protocol Swimmable {\n\tvar depth { get }\n}",
-            "reason": ""
+            "reason": "This needs a type annotation for <code>depth<\/code>."
         },
         {
             "answer": "protocol Liftable {\n\tvar weight: Double get set\n}",
-            "reason": ""
+            "reason": "This is missing braces around <code>get set<\/code>."
         },
         {
             "answer": "protocol Mailable {\n\tvar width: Double { get, set }\n\tvar height: Double { get, set }\n}",
-            "reason": ""
+            "reason": "<code>{ get set }<\/code> should not have a comma inside."
         }
     ]
 }

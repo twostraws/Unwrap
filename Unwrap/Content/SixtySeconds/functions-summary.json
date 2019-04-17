@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func eatIceCream {\n\tprint(\"Yum!\")\n}",
-            "reason": ""
+            "reason": "This is missing parentheses after <code>eatIceCream()<\/code>."
         },
         {
             "answer": "func makeSandwich(fillings String...) {\n\tprint(\"I'm making a sandwich...\")\n\tfor filling in fillings {\n\t\tprint(\"Let's add some \\(filling).\")\n\t}\n}",
-            "reason": ""
+            "reason": "This is missing a colon between <code>fillings<\/code> and <code>String<\/code>."
         },
         {
             "answer": "enum SwimmingError: Error {\n\tcase cantSwim\n}\nfunc swim(distance: Int) {\n\tthrow SwimmingError.cantSwim\n}",
-            "reason": ""
+            "reason": "The <code>swim()<\/code> function can't throw errors because it isn't marked with <code>throws<\/code>."
         },
         {
             "answer": "func checkFor(_ searchName: String, in names: [String]) -> Bool {\n\tfor name in names {\n\t\tif name == searchName {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "If <code>searchName<\/code> isn't found in the <code>names<\/code> array this function won't return anything."
         },
         {
             "answer": "func paintWalls(tastefully: Bool, color: inout String) {\n\tif tastefully {\n\t\tcolor = \"cream\"\n\t} else {\n\t\tcolor = \"tartan\"\n\t}\n}\nlet color = \"\"\npaintWalls(tastefully: true, color: &color)",
-            "reason": ""
+            "reason": "This attempts to pass a constant string into a function as an <code>inout<\/code> parameter."
         },
         {
             "answer": "func isUserAllowed(name username: String) -> Bool {\n\tif name == \"Anonymous\" {\n\t\tprint(\"Forbidden\")\n\t} else {\n\t\tprint(\"Allowed\")\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>isUserAllowed()<\/code> function says it will return a Boolean, but it does not return anything."
         }
     ]
 }

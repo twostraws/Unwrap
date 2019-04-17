@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func makeBurger(withCheese: Bool) {\n\tif cheese {\n\t\tprint(\"Here's a cheeseburger\")\n\t} else {\n\t\tprint(\"Here's a regular burger\")\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>makeBurger()<\/code> function says that its parameter is called <code>withCheese<\/code>, but it's used as <code>cheese<\/code>."
         },
         {
             "answer": "func countPoodles(dogs: [String]) -> Int {\n\tvar sum = 0\n\tfor dog in dogs {\n\t\tif dog == \"Poodle\" {\n\t\t\tsum += 1\n\t\t}\n\t}\n\treturn sum\n}\ncountPoodles([\"Mollie\", \"Penny\", \"Poppy\"])",
-            "reason": ""
+            "reason": "This code calls <code>countPoodles()<\/code> without using its <code>dogs<\/code> parameter name."
         },
         {
             "answer": "func addStudentToClass(_ name: String) {\n\tprint(\"Welcome to the class, \\(student)!\")\n}",
-            "reason": ""
+            "reason": "The <code>addStudentToClass()<\/code> function says that its parameter is called <code>name<\/code>, but it's used as <code>student<\/code>."
         },
         {
             "answer": "func isEveryoneCanadian(_ birthCountries: [String]) {\n\tfor country in birthCountries {\n\t\tif country != \"Canada\" {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
-            "reason": ""
+            "reason": "This code attempts to return a value from a function that doesn't return anything."
         },
         {
             "answer": "func printLogMessage(message: String) -> Bool {\n\tprint(\"Log: \\(message)\")\n\treturn true\n}\nprintLogMessage(\"Something went wrong!\")",
-            "reason": ""
+            "reason": "This code calls <code>printLogMessage()<\/code> without using its <code>message<\/code> parameter name."
         },
         {
             "answer": "func formatLength(length length: Int) {\n\tprint(\"That measures \\(length)cm.\")\n}\nformatLength(95)",
-            "reason": ""
+            "reason": "This code calls <code>formatLength()<\/code> without using its <code>length<\/code> parameter name."
         }
     ]
 }

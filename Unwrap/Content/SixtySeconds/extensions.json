@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "extension Int {\n\tvar isEven {\n\t\treturn self % 2 == 0\n\t}\n}",
-            "reason": ""
+            "reason": "<code>isEven<\/code> is missing a type annotation."
         },
         {
             "answer": "extension String {\n\tfunc append(_ other: String) {\n\t\tself += other\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>append()<\/code> method must be marked <code>mutating<\/code>."
         },
         {
             "answer": "extension Bool {\n\tfunc toggled() -> Bool {\n\t\tif self = true {\n\t\t\treturn false\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>if self = true<\/code> should read <code>if self == true<\/code>."
         },
         {
             "answer": "ext Array {\n\tfunc summarize() {\n\t\tprint(\"The array has \\(count) items. They are:\")\n\t\tfor item in self {\n\t\t\tprint(item)\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "<code>ext<\/code> should read <code>extension<\/code>."
         },
         {
             "answer": "extension Int {\n\ttimes(_ action: () -> Void) {\n\t\tfor _ in 0..<self {\n\t\t\taction()\n\t\t}\n\t}\n}",
-            "reason": ""
+            "reason": "The <code>times()<\/code> method is missing the <code>func<\/code> keyword."
         },
         {
             "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tself == 42\n\t}\n}",
-            "reason": ""
+            "reason": "This computed property is missing the <code>return<\/code> keyword."
         }
     ]
 }

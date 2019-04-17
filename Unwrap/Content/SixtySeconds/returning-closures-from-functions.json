@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "func makeSharer(String) -> () -> String {\n\tswitch destination {\n\tcase \"Twitter\":\n\t\treturn {\n\t\t\treturn \"I'm writing a tweet\"\n\t\t}\n\tdefault:\n\t\treturn {\n\t\t\treturn \"I'm sending an email\"\n\t\t}\n\t}\n}\nlet sharer = makeSharer(destination: \"Twitter\")\nprint(sharer())",
-            "reason": ""
+            "reason": "The parameter to <code>makeSharer()<\/code> needs to have a name."
         },
         {
             "answer": "func makeCodeGenerator(language: String) -> () -> Void {\n\tif language == \"Swift\" {\n\t\treturn \"Swift rocks!\"\n\t} else {\n\t\treturn \"Other languages are pretty great too!\"\n\t}\n}\nlet generator = makeCodeGenerator(language: \"Swift\")\ngenerator()",
-            "reason": ""
+            "reason": "<code>makeCodeGenerator()<\/code> says it will return a closure, but instead returns a string."
         },
         {
             "answer": "func mealProducer() -> (Int) -> String {\n\treturn {\n\t\tprint(\"I'll make dinner for \\($0) people.\")\n\t}\n}\nlet makeDinner = mealProducer()\nprint(makeDinner(5))",
-            "reason": ""
+            "reason": "<code>mealProducer()<\/code> says it will return a closure that accepts an integer and returns a string, but it returns a closure that accepts a string and returns nothing."
         },
         {
             "answer": "func paintingMaker(medium: String) -> (String) -> Void {\n\tif medium == \"watercolor\" {\n\t\treturn {\n\t\t\tprint(\"I'm going to paint some flowers.\")\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\tprint(\"I'm going to paint a landscape.\")\n\t\t}\n\t}\n}\nlet maker = paintingMaker(medium: \"watercolor\")\nmaker()",
-            "reason": ""
+            "reason": "<code>paintingMaker()<\/code> says it will return a closure that accepts a string and returns nothing, but the closure it returns accepts no parameters."
         },
         {
             "answer": "func catchPokemon(level: Int) -> () {\n\tif level < 10 {\n\t\treturn {\n\t\t\treturn \"Use a regular ball\"\n\t\t}\n\t} else if level < 20 {\n\t\treturn {\n\t\t\treturn \"Use a great ball\"\n\t\t}\n\t} else {\n\t\treturn {\n\t\t\treturn \"Use an ultra ball\"\n\t\t}\n\t}\n}\nlet catcher = catchPokemon(level: 11)\nprint(catcher())",
-            "reason": ""
+            "reason": "<code>catchPokemon()<\/code> says it will return an empty tuple, not a closure."
         },
         {
             "answer": "func makeGame() -> Int -> Void {\n\treturn {\n\t\tif $0 <= 5 {\n\t\t\tprint(\"Let's play five-a-side football.\")\n\t\t} else {\n\t\t\tprint(\"Let's play regular football.\")\n\t\t}\n\t}\n}\nlet game = makeGame()\ngame(5)",
-            "reason": ""
+            "reason": "The return value of <code>makeGame()<\/code> needs to be written with parentheses around the parameter type: <code>(Int) -> Void<\/code>."
         }
     ]
 }

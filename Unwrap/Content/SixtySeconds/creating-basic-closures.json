@@ -34,27 +34,27 @@
     "wrong": [
         {
             "answer": "let upgrade() = {\n\tprint(\"Upgrading...\")\n}\nupgrade()",
-            "reason": ""
+            "reason": "The parentheses after <code>upgrade<\/code> should not be there.."
         },
         {
             "answer": "let sing {\n\tprint(\"Tralala\")\n}\nsing()",
-            "reason": ""
+            "reason": "There should be an equals sign before the opening brace."
         },
         {
             "answer": "takeCruise = {\n\tprint(\"A week of vacation!\")\n}",
-            "reason": ""
+            "reason": "This needs either <code>let<\/code> or <code>var<\/code> before <code>takeCruise<\/code>."
         },
         {
             "answer": "var meetFriends = {\n\tprint(\"Let's watch a movie\")\n}\nmeetfriends()",
-            "reason": ""
+            "reason": "Closure names are case-sensitive, and this attempts to call <code>meetfriends()<\/code> rather than <code>meetFriends()<\/code>."
         },
         {
             "answer": "var paintPicture() {\n\tprint(\"Where are my watercolors?\")\n}",
-            "reason": ""
+            "reason": "This should read <code>var paintPicture = {<\/code>."
         },
         {
             "answer": "var signAutograph(to name: String) = {\n\tprint(\"To \\(name), my #1 fan\")\n}\nsignAutograph(to: \"Lisa\")",
-            "reason": ""
+            "reason": "Unlike functions, closures put their parameters inside the opening brace."
         }
     ]
 }

@@ -9,10 +9,20 @@
 import UIKit
 import QuickLayout
 
-public class EKRatingMessageView: UIView {
+public class EKRatingMessageView: UIView, EntryAppearanceDescriptor {
+
+    // MARK: Properties
     
     private var message: EKRatingMessage
 
+    // MARK: EntryAppearenceDescriptor
+
+    var bottomCornerRadius: CGFloat = 0 {
+        didSet {
+            buttonBarView.bottomCornerRadius = bottomCornerRadius
+        }
+    }
+    
     private var selectedIndex: Int! {
         didSet {
             message.selectedIndex = selectedIndex
@@ -27,7 +37,7 @@ public class EKRatingMessageView: UIView {
 
     public init(with message: EKRatingMessage) {
         self.message = message
-        super.init(frame: .zero)
+        super.init(frame: UIScreen.main.bounds)
         setupMessageContentView()
         setupSymbolsView()
         setupButtonBarView()
