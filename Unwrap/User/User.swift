@@ -292,7 +292,7 @@ final class User: Codable {
             }
 
             return conditionChapter.bundleNameSections.reduce(true) {
-                return $0 && hasReviewed($1.bundleName)
+                $0 && hasReviewed($1.bundleName)
             }
         } else if badge.criterion == "practice" {
             let practiceBadgeCount = 10
