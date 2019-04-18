@@ -324,20 +324,38 @@ final class User: Codable {
     /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.
     @objc func updateStreak() {
         let today = Date()
+        let elapsedDays: Int
+        
         guard lastStreakEntry.isSameDay(as: today) == false else { return }
-
-        let elapsedDays = lastStreakEntry.days(between: today)
-
-        if elapsedDays == 1 {
-            lastStreakEntry = today
-            streakDays += 1
-            bestStreak = max(bestStreak, streakDays)
-        } else {
-            // reset back to 1, because they obviously launched the app today
-            streakDays = 1
-            lastStreakEntry = today
+        
+        // We want to see if today is more recent than sync'd lastStreakEntry. This will be true if we are first in app during or after a calendar day change. Otherwise, our lastStreakEntry is newer and we need to calculate elapsed days the other way.
+        if today >= lastStreakEntry {
+            elapsedDays = lastStreakEntry.days(between: today)
+            
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                streakDays += 1
+                bestStreak = max(bestStreak, streakDays)
+                
+            } else {
+                // reset back to 1, because they obviously launched the app today
+                streakDays = 1
+                lastStreakEntry = today
+            }
+        } else if today < lastStreakEntry {
+            elapsedDays = today.days(between: lastStreakEntry)
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                // Not going to update streakDays here as the version from iCloud already has the correct value
+                bestStreak = max(bestStreak, streakDays)
+                
+            } else {
+                // reset back to 1, because they obviously launched the app today
+                streakDays = 1
+                lastStreakEntry = today
+            }
         }
-
+        
         save()
     }
 
