@@ -63,6 +63,14 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
         navigationItem.leftBarButtonItem?.isEnabled = false
         selected.setTitle("CONTINUE", for: .normal)
 
+        // disable the other button
+        if selected == trueButton {
+            falseButton.disable()
+        } else {
+            trueButton.disable()
+        }
+
+        // update the button they tapped to reflect whether they were right or wrong
         if selected == trueButton {
             if currentAnswer.isCorrect {
                 selected.correctAnswer()

@@ -45,4 +45,9 @@ extension UIButton {
         setImage(UIImage(bundleName: "Cross"), for: .normal)
         backgroundColor = UIColor(bundleName: "ReviewWrong")
     }
+
+    func disable() {
+        backgroundColor = UIColor(bundleName: "Disabled")
+        isUserInteractionEnabled = false
+    }
 }
