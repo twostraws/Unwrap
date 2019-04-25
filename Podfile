@@ -15,6 +15,7 @@ target 'Unwrap' do
   pod 'Sourceful', :git => 'https://github.com/twostraws/Sourceful.git', :branch => 'master'
   pod 'DZNEmptyDataSet', '~> 1.8'
   pod 'SwiftLint', '0.31.0'
+  pod 'Zephyr', '3.4.0'
 
   target 'UnwrapTests' do
     inherit! :search_paths

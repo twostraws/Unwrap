@@ -9,6 +9,7 @@ PODS:
   - SwiftEntryKit (1.0.1):
     - QuickLayout (= 3.0.0)
   - SwiftLint (0.31.0)
+  - Zephyr (3.4.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Sourceful (from `https://github.com/twostraws/Sourceful.git`, branch `master`)
   - SwiftEntryKit (~> 1.0)
   - SwiftLint (= 0.31.0)
+  - Zephyr (= 3.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - SDWebImage
     - SwiftEntryKit
     - SwiftLint
+    - Zephyr
 
 EXTERNAL SOURCES:
   Sourceful:
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   Sourceful: 7be20b8682d4919a1be65369385e1e52f5be38bd
   SwiftEntryKit: 3f55c0b8e676afe24a3703237bcac68372891c56
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  Zephyr: 981f34b10e37f60f00f1ec74fb8420aaadccd774
 
-PODFILE CHECKSUM: 472cdfa7e43ed677541ea9efedfb99b6c1014153
+PODFILE CHECKSUM: 2433f2d933c188fae85e7174018875d0d04dd44f
 
 COCOAPODS: 1.6.1

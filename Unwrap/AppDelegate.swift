@@ -8,6 +8,7 @@
 
 import AVKit
 import UIKit
+import Zephyr
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
