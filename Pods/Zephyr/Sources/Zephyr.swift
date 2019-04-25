@@ -27,7 +27,7 @@ public final class Zephyr: NSObject {
     /// If **true**, then `NSUbiquitousKeyValueStore.synchronize()` will be called immediately after any change is made.
     public static var syncUbiquitousKeyValueStoreOnChange = true
 
-    /// A string containing the notification name that will be psoted when Zephyr receives updated data from iCloud
+    /// A string containing the notification name that will be psoted when Zephyr receives updated data from iCloud.
     public static let keysDidChangeOnCloudNotification = Notification.Name("ZephyrKeysDidChangeOnCloudNotification")
 
     /// The singleton for Zephyr.
@@ -440,10 +440,7 @@ extension Zephyr {
                 syncSpecificKeys(keys: [key], dataStore: .remote)
             }
 
-            // The next two lines are additions to the original source.
-            // This method modified because Zephyr will sync everytime monitored keys have changes.
-            // We want a way to (re)load the user and decode its data into memory each sync.
-
+            // Notify any observers that we have finished synchronizing an update from iCloud.
             NotificationCenter.default.post(name: Zephyr.keysDidChangeOnCloudNotification, object: nil)
         }
     }
