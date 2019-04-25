@@ -54,7 +54,7 @@
         },
         {
             "answer": "func isUserAllowed(name username: String) -> Bool {\n\tif name == \"Anonymous\" {\n\t\tprint(\"Forbidden\")\n\t} else {\n\t\tprint(\"Allowed\")\n\t}\n}",
-            "reason": "The <code>isUserAllowed()<\/code> function says it will return a Boolean, but it does not return anything."
+            "reason": "This code has a couple of problems, not least that the <code>isUserAllowed()<\/code> function says it will return a Boolean, but it does not return anything."
         }
     ]
 }

@@ -8,27 +8,27 @@
     "correct": [
         {
             "answer": "let scores = [\"Sophie\": 100]",
-            "reason": "This creates a dictionary strings for keys and integers for values."
+            "reason": "This creates a dictionary with strings for keys and integers for values."
         },
         {
             "answer": "let forecast = [\"Monday\": \"sunny\", \"Tuesday\": \"cloudy\"]",
-            "reason": "This creates a dictionary strings for keys and strings for values."
+            "reason": "This creates a dictionary with strings for keys and strings for values."
         },
         {
             "answer": "let heights = [\"Taylor Swift\": 1.78]",
-            "reason": "This creates a dictionary strings for keys and doubles for values."
+            "reason": "This creates a dictionary with strings for keys and doubles for values."
         },
         {
             "answer": "var roles = [\"captain\": \"Mal\", \"engineer\": \"Kaylee\"]",
-            "reason": "This creates a dictionary strings for keys and strings for values."
+            "reason": "This creates a dictionary with strings for keys and strings for values."
         },
         {
             "answer": "var capitals = [\"England\": \"London\", \"Scotland\": \"Edinburgh\"]",
-            "reason": "This creates a dictionary strings for keys and strings for values."
+            "reason": "This creates a dictionary with strings for keys and strings for values."
         },
         {
             "answer": "var address = [\"road\": \"Park Lane\", \"city\": \"Cardiff\"]",
-            "reason": "This creates a dictionary strings for keys and strings for values."
+            "reason": "This creates a dictionary with strings for keys and strings for values."
         }
     ],
     "wrong": [
