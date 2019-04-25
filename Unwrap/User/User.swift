@@ -182,7 +182,7 @@ final class User: Codable {
 
     /// Triggered by new data coming from iCloud; pass it straight on to statusChanged() so all our UI refreshes.
     func cloudUpdate() {
-        statusChanged()
+        cloudStatusChanged()
     }
 
     /// Triggered when the user has finished learning
@@ -242,6 +242,15 @@ final class User: Codable {
         DispatchQueue.main.async {
             User.current.save()
         }
+    }
+
+    /// Sends an app-wide notification when the user's data has changed via the cloud, so all listening objects can update. This is the same as statusChanged but without the save.
+    private func cloudStatusChanged() {
+        let notification = Notification(name: .userStatusChanged)
+
+        // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
+        NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
+
     }
 
     /// Returns how many points the user has earned for a specific chapter in the book.
@@ -324,20 +333,32 @@ final class User: Codable {
     /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.
     @objc func updateStreak() {
         let today = Date()
+        let elapsedDays: Int
         guard lastStreakEntry.isSameDay(as: today) == false else { return }
-
-        let elapsedDays = lastStreakEntry.days(between: today)
-
-        if elapsedDays == 1 {
-            lastStreakEntry = today
-            streakDays += 1
-            bestStreak = max(bestStreak, streakDays)
-        } else {
-            // reset back to 1, because they obviously launched the app today
-            streakDays = 1
-            lastStreakEntry = today
+        // We want to see if today is more recent than sync'd lastStreakEntry. This will be true if we are first in app during or after a calendar day change. Otherwise, our lastStreakEntry is newer and we need to calculate elapsed days the other way.
+        if today > lastStreakEntry {
+            elapsedDays = lastStreakEntry.days(between: today)
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                streakDays += 1
+                bestStreak = max(bestStreak, streakDays)
+            } else {
+                // reset back to 1, because they obviously launched the app today
+                streakDays = 1
+                lastStreakEntry = today
+            }
+        } else if today < lastStreakEntry {
+            elapsedDays = today.days(between: lastStreakEntry)
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                // Not going to update streakDays here as the version from iCloud already has the correct value
+                bestStreak = max(bestStreak, streakDays)
+            } else {
+                // reset back to 1, because they obviously launched the app today
+                streakDays = 1
+                lastStreakEntry = today
+            }
         }
-
         save()
     }
 
