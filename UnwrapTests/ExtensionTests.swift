@@ -58,9 +58,9 @@ class ExtensionTests: XCTestCase {
         let test2 = "Hello\nworld"
         let test5 = "Hello\ndarkness\nmy\nold\nfriend"
 
-        XCTAssert(test1.lines.count == 1, "There should be 1 line in \(test1).")
-        XCTAssert(test2.lines.count == 2, "There should be 2 lines in \(test2).")
-        XCTAssert(test5.lines.count == 5, "There should be 5 lines in \(test5).")
+        XCTAssertEqual(test1.lines.count, 1, "There should be 1 line in \(test1).")
+        XCTAssertEqual(test2.lines.count, 2, "There should be 2 lines in \(test2).")
+        XCTAssertEqual(test5.lines.count, 5, "There should be 5 lines in \(test5).")
     }
 
     /// Tests that line differences are detected correctly.
@@ -68,8 +68,8 @@ class ExtensionTests: XCTestCase {
         let testA = "This\nis\na\ntest"
         let testB = "This\nis\na\nmess"
 
-        XCTAssert(testA.lineDiff(from: testB) == 3, "Line 3 is different.")
-        XCTAssert(testA.lineDiff(from: testA) == -1, "There are no differences.")
+        XCTAssertEqual(testA.lineDiff(from: testB), 3, "Line 3 is different.")
+        XCTAssertEqual(testA.lineDiff(from: testA), -1, "There are no differences.")
     }
 
     /// Tests that strings can be formatted into variable names correctly.
@@ -89,8 +89,8 @@ class ExtensionTests: XCTestCase {
     func testCodeAnonymization() {
         let cleanString = "func sumOfFactors(for number: Int) -> Int {\n\tvar sum = 0\n\tfor i in 1...number {\n\t\tif number % i == 0 {\n\t\t\tsum += i\n\t\t}\n\t}\n\treturn sum\n}\nlet sum = sumOfFactors(for: 100)"
 
-        let anonymizedString = "func #1#(%1%: Int) -> Int {\nvar &1& = 0\nfor @1@ in 1...%1% {\nif %1% % @1@ == 0 {\n&1& += @1@\n}\n}\nreturn &1&\n}\nlet &1& = #1#(for: 100)"
+        let anonymizedString = "func #1#(%1%: Int) -> Int {\nvar &1& = 0\nfor @1@ in 1 ... %1% {\nif %1% % @1@ == 0 {\n&1& += @1@\n}\n}\nreturn &1&\n}\nlet &1& = #1#(for: 100)"
 
-        XCTAssert(cleanString.toAnonymizedVariables() == anonymizedString)
+        XCTAssertEqual(cleanString.toAnonymizedVariables(), anonymizedString)
     }
 }

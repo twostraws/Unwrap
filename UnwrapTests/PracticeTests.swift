@@ -125,6 +125,66 @@ class PracticeTests: XCTestCase {
         }
     }
 
+    /// Compares various correct answers against a known question to make sure Free Coding is stable.
+    func testFreeCoding3() {
+        let question = "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total."
+        let answers = [
+            "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
+            "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{return $0 == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{return $0 == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = x numbers.filter{num in return num == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)",
+            "letvar filtered:[Int] = x numbers.filter{num in num == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in num == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{num in\nnum == 5\n}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
+            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
+        ]
+
+        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
+
+        let correctAnswers = [
+            "let counter = numbers.filter{return $0 == 5}.count\nprint(counter)",
+            "let count = numbers.filter{return $0 == 5}.count\nprint(count)",
+            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
+        ]
+
+        let wrongAnswers = [
+            // This misses an equals sign
+            "let counter = numbers.filter{return $0 = 5}.count\nprint(counter)",
+
+            // This mixes named and unnamed closure parameters
+            "let count = numbers.filter{number in return $0 == 5}.count\nprint(count)",
+
+            // This doesn't print the result
+            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}",
+
+            // This changes the counting variable name
+            "let count = numbers.filter{return $0 == 5}.count\nprint(count1)",
+
+            // This also changes the counting variable name
+            "let count1 = numbers.filter{return $0 == 5}.count\nprint(count)"
+        ]
+
+        // Make sure all correct answers assert true.
+        for answer in correctAnswers {
+            let result = test.check(answer: answer)
+            print(answer.toAnonymizedVariables())
+            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+        }
+
+        // Make sure all wrong answers assert false.
+        for answer in wrongAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+        }
+    }
+
     /// Generates a variety of Predict the Output practice questions so we give everything a thorough going over.
     func testPredictTheOutput() {
         // test a wide variety of possible examples
@@ -155,7 +215,7 @@ class PracticeTests: XCTestCase {
         // test a wide variety of possible examples
         for _ in 1...100 {
             let test = SpotTheErrorPractice()
-            XCTAssert(test.lineNumber != -1, "No errors were found in Spot the Error. Error was supposed to be \(test.error), with code \(test.code)")
+            XCTAssertNotEqual(test.lineNumber, -1, "No errors were found in Spot the Error. Error was supposed to be \(test.error), with code \(test.code)")
         }
     }
 
@@ -164,7 +224,7 @@ class PracticeTests: XCTestCase {
         // test a wide variety of possible examples
         for _ in 1...100 {
             let test = TapToCodePractice()
-            XCTAssert(test.components.count >= 2, "Tap to Code practice questions must have at least two components.")
+            XCTAssertGreaterThanOrEqual(test.components.count, 2, "Tap to Code practice questions must have at least two components.")
         }
     }
 
@@ -173,7 +233,7 @@ class PracticeTests: XCTestCase {
         // test a wide variety of possible examples
         for _ in 1...100 {
             let test = TypeCheckerPractice()
-            XCTAssert(test.answers.count == 8, "There should be precisely 8 test answers.")
+            XCTAssertEqual(test.answers.count, 8, "There should be precisely 8 test answers.")
         }
     }
 }

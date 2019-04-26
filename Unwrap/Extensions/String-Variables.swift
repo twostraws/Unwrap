@@ -48,6 +48,10 @@ extension String {
         // Replace semi-colons with line breaks in the unlikely event folks try to put multiple statements on a single line.
         replaced = replaced.replacingOccurrences(of: ";", with: "\n")
 
+        // Add spacing around range operators to avoid false positives that a full stop before a variable is a property access
+        replaced = replaced.replacingOccurrences(of: "...", with: " ... ")
+        replaced = replaced.replacingOccurrences(of: "..<", with: " ..< ")
+
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
 
@@ -112,8 +116,8 @@ extension String {
                 }
 
                 // We don't want to just do a simple string replace, because they might call their thing "a" and that would be replaced everywhere.
-                // So, ensure whatever is before or after their name isn't more letters/numbers.
-                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9])\(componentName)([^A-Za-z0-9])", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
+                // So, ensure whatever is before or after their name isn't more letters/numbers, and it isn't preceded by a full stop.
+                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9.])\(componentName)([^A-Za-z0-9])", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
                 componentNumber += 1
             } else {
                 break
