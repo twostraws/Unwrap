@@ -84,6 +84,8 @@ class NewsDataSource: NSObject, UITableViewDataSource {
 
         if User.current.hasReadNewsStory(forURL: article.url) {
             newsCell.readNotification.alpha = 0
+        } else {
+            newsCell.readNotification.alpha = 1
         }
 
         newsCell.textLabel?.text = article.title
