@@ -31,7 +31,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     /// Shows the list of common Swift terms
     func showGlossary() {
-        let vc = GlossaryViewController.instantiate()
+        let vc = GlossaryViewController(style: .plain)
         navigationController.pushViewController(vc, animated: true)
     }
 
