@@ -162,45 +162,6 @@
             </objects>
             <point key="canvasLocation" x="1521" y="753"/>
         </scene>
-        <!--Learn View Controller-->
-        <scene sceneID="lNi-g2-5ey">
-            <objects>
-                <tableViewController storyboardIdentifier="LearnViewController" id="4Uk-lz-H7x" customClass="LearnViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" id="3t5-l0-WIO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="98v-R1-GeE" style="IBUITableViewCellStyleDefault" id="PsV-TH-6RG">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PsV-TH-6RG" id="pcf-b5-sgv">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="98v-R1-GeE">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="4Uk-lz-H7x" id="GjJ-V5-Afs"/>
-                            <outlet property="delegate" destination="4Uk-lz-H7x" id="F9A-Jn-mtB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Jzy-jh-Wia"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zag-Lt-dnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2325" y="-465"/>
-        </scene>
         <!--Glossary View Controller-->
         <scene sceneID="ANa-Nm-QoR">
             <objects>
@@ -1020,7 +981,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMM-zC-LCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="-1177"/>
+            <point key="canvasLocation" x="2324" y="-515"/>
         </scene>
         <!--Spot The Error View Controller-->
         <scene sceneID="aXR-Ta-oR7">

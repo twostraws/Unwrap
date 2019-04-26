@@ -23,7 +23,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
-        let viewController = LearnViewController.instantiate()
+        let viewController = LearnViewController(style: .plain)
         viewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]

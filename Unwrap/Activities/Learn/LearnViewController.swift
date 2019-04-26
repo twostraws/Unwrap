@@ -9,7 +9,7 @@
 import UIKit
 
 /// The main view controller you see in  the Home tab in the app.
-class LearnViewController: UITableViewController, Storyboarded, UserTracking, UIViewControllerPreviewingDelegate {
+class LearnViewController: UITableViewController, UserTracking, UIViewControllerPreviewingDelegate {
     var coordinator: LearnCoordinator?
 
     /// This handles all the rows in our table view.
@@ -28,6 +28,8 @@ class LearnViewController: UITableViewController, Storyboarded, UserTracking, UI
         tableView.delegate = dataSource
         registerForPreviewing(with: self, sourceView: tableView)
         dataSource.delegate = self
+
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
     /// Refreshes everything when the user changes.

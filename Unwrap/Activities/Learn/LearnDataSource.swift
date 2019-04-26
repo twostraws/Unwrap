@@ -30,6 +30,7 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
 
         let chapter = Unwrap.chapters[indexPath.section]
         let section = chapter.sections[indexPath.row]
