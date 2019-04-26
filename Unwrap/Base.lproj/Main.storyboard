@@ -545,41 +545,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLI-uz-9uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="731"/>
-        </scene>
-        <!--Credits View Controller-->
-        <scene sceneID="0se-w8-pWh">
-            <objects>
-                <viewController storyboardIdentifier="CreditsViewController" id="Gri-KT-vNm" customClass="CreditsViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E3G-Pq-GUK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Credits" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fkO-fJ-cwM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fkO-fJ-cwM" firstAttribute="leading" secondItem="6UR-gQ-vBU" secondAttribute="leading" id="3fc-Qc-9xT"/>
-                            <constraint firstItem="fkO-fJ-cwM" firstAttribute="top" secondItem="6UR-gQ-vBU" secondAttribute="top" id="Tny-To-JU2"/>
-                            <constraint firstItem="6UR-gQ-vBU" firstAttribute="bottom" secondItem="fkO-fJ-cwM" secondAttribute="bottom" id="c3X-h3-6pY"/>
-                            <constraint firstItem="6UR-gQ-vBU" firstAttribute="trailing" secondItem="fkO-fJ-cwM" secondAttribute="trailing" id="vLa-2R-g6f"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6UR-gQ-vBU"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="textView" destination="fkO-fJ-cwM" id="onM-ZP-yhI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rkk-N0-N39" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="430" y="1406"/>
+            <point key="canvasLocation" x="665" y="1074"/>
         </scene>
         <!--Challenges View Controller-->
         <scene sceneID="Ydl-vc-ZqJ">
