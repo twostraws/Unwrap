@@ -26,7 +26,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
-        let viewController = PracticeViewController.instantiate()
+        let viewController = PracticeViewController(style: .plain)
         viewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]

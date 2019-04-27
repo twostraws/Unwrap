@@ -45,11 +45,14 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if User.current.hasCompletedTodaysChallenge {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ComeBackTomorrow", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
+                cell.accessoryType = .none
                 cell.selectionStyle = .none
+                cell.textLabel?.text = "Come Back Tomorrow"
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TakeChallenge", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
+                cell.accessoryType = .disclosureIndicator
                 cell.textLabel?.text = Date().formatted
                 return cell
             }

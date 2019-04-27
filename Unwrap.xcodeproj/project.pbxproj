@@ -589,6 +589,8 @@
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
 		81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */; };
 		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
+		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
+		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
 		B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
 /* End PBXBuildFile section */
@@ -1203,6 +1205,8 @@
 		879EE4E91437B6378BB24AE1 /* Pods-Unwrap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig"; sourceTree = "<group>"; };
 		AA4718A94B659E9A42AEC33E /* Pods-UnwrapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
+		B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTableViewCell.swift; sourceTree = "<group>"; };
 		BB24D72F99ED46CE1F202A82 /* Pods-Unwrap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.debug.xcconfig"; sourceTree = "<group>"; };
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1558,6 +1562,8 @@
 			children = (
 				5153F49720EF763E009E829D /* ChallengesCoordinator.swift */,
 				51C5642420CCB8350093030C /* ChallengesViewController.swift */,
+				B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */,
+				B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */,
 				51862E6C20CE8B980086CD1B /* ChallengesDataSource.swift */,
 				51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */,
 			);
@@ -2896,6 +2902,7 @@
 				514BF46C21E6693100DE1483 /* GlossaryDataSource.swift in Sources */,
 				51862E5A20CE12330086CD1B /* User.swift in Sources */,
 				511FD6A92105E6B00023E92C /* NewsViewController.swift in Sources */,
+				B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */,
 				51596DEA20EE04EF00952ADC /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				51A4476D210926FE005D8665 /* CountedSet.swift in Sources */,
 				51862E5C20CE13F00086CD1B /* UserTracking.swift in Sources */,
@@ -2923,6 +2930,7 @@
 				51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */,
 				51A6D62720E651DA00FB6B46 /* FloatNames.swift in Sources */,
 				51A6D66820E6953100FB6B46 /* CodeErrorType.swift in Sources */,
+				B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */,
 				4C8950C42253633F002F9FA6 /* NewsTableViewCell.swift in Sources */,
 				51B87CDE210B35C600FE773A /* User-StaticProperties.swift in Sources */,
 				511FD6B12105F07A0023E92C /* URL-String.swift in Sources */,
