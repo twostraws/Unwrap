@@ -1,0 +1,65 @@
+{
+  "stickers" : [
+    {
+      "filename" : "100 Days of Swift.sticker"
+    },
+    {
+      "filename" : "Contravariance.sticker"
+    },
+    {
+      "filename" : "Fireside Swift.sticker"
+    },
+    {
+      "filename" : "Hacking with Swift.sticker"
+    },
+    {
+      "filename" : "iOS Dev Weekly.sticker"
+    },
+    {
+      "filename" : "Kitura.sticker"
+    },
+    {
+      "filename" : "NSScreencast.sticker"
+    },
+    {
+      "filename" : "Sean Allen.sticker"
+    },
+    {
+      "filename" : "Swift.sticker"
+    },
+    {
+      "filename" : "Swift by Sundell.sticker"
+    },
+    {
+      "filename" : "SwiftLee.sticker"
+    },
+    {
+      "filename" : "Swift News.sticker"
+    },
+    {
+      "filename" : "Swift on Sundays.sticker"
+    },
+    {
+      "filename" : "Swift over Coffee.sticker"
+    },
+    {
+      "filename" : "Swift Unwrapped.sticker"
+    },
+    {
+      "filename" : "Swift Weekly Brief.sticker"
+    },
+    {
+      "filename" : "Unwrap.sticker"
+    },
+    {
+      "filename" : "Vapor.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}
