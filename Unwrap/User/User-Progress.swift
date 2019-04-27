@@ -35,13 +35,13 @@ extension User {
             }
 
             if awardedScore > totalSections * 200 {
-                fatalError("awardedScore (\(awardedScore)) cannot exceed amount possible for the chapter (\(totalSections * 200)).")
+                fatalError("awardedScore (\(awardedScore)) cannot exceed amount possible for the section (\(totalSections * 200)).")
             }
 
             if awardedScore == 0 {
-                progress = "\n\nYou haven't completed anything is this chapter yet."
+                progress = "\n\nYou haven't completed anything is this section yet."
             } else {
-                progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) sections!"
+                progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) chapters!"
             }
             return progress.attributed()
 
