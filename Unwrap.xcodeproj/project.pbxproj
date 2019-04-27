@@ -589,6 +589,7 @@
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
 		81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
+		FE81585F2274F8C2007E5E11 /* User-Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81585E2274F8C2007E5E11 /* User-Progress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1204,6 +1205,7 @@
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnwrapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE81585E2274F8C2007E5E11 /* User-Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Progress.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1376,6 +1378,7 @@
 				51862E5920CE12330086CD1B /* User.swift */,
 				51B87CD6210B270800FE773A /* User-Serialization.swift */,
 				51B87CDD210B35C600FE773A /* User-StaticProperties.swift */,
+				FE81585E2274F8C2007E5E11 /* User-Progress.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2901,6 +2904,7 @@
 				5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */,
 				51CC13632065607C00F37A67 /* AppDelegate.swift in Sources */,
 				51E35647223CE43400C05881 /* Float-Random.swift in Sources */,
+				FE81585F2274F8C2007E5E11 /* User-Progress.swift in Sources */,
 				51CC139D2065AB8500F37A67 /* GradientView.swift in Sources */,
 				511FD6AD2105E72C0023E92C /* NewsCoordinator.swift in Sources */,
 				5153F49E20EF93CF009E829D /* TypeCheckerViewController.swift in Sources */,
