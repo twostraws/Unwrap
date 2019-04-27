@@ -52,7 +52,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// Show the help screen.
     @objc func showHelp() {
-        let viewController = HelpViewController.instantiate()
+        let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

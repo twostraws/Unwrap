@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpViewController: UITableViewController, Storyboarded, TappableTextViewDelegate {
+class HelpViewController: UITableViewController, TappableTextViewDelegate {
     var coordinator: HomeCoordinator?
     var dataSource = HelpDataSource()
 
@@ -23,6 +23,9 @@ class HelpViewController: UITableViewController, Storyboarded, TappableTextViewD
 
         tableView.dataSource = dataSource
         dataSource.delegate = self
+
+        tableView.separatorStyle = .none
+        tableView.register(HelpTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
     func linkTapped(_ url: URL) {

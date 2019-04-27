@@ -500,53 +500,6 @@
             </objects>
             <point key="canvasLocation" x="2418" y="-1956"/>
         </scene>
-        <!--Help View Controller-->
-        <scene sceneID="OcZ-ZV-QyY">
-            <objects>
-                <tableViewController storyboardIdentifier="HelpViewController" id="Zti-xD-xDe" customClass="HelpViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ROs-B1-LpG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="r8p-Kq-x2W" customClass="HelpTableViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r8p-Kq-x2W" id="JZp-f9-028">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2cY-e1-dhh" customClass="TappableTextView" customModule="Unwrap" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="11" width="343" height="41"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                        </textView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="2cY-e1-dhh" secondAttribute="bottomMargin" id="CJP-X2-kCo"/>
-                                        <constraint firstItem="2cY-e1-dhh" firstAttribute="leading" secondItem="JZp-f9-028" secondAttribute="leadingMargin" id="Mim-Rb-CUM"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2cY-e1-dhh" secondAttribute="trailing" id="NNV-VI-H8i"/>
-                                        <constraint firstItem="2cY-e1-dhh" firstAttribute="top" secondItem="JZp-f9-028" secondAttribute="topMargin" id="TcD-n9-F2E"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="textView" destination="2cY-e1-dhh" id="EOZ-jQ-8oB"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Zti-xD-xDe" id="0HP-EL-ElU"/>
-                            <outlet property="delegate" destination="Zti-xD-xDe" id="pOu-9W-g1d"/>
-                        </connections>
-                    </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eLI-uz-9uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="665" y="1074"/>
-        </scene>
         <!--Challenges View Controller-->
         <scene sceneID="Ydl-vc-ZqJ">
             <objects>
@@ -638,7 +591,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmA-wR-6pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="1074"/>
+            <point key="canvasLocation" x="2324" y="1054"/>
         </scene>
         <!--Tour Item View Controller-->
         <scene sceneID="GxJ-r2-jfV">
