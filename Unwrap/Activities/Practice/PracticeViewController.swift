@@ -23,6 +23,7 @@ class PracticeViewController: UITableViewController, Storyboarded, UserTracking 
         title = "Practice"
         registerForUserChanges()
         tableView.dataSource = dataSource
+        tableView.register(PracticeTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
     /// Refreshes everything when the user changes.
