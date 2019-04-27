@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.8" y="59.820089955022496"/>
+            <point key="canvasLocation" x="2417" y="95"/>
         </scene>
         <!--Tour Page View Controller-->
         <scene sceneID="wpD-rz-caF">
@@ -123,7 +123,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Xij-wE-rVM" customClass="TourPageViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAI-x8-cug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="1422"/>
+            <point key="canvasLocation" x="2417" y="1413"/>
         </scene>
         <!--Tour Host View Controller-->
         <scene sceneID="jui-My-jyT">
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmV-MM-RTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="753"/>
+            <point key="canvasLocation" x="2417" y="740"/>
         </scene>
         <!--Alert View Controller-->
         <scene sceneID="oPI-oB-A5E">
@@ -258,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKJ-Ag-ie8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="-2621"/>
+            <point key="canvasLocation" x="2417" y="-1252"/>
         </scene>
         <!--Single Select Review View Controller-->
         <scene sceneID="hnC-uA-4VV">
@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ud-Gj-A0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.8" y="2021.7391304347827"/>
+            <point key="canvasLocation" x="2417" y="2176"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Ib0-lL-07n">
@@ -717,7 +717,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMM-zC-LCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="582"/>
+            <point key="canvasLocation" x="2417" y="-572"/>
         </scene>
         <!--Spot The Error View Controller-->
         <scene sceneID="aXR-Ta-oR7">
@@ -993,7 +993,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5r-td-Abh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949.5999999999999" y="115.59220389805098"/>
+            <point key="canvasLocation" x="3828" y="95"/>
         </scene>
         <!--Free Coding View Controller-->
         <scene sceneID="0Tf-ZR-0Py">
@@ -1067,96 +1067,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="je3-gD-Mw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3108" y="779"/>
-        </scene>
-        <!--News View Controller-->
-        <scene sceneID="hwl-xt-gxS">
-            <objects>
-                <tableViewController storyboardIdentifier="NewsViewController" id="pGg-9J-cXB" customClass="NewsViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="teF-Zd-wAe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="1NR-OF-zX6" customClass="NewsTableViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1NR-OF-zX6" id="GNJ-k6-RBG">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EC-1U-fcV" userLabel="Read Notification">
-                                            <rect key="frame" x="5" y="-2" width="15" height="43.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                            <color key="textColor" name="Primary"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hge-Do-qdQ">
-                                            <rect key="frame" x="25" y="-6.5" width="84" height="56.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="56" id="KZK-t8-lFy"/>
-                                                <constraint firstAttribute="width" constant="84" id="xLd-pJ-dFg"/>
-                                            </constraints>
-                                        </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms3-4j-Cij">
-                                            <rect key="frame" x="117" y="8" width="224" height="27.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqy-wX-YVY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKq-J0-J46">
-                                                    <rect key="frame" x="0.0" y="20.5" width="31" height="7"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="Vqy-wX-YVY" firstAttribute="top" secondItem="ms3-4j-Cij" secondAttribute="top" id="0Ub-Hv-Th6"/>
-                                                <constraint firstItem="bKq-J0-J46" firstAttribute="top" secondItem="Vqy-wX-YVY" secondAttribute="bottom" id="AMO-pa-Mwr"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bKq-J0-J46" secondAttribute="trailing" id="G5p-9h-0rD"/>
-                                                <constraint firstItem="bKq-J0-J46" firstAttribute="leading" secondItem="ms3-4j-Cij" secondAttribute="leading" id="Sfe-5H-8L4"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bKq-J0-J46" secondAttribute="bottom" id="UoZ-KS-ZIt"/>
-                                                <constraint firstItem="Vqy-wX-YVY" firstAttribute="leading" secondItem="ms3-4j-Cij" secondAttribute="leading" id="p3F-Yw-zfn"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vqy-wX-YVY" secondAttribute="trailing" id="weh-Ms-tpW"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ms3-4j-Cij" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GNJ-k6-RBG" secondAttribute="top" constant="8" id="61I-Wo-sii"/>
-                                        <constraint firstAttribute="trailing" secondItem="ms3-4j-Cij" secondAttribute="trailing" id="8A5-ge-oaR"/>
-                                        <constraint firstItem="6EC-1U-fcV" firstAttribute="centerY" secondItem="GNJ-k6-RBG" secondAttribute="centerY" constant="-2" id="J8X-le-hj4"/>
-                                        <constraint firstItem="hge-Do-qdQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GNJ-k6-RBG" secondAttribute="top" priority="999" constant="5" id="Oaj-5A-PsD"/>
-                                        <constraint firstItem="6EC-1U-fcV" firstAttribute="leading" secondItem="GNJ-k6-RBG" secondAttribute="leading" constant="5" id="Wrm-ik-Z9F"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hge-Do-qdQ" secondAttribute="bottom" priority="999" constant="5" id="Ycb-6P-70g"/>
-                                        <constraint firstItem="hge-Do-qdQ" firstAttribute="leading" secondItem="6EC-1U-fcV" secondAttribute="trailing" constant="5" id="ds5-XV-4Pt"/>
-                                        <constraint firstItem="ms3-4j-Cij" firstAttribute="centerY" secondItem="GNJ-k6-RBG" secondAttribute="centerY" id="fmi-2R-AKJ"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ms3-4j-Cij" secondAttribute="bottom" constant="8" id="hTm-Bl-a5n"/>
-                                        <constraint firstItem="ms3-4j-Cij" firstAttribute="leading" secondItem="hge-Do-qdQ" secondAttribute="trailing" constant="8" id="k9y-KJ-JSt"/>
-                                        <constraint firstItem="hge-Do-qdQ" firstAttribute="centerY" secondItem="GNJ-k6-RBG" secondAttribute="centerY" id="wj8-qI-onc"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="customDetailTextLabel" destination="bKq-J0-J46" id="OAu-Wn-AoR"/>
-                                    <outlet property="customImageView" destination="hge-Do-qdQ" id="6mO-YQ-sYZ"/>
-                                    <outlet property="customTextLabel" destination="Vqy-wX-YVY" id="bM9-eV-dCQ"/>
-                                    <outlet property="readNotification" destination="6EC-1U-fcV" id="VNO-5e-D07"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pGg-9J-cXB" id="8oK-y7-Fq6"/>
-                            <outlet property="delegate" destination="pGg-9J-cXB" id="Nw2-dK-bQ5"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cRb-7L-eZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2324" y="1451"/>
         </scene>
         <!--Rearrange The Lines View Controller-->
         <scene sceneID="XM7-4d-Ms1">

@@ -18,7 +18,7 @@ class NewsCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
-        let viewController = NewsViewController.instantiate()
+        let viewController = NewsViewController(style: .plain)
         viewController.tabBarItem = UITabBarItem(title: "News", image: UIImage(bundleName: "News"), tag: 4)
         viewController.coordinator = self
 
