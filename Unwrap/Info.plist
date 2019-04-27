@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>6</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>Challenges</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Today&apos;s Challenge</string>
+			<string>Today's Challenge</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.hackingwithswift.unwrapswift.challenges</string>
 		</dict>
