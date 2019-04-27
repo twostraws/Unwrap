@@ -3,7 +3,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Messages-29@2x.png",
+      "filename" : "Messages-29@2x-1.png",
       "scale" : "2x"
     },
     {
@@ -27,7 +27,7 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Messages-29@2x-1.png",
+      "filename" : "Messages-29@2x.png",
       "scale" : "2x"
     },
     {
@@ -58,7 +58,7 @@
     {
       "size" : "27x20",
       "idiom" : "universal",
-      "filename" : "Messages-27@3x-1.png",
+      "filename" : "Messages-27@3x.png",
       "scale" : "3x",
       "platform" : "ios"
     },
