@@ -23,5 +23,10 @@
 		"image": "Tour5",
 		"title": "If you get stuck…",
 		"text": "You'll often see a Hint button, which will give you a little nudge in the right direction if you tap it. You are never penalized for using hints, so use the Hint button as often as you need."
-	}
+	},
+    {
+        "image": "Tour6",
+        "title": "Bonus: stickers!",
+        "text": "Included with Unwrap is an iMessage sticker pack with logos from across the Swift community: Hacking with Swift, Swift over Coffee, iOS Dev Weekly, and more – just look for the Unwrap logo next time you send a message."
+    }
 ]

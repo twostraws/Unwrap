@@ -5,7 +5,7 @@ target 'Unwrap' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # There isn't a lot we can do about warnings in thes pods, so silence them
+  # There isn't a lot we can do about warnings in these pods, so silence them
   inhibit_all_warnings!
 
   # Pods for Unwrap

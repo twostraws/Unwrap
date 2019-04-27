@@ -13,7 +13,7 @@
 
 Unwrap is an app that helps you learn Swift faster and more effectively.
 
-At its core are almost 100 video lessons that teach all the fundamentals of the Swift programming language, with each lesson backed up by an interactive review.
+At its core lies almost 100 video lessons that teach all the fundamentals of the Swift programming language, with each lesson backed up by an interactive review.
 
 Once you’ve made some progress learning, you can dive into a selection of practice activities that make you write code by tapping, dragging, or typing, find errors, predict program output, and more. There are also daily challenges that test your overall language knowledge once per day, helping your new skills really sink in.
 
@@ -70,5 +70,26 @@ Unwrap was designed and built by Paul Hudson. Hacking with Swift, Swift in Sixty
 Unwrap is built using some third-party frameworks and fonts: [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet), [Font Awesome](https://fontawesome.com/), [MKRingProgressView](https://github.com/maxkonovalov/MKRingProgressView), [QuickLayout](https://github.com/huri000/QuickLayout), [SDWebImage](https://github.com/SDWebImage/SDWebImage), [Sourceful](https://github.com/twostraws/Sourceful), and [SwiftEntryKit](https://github.com/huri000/SwiftEntryKit). Their licenses are stored inside their respective Pods directories, and are repeated inside the app’s credits screen.
 
 Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries. 
+
+Unwrap includes an iMessage sticker pack that incorporates a variety of logos from around the Swift community – these are used with permission, and we're grateful to each person or project for granting that permission:
+
+- The [100 Days of Swift](https://www.hackingwithswift.com/100) logo is copyright © 2019 Paul Hudson.
+- The [Contravariance](https://contravariance.rocks) logo is copyright © 2019 Benedikt Terhechte and Bas Broek.
+- The [Fireside Swift](https://www.firesideswift.com) logo is copyright © 2019 Steve Berard and Zack Falgout.
+- The [Hacking with Swift](https://www.hackingwithswift.com) logo is copyright © 2019 Paul Hudson.
+- The [iOS Dev Weekly](https://iosdevweekly.com) logo is copyright © 2019 Dave Verwer.
+- The [Kitura](https://www.kitura.io) logo is copyright © 2019 IBM Corporation.
+- The [NSScreencast](https://nsscreencast.com/episodes) logo is copyright © 2019 Ben Scheirman.
+- The [Sean Allen](https://www.youtube.com/seanallen) logo is copyright © 2019 Sean Allen.
+- The [Swift](https://swift.org) logo is copyright © 2019 Apple Inc.
+- The [Swift by Sundell](https://www.swiftbysundell.com) logo is copyright © 2019 John Sundell.
+- The [SwiftLee](https://www.avanderlee.com) logo is copyright © 2019 Antoine Van Der Lee.
+- The [Swift News](https://www.youtube.com/playlist?list=PL8seg1JPkqgH-ZuXSBBXRGRlnmVtEud04) logo is copyright © 2019 Sean Allen.
+- The [Swift on Sundays](https://www.youtube.com/playlist?list=PLuoeXyslFTuZNAZKB3FAYqiJZKigjC3VG) logo is copyright © 2019 Paul Hudson.
+- The [Swift over Coffee](https://podcasts.apple.com/gb/podcast/swift-over-coffee/id1435076502) logo is copyright © 2019 Paul Hudson.
+- The [Swift Unwrapped](https://spec.fm/podcasts/swift-unwrapped) logo is copyright © 2019 Jesse Squires.
+- The [Swift Weekly Brief](https://swiftweekly.github.io) logo is copyright © 2019 Jesse Squires.
+- The [Unwrap](https://www.github.com/twostraws/Unwrap) logo is copyright © 2019 Paul Hudson.
+- The [Vapor](https://vapor.codes) logo is copyright © 2019 Qutheory, LLC.
 
 If you liked Unwrap and want more like it, I have [a whole website full of free Swift tutorials](https://www.hackingwithswift.com).
