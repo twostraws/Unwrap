@@ -55,10 +55,6 @@ extension User {
             }
             return progress.attributed()
         } else {
-            guard let intValue = Int(badge.value) else {
-                fatalError("Criterion must have its value specified as an integer: \(badge.criterion).")
-            }
-
             switch badge.criterion {
             case "streak":
                 if bestStreak == 1 {

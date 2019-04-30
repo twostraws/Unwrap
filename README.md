@@ -80,6 +80,7 @@ Unwrap includes an iMessage sticker pack that incorporates a variety of logos fr
 - The [iOS Dev Weekly](https://iosdevweekly.com) logo is copyright © 2019 Dave Verwer.
 - The [Kitura](https://www.kitura.io) logo is copyright © 2019 IBM Corporation.
 - The [NSScreencast](https://nsscreencast.com/episodes) logo is copyright © 2019 Ben Scheirman.
+- The [Ray Wenderlich](https://www.raywenderlich.com) logo is copyright © 2019 Razeware LLC.
 - The [Sean Allen](https://www.youtube.com/seanallen) logo is copyright © 2019 Sean Allen.
 - The [Swift](https://swift.org) logo is copyright © 2019 Apple Inc.
 - The [Swift by Sundell](https://www.swiftbysundell.com) logo is copyright © 2019 John Sundell.
