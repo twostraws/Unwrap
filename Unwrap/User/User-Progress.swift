@@ -9,7 +9,6 @@
 import UIKit
 
 extension User {
-
     /// Returns an NSAttributedString to display progress in an alert.
     func badgeProgress(_ badge: Badge) -> NSAttributedString {
         let progress: String
@@ -21,6 +20,7 @@ extension User {
             }) else {
                 fatalError("Unknown chapter name for criterion: \(badge.value).")
             }
+
             var awardedScore = 0
             let totalSections = conditionChapter.sections.count
 
@@ -43,7 +43,8 @@ extension User {
             } else {
                 progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) chapters!"
             }
-            return progress.attributed()
+
+            return progress.centered()
 
         } else if badge.criterion == "practice" {
             if practiceSessions.count(for: badge.value) < 1 {
@@ -53,7 +54,8 @@ extension User {
             } else {
                 progress = "\n\nYou have practiced \(practiceSessions.count(for: badge.value)) times!"
             }
-            return progress.attributed()
+
+            return progress.centered()
         } else {
             switch badge.criterion {
             case "streak":
@@ -62,7 +64,8 @@ extension User {
                 } else {
                     progress = "\n\nYour best streak is \(bestStreak) days!"
                 }
-                return progress.attributed()
+
+                return progress.centered()
 
             case "challenge":
                 if dailyChallenges.count < 1 {
@@ -72,7 +75,8 @@ extension User {
                 } else {
                     progress = "\n\nYou have completed \(dailyChallenges.count) challenges!"
                 }
-                return progress.attributed()
+
+                return progress.centered()
 
             case "news":
                 if readNewsCount < 1 {
@@ -82,7 +86,8 @@ extension User {
                 } else {
                     progress = "\n\nYou have read \(readNewsCount) news article!"
                 }
-                return progress.attributed()
+
+                return progress.centered()
 
             case "share":
                 if scoreShareCount < 1 {
@@ -92,7 +97,8 @@ extension User {
                 } else {
                     progress = "\n\nYou have shared your score \(scoreShareCount) times!"
                 }
-                return progress.attributed()
+
+                return progress.centered()
 
             default:
                 fatalError("Unknown badge criterion: \(badge.criterion)")

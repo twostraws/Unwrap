@@ -97,7 +97,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
             let badgeProgress = User.current.badgeProgress(badge)
             let alert = AlertViewController.instantiate()
             alert.title = badge.name
-            alert.body = badge.description.attributed() + badgeProgress
+            alert.body = badge.description.centered() + badgeProgress
             alert.presentAsAlert()
         }
     }
