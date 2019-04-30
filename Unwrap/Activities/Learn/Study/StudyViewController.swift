@@ -45,6 +45,9 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
 
         if action == "playVideo" {
             coordinator?.playStudyVideo()
+        } else {
+            // this is some other kind of URL; open it up in a web view
+            coordinator?.show(url: url)
         }
     }
 

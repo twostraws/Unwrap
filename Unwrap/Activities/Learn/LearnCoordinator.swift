@@ -7,6 +7,7 @@
 //
 
 import AVKit
+import SafariServices
 import SwiftEntryKit
 import UIKit
 
@@ -178,5 +179,10 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     // Single select reviews come in groups of three.
     func titleSuffix(for item: Sequenced) -> String {
         return " (\(item.questionNumber)/3)"
+    }
+
+    func show(url: URL) {
+        let viewController = SFSafariViewController(url: url)
+        navigationController.present(viewController, animated: true)
     }
 }
