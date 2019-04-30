@@ -45,6 +45,7 @@ class StatusView: UIImageView, UserTracking {
         if imageView == nil {
             registerForUserChanges()
 
+            ringProgressView.translatesAutoresizingMaskIntoConstraints = false
             ringProgressView.startColor = strokeColorStart
             ringProgressView.endColor = strokeColorEnd
             ringProgressView.backgroundRingColor = UIColor(bundleName: "StatusViewRingBackground")
@@ -52,15 +53,24 @@ class StatusView: UIImageView, UserTracking {
             ringProgressView.shadowOpacity = shadowOpacity
             addSubview(ringProgressView)
 
-            imageView = UIImageView(frame: bounds)
+            imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFit
             addSubview(imageView)
+
+            NSLayoutConstraint.activate([
+                ringProgressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+                ringProgressView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+                ringProgressView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+                ringProgressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+
+                imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+                imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+                imageView.topAnchor.constraint(equalTo: topAnchor, constant: 40),
+                imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            ])
         }
 
-        ringProgressView.bounds = bounds.insetBy(dx: 15, dy: 15)
-        ringProgressView.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-
-        imageView.bounds = bounds.insetBy(dx: 40, dy: 40)
         userDataChanged()
 
         // Always force the stroke end to its absolute starting point regardless of what userDataChanged() is trying to do. This allows us to start on 0 and count up to maximum with animation.
