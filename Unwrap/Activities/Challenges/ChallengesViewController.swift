@@ -50,7 +50,8 @@ class ChallengesViewController: UITableViewController, UserTracking {
             }
         } else {
             guard User.current.dailyChallenges.count > 0 else { return }
-            coordinator?.shareScore(User.current.dailyChallenges[indexPath.row])
+            let sourceRect = tableView.rectForRow(at: indexPath)
+            coordinator?.shareScore(User.current.dailyChallenges[indexPath.row], from: sourceRect)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }

@@ -130,15 +130,15 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     }
 
     /// Called from the main Challenges table view so that users can share their scores with friends online.
-    func shareScore(_ challenge: ChallengeResult) {
+    func shareScore(_ challenge: ChallengeResult, from sourceRect: CGRect) {
         let text = "I scored \(challenge.score) in Unwrap's daily challenge for \(challenge.date.formatted). Download it here: \(Unwrap.appURL)"
 
         let alert = UIActivityViewController(activityItems: [text], applicationActivities: nil)
 
-        // if we're on iPad there is nowhere sensible to anchor this from, so just center it
+        // if we're on iPad we'll anchor this thing to the table view cell they tapped
         if let popOver = alert.popoverPresentationController {
-            popOver.sourceView = self.navigationController.view
-            popOver.sourceRect = CGRect(x: self.navigationController.view.frame.midX, y: self.navigationController.view.frame.midY, width: 0, height: 0)
+            popOver.sourceView = self.navigationController.topViewController?.view
+            popOver.sourceRect = sourceRect
         }
 
         navigationController.present(alert, animated: true)
