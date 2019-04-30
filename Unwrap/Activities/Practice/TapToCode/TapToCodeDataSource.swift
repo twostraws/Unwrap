@@ -101,26 +101,30 @@ class TapToCodeDataSource: NSObject, UICollectionViewDataSource, UICollectionVie
         // …and make sure we can read the original index path it came from.
         guard let originalIndexPath = item.dragItem.localObject as? IndexPath else { return }
 
-        // Use the destination index path if we have one, or insert the word at the end of our used words collection view.
-        let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: model.count(for: usedWordsCollectionView), section: 0)
 
-        // Now update the collction views.
+        // Now update the collection views.
         collectionView.performBatchUpdates({
+            let destinationIndexPath: IndexPath
+
             if let sourceIndexPath = item.sourceIndexPath {
                 // we moved used words around
+                // Use the destination index path if we have one, or insert the word at the end of our used words collection view.
+                destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: model.count(for: usedWordsCollectionView) - 1, section: 0)
                 model.rearrange(sourceIndexPath, to: destinationIndexPath)
                 collectionView.deleteItems(at: [sourceIndexPath])
             } else {
                 // we dragged a word from all to used
+                // Use the destination index path if we have one, or insert the word at the end of our used words collection view.
+                destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: model.count(for: usedWordsCollectionView), section: 0)
                 model.moveToUsed(originalIndexPath, to: destinationIndexPath)
                 allWordsCollectionView?.deleteItems(at: [originalIndexPath])
             }
 
             collectionView.insertItems(at: [destinationIndexPath])
-        })
 
-        // animate the drop completion…
-        coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+            // animate the drop completion…
+            coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+        })
 
         // …and notify the delegate so it can update the UI.
         delegate?.usedWordsChanged(to: model.count(for: usedWordsCollectionView))
