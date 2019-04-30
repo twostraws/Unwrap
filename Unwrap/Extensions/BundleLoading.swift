@@ -84,7 +84,7 @@ extension String {
         styleContents = styleContents.replacingOccurrences(of: "[FONTSIZE]", with: "\(scaledSize)")
 
         // Force images to be the natural screen width.
-        styleContents = styleContents.replacingOccurrences(of: "[IMAGEWIDTH]", with: "\(UIScreen.main.bounds.width)px")
+        styleContents = styleContents.replacingOccurrences(of: "[IMAGEWIDTH]", with: "\(UIApplication.shared.keyWindow?.frame.width ?? 320)px")
 
         // Now merge in our adjusted CSS with the main HTML wrapper.
         wrapperContents = wrapperContents.replacingOccurrences(of: "[STYLE]", with: styleContents)

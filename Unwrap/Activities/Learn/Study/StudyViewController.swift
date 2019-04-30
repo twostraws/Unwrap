@@ -47,4 +47,11 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
             coordinator?.playStudyVideo()
         }
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        // If our view controller is changing size we need to reload our content to make sure the movie view at the top correctly fills the full width of the screen.
+        coordinator.animate(alongsideTransition: nil) { ctx in
+            self.studyTextView.loadContent(self.chapter)
+        }
+    }
 }
