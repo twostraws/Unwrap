@@ -58,7 +58,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
     }
 
     /// Start sharing the user's current score.
-    func shareScore() {
+    func shareScore(from sourceRect: CGRect) {
         let image = User.current.rankImage.imageForSharing
         let text = "I'm on level \(User.current.rankNumber) in Unwrap. Download it here: \(Unwrap.appURL)"
 
@@ -67,8 +67,8 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
         // if we're on iPad there is nowhere sensible to anchor this from, so just center it
         if let popOver = alert.popoverPresentationController {
-            popOver.sourceView = self.navigationController.view
-            popOver.sourceRect = CGRect(x: self.navigationController.view.frame.midX, y: self.navigationController.view.frame.midY, width: 0, height: 0)
+            popOver.sourceView = navigationController.topViewController?.view
+            popOver.sourceRect = sourceRect
         }
 
         navigationController.present(alert, animated: true)
