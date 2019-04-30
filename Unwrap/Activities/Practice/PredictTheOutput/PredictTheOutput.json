@@ -45,7 +45,7 @@
 	},
 
     {
-        "code": "let RANDOM_STRING_NAMEDict = [String: String]()\nlet selected = allValues[\"test\", default: \"Unknown\"]\nprint(selected)",
+        "code": "let RANDOM_STRING_NAMEDict = [String: String]()\nlet selected = NAME_0Dict.allValues[\"test\", default: \"Unknown\"]\nprint(selected)",
         "answers": [
             {
                 "text": "Unknown"
