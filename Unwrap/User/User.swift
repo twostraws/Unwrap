@@ -42,7 +42,7 @@ final class User: Codable {
     private var reviewedSections = Set<String>()
 
     /// How many times this user has completed each type of practice.
-    private var practiceSessions = CountedSet<String>()
+    internal var practiceSessions = CountedSet<String>()
 
     /// The number of points this user earned through practicing.
     var practicePoints = 0

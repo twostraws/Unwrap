@@ -94,9 +94,10 @@ class HomeCoordinator: Coordinator, AlertShowing {
             }
         } else {
             // This badge isn't earned; just show details about it.
+            let badgeProgress = User.current.badgeProgress(badge)
             let alert = AlertViewController.instantiate()
             alert.title = badge.name
-            alert.body = badge.description.fromSimpleHTML()
+            alert.body = badge.description.attributed() + badgeProgress
             alert.presentAsAlert()
         }
     }

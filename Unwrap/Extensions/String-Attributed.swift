@@ -58,4 +58,16 @@ extension String {
 
         return NSMutableAttributedString(source: self, tokens: tokens, theme: theme)
     }
+
+    /// Returns an attributed string with center justification
+    func attributed() -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: paragraphStyle
+        ]
+        return NSAttributedString(string: self, attributes: attributes)
+
+    }
 }
