@@ -98,7 +98,7 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
                 if answer.isCorrect {
                     cell.wrongAnswer()
                 } else {
-                    cell.correctAnswer()
+                    cell.unknownAnswer()
                 }
             }
         }

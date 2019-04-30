@@ -26,4 +26,12 @@ extension UITableViewCell {
         detailTextLabel?.textColor = .white
         tintColor = .white
     }
+
+    /// Styles a table view cell as representing an unknown answer.
+    func unknownAnswer() {
+        backgroundColor = .white
+        multipleSelectionBackgroundView?.backgroundColor = backgroundColor
+        textLabel?.textColor = .black
+        tintColor = nil
+    }
 }
