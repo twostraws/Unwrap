@@ -101,7 +101,6 @@ class TapToCodeDataSource: NSObject, UICollectionViewDataSource, UICollectionVie
         // …and make sure we can read the original index path it came from.
         guard let originalIndexPath = item.dragItem.localObject as? IndexPath else { return }
 
-
         // Now update the collection views.
         collectionView.performBatchUpdates({
             let destinationIndexPath: IndexPath
