@@ -28,7 +28,7 @@
         },
         {
             "answer": "Lines in a poem.",
-            "reason": "There can be many songs, and they don't need to be unique."
+            "reason": "There can be many lines, and they don't need to be unique."
         }
     ],
     "wrong": [
