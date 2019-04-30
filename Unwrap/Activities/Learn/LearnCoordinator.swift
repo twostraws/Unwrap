@@ -23,7 +23,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
-        let viewController = LearnViewController.instantiate()
+        let viewController = LearnViewController(style: .plain)
         viewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]
@@ -31,7 +31,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     /// Shows the list of common Swift terms
     func showGlossary() {
-        let vc = GlossaryViewController.instantiate()
+        let vc = GlossaryViewController(style: .plain)
         navigationController.pushViewController(vc, animated: true)
     }
 

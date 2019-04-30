@@ -58,7 +58,7 @@ If you’d like to help, here are some suggestions ordered from most easy to mos
 
 1. Although I’m pretty happy with the app’s architecture, it could always be improved – if you have suggestions, let me know!
 2. I’ve added the basics of theme support, but it’s not implemented or tested yet. This could be expanded to work everywhere, and new themes could be added.
-3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. To resolve this we could switch to building the UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code. 
+3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. Some of the UI is now built in code already. To resolve this we could switch to building even more UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code. 
 
 Again, please make sure you read the LICENSE.md and CONTRIBUTING.md files before you start just to avoid problems.
 

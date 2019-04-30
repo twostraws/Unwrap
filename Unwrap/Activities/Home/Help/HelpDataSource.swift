@@ -36,8 +36,7 @@ class HelpDataSource: NSObject, UITableViewDataSource {
 
         let item = items[indexPath.section]
 
-        // add a couple of line breaks at the end to provide clearer section spacing
-        cell.textView.text = "\(item.text)\n\n"
+        cell.textView.text = item.text
         cell.textView.linkDelegate = delegate
 
         if item.action.isEmpty {

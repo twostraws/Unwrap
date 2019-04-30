@@ -590,6 +590,10 @@
 		51FE151C20E25F1200F29889 /* protocol-extensions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139520E25F1100F29889 /* protocol-extensions.mp4 */; };
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
 		81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */; };
+		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
+		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
+		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
+		B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
 /* End PBXBuildFile section */
 
@@ -1226,6 +1230,10 @@
 		51FE151D20E2814E00F29889 /* StudyReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyReview.swift; sourceTree = "<group>"; };
 		879EE4E91437B6378BB24AE1 /* Pods-Unwrap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig"; sourceTree = "<group>"; };
 		AA4718A94B659E9A42AEC33E /* Pods-UnwrapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
+		B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTableViewCell.swift; sourceTree = "<group>"; };
 		BB24D72F99ED46CE1F202A82 /* Pods-Unwrap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.debug.xcconfig"; sourceTree = "<group>"; };
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1320,6 +1328,7 @@
 			children = (
 				514BF46921E6691A00DE1483 /* GlossaryViewController.swift */,
 				514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */,
+				B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */,
 				514BF46D21E6698C00DE1483 /* GlossaryEntry.swift */,
 			);
 			path = Glossary;
@@ -1576,6 +1585,7 @@
 				5153F49520EF762B009E829D /* PracticeCoordinator.swift */,
 				51C5642220CCB82B0093030C /* PracticeViewController.swift */,
 				51862E6720CE7DE40086CD1B /* PracticeDataSource.swift */,
+				B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */,
 				51862E6920CE84FB0086CD1B /* PracticeActivity.swift */,
 				5153F49B20EF917B009E829D /* PracticingViewController.swift */,
 			);
@@ -1587,6 +1597,8 @@
 			children = (
 				5153F49720EF763E009E829D /* ChallengesCoordinator.swift */,
 				51C5642420CCB8350093030C /* ChallengesViewController.swift */,
+				B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */,
+				B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */,
 				51862E6C20CE8B980086CD1B /* ChallengesDataSource.swift */,
 				51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */,
 			);
@@ -2922,9 +2934,11 @@
 				51A6D66C20E696A300FB6B46 /* SpotTheErrorPractice.swift in Sources */,
 				514BF46E21E6698C00DE1483 /* GlossaryEntry.swift in Sources */,
 				51C5642520CCB8350093030C /* ChallengesViewController.swift in Sources */,
+				B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */,
 				51596DEC20EE1C9F00952ADC /* WordCollectionViewCell.swift in Sources */,
 				51A6D62320E651DA00FB6B46 /* DoubleNames.swift in Sources */,
 				5153F49620EF762B009E829D /* PracticeCoordinator.swift in Sources */,
+				B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */,
 				4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */,
 				51A6D63620E6539200FB6B46 /* FreeCodingQuestion.swift in Sources */,
 				5153F4AE20F007EF009E829D /* UIViewController-Alerts.swift in Sources */,
@@ -2954,6 +2968,7 @@
 				514BF46C21E6693100DE1483 /* GlossaryDataSource.swift in Sources */,
 				51862E5A20CE12330086CD1B /* User.swift in Sources */,
 				511FD6A92105E6B00023E92C /* NewsViewController.swift in Sources */,
+				B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */,
 				51596DEA20EE04EF00952ADC /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				51A4476D210926FE005D8665 /* CountedSet.swift in Sources */,
 				51862E5C20CE13F00086CD1B /* UserTracking.swift in Sources */,
@@ -2981,6 +2996,7 @@
 				51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */,
 				51A6D62720E651DA00FB6B46 /* FloatNames.swift in Sources */,
 				51A6D66820E6953100FB6B46 /* CodeErrorType.swift in Sources */,
+				B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */,
 				4C8950C42253633F002F9FA6 /* NewsTableViewCell.swift in Sources */,
 				51B87CDE210B35C600FE773A /* User-StaticProperties.swift in Sources */,
 				511FD6B12105F07A0023E92C /* URL-String.swift in Sources */,
@@ -3238,13 +3254,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Unwrap/Unwrap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = 74N8K5J2N7;
 				INFOPLIST_FILE = Unwrap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianschiavo.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3258,13 +3274,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Unwrap/Unwrap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = 74N8K5J2N7;
 				INFOPLIST_FILE = Unwrap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julianschiavo.unwrapswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

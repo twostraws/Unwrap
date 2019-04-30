@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GlossaryViewController: UITableViewController, Storyboarded {
+class GlossaryViewController: UITableViewController {
     let dataSource = GlossaryDataSource()
 
     override func viewDidLoad() {
@@ -16,6 +16,12 @@ class GlossaryViewController: UITableViewController, Storyboarded {
 
         title = "Glossary"
         navigationItem.largeTitleDisplayMode = .never
+
         tableView.dataSource = dataSource
+        tableView.register(GlossaryTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

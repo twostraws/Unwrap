@@ -52,7 +52,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// Show the help screen.
     @objc func showHelp() {
-        let viewController = HelpViewController.instantiate()
+        let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -124,7 +124,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// Show credits for the app.
     @objc func showCredits() {
-        let credits = CreditsViewController.instantiate()
+        let credits = CreditsViewController()
         navigationController.pushViewController(credits, animated: true)
     }
 }

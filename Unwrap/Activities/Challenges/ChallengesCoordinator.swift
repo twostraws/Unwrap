@@ -30,7 +30,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
-        let viewController = ChallengesViewController.instantiate()
+        let viewController = ChallengesViewController(style: .grouped)
         viewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]
