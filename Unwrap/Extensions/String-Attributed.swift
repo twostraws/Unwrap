@@ -52,9 +52,7 @@ extension String {
 
     /// Adds syntax highlighting to a string using Source Editor.
     func syntaxHighlighted() -> NSAttributedString {
-        // This attempts to adjust the way iOS performs line breaking, by replacing two important character pairs ("\(" for string interpolation, and "->" for function return types) with those same characters separated by U+2060. This is the "word joiner" character, and it says that word separation should not happen. This is only "should" – it's advisory! – but all we can do is try.
-        var reflowed = self.replacingOccurrences(of: "\\(", with: "\\\u{2060}(")
-        reflowed = reflowed.replacingOccurrences(of: "->", with: "-\u{2060}>")
+        let reflowed = self.fixingLineWrapping()
 
         let theme = User.current.sourceCodeTheme
         let lexer = SwiftLexer()

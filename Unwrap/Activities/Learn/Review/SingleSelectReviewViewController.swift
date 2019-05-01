@@ -92,7 +92,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     func addReasonToTitle() {
         if !currentAnswer.subtitle.isEmpty {
             let newTopString = NSMutableAttributedString(attributedString: "\(review.question)\n\n".fromSimpleHTML())
-            let newBottomString = currentAnswer.subtitle.fromSimpleHTML().formattedAsExplanation()
+            let newBottomString = currentAnswer.subtitle.fixingLineWrapping().fromSimpleHTML().formattedAsExplanation()
 
             newTopString.append(newBottomString)
             prompt.attributedText = newTopString
