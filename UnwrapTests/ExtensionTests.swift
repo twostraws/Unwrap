@@ -87,10 +87,20 @@ class ExtensionTests: XCTestCase {
 
     /// Tests that code can be anonymized and homogenized.
     func testCodeAnonymization() {
-        let cleanString = "func sumOfFactors(for number: Int) -> Int {\n\tvar sum = 0\n\tfor i in 1...number {\n\t\tif number % i == 0 {\n\t\t\tsum += i\n\t\t}\n\t}\n\treturn sum\n}\nlet sum = sumOfFactors(for: 100)"
+        let cleanString1 = "func sumOfFactors(for number: Int) -> Int {\n\tvar sum = 0\n\tfor i in 1...number {\n\t\tif number % i == 0 {\n\t\t\tsum += i\n\t\t}\n\t}\n\treturn sum\n}\nlet sum = sumOfFactors(for: 100)"
 
-        let anonymizedString = "func #1#(%1%: Int) -> Int {\nvar &1& = 0\nfor @1@ in 1 ... %1% {\nif %1% % @1@ == 0 {\n&1& += @1@\n}\n}\nreturn &1&\n}\nlet &1& = #1#(for: 100)"
+        let anonymizedString1 = "func #1#(%1%: Int) -> Int {\nvar &1& = 0\nfor @1@ in 1 ... %1% {\nif %1% % @1@ == 0 {\n&1& += @1@\n}\n}\nreturn &1&\n}\nlet &1& = #1#(for: 100)"
 
-        XCTAssertEqual(cleanString.toAnonymizedVariables(), anonymizedString)
+        XCTAssertEqual(cleanString1.toAnonymizedVariables(), anonymizedString1)
+
+        // watch out for Pythonic ranges
+        let cleanString2 = "for i in Range(1...100) {"
+        let anonymizedString2 = "for @1@ in 1 ... 100 {"
+        XCTAssertEqual(cleanString2.toAnonymizedVariables(), anonymizedString2)
+
+        // watch out for explicit type annotation with an empty array initializer
+        let cleanString3 = "var array:[Int]=[]"
+        let anonymizedString3 = "var &1& = [Int]()"
+        XCTAssertEqual(cleanString3.toAnonymizedVariables(), anonymizedString3)
     }
 }

@@ -123,9 +123,12 @@ struct FreeCodingPractice: PracticeActivity {
             expr = expr.replacingOccurrences(of: "\(counter)_NUMBER", with: "([0-9][0-9_]*\\.?[0-9]?)")
         }
 
-        // Finally, fix any mistakes!
+        // Fix any mistakes!
         // Our example code always uses explicit types, but the above code makes them optional. However, the code above will cause problems: it will convert "a:Int" into "a:(?:Int)?", then try to allow whitespace around the colon, giving "a\\s*:\\s*(?\\s*:\\s*Int)?". What we *want* is "a\\s*:\\s*(?:Int)?" so we'll do some cleanup below to fix this.
         expr = expr.replacingOccurrences(of: "?\\s*:\\s*", with: "?:")
+
+        // Make one space match zero or more spaces
+        expr = expr.replacingOccurrences(of: " ", with: " *")
 
         // We're done – the whole thing is now a valid regex.
 

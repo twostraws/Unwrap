@@ -52,6 +52,10 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "...", with: " ... ")
         replaced = replaced.replacingOccurrences(of: "..<", with: " ..< ")
 
+        // Some folks, particularly those coming from Python, use Range(1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
+        replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
+        replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
+
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
 
@@ -83,6 +87,9 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "Dictionary<String, String>", with: "[String: String]")
         replaced = replaced.replacingOccurrences(of: "Dictionary<String, Int>", with: "[String: Int]")
         replaced = replaced.replacingOccurrences(of: "Dictionary<String, Double>", with: "[String: Double]")
+
+        // If folks use explicit type annotation for a collection backed up by an empty initializer, prefer removing the annotation.
+        replaced = replaced.replacingOccurrences(of: #":\[([A-Za-z]+)\] *= *\[\]"#, with: " = [$1]()", options: .regularExpression)
 
         // Now do one last pass to remove any excess space from each line; we don't care how they indent.
         let lines = replaced.lines.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }

@@ -20,7 +20,9 @@ class PracticeTests: XCTestCase {
             "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.uppercased() == input2.uppercased()\nreturn result\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}else{\nreturn false\n}\n}",
-            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}\n}"
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}\nreturn false\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}\nreturn false\n}"
         ]
 
         let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
@@ -32,7 +34,8 @@ class PracticeTests: XCTestCase {
             "func checkSame(string1: String, string2: String) -> Bool {\nreturn string1.lowercased() == string2.lowercased()\n}",
             "\nfunc checkIdentical(stringA : String, stringB : String)  ->  Bool  {\n\n\treturn stringA.lowercased()  ==  stringB.lowercased()\n\n}\n",
             "func compare(thing1 :String,thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased(){\nreturn true\n} else {\nreturn false\n}\n}",
-            "  func    compare   (_ thing1 :String, _ thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased() {\nreturn true\n}\nelse\n{\nreturn false\n}\n}"
+            "  func    compare   (_ thing1 :String, _ thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased() {\nreturn true\n}\nelse\n{\nreturn false\n}\n}",
+            "func equalStrings(str1: String, str2: String) -> Bool {\nif str1.lowercased() == str2.lowercased() {\nreturn true\n}\nreturn false\n}"
         ]
 
         let wrongAnswers = [
@@ -98,7 +101,8 @@ class PracticeTests: XCTestCase {
             "let evens = (1...100).filter {\n$0 % 2 == 0\n}",
             "let evens = (1...100).filter {$0 % 2 == 0\n}",
             "let evens = (1...100).filter {\n\t$0 % 2 == 0\n}",
-            "let evens = (1...100).filter {\n\n\n\n return $0 % 2 == 0\n\n\n\n\n }"
+            "let evens = (1...100).filter {\n\n\n\n return $0 % 2 == 0\n\n\n\n\n }",
+            "var array:[Int]=[]\nfor i in Range(1...100) {\nif i%2==0 {\narray.append(i)\n}\n}"
         ]
 
         let wrongAnswers = [
