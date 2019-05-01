@@ -6,11 +6,11 @@
 	},
 	{
 		"title": "What are the points for?",
-		"text": "The points and levels help you keep track of your progress.\n\nYou earn points for each chapter you read, each test you take, and each practice and challenge you complete. You can share your score with your friends by tapping Share Score on the home page.",
-		"action": ""
-	},
+		"text": "The points and levels help you keep track of your progress.\n\nYou earn points for each chapter you read, each test you take, and each practice and challenge you complete. You can share your score with your friends by tapping Share Score on the home page.\n\nUnless you're taking a challenge, you get the same number of points regardless of how many mistakes you make – you earn points for trying your best, not for answering everything perfectly. If you want to go back and take a test again to improve your score, go for it!",
+        "action": ""
+    },
 	{
-		"title": "Can I retake a daily challenge?",
+		"title": "Can I retake daily challenges?",
 		"text": "No; daily challenges can be taken only once a day. Please wait until tomorrow before trying again.",
 		"action": ""
 	},
