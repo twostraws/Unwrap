@@ -24,16 +24,24 @@ class TappableTextView: UITextView, UITextViewDelegate {
         set { }
     }
 
-    /// Catch all text delegates ourselves, then force content to go edge to edge.
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        addCustomizations()
+    }
 
-        // We want to handle text view events so that we can catch interaction events in plain text.
-        delegate = self
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addCustomizations()
+    }
 
+    /// Tappable text views have no margin and handle taps by hand to avoid delays.s
+    func addCustomizations() {
         // Force the content to go edge to edge.
         textContainerInset = .zero
         textContainer.lineFragmentPadding = 0
+
+        // We want to handle text view events so that we can catch interaction events in plain text.
+        delegate = self
     }
 
     /// Sets up this text view to look for link taps in the attributed string. You must call this yourself if you want this behavior.
