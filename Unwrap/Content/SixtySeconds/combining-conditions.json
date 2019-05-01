@@ -12,7 +12,7 @@
         },
         {
             "answer": "let a = true\nlet b = false\n\nif a || b {\n\tprint(\"Hello, Swift!\")\n}",
-            "reason": "Although <code>b<\/code> is false, <code>a\/code> is true, so this will print a message."
+            "reason": "Although <code>b<\/code> is false, <code>a<\/code> is true, so this will print a message."
         },
         {
             "answer": "let a = 10\nlet b = 10\n\nif a >= 10 && b <= 10 {\n\tprint(\"Hello, Swift!\")\n}\n",
