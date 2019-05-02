@@ -39,21 +39,23 @@ class NewsCoordinator: Coordinator {
         splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
-    /// Creates and configures – but does not show! – a Safari view controller for a specific article. This might be called when the user tapped a story, or when they 3D touch one.
-    func readViewController(for article: NewsArticle) -> UIViewController {
-        let viewController = SFSafariViewController(url: article.url)
+    /// Creates and configures – but does not show! – an ArticleViewController for a specific article.
+    /// This might be called when the user tapped a story, or when they 3D touch one.
+    func articleViewController(for article: NewsArticle) -> UIViewController {
+        let viewController = ArticleViewController(article: article)
         return viewController
     }
 
     /// Triggered when we already have a Safari view controller configured and ready to go, so we just show it.
     func startReading(using viewController: UIViewController, withURL url: URL) {
-        splitViewController.showDetailViewController(viewController, sender: self)
+        let detailNav = CoordinatedNavigationController(rootViewController: viewController)
+        splitViewController.showDetailViewController(detailNav, sender: self)
         User.current.readNewsStory(forURL: url)
     }
 
-    /// Creates, configures, and presents a Safari view controller for a specific article.
+    /// Creates, configures, and presents an ArticleViewController for a specific article.
     func read(_ article: NewsArticle) {
-        let viewController = readViewController(for: article)
+        let viewController = articleViewController(for: article)
         startReading(using: viewController, withURL: article.url)
     }
 
@@ -61,6 +63,6 @@ class NewsCoordinator: Coordinator {
     @objc func buyBooks() {
         let storeURL = URL(staticString: "https://www.hackingwithswift.com/store")
         let viewController = SFSafariViewController(url: storeURL)
-        splitViewController.showDetailViewController(viewController, sender: self)
+        splitViewController.present(viewController, animated: true)
     }
 }

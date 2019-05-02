@@ -87,7 +87,7 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
         if let indexPath = tableView.indexPathForRow(at: location) {
             previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             currentSelectedArticle = dataSource.article(at: indexPath.row)
-            return coordinator?.readViewController(for: currentSelectedArticle)
+            return coordinator?.articleViewController(for: currentSelectedArticle)
         }
 
         return nil
