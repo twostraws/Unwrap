@@ -15,6 +15,7 @@ class GlossaryViewController: UITableViewController {
         super.viewDidLoad()
 
         title = "Glossary"
+        extendedLayoutIncludesOpaqueBars = true
         navigationItem.largeTitleDisplayMode = .never
 
         tableView.dataSource = dataSource

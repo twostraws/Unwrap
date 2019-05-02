@@ -597,6 +597,7 @@
 		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
 		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
 		B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */; };
+		B9AC3C9C227B1262007AC17C /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC3C9B227B1262007AC17C /* ArticleViewController.swift */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
 		FE81585F2274F8C2007E5E11 /* User-Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81585E2274F8C2007E5E11 /* User-Progress.swift */; };
 /* End PBXBuildFile section */
@@ -1241,6 +1242,7 @@
 		B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTableViewCell.swift; sourceTree = "<group>"; };
+		B9AC3C9B227B1262007AC17C /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		BB24D72F99ED46CE1F202A82 /* Pods-Unwrap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.debug.xcconfig"; sourceTree = "<group>"; };
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1314,6 +1316,7 @@
 				511FD6AA2105E6EB0023E92C /* NewsDataSource.swift */,
 				51FA55D8211B55DE00C38188 /* NewsEmptyDataSource.swift */,
 				4C8950C32253633F002F9FA6 /* NewsTableViewCell.swift */,
+				B9AC3C9B227B1262007AC17C /* ArticleViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -3025,6 +3028,7 @@
 				51CC13A12065B20500F37A67 /* Storyboarded.swift in Sources */,
 				5192241C210E2767007D7D74 /* DarkTheme.swift in Sources */,
 				51A447692108A0C3005D8665 /* BadgeDataSource.swift in Sources */,
+				B9AC3C9C227B1262007AC17C /* ArticleViewController.swift in Sources */,
 				5153F4A020EF9409009E829D /* TypeCheckerDataSource.swift in Sources */,
 				51053A0421135C6000B28328 /* TourItem.swift in Sources */,
 				51B3A7CA20CCCAF2000ACA6D /* HomeDataSource.swift in Sources */,

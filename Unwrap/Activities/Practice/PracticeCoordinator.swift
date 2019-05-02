@@ -13,6 +13,8 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
+    var practiceViewController = PracticeViewController(style: .plain)
+
     /// Stores whichever activity the user is currently taking, so that we can make new instances of it when working through a practice sequence.
     var currentActivity: PracticeActivity.Type?
 
@@ -27,9 +29,8 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         primaryNavigationController.navigationBar.prefersLargeTitles = true
         primaryNavigationController.coordinator = self
 
-        let viewController = PracticeViewController(style: .plain)
-        viewController.coordinator = self
-        primaryNavigationController.viewControllers = [viewController]
+        practiceViewController.coordinator = self
+        primaryNavigationController.viewControllers = [practiceViewController]
 
         // Set up the detail view controller
         splitViewController.viewControllers = [primaryNavigationController, PleaseSelectViewController.instantiate()]
@@ -46,7 +47,10 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             // They can't access this practice activity yet.
             let alert = UIAlertController(title: "Activity Locked", message: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
+
             splitViewController.present(alert, animated: true)
+            splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
+
             return false
         } else {
             // They can access this activity, so clear our state and begin immediately.
@@ -97,6 +101,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
     /// Called when the user has requested to exit the current practice session, so we should terminate it without awarding points.
     func skipPracticing() {
+        practiceViewController.resetTableView()
         returnToStart(pointsAwarded: false)
     }
 

@@ -41,5 +41,6 @@ extension Awarding {
     /// Returns to the root of our navigation stack.
     func returnToStart(pointsAwarded: Bool) {
         splitViewController.popToRootViewController(animated: !pointsAwarded)
+        splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
     }
 }
