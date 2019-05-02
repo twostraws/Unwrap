@@ -36,6 +36,7 @@ class NewsCoordinator: Coordinator {
 
         // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
     /// Creates and configures – but does not show! – a Safari view controller for a specific article. This might be called when the user tapped a story, or when they 3D touch one.
