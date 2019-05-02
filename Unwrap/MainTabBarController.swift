@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.navigationController, news.splitViewController]
+        viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
         tabBar.isTranslucent = false
     }
 
@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController, Storyboarded {
 
     func handle(shortcutItem: UIApplicationShortcutItem) {
         if shortcutItem.type == "com.hackingwithswift.unwrapswift.challenges" {
-            selectedViewController = challenges.navigationController
+            selectedViewController = challenges.splitViewController
         } else if shortcutItem.type == "com.hackingwithswift.unwrapswift.news" {
             selectedViewController = news.splitViewController
         } else {

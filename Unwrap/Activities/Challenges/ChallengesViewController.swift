@@ -26,6 +26,7 @@ class ChallengesViewController: UITableViewController, UserTracking {
         tableView.dataSource = dataSource
         tableView.register(ChallengeTableViewCell.self, forCellReuseIdentifier: "Challenge")
         tableView.register(PreviousChallengeTableViewCell.self, forCellReuseIdentifier: "PreviousChallenge")
+        extendedLayoutIncludesOpaqueBars = true
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: UIApplication.willEnterForegroundNotification, object: nil)
 

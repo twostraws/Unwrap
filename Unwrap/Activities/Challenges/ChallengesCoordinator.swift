@@ -12,7 +12,7 @@ import UIKit
 /// Manages everything launched from the Challenges tab in the app.
 class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     var splitViewController = UISplitViewController()
-    var navigationController: CoordinatedNavigationController
+    var primaryNavigationController = CoordinatedNavigationController()
 
     /// The list of practice activities in the current challenge.
     var questions = [PracticeActivity.Type]()
@@ -26,15 +26,25 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     /// Whether or not the user can have multiple attempts at questions
     let retriesAllowed = false
 
-    init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
-        self.navigationController = navigationController
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.coordinator = self
+    init() {
+        // Set up the master view controller
+        primaryNavigationController.navigationBar.prefersLargeTitles = true
+        primaryNavigationController.coordinator = self
 
         let viewController = ChallengesViewController(style: .grouped)
-        viewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
         viewController.coordinator = self
-        navigationController.viewControllers = [viewController]
+        primaryNavigationController.viewControllers = [viewController]
+
+        // Set up the detail view controller
+        let detailNavigationController = PleaseSelectViewController.instantiate()
+        detailNavigationController.selectionMode = .challenge
+
+        splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
+        splitViewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
+
+        // make this split view controller behave sensibly on iPad
+        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
     /// Called when the user starts their daily challenge – removes all the activities, clears their score, and resets the skips they have remaining.
@@ -67,7 +77,9 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             let viewController = currentQuestion.instantiate()
             viewController.coordinator = self
             viewController.questionNumber = 10 - questions.count
-            navigationController.pushViewController(viewController, animated: true)
+
+            let detailNav = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(detailNav, sender: self)
         } else {
             award(points: currentScore, for: .challenge)
         }
@@ -127,7 +139,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
         alert.addAction(quitAction)
         alert.addAction(continueAction)
-        navigationController.present(alert, animated: true)
+        splitViewController.present(alert, animated: true)
     }
 
     /// Called from the main Challenges table view so that users can share their scores with friends online.
@@ -138,10 +150,10 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
         // if we're on iPad we'll anchor this thing to the table view cell they tapped
         if let popOver = alert.popoverPresentationController {
-            popOver.sourceView = self.navigationController.topViewController?.view
+            popOver.sourceView = primaryNavigationController.topViewController?.view
             popOver.sourceRect = sourceRect
         }
 
-        navigationController.present(alert, animated: true)
+        splitViewController.present(alert, animated: true)
     }
 }

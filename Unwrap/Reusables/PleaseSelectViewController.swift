@@ -21,13 +21,14 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         extendedLayoutIncludesOpaqueBars = true
         logo.path = UIBezierPath.logo
 
         switch selectionMode {
         case .challenge:
-            prompt.text = "Please select a challenge to begin"
+            // it seems weird to repeat the text here
+            prompt.text = ""
 
         case .news:
             prompt.text = "Please select an article to read"
