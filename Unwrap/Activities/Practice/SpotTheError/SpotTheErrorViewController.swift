@@ -35,6 +35,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
 
         title = "Spot the Error" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
 
         dataSource = SpotTheErrorDataSource(practiceData: practiceData)
         dataSource.delegate = self

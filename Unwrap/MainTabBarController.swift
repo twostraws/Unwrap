@@ -19,7 +19,8 @@ class MainTabBarController: UITabBarController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewControllers = [home.navigationController, learn.splitViewController, practice.navigationController, challenges.navigationController, news.navigationController]
+        viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
+        tabBar.isTranslucent = false
     }
 
     /// If we get some launch options, figure out which one was requested and jump right to the correct tab.
@@ -31,9 +32,9 @@ class MainTabBarController: UITabBarController, Storyboarded {
 
     func handle(shortcutItem: UIApplicationShortcutItem) {
         if shortcutItem.type == "com.hackingwithswift.unwrapswift.challenges" {
-            selectedViewController = challenges.navigationController
+            selectedViewController = challenges.splitViewController
         } else if shortcutItem.type == "com.hackingwithswift.unwrapswift.news" {
-            selectedViewController = news.navigationController
+            selectedViewController = news.splitViewController
         } else {
             fatalError("Unknown shortcut item type: \(shortcutItem.type).")
         }
