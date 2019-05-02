@@ -9,7 +9,7 @@
 import UIKit
 
 /// Manages everything launched from the Practice tab in the app.
-class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
+class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, AlertShowing {
     var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
@@ -45,12 +45,8 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     func startPracticing(_ activity: PracticeActivity.Type) -> Bool {
         if activity.isLocked {
             // They can't access this practice activity yet.
-            let alert = UIAlertController(title: "Activity Locked", message: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-
-            splitViewController.present(alert, animated: true)
+            showAlert(title: "Activity Locked", body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.")
             splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
-
             return false
         } else {
             // They can access this activity, so clear our state and begin immediately.
