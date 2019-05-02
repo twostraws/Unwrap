@@ -9,7 +9,7 @@
 import SwiftEntryKit
 import UIKit
 
-extension UIViewController {
+extension UIViewController: AlertShowing {
     /// Does all the leg work of making any UIViewController be shown inside a pre-styled SwiftEntryKit alert.
     func presentAsAlert() {
         var attributes = EKAttributes()
@@ -42,10 +42,7 @@ extension UIViewController {
         let defaultsName = "Shown\(name)"
 
         if UserDefaults.standard.bool(forKey: defaultsName) == false {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-
+            showAlert(title: title, body: message)
             UserDefaults.standard.set(true, forKey: defaultsName)
         }
     }

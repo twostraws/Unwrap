@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController, AlertShowing, PracticingViewController {
+class ReviewViewController: UIViewController, PracticingViewController {
     var coordinator: (AnswerHandling & Skippable)?
 
     var questionNumber = 1
