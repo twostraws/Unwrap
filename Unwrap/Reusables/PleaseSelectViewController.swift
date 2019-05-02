@@ -25,6 +25,9 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
         extendedLayoutIncludesOpaqueBars = true
         logo.path = UIBezierPath.logo
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+        logo.addGestureRecognizer(tap)
+
         switch selectionMode {
         case .challenge:
             // it seems weird to repeat the text here
@@ -36,5 +39,9 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
         case .practice:
             prompt.text = "Please select a practice activity to begin"
         }
+    }
+
+    @objc func logoTapped() {
+        logo.draw(delay: 0, duration: 2, keyFrameValues: [0, 0.129, 0.373, 0.58, 0.928, 1.0])
     }
 }
