@@ -156,4 +156,14 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
         splitViewController.present(alert, animated: true)
     }
+
+    /// When using split view controllers, completing a challenge results in the awards screen staying visible in the detail view controller until the app finally exits. To avoid that scenario, this method resets the detail view controller.
+    func resetDetailViewController() {
+        guard splitViewController.isCollapsed == false else { return }
+        guard splitViewController.viewControllers.last is AwardPointsViewController else { return }
+
+        let newDetail = PleaseSelectViewController.instantiate()
+        newDetail.selectionMode = .challenge
+        splitViewController.viewControllers = [splitViewController.viewControllers[0], newDetail]
+    }
 }

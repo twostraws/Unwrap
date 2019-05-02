@@ -37,6 +37,8 @@ class ChallengesViewController: UITableViewController, UserTracking {
 
         // reload our table each time the user returns here so that daily challenge updates correctly
         tableView.reloadData()
+        coordinator?.resetDetailViewController()
+
     }
 
     func userDataChanged() {
