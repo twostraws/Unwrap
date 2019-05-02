@@ -15,15 +15,18 @@ class CoordinatedNavigationController: UINavigationController {
     override init(nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         extendedLayoutIncludesOpaqueBars = true
+        navigationBar.isTranslucent = false
     }
 
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         extendedLayoutIncludesOpaqueBars = true
+        navigationBar.isTranslucent = false
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         extendedLayoutIncludesOpaqueBars = true
+        navigationBar.isTranslucent = false
     }
 }
