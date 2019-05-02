@@ -12,7 +12,7 @@ import SwiftEntryKit
 import UIKit
 
 /// Manages everything launched from the Learn tab in the app.
-class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling {
+class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling, UISplitViewControllerDelegate {
     var splitViewController: UISplitViewController
     var navigationController: CoordinatedNavigationController
     var activeStudyReview: StudyReview!
@@ -22,6 +22,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
         self.splitViewController = UISplitViewController()
+
 
         // Set up the master view controller
         self.navigationController = navigationController
@@ -38,8 +39,9 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         splitViewController.viewControllers = [navigationController, detailNavigationController]
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
 
-        // we
+        // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.delegate = self
     }
 
     /// Shows the list of common Swift terms
@@ -206,5 +208,9 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
         let detailNav = UINavigationController(rootViewController: viewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
+    }
+
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
