@@ -16,7 +16,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
     @IBOutlet var totalPoints: CountingLabel!
     @IBOutlet var earnedPoints: CountingLabel!
     @IBOutlet var tapToContinue: UILabel!
-    
+
     /// The reason we're giving points to the user: learning, reviewing, practicing, or challenges.
     var awardType = AwardType.challenge
 

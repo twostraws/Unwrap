@@ -23,7 +23,6 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
         self.splitViewController = UISplitViewController()
 
-
         // Set up the master view controller
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true
