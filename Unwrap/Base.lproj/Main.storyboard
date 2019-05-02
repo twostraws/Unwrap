@@ -996,6 +996,56 @@
             </objects>
             <point key="canvasLocation" x="3828" y="95"/>
         </scene>
+        <!--Please Select View Controller-->
+        <scene sceneID="5QP-ex-hKK">
+            <objects>
+                <viewController storyboardIdentifier="PleaseSelectViewController" id="0CT-73-r3j" customClass="PleaseSelectViewController" customModule="Unwrap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aEc-PG-HMr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdZ-0B-6yg" customClass="ShapeView" customModule="Unwrap" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="198.5" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="aMt-bn-kRu"/>
+                                    <constraint firstAttribute="width" constant="250" id="dTB-dN-Kgw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a practice activity to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZV-gA-M8x">
+                                <rect key="frame" x="30" y="458.5" width="315" height="49"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xdZ-0B-6yg" firstAttribute="centerY" secondItem="th4-Tf-uo8" secondAttribute="centerY" constant="-20" id="48h-St-oeB"/>
+                            <constraint firstItem="FZV-gA-M8x" firstAttribute="leading" secondItem="th4-Tf-uo8" secondAttribute="leading" constant="30" id="BNL-eO-CNl"/>
+                            <constraint firstItem="xdZ-0B-6yg" firstAttribute="centerX" secondItem="th4-Tf-uo8" secondAttribute="centerX" id="QLA-IZ-4Fk"/>
+                            <constraint firstItem="FZV-gA-M8x" firstAttribute="top" secondItem="xdZ-0B-6yg" secondAttribute="bottom" constant="10" id="VhW-iD-Hsq"/>
+                            <constraint firstItem="FZV-gA-M8x" firstAttribute="trailing" secondItem="th4-Tf-uo8" secondAttribute="trailing" constant="-30" id="eTj-Mj-HTw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="th4-Tf-uo8"/>
+                    </view>
+                    <connections>
+                        <outlet property="logo" destination="xdZ-0B-6yg" id="x4w-Kt-U5w"/>
+                        <outlet property="prompt" destination="FZV-gA-M8x" id="4nK-wr-kob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdQ-sI-218" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4553" y="94"/>
+        </scene>
         <!--Free Coding View Controller-->
         <scene sceneID="0Tf-ZR-0Py">
             <objects>

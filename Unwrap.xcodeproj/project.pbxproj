@@ -148,6 +148,8 @@
 		51A6D66A20E6954400FB6B46 /* Replacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6D66920E6954400FB6B46 /* Replacement.swift */; };
 		51A6D66C20E696A300FB6B46 /* SpotTheErrorPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6D66B20E696A300FB6B46 /* SpotTheErrorPractice.swift */; };
 		51A90DC0227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A90DBF227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift */; };
+		51A90DC2227AF0D60068A4F9 /* PleaseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A90DC1227AF0D60068A4F9 /* PleaseSelectViewController.swift */; };
+		51A90DC4227AFC060068A4F9 /* SplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A90DC3227AFC060068A4F9 /* SplitViewControllerDelegate.swift */; };
 		51ADAEA520CE9004000D9DCF /* ChallengeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */; };
 		51B3A7C820CCC74B000ACA6D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */; };
 		51B3A7CA20CCCAF2000ACA6D /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */; };
@@ -783,6 +785,8 @@
 		51A6D66920E6954400FB6B46 /* Replacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Replacement.swift; sourceTree = "<group>"; };
 		51A6D66B20E696A300FB6B46 /* SpotTheErrorPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTheErrorPractice.swift; sourceTree = "<group>"; };
 		51A90DBF227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISplitViewController-NavigationController.swift"; sourceTree = "<group>"; };
+		51A90DC1227AF0D60068A4F9 /* PleaseSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PleaseSelectViewController.swift; sourceTree = "<group>"; };
+		51A90DC3227AFC060068A4F9 /* SplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerDelegate.swift; sourceTree = "<group>"; };
 		51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResult.swift; sourceTree = "<group>"; };
 		51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -1389,6 +1393,7 @@
 				5115CD65216B98C3006635FE /* EditingToolbarView.swift */,
 				51CC139C2065AB8500F37A67 /* GradientView.swift */,
 				51596DE920EE04EF00952ADC /* LeftAlignedCollectionViewFlowLayout.swift */,
+				51A90DC1227AF0D60068A4F9 /* PleaseSelectViewController.swift */,
 				51CC1390206560A600F37A67 /* ShapeView.swift */,
 				511FD6BF2107425F0023E92C /* TappableTextView.swift */,
 			);
@@ -1646,10 +1651,11 @@
 				5156459220E116EE00CED877 /* Content */,
 				51CC13622065607C00F37A67 /* AppDelegate.swift */,
 				51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */,
+				51A90DC3227AFC060068A4F9 /* SplitViewControllerDelegate.swift */,
+				511FD6B221065BF80023E92C /* Unwrap.swift */,
 				51CC13662065607C00F37A67 /* Main.storyboard */,
 				51CC136B2065607F00F37A67 /* LaunchScreen.storyboard */,
 				51CC136E2065607F00F37A67 /* Info.plist */,
-				511FD6B221065BF80023E92C /* Unwrap.swift */,
 			);
 			path = Unwrap;
 			sourceTree = "<group>";
@@ -2952,6 +2958,7 @@
 				518FAE7420E3C067007F4675 /* AlertViewController.swift in Sources */,
 				51596DEE20EE2B5B00952ADC /* TapToCodeDataSource.swift in Sources */,
 				5189D9DF20EADA3E00E6E1D3 /* UIView-EditingToolbar.swift in Sources */,
+				51A90DC4227AFC060068A4F9 /* SplitViewControllerDelegate.swift in Sources */,
 				5153F4A820EFCD29009E829D /* Skippable.swift in Sources */,
 				511FD6BE210740860023E92C /* HelpTableViewCell.swift in Sources */,
 				51A6D62520E651DA00FB6B46 /* BoolNames.swift in Sources */,
@@ -2981,6 +2988,7 @@
 				51053A002113332A00B28328 /* TourItemViewController.swift in Sources */,
 				511FD6B621065CED0023E92C /* HelpViewController.swift in Sources */,
 				51596DE820EE04A500952ADC /* TapToCodeViewController.swift in Sources */,
+				51A90DC2227AF0D60068A4F9 /* PleaseSelectViewController.swift in Sources */,
 				51A90DC0227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift in Sources */,
 				511FD6C02107425F0023E92C /* TappableTextView.swift in Sources */,
 				51596DFB20EE94DC00952ADC /* AwardPointsViewController.swift in Sources */,

@@ -45,6 +45,7 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
 
         title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
 
         if practiceData.existingCode.isEmpty {
             // Hide the existing code label and disable the collection view constraint that positions it below. This will make Auto Layout rely on a second vertical spacing constraint that positions the collection view relative to the prompt view.

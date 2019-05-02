@@ -33,6 +33,7 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
+        extendedLayoutIncludesOpaqueBars = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
 
         // always include the safe area insets in the scroll view content adjustment

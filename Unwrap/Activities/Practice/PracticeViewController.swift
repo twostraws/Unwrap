@@ -24,6 +24,7 @@ class PracticeViewController: UITableViewController, UserTracking {
         registerForUserChanges()
         tableView.dataSource = dataSource
         tableView.register(PracticeTableViewCell.self, forCellReuseIdentifier: "Cell")
+        extendedLayoutIncludesOpaqueBars = true
     }
 
     /// Refreshes everything when the user changes.

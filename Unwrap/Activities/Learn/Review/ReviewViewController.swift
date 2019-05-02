@@ -29,6 +29,7 @@ class ReviewViewController: UIViewController, AlertShowing, PracticingViewContro
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        extendedLayoutIncludesOpaqueBars = true
     }
 
     override func viewDidLoad() {

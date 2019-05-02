@@ -34,6 +34,7 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
 
         title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
 
         // Users need to be able to check all the rows they want, so our data source is used for the table view's data source and delegate.
         dataSource = TypeCheckerDataSource(review: review)

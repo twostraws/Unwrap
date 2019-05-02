@@ -64,7 +64,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     /// Moves the current challenge to the next question, or ends it if there are no more questions.
     func askQuestion() {
         if let currentQuestion = questions.popLast() {
-            var viewController = currentQuestion.instantiate()
+            let viewController = currentQuestion.instantiate()
             viewController.coordinator = self
             viewController.questionNumber = 10 - questions.count
             navigationController.pushViewController(viewController, animated: true)

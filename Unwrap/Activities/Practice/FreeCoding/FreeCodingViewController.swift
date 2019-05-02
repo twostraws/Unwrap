@@ -38,6 +38,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
 
         title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()

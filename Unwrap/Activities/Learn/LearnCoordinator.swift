@@ -13,40 +13,37 @@ import UIKit
 
 /// Manages everything launched from the Learn tab in the app.
 class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling, UISplitViewControllerDelegate {
-    var splitViewController: UISplitViewController
-    var navigationController: CoordinatedNavigationController
+    var splitViewController = UISplitViewController()
+    var primaryNavigationController = CoordinatedNavigationController()
     var activeStudyReview: StudyReview!
 
     /// Whether or not the user can have multiple attempts at questions
     let retriesAllowed = true
 
-    init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
-        self.splitViewController = UISplitViewController()
-
+    init() {
         // Set up the master view controller
-        self.navigationController = navigationController
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.coordinator = self
+        primaryNavigationController.navigationBar.prefersLargeTitles = true
+        primaryNavigationController.coordinator = self
 
         let viewController = LearnViewController(style: .plain)
         viewController.coordinator = self
-        navigationController.viewControllers = [viewController]
+        primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
         let detailNavigationController = UINavigationController(rootViewController: studyViewController(for: "Variables"))
 
-        splitViewController.viewControllers = [navigationController, detailNavigationController]
+        splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
 
         // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
-        splitViewController.delegate = self
+        splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
     /// Shows the list of common Swift terms
     func showGlossary() {
         let vc = GlossaryViewController(style: .plain)
-        navigationController.pushViewController(vc, animated: true)
+        primaryNavigationController.pushViewController(vc, animated: true)
     }
 
     /// Triggered when we already have a study view controller configured and ready to go, so we just show it.
@@ -207,9 +204,5 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
         let detailNav = UINavigationController(rootViewController: viewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
-    }
-
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
     }
 }

@@ -23,6 +23,7 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
         title = "Learn"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Glossary", style: .plain, target: self, action: #selector(showGlossary))
         registerForUserChanges()
+        extendedLayoutIncludesOpaqueBars = true
 
         tableView.dataSource = dataSource
         tableView.delegate = dataSource

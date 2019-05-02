@@ -28,6 +28,7 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
 
         title = "News"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Buy Swift Books", style: .plain, target: coordinator, action: #selector(NewsCoordinator.buyBooks))
+        extendedLayoutIncludesOpaqueBars = true
 
         dataSource.delegate = self
         tableView.dataSource = dataSource

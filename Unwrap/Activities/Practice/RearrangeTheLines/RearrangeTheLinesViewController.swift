@@ -35,6 +35,7 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
 
         title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
 
         dataSource = RearrangeTheLinesDataSource(practiceData: practiceData)
         tableView.dataSource = dataSource

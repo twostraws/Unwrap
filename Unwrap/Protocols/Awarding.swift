@@ -20,15 +20,17 @@ extension Awarding {
         viewController.awardType = type
         viewController.pointsToAward = points
         viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .formSheet
 
-        // As soon as the award view controller is shown, get back to the root of our navigation stack.
         if splitViewController.isCollapsed {
+            // As soon as the award view controller is shown, get back to the root of our navigation stack.
             splitViewController.present(viewController, animated: true) {
                 self.returnToStart(pointsAwarded: true)
             }
         } else {
-            let detailNav = UINavigationController(rootViewController: viewController)
-            splitViewController.showDetailViewController(detailNav, sender: self)
+            // Show the awards screen alongside the master view controller.
+//            let detailNav = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(viewController, sender: self)
         }
     }
 

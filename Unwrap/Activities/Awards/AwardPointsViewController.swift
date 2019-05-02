@@ -41,6 +41,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
+        extendedLayoutIncludesOpaqueBars = true
 
         totalPoints.title = "TOTAL"
         earnedPoints.title = "EARNED"
