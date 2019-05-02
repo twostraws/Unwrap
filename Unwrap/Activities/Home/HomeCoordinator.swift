@@ -6,7 +6,6 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import SafariServices
 import UIKit
 
 /// Manages everything launched from the Home tab in the app.
@@ -116,8 +115,8 @@ class HomeCoordinator: Coordinator, AlertShowing {
     func open(_ url: URL) {
         if url.scheme?.hasPrefix("http") == true {
             // we'll open web URLs inside the app
-            let viewController = SFSafariViewController(url: url)
-            navigationController.present(viewController, animated: true)
+            let viewController = WebViewController(url: url)
+            navigationController.pushViewController(viewController, animated: true)
         } else {
             // send all other types of URL over to the main application to figure out
             UIApplication.shared.open(url)

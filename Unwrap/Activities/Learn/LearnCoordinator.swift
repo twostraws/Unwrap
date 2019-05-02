@@ -7,7 +7,6 @@
 //
 
 import AVKit
-import SafariServices
 import SwiftEntryKit
 import UIKit
 
@@ -200,8 +199,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     }
 
     func show(url: URL) {
-        let viewController = SFSafariViewController(url: url)
-
+        let viewController = WebViewController(url: url)
         let detailNav = CoordinatedNavigationController(rootViewController: viewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
     }

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import SafariServices
 import UIKit
 
 /// Manages everything launched from the News tab in the app.
@@ -42,7 +41,7 @@ class NewsCoordinator: Coordinator {
     /// Creates and configures – but does not show! – an ArticleViewController for a specific article.
     /// This might be called when the user tapped a story, or when they 3D touch one.
     func articleViewController(for article: NewsArticle) -> UIViewController {
-        let viewController = ArticleViewController(article: article)
+        let viewController = WebViewController(url: article.url)
         return viewController
     }
 
@@ -62,7 +61,8 @@ class NewsCoordinator: Coordinator {
     /// Loads the Hacking with Swift store.
     @objc func buyBooks() {
         let storeURL = URL(staticString: "https://www.hackingwithswift.com/store")
-        let viewController = SFSafariViewController(url: storeURL)
-        splitViewController.present(viewController, animated: true)
+        let viewController = WebViewController(url: storeURL)
+        let detailNav = CoordinatedNavigationController(rootViewController: viewController)
+        splitViewController.showDetailViewController(detailNav, sender: self)
     }
 }
