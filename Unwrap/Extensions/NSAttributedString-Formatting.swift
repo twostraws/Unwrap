@@ -9,26 +9,12 @@
 import UIKit
 
 extension NSAttributedString {
-    /// Takes a chunk of HTML in a string and wraps it in our HTML to give it common styling.
-    convenience init(formattedAsHTML bodyContents: String) {
-        // merge the wrapper with this page's content
-        var finalHTML = String.wrapperHTML(allowTheming: false).replacingOccurrences(of: "[BODY]", with: bodyContents).trimmingCharacters(in: .whitespacesAndNewlines)
-
-        let data = Data(finalHTML.utf8)
-
-        do {
-            try self.init(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-        } catch {
-            fatalError("Unable to wrap string in HTML: \(bodyContents).")
-        }
-    }
-
     /// A simple initializer that loads a chapter filename into a string, wraps it in HTML, then adds in our video.
-    convenience init(chapterName: String) {
+    convenience init(chapterName: String, width: CGFloat) {
         let bodyContents = String(bundleName: "\(chapterName).html")
 
         // Merge the wrapper with this page's content.
-        var finalHTML = String.wrapperHTML(allowTheming: true).replacingOccurrences(of: "[BODY]", with: bodyContents)
+        var finalHTML = String.wrapperHTML(allowTheming: true, width: width).replacingOccurrences(of: "[BODY]", with: bodyContents)
 
         // Finally, replace any instances of [VIDEO-NUMBER] with the correct chapter and section.
         finalHTML = finalHTML.replacingOccurrences(of: "[VIDEO-NUMBER]", with: chapterName)

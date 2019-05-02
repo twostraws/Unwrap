@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewControllers = [home.navigationController, learn.navigationController, practice.navigationController, challenges.navigationController, news.navigationController]
+        viewControllers = [home.navigationController, learn.splitViewController, practice.navigationController, challenges.navigationController, news.navigationController]
     }
 
     /// If we get some launch options, figure out which one was requested and jump right to the correct tab.

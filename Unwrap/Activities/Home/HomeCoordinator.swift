@@ -11,6 +11,7 @@ import UIKit
 
 /// Manages everything launched from the Home tab in the app.
 class HomeCoordinator: Coordinator, AlertShowing {
+    var splitViewController = UISplitViewController()
     var navigationController: CoordinatedNavigationController
 
     private static let firstRunDefaultsKey = "ShownFirstRun"

@@ -14,9 +14,17 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
     var studyTextView = StudyTextView()
     var chapter = ""
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        navigationItem.largeTitleDisplayMode = .never
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
     override func loadView() {
         studyTextView.linkDelegate = self
-        studyTextView.loadContent(chapter)
         view = studyTextView
     }
 
@@ -25,11 +33,15 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
 
         // always include the safe area insets in the scroll view content adjustment
         studyTextView.contentInsetAdjustmentBehavior = .always
+    }
+
+    // It's important we do content loading here, because a) loadView() is too early – here the text view has fully loaded and has its correct size, which means the movie image will be rendered correctly, and b) viewDidLayoutSubviews() is too late – it causes a layout loop.
+    override func viewWillAppear(_ animated: Bool) {
+        studyTextView.loadContent(chapter)
     }
 
     override func viewDidAppear(_ animated: Bool) {

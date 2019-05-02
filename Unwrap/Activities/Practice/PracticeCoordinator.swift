@@ -10,6 +10,7 @@ import UIKit
 
 /// Manages everything launched from the Practice tab in the app.
 class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
+    var splitViewController = UISplitViewController()
     var navigationController: CoordinatedNavigationController
 
     /// Stores whichever activity the user is currently taking, so that we can make new instances of it when working through a practice sequence.

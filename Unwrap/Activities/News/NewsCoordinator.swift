@@ -11,6 +11,7 @@ import UIKit
 
 /// Manages everything launched from the News tab in the app.
 class NewsCoordinator: Coordinator {
+    var splitViewController = UISplitViewController()
     var navigationController: CoordinatedNavigationController
 
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {

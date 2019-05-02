@@ -904,9 +904,7 @@
                                 <rect key="frame" x="62.5" y="120.5" width="250" height="200"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="oPB-Fi-wOe">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="480"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="250" id="oPB-Fi-wOe"/>
                                     <constraint firstAttribute="width" secondItem="Abq-fl-Xzo" secondAttribute="height" multiplier="1:0.8" id="trY-wN-LFw"/>
                                 </constraints>
                             </imageView>
@@ -990,6 +988,7 @@
                     <connections>
                         <outlet property="earnedPoints" destination="sfo-cE-S4u" id="kiQ-aj-PfO"/>
                         <outlet property="statusView" destination="Abq-fl-Xzo" id="3vu-oe-HYa"/>
+                        <outlet property="tapToContinue" destination="b6b-1Y-cu1" id="y5A-8V-0DP"/>
                         <outlet property="totalPoints" destination="hdq-DO-teL" id="cyQ-Ig-mfe"/>
                     </connections>
                 </viewController>

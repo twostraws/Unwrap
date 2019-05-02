@@ -19,7 +19,7 @@ class StudyTextView: TappableTextView {
 
     func loadContent(_ contentName: String) {
         // load our chapter text
-        attributedText = NSAttributedString(chapterName: contentName)
+        attributedText = NSAttributedString(chapterName: contentName, width: bounds.width)
         backgroundColor = .white
         isEditable = false
     }

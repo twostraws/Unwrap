@@ -13,6 +13,7 @@ import UIKit
 
 /// Manages everything launched from the Learn tab in the app.
 class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling {
+    var splitViewController: UISplitViewController
     var navigationController: CoordinatedNavigationController
     var activeStudyReview: StudyReview!
 
@@ -20,14 +21,25 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     let retriesAllowed = true
 
     init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
+        self.splitViewController = UISplitViewController()
+
+        // Set up the master view controller
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.coordinator = self
 
         let viewController = LearnViewController(style: .plain)
-        viewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
         viewController.coordinator = self
         navigationController.viewControllers = [viewController]
+
+        // Set up the detail view controller
+        let detailNavigationController = UINavigationController(rootViewController: studyViewController(for: "Variables"))
+
+        splitViewController.viewControllers = [navigationController, detailNavigationController]
+        splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
+
+        // we
+        splitViewController.preferredDisplayMode = .allVisible
     }
 
     /// Shows the list of common Swift terms
@@ -38,7 +50,8 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     /// Triggered when we already have a study view controller configured and ready to go, so we just show it.
     func startStudying(using viewController: UIViewController) {
-        navigationController.pushViewController(viewController, animated: true)
+        let detailNav = UINavigationController(rootViewController: viewController)
+        splitViewController.showDetailViewController(detailNav, sender: self)
     }
 
     /// Creates and configures – but does not show! – a study view controller for a specific chapter. This might be called when the user tapped a chapter, or when they 3D touch one.
@@ -73,7 +86,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         playerViewController.player = player
         player.play()
 
-        navigationController.present(playerViewController, animated: true)
+        splitViewController.present(playerViewController, animated: true)
     }
 
     /// When we finish studying, we either move to the postscript or we start reviewing.
@@ -94,12 +107,16 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
             viewController.coordinator = self
             viewController.review = activeStudyReview
             viewController.sectionName = activeStudyReview.title.bundleName
-            navigationController.pushViewController(viewController, animated: true)
+
+            let detailNav = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(detailNav, sender: self)
         } else {
             let viewController = SingleSelectReviewViewController.instantiate()
             viewController.coordinator = self
             viewController.review = activeStudyReview
-            navigationController.pushViewController(viewController, animated: true)
+
+            let detailNav = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(detailNav, sender: self)
         }
     }
 
@@ -131,13 +148,14 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
                 // This is a single selection review and this is the final question, so we're done reviewing.
                 finishedReviewing()
             } else {
-                // This is a single selection review but we haven't shown three yet, so show another in the sequence.
+                // This is a single selection review but we haven't shown them all yet, so show another in the sequence.
                 let viewController = SingleSelectReviewViewController.instantiate()
                 viewController.coordinator = self
                 viewController.review = single.review
                 viewController.answers = single.answers
                 viewController.questionNumber = single.questionNumber + 1
-                navigationController.pushViewController(viewController, animated: false)
+
+                reviewViewController.navigationController?.pushViewController(viewController, animated: false)
             }
         } else {
             /// this is a multiple selection review, so we only ever show one – we're done reviewing.
@@ -147,12 +165,14 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     /// Called when the user doesn't want to continue reviewing this chapter, so we either award points or bail out.
     func skipReviewing() {
-        if User.current.hasLearned(activeStudyReview.title.bundleName) {
+        let sectionName = activeStudyReview.title.bundleName
+
+        if User.current.hasLearned(sectionName) {
             // Exit back to the main chapter list.
-            returnToStart(pointsAwarded: false)
+            award(points: 0, for: .review(chapter: sectionName))
         } else {
             // They should get points for at least reading the chapter, so present the awards screen.
-            award(points: User.pointsForLearning, for: .learn(chapter: activeStudyReview.title.bundleName))
+            award(points: User.pointsForLearning, for: .learn(chapter: sectionName))
         }
     }
 
@@ -162,7 +182,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
         if User.current.hasReviewed(sectionName) {
             // They already reviewed this chapter, so don't award them more points.
-            returnToStart(pointsAwarded: false)
+            award(points: 0, for: .review(chapter: sectionName))
         } else {
             // This is their first time reviewing this chapter, so award them points.
             var pointsToAward = User.pointsForReviewing
@@ -183,6 +203,8 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     func show(url: URL) {
         let viewController = SFSafariViewController(url: url)
-        navigationController.present(viewController, animated: true)
+
+        let detailNav = UINavigationController(rootViewController: viewController)
+        splitViewController.showDetailViewController(detailNav, sender: self)
     }
 }

@@ -15,7 +15,8 @@ class AwardPointsViewController: UIViewController, Storyboarded {
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
     @IBOutlet var earnedPoints: CountingLabel!
-
+    @IBOutlet var tapToContinue: UILabel!
+    
     /// The reason we're giving points to the user: learning, reviewing, practicing, or challenges.
     var awardType = AwardType.challenge
 
@@ -27,6 +28,15 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         return .lightContent
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        fatalError("Not implemented")
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.largeTitleDisplayMode = .never
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,18 +45,23 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         totalPoints.title = "TOTAL"
         earnedPoints.title = "EARNED"
 
-        /// Configure the status view so that it looks good on a white background, and can animate past 100% so that we can rank up without the animation going back to the start.
+        // Configure the status view so that it looks good on a white background, and can animate past 100% so that we can rank up without the animation going back to the start.
         statusView.useTemplateImages = true
         statusView.strokeColorStart = UIColor(bundleName: "Rank-Start")
         statusView.strokeColorEnd = UIColor(bundleName: "Rank-End")
         statusView.shadowOpacity = 1
         statusView.animatePastEnd = true
 
-        /// Configure two of our title/subtitle labels so users can see points moving from one place to another.
+        // Configure two of our title/subtitle labels so users can see points moving from one place to another.
         totalPoints.textColor = .white
         earnedPoints.textColor = .white
         totalPoints.attributedText = NSAttributedString.makeTitle("TOTAL", subtitle: User.current.totalPoints.formatted)
         earnedPoints.attributedText = NSAttributedString.makeTitle("EARNED", subtitle: pointsToAward.formatted)
+
+        // If we're on iPad, the "Tap to continue" label should not be shown
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            tapToContinue.isHidden = true
+        }
 
         // If they scored any points at all, wait a split second then run the animation.
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
