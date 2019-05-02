@@ -69,9 +69,11 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
     func selectionChanged() {
         if let number = dataSource.selectedAnswer {
             answerButton.setTitle("ERROR ON LINE \(number + 1)", for: .normal)
+            answerButton.backgroundColor = UIColor(bundleName: "Primary")
             answerButton.isEnabled = true
         } else {
             answerButton.setTitle("SELECT A LINE", for: .normal)
+            answerButton.backgroundColor = UIColor(bundleName: "PrimaryDisabled")
             answerButton.isEnabled = false
         }
     }

@@ -771,7 +771,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b12-Nc-k65">
                                 <rect key="frame" x="0.0" y="579" width="375" height="88"/>
-                                <color key="backgroundColor" name="Primary"/>
+                                <color key="backgroundColor" name="PrimaryDisabled"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="jSW-hF-gfW"/>
                                 </constraints>
