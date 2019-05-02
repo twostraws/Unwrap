@@ -32,8 +32,6 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
-//        let detailNavigationController = UINavigationController(rootViewController: PleaseSelectViewController.instantiate())
-
         splitViewController.viewControllers = [primaryNavigationController, PleaseSelectViewController.instantiate()]
         splitViewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
 
@@ -58,7 +56,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             let viewController = activity.instantiate()
             viewController.coordinator = self
 
-            let detailNav = UINavigationController(rootViewController: viewController)
+            let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
 
             return true

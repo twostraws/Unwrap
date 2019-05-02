@@ -29,7 +29,6 @@ extension Awarding {
             }
         } else {
             // Show the awards screen alongside the master view controller.
-//            let detailNav = UINavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(viewController, sender: self)
         }
     }

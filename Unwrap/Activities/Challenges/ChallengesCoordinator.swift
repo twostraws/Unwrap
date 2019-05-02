@@ -36,10 +36,10 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
-        let detailNavigationController = PleaseSelectViewController.instantiate()
-        detailNavigationController.selectionMode = .challenge
+        let detailViewController = PleaseSelectViewController.instantiate()
+        detailViewController.selectionMode = .challenge
 
-        splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
+        splitViewController.viewControllers = [primaryNavigationController, detailViewController]
         splitViewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
 
         // make this split view controller behave sensibly on iPad
@@ -78,7 +78,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             viewController.coordinator = self
             viewController.questionNumber = 10 - questions.count
 
-            let detailNav = UINavigationController(rootViewController: viewController)
+            let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
         } else {
             award(points: currentScore, for: .challenge)

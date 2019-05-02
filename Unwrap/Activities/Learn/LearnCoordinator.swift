@@ -30,7 +30,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
-        let detailNavigationController = UINavigationController(rootViewController: studyViewController(for: "Variables"))
+        let detailNavigationController = CoordinatedNavigationController(rootViewController: studyViewController(for: "Variables"))
 
         splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
@@ -48,7 +48,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
     /// Triggered when we already have a study view controller configured and ready to go, so we just show it.
     func startStudying(using viewController: UIViewController) {
-        let detailNav = UINavigationController(rootViewController: viewController)
+        let detailNav = CoordinatedNavigationController(rootViewController: viewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
     }
 
@@ -106,14 +106,14 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
             viewController.review = activeStudyReview
             viewController.sectionName = activeStudyReview.title.bundleName
 
-            let detailNav = UINavigationController(rootViewController: viewController)
+            let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
         } else {
             let viewController = SingleSelectReviewViewController.instantiate()
             viewController.coordinator = self
             viewController.review = activeStudyReview
 
-            let detailNav = UINavigationController(rootViewController: viewController)
+            let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
         }
     }
@@ -202,7 +202,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     func show(url: URL) {
         let viewController = SFSafariViewController(url: url)
 
-        let detailNav = UINavigationController(rootViewController: viewController)
+        let detailNav = CoordinatedNavigationController(rootViewController: viewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
     }
 }
