@@ -19,7 +19,12 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
 
         title = "Help"
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: coordinator, action: #selector(HomeCoordinator.showCredits))
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+        }
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(showCredits))
 
         tableView.dataSource = dataSource
         dataSource.delegate = self
@@ -30,6 +35,11 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
 
     func linkTapped(_ url: URL) {
         coordinator?.open(url)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // if we're on iPad we should dismiss the modal view controller immediately so the user can browse the link they chose.
+            dismiss(animated: true)
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,5 +54,15 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
         default:
             break
         }
+    }
+
+    @objc func doneTapped() {
+        dismiss(animated: true)
+    }
+
+    /// Show the app credits. This cannot be done using the coordinator, because on iPhone we use the coordinator's navigation controller, but on iPad we run in a modal window with our own navigation controller.
+    @objc func showCredits() {
+        let credits = CreditsViewController()
+        navigationController?.pushViewController(credits, animated: true)
     }
 }

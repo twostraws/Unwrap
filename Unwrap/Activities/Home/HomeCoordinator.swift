@@ -54,7 +54,14 @@ class HomeCoordinator: Coordinator, AlertShowing {
     @objc func showHelp() {
         let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let navController = CoordinatedNavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .formSheet
+            navigationController.present(navController, animated: true)
+        } else {
+            navigationController.pushViewController(viewController, animated: true)
+        }
     }
 
     /// Start sharing the user's current score.
@@ -121,11 +128,5 @@ class HomeCoordinator: Coordinator, AlertShowing {
             // send all other types of URL over to the main application to figure out
             UIApplication.shared.open(url)
         }
-    }
-
-    /// Show credits for the app.
-    @objc func showCredits() {
-        let credits = CreditsViewController()
-        navigationController.pushViewController(credits, animated: true)
     }
 }
