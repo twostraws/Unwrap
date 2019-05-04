@@ -46,7 +46,11 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
         if activity.isLocked {
             // They can't access this practice activity yet.
             showAlert(title: "Activity Locked", body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.")
-            splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
+
+            if splitViewController.isCollapsed == false {
+                splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
+            }
+
             return false
         } else {
             // They can access this activity, so clear our state and begin immediately.
