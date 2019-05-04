@@ -69,6 +69,16 @@ class WebView: UIView {
         webView.reload()
     }
 
+    var canGoBack: Bool { return webView.canGoBack }
+    @objc func goBack() {
+        webView.goBack()
+    }
+
+    var canGoForward: Bool { return webView.canGoForward }
+    @objc func goForward() {
+        webView.goForward()
+    }
+
     func loadingDidStart() {
         progressView.progress = 0
         progressView.isHidden = false
