@@ -14,6 +14,9 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     var internalWebView: WebView!
     var url: URL
 
+    var backButton: UIBarButtonItem!
+    var forwardButton: UIBarButtonItem!
+
     var refreshButton: UIBarButtonItem!
     var shareButton: UIBarButtonItem!
 
@@ -40,6 +43,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        backButton = UIBarButtonItem(image: UIImage(bundleName: "Back"), style: .plain, target: internalWebView, action: #selector(internalWebView.goBack))
+        forwardButton = UIBarButtonItem(image: UIImage(bundleName: "Forward"), style: .plain, target: internalWebView, action: #selector(internalWebView.goForward))
+        navigationItem.setLeftBarButtonItems([backButton, forwardButton], animated: true)
+
         refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: internalWebView, action: #selector(internalWebView.reload))
         shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
         navigationItem.setRightBarButtonItems([shareButton, refreshButton], animated: true)
@@ -54,21 +61,29 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         present(alert, animated: true)
     }
 
+    private func updateBackForwardState() {
+        backButton.isEnabled = internalWebView.canGoBack
+        forwardButton.isEnabled = internalWebView.canGoForward
+    }
+
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         internalWebView.loadingDidStart()
         refreshButton?.isEnabled = false
+        updateBackForwardState()
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         title = "Failed to load"
         internalWebView.loadingDidFinish()
         refreshButton?.isEnabled = true
+        updateBackForwardState()
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
         internalWebView.loadingDidFinish()
         refreshButton?.isEnabled = true
+        updateBackForwardState()
     }
 
     /// Disallow new windows from being created.
