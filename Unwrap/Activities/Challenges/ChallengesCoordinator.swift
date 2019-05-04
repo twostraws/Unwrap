@@ -144,7 +144,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
     /// Called from the main Challenges table view so that users can share their scores with friends online.
     func shareScore(_ challenge: ChallengeResult, from sourceRect: CGRect) {
-        let text = "I scored \(challenge.score) in Unwrap's daily challenge for \(challenge.date.formatted). Download it here: \(Unwrap.appURL)"
+        let text = "I scored \(challenge.score) in Unwrap's daily challenge for \(challenge.date.formatted). Download it here: \(Unwrap.appURL) (via @twostraws)"
 
         let alert = UIActivityViewController(activityItems: [text], applicationActivities: nil)
 
