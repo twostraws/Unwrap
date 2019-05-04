@@ -52,8 +52,6 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// Show the help screen.
     @objc func showHelp() {
-        User.current.completedChallenge(score: 10000)
-        return
         let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
