@@ -11,7 +11,7 @@ import UIKit
 
 /// Manages everything launched from the Challenges tab in the app.
 class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
-    var splitViewController = UISplitViewController()
+    var splitViewController = PortraitSplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
     /// The list of practice activities in the current challenge.
@@ -127,7 +127,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             User.current.completedChallenge(score: 0)
 
             // then exit the challenge
-            self.returnToStart(pointsAwarded: false, activityType: .challenges)
+            self.returnToStart(activityType: .challenges)
         }
 
         let continueAction = UIAlertAction(title: "Continue", style: .cancel)

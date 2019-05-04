@@ -12,7 +12,7 @@ import UIKit
 
 /// Manages everything launched from the Learn tab in the app.
 class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling, UISplitViewControllerDelegate {
-    var splitViewController = UISplitViewController()
+    var splitViewController = PortraitSplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
     var activeStudyReview: StudyReview!
 
@@ -56,10 +56,10 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         activeStudyReview = StudyReview.review(for: title.bundleName)
 
         let studyViewController = StudyViewController()
-        studyViewController.coordinator = self
         studyViewController.hidesBottomBarWhenPushed = true
         studyViewController.title = title
         studyViewController.chapter = title.bundleName
+        studyViewController.coordinator = self
 
         return studyViewController
     }
@@ -101,16 +101,16 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
 
         if activeStudyReview.reviewType == "multipleSelection" {
             let viewController = MultipleSelectReviewViewController.instantiate()
-            viewController.coordinator = self
             viewController.review = activeStudyReview
             viewController.sectionName = activeStudyReview.title.bundleName
+            viewController.coordinator = self
 
             let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
         } else {
             let viewController = SingleSelectReviewViewController.instantiate()
-            viewController.coordinator = self
             viewController.review = activeStudyReview
+            viewController.coordinator = self
 
             let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)
@@ -147,12 +147,12 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
             } else {
                 // This is a single selection review but we haven't shown them all yet, so show another in the sequence.
                 let viewController = SingleSelectReviewViewController.instantiate()
-                viewController.coordinator = self
                 viewController.review = single.review
                 viewController.answers = single.answers
                 viewController.questionNumber = single.questionNumber + 1
+                viewController.coordinator = self
 
-                reviewViewController.navigationController?.pushViewController(viewController, animated: false)
+                reviewViewController.navigationController?.pushViewController(viewController, animated: true)
             }
         } else {
             /// this is a multiple selection review, so we only ever show one – we're done reviewing.

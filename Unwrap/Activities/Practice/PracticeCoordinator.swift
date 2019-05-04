@@ -10,7 +10,7 @@ import UIKit
 
 /// Manages everything launched from the Practice tab in the app.
 class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, AlertShowing {
-    var splitViewController = UISplitViewController()
+    var splitViewController = PortraitSplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
     var practiceViewController = PracticeViewController(style: .plain)
@@ -102,7 +102,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
     /// Called when the user has requested to exit the current practice session, so we should terminate it without awarding points.
     func skipPracticing() {
         practiceViewController.resetTableView()
-        returnToStart(pointsAwarded: false)
+        returnToStart()
     }
 
     /// Add something like "(2/10)" to the title of each practice activity.

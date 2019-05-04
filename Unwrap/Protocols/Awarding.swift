@@ -20,12 +20,11 @@ extension Awarding {
         viewController.awardType = type
         viewController.pointsToAward = points
         viewController.modalTransitionStyle = .crossDissolve
-        viewController.modalPresentationStyle = .formSheet
 
         if splitViewController.isCollapsed {
             // As soon as the award view controller is shown, get back to the root of our navigation stack.
             splitViewController.present(viewController, animated: true) {
-                self.returnToStart(pointsAwarded: true)
+                self.returnToStart()
             }
         } else {
             // Show the awards screen alongside the master view controller.
@@ -39,8 +38,8 @@ extension Awarding {
     }
 
     /// Returns to the root of our navigation stack.
-    func returnToStart(pointsAwarded: Bool, activityType: Unwrap.ActivityType = .practice) {
-        splitViewController.popToRootViewController(animated: !pointsAwarded)
+    func returnToStart(activityType: Unwrap.ActivityType = .practice) {
+        splitViewController.popToRootViewController()
 
         if splitViewController.isCollapsed == false {
             let viewController = PleaseSelectViewController.instantiate()
