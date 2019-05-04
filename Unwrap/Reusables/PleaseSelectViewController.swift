@@ -9,15 +9,9 @@
 import UIKit
 
 class PleaseSelectViewController: UIViewController, Storyboarded {
-    enum SelectionMode {
-        case challenge
-        case news
-        case practice
-    }
-
     @IBOutlet var logo: ShapeView!
     @IBOutlet var prompt: UILabel!
-    var selectionMode = SelectionMode.practice
+    var selectionMode = Unwrap.ActivityType.practice
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +23,21 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
         logo.addGestureRecognizer(tap)
 
         switch selectionMode {
-        case .challenge:
-            // it seems weird to repeat the text here
-            prompt.text = ""
+        case .challenges:
+            if User.current.hasCompletedTodaysChallenge {
+                prompt.text = "Come back tomorrow"
+            } else {
+                prompt.text = "Start today's challenge when you're ready"
+            }
 
         case .news:
             prompt.text = "Please select an article to read"
 
         case .practice:
             prompt.text = "Please select a practice activity to begin"
+
+        default:
+            prompt.text = ""
         }
     }
 

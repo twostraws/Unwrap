@@ -39,8 +39,13 @@ extension Awarding {
     }
 
     /// Returns to the root of our navigation stack.
-    func returnToStart(pointsAwarded: Bool) {
+    func returnToStart(pointsAwarded: Bool, activityType: Unwrap.ActivityType = .practice) {
         splitViewController.popToRootViewController(animated: !pointsAwarded)
-        splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
+
+        if splitViewController.isCollapsed == false {
+            let viewController = PleaseSelectViewController.instantiate()
+            viewController.selectionMode = activityType
+            splitViewController.showDetailViewController(viewController, sender: self)
+        }
     }
 }

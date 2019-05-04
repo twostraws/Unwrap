@@ -37,7 +37,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
         // Set up the detail view controller
         let detailViewController = PleaseSelectViewController.instantiate()
-        detailViewController.selectionMode = .challenge
+        detailViewController.selectionMode = .challenges
 
         splitViewController.viewControllers = [primaryNavigationController, detailViewController]
         splitViewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
@@ -127,7 +127,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             User.current.completedChallenge(score: 0)
 
             // then exit the challenge
-            self.returnToStart(pointsAwarded: false)
+            self.returnToStart(pointsAwarded: false, activityType: .challenges)
         }
 
         let continueAction = UIAlertAction(title: "Continue", style: .cancel)
@@ -163,7 +163,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         guard splitViewController.viewControllers.last is AwardPointsViewController else { return }
 
         let newDetail = PleaseSelectViewController.instantiate()
-        newDetail.selectionMode = .challenge
+        newDetail.selectionMode = .challenges
         splitViewController.viewControllers = [splitViewController.viewControllers[0], newDetail]
     }
 }

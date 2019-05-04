@@ -9,6 +9,14 @@
 import UIKit
 
 enum Unwrap {
+    enum ActivityType {
+        case home
+        case learn
+        case practice
+        case challenges
+        case news
+    }
+
     /// The URL where users can go to share this app.
     static let appURL = URL(staticString: "https://github.com/twostraws/unwrap")
 
