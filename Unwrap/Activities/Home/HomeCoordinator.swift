@@ -52,6 +52,8 @@ class HomeCoordinator: Coordinator, AlertShowing {
 
     /// Show the help screen.
     @objc func showHelp() {
+        User.current.completedChallenge(score: 10000)
+        return
         let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
@@ -60,7 +62,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
     /// Start sharing the user's current score.
     func shareScore(from sourceRect: CGRect) {
         let image = User.current.rankImage.imageForSharing
-        let text = "I'm on level \(User.current.rankNumber) in Unwrap. Download it here: \(Unwrap.appURL)"
+        let text = "I'm on level \(User.current.rankNumber) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
 
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         alert.completionWithItemsHandler = handleScoreSharingResult
@@ -79,8 +81,8 @@ class HomeCoordinator: Coordinator, AlertShowing {
         if User.current.isBadgeEarned(badge) {
             // This badge is earned, so share it using the system share sheet.
             showAlert(title: badge.name, body: badge.description, alternateTitle: "Share") {
-                let image = badge.image
-                let text = "I earned the badge \(badge.name) in Unwrap. Download it here: \(Unwrap.appURL)"
+                let image = badge.image.imageForSharing
+                let text = "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
 
                 let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
 

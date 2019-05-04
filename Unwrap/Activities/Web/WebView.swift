@@ -93,7 +93,7 @@ class WebView: UIView {
         var shareItems: [Any] = [url]
 
         if let webViewTitle = webView.title {
-            shareItems.append(webViewTitle)
+            shareItems.append("\(webViewTitle) (via @twostraws)")
         }
 
         return shareItems
