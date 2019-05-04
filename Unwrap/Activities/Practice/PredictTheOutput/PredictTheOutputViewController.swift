@@ -34,7 +34,7 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    private func configureNavigation() {
+    func configureNavigation() {
         title = "Predict the Output" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true

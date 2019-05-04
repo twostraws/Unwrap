@@ -75,8 +75,8 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     func askQuestion() {
         if let currentQuestion = questions.popLast() {
             let viewController = currentQuestion.instantiate()
-            viewController.coordinator = self
             viewController.questionNumber = 10 - questions.count
+            viewController.coordinator = self
 
             let detailNav = CoordinatedNavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(detailNav, sender: self)

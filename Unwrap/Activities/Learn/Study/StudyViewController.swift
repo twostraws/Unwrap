@@ -10,17 +10,19 @@ import UIKit
 
 /// Responsible for showing one chapter of the book as text.
 class StudyViewController: UIViewController, TappableTextViewDelegate {
-    var coordinator: LearnCoordinator?
+    var coordinator: LearnCoordinator? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var studyTextView = StudyTextView()
     var chapter = ""
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    func configureNavigation() {
         navigationItem.largeTitleDisplayMode = .never
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        extendedLayoutIncludesOpaqueBars = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
     }
 
     override func loadView() {
@@ -32,9 +34,6 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
-
-        extendedLayoutIncludesOpaqueBars = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
 
         // always include the safe area insets in the scroll view content adjustment
         studyTextView.contentInsetAdjustmentBehavior = .always

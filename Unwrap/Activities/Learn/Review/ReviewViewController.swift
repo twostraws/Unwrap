@@ -9,7 +9,11 @@
 import UIKit
 
 class ReviewViewController: UIViewController, PracticingViewController {
-    var coordinator: (AnswerHandling & Skippable)?
+    var coordinator: (AnswerHandling & Skippable)? {
+        didSet {
+            configureNavigation()
+        }
+    }
 
     var questionNumber = 1
 
@@ -18,14 +22,8 @@ class ReviewViewController: UIViewController, PracticingViewController {
     var sectionName = ""
     var review: StudyReview!
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        fatalError("Not implemented")
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        // We need to configure our navigation items super early to avoid janky animations thanks to our adaptive layout
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
@@ -34,7 +32,6 @@ class ReviewViewController: UIViewController, PracticingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
     }
 

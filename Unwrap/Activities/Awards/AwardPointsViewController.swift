@@ -10,7 +10,11 @@ import UIKit
 
 /// The view controller that handles visually awarding points to users.
 class AwardPointsViewController: UIViewController, Storyboarded {
-    var coordinator: Awarding?
+    var coordinator: Awarding? {
+        didSet {
+            configureNavigation()
+        }
+    }
 
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
@@ -28,14 +32,9 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         return .lightContent
     }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        fatalError("Not implemented")
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
         navigationItem.largeTitleDisplayMode = .never
-
     }
 
     override func viewDidLoad() {

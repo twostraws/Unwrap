@@ -15,10 +15,15 @@ class MultipleSelectReviewViewController: ReviewViewController, Storyboarded {
 
     var dataSource: MultipleSelectReviewDataSource!
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    override func configureNavigation() {
+        super.configureNavigation()
+        title = getTitle()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = getTitle()
         dataSource = MultipleSelectReviewDataSource(review: review)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource

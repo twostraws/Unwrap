@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Tap to Code practice activities.
 class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "tap-to-code"
 
     @IBOutlet var prompt: UILabel!
@@ -37,9 +42,8 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    func configureNavigation() {
+        title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -53,8 +57,6 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
 
         if practiceData.existingCode.isEmpty {
             // Hide the existing code label and disable the collection view constraint that positions it below. This will make Auto Layout rely on a second vertical spacing constraint that positions the collection view relative to the prompt view.

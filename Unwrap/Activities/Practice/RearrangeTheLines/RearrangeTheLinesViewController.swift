@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Rearrange the Lines practice activities.
 class RearrangeTheLinesViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "rearrange-the-lines"
 
     @IBOutlet var prompt: UILabel!
@@ -27,9 +32,8 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    func configureNavigation() {
+        title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -43,8 +47,6 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
 
         dataSource = RearrangeTheLinesDataSource(practiceData: practiceData)
         tableView.dataSource = dataSource

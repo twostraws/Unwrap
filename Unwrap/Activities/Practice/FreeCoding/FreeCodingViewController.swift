@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Free Coding practice activities.
 class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "free-coding"
 
     @IBOutlet var prompt: UILabel!
@@ -30,9 +35,8 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
     let lexer = SwiftLexer()
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    func configureNavigation() {
+        title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -46,8 +50,6 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()

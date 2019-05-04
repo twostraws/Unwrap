@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Spot the Error practice activities.
 class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "spot-the-error"
 
     @IBOutlet var prompt: UILabel!
@@ -27,9 +32,8 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    func configureNavigation() {
+        title = "Spot the Error" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -43,8 +47,6 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Spot the Error" + (coordinator?.titleSuffix(for: self) ?? "")
 
         dataSource = SpotTheErrorDataSource(practiceData: practiceData)
         dataSource.delegate = self

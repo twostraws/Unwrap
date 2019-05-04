@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Type Checker practice activities.
 class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "type-practice"
 
     @IBOutlet var prompt: UILabel!
@@ -27,9 +32,8 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    func configureNavigation() {
+        title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -42,8 +46,6 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
-
-        title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
 
         // Users need to be able to check all the rows they want, so our data source is used for the table view's data source and delegate.
         dataSource = TypeCheckerDataSource(review: review)
