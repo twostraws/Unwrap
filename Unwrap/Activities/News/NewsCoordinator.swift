@@ -48,6 +48,7 @@ class NewsCoordinator: Coordinator {
     /// Triggered when we already have a Safari view controller configured and ready to go, so we just show it.
     func startReading(using viewController: UIViewController, withURL url: URL) {
         let detailNav = CoordinatedNavigationController(rootViewController: viewController)
+        detailNav.setToolbarHidden(false, animated: true)
         splitViewController.showDetailViewController(detailNav, sender: self)
         User.current.readNewsStory(forURL: url)
     }

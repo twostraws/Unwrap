@@ -43,13 +43,17 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        fixedSpace.width = 50
+
         backButton = UIBarButtonItem(image: UIImage(bundleName: "Back"), style: .plain, target: internalWebView, action: #selector(internalWebView.goBack))
         forwardButton = UIBarButtonItem(image: UIImage(bundleName: "Forward"), style: .plain, target: internalWebView, action: #selector(internalWebView.goForward))
-        navigationItem.setLeftBarButtonItems([backButton, forwardButton], animated: true)
+        shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
+        setToolbarItems([backButton, fixedSpace, forwardButton, flexibleSpace, shareButton], animated: true)
 
         refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: internalWebView, action: #selector(internalWebView.reload))
-        shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
-        navigationItem.setRightBarButtonItems([shareButton, refreshButton], animated: true)
+        navigationItem.setRightBarButton(refreshButton, animated: true)
     }
 
     @objc private func shareArticle() {
@@ -67,6 +71,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        title = webView.url?.host ?? webView.title
         internalWebView.loadingDidStart()
         refreshButton?.isEnabled = false
         updateBackForwardState()
@@ -80,7 +85,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        title = webView.title
+        title = webView.url?.host ?? webView.title
         internalWebView.loadingDidFinish()
         refreshButton?.isEnabled = true
         updateBackForwardState()
