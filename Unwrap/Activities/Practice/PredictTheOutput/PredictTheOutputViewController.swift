@@ -11,7 +11,12 @@ import UIKit
 
 /// The view controller that handles Predict the Output practice activities.
 class PredictTheOutputViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "predict-the-output"
 
     @IBOutlet var prompt: UILabel!
@@ -29,9 +34,8 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
     var questionNumber = 1
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+    private func configureNavigation() {
+        title = "Predict the Output" + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
@@ -45,8 +49,6 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Predict the Output" + (coordinator?.titleSuffix(for: self) ?? "")
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()
