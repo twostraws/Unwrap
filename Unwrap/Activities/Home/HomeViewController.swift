@@ -32,7 +32,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
-        #if targetEnvironment(simulator)
+        #if DEBUG
             // showing the review request thing while debugging is annoying, so we'll just do nothing instead
         #else
             // once the user has had some time with the app, ask them what they think
