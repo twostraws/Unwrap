@@ -23,6 +23,7 @@
 		51053A082113804E00B28328 /* Tour.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51053A072113804E00B28328 /* Tour.xcassets */; };
 		511458FC20E5694D003BABAD /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511458FB20E5694D003BABAD /* ReviewViewController.swift */; };
 		5115CD66216B98C3006635FE /* EditingToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5115CD65216B98C3006635FE /* EditingToolbarView.swift */; };
+		51163087227E333F007BD640 /* PortraitSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51163086227E333F007BD640 /* PortraitSplitViewController.swift */; };
 		511FD6A92105E6B00023E92C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6A82105E6B00023E92C /* NewsViewController.swift */; };
 		511FD6AB2105E6EB0023E92C /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6AA2105E6EB0023E92C /* NewsDataSource.swift */; };
 		511FD6AD2105E72C0023E92C /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FD6AC2105E72C0023E92C /* NewsCoordinator.swift */; };
@@ -660,6 +661,7 @@
 		51053A072113804E00B28328 /* Tour.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tour.xcassets; sourceTree = "<group>"; };
 		511458FB20E5694D003BABAD /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		5115CD65216B98C3006635FE /* EditingToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingToolbarView.swift; sourceTree = "<group>"; };
+		51163086227E333F007BD640 /* PortraitSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitSplitViewController.swift; sourceTree = "<group>"; };
 		511FD6A82105E6B00023E92C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		511FD6AA2105E6EB0023E92C /* NewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
 		511FD6AC2105E72C0023E92C /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
@@ -1398,6 +1400,7 @@
 				51CC139C2065AB8500F37A67 /* GradientView.swift */,
 				51596DE920EE04EF00952ADC /* LeftAlignedCollectionViewFlowLayout.swift */,
 				51A90DC1227AF0D60068A4F9 /* PleaseSelectViewController.swift */,
+				51163086227E333F007BD640 /* PortraitSplitViewController.swift */,
 				51CC1390206560A600F37A67 /* ShapeView.swift */,
 				511FD6BF2107425F0023E92C /* TappableTextView.swift */,
 			);
@@ -3000,6 +3003,7 @@
 				51A4476D210926FE005D8665 /* CountedSet.swift in Sources */,
 				51862E5C20CE13F00086CD1B /* UserTracking.swift in Sources */,
 				51053A002113332A00B28328 /* TourItemViewController.swift in Sources */,
+				51163087227E333F007BD640 /* PortraitSplitViewController.swift in Sources */,
 				511FD6B621065CED0023E92C /* HelpViewController.swift in Sources */,
 				5144A742227B997A00AB7E58 /* WebView.swift in Sources */,
 				51596DE820EE04A500952ADC /* TapToCodeViewController.swift in Sources */,
