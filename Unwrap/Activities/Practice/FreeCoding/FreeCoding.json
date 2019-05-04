@@ -96,7 +96,7 @@
     },
     {
         "question": "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value.",
-        "hint": "You can solve this using a <code>for</code> loop.",
+        "hint": "You can solve this using a <code>didSet</code> property observer.",
         "startingCode": "",
         "answers": [
             "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
