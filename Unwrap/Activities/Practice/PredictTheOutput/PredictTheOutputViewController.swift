@@ -28,6 +28,17 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
     /// Lets us track how far the user is through their current practice/challenge session.
     var questionNumber = 1
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +47,6 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
 
         title = "Predict the Output" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
-        extendedLayoutIncludesOpaqueBars = true
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()
@@ -46,9 +55,6 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
         // Make sure our text view stays out of the way of the keyboard rather than scrolling under it.
         scrollView.avoidKeyboard()
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
 
         // Attach the Submit button directly to the keyboard to make input faster.
         let submitButton = UIButton.primary(frame: CGRect(x: 0, y: 0, width: 50, height: UIButton.primaryButtonHeight))

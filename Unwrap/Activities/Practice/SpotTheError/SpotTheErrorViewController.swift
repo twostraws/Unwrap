@@ -26,6 +26,17 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
     /// Lets us track how far the user is through their current practice/challenge session.
     var questionNumber = 1
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +45,12 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
 
         title = "Spot the Error" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
-        extendedLayoutIncludesOpaqueBars = true
 
         dataSource = SpotTheErrorDataSource(practiceData: practiceData)
         dataSource.delegate = self
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         prompt.attributedText = practiceData.question.fromSimpleHTML()
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
     }
 
     /// Shows extra explanation to users to help them understand where the error is.
