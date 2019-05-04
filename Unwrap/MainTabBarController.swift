@@ -20,7 +20,6 @@ class MainTabBarController: UITabBarController, Storyboarded {
         super.viewDidLoad()
 
         viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
-        tabBar.isTranslucent = false
     }
 
     /// If we get some launch options, figure out which one was requested and jump right to the correct tab.

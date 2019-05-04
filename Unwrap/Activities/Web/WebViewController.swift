@@ -50,7 +50,8 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         backButton = UIBarButtonItem(image: UIImage(bundleName: "Back"), style: .plain, target: internalWebView, action: #selector(internalWebView.goBack))
         forwardButton = UIBarButtonItem(image: UIImage(bundleName: "Forward"), style: .plain, target: internalWebView, action: #selector(internalWebView.goForward))
         shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
-        setToolbarItems([backButton, fixedSpace, forwardButton, flexibleSpace, shareButton], animated: true)
+
+        toolbarItems = [backButton, fixedSpace, forwardButton, flexibleSpace, shareButton]
 
         refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: internalWebView, action: #selector(internalWebView.reload))
         navigationItem.setRightBarButton(refreshButton, animated: true)

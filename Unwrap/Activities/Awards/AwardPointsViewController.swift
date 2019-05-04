@@ -35,6 +35,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.largeTitleDisplayMode = .never
+
     }
 
     override func viewDidLoad() {
