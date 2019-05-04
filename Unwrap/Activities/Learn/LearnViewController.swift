@@ -33,9 +33,10 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
-    /// Refreshes everything when the user changes.
+    /// Refreshes visible cells when the user changes.
     func userDataChanged() {
-        tableView.reloadData()
+        guard let indexPaths = tableView.indexPathsForVisibleRows else { return }
+        tableView.reloadRows(at: indexPaths, with: .none)
     }
 
     func startStudying(title: String) {
