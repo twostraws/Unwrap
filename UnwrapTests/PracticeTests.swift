@@ -35,7 +35,8 @@ class PracticeTests: XCTestCase {
             "\nfunc checkIdentical(stringA : String, stringB : String)  ->  Bool  {\n\n\treturn stringA.lowercased()  ==  stringB.lowercased()\n\n}\n",
             "func compare(thing1 :String,thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased(){\nreturn true\n} else {\nreturn false\n}\n}",
             "  func    compare   (_ thing1 :String, _ thing2 : String) -> Bool{\nif thing1.lowercased() == thing2.lowercased() {\nreturn true\n}\nelse\n{\nreturn false\n}\n}",
-            "func equalStrings(str1: String, str2: String) -> Bool {\nif str1.lowercased() == str2.lowercased() {\nreturn true\n}\nreturn false\n}"
+            "func equalStrings(str1: String, str2: String) -> Bool {\nif str1.lowercased() == str2.lowercased() {\nreturn true\n}\nreturn false\n}",
+            "func equalStrings(str1: String, str2: String) -> Bool {\nif str1.lowercased() == str2.lowercased() {\nreturn true\n}\nreturn false\n}\nequalString(str1: \"Hello\", str2: \"hello\")"
         ]
 
         let wrongAnswers = [
