@@ -102,5 +102,10 @@ class ExtensionTests: XCTestCase {
         let cleanString3 = "var array:[Int]=[]"
         let anonymizedString3 = "var &1& = [Int]()"
         XCTAssertEqual(cleanString3.toAnonymizedVariables(), anonymizedString3)
+
+        // check that a simple (albeit bad) function definition doesn't cause problems
+        let cleanString4 = "func a"
+        let anonymizedString4 = "func #1#"
+        XCTAssertEqual(cleanString4.toAnonymizedVariables(), anonymizedString4)
     }
 }

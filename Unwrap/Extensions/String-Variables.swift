@@ -124,7 +124,7 @@ extension String {
 
                 // We don't want to just do a simple string replace, because they might call their thing "a" and that would be replaced everywhere.
                 // So, ensure whatever is before or after their name isn't more letters/numbers, and it isn't preceded by a full stop.
-                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9.])\(componentName)([^A-Za-z0-9])", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
+                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9.])\(componentName)([^A-Za-z0-9]|$)", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
                 componentNumber += 1
             } else {
                 break
