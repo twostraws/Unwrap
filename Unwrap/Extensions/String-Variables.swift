@@ -52,9 +52,11 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "...", with: " ... ")
         replaced = replaced.replacingOccurrences(of: "..<", with: " ..< ")
 
-        // Some folks, particularly those coming from Python, use Range(1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
+        // Some folks, particularly those coming from Python, use Range(1...100) or (1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
+        replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
+        replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
 
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
