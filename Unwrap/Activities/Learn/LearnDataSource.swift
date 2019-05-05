@@ -33,13 +33,10 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType = .disclosureIndicator
 
         let chapter = Unwrap.chapters[indexPath.section]
-        var section = chapter.sections[indexPath.row]
+        let section = chapter.sections[indexPath.row]
         cell.textLabel?.text = section
 
         // Decide how to show the checkmark for this section.
-		if section == "Where now?" {
-			section = "Final test"
-		}
 
         let score = User.current.ratingForSection(section.bundleName)
 
