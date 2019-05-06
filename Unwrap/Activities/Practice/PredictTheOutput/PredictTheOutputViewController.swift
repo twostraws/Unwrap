@@ -95,7 +95,16 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
                 answerButton.correctAnswer()
             } else {
                 answerButton.wrongAnswer()
+                addReasonToTitle()
             }
         }
+    }
+
+    func addReasonToTitle() {
+        let newTopString = NSMutableAttributedString(attributedString: "\(practiceData.question)\n\n".fromSimpleHTML())
+        let newBottomString = "This code will print \"\(practiceData.correctAnswer)\".".fromSimpleHTML().formattedAsExplanation()
+
+        newTopString.append(newBottomString)
+        prompt.attributedText = newTopString
     }
 }

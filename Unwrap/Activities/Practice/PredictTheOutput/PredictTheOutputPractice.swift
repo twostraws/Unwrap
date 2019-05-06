@@ -22,6 +22,10 @@ struct PredictTheOutputPractice: PracticeActivity {
     /// The output that will be printed when the code is run.
     var answer = ""
 
+    var correctAnswer: String {
+        return process(answer)
+    }
+
     static let name = "Predict the Output"
     static let subtitle = "Read code then predict the output"
     static let lockedUntil = "Functions: Summary"
@@ -82,17 +86,16 @@ struct PredictTheOutputPractice: PracticeActivity {
 
     // Checks a user's input against the correct answer, giving just a little leeway for variance.
     func answerIsCorrect(_ str: String) -> Bool {
-        let targetAnswer = process(answer)
-        let theirAnswer = process(str)
+        let targetAnswer = correctAnswer.lowercased()
+        let theirAnswer = process(str).lowercased()
 
         // let's be generous – don't force them to get case exactly right
         return targetAnswer.lowercased() == theirAnswer.lowercased()
     }
 
-    /// Reduces the chance of basic differences by removing smart quotes and extra spaces, while also collapsing case.
+    /// Reduces the chance of basic differences by removing smart quotes and extra spaces, but *not* collapsing case – we do that inside answerIsCorrect() so that our correctAnswer property is formatted nicely for users.
     private func process(_ string: String) -> String {
-        var result = string.lowercased()
-        result = result.replacingOccurrences(of: "“", with: "\"")
+        var result = string.replacingOccurrences(of: "“", with: "\"")
         result = result.replacingOccurrences(of: "”", with: "\"")
         result = result.replacingOccurrences(of: "‘", with: "'")
         result = result.replacingOccurrences(of: "’", with: "'")
