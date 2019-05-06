@@ -37,6 +37,7 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = section
 
         // Decide how to show the checkmark for this section.
+
         let score = User.current.ratingForSection(section.bundleName)
 
         if score == 0 {
