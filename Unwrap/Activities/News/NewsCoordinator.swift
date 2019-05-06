@@ -16,6 +16,9 @@ class NewsCoordinator: Coordinator {
     init() {
         // Set up the master view controller
         primaryNavigationController.navigationBar.prefersLargeTitles = true
+
+        // FIXME: Disable transluceny on this navigation bar, otherwise on iPad selecting a news story makes the navigation bar go gray.
+        primaryNavigationController.navigationBar.isTranslucent = false
         primaryNavigationController.coordinator = self
 
         let viewController = NewsViewController(style: .plain)
