@@ -27,6 +27,10 @@ class WebView: UIView {
 
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.allowsBackForwardNavigationGestures = true
+
+        // FIXME: For some reason this web view loves having horizontal bounces even for pages that don't scroll horizontally. Disabling all bouncing sucks, but at least it solves the weird scrolling behavior. Note: this might only happen when we're inside a split view?
+        webView.scrollView.bounces = false
+
         addSubview(webView)
 
         NSLayoutConstraint.activate([
