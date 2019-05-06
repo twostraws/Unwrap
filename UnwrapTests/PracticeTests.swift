@@ -156,6 +156,7 @@ class PracticeTests: XCTestCase {
         let correctAnswers = [
             "let counter = numbers.filter{return $0 == 5}.count\nprint(counter)",
             "let count = numbers.filter{return $0 == 5}.count\nprint(count)",
+            "let count = numbers.filter({return $0 == 5}).count\nprint(count)",
             "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
         ]
 
@@ -238,7 +239,7 @@ class PracticeTests: XCTestCase {
         // test a wide variety of possible examples
         for _ in 1...100 {
             let test = TypeCheckerPractice()
-            XCTAssertEqual(test.answers.count, 8, "There should be precisely 8 test answers.")
+            XCTAssertEqual(test.answers.count, 10, "There should be precisely 10 test answers.")
         }
     }
 }

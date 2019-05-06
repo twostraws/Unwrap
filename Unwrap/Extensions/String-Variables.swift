@@ -29,6 +29,9 @@ extension String {
             return replaced
         }
 
+        // Homogenize trailing closures: array.map { … } is always preferred to array.map({ … })
+        replaced = replaced.replacingOccurrences(of: #"\(\{(.*?)\}\)"#, with: "{$1}", options: .regularExpression)
+
         // Homogenize brace style.
         replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
         replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
