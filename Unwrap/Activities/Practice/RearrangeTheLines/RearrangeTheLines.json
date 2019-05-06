@@ -45,7 +45,7 @@
 		"code": "func isPassingGrade(for scores: [Int]) -> Bool {\n\tvar total = 0\n\tfor score in scores {\n\t\ttotal += score\n\t}\n\tif total >= 500 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}"
 	},
 	{
-		"question": "This code should make pizza, but only if it doesn't have pineapple.",
+		"question": "This code should define an error enum, then create a function that makes pizza – but only if it doesn't have pineapple.",
 		"hint": "Make sure you define the enum before the class.",
 		"code": "enum PizzaErrors: Error {\n\tcase hasPineapple\n}\nfunc makePizza(type: String) throws {\n\tif type != \"Hawaiian\" {\n\t\tprint(\"Your pizza will be ready in 10 minutes.\")\n\t} else {\n\t\tthrow PizzaErrors.hasPineapple\n\t}\n}"
 	},
