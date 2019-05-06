@@ -1602,9 +1602,9 @@
 		51C5641C20CCB7ED0093030C /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				4C41E3112207C651009D580E /* Review */,
 				51A6D63420E6539200FB6B46 /* FreeCoding */,
 				51A6D63720E6539800FB6B46 /* PredictTheOutput */,
+				4C41E3112207C651009D580E /* Review */,
 				51A6D63D20E653A300FB6B46 /* SpotTheError */,
 				51A6D63A20E6539D00FB6B46 /* RearrangeTheLines */,
 				51D8FE6F20ED3856004DFF83 /* TapToCode */,
