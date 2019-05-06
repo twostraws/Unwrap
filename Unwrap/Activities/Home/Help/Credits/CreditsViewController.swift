@@ -13,6 +13,7 @@ class CreditsViewController: UIViewController {
 
     override func loadView() {
         view = UIView()
+        view.backgroundColor = .white
 
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.dataDetectorTypes = .link
