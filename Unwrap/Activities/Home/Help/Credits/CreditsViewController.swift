@@ -16,7 +16,6 @@ class CreditsViewController: UIViewController {
         view.backgroundColor = .white
 
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.dataDetectorTypes = .link
         textView.isEditable = false
         view.addSubview(textView)
 

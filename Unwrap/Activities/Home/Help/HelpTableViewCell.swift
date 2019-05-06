@@ -18,16 +18,13 @@ class HelpTableViewCell: UITableViewCell {
         textView.font = Unwrap.scaledBaseFont
         textView.isEditable = false
         textView.isScrollEnabled = false
-        textView.dataDetectorTypes = [.link]
         contentView.addSubview(textView)
 
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             textView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-
-            // Add extra spacing at the bottom of the cell to provide clearer section spacing
-            textView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -20)
+            textView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
         ])
     }
 

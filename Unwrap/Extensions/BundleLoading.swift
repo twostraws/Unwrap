@@ -68,8 +68,14 @@ extension String {
     }
 
     /// Loads the HTML wrapper from our bundle.
-    static func wrapperHTML(allowTheming: Bool, width: CGFloat) -> String {
-        var wrapperContents = String(bundleName: "HTMLWrapper.html")
+    static func wrapperHTML(allowTheming: Bool, width: CGFloat, slimLayout: Bool = false) -> String {
+        var wrapperContents: String
+
+        if slimLayout {
+            wrapperContents = String(bundleName: "HTMLWrapper-Slim.html")
+        } else {
+            wrapperContents = String(bundleName: "HTMLWrapper.html")
+        }
 
         // Replace relative URLs of images with absolute URLs.
         wrapperContents = wrapperContents.replacingOccurrences(of: "<img src=\"", with: "<img src=\"\(Bundle.main.resourceURL!)/")
