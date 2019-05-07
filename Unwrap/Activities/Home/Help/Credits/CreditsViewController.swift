@@ -7,38 +7,43 @@
 //
 
 import UIKit
+import WebKit
 
-class CreditsViewController: UIViewController {
-    let textView = UITextView()
+class CreditsViewController: UIViewController, TappableTextViewDelegate {
+    var coordinator: HomeCoordinator?
+    var textView: TappableTextView?
 
-    override func loadView() {
-        view = UIView()
+	override func loadView() {
+		textView = TappableTextView()
+        textView?.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        textView?.isEditable = false
+        textView?.linkDelegate = self
+        view = textView
+	}
 
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.dataDetectorTypes = .link
-        textView.isEditable = false
-        view.addSubview(textView)
-
-        NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            textView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
         title = "Credits"
+        let credits = String(bundleName: "Credits.html")
+        let contents = String.wrapperHTML(allowTheming: true, width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: credits)
 
-        let contents = String(bundleName: "Credits.md")
-        textView.attributedText = contents.fromSimpleMarkdown()
+        let data = Data(contents.utf8)
+        let str = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        textView?.attributedText = str
+	}
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView?.flashScrollIndicators()
     }
 
-    override func viewDidLayoutSubviews() {
-        // Set content offset to zero to make sure the textview starts from the top
-        // when the view is laid out.
-        textView.setContentOffset(.zero, animated: false)
+    func linkTapped(_ url: URL) {
+        coordinator?.open(url)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // if we're on iPad we should dismiss the modal view controller immediately so the user can browse the link they chose.
+            dismiss(animated: true)
+        }
     }
 }

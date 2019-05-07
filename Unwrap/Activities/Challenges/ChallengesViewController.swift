@@ -26,6 +26,7 @@ class ChallengesViewController: UITableViewController, UserTracking {
         tableView.dataSource = dataSource
         tableView.register(ChallengeTableViewCell.self, forCellReuseIdentifier: "Challenge")
         tableView.register(PreviousChallengeTableViewCell.self, forCellReuseIdentifier: "PreviousChallenge")
+        extendedLayoutIncludesOpaqueBars = true
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: UIApplication.willEnterForegroundNotification, object: nil)
 
@@ -36,6 +37,8 @@ class ChallengesViewController: UITableViewController, UserTracking {
 
         // reload our table each time the user returns here so that daily challenge updates correctly
         tableView.reloadData()
+        coordinator?.resetDetailViewController()
+
     }
 
     func userDataChanged() {

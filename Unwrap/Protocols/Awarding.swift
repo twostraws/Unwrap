@@ -21,19 +21,30 @@ extension Awarding {
         viewController.pointsToAward = points
         viewController.modalTransitionStyle = .crossDissolve
 
-        // As soon as the award view controller is shown, get back to the root of our navigation stack.
-        navigationController.present(viewController, animated: true) {
-            self.returnToStart(pointsAwarded: true)
+        if splitViewController.isCollapsed {
+            // As soon as the award view controller is shown, get back to the root of our navigation stack.
+            splitViewController.present(viewController, animated: true) {
+                self.returnToStart()
+            }
+        } else {
+            // Show the awards screen alongside the master view controller.
+            splitViewController.showDetailViewController(viewController, sender: self)
         }
     }
 
     /// Hides the awards view controller.
     func finishedAwards() {
-        navigationController.dismiss(animated: true)
+        splitViewController.dismiss(animated: true)
     }
 
     /// Returns to the root of our navigation stack.
-    func returnToStart(pointsAwarded: Bool) {
-        navigationController.popToRootViewController(animated: !pointsAwarded)
+    func returnToStart(activityType: Unwrap.ActivityType = .practice) {
+        splitViewController.popToRootViewController()
+
+        if splitViewController.isCollapsed == false {
+            let viewController = PleaseSelectViewController.instantiate()
+            viewController.selectionMode = activityType
+            splitViewController.showDetailViewController(viewController, sender: self)
+        }
     }
 }

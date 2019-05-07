@@ -9,8 +9,11 @@
 import UIKit
 
 /// Manages everything launched from the Practice tab in the app.
-class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
-    var navigationController: CoordinatedNavigationController
+class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, AlertShowing {
+    var splitViewController = PortraitSplitViewController()
+    var primaryNavigationController = CoordinatedNavigationController()
+
+    var practiceViewController = PracticeViewController(style: .plain)
 
     /// Stores whichever activity the user is currently taking, so that we can make new instances of it when working through a practice sequence.
     var currentActivity: PracticeActivity.Type?
@@ -21,41 +24,52 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
     /// Whether or not the user can have multiple attempts at questions
     let retriesAllowed = true
 
-    init(navigationController: CoordinatedNavigationController = CoordinatedNavigationController()) {
-        self.navigationController = navigationController
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.coordinator = self
+    init() {
+        // Set up the master view controller
+        primaryNavigationController.navigationBar.prefersLargeTitles = true
+        primaryNavigationController.coordinator = self
 
-        let viewController = PracticeViewController(style: .plain)
-        viewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
-        viewController.coordinator = self
-        navigationController.viewControllers = [viewController]
+        practiceViewController.coordinator = self
+        primaryNavigationController.viewControllers = [practiceViewController]
+
+        // Set up the detail view controller
+        splitViewController.viewControllers = [primaryNavigationController, PleaseSelectViewController.instantiate()]
+        splitViewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
+
+        // make this split view controller behave sensibly on iPad
+        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
     /// Called when the user wants to start practicing something. We either start it immediately, or show an alert refusing access if they haven't completed the required learn chapter.
     func startPracticing(_ activity: PracticeActivity.Type) -> Bool {
         if activity.isLocked {
             // They can't access this practice activity yet.
-            let alert = UIAlertController(title: "Activity Locked", message: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            navigationController.present(alert, animated: true)
+            showAlert(title: "Activity Locked", body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.")
+
+            if splitViewController.isCollapsed == false {
+                splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)
+            }
+
             return false
         } else {
             // They can access this activity, so clear our state and begin immediately.
             currentActivity = activity
             currentScore = 0
 
-            var viewController = activity.instantiate()
+            let viewController = activity.instantiate()
             viewController.coordinator = self
-            navigationController.pushViewController(viewController, animated: true)
+
+            let detailNav = CoordinatedNavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(detailNav, sender: self)
 
             return true
         }
     }
 
     /// Called when the user has submitted an answer from a practice question.
-    func answerSubmitted(from: UIViewController, wasCorrect: Bool) {
-        guard let practicingViewController = from as? PracticingViewController else {
+    func answerSubmitted(from viewController: UIViewController, wasCorrect: Bool) {
+        guard let practicingViewController = viewController as? PracticingViewController else {
             fatalError("Unknown view controller trying to submit a practice answer.")
         }
 
@@ -69,14 +83,14 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             finishedPracticing(type: practicingViewController.practiceType)
         } else {
             // We're not finished yet, so make a fresh instance of our practice type, move its question number along one, then show it.
-            guard var viewController = currentActivity?.instantiate() else {
+            guard let viewController = currentActivity?.instantiate() else {
                 fatalError("Trying to instantiate an empty practice activity.")
             }
 
             viewController.questionNumber = practicingViewController.questionNumber + 1
             viewController.coordinator = self
 
-            navigationController.pushViewController(viewController, animated: true)
+            practicingViewController.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 
@@ -87,7 +101,8 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
     /// Called when the user has requested to exit the current practice session, so we should terminate it without awarding points.
     func skipPracticing() {
-        returnToStart(pointsAwarded: false)
+        practiceViewController.resetTableView()
+        returnToStart()
     }
 
     /// Add something like "(2/10)" to the title of each practice activity.

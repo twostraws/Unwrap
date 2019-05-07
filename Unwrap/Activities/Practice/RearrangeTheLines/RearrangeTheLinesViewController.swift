@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Rearrange the Lines practice activities.
 class RearrangeTheLinesViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "rearrange-the-lines"
 
     @IBOutlet var prompt: UILabel!
@@ -26,6 +31,16 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
     /// Lets us track how far the user is through their current practice/challenge session.
     var questionNumber = 1
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
+        title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +48,12 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
 
-        title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
-
         dataSource = RearrangeTheLinesDataSource(practiceData: practiceData)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.isEditing = true
 
         prompt.attributedText = practiceData.question.fromSimpleHTML()
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
     }
 
     override func viewDidAppear(_ animated: Bool) {

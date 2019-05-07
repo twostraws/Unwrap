@@ -98,9 +98,19 @@ class ExtensionTests: XCTestCase {
         let anonymizedString2 = "for @1@ in 1 ... 100 {"
         XCTAssertEqual(cleanString2.toAnonymizedVariables(), anonymizedString2)
 
-        // watch out for explicit type annotation with an empty array initializer
-        let cleanString3 = "var array:[Int]=[]"
-        let anonymizedString3 = "var &1& = [Int]()"
+        // watch out for ranges in parens
+        let cleanString3 = "for i in (1...100) {"
+        let anonymizedString3 = "for @1@ in 1 ... 100 {"
         XCTAssertEqual(cleanString3.toAnonymizedVariables(), anonymizedString3)
+
+        // watch out for explicit type annotation with an empty array initializer
+        let cleanString4 = "var array:[Int]=[]"
+        let anonymizedString4 = "var &1& = [Int]()"
+        XCTAssertEqual(cleanString4.toAnonymizedVariables(), anonymizedString4)
+
+        // check that a simple (albeit bad) function definition doesn't cause problems
+        let cleanString5 = "func a"
+        let anonymizedString5 = "func #1#"
+        XCTAssertEqual(cleanString5.toAnonymizedVariables(), anonymizedString5)
     }
 }

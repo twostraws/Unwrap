@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Tap to Code practice activities.
 class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "tap-to-code"
 
     @IBOutlet var prompt: UILabel!
@@ -36,15 +41,22 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
     /// Lets us track how far the user is through their current practice/challenge session.
     var questionNumber = 1
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
+        title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
 
         if practiceData.existingCode.isEmpty {
             // Hide the existing code label and disable the collection view constraint that positions it below. This will make Auto Layout rely on a second vertical spacing constraint that positions the collection view relative to the prompt view.
@@ -77,9 +89,6 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
         // pull the existing code from the data source for the same reason
         existingCode.attributedText = dataSource.existingCode.syntaxHighlighted()
         existingCode.font = Unwrap.codeFont
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
 
         // give the answer button the correct initial state
         updateAnswerButton()

@@ -36,7 +36,11 @@ class HelpDataSource: NSObject, UITableViewDataSource {
 
         let item = items[indexPath.section]
 
-        cell.textView.text = item.text
+        // Wrap our help text in HTML so we catch links correctly.
+        let contents = String.wrapperHTML(allowTheming: true, width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: item.text)
+        let data = Data(contents.utf8)
+        let str = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        cell.textView.attributedText = str
         cell.textView.linkDelegate = delegate
 
         if item.action.isEmpty {

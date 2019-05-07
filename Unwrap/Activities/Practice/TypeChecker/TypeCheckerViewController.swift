@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Type Checker practice activities.
 class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "type-practice"
 
     @IBOutlet var prompt: UILabel!
@@ -26,23 +31,27 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
     /// Lets us track how far the user is through their current practice/challenge session.
     var questionNumber = 1
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
+        title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
-
         // Users need to be able to check all the rows they want, so our data source is used for the table view's data source and delegate.
         dataSource = TypeCheckerDataSource(review: review)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         tableView.isEditing = true
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
 
         prompt.attributedText = review.question.fromSimpleHTML()
     }

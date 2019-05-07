@@ -14,7 +14,7 @@ struct ReviewPractice: PracticeActivity {
     static let name = "Review"
     static let subtitle = "Go over questions you've already learned"
     static let lockedUntil = "Variables"
-    static let icon = UIImage(bundleName: "Learn")
+    static let icon = UIImage(bundleName: "Practice-Review")
 
     /// Creates a view controller configured with a Review Practice activity.
     static func instantiate() -> UIViewController & PracticingViewController {

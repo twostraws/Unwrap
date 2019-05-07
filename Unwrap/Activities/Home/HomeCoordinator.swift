@@ -6,11 +6,11 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import SafariServices
 import UIKit
 
 /// Manages everything launched from the Home tab in the app.
 class HomeCoordinator: Coordinator, AlertShowing {
+    var splitViewController = PortraitSplitViewController()
     var navigationController: CoordinatedNavigationController
 
     private static let firstRunDefaultsKey = "ShownFirstRun"
@@ -54,13 +54,20 @@ class HomeCoordinator: Coordinator, AlertShowing {
     @objc func showHelp() {
         let viewController = HelpViewController(style: .plain)
         viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let navController = CoordinatedNavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .formSheet
+            navigationController.present(navController, animated: true)
+        } else {
+            navigationController.pushViewController(viewController, animated: true)
+        }
     }
 
     /// Start sharing the user's current score.
     func shareScore(from sourceRect: CGRect) {
         let image = User.current.rankImage.imageForSharing
-        let text = "I'm on level \(User.current.rankNumber) in Unwrap. Download it here: \(Unwrap.appURL)"
+        let text = "I'm on level \(User.current.rankNumber) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
 
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         alert.completionWithItemsHandler = handleScoreSharingResult
@@ -79,8 +86,8 @@ class HomeCoordinator: Coordinator, AlertShowing {
         if User.current.isBadgeEarned(badge) {
             // This badge is earned, so share it using the system share sheet.
             showAlert(title: badge.name, body: badge.description, alternateTitle: "Share") {
-                let image = badge.image
-                let text = "I earned the badge \(badge.name) in Unwrap. Download it here: \(Unwrap.appURL)"
+                let image = badge.image.imageForSharing
+                let text = "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
 
                 let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
 
@@ -115,17 +122,11 @@ class HomeCoordinator: Coordinator, AlertShowing {
     func open(_ url: URL) {
         if url.scheme?.hasPrefix("http") == true {
             // we'll open web URLs inside the app
-            let viewController = SFSafariViewController(url: url)
-            navigationController.present(viewController, animated: true)
+            let viewController = WebViewController(url: url)
+            navigationController.pushViewController(viewController, animated: true)
         } else {
             // send all other types of URL over to the main application to figure out
             UIApplication.shared.open(url)
         }
-    }
-
-    /// Show credits for the app.
-    @objc func showCredits() {
-        let credits = CreditsViewController()
-        navigationController.pushViewController(credits, animated: true)
     }
 }

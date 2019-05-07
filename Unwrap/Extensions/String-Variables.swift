@@ -29,6 +29,9 @@ extension String {
             return replaced
         }
 
+        // Homogenize trailing closures: array.map { … } is always preferred to array.map({ … })
+        replaced = replaced.replacingOccurrences(of: #"\(\{(.*?)\}\)"#, with: "{$1}", options: .regularExpression)
+
         // Homogenize brace style.
         replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
         replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
@@ -52,9 +55,11 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "...", with: " ... ")
         replaced = replaced.replacingOccurrences(of: "..<", with: " ..< ")
 
-        // Some folks, particularly those coming from Python, use Range(1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
+        // Some folks, particularly those coming from Python, use Range(1...100) or (1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
+        replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
+        replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
 
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
@@ -124,7 +129,7 @@ extension String {
 
                 // We don't want to just do a simple string replace, because they might call their thing "a" and that would be replaced everywhere.
                 // So, ensure whatever is before or after their name isn't more letters/numbers, and it isn't preceded by a full stop.
-                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9.])\(componentName)([^A-Za-z0-9])", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
+                replaced = replaced.replacingOccurrences(of: "([^A-Za-z0-9.])\(componentName)([^A-Za-z0-9]|$)", with: "$1\(replacementWrapper)\(componentNumber)\(replacementWrapper)$2", options: .regularExpression)
                 componentNumber += 1
             } else {
                 break

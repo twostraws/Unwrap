@@ -10,7 +10,12 @@ import UIKit
 
 /// The view controller that handles Free Coding practice activities.
 class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewController {
-    var coordinator: (Skippable & AnswerHandling)?
+    var coordinator: (Skippable & AnswerHandling)? {
+        didSet {
+            configureNavigation()
+        }
+    }
+
     var practiceType = "free-coding"
 
     @IBOutlet var prompt: UILabel!
@@ -29,15 +34,22 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
     /// A lexer to highlight our source code.
     let lexer = SwiftLexer()
 
+    /// Run all our navigation bar code super early to avoid bad animations on iPhone
+    func configureNavigation() {
+        title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
+        navigationItem.largeTitleDisplayMode = .never
+        extendedLayoutIncludesOpaqueBars = true
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        showHintButton()
+    }
+
     /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         assert(practiceData != nil, "You must assign some practice data before presenting this view controller.")
-
-        title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
-        navigationItem.largeTitleDisplayMode = .never
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()
@@ -55,9 +67,6 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
             // add the starting code, with a line break afterwards so the user can start typing below
             textView.text = "\(practiceData.startingCode)\n"
         }
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        showHintButton()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -68,7 +77,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
 
     /// Shows the hint button. This gets called in more than one place, because we replace it with a Done button when the text view is being edited.
     @objc func showHintButton() {
-        textView.contentTextView.resignFirstResponder()
+        textView?.contentTextView.resignFirstResponder()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
     }
 

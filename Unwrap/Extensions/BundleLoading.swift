@@ -68,8 +68,14 @@ extension String {
     }
 
     /// Loads the HTML wrapper from our bundle.
-    static func wrapperHTML(allowTheming: Bool) -> String {
-        var wrapperContents = String(bundleName: "HTMLWrapper.html")
+    static func wrapperHTML(allowTheming: Bool, width: CGFloat, slimLayout: Bool = false) -> String {
+        var wrapperContents: String
+
+        if slimLayout {
+            wrapperContents = String(bundleName: "HTMLWrapper-Slim.html")
+        } else {
+            wrapperContents = String(bundleName: "HTMLWrapper.html")
+        }
 
         // Replace relative URLs of images with absolute URLs.
         wrapperContents = wrapperContents.replacingOccurrences(of: "<img src=\"", with: "<img src=\"\(Bundle.main.resourceURL!)/")
@@ -84,7 +90,7 @@ extension String {
         styleContents = styleContents.replacingOccurrences(of: "[FONTSIZE]", with: "\(scaledSize)")
 
         // Force images to be the natural screen width.
-        styleContents = styleContents.replacingOccurrences(of: "[IMAGEWIDTH]", with: "\(UIApplication.shared.keyWindow?.frame.width ?? 320)px")
+        styleContents = styleContents.replacingOccurrences(of: "[IMAGEWIDTH]", with: "\(width)px")
 
         // Now merge in our adjusted CSS with the main HTML wrapper.
         wrapperContents = wrapperContents.replacingOccurrences(of: "[STYLE]", with: styleContents)

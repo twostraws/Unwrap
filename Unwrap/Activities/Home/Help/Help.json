@@ -1,32 +1,32 @@
 [
 	{
 		"title": "Where to start",
-		"text": "The main part of this app is split into three sections: Learn, Practice, and Challenges. To begin with you should work your way through the Learn section from top to bottom so that you learn Swift smoothly.\n\nEach time you read a chapter in the Learn section, you'll get an orange checkmark next to that section so you know it's complete. If you also answer the test for that chapter, you'll get a green checkmark and some bonus points.\n\nAs you progress you'll unlock parts of the Practice section so that you can hone skills you already learned. When you're ready, the Challenges section gives you questions from across all the Practice types.\n\nYou can take a challenge only once per day, so make sure you set aside some time to read the questions carefully!",
+		"text": "<p>The main part of this app is split into three sections: Learn, Practice, and Challenges. To begin with you should work your way through the Learn section from top to bottom so that you learn Swift smoothly.</p><p>Each time you read a chapter in the Learn section, you'll get an orange checkmark next to that section so you know it's complete. If you also answer the test for that chapter, you'll get a green checkmark and some bonus points.</p><p>As you progress you'll unlock parts of the Practice section so that you can hone skills you already learned. When you're ready, the Challenges section gives you questions from across all the Practice types.</p><p>You can take a challenge only once per day, so make sure you set aside some time to read the questions carefully!</p>",
 		"action": ""
 	},
 	{
 		"title": "What are the points for?",
-		"text": "The points and levels help you keep track of your progress.\n\nYou earn points for each chapter you read, each test you take, and each practice and challenge you complete. You can share your score with your friends by tapping Share Score on the home page.\n\nUnless you're taking a challenge, you get the same number of points regardless of how many mistakes you make – you earn points for trying your best, not for answering everything perfectly. If you want to go back and take a test again to improve your score, go for it!",
+		"text": "<p>The points and levels help you keep track of your progress.</p><p>You earn points for each chapter you read, each test you take, and each practice and challenge you complete. You can share your score with your friends by tapping Share Score on the home page.</p><p>Unless you're taking a challenge, you get the same number of points regardless of how many mistakes you make – you earn points for trying your best, not for answering everything perfectly. If you want to go back and take a test again to improve your score, go for it!</p>",
         "action": ""
     },
 	{
 		"title": "Can I retake daily challenges?",
-		"text": "No; daily challenges can be taken only once a day. Please wait until tomorrow before trying again.",
+		"text": "<p>No; daily challenges can be taken only once a day. Please wait until tomorrow before trying again.</p>",
 		"action": ""
 	},
 	{
 		"title": "Where can I report mistakes?",
-		"text": "If you spot any sort of mistake in the app – perhaps you wrote some good code the app thought was bad, or perhaps it's just a typo – you can report it by emailing paul@hackingwithswift.com.",
+        "text": "<p>If you spot any sort of mistake in the app – perhaps you wrote some good code the app thought was bad, or perhaps it's just a typo – you can report it by emailing <a href=\"mailto:paul@hackingwithswift.com\">paul@hackingwithswift.com</a>.</p>",
 		"action": ""
 	},
 	{
 		"title": "How can I take the tour again?",
-		"text": "Tap here to show the introductory tour again.",
+		"text": "<p>Tap here to show the introductory tour again.</p>",
 		"action": "showTour"
 	},
 	{
 		"title": "About this app",
-		"text": "I wrote this app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at www.hackingwithswift.com – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.\n\nIf you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from www.github.com/twostraws/Unwrap. Contributions are welcome!",
+        "text": "<p>I wrote this app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at <a href=\"https://www.hackingwithswift.com\">hackingwithswift.com</a> – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.</p><p>If you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from <a href=\"https://www.github.com/twostraws/Unwrap\">github.com/twostraws/Unwrap</a>. Contributions are welcome!</p>",
 		"action": ""
 	}
 ]

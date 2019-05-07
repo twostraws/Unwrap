@@ -46,7 +46,7 @@ struct TypeCheckerPractice: PracticeActivity {
             question = "Which of these produces a <code>\(types[0].type)</code>?"
         }
 
-        let correctAnswers = Int.random(in: 3...5)
+        let correctAnswers = Int.random(in: 4...6)
 
         // Add some correct answers…
         for _ in 0 ..< correctAnswers {
@@ -54,7 +54,7 @@ struct TypeCheckerPractice: PracticeActivity {
         }
 
         // …and some wrong answers – however many we need to bring us up to eight answers.
-        while answers.count < 8 {
+        while answers.count < 10 {
             let randomType = types.randomElement()!
 
             if randomType.type != correctType {
