@@ -7,38 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
 class CreditsViewController: UIViewController {
-    let textView = UITextView()
+    let webView = WKWebView()
 
     override func loadView() {
-        view = UIView()
-        view.backgroundColor = .white
-
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.isEditable = false
-        view.addSubview(textView)
-
-        NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            textView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
+        self.view = webView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Credits"
-
-        let contents = String(bundleName: "Credits.md")
-        textView.attributedText = contents.fromSimpleMarkdown()
-    }
-
-    override func viewDidLayoutSubviews() {
-        // Set content offset to zero to make sure the textview starts from the top
-        // when the view is laid out.
-        textView.setContentOffset(.zero, animated: false)
+        if let url = Bundle.main.url(forResource: "Credits", withExtension: "html") {
+             webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        }
     }
 }
