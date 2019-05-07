@@ -10,30 +10,29 @@ import UIKit
 import WebKit
 
 class CreditsViewController: UIViewController {
-    
-    private lazy var webview: WKWebView = {
-    let preferences = WKPreferences()
-    preferences.javaScriptEnabled = false
-    let configuration = WKWebViewConfiguration()
-    configuration.preferences = preferences
-    let webview = WKWebView(frame: .zero, configuration: configuration)
-    return webview
-  }()
+	private lazy var webView: WKWebView = {
+		let preferences = WKPreferences()
+		preferences.javaScriptEnabled = false
+		let configuration = WKWebViewConfiguration()
+		configuration.preferences = preferences
+		let webview = WKWebView(frame: .zero, configuration: configuration)
+		return webview
+	}()
 
-    override func loadView() {
-        self.view = webView
-    }
+	override func loadView() {
+		view = webView
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let url = Bundle.main.url(forResource: "help", withExtension: "html") { webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent()) 
-        }
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(contentSizeDidChange(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
-    }
-  
-  @objc private func contentSizeDidChange(_ notification: Notification) {
-    webview.reload() 
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		if let url = Bundle.main.url(forResource: "Credits", withExtension: "html") { webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+		}
+
+		NotificationCenter.default.addObserver(self, selector: #selector(contentSizeDidChange(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+	}
+
+	@objc private func contentSizeDidChange(_ notification: Notification) {
+		webView.reload()
+	}
 }
