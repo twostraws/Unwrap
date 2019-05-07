@@ -17,11 +17,16 @@ extension UIViewController: AlertShowing {
 
         let widthConstraint: EKAttributes.PositionConstraints.Edge
 
-        // If we're on phone we want the alert to take up 90% of the view width, but for everything else a fixed width is fine.
+        // If we're on phone we want the alert to take up 90% of the view width.
         if UIDevice.current.userInterfaceIdiom == .phone {
             widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.9)
         } else {
-            widthConstraint = EKAttributes.PositionConstraints.Edge.constant(value: 400)
+            // If we're on iPad we might also take up 90% of the space if we're compact, otherwise a fixed width is fine. HOWEVER: We haven't been shown yet, so we don't have a trait collection of our own that we can read a size class from. So, as a grim workaround, we read the root view controller of our main window using the app delegate, which *does* have a size class that we can use.
+            if (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController?.traitCollection.horizontalSizeClass == .compact {
+                widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.9)
+            } else {
+                widthConstraint = EKAttributes.PositionConstraints.Edge.constant(value: 400)
+            }
         }
 
         let heightConstraint = EKAttributes.PositionConstraints.Edge.intrinsic
