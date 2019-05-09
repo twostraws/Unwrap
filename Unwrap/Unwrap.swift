@@ -18,7 +18,7 @@ enum Unwrap {
     }
 
     /// The URL where users can go to share this app.
-    static let appURL = URL(staticString: "https://github.com/twostraws/unwrap")
+    static let appURL = URL(staticString: "https://itunes.apple.com/app/id1440611372")
 
     /// The static chapters for the app. These can be loaded up front – they never change while the app is running.
     static let chapters = Bundle.main.decode([Chapter].self, from: "Chapters.json")

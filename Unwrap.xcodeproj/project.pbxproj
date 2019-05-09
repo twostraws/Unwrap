@@ -172,7 +172,6 @@
 		51CC13682065607C00F37A67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CC13662065607C00F37A67 /* Main.storyboard */; };
 		51CC136D2065607F00F37A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CC136B2065607F00F37A67 /* LaunchScreen.storyboard */; };
 		51CC13782065607F00F37A67 /* UnwrapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13772065607F00F37A67 /* UnwrapTests.swift */; };
-		51CC13832065607F00F37A67 /* UnwrapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13822065607F00F37A67 /* UnwrapUITests.swift */; };
 		51CC1391206560A600F37A67 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC1390206560A600F37A67 /* ShapeView.swift */; };
 		51CC13932065678A00F37A67 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13922065678A00F37A67 /* WelcomeView.swift */; };
 		51CC1395206568DE00F37A67 /* UIBezierPath-Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC1394206568DE00F37A67 /* UIBezierPath-Logo.swift */; };
@@ -595,7 +594,6 @@
 		51FE151B20E25F1200F29889 /* range-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139420E25F1100F29889 /* range-operators.html */; };
 		51FE151C20E25F1200F29889 /* protocol-extensions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139520E25F1100F29889 /* protocol-extensions.mp4 */; };
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
-		81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */; };
 		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
 		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
 		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
@@ -614,13 +612,6 @@
 			remoteInfo = Stickers;
 		};
 		51CC13742065607F00F37A67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51CC13572065607C00F37A67 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 51CC135E2065607C00F37A67;
-			remoteInfo = Unwrap;
-		};
-		51CC137F2065607F00F37A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51CC13572065607C00F37A67 /* Project object */;
 			proxyType = 1;
@@ -817,9 +808,6 @@
 		51CC13732065607F00F37A67 /* UnwrapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnwrapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CC13772065607F00F37A67 /* UnwrapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwrapTests.swift; sourceTree = "<group>"; };
 		51CC13792065607F00F37A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51CC137E2065607F00F37A67 /* UnwrapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnwrapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		51CC13822065607F00F37A67 /* UnwrapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwrapUITests.swift; sourceTree = "<group>"; };
-		51CC13842065607F00F37A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CC1390206560A600F37A67 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		51CC13922065678A00F37A67 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		51CC1394206568DE00F37A67 /* UIBezierPath-Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath-Logo.swift"; sourceTree = "<group>"; };
@@ -1273,14 +1261,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51CC137B2065607F00F37A67 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81EB5780E28D768D1C6D9687 /* Pods_UnwrapUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1639,7 +1619,6 @@
 			children = (
 				51CC13612065607C00F37A67 /* Unwrap */,
 				51CC13762065607F00F37A67 /* UnwrapTests */,
-				51CC13812065607F00F37A67 /* UnwrapUITests */,
 				5192DDCA2273E05E0081C6DE /* Stickers */,
 				51CC13602065607C00F37A67 /* Products */,
 				A302CA35FC779D934F639FFC /* Pods */,
@@ -1652,7 +1631,6 @@
 			children = (
 				51CC135F2065607C00F37A67 /* Unwrap.app */,
 				51CC13732065607F00F37A67 /* UnwrapTests.xctest */,
-				51CC137E2065607F00F37A67 /* UnwrapUITests.xctest */,
 				5192DDC92273E05E0081C6DE /* Stickers.appex */,
 			);
 			name = Products;
@@ -1693,15 +1671,6 @@
 				51CC13792065607F00F37A67 /* Info.plist */,
 			);
 			path = UnwrapTests;
-			sourceTree = "<group>";
-		};
-		51CC13812065607F00F37A67 /* UnwrapUITests */ = {
-			isa = PBXGroup;
-			children = (
-				51CC13822065607F00F37A67 /* UnwrapUITests.swift */,
-				51CC13842065607F00F37A67 /* Info.plist */,
-			);
-			path = UnwrapUITests;
 			sourceTree = "<group>";
 		};
 		51CC13982065735400F37A67 /* Welcome */ = {
@@ -2271,25 +2240,6 @@
 			productReference = 51CC13732065607F00F37A67 /* UnwrapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		51CC137D2065607F00F37A67 /* UnwrapUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51CC138D2065607F00F37A67 /* Build configuration list for PBXNativeTarget "UnwrapUITests" */;
-			buildPhases = (
-				ED00F7E744A9744ADA41D86F /* [CP] Check Pods Manifest.lock */,
-				51CC137A2065607F00F37A67 /* Sources */,
-				51CC137B2065607F00F37A67 /* Frameworks */,
-				51CC137C2065607F00F37A67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				51CC13802065607F00F37A67 /* PBXTargetDependency */,
-			);
-			name = UnwrapUITests;
-			productName = UnwrapUITests;
-			productReference = 51CC137E2065607F00F37A67 /* UnwrapUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2320,11 +2270,6 @@
 						LastSwiftMigration = 1020;
 						TestTargetID = 51CC135E2065607C00F37A67;
 					};
-					51CC137D2065607F00F37A67 = {
-						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1020;
-						TestTargetID = 51CC135E2065607C00F37A67;
-					};
 				};
 			};
 			buildConfigurationList = 51CC135A2065607C00F37A67 /* Build configuration list for PBXProject "Unwrap" */;
@@ -2342,7 +2287,6 @@
 			targets = (
 				51CC135E2065607C00F37A67 /* Unwrap */,
 				51CC13722065607F00F37A67 /* UnwrapTests */,
-				51CC137D2065607F00F37A67 /* UnwrapUITests */,
 				5192DDC82273E05E0081C6DE /* Stickers */,
 			);
 		};
@@ -2800,13 +2744,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51CC137C2065607F00F37A67 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -2893,24 +2830,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
-		};
-		ED00F7E744A9744ADA41D86F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UnwrapUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3090,14 +3009,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51CC137A2065607F00F37A67 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51CC13832065607F00F37A67 /* UnwrapUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -3110,11 +3021,6 @@
 			isa = PBXTargetDependency;
 			target = 51CC135E2065607C00F37A67 /* Unwrap */;
 			targetProxy = 51CC13742065607F00F37A67 /* PBXContainerItemProxy */;
-		};
-		51CC13802065607F00F37A67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 51CC135E2065607C00F37A67 /* Unwrap */;
-			targetProxy = 51CC137F2065607F00F37A67 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3371,48 +3277,6 @@
 			};
 			name = Release;
 		};
-		51CC138E2065607F00F37A67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
-				INFOPLIST_FILE = UnwrapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Unwrap;
-			};
-			name = Debug;
-		};
-		51CC138F2065607F00F37A67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
-				INFOPLIST_FILE = UnwrapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.UnwrapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Unwrap;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3448,15 +3312,6 @@
 			buildConfigurations = (
 				51CC138B2065607F00F37A67 /* Debug */,
 				51CC138C2065607F00F37A67 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51CC138D2065607F00F37A67 /* Build configuration list for PBXNativeTarget "UnwrapUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51CC138E2065607F00F37A67 /* Debug */,
-				51CC138F2065607F00F37A67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
