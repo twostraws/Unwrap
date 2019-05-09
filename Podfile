@@ -14,7 +14,7 @@ target 'Unwrap' do
   pod 'MKRingProgressView', '~> 2.2.2'
   pod 'Sourceful', :git => 'https://github.com/twostraws/Sourceful.git', :branch => 'master'
   pod 'DZNEmptyDataSet', '~> 1.8'
-  pod 'SwiftLint', '0.31.0'
+  pod 'SwiftLint', '0.32.0'
   pod 'Zephyr', '3.4.0'
 
   target 'UnwrapTests' do

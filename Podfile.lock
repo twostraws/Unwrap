@@ -2,13 +2,13 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - MKRingProgressView (2.2.2)
   - QuickLayout (3.0.0)
-  - SDWebImage (5.0.1):
-    - SDWebImage/Core (= 5.0.1)
-  - SDWebImage/Core (5.0.1)
+  - SDWebImage (5.0.2):
+    - SDWebImage/Core (= 5.0.2)
+  - SDWebImage/Core (5.0.2)
   - Sourceful (0.2.0)
   - SwiftEntryKit (1.0.1):
     - QuickLayout (= 3.0.0)
-  - SwiftLint (0.31.0)
+  - SwiftLint (0.32.0)
   - Zephyr (3.4.0)
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - Sourceful (from `https://github.com/twostraws/Sourceful.git`, branch `master`)
   - SwiftEntryKit (~> 1.0)
-  - SwiftLint (= 0.31.0)
+  - SwiftLint (= 0.32.0)
   - Zephyr (= 3.4.0)
 
 SPEC REPOS:
@@ -37,19 +37,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Sourceful:
-    :commit: 50ed0519ea86e80012e32232f765b2a43b2e0112
+    :commit: d4cb8a48042829bad9b75cb84a99fe683e8ab936
     :git: https://github.com/twostraws/Sourceful.git
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   MKRingProgressView: b558eff66a648bd77b11f61cfc5603ae96008077
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
+  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   Sourceful: 7be20b8682d4919a1be65369385e1e52f5be38bd
   SwiftEntryKit: 3f55c0b8e676afe24a3703237bcac68372891c56
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   Zephyr: 981f34b10e37f60f00f1ec74fb8420aaadccd774
 
-PODFILE CHECKSUM: 2433f2d933c188fae85e7174018875d0d04dd44f
+PODFILE CHECKSUM: e060a93163943fc15947d7f745bb1075248730a0
 
 COCOAPODS: 1.6.1
