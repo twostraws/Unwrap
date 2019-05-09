@@ -82,13 +82,21 @@ class PracticeTests: XCTestCase {
             "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
             "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
             "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
+            "letvar even6:[Int] = (1...100).filter { $0.isMultiple(of:2) }",
             "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
+            "letvar even6:[Int] = (1...100).filter { return $0.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in num.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
+            "letvar even7:[Int] = (1...100).filter { num in return num.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { $0.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
+            "letvar even8:[Int] = (1..<101).filter { return $0.isMultiple(of:2) }",
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
+            "letvar even9:[Int] = (1..<101).filter { num in num.isMultiple(of:2) }",
+            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }",
+            "letvar even9:[Int] = (1..<101).filter { num in return num.isMultiple(of:2) }"
         ]
 
         let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
@@ -103,7 +111,9 @@ class PracticeTests: XCTestCase {
             "let evens = (1...100).filter {$0 % 2 == 0\n}",
             "let evens = (1...100).filter {\n\t$0 % 2 == 0\n}",
             "let evens = (1...100).filter {\n\n\n\n return $0 % 2 == 0\n\n\n\n\n }",
-            "var array:[Int]=[]\nfor i in Range(1...100) {\nif i%2==0 {\narray.append(i)\n}\n}"
+            "var array:[Int]=[]\nfor i in Range(1...100) {\nif i%2==0 {\narray.append(i)\n}\n}",
+            "let evens = (1...100).filter { $0.isMultiple(of: 2) }",
+            "let evens = (1...100).filter { number in return number.isMultiple(of: 2) }"
         ]
 
         let wrongAnswers = [
@@ -181,7 +191,6 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            print(answer.toAnonymizedVariables())
             XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
@@ -216,7 +225,6 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            print(answer.toAnonymizedVariables())
             XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
