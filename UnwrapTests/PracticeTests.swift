@@ -157,7 +157,8 @@ class PracticeTests: XCTestCase {
             "let counter = numbers.filter{return $0 == 5}.count\nprint(counter)",
             "let count = numbers.filter{return $0 == 5}.count\nprint(count)",
             "let count = numbers.filter({return $0 == 5}).count\nprint(count)",
-            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
+            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)",
+            "var count = 0\nfor index in 0..<numbers.count\n{\nif numbers[index] == 5\n{\ncount += 1\n}\n}\nprint(count)"
         ]
 
         let wrongAnswers = [
@@ -175,6 +176,41 @@ class PracticeTests: XCTestCase {
 
             // This also changes the counting variable name
             "let count1 = numbers.filter{return $0 == 5}.count\nprint(count)"
+        ]
+
+        // Make sure all correct answers assert true.
+        for answer in correctAnswers {
+            let result = test.check(answer: answer)
+            print(answer.toAnonymizedVariables())
+            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+        }
+
+        // Make sure all wrong answers assert false.
+        for answer in wrongAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+        }
+    }
+
+    /// Compares various correct answers against a known question to make sure Free Coding is stable.
+    func testFreeCoding4() {
+        let question = "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value."
+        let answers = [
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
+        ]
+
+        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
+
+        let correctAnswers = [
+            "struct Player\n{\n\tvar score: Int = 0\n\t{\n\t\tdidSet\n\t\t{\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}"
+        ]
+
+        let wrongAnswers = [
+            // this has the wrong data type
+            "struct Player\n{\n\tvar score: Double = 0\n\t{\n\t\tdidSet\n\t\t{\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}"
         ]
 
         // Make sure all correct answers assert true.
