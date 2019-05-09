@@ -22,11 +22,6 @@ target 'Unwrap' do
     # Pods for testing
   end
 
-  target 'UnwrapUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
       config.build_settings.delete('CODE_SIGNING_ALLOWED')
