@@ -99,10 +99,10 @@
         "hint": "You can solve this using a <code>didSet</code> property observer.",
         "startingCode": "",
         "answers": [
-            "struct Player {\n\tletvar score:Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score:Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score:Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score:Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
         ]
     },
     {
@@ -124,7 +124,7 @@
     },
     {
         "question": "Write code that loops from 1 through 100 to create an array of all even numbers.",
-        "hint": "You'll need to use the division remainder operator, <code>%</code>.",
+        "hint": "You'll need to use the division remainder operator, <code>%</code>, or the isMultiple(of:) function",
         "startingCode": "",
         "answers": [
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
@@ -133,13 +133,21 @@
             "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
             "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
             "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
+	    "letvar even6:[Int] = (1...100).filter { $0.isMultiple(of:2) }",
             "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
+	    "letvar even6:[Int] = (1...100).filter { return $0.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
+	    "letvar even7:[Int] = (1...100).filter { num in num.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
+	    "letvar even7:[Int] = (1...100).filter { num in return num.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
+	    "letvar even8:[Int] = (1..<101).filter { $0.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
+	    "letvar even8:[Int] = (1..<101).filter { return $0.isMultiple(of:2) }",
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
+	    "letvar even9:[Int] = (1..<101).filter { num in num.isMultiple(of:2) }",
+            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }",
+	    "letvar even9:[Int] = (1..<101).filter { num in return num.isMultiple(of:2) }"
         ]
     }
 ]
