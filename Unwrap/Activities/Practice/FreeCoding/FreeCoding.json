@@ -99,10 +99,10 @@
         "hint": "You can solve this using a <code>didSet</code> property observer.",
         "startingCode": "",
         "answers": [
-            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
-            "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
+            "struct Player {\n\tletvar score:Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score:Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score:Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
+            "struct Player {\n\tletvar score:Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
         ]
     },
     {
