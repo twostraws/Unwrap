@@ -16,13 +16,9 @@ class TourPageViewController: UIPageViewController, UIPageViewControllerDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let items = Bundle.main.decode([TourItem].self, from: "Tour.json")
-
-        for item in items {
-            let viewController = TourItemViewController.instantiate()
-            viewController.item = item
-            allViewControllers.append(viewController)
-        }
+        allViewControllers = Bundle.main
+            .decode([TourItem].self, from: "Tour.json")
+            .map(TourItemViewController.instantiate(from: ))
 
         setViewControllers([allViewControllers[0]], direction: .forward, animated: false)
         dataSource = self

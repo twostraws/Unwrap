@@ -10,7 +10,5 @@ import UIKit
 
 /// Stores a single page of the app tour loaded from JSON.
 struct TourItem: Decodable {
-    let image: String
-    let title: String
-    let text: String
+    let image, title, text: String
 }

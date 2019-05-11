@@ -15,6 +15,12 @@ class TourItemViewController: UIViewController, Storyboarded {
 
     var item: TourItem?
 
+    class func instantiate(from tourItem: TourItem) -> TourItemViewController {
+        let vc = instantiate()
+        vc.item = tourItem
+        return vc
+    }
+    
     /// Load the appropriate tour item into our UI.
     override func viewDidLoad() {
         super.viewDidLoad()
