@@ -50,7 +50,7 @@
         },
         {
             "answer": "struct House {\n\tvar isExpensiveArea = \"false\"\n\tvar numberOfRooms: Int\n\tmethod estimatePrice() -> Int {\n\t\tif isExpensiveArea == true {\n\t\t\treturn numberOfRooms * 100_000\n\t\t} else {\n\t\t\treturn numberOfRooms * 50_000\n\t\t}\n\t}\n}",
-            "reason": "The <code>isExpensiveArea<\/code> property is a string, but it's being treated like a Boolean."
+            "reason": "The <code>isExpensiveArea<\/code> property is a string, but it's being treated like a Boolean. More importantly, this uses <code>method<\/code> rather than <code>func<\/code>."
         },
         {
             "answer": "struct Jewellery {\n\tvar price: Double\n\tfunc estimateInsurance() -> Double {\n\t\tprice \/ 50.0\n\t}\n}",
