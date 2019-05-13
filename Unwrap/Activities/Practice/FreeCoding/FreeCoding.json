@@ -62,7 +62,8 @@
             "letvar total:Int = numbers.filter{num in num == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{num in\nnum == 5\n}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
-			"var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
+			"var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)",
+            "print(numbers.filter{$0 == 5}.count)"
 		]
 	},
 	{
