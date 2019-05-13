@@ -14,7 +14,7 @@ class UserTests: XCTestCase {
     /// Tracks which practice section the user just entered,
     let testSection = "variables"
 
-    /// Ensure clean users have no badgesl.
+    /// Ensure clean users have no badges.
     func testCleanUser() {
         let user = User()
         XCTAssert(user.totalPoints == 0, "New users must start with zero points.")
@@ -34,7 +34,7 @@ class UserTests: XCTestCase {
         XCTAssert(loadedUser != nil, "Loading a saved user should always return something.")
     }
 
-    /// Tests that completing chaptear lerning is stored correclty.
+    /// Tests that completing chapter learning is stored correctly.
     func testLearning() {
         let user = User()
 
@@ -49,7 +49,7 @@ class UserTests: XCTestCase {
         XCTAssert(user.ratingForSection(testSection) == User.pointsForLearning, "The rating for a section should be equal to its points for learning plus its points for reviewing, as appropriate.")
     }
 
-    /// Test that relearnng a topic (i.e., completing it more than once.)
+    /// Test that relearning a topic (i.e., completing it more than once.)
     func testRelearning() {
         let user = User()
         user.learnedSection(testSection)
@@ -61,7 +61,7 @@ class UserTests: XCTestCase {
         XCTAssert(user.ratingForSection(testSection) == User.pointsForLearning, "Learning one section should give the user the correct number of points.")
     }
 
-    /// Tests that reviewing a chapter gest stored correctl.
+    /// Tests that reviewing a chapter gest stored correctly.
     func testReviewing() {
         let user = User()
         user.reviewedSection(testSection)
