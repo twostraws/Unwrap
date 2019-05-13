@@ -278,6 +278,11 @@ final class User: Codable {
         return reviewedSections.contains(section)
     }
 
+    /// Returns true if the user has reviewed all sections of a specific chapter of the book.
+    func hasReviewed(_ chapter: Chapter) -> Bool {
+        return !chapter.bundleNameSections.map(hasReviewed).contains(false)
+    }
+
     /// Tracks the highest-numbered article the user has seen – i.e., was present when they visited the News tab. This doesn't mean they have *read* that article.
     func seenUpToArticle(_ articleID: Int) {
         latestNewsArticle = articleID
@@ -293,17 +298,14 @@ final class User: Codable {
     /// Returns true if a specific badge has been earned, or false otherwise.
     func isBadgeEarned(_ badge: Badge) -> Bool {
         if badge.criterion == "read" {
-            // FIXME: How can we get rid of this warning?
-            guard var conditionChapter = Unwrap.chapters.first(where: {
+            guard let conditionChapter = Unwrap.chapters.first(where: {
                 $0.name.bundleName == badge.value
 
             }) else {
                 fatalError("Unknown chapter name for criterion: \(badge.value).")
             }
 
-            return conditionChapter.bundleNameSections.reduce(true) {
-                $0 && hasReviewed($1.bundleName)
-            }
+            return hasReviewed(conditionChapter)
         } else if badge.criterion == "practice" {
             let practiceBadgeCount = 10
             return practiceSessions.count(for: badge.value) >= practiceBadgeCount
