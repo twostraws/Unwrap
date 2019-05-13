@@ -293,7 +293,6 @@ final class User: Codable {
     /// Returns true if a specific badge has been earned, or false otherwise.
     func isBadgeEarned(_ badge: Badge) -> Bool {
         if badge.criterion == "read" {
-            // FIXME: How can we get rid of this warning?
             guard var conditionChapter = Unwrap.chapters.first(where: {
                 $0.name.bundleName == badge.value
 
@@ -301,8 +300,8 @@ final class User: Codable {
                 fatalError("Unknown chapter name for criterion: \(badge.value).")
             }
 
-            return conditionChapter.bundleNameSections.reduce(true) {
-                $0 && hasReviewed($1.bundleName)
+            return conditionChapter.bundleNameSections().allSatisfy {
+                hasReviewed($0.bundleName)
             }
         } else if badge.criterion == "practice" {
             let practiceBadgeCount = 10
