@@ -20,8 +20,13 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         return Unwrap.chapters.count
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Unwrap.chapters[section].name
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SectionHeader") as? DynamicHeightHeaderView {
+            headerView.headerLabel.text = Unwrap.chapters[section].name
+            return headerView
+        } else {
+            return nil
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
