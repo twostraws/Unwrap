@@ -23,7 +23,7 @@
             "reason": "This code is valid Swift."
         },
         {
-            "answer": "let yourScore = 20\nvar highScore = 15\nif yourScore >= highScore {\nprint(\"You got the high score!\")\n}",
+            "answer": "let yourScore = 20\nvar highScore = 15\nif yourScore >= highScore {\n\tprint(\"You got the high score!\")\n}",
             "reason": "This code is valid Swift."
         },
         {
@@ -49,7 +49,7 @@
             "reason": "<code>....<\/code> \u2013 with four dots \u2013 is not one of Swift's built-in operators. The closed-range operator is <code>...<\/code>, with three dots."
         },
         {
-            "answer": "let rank = 4\nif rank <= 10 {\nprint(You're in the top 10!)\n}",
+            "answer": "let rank = 4\nif rank <= 10 {\n\tprint(You're in the top 10!)\n}",
             "reason": "The text inside the call to <code>print()<\/code> must be inside quote marks."
         },
         {
