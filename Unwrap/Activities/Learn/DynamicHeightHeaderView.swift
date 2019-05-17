@@ -8,9 +8,10 @@
 
 import UIKit
 
+/// A replacement for the built-in section headers in UITableView, adding support for multi-line text. By default our text doesn't wrap over lines, but if the user increases their font size using Dynamic Type then this class ensures header titles go over multiple lines correctly.
 class DynamicHeightHeaderView: UITableViewHeaderFooterView {
 
-    /** TableView section header */
+    /// The label that is shown inside our header view
     let headerLabel = UILabel()
 
     override init(reuseIdentifier: String?) {
@@ -22,9 +23,7 @@ class DynamicHeightHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    /**
-     Function to create the dynamic section header label by activating its constraints and setting its attributes.
-    */
+    /// Create the dynamic section header label, activates its constraints, and sets its attributes.
     private func configureHeader() {
         contentView.addSubview(headerLabel)
         contentView.backgroundColor = UIColor(bundleName: "BackgroundLight")
@@ -33,9 +32,12 @@ class DynamicHeightHeaderView: UITableViewHeaderFooterView {
         headerLabel.adjustsFontForContentSizeCategory = true
         headerLabel.font = Unwrap.scaledBoldFont
         headerLabel.numberOfLines = 0
-        headerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4).isActive = true
-        headerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4).isActive = true
-        headerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        headerLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+
+        NSLayoutConstraint.activate([
+            headerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            headerLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4),
+            headerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            headerLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ])
     }
 }
