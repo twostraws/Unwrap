@@ -13,7 +13,7 @@ struct Chapter: Decodable {
     var name: String
     var sections: [String]
 
-    mutating func bundleNameSections() -> [String] {
-        return sections.map { $0.bundleName }
-    }
+    lazy var bundleNameSections: [String] = {
+        sections.map { $0.bundleName }
+    }()
 }

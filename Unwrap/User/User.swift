@@ -300,7 +300,7 @@ final class User: Codable {
                 fatalError("Unknown chapter name for criterion: \(badge.value).")
             }
 
-            return conditionChapter.bundleNameSections().allSatisfy {
+            return conditionChapter.bundleNameSections.allSatisfy {
                 hasReviewed($0.bundleName)
             }
         } else if badge.criterion == "practice" {
