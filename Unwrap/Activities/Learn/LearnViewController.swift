@@ -31,6 +31,7 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
         dataSource.delegate = self
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(DynamicHeightHeaderView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
     }
 
     /// Refreshes visible cells when the user changes.

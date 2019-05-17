@@ -594,6 +594,7 @@
 		51FE151B20E25F1200F29889 /* range-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139420E25F1100F29889 /* range-operators.html */; };
 		51FE151C20E25F1200F29889 /* protocol-extensions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139520E25F1100F29889 /* protocol-extensions.mp4 */; };
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
+		A9476512228DF2E7005CC249 /* DynamicHeightHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */; };
 		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
 		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
 		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
@@ -1231,6 +1232,7 @@
 		51FE139520E25F1100F29889 /* protocol-extensions.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "protocol-extensions.mp4"; sourceTree = "<group>"; };
 		51FE151D20E2814E00F29889 /* StudyReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyReview.swift; sourceTree = "<group>"; };
 		879EE4E91437B6378BB24AE1 /* Pods-Unwrap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig"; sourceTree = "<group>"; };
+		A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightHeaderView.swift; sourceTree = "<group>"; };
 		AA4718A94B659E9A42AEC33E /* Pods-UnwrapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
 		B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
@@ -1583,6 +1585,7 @@
 				5153F49120EF7430009E829D /* LearnCoordinator.swift */,
 				51C5642020CCB8250093030C /* LearnViewController.swift */,
 				51C5642820CCC2520093030C /* LearnDataSource.swift */,
+				A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */,
 				51C5642C20CCC5480093030C /* Chapter.swift */,
 			);
 			path = Learn;
@@ -2896,6 +2899,7 @@
 				51C5642520CCB8350093030C /* ChallengesViewController.swift in Sources */,
 				B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */,
 				51596DEC20EE1C9F00952ADC /* WordCollectionViewCell.swift in Sources */,
+				A9476512228DF2E7005CC249 /* DynamicHeightHeaderView.swift in Sources */,
 				51A6D62320E651DA00FB6B46 /* DoubleNames.swift in Sources */,
 				5153F49620EF762B009E829D /* PracticeCoordinator.swift in Sources */,
 				B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */,
