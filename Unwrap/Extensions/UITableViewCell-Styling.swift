@@ -31,6 +31,8 @@ extension UITableViewCell {
     func unknownAnswer() {
         backgroundColor = .white
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
+        textLabel?.textColor = .black
+        detailTextLabel?.textColor = .black
         tintColor = nil
     }
 }
