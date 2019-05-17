@@ -145,9 +145,9 @@
 		"code": "var numbers = [1, 2, 3, 4, 5, 6]\nfor number in numbers {\n\tif number % 2 == 0 {\n\t\tprint(number)\n\t} else {\n\t\tprint(\"Skipping odd number\")\n\t}\n}"
 	},
 	{
-		"question": "This code should print out all multiples of 10 in an array.",
+		"question": "This code should count all multiples of 10 in an array.",
 		"hint": "Make sure the <code>result</code> variable is created outside of the loop.",
-		"code": "func countMultiplesOf10(numbers: Int...) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\ncountMultiplesOf10(numbers: 5, 10, 15, 20, 25)"
+		"code": "func countMultiplesOf10(numbers: Int...) -> Int {\n\tvar result = 0\n\tfor number in numbers {\n\t\tif number % 10 == 0 {\n\t\t\tresult += 1\n\t\t}\n\t}\n\treturn result\n}\nlet count = countMultiplesOf10(numbers: 5, 10, 15, 20, 25)"
 	},
 	{
 		"question": "This code should create a <code>Venue</code> struct with a maximum capacity, plus a method to make bookings.",
