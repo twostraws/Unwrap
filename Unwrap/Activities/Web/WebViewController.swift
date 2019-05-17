@@ -38,6 +38,9 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         view = internalWebView
 
         internalWebView.load(url)
+
+        // FIXME: Showing the toolbar here isn't ideal, because it causes a strange animation where the toolbar slides up, then drops down a little when the view controller has finished showing. If we use performWithoutAnimation() we avoid the sliding up, but it still drops down afterwards. A third option is to show the toolbar where the nav controller is created, but then it isn't shown until the view has finished animating. So, this approach seems like the best of multiple bad choices.
+        navigationController?.setToolbarHidden(false, animated: false)
     }
 
     override func viewDidLoad() {
