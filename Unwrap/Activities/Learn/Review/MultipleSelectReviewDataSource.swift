@@ -55,6 +55,9 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let answer = answers[indexPath.row]
 
+        // We need to start off every label with black text, even though it will be using an attributed string for its exact styling. Without this next line of code, cell re-use will cause a problem in questions without syntax highlighting: correct/wrong answers will have their text color set to white, and cell re-use will cause that to be propagated to cells with a white background color. While we could update unknownAnswer() to set a black text color, doing so would strip syntax highlighting from questions that have it enabled, so the best solution is to start with a black and let syntax highlighting / white color override as necessary.
+        cell.textLabel?.textColor = .black
+
         if review.syntaxHighlighting == true {
             cell.textLabel?.font = Unwrap.codeFont
             cell.textLabel?.attributedText = answer.text.syntaxHighlighted()
