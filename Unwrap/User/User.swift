@@ -301,8 +301,8 @@ final class User: Codable {
                 fatalError("Unknown chapter name for criterion: \(badge.value).")
             }
 
-            return conditionChapter.bundleNameSections.reduce(true) {
-                $0 && hasReviewed($1.bundleName)
+            return conditionChapter.bundleNameSections.allSatisfy {
+                hasReviewed($0.bundleName)
             }
         } else if badge.criterion == "practice" {
             let practiceBadgeCount = 10
