@@ -82,21 +82,13 @@ class PracticeTests: XCTestCase {
             "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
             "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
             "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
-            "letvar even6:[Int] = (1...100).filter { $0.isMultiple(of:2) }",
             "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
-            "letvar even6:[Int] = (1...100).filter { return $0.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
-            "letvar even7:[Int] = (1...100).filter { num in num.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
-            "letvar even7:[Int] = (1...100).filter { num in return num.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
-            "letvar even8:[Int] = (1..<101).filter { $0.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
-            "letvar even8:[Int] = (1..<101).filter { return $0.isMultiple(of:2) }",
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in num.isMultiple(of:2) }",
-            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in return num.isMultiple(of:2) }"
+            "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
         ]
 
         let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
@@ -130,6 +122,7 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
+            print(answer.toAnonymizedVariables())
             XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
@@ -150,11 +143,11 @@ class PracticeTests: XCTestCase {
             "letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{return $0 == 5}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{return $0 == 5}.count\nprint(total)",
-            "letvar filtered:[Int] = x numbers.filter{num in return num == 5}\nprint(filtered.count)",
+            "letvar filtered:[Int] = numbers.filter{num in return num == 5}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)",
-            "letvar filtered:[Int] = x numbers.filter{num in num == 5}\nprint(filtered.count)",
+            "letvar filtered:[Int] = numbers.filter{num in num == 5}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in num == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{num in\nnum == 5\n}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
@@ -220,6 +213,68 @@ class PracticeTests: XCTestCase {
         let wrongAnswers = [
             // this has the wrong data type
             "struct Player\n{\n\tvar score: Double = 0\n\t{\n\t\tdidSet\n\t\t{\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}"
+        ]
+
+        // Make sure all correct answers assert true.
+        for answer in correctAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+        }
+
+        // Make sure all wrong answers assert false.
+        for answer in wrongAnswers {
+            let result = test.check(answer: answer)
+            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+        }
+    }
+
+    /// Compares various correct answers against a known question to make sure Free Coding is stable.
+    func testFreeCoding5() {
+        let question = "Write code that creates an array containing all the people with the first name Terry."
+        let answers = [
+            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
+            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.split(separator: \" \")[0] == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
+            "letvar parsed2:[String] = names.filter{return $0.hasPrefix(\"Terry\")}",
+            "letvar parsed2:[String] = names.filter{return $0.split(separator: \" \")[0] == \"Terry\"}",
+            "letvar parsed3:[String] = names.filter{name in\n\treturn name.hasPrefix(\"Terry\")\n}",
+            "letvar parsed3:[String] = names.filter{name in\n\treturn name.split(separator: \" \")[0] == \"Terry\"\n}",
+            "letvar parsed2:[String] = names.filter{$0.hasPrefix(\"Terry\")}",
+            "letvar parsed2:[String] = names.filter{$0.split(separator: \" \")[0] == \"Terry\"}",
+            "letvar parsed3:[String] = names.filter {name in\n\tname.hasPrefix(\"Terry\")\n}",
+            "letvar parsed3:[String] = names.filter {name in\n\tname.split(separator: \" \")[0] == \"Terry\"\n}",
+            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n",
+            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n"
+        ]
+
+        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
+
+        let correctAnswers = [
+            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
+            "var parsed = [String]()\nfor name in names {\n\tif name.split(separator: \" \").first == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
+            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.split(separator: \" \")[0] == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
+            "let parsed2 = names.filter{return $0.hasPrefix(\"Terry\")}",
+            "let parsed2:[String] = names.filter{return $0.split(separator: \" \").first == \"Terry\"}",
+            "let parsed2 = names.filter{return $0.split(separator: \" \")[0] == \"Terry\"}",
+            "let parsed3:[String] = names.filter{name in\n\treturn name.hasPrefix(\"Terry\")\n}",
+            "let parsed3 = names.filter{name in\n\treturn name.split(separator: \" \").first == \"Terry\"\n}",
+            "let parsed3:[String] = names.filter{name in\n\treturn name.split(separator: \" \")[0] == \"Terry\"\n}",
+            "let parsed2 = names.filter{$0.hasPrefix(\"Terry\")}",
+            "let parsed2:[String] = names.filter{$0.split(separator: \" \").first == \"Terry\"}",
+            "let parsed2 = names.filter{$0.split(separator: \" \")[0] == \"Terry\"}",
+            "let parsed3:[String] = names.filter {name in\n\tname.hasPrefix(\"Terry\")\n}",
+            "let parsed3 = names.filter {name in\n\tname.split(separator: \" \").first == \"Terry\"\n}",
+            "let parsed3:[String] = names.filter {name in\n\tname.split(separator: \" \")[0] == \"Terry\"\n}",
+            "var result = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n",
+            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \").first == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n",
+            "var counted = [String]()\nfor i in 0 ..< names.count {\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tcounted.append(name)\n\t}\n}\n"
+        ]
+
+        let wrongAnswers = [
+            // this counts from 0 through names.count rather than up to
+            "var counted = [String]()\nfor i in 0 ... names.count {\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tcounted.append(name)\n\t}\n}\n",
+
+            // this has the wrong array type
+            "var counted = [Int]()\nfor i in 0 ..< names.count {\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tcounted.append(name)\n\t}\n}\n"
         ]
 
         // Make sure all correct answers assert true.

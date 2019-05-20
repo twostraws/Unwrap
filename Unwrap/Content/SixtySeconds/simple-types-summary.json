@@ -42,7 +42,7 @@
         },
         {
             "answer": "let isOverflowing: Bool = \"true\"",
-            "reason": "This creates a constant."
+            "reason": "This attempts to assign a string to a Boolean, which is invalid in Swift."
         },
         {
             "answer": "var isActive: Bool = 0",

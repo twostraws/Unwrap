@@ -32,6 +32,12 @@ extension String {
         // Homogenize trailing closures: array.map { … } is always preferred to array.map({ … })
         replaced = replaced.replacingOccurrences(of: #"\(\{(.*?)\}\)"#, with: "{$1}", options: .regularExpression)
 
+        // Homogenize modulus to use %
+        replaced = replaced.replacingOccurrences(of: #"\.isMultiple\(of: *(\d+)\)"#, with: " % $1 == 0", options: .regularExpression)
+
+        // Replace .first with [0] to reduce the number of possible solutions
+        replaced = replaced.replacingOccurrences(of: ".first", with: "[0]")
+
         // Homogenize brace style.
         replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
         replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")

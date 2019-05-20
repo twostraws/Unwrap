@@ -1,109 +1,113 @@
 [
-	{
-		"question": "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use.",
-		"hint": "If you make both strings lowercased using <code>lowercased()</code> you can compare the lowercased versions.",
-		"startingCode": "",
-		"answers": [
-			"func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
-			"func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.uppercased() == input2.uppercased()\n}",
-			"func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
-			"func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.uppercased() == input2.uppercased()\nreturn result\n}",
-			"func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}else{\nreturn false\n}\n}",
-			"func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}\n}",
+    {
+        "question": "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use.",
+        "hint": "If you make both strings lowercased using <code>lowercased()</code> you can compare the lowercased versions.",
+        "startingCode": "",
+        "answers": [
+            "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.uppercased() == input2.uppercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.uppercased() == input2.uppercased()\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}else{\nreturn false\n}\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}else{\nreturn false\n}\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}\nreturn false\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}\nreturn false\n}"
-		]
-	},
-	{
-		"question": "Write a function that accepts two strings and returns them joined together. For example, sending in the strings 'car' and 'pet' should return 'carpet'.",
-		"hint": "You can use <code>+</code> to join two strings together.",
-		"startingCode": "",
-		"answers": [
-			"func myFunction(input1:String,input2:String) -> String{\nreturn input1 + input2\n}",
-			"func myFunction(input1:String,input2:String) -> String{\nletvar result:String = input1 + input2\nreturn result\n}",
-			"func myFunction(input1:String,input2:String) -> String{\nreturn \"\\(input1)\\(input2)\"\n}",
-			"func myFunction(input1:String,input2:String) -> String{\nletvar result:String = \"\\(input1)\\(input2)\"\nreturn result\n}"
-		]
-	},
-	{
-		"question": "Write a function that accepts a string and sends back an integer of how many characters are in the string.",
-		"hint": "You can use the <code>count</code> property to measure the length of the string.",
-		"startingCode": "",
-		"answers": [
-			"func myFunction(input1:String) -> Int{\nreturn input1.count\n}",
-			"func myFunction(input1:String) -> Int{\nletvar result:Int = input1.count\nreturn result}"
-		]
-	},
-	{
-		"question": "Write a function that accepts an integer and returns that number squared. For example, sending in the number 5 will return 25.",
-		"hint": "The square of a number is that number multiplied by itself",
-		"startingCode": "",
-		"answers": [
-			"func myFunction(input1:Int) -> Int{\nreturn input1 * input1\n}",
-			"func myFunction(input1:Int) -> Int{\nletvar result:Int = input1 * input1\nreturn result\n}"
-		]
-	},
-	{
-		"question": "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total.",
-		"hint": "You can solve this using a <code>for</code> loop.",
-		"startingCode": "let numbers = [1, 5, 2, 5, 3, 5]",
-		"answers": [
-			"var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
-			"var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
-			"letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
-			"letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
+        ]
+    },
+    {
+        "question": "Write a function that accepts two strings and returns them joined together. For example, sending in the strings 'car' and 'pet' should return 'carpet'.",
+        "hint": "You can use <code>+</code> to join two strings together.",
+        "startingCode": "",
+        "answers": [
+            "func myFunction(input1:String,input2:String) -> String{\nreturn input1 + input2\n}",
+            "func myFunction(input1:String,input2:String) -> String{\nletvar result:String = input1 + input2\nreturn result\n}",
+            "func myFunction(input1:String,input2:String) -> String{\nreturn \"\\(input1)\\(input2)\"\n}",
+            "func myFunction(input1:String,input2:String) -> String{\nletvar result:String = \"\\(input1)\\(input2)\"\nreturn result\n}"
+        ]
+    },
+    {
+        "question": "Write a function that accepts a string and sends back an integer of how many characters are in the string.",
+        "hint": "You can use the <code>count</code> property to measure the length of the string.",
+        "startingCode": "",
+        "answers": [
+            "func myFunction(input1:String) -> Int{\nreturn input1.count\n}",
+            "func myFunction(input1:String) -> Int{\nletvar result:Int = input1.count\nreturn result}"
+        ]
+    },
+    {
+        "question": "Write a function that accepts an integer and returns that number squared. For example, sending in the number 5 will return 25.",
+        "hint": "The square of a number is that number multiplied by itself",
+        "startingCode": "",
+        "answers": [
+            "func myFunction(input1:Int) -> Int{\nreturn input1 * input1\n}",
+            "func myFunction(input1:Int) -> Int{\nletvar result:Int = input1 * input1\nreturn result\n}"
+        ]
+    },
+    {
+        "question": "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total.",
+        "hint": "You can solve this using a <code>for</code> loop.",
+        "startingCode": "let numbers = [1, 5, 2, 5, 3, 5]",
+        "answers": [
+            "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
+            "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{$0 == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{return $0 == 5}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{return $0 == 5}.count\nprint(total)",
-			"letvar filtered:[Int] = x numbers.filter{num in return num == 5}\nprint(filtered.count)",
-			"letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
-			"letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
-			"letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)",
+            "letvar filtered:[Int] = x numbers.filter{num in return num == 5}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in return num == 5}.count\nprint(total)",
+            "letvar filtered:[Int] = numbers.filter{num in\nreturn num == 5\n}\nprint(filtered.count)",
+            "letvar total:Int = numbers.filter{num in\nreturn num == 5\n}.count\nprint(total)",
             "letvar filtered:[Int] = x numbers.filter{num in num == 5}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in num == 5}.count\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{num in\nnum == 5\n}\nprint(filtered.count)",
             "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
-			"var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)",
+            "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)",
+            "print(numbers.filter{num in return num == 5}.count)",
+            "print(numbers.filter{return $0 == 5}.count)",
+            "print(numbers.filter{num in num == 5}.count)",
             "print(numbers.filter{$0 == 5}.count)"
-		]
-	},
-	{
-		"question": "Write code that doubles all the numbers in this array.",
-		"hint": "You can solve this using a <code>for</code> loop.",
-		"startingCode": "let numbers = [1, 3, 5, 7, 9]",
-		"answers": [
-			"var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
-			"var newArray:[Int] = [Int]()\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
-			"var newArray:[Int] = []\nfor number in numbers{\nnewArray.append(number * 2)\n}",
-			"var newArray:[Int] = []\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
-			"letvar newArray:[Int] = numbers.map{$0 * 2}",
-			"letvar newArray:[Int] = numbers.map{num in return num * 2}",
-			"letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}",
+        ]
+    },
+    {
+        "question": "Write code that doubles all the numbers in this array.",
+        "hint": "You can solve this using a <code>for</code> loop.",
+        "startingCode": "let numbers = [1, 3, 5, 7, 9]",
+        "answers": [
+            "var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
+            "var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(2 * number)\n}",
+            "var newArray:[Int] = [Int]()\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+            "var newArray:[Int] = [Int]()\nfor number in numbers{\nletvar doubled:Int = 2 * number\nnewArray.append(doubled)\n}",
+            "var newArray:[Int] = []\nfor number in numbers{\nnewArray.append(number * 2)\n}",
+            "var newArray:[Int] = []\nfor number in numbers{\nnewArray.append(2 * number)\n}",
+            "var newArray:[Int] = []\nfor number in numbers{\nletvar doubled:Int = number * 2\nnewArray.append(doubled)\n}",
+            "var newArray:[Int] = []\nfor number in numbers{\nletvar doubled:Int = 2 * number\nnewArray.append(doubled)\n}",
+            "letvar newArray:[Int] = numbers.map{$0 * 2}",
+            "letvar newArray:[Int] = numbers.map{num in return num * 2}",
+            "letvar newArray:[Int] = numbers.map{num in\nreturn num * 2\n}",
+            "letvar newArray:[Int] = numbers.map{2 * $0}",
+            "letvar newArray:[Int] = numbers.map{num in return 2 * num}",
+            "letvar newArray:[Int] = numbers.map{num in\nreturn 2 * num\n}",
             "var newArray:[Int] = [Int]()\nfor i in 0..<newArray.count{\n\tnewArray.append(numbers[i] * 2)\n}",
             "var newArray:[Int] = [Int]()\nfor i in 0..<newArray.count{\n\tletvar doubled = numbers[i] * 2\n\tnewArray.append(doubled)\n}"
-		]
-	},
+        ]
+    },
     {
         "question": "Write code that creates an array containing all the people with the first name Terry.",
         "hint": "You can solve this using a <code>for</code> loop.",
         "startingCode": "let names = [\"Terry Jones\", \"John Terry\", \"Terry Crews\", \"Terry Farrell\", \"Samuel Terry\"]",
         "answers": [
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
-            "var parsed:[String] = [String]()\nfor name in names {\n\tif name.split(separator: \" \").first == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.split(separator: \" \")[0] == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
             "letvar parsed2:[String] = names.filter{return $0.hasPrefix(\"Terry\")}",
-            "letvar parsed2:[String] = names.filter{return $0.split(separator: \" \").first == \"Terry\"}",
             "letvar parsed2:[String] = names.filter{return $0.split(separator: \" \")[0] == \"Terry\"}",
-            "letvar parsed3:[String] = names.filter {name in\n\treturn name.hasPrefix(\"Terry\")\n}",
-            "letvar parsed3:[String] = names.filter {name in\n\treturn name.split(separator: \" \").first == \"Terry\"\n}",
-            "letvar parsed3:[String] = names.filter {name in\n\treturn name.split(separator: \" \")[0] == \"Terry\"\n}",
+            "letvar parsed3:[String] = names.filter{name in\n\treturn name.hasPrefix(\"Terry\")\n}",
+            "letvar parsed3:[String] = names.filter{name in\n\treturn name.split(separator: \" \")[0] == \"Terry\"\n}",
             "letvar parsed2:[String] = names.filter{$0.hasPrefix(\"Terry\")}",
-            "letvar parsed2:[String] = names.filter{$0.split(separator: \" \").first == \"Terry\"}",
             "letvar parsed2:[String] = names.filter{$0.split(separator: \" \")[0] == \"Terry\"}",
             "letvar parsed3:[String] = names.filter {name in\n\tname.hasPrefix(\"Terry\")\n}",
-            "letvar parsed3:[String] = names.filter {name in\n\tname.split(separator: \" \").first == \"Terry\"\n}",
             "letvar parsed3:[String] = names.filter {name in\n\tname.split(separator: \" \")[0] == \"Terry\"\n}",
             "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n",
-            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \").first == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n",
             "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n"
         ]
     },
@@ -137,7 +141,7 @@
     },
     {
         "question": "Write code that loops from 1 through 100 to create an array of all even numbers.",
-        "hint": "You'll need to use the division remainder operator, <code>%</code>, or the isMultiple(of:) function",
+        "hint": "You'll need to use the division remainder operator, <code>%</code>, or the isMultiple(of:) method.",
         "startingCode": "",
         "answers": [
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
@@ -146,21 +150,13 @@
             "var even4:[Int] = [Int]()\nfor i in 1..<101 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven4.append(i)\n\t}\n}",
             "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
             "letvar even6:[Int] = (1...100).filter { $0 % 2 == 0 }",
-            "letvar even6:[Int] = (1...100).filter { $0.isMultiple(of:2) }",
             "letvar even6:[Int] = (1...100).filter { return $0 % 2 == 0 }",
-            "letvar even6:[Int] = (1...100).filter { return $0.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in num % 2 == 0 }",
-            "letvar even7:[Int] = (1...100).filter { num in num.isMultiple(of:2) }",
             "letvar even7:[Int] = (1...100).filter { num in return num % 2 == 0 }",
-            "letvar even7:[Int] = (1...100).filter { num in return num.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { $0 % 2 == 0 }",
-            "letvar even8:[Int] = (1..<101).filter { $0.isMultiple(of:2) }",
             "letvar even8:[Int] = (1..<101).filter { return $0 % 2 == 0 }",
-            "letvar even8:[Int] = (1..<101).filter { return $0.isMultiple(of:2) }",
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in num.isMultiple(of:2) }",
             "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }",
-            "letvar even9:[Int] = (1..<101).filter { num in return num.isMultiple(of:2) }"
         ]
     }
 ]
