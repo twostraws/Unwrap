@@ -9,7 +9,7 @@
 import UIKit
 
 /// Manages all the rows in the Help table view, handing taps back to a delegate where appropriate.
-class HelpDataSource: NSObject, UITableViewDataSource {
+class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     weak var delegate: TappableTextViewDelegate?
     let items = Bundle.main.decode([HelpItem].self, from: "Help.json")
 
@@ -25,8 +25,13 @@ class HelpDataSource: NSObject, UITableViewDataSource {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return items[section].title
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SectionHeader") as? DynamicHeightHeaderView {
+            headerView.headerLabel.text = items[section].title
+            return headerView
+        } else {
+            return nil
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
