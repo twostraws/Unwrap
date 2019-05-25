@@ -1394,6 +1394,7 @@
 				51163086227E333F007BD640 /* PortraitSplitViewController.swift */,
 				51CC1390206560A600F37A67 /* ShapeView.swift */,
 				511FD6BF2107425F0023E92C /* TappableTextView.swift */,
+				A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -1585,7 +1586,6 @@
 				5153F49120EF7430009E829D /* LearnCoordinator.swift */,
 				51C5642020CCB8250093030C /* LearnViewController.swift */,
 				51C5642820CCC2520093030C /* LearnDataSource.swift */,
-				A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */,
 				51C5642C20CCC5480093030C /* Chapter.swift */,
 			);
 			path = Learn;

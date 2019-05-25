@@ -27,10 +27,12 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(showCredits))
 
         tableView.dataSource = dataSource
+        tableView.delegate = dataSource
         dataSource.delegate = self
 
         tableView.separatorStyle = .none
         tableView.register(HelpTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(DynamicHeightHeaderView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
     }
 
     func linkTapped(_ url: URL) {
