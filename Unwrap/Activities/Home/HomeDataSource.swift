@@ -117,8 +117,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
     /// Shows the user's points breakdown.
     func makePointsBreakdown(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
-        cell.textLabel?.textColor = nil
+        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
 
         switch indexPath.row {
         case 0:
@@ -143,7 +142,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         case 4:
             cell.textLabel?.text = "Share Score"
-            cell.detailTextLabel?.text = nil
+            cell.accessibilityTraits = .button
             cell.textLabel?.textColor = UIColor(bundleName: "Primary")
 
         default:
@@ -155,8 +154,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
     /// Shows how the user is progressing through levels.
     func makeStatistic(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
-        cell.textLabel?.textColor = nil
+        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
 
         switch indexPath.row {
         case 0:
@@ -189,11 +187,10 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
     /// Shows the user's streak record.
     func makeStreak(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
             cell.textLabel?.text = "Current Streak"
-            cell.textLabel?.textColor = nil
             cell.detailTextLabel?.text = "\(User.current.streakDays)"
             cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
             //UITest reading accessibility label and not accessibility identifier in Storyboard
@@ -201,9 +198,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             return cell
 
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
             cell.textLabel?.text = "Best Streak"
-            cell.textLabel?.textColor = nil
             cell.detailTextLabel?.text = "\(User.current.bestStreak)"
             cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
             //UITest reading accessibility label and not accessibility identifier in Storyboard
@@ -213,6 +208,17 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         default:
             fatalError("Unknown index path: \(indexPath).")
         }
+    }
+
+    /// Dequeue a reusable and clean table view cell to show an stat.
+    func dequeueStatReusableCell(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
+        cell.textLabel?.textColor = nil
+        cell.detailTextLabel?.text = nil
+        cell.accessibilityLabel = nil
+        cell.accessibilityTraits = .none
+
+        return cell
     }
 
     /// Shows all the badges the user has earned.
