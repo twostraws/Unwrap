@@ -14,10 +14,14 @@ protocol AlertShowing { }
 extension AlertShowing {
     /// This shows an alert message. Note: this a default implementation of showAlert() in the AlertShowing protocol, but it isn't declared in the protocol because we don't want conforming types to provide their own implementation.
     func showAlert(title: String = "Hint", body: String, coordinator: AlertHandling? = nil, alternateTitle: String? = nil, alternateAction: (() -> Void)? = nil) {
+        showAlert(title: title, body: body.fromSimpleHTML(), coordinator: coordinator, alternateTitle: alternateTitle, alternateAction: alternateAction)
+    }
+
+    func showAlert(title: String = "Hint", body: NSAttributedString, coordinator: AlertHandling? = nil, alternateTitle: String? = nil, alternateAction: (() -> Void)? = nil) {
         let alert = AlertViewController.instantiate()
 
         alert.title = title
-        alert.body = body.fromSimpleHTML()
+        alert.body = body
         alert.alternateTitle = alternateTitle
         alert.alternateAction = alternateAction
         alert.coordinator = coordinator
