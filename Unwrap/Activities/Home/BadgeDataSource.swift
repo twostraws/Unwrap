@@ -24,20 +24,32 @@ class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
 
         let badge = badges[indexPath.item]
         cell.imageView.image = badge.image
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = "Badge" + badge.name
 
-        /// Highlight earned badges in whatever color was specified in the JSON.
+        /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
         if User.current.isBadgeEarned(badge) {
             cell.imageView.tintColor = UIColor(bundleName: badge.color)
+            cell.accessibilityTraits = .button
+            cell.accessibilityValue = "Earned"
+            cell.accessibilityHint = "Share Badge"
         } else {
             cell.imageView.tintColor = UIColor(bundleName: "Locked")
+            cell.accessibilityTraits = .none
+            cell.accessibilityValue = User.current.badgeProgress(badge).string
         }
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let coordinator = collectionView.findCoordinator() as? HomeCoordinator else { return }
         let badge = badges[indexPath.item]
+
+        /// Do not perform any action when voice over enabled and Badge is not earned. The accessibilityValue already tells the current progress.
+        if UIAccessibility.isVoiceOverRunning && !User.current.isBadgeEarned(badge) { return }
+
+        guard let coordinator = collectionView.findCoordinator() as? HomeCoordinator else { return }
+
         coordinator.shareBadge(badge)
     }
 }
