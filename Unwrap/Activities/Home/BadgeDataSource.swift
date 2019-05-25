@@ -43,13 +43,17 @@ class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let badge = badges[indexPath.item]
-
-        /// Do not perform any action when voice over enabled and Badge is not earned. The accessibilityValue already tells the current progress.
-        if UIAccessibility.isVoiceOverRunning && !User.current.isBadgeEarned(badge) { return }
-
         guard let coordinator = collectionView.findCoordinator() as? HomeCoordinator else { return }
 
-        coordinator.shareBadge(badge)
+        let badge = badges[indexPath.item]
+
+        /// Do not show badge details when voice over is running. For for earned badges we share directly and for not earned the accessibilityValue already tells the current progress.
+        if UIAccessibility.isVoiceOverRunning {
+            if User.current.isBadgeEarned(badge) {
+                coordinator.shareBadge(badge)
+            }
+        } else {
+            coordinator.showBadgeDetails(badge)
+        }
     }
 }
