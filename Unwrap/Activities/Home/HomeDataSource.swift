@@ -233,9 +233,6 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
         cell.layoutIfNeeded()
 
-        //Storyboard doesn't override isAccessibilityElement for UITesting, setting it here
-        cell.isAccessibilityElement = true
-
         return cell
     }
 }

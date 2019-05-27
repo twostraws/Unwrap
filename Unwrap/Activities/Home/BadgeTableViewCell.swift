@@ -18,8 +18,10 @@ class BadgeTableViewCell: UITableViewCell, UserTracking {
 
         // although our main table view will get reloaded when user data changes, iOS will reuse this existing cell if it has one and so we must reload it ourselves as needed.
         registerForUserChanges()
-    }
 
+        // By setting accessibility element to false, we allow voiceover to access the elements inside
+        isAccessibilityElement = false
+    }
     func userDataChanged() {
         collectionView.reloadData()
     }
