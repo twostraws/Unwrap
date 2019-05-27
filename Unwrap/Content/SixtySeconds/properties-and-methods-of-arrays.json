@@ -23,7 +23,7 @@
             "reason": "This code will evaluate as true."
         },
         {
-            "answer": "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.index(of: \"Whist\") == 2",
+            "answer": "let cardGames = [\"Poker\", \"Blackjack\", \"Whist\"]\ncardGames.firstIndex(of: \"Whist\") == 2",
             "reason": "This code will evaluate as true."
         },
         {
@@ -45,7 +45,7 @@
             "reason": "This will evaluate as false, because the sorted array is missing the second 1."
         },
         {
-            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.index(of: \"A New Hope\") == 4",
+            "answer": "let movies = [\"A New Hope\", \"Empire Strikes Back\", \"Return of the Jedi\"]\nmovies.firstIndex(of: \"A New Hope\") == 4",
             "reason": "\"A New Hope\" exists at index 0."
         },
         {

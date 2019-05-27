@@ -23,7 +23,7 @@
             "reason": "This code will print a message."
         },
         {
-            "answer": "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.index(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
+            "answer": "let album = \"Red\"\nlet albums = [\"Reputation\", \"Red\", \"1989\"]\nif let position = albums.firstIndex(of: album) {\n\tprint(\"Found \\(album) at position \\(position).\")\n}",
             "reason": "This code will print a message."
         },
         {

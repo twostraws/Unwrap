@@ -28,6 +28,7 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
 
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+        dataSource.coordinator = coordinator
         dataSource.delegate = self
 
         tableView.separatorStyle = .none
@@ -41,20 +42,6 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
         if UIDevice.current.userInterfaceIdiom == .pad {
             // if we're on iPad we should dismiss the modal view controller immediately so the user can browse the link they chose.
             dismiss(animated: true)
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        let item = dataSource.item(at: indexPath.section)
-
-        switch item.action {
-        case "showTour":
-            coordinator?.showTour()
-
-        default:
-            break
         }
     }
 

@@ -10,6 +10,7 @@ import UIKit
 
 /// Manages all the rows in the Help table view, handing taps back to a delegate where appropriate.
 class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+    weak var coordinator: HomeCoordinator?
     weak var delegate: TappableTextViewDelegate?
     let items = Bundle.main.decode([HelpItem].self, from: "Help.json")
 
@@ -59,5 +60,19 @@ class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let selected = item(at: indexPath.section)
+
+        switch selected.action {
+        case "showTour":
+            coordinator?.showTour()
+
+        default:
+            break
+        }
     }
 }
