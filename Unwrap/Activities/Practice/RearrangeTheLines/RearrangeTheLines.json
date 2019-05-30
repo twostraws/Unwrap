@@ -82,7 +82,7 @@
 	{
 		"question": "This code should make an X-Wing that attacks the Death Star if its callsign is Red 5.",
 		"hint": "Remember to put your properties before your methods.",
-		"code": "struct XWing {\n\tvar callSign: String\n\tfunc startTrenchRun() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\tprint(\"I'm going to blow up the Death Star!\")\n\t\t} else {\n\t\t\tprint(\"I'm hit!\")\n\t\t}\n\t}\n}"
+		"code": "struct XWing {\n\tvar callSign: String\n\tfunc shouldAttackDeathStar() -> Bool {\n\t\tif callSign == \"Red 5\" {\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}"
 	},
 	{
 		"question": "This code should make a <code>Bicycle</code> struct that prints a message when it changes gear.",
