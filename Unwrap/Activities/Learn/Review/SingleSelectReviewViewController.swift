@@ -55,12 +55,30 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
         code.contentTextView.isEditable = false
     }
 
+    deinit {
+        Unwrap.codeFontSize = 17.0
+    }
+
     @IBAction func selectAnswer(_ sender: UIButton) {
         if isShowingAnswer {
             coordinator?.answerSubmitted(from: self, wasCorrect: currentAnswer.isCorrect)
         } else {
             showAnswer(selected: sender)
         }
+    }
+
+    @IBAction func decreaseFontSize(_ sender: UIButton) {
+        Unwrap.codeFontSize -= 2
+        updateCodeFontSize()
+    }
+
+    @IBAction func increaseFontSize(_ sender: UIButton) {
+        Unwrap.codeFontSize += 2
+        updateCodeFontSize()
+    }
+
+    private func updateCodeFontSize() {
+        code.contentTextView.font = Unwrap.codeFont
     }
 
     func showAnswer(selected: UIButton) {

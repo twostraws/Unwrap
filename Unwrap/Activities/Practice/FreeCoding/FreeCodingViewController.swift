@@ -75,6 +75,10 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
         showFirstTimeAlert(name: "FreeCoding", title: "Tip", message: "Unwrap is able to understand a variety of different solutions to each problem, but it's not perfect. If you enter a valid solution that is not accepted, please let us know so we can add it and make Unwrap better for everyone!")
     }
 
+    deinit {
+        Unwrap.codeFontSize = 17.0
+    }
+
     /// Shows the hint button. This gets called in more than one place, because we replace it with a Done button when the text view is being edited.
     @objc func showHintButton() {
         textView?.contentTextView.resignFirstResponder()
@@ -108,6 +112,20 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
                 }
             }
         }
+    }
+
+    @IBAction func decreaseFontSize(_ sender: UIButton) {
+        Unwrap.codeFontSize -= 2
+        updateCodeFontSize()
+    }
+
+    @IBAction func increaseFontSize(_ sender: UIButton) {
+        Unwrap.codeFontSize += 2
+        updateCodeFontSize()
+    }
+
+    private func updateCodeFontSize() {
+        textView.contentTextView.font = Unwrap.codeFont
     }
 
     /// Give users the choice of trying again or skipping
