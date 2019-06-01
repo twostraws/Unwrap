@@ -37,7 +37,7 @@
             "reason": "The <code>loadForecast()<\/code> function does not return an optional string."
         },
         {
-            "answer": "let captains = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
+            "answer": "let captains: [String]? = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
             "reason": "The <code>captains<\/code> array is optional, so this should read <code>captains?.last?.count<\/code>."
         },
         {
