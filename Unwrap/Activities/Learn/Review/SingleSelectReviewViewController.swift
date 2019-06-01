@@ -56,7 +56,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     }
 
     deinit {
-        Unwrap.codeFontSize = 17.0
+        Unwrap.codeFontSize = Unwrap.defaultCodeFontSize
     }
 
     @IBAction func selectAnswer(_ sender: UIButton) {

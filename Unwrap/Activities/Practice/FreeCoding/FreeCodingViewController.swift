@@ -76,7 +76,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
     }
 
     deinit {
-        Unwrap.codeFontSize = 17.0
+        Unwrap.codeFontSize = Unwrap.defaultCodeFontSize
     }
 
     /// Shows the hint button. This gets called in more than one place, because we replace it with a Done button when the text view is being edited.
