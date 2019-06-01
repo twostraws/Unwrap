@@ -31,29 +31,4 @@ enum CodeErrorType: CaseIterable {
 
     case anonymousParameters // first parameter has no external name
     case removingVar // changing "var result" to just "result"
-
-    // FIXME: To be removed when switching to Swift 4.2
-    static let allCases = [
-        badResultType,
-        badReturnType,
-        badValue,
-        badWhitespace,
-
-        missingBrace,
-        missingMinus,
-        missingParenthesis,
-        missingQuote,
-        missingReturnType,
-        missingReturnValue,
-
-        typoCaseCall,
-        typoCaseReturn,
-        typoColon,
-        typoFunction,
-        typoQuotes,
-        typoReturn,
-
-        anonymousParameters,
-        removingVar
-    ]
 }
