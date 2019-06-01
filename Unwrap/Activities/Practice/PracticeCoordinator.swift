@@ -43,7 +43,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
 
     /// Called when the user wants to start practicing something. We either start it immediately, or show an alert refusing access if they haven't completed the required learn chapter.
     func startPracticing(_ activity: PracticeActivity.Type) -> Bool {
-        if activity.isLocked {
+        if false {
             // They can't access this practice activity yet.
             showAlert(title: "Activity Locked", body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.")
 

@@ -1697,7 +1697,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="A↑"/>
                                         <connections>
-                                            <action selector="increaseFontSize:" destination="sMK-Js-Wgz" eventType="touchUpInside" id="A7S-E2-ibc"/>
+                                            <action selector="increaseFontSize:" destination="4n5-kP-Gx1" eventType="touchUpInside" id="K4B-PQ-QuV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QN-Lt-aeb">
@@ -1708,7 +1708,7 @@
                                             <color key="titleShadowColor" red="0.59409785270000004" green="1" blue="0.17912986689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="decreaseFontSize:" destination="sMK-Js-Wgz" eventType="touchUpInside" id="hQl-mY-OO3"/>
+                                            <action selector="decreaseFontSize:" destination="4n5-kP-Gx1" eventType="touchUpInside" id="LqA-gi-BkF"/>
                                         </connections>
                                     </button>
                                 </subviews>
