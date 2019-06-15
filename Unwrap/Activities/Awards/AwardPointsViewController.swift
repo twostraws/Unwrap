@@ -15,10 +15,8 @@ class AwardPointsViewController: UIViewController, Storyboarded {
             configureNavigation()
         }
     }
-    
     //The AVPlayer for our sound when the user levels up
     var levelUpSoundPlayer: AVAudioPlayer?
-
 
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
@@ -84,7 +82,6 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         }
         totalPoints.count(start: User.current.totalPoints, end: User.current.totalPoints + pointsToAward)
         earnedPoints.count(start: pointsToAward, end: 0)
-        
         if willPlaySound {
             //Schedules the sound to be played
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
