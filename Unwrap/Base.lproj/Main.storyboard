@@ -572,7 +572,7 @@
                                                 </fragment>
                                                 <fragment content="100,000">
                                                     <attributes>
-                                                        <font key="NSFont" size="48" name=".SFNSText"/>
+                                                        <font key="NSFont" metaFont="system" size="48"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -909,7 +909,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdq-DO-teL" customClass="CountingLabel" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="101" y="340.5" width="173.5" height="76.5"/>
+                                <rect key="frame" x="97" y="340.5" width="181" height="78"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">TOTAL
@@ -921,7 +921,7 @@
                                     </fragment>
                                     <fragment content="100,000">
                                         <attributes>
-                                            <font key="NSFont" size="48" name=".SFNSText"/>
+                                            <font key="NSFont" metaFont="system" size="48"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -929,7 +929,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-cE-S4u" customClass="CountingLabel" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="101" y="447" width="173.5" height="76.5"/>
+                                <rect key="frame" x="97" y="448.5" width="181" height="78"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">EARNED
@@ -941,7 +941,7 @@
                                     </fragment>
                                     <fragment content="100,000">
                                         <attributes>
-                                            <font key="NSFont" size="48" name=".SFNSText"/>
+                                            <font key="NSFont" metaFont="system" size="48"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -955,7 +955,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="TAP TO CONTINUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6b-1Y-cu1">
-                                <rect key="frame" x="112" y="558.5" width="151" height="20.5"/>
+                                <rect key="frame" x="112" y="561.5" width="151" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
