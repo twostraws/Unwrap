@@ -525,7 +525,7 @@
   },
   {
     "term": "Value type",
-    "description": "Any type that stores its data directly in memory. If you point a second variable to a value type it will always copies the data in its entirety, rather than allowing it to be shared."
+    "description": "Any type that stores its data directly in memory. If you point a second variable to a value type it will always copy the data in its entirety, rather than allowing it to be shared."
   },
   {
     "term": "Variable",
