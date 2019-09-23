@@ -41,7 +41,7 @@
             "reason": "The <code>translate</code> function is missing a name for its parameter."
         },
         {
-            "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..>count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
+            "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..<count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
             "reason": "The closure references a parameter, <code>$0</code>, but it doesn't take any parameters."
         },
         {
