@@ -54,7 +54,7 @@
         },
         {
             "answer": "var population = 7_500_000_000\nrepeat {\n\tprint(\"More babies have been born.\")\n\tpopulation *= 1.0001\n} while true",
-            "reason": "This attempts to multiple an <code>Int<\/code> by a <code>Double<\/code>."
+            "reason": "This attempts to multiply an <code>Int<\/code> by a <code>Double<\/code>."
         }
     ]
 }
