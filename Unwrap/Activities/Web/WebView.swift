@@ -30,6 +30,11 @@ class WebView: UIView {
             backgroundColor = .white
         }
 
+        if #available(iOS 13, *) {
+            backgroundColor = .systemBackground
+            webView.backgroundColor = .systemBackground
+        }
+
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.allowsBackForwardNavigationGestures = true
 

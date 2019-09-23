@@ -39,7 +39,9 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
         let chapter = Unwrap.chapters[indexPath.section]
         let section = chapter.sections[indexPath.row]
+
         cell.textLabel?.text = section
+        cell.textLabel?.numberOfLines = 0
 
         // Decide how to show the checkmark for this section.
 

@@ -783,6 +783,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="b12-Nc-k65" firstAttribute="leading" secondItem="dw2-QN-Yy0" secondAttribute="leading" id="3qu-Ed-giW"/>
                             <constraint firstItem="0UI-dg-FYd" firstAttribute="top" secondItem="dw2-QN-Yy0" secondAttribute="top" id="AhJ-fY-4Ev"/>

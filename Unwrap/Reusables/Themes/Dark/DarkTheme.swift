@@ -12,7 +12,7 @@ import UIKit
 /// A source code theme that has a dark background and light text.
 public struct DarkTheme: SourceCodeTheme {
     public var lineNumbersStyle: LineNumbersStyle? = LineNumbersStyle(font: Unwrap.codeFont, textColor: Color.lightGray)
-    public let gutterStyle: GutterStyle = GutterStyle(backgroundColor: Color(white: 0.25, alpha: 1), minimumWidth: 32)
+    public let gutterStyle: GutterStyle = GutterStyle(backgroundColor: Color(white: 0.15, alpha: 1), minimumWidth: 32)
 
     public let backgroundColor = Color.black
     public let font = Unwrap.codeFont
