@@ -35,6 +35,9 @@ class WebView: UIView {
             webView.backgroundColor = .systemBackground
         }
 
+        // stop the web view from appearing full white initially; this is pretty blinding in dark mode!
+        webView.isOpaque = false
+
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.allowsBackForwardNavigationGestures = true
 
