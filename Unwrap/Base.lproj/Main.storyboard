@@ -863,6 +863,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="MMv-9p-c2C" firstAttribute="bottom" secondItem="M1E-oE-vy5" secondAttribute="bottom" id="2W1-Oz-Uu2"/>
                             <constraint firstItem="MMv-9p-c2C" firstAttribute="trailing" secondItem="M1E-oE-vy5" secondAttribute="trailing" id="8a3-rh-QIH"/>
@@ -1000,7 +1001,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdZ-0B-6yg" customClass="ShapeView" customModule="Unwrap" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="188.5" width="250" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="aMt-bn-kRu"/>
                                     <constraint firstAttribute="width" constant="250" id="dTB-dN-Kgw"/>
@@ -1016,12 +1017,13 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a practice activity to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZV-gA-M8x">
                                 <rect key="frame" x="30" y="448.5" width="315" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xdZ-0B-6yg" firstAttribute="centerY" secondItem="th4-Tf-uo8" secondAttribute="centerY" constant="-20" id="48h-St-oeB"/>
                             <constraint firstItem="FZV-gA-M8x" firstAttribute="leading" secondItem="th4-Tf-uo8" secondAttribute="leading" constant="30" id="BNL-eO-CNl"/>
@@ -1086,6 +1088,7 @@
                                 <rect key="frame" x="0.0" y="104.5" width="375" height="482.5"/>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GOQ-0e-iAT" firstAttribute="leading" secondItem="xMX-9R-yqH" secondAttribute="leading" id="A4d-fH-EwM"/>
                             <constraint firstItem="xMX-9R-yqH" firstAttribute="trailing" secondItem="GOQ-0e-iAT" secondAttribute="trailing" id="EZa-aF-Hyi"/>
@@ -1178,6 +1181,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="abC-0o-Ij1" firstAttribute="leading" secondItem="wbc-cJ-bTy" secondAttribute="leading" id="C5h-dK-qcE"/>
                             <constraint firstItem="wbc-cJ-bTy" firstAttribute="trailing" secondItem="PJk-0B-67F" secondAttribute="trailing" id="FCi-a0-JDd"/>
