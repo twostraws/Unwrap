@@ -60,8 +60,13 @@ class SpotTheErrorDataSource: NSObject, UITableViewDataSource, UITableViewDelega
                 if indexPath.row == practiceData.lineNumber {
                     cell.backgroundColor = UIColor(bundleName: "ReviewWrong")
                 } else {
-                    cell.backgroundColor = .white
-                    cell.textLabel?.textColor = .black
+                    if #available(iOS 13, *) {
+                        cell.backgroundColor = .systemBackground
+                        cell.textLabel?.textColor = .label
+                    } else {
+                        cell.backgroundColor = .white
+                        cell.textLabel?.textColor = .black
+                    }
                 }
             }
         }
