@@ -216,7 +216,6 @@ extension String {
     fileprivate func resolveRandomStringValues(input: String, possibleValues: [[String]]) -> (output: String, values: [String]) {
         var output = input
         var values = [String]()
-        var possibleValues = possibleValues
 
         // We want to make sure each value is used only once across all replacements, so this set will contain each value that is used.
         var usedValues = Set<String>()
@@ -226,7 +225,7 @@ extension String {
             // Look for the current value to replace.
             while let range = output.range(of: "RANDOM_STRING_VALUE_\(matchNumber)") {
                 // These are the values we'll use for this replacement.
-                var currentValues = possibleValues[matchNumber]
+                let currentValues = possibleValues[matchNumber]
 
                 // Find a unique value to use across all instances of this code.
                 var valueToUse = currentValues[0]

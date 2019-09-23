@@ -157,6 +157,7 @@
 		51ADAEA520CE9004000D9DCF /* ChallengeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */; };
 		51B3A7C820CCC74B000ACA6D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */; };
 		51B3A7CA20CCCAF2000ACA6D /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */; };
+		51B61577233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B61576233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift */; };
 		51B87CD7210B270800FE773A /* User-Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B87CD6210B270800FE773A /* User-Serialization.swift */; };
 		51B87CDE210B35C600FE773A /* User-StaticProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B87CDD210B35C600FE773A /* User-StaticProperties.swift */; };
 		51B87CE4210BC12E00FE773A /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */; };
@@ -791,6 +792,7 @@
 		51ADAEA420CE9004000D9DCF /* ChallengeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResult.swift; sourceTree = "<group>"; };
 		51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		51B61576233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication-ActiveTraitCollection.swift"; sourceTree = "<group>"; };
 		51B87CD6210B270800FE773A /* User-Serialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Serialization.swift"; sourceTree = "<group>"; };
 		51B87CDD210B35C600FE773A /* User-StaticProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-StaticProperties.swift"; sourceTree = "<group>"; };
 		51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -1706,6 +1708,7 @@
 				51A6D61C20E651DA00FB6B46 /* TypeGeneration */,
 				51862E6320CE3C540086CD1B /* BundleLoading.swift */,
 				51862E5F20CE35160086CD1B /* Date-Math.swift */,
+				51E35646223CE43400C05881 /* Float-Random.swift */,
 				51862E5D20CE2C300086CD1B /* Formatted.swift */,
 				5189D9D420EA3B4E00E6E1D3 /* KeyboardAvoidingScrollView.swift */,
 				5192587220E3A11200A85704 /* NSAttributedString-Formatting.swift */,
@@ -1727,7 +1730,7 @@
 				5153F49920EF8581009E829D /* UITableViewCell-Styling.swift */,
 				5153F4AD20F007EF009E829D /* UIViewController-Alerts.swift */,
 				511FD6B02105F07A0023E92C /* URL-String.swift */,
-				51E35646223CE43400C05881 /* Float-Random.swift */,
+				51B61576233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2881,6 +2884,7 @@
 				5153F49A20EF8581009E829D /* UITableViewCell-Styling.swift in Sources */,
 				518FAE7720E4269E007F4675 /* MultipleSelectReviewViewController.swift in Sources */,
 				5153F4AC20EFFF49009E829D /* Sequenced.swift in Sources */,
+				51B61577233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift in Sources */,
 				51596DF820EE4F9D00952ADC /* String-Range.swift in Sources */,
 				519CD3D620EBA6ED007110BD /* RearrangeTheLinesDataSource.swift in Sources */,
 				51D8FE7320ED3BF6004DFF83 /* TapToCodePractice.swift in Sources */,

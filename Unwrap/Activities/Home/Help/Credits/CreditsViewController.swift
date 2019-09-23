@@ -26,7 +26,7 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
 
         title = "Credits"
         let credits = String(bundleName: "Credits.html")
-        let contents = String.wrapperHTML(allowTheming: true, width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: credits)
+        let contents = String.wrapperHTML(width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: credits)
 
         let data = Data(contents.utf8)
         let str = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)

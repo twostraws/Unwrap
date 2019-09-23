@@ -11,7 +11,7 @@ import Foundation
 extension String {
     /// Converts a string such as "this is a test" into camel case, making "thisIsATest".
     func formatAsVariable() -> String {
-        var parts = components(separatedBy: " ")
+        let parts = components(separatedBy: " ")
         var output = parts[0].lowercased()
 
         for part in parts.dropFirst() {

@@ -68,7 +68,7 @@ extension String {
     }
 
     /// Loads the HTML wrapper from our bundle.
-    static func wrapperHTML(allowTheming: Bool, width: CGFloat, slimLayout: Bool = false) -> String {
+    static func wrapperHTML(width: CGFloat, slimLayout: Bool = false) -> String {
         var wrapperContents: String
 
         if slimLayout {
@@ -81,7 +81,14 @@ extension String {
         wrapperContents = wrapperContents.replacingOccurrences(of: "<img src=\"", with: "<img src=\"\(Bundle.main.resourceURL!)/")
 
         // Add in the currently selected theme.
-        let currentTheme = User.current.theme
+        let currentTheme: String
+
+        if UIApplication.activeTraitCollection.userInterfaceStyle == .dark {
+            currentTheme = "Dark"
+        } else {
+            currentTheme = "Light"
+        }
+
         var styleContents = String(bundleName: "\(currentTheme)Theme.css")
 
         // Scale up fonts based on Dynamic Type.

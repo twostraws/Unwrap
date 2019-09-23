@@ -143,7 +143,7 @@ struct FreeCodingPractice: PracticeActivity {
 extension FreeCodingPractice {
     /// Loads a single FreeCodingQuestion into an activity. This is kept separate so we retain the memberwise initializer for testing purposes.
     init() {
-        var items = Bundle.main.decode([FreeCodingQuestion].self, from: "FreeCoding.json")
+        let items = Bundle.main.decode([FreeCodingQuestion].self, from: "FreeCoding.json")
         let selectedItem: FreeCodingQuestion
         selectedItem = items[Unwrap.getEntropy() % items.count]
 

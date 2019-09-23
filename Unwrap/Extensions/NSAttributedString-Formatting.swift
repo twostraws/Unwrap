@@ -14,7 +14,7 @@ extension NSAttributedString {
         let bodyContents = String(bundleName: "\(chapterName).html")
 
         // Merge the wrapper with this page's content.
-        var finalHTML = String.wrapperHTML(allowTheming: true, width: width).replacingOccurrences(of: "[BODY]", with: bodyContents)
+        var finalHTML = String.wrapperHTML(width: width).replacingOccurrences(of: "[BODY]", with: bodyContents)
 
         // Finally, replace any instances of [VIDEO-NUMBER] with the correct chapter and section.
         finalHTML = finalHTML.replacingOccurrences(of: "[VIDEO-NUMBER]", with: chapterName)

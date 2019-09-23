@@ -43,7 +43,7 @@ class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         let item = items[indexPath.section]
 
         // Wrap our help text in HTML so we catch links correctly.
-        let contents = String.wrapperHTML(allowTheming: true, width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: item.text)
+        let contents = String.wrapperHTML(width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: item.text)
         let data = Data(contents.utf8)
         let str = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
         cell.textView.attributedText = str
@@ -52,7 +52,10 @@ class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         if item.action.isEmpty {
             cell.selectionStyle = .none
             cell.textView.isUserInteractionEnabled = true
-            cell.textView.textColor = nil
+
+            if #available(iOS 13, *) {
+                cell.textView.textColor = .label
+            }
         } else {
             cell.selectionStyle = .default
             cell.textView.isUserInteractionEnabled = false

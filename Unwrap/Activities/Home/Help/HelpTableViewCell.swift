@@ -18,6 +18,7 @@ class HelpTableViewCell: UITableViewCell {
         textView.font = Unwrap.scaledBaseFont
         textView.isEditable = false
         textView.isScrollEnabled = false
+        textView.backgroundColor = .clear
         contentView.addSubview(textView)
 
         NSLayoutConstraint.activate([
