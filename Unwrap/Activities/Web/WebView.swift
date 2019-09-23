@@ -23,7 +23,12 @@ class WebView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+
+        if #available(iOS 13, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
 
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.allowsBackForwardNavigationGestures = true

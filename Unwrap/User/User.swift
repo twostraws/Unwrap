@@ -140,10 +140,10 @@ final class User: Codable {
 
     /// Returns an instance of the correct source code theme for the user's current settings.
     var sourceCodeTheme: SourceCodeTheme {
-        if theme == "Light" {
-            return LightTheme()
-        } else {
+        if UIApplication.activeTraitCollection.userInterfaceStyle == .dark {
             return DarkTheme()
+        } else {
+            return LightTheme()
         }
     }
 

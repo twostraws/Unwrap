@@ -21,6 +21,12 @@ extension Awarding {
         viewController.pointsToAward = points
         viewController.modalTransitionStyle = .crossDissolve
 
+        if #available(iOS 13, *) {
+            // make sure this view controller takes up the full screen rather than being swipe to dismiss.
+            viewController.isModalInPresentation = true
+            viewController.modalPresentationStyle = .fullScreen
+        }
+
         if splitViewController.isCollapsed {
             // As soon as the award view controller is shown, get back to the root of our navigation stack.
             splitViewController.present(viewController, animated: true) {

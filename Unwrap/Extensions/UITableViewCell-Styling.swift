@@ -29,7 +29,12 @@ extension UITableViewCell {
 
     /// Styles a table view cell as representing an unknown answer.
     func unknownAnswer() {
-        backgroundColor = .white
+        if #available(iOS 13, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
+
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         tintColor = nil
     }
