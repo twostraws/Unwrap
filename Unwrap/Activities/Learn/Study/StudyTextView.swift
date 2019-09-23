@@ -20,7 +20,13 @@ class StudyTextView: TappableTextView {
     func loadContent(_ contentName: String) {
         // load our chapter text
         attributedText = NSAttributedString(chapterName: contentName, width: bounds.width)
-        backgroundColor = .white
+
+        if #available(iOS 13, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
+
         isEditable = false
     }
 }
