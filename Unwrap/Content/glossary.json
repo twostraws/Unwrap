@@ -372,8 +372,16 @@
     "description": "The ability for an object to appear as and be used as multiple different types. For example, a <code>Labrador<\/code> class instance could also be used as a <code>Dog<\/code> and <code>Mammal<\/code> if you had defined those as parent classes."
   },
   {
+    "term": "Property",
+    "description": "A constant or variable that belongs to a class, struct, or enum."
+  },
+  {
     "term": "Property observer",
     "description": "Code added to a property using <code>willSet<\/code> and <code>didSet<\/code>, that gets called whenever a property is being changed."
+  },
+  {
+    "term": "Property wrapper",
+    "description": "An attribute placed around a property that gives it custom abilities. For example, you could write a <code>@UserDefaults</code> property wrapper to make loading and saving data to user defaults easier."
   },
   {
     "term": "Protocol",
@@ -442,6 +450,10 @@
   {
     "term": "Shorthand parameter name",
     "description": "Special parameter names made available inside closures, written as a dollar sign the numbers starting from 0. For example, if a closure accepts a <code>name<\/code> string and an <code>age<\/code> integer, you could refer to the string as <code>$0<\/code> and the age as <code>$1<\/code>. Note: you may not mix and match shorthand syntax with regular syntax."
+  },
+  {
+    "term": "some",
+    "description": "A keyword that uses an opaque return type – return types such as <code>some View</code> in SwiftUI to mean \"some sort of View will be returned but it doesn't matter which type specifically.\""
   },
   {
     "term": "Statement",
