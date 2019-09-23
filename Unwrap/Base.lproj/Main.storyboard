@@ -783,7 +783,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b12-Nc-k65" firstAttribute="leading" secondItem="dw2-QN-Yy0" secondAttribute="leading" id="3qu-Ed-giW"/>
                             <constraint firstItem="0UI-dg-FYd" firstAttribute="top" secondItem="dw2-QN-Yy0" secondAttribute="top" id="AhJ-fY-4Ev"/>
@@ -864,7 +863,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MMv-9p-c2C" firstAttribute="bottom" secondItem="M1E-oE-vy5" secondAttribute="bottom" id="2W1-Oz-Uu2"/>
                             <constraint firstItem="MMv-9p-c2C" firstAttribute="trailing" secondItem="M1E-oE-vy5" secondAttribute="trailing" id="8a3-rh-QIH"/>
@@ -1086,10 +1084,8 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbe-bX-IHV" customClass="SyntaxTextView" customModule="Sourceful">
                                 <rect key="frame" x="0.0" y="104.5" width="375" height="482.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GOQ-0e-iAT" firstAttribute="leading" secondItem="xMX-9R-yqH" secondAttribute="leading" id="A4d-fH-EwM"/>
                             <constraint firstItem="xMX-9R-yqH" firstAttribute="trailing" secondItem="GOQ-0e-iAT" secondAttribute="trailing" id="EZa-aF-Hyi"/>
@@ -1182,7 +1178,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="abC-0o-Ij1" firstAttribute="leading" secondItem="wbc-cJ-bTy" secondAttribute="leading" id="C5h-dK-qcE"/>
                             <constraint firstItem="wbc-cJ-bTy" firstAttribute="trailing" secondItem="PJk-0B-67F" secondAttribute="trailing" id="FCi-a0-JDd"/>
@@ -1335,7 +1330,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FvL-Ao-d4I" firstAttribute="trailing" secondItem="uJH-r6-A1v" secondAttribute="trailing" id="2as-UQ-h9g"/>
                             <constraint firstItem="5n8-WW-oik" firstAttribute="centerY" secondItem="sRB-YS-ruh" secondAttribute="centerY" id="5RQ-a2-dzY"/>
@@ -1442,7 +1436,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6fI-JY-wUw" firstAttribute="leading" secondItem="uEt-Pn-A2F" secondAttribute="leading" id="0a2-qz-glH"/>
                             <constraint firstItem="IgP-Vc-tuP" firstAttribute="leading" secondItem="uEt-Pn-A2F" secondAttribute="leading" id="ABT-aG-gyd"/>
@@ -1540,7 +1533,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IA4-hG-4bU" firstAttribute="trailing" secondItem="28E-a5-14w" secondAttribute="trailing" id="1id-D4-mqR"/>
                             <constraint firstItem="28E-a5-14w" firstAttribute="leading" secondItem="IA4-hG-4bU" secondAttribute="leading" id="4eg-Q9-sTD"/>
@@ -1634,7 +1626,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Iug-Nc-tpk" firstAttribute="top" secondItem="3DV-k0-hVn" secondAttribute="bottom" id="6JO-6s-9DK"/>
                             <constraint firstItem="3DV-k0-hVn" firstAttribute="leading" secondItem="s8V-K2-Wwd" secondAttribute="leading" id="8kf-aM-oQO"/>

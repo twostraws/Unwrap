@@ -36,6 +36,11 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
         splitViewController.viewControllers = [primaryNavigationController, PleaseSelectViewController.instantiate()]
         splitViewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
 
+        if #available(iOS 13, *) {
+            // Without this workaround, there's a nasty color behind pushed view controllers, only in dark mode on iOS 13.
+            splitViewController.view.backgroundColor = .systemBackground
+        }
+
         // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
         splitViewController.delegate = SplitViewControllerDelegate.shared

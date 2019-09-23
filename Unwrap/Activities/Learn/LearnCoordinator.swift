@@ -35,7 +35,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
 
         if #available(iOS 13, *) {
-            // Without this workaround, there's a nasty color behind the bars when reviewing a chapter, only in dark mode on iOS 13.
+            // Without this workaround, there's a nasty color behind pushed view controllers, only in dark mode on iOS 13.
             splitViewController.view.backgroundColor = .systemBackground
         }
 
