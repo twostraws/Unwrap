@@ -32,6 +32,7 @@ class DynamicHeightHeaderView: UITableViewHeaderFooterView {
         headerLabel.adjustsFontForContentSizeCategory = true
         headerLabel.font = Unwrap.scaledBoldFont
         headerLabel.numberOfLines = 0
+        headerLabel.accessibilityTraits.insert(.header)
 
         NSLayoutConstraint.activate([
             headerLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),

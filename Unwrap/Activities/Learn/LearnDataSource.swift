@@ -51,16 +51,19 @@ class LearnDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             // alignment uniform across the table.
             cell.imageView?.image = UIImage(bundleName: "Check")
             cell.imageView?.alpha = 0
+            cell.textLabel?.accessibilityLabel = "\(section). Section not started"
         } else if score == 100 {
             // They read this chapter but didn't review it.
             cell.imageView?.image = UIImage(bundleName: "Check")
             cell.imageView?.tintColor = UIColor(bundleName: "CoursePartial")
             cell.imageView?.alpha = 1
+            cell.textLabel?.accessibilityLabel = "\(section). Section in progress"
         } else if score == 200 {
             // They read and reviewed this chapter.
             cell.imageView?.image = UIImage(bundleName: "Check")
             cell.imageView?.tintColor = UIColor(bundleName: "CourseFull")
             cell.imageView?.alpha = 1
+            cell.textLabel?.accessibilityLabel = "\(section). Section completed"
         }
 
         return cell
