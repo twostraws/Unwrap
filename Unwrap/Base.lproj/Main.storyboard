@@ -1542,7 +1542,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IA4-hG-4bU" firstAttribute="trailing" secondItem="28E-a5-14w" secondAttribute="trailing" id="1id-D4-mqR"/>
                             <constraint firstItem="28E-a5-14w" firstAttribute="leading" secondItem="IA4-hG-4bU" secondAttribute="leading" id="4eg-Q9-sTD"/>
@@ -1669,7 +1669,7 @@
         <image name="Info" width="30" height="30"/>
         <image name="News" width="25" height="17"/>
         <namedColor name="BackgroundDark">
-            <color red="0.36800000071525574" green="0.44600000977516174" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.16800000000000001" green="0.246" blue="0.30599999999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.035294117647058823" green="0.50196078431372548" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
