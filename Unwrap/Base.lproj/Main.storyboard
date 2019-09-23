@@ -1244,7 +1244,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sRB-YS-ruh" customClass="UsedWordsCollectionView" customModule="Unwrap" customModuleProvider="target">
                                 <rect key="frame" x="10" y="145" width="355" height="221"/>
-                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bo8-3a-Kbw" customClass="LeftAlignedCollectionViewFlowLayout" customModule="Unwrap" customModuleProvider="target">
                                     <size key="itemSize" width="150" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
