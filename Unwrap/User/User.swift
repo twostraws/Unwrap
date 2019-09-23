@@ -293,7 +293,6 @@ final class User: Codable {
     /// Returns true if a specific badge has been earned, or false otherwise.
     func isBadgeEarned(_ badge: Badge) -> Bool {
         if badge.criterion == "read" {
-            // FIXME: How can we get rid of this warning?
             guard var conditionChapter = Unwrap.chapters.first(where: {
                 $0.name.bundleName == badge.value
 

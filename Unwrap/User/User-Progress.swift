@@ -14,7 +14,7 @@ extension User {
         let progress: String
 
         if badge.criterion == "read" {
-            guard var conditionChapter = Unwrap.chapters.first(where: {
+            guard let conditionChapter = Unwrap.chapters.first(where: {
                 $0.name.bundleName == badge.value
 
             }) else {
