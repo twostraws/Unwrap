@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 /// The view controller that handles visually awarding points to users.
 class AwardPointsViewController: UIViewController, Storyboarded {
     var coordinator: Awarding? {
@@ -15,6 +15,8 @@ class AwardPointsViewController: UIViewController, Storyboarded {
             configureNavigation()
         }
     }
+    //The AVPlayer for our sound when the user levels up
+    var levelUpSoundPlayer: AVAudioPlayer?
 
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
@@ -72,9 +74,27 @@ class AwardPointsViewController: UIViewController, Storyboarded {
 
     /// Performs the animation of granting points, while also actually performing the grant to the user data.
     func awardPoints() {
+        //This tells whether to play a aound
+        var willPlaySound = false
+        //checks whether to play the sound
+        if pointsToAward + User.current.totalPoints >= User.rankLevels[User.current.rankNumber] {
+            willPlaySound = true
+        }
         totalPoints.count(start: User.current.totalPoints, end: User.current.totalPoints + pointsToAward)
         earnedPoints.count(start: pointsToAward, end: 0)
-
+        if willPlaySound {
+            //Schedules the sound to be played
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                let path = Bundle.main.path(forResource: "levelUp", ofType: "wav")!
+                let url = URL(fileURLWithPath: path)
+                do {
+                    self.levelUpSoundPlayer = try AVAudioPlayer(contentsOf: url)
+                    self.levelUpSoundPlayer?.play()
+                } catch {
+                    print("File did not load")
+                }
+                })
+        }
         // save that they completed some work
         switch awardType {
         case .learn(let chapter):

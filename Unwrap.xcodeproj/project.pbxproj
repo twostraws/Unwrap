@@ -600,6 +600,7 @@
 		B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4E2273DF03005A50DF /* PreviousChallengeTableViewCell.swift */; };
 		B96D1C3F227333BE0096492B /* GlossaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D1C3E227333BE0096492B /* GlossaryTableViewCell.swift */; };
 		B9AC3C9C227B1262007AC17C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC3C9B227B1262007AC17C /* WebViewController.swift */; };
+		EEE32A6622B4A2200008A11C /* levelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = EEE32A6522B4A2200008A11C /* levelUp.wav */; };
 		FBCAB466480A05C9E3D694CF /* Pods_Unwrap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1042D2A80E9E96DA0B7C6F35 /* Pods_Unwrap.framework */; };
 		FE81585F2274F8C2007E5E11 /* User-Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE81585E2274F8C2007E5E11 /* User-Progress.swift */; };
 /* End PBXBuildFile section */
@@ -1243,6 +1244,7 @@
 		BE61552411B754C7764869FE /* Pods-UnwrapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE64715D944F01A45D8EE2EB /* Pods-UnwrapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapUITests/Pods-UnwrapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD9A9FDC401B2E4E93A13259 /* Pods_UnwrapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnwrapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEE32A6522B4A2200008A11C /* levelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelUp.wav; sourceTree = "<group>"; };
 		FE81585E2274F8C2007E5E11 /* User-Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Progress.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1348,6 +1350,7 @@
 				5156459620E116EE00CED877 /* FontAwesomeIcons.xcassets */,
 				5156459420E116EE00CED877 /* Ranks.xcassets */,
 				51053A072113804E00B28328 /* Tour.xcassets */,
+				EEE32A6522B4A2200008A11C /* levelUp.wav */,
 				514BF46721E6670000DE1483 /* glossary.json */,
 			);
 			path = Content;
@@ -2401,6 +2404,7 @@
 				51FE144720E25F1200F29889 /* properties-and-methods-of-arrays.html in Resources */,
 				51FE151120E25F1200F29889 /* lazy-properties.png in Resources */,
 				51FE13B520E25F1200F29889 /* unwrapping-optionals.json in Resources */,
+				EEE32A6622B4A2200008A11C /* levelUp.wav in Resources */,
 				51FE14E520E25F1200F29889 /* strings-and-integers.html in Resources */,
 				5156459820E116EE00CED877 /* Colors.xcassets in Resources */,
 				51FE140F20E25F1200F29889 /* operator-overloading.html in Resources */,
