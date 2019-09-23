@@ -327,6 +327,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="khG-0J-PLC" firstAttribute="leading" secondItem="jYQ-n3-oSW" secondAttribute="leading" id="8U8-fb-U6n"/>
                             <constraint firstItem="KqT-gg-ZVW" firstAttribute="leading" secondItem="jYQ-n3-oSW" secondAttribute="leading" id="HQV-Co-RkB"/>
@@ -426,6 +427,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TvJ-TZ-drn" firstAttribute="trailing" secondItem="pnP-yj-HSR" secondAttribute="trailing" id="2Yx-XL-mWq"/>
                             <constraint firstItem="pnP-yj-HSR" firstAttribute="top" secondItem="0jO-bf-6nV" secondAttribute="bottom" id="N9w-oS-Q4r"/>
@@ -1442,6 +1444,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6fI-JY-wUw" firstAttribute="leading" secondItem="uEt-Pn-A2F" secondAttribute="leading" id="0a2-qz-glH"/>
                             <constraint firstItem="IgP-Vc-tuP" firstAttribute="leading" secondItem="uEt-Pn-A2F" secondAttribute="leading" id="ABT-aG-gyd"/>
@@ -1539,6 +1542,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IA4-hG-4bU" firstAttribute="trailing" secondItem="28E-a5-14w" secondAttribute="trailing" id="1id-D4-mqR"/>
                             <constraint firstItem="28E-a5-14w" firstAttribute="leading" secondItem="IA4-hG-4bU" secondAttribute="leading" id="4eg-Q9-sTD"/>
@@ -1632,6 +1636,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Iug-Nc-tpk" firstAttribute="top" secondItem="3DV-k0-hVn" secondAttribute="bottom" id="6JO-6s-9DK"/>
                             <constraint firstItem="3DV-k0-hVn" firstAttribute="leading" secondItem="s8V-K2-Wwd" secondAttribute="leading" id="8kf-aM-oQO"/>
