@@ -327,7 +327,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="khG-0J-PLC" firstAttribute="leading" secondItem="jYQ-n3-oSW" secondAttribute="leading" id="8U8-fb-U6n"/>
                             <constraint firstItem="KqT-gg-ZVW" firstAttribute="leading" secondItem="jYQ-n3-oSW" secondAttribute="leading" id="HQV-Co-RkB"/>
@@ -427,7 +426,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TvJ-TZ-drn" firstAttribute="trailing" secondItem="pnP-yj-HSR" secondAttribute="trailing" id="2Yx-XL-mWq"/>
                             <constraint firstItem="pnP-yj-HSR" firstAttribute="top" secondItem="0jO-bf-6nV" secondAttribute="bottom" id="N9w-oS-Q4r"/>
