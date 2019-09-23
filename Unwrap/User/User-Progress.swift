@@ -39,7 +39,7 @@ extension User {
             }
 
             if awardedScore == 0 {
-                progress = "\n\nYou haven't completed anything is this section yet."
+                progress = "\n\nYou have not completed anything in this section yet."
             } else {
                 progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) chapters!"
             }
@@ -60,7 +60,7 @@ extension User {
             switch badge.criterion {
             case "streak":
                 if bestStreak == 1 {
-                    progress = "You have only played one day."
+                    progress = "\n\nYou have only played one day."
                 } else {
                     progress = "\n\nYour best streak is \(bestStreak) days!"
                 }
