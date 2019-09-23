@@ -12,7 +12,7 @@ import UIKit
 
 /// Manages everything launched from the Learn tab in the app.
 class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerHandling, UISplitViewControllerDelegate {
-    var splitViewController = PortraitSplitViewController()
+    var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
     var activeStudyReview: StudyReview!
 
@@ -29,7 +29,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
-        let detailNavigationController = CoordinatedNavigationController(rootViewController: studyViewController(for: "Variables"))
+        let detailNavigationController = PleaseSelectViewController.instantiate()
 
         splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)

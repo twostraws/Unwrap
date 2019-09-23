@@ -10,7 +10,7 @@ import UIKit
 
 /// Manages everything launched from the Practice tab in the app.
 class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, AlertShowing {
-    var splitViewController = PortraitSplitViewController()
+    var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
     var practiceViewController = PracticeViewController(style: .plain)

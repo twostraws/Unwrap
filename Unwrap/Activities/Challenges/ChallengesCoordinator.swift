@@ -11,7 +11,7 @@ import UIKit
 
 /// Manages everything launched from the Challenges tab in the app.
 class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
-    var splitViewController = PortraitSplitViewController()
+    var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
 
     /// The list of practice activities in the current challenge.
