@@ -40,7 +40,18 @@
         "startingCode": "",
         "answers": [
             "func myFunction(input1:Int) -> Int{\nreturn input1 * input1\n}",
-            "func myFunction(input1:Int) -> Int{\nletvar result:Int = input1 * input1\nreturn result\n}"
+            "func myFunction(input1:Int) -> Int{\nletvar result:Int = input1 * input1\nreturn result\n}",
+            "func myFunction(input1:Int) -> Int{\nletvar result:Int\n result = input1 * input1\nreturn result\n}"
+        ]
+    },
+    {
+        "question": "Write a function that accepts two Doubles and returns their product. For example, sending in <code>3 * 5</code> will return 15.",
+        "hint": "The product of two numbers is the numbers multiplied",
+        "startingCode": "",
+        "answers": [
+            "func myFunction(input1:Double, input2:Double) -> Double{\nreturn input1 * input2\n}",
+            "func myFunction(input1:Double, input2:Double) -> Double{\nletvar result:Double = input1 * input2\nreturn result\n}",
+            "func myFunction(input1:Double, input2:Double) -> Double{\nletvar result:Double\n result = input1 * input2\nreturn result\n}"
         ]
     },
     {
