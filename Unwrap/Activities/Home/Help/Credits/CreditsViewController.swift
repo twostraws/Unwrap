@@ -53,6 +53,9 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
 
     // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        // Refuse to update the trait when running in the background. This isn't ideal, but NSAttributedString throws an exception when we load our wrapper HTML in the background, so we have no choice if we want to avoid a crash.
+        guard UIApplication.shared.applicationState != .background else { return }
+
         if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
             loadCredits()
         }
