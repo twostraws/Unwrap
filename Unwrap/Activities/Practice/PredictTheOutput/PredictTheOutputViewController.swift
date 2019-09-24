@@ -52,8 +52,7 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
         // The prompt can only be simple HTML (e.g. <code></code>), but the source code is fully syntax highlighted.
         prompt.attributedText = practiceData.question.fromSimpleHTML()
-        code.attributedText = practiceData.code.syntaxHighlighted()
-        code.font = Unwrap.codeFont
+        loadExistingCode()
 
         // Make sure our text view stays out of the way of the keyboard rather than scrolling under it.
         scrollView.avoidKeyboard()
@@ -63,6 +62,12 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
         submitButton.setTitle("SUBMIT", for: .normal)
         submitButton.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
         answerEntry.inputAccessoryView = submitButton
+    }
+
+    /// Loads any existing code that the user should read through.
+    func loadExistingCode() {
+        code.attributedText = practiceData.code.syntaxHighlighted()
+        code.font = Unwrap.codeFont
     }
 
     @objc func hint() {
@@ -106,5 +111,12 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
         newTopString.append(newBottomString)
         prompt.attributedText = newTopString
+    }
+
+    // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            loadExistingCode()
+        }
     }
 }
