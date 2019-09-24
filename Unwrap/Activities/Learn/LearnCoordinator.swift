@@ -29,9 +29,10 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         primaryNavigationController.viewControllers = [viewController]
 
         // Set up the detail view controller
-        let detailNavigationController = PleaseSelectViewController.instantiate()
+        let detailViewController = PleaseSelectViewController.instantiate()
+        detailViewController.selectionMode = .learn
 
-        splitViewController.viewControllers = [primaryNavigationController, detailNavigationController]
+        splitViewController.viewControllers = [primaryNavigationController, detailViewController]
         splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
 
         if #available(iOS 13, *) {

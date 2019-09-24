@@ -23,6 +23,9 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
         logo.addGestureRecognizer(tap)
 
         switch selectionMode {
+        case .learn:
+            prompt.text = "Please select a topic to learn"
+
         case .challenges:
             if User.current.hasCompletedTodaysChallenge {
                 prompt.text = "Come back tomorrow"
