@@ -43,6 +43,7 @@
 		51259E8E21885FC90092D96B /* combining-conditions.png in Resources */ = {isa = PBXBuildFile; fileRef = 51259E8A21885FC90092D96B /* combining-conditions.png */; };
 		5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */; };
 		5144A742227B997A00AB7E58 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144A741227B997A00AB7E58 /* WebView.swift */; };
+		5148246D233A321A0039E662 /* UITableView-SmartReloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148246C233A321A0039E662 /* UITableView-SmartReloading.swift */; };
 		514BF46821E6670000DE1483 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 514BF46721E6670000DE1483 /* glossary.json */; };
 		514BF46A21E6691A00DE1483 /* GlossaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF46921E6691A00DE1483 /* GlossaryViewController.swift */; };
 		514BF46C21E6693100DE1483 /* GlossaryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */; };
@@ -675,6 +676,7 @@
 		51259E8A21885FC90092D96B /* combining-conditions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combining-conditions.png"; sourceTree = "<group>"; };
 		5144932D20E55FF400D15AA5 /* SingleSelectReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectReviewViewController.swift; sourceTree = "<group>"; };
 		5144A741227B997A00AB7E58 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		5148246C233A321A0039E662 /* UITableView-SmartReloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-SmartReloading.swift"; sourceTree = "<group>"; };
 		514BF46721E6670000DE1483 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glossary.json; sourceTree = "<group>"; };
 		514BF46921E6691A00DE1483 /* GlossaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryViewController.swift; sourceTree = "<group>"; };
 		514BF46B21E6693100DE1483 /* GlossaryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryDataSource.swift; sourceTree = "<group>"; };
@@ -1724,6 +1726,7 @@
 				51A90DBF227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift */,
 				5189D9DE20EADA3E00E6E1D3 /* UIView-EditingToolbar.swift */,
 				51CC13962065714F00F37A67 /* UIView-FadeIn.swift */,
+				5148246C233A321A0039E662 /* UITableView-SmartReloading.swift */,
 				5153F49920EF8581009E829D /* UITableViewCell-Styling.swift */,
 				5153F4AD20F007EF009E829D /* UIViewController-Alerts.swift */,
 				511FD6B02105F07A0023E92C /* URL-String.swift */,
@@ -2874,6 +2877,7 @@
 				511458FC20E5694D003BABAD /* ReviewViewController.swift in Sources */,
 				518FAE7920E433A5007F4675 /* MultipleSelectReviewDataSource.swift in Sources */,
 				51862E6D20CE8B980086CD1B /* ChallengesDataSource.swift in Sources */,
+				5148246D233A321A0039E662 /* UITableView-SmartReloading.swift in Sources */,
 				519CD3D420EBA601007110BD /* RearrangeTheLinesViewController.swift in Sources */,
 				51862E6420CE3C540086CD1B /* BundleLoading.swift in Sources */,
 				5153F49820EF763E009E829D /* ChallengesCoordinator.swift in Sources */,
