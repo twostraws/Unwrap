@@ -25,17 +25,21 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
 		super.viewDidLoad()
 
         title = "Credits"
+        loadCredits()
+	}
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView?.flashScrollIndicators()
+    }
+
+    func loadCredits() {
         let credits = String(bundleName: "Credits.html")
         let contents = String.wrapperHTML(width: 320, slimLayout: true).replacingOccurrences(of: "[BODY]", with: credits)
 
         let data = Data(contents.utf8)
         let str = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
         textView?.attributedText = str
-	}
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        textView?.flashScrollIndicators()
     }
 
     func linkTapped(_ url: URL) {
@@ -44,6 +48,12 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
         if UIDevice.current.userInterfaceIdiom == .pad {
             // if we're on iPad we should dismiss the modal view controller immediately so the user can browse the link they chose.
             dismiss(animated: true)
+        }
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            loadCredits()
         }
     }
 }
