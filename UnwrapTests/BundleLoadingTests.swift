@@ -34,7 +34,7 @@ class BundleLoadingTests: XCTestCase {
 
     /// Tests loading the wrapper HTML from our bundle.
     func testLoadingWrapperHTML() {
-        _ = String.wrapperHTML(allowTheming: true, width: 320)
+        _ = String.wrapperHTML(width: 320)
     }
 
     /// Tests loading a named color instance from the app bundle.
