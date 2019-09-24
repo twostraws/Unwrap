@@ -20,7 +20,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
     var levelUpSoundPlayer: AVAudioPlayer?
 
     /// A gentle vibration to play on level up
-    var levelUpVibration = UINotificationFeedbackGenerator()
+    var levelUpVibration = UIImpactFeedbackGenerator(style: .heavy)
 
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
@@ -102,7 +102,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
                 // Schedules the sound to be played with a short delay
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.levelUpSoundPlayer?.play()
-                    self.levelUpVibration.notificationOccurred(.success)
+                    self.levelUpVibration.impactOccurred()
                 }
             } catch {
                 print("levelUp.wav failed to load.")
