@@ -10,13 +10,6 @@ import UIKit
 
 /// A trivial text view subclass that loads Swift in Sixty Seconds chapters.
 class StudyTextView: TappableTextView {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        // act on taps as soon as they occur
-        lookForAttributedTaps()
-    }
-
     func loadContent(_ contentName: String) {
         // load our chapter text
         attributedText = NSAttributedString(chapterName: contentName, width: bounds.width)

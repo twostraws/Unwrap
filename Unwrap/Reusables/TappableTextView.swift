@@ -12,9 +12,7 @@ import UIKit
 class TappableTextView: UITextView, UITextViewDelegate {
     /// Where we should report link taps.
     weak var linkDelegate: TappableTextViewDelegate?
-
-    /// A tap recognizer that helps us detect link taps quickly.
-    var tapRecognizer: UITapGestureRecognizer!
+    var lastURLInteraction = CFAbsoluteTimeGetCurrent()
 
     // Stop the user from selecting pieces of text.
     override public var selectedTextRange: UITextRange? {
@@ -36,6 +34,9 @@ class TappableTextView: UITextView, UITextViewDelegate {
 
     /// Tappable text views have no margin and handle taps by hand to avoid delays.s
     func addCustomizations() {
+        // Stop the user from accidentally dragging our top image
+        textDragInteraction?.isEnabled = false
+
         // Force the content to go edge to edge.
         textContainerInset = .zero
         textContainer.lineFragmentPadding = 0
@@ -44,35 +45,20 @@ class TappableTextView: UITextView, UITextViewDelegate {
         delegate = self
     }
 
-    /// Sets up this text view to look for link taps in the attributed string. You must call this yourself if you want this behavior.
-    func lookForAttributedTaps() {
-        // Don't configure this view more than once.
-        guard tapRecognizer == nil else { return }
-
-        // Make sure we recognize link taps immediately.
-        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
-        addGestureRecognizer(tapRecognizer)
-    }
-
-    /// Called when a link is tapped; we pass it on to our link delegate.
-    @objc func textViewTapped(recognizer: UITapGestureRecognizer) {
-        let location = recognizer.location(in: self)
-        guard let textPosition = closestPosition(to: location) else { return }
-        guard let attributes = textStyling(at: textPosition, in: .backward) else { return }
-
-        if let url = attributes[.link] as? URL {
-            linkDelegate?.linkTapped(url)
-        }
-    }
-
     /// Handle non-attributed link taps either by handling them directly (we don't care about mailto: etc), or by passing them on to our delegate.
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        // don't let delegates handle email addresses, because the system does this best
+        // Don't let delegates handle email addresses, because the system does this best.
         if URL.scheme?.hasPrefix("mailto") == true {
             return true
         }
 
-        linkDelegate?.linkTapped(URL)
+        // Rate limit how often we trigger link taps to avoid double taps causing a problem.
+        if lastURLInteraction + 0.2 < CFAbsoluteTimeGetCurrent() {
+            lastURLInteraction = CFAbsoluteTimeGetCurrent()
+            linkDelegate?.linkTapped(URL)
+        }
+
+        // Signal that we've handled the tap.
         return false
     }
 }
