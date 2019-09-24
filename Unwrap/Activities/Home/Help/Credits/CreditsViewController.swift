@@ -51,6 +51,7 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
         }
     }
 
+    // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
             loadCredits()

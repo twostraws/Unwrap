@@ -41,7 +41,7 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
 
     // It's important we do content loading here, because a) loadView() is too early – here the text view has fully loaded and has its correct size, which means the movie image will be rendered correctly, and b) viewDidLayoutSubviews() is too late – it causes a layout loop.
     override func viewWillAppear(_ animated: Bool) {
-        studyTextView.loadContent(chapter)
+        loadContent()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +49,11 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
 
         // warn users there might be more content to scroll through
         studyTextView.flashScrollIndicators()
+    }
+
+    // A centralized method for loading the content for this chapter, so it can be used in various places.
+    func loadContent() {
+        studyTextView.loadContent(chapter)
     }
 
     /// Most chapters have a video, so this catches link taps and triggers video playback.
@@ -67,6 +72,13 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
         // If our view controller is changing size we need to reload our content to make sure the movie view at the top correctly fills the full width of the screen.
         coordinator.animate(alongsideTransition: nil) { ctx in
             self.studyTextView.loadContent(self.chapter)
+        }
+    }
+
+    // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            loadContent()
         }
     }
 }
