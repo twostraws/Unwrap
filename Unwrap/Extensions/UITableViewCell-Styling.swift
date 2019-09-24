@@ -15,7 +15,9 @@ extension UITableViewCell {
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
         detailTextLabel?.textColor = .white
-        tintColor = .white
+
+        // FIXME: iOS 12 used a clear color for the checkmark inside a selected table view cell, and the tint color affected the circle around the check. iOS 13 uses a white color for the checkmark, which means if we use pure white tint color the checkmark becomes invisible. Compromise: use a blended white, so the check still stands out, but the old behavior was nicer. Perhaps this will be fixed in the future.
+        tintColor = UIColor.white.withAlphaComponent(0.35)
     }
 
     /// Styles a table view cell as representing a wrong answer.
@@ -24,7 +26,9 @@ extension UITableViewCell {
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
         detailTextLabel?.textColor = .white
-        tintColor = .white
+
+        // FIXME: iOS 12 used a clear color for the checkmark inside a selected table view cell, and the tint color affected the circle around the check. iOS 13 uses a white color for the checkmark, which means if we use pure white tint color the checkmark becomes invisible. Compromise: use a blended white, so the check still stands out, but the old behavior was nicer. Perhaps this will be fixed in the future.
+        tintColor = UIColor.white.withAlphaComponent(0.35)
     }
 
     /// Styles a table view cell as representing an unknown answer.
