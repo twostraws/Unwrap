@@ -87,11 +87,15 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
         prompt.attributedText = dataSource.question.fromSimpleHTML()
 
         // pull the existing code from the data source for the same reason
-        existingCode.attributedText = dataSource.existingCode.syntaxHighlighted()
-        existingCode.font = Unwrap.codeFont
+        loadExistingCode()
 
         // give the answer button the correct initial state
         updateAnswerButton()
+    }
+
+    func loadExistingCode() {
+        existingCode.attributedText = dataSource.existingCode.syntaxHighlighted()
+        existingCode.font = Unwrap.codeFont
     }
 
     @objc func hint() {
@@ -143,6 +147,13 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
             } else {
                 answerButton.wrongAnswer()
             }
+        }
+    }
+
+    // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            loadExistingCode()
         }
     }
 }
