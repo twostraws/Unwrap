@@ -42,7 +42,7 @@
         },
         {
             "answer": "let location = (\"road\": \"Park Lane\", \"city\": \"Cardiff\")",
-            "reason": "This creates a tuple."
+            "reason": "This is not valid Swift code."
         },
         {
             "answer": "var place = [\"road\", \"Park Lane\", \"city\", \"Cardiff\"]",
