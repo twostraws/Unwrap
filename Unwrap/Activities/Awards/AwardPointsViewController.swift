@@ -15,8 +15,12 @@ class AwardPointsViewController: UIViewController, Storyboarded {
             configureNavigation()
         }
     }
-    //The AVPlayer for our sound when the user levels up
+
+    /// The AVPlayer for our sound when the user levels up
     var levelUpSoundPlayer: AVAudioPlayer?
+
+    /// A gentle vibration to play on level up
+    var levelUpVibration = UINotificationFeedbackGenerator()
 
     @IBOutlet var statusView: StatusView!
     @IBOutlet var totalPoints: CountingLabel!
@@ -74,28 +78,38 @@ class AwardPointsViewController: UIViewController, Storyboarded {
 
     /// Performs the animation of granting points, while also actually performing the grant to the user data.
     func awardPoints() {
-        //This tells whether to play a aound
-        var willPlaySound = false
-        //checks whether to play the sound
+        // Before awarding points, see if they have levelled up or not.
+        var levelUpOccurred = false
+
+        // Check whether level up will take place.
         if pointsToAward + User.current.totalPoints >= User.rankLevels[User.current.rankNumber] {
-            willPlaySound = true
+            levelUpOccurred = true
         }
+
         totalPoints.count(start: User.current.totalPoints, end: User.current.totalPoints + pointsToAward)
         earnedPoints.count(start: pointsToAward, end: 0)
-        if willPlaySound {
-            //Schedules the sound to be played
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                let path = Bundle.main.path(forResource: "levelUp", ofType: "wav")!
-                let url = URL(fileURLWithPath: path)
-                do {
-                    self.levelUpSoundPlayer = try AVAudioPlayer(contentsOf: url)
+
+        if levelUpOccurred {
+            // We're going to play a sound and trigger a gentle vibration.
+            guard let path = Bundle.main.path(forResource: "levelUp", ofType: "wav") else { return }
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                levelUpSoundPlayer = try AVAudioPlayer(contentsOf: url)
+                levelUpSoundPlayer?.prepareToPlay()
+                levelUpVibration.prepare()
+
+                // Schedules the sound to be played with a short delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.levelUpSoundPlayer?.play()
-                } catch {
-                    print("File did not load")
+                    self.levelUpVibration.notificationOccurred(.success)
                 }
-                })
+            } catch {
+                print("levelUp.wav failed to load.")
+            }
         }
-        // save that they completed some work
+
+        // Save that they completed some work.
         switch awardType {
         case .learn(let chapter):
             User.current.learnedSection(chapter)
