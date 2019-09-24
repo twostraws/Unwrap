@@ -34,7 +34,7 @@ enum Unwrap {
     /// The basic font used for code in the app, scaled up for Dynamic Type.
     static var codeFont: UIFont {
         let metrics = UIFontMetrics(forTextStyle: .body)
-        let baseFont = UIFont.monospacedSystemFont(ofSize: 17, weight: .regular)
+        let baseFont = UIFont(name: "Menlo", size: 17) ?? UIFont.systemFont(ofSize: 17)
         return metrics.scaledFont(for: baseFont)
     }
 
