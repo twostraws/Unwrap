@@ -83,4 +83,11 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
             navigationItem.leftBarButtonItem?.isEnabled = false
         }
     }
+
+    // If we dynamically changed between light and dark mode while the app was running, make sure we refresh our layout to reflect the theme.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            tableView.reloadDataSavingSelections()
+        }
+    }
 }

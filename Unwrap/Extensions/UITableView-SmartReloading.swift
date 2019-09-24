@@ -11,14 +11,14 @@ import UIKit
 extension UITableView {
     /// Reloads a table view without losing track of what was selected.
     func reloadDataSavingSelections() {
-        guard let selected = indexPathsForSelectedRows else {
-            return
-        }
+        let selectedRows = indexPathsForSelectedRows
 
         reloadData()
 
-        for indexPath in selected {
-            selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        if let selectedRow = selectedRows {
+            for indexPath in selectedRow {
+                selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            }
         }
     }
 }
