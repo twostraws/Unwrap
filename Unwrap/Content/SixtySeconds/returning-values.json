@@ -29,7 +29,11 @@
         {
             "answer": "func allTestsPassed(tests: [Bool]) -> Bool {\n\tfor test in tests {\n\t\tif test == false {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
             "reason": "This code is valid Swift."
-        }
+        },
+        {
+            "answer": "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
+            "reason": "This code is valid Swift."
+        },
     ],
     "wrong": [
         {
@@ -39,10 +43,6 @@
         {
             "answer": "func check(scores: [Int]) {\n\tfor score in scores {\n\t\tif score < 80 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\ncheck(scores: [100, 90, 100, 85])",
             "reason": "This returns a value from a function that should not return anything."
-        },
-        {
-            "answer": "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
-            "reason": "This function should return a string, but doesn't return anything."
         },
         {
             "answer": "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",
