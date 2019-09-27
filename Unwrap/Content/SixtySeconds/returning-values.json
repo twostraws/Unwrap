@@ -33,7 +33,7 @@
         {
             "answer": "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
             "reason": "This code is valid Swift."
-        },
+        }
     ],
     "wrong": [
         {
