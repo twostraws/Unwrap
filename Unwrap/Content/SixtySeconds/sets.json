@@ -42,7 +42,7 @@
         },
         {
             "answer": "let earthquakeStrengths = Set(1, 1, 2, 2)",
-            "reason": "To create a set you must pass in an array of items rather than just loose integers."
+            "reason": "To create a set you must pass in an array of items rather than just loose integers – <code>Set([1, 1, 2, 2])</code> would have been correct."
         },
         {
             "answer": "let staffReviews = Set([1, 2, 1, 2, 3])",

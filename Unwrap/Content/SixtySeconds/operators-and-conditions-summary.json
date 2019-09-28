@@ -54,7 +54,7 @@
         },
         {
             "answer": "let numberOfCats = 1\nswitch numberOfCats {\ncase 0:\n\tprint(\"You have no cats\")\ncase 1...3:\n\tprint(\"You have some cats\")\ncase 4..<10:\n\tprint(\"You have many cats!\")\n}",
-            "reason": "This switch block is not exahustive because it doesn't have a default case."
+            "reason": "This switch block is not exhaustive because it doesn't have a default case."
         }
     ]
 }

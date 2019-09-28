@@ -50,7 +50,7 @@
         },
         {
             "answer": "Raw values must always be strings.",
-            "reason": "You can something else if you wish, such as integers."
+            "reason": "You can use something else if you wish, such as integers."
         },
         {
             "answer": "Raw values and associated values are the same.",

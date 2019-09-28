@@ -41,8 +41,8 @@
             "reason": "This returns a value from a function that should not return anything."
         },
         {
-            "answer": "func playPiano(song: String) -> String {\n\t\"I'm going to play \\(song) on my piano.\"\n}",
-            "reason": "This function should return a string, but doesn't return anything."
+            "answer": "func playPiano(song: String) -> String {\n\tretrurn \"I'm going to play \\(song) on my piano.\"\n}",
+            "reason": "This has a typo – it should read <code>return<\/code> rather than <code>retrurn<\/code>."
         },
         {
             "answer": "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",

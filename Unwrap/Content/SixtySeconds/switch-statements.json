@@ -8,7 +8,7 @@
     "correct": [
         {
             "answer": "Switch statements are often clearer to read than multiple <code>if<\/code> conditions.",
-            "reason": "They help us by focusing on one specific check, rathe than many possible checks."
+            "reason": "They help us by focusing on one specific check, rather than many possible checks."
         },
         {
             "answer": "Code from the following case will be run if you use <code>fallthrough<\/code>.",
