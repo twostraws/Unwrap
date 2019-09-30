@@ -53,7 +53,7 @@
             "reason": "The <code>isExpensiveArea<\/code> property is a string, but it's being treated like a Boolean. More importantly, this uses <code>method<\/code> rather than <code>func<\/code>."
         },
         {
-            "answer": "struct Jewellery {\n\tvar price: Double\n\tfunc estimateInsurance() -> Double {\n\t\tprice \/ 50.0\n\t}\n}",
+            "answer": "struct Jewellery {\n\tvar price: Double\n\tfunc estimateInsurance() -> Double {\n\t\tlet value = price \/ 50.0\n\t\tvalue\n\t}\n}",
             "reason": "The <code>estimateInsurance()<\/code> method is missing the <code>return<\/code> keyword."
         }
     ]
