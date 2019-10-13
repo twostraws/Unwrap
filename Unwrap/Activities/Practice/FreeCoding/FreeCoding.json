@@ -45,7 +45,7 @@
         ]
     },
     {
-        "question": "Write a function that accepts two Doubles and returns their product. For example, sending in <code>3 * 5</code> will return 15.",
+        "question": "Write a function that accepts two Doubles and returns their product. For example, sending in <code>3, 5</code> will return 15.",
         "hint": "The product of two numbers is the numbers multiplied",
         "startingCode": "",
         "answers": [
