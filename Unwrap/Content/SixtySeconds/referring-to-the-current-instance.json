@@ -46,7 +46,7 @@
         },
         {
             "answer": "struct Language {\n\tvar nameEnglish: String\n\tvar nameLocal: String\n\tvar speakerCount: Int\n\tinit(english: String, local: String, speakerCount: Int) {\n\t\tself.nameEnglish = english\n\t\tself.nameLocal = local\n\t\tself.speakerCount = speakerCount\n\t}\n}\nlet french = Language(nameEnglish: \"French\", nameLocal: \"fran\u00e7ais\", speakerCount: 220_000_000)",
-            "reason": "The initializer has the parameter name <code>local<\/code>, not <code>nameLocal<\/code>."
+            "reason": "The initializer has the parameter names <code>english<\/code> and <code>local<\/code>, not <code>nameEnglish<\/code> and <code>nameLocal<\/code>."
         },
         {
             "answer": "struct Bus {\n\tvar routeNumber: String\n\tinit(route: Int) {\n\t\tself.routeNumber = route\n\t}\n}",
