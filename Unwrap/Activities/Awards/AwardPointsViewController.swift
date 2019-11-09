@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVFoundation
+
 /// The view controller that handles visually awarding points to users.
 class AwardPointsViewController: UIViewController, Storyboarded {
     var coordinator: Awarding? {
@@ -15,9 +15,6 @@ class AwardPointsViewController: UIViewController, Storyboarded {
             configureNavigation()
         }
     }
-
-    /// The AVPlayer for our sound when the user levels up
-    var levelUpSoundPlayer: AVAudioPlayer?
 
     /// A gentle vibration to play on level up
     var levelUpVibration = UIImpactFeedbackGenerator(style: .heavy)
@@ -90,22 +87,12 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         earnedPoints.count(start: pointsToAward, end: 0)
 
         if levelUpOccurred {
-            // We're going to play a sound and trigger a gentle vibration.
-            guard let path = Bundle.main.path(forResource: "levelUp", ofType: "wav") else { return }
-            let url = URL(fileURLWithPath: path)
+            // We're going to trigger a gentle vibration.
+            levelUpVibration.prepare()
 
-            do {
-                levelUpSoundPlayer = try AVAudioPlayer(contentsOf: url)
-                levelUpSoundPlayer?.prepareToPlay()
-                levelUpVibration.prepare()
-
-                // Schedules the sound to be played with a short delay
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.levelUpSoundPlayer?.play()
-                    self.levelUpVibration.impactOccurred()
-                }
-            } catch {
-                print("levelUp.wav failed to load.")
+            // Schedules the vibration to be played with a short delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.levelUpVibration.impactOccurred()
             }
         }
 
