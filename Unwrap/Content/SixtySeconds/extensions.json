@@ -53,7 +53,7 @@
             "reason": "The <code>times()<\/code> method is missing the <code>func<\/code> keyword."
         },
         {
-            "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tself == 42\n\t}\n}",
+            "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tlet target = 42\n\t\tself == target\n\t}\n}",
             "reason": "This computed property is missing the <code>return<\/code> keyword."
         }
     ]
