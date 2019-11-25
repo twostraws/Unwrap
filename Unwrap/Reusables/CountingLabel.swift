@@ -45,7 +45,7 @@ class CountingLabel: UILabel {
         targetValue = end
     }
 
-    /// Called every time a frame draw happens thanks to CADisplayLink, so its our chance to adjust our current value towards our target value, then update our label.
+    /// Called every time a frame draw happens thanks to CADisplayLink, so it’s our chance to adjust our current value towards our target value, then update our label.
     @objc func updateCount() {
         if targetValue > fromValue {
             // We need to add numbers to reach our target.
