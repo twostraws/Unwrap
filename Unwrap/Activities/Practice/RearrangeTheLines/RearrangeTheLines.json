@@ -12,7 +12,7 @@
 	{
 		"question": "This code should check that a password is at least eight characters.",
 		"hint": "Passwords are long enough if they are eight letters or longer.",
-		"code": "let passwordLength = 5\nif passwordLength >= 8 {\n\tprint(\"The password is long enough\")\n} else {\n\tprint(\"The password is too short\")\n}"
+		"code": "let password = \"t4yl0r\"\nif password.count >= 8 {\n\tprint(\"The password is long enough\")\n} else {\n\tprint(\"The password is too short\")\n}"
 	},
 	{
 		"question": "This code should count piano lessons.",
