@@ -92,6 +92,10 @@
     "description": "A Swift protocol that can be applied to enums. If the enum has cases with no associated values, the compiler will generate an <code>allCases<\/code> array that lets you loop over the cases in the enum."
   },
   {
+    "term": "Catch",
+    "description": "A keyword that starts a block of code to handle errors. You can specify what kind of errors should be caught, and use a generic \"catch all\" block to catch everything else. Paired with <code>do<\/code>."
+  },
+  {
     "term": "CGFloat",
     "description": "A floating-point number that may be equivalent to a <code>Double<\/code> or <code>Float<\/code> depending on the platform."
   },
@@ -176,6 +180,10 @@
     "description": "A high-performance, unordered collection of values stored using a key for fast access."
   },
   {
+    "term": "Do",
+    "description": "A keyword that starts a block of code that might throw errors. Paired with <code>catch<\/code>."
+  },
+  {
     "term": "Double",
     "description": "A high-precision floating-point number, such as 3.1, or 3.141592654."
   },
@@ -188,12 +196,20 @@
     "description": "A common Swift protocol that says conforming types can be compared for equality using <code>==<\/code>."
   },
   {
+    "term": "Error",
+    "description": "A Swift protocol that our own enums can conform to, which we can then use to throw errors from functions."
+  },
+  {
     "term": "Expression",
     "description": "Some code that evaluates to a value. For example, <code>12 * 12<\/code> evaluates to 144."
   },
   {
     "term": "Extension",
     "description": "A set of additional methods and computed properties that are added to a concrete type, such as <code>Int<\/code>."
+  },
+  {
+    "term": "Fallthrough",
+    "description": "A keyword used in <code>switch<\/code> blocks to mean \"carry on executing the case immediately following this one.\""
   },
   {
     "term": "Failable initializer",
