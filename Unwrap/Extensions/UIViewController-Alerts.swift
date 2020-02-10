@@ -34,7 +34,7 @@ extension UIViewController: AlertShowing {
         attributes.screenInteraction = .dismiss
         attributes.entryInteraction = .absorbTouches
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.3, radius: 10, offset: .zero))
-        attributes.screenBackground = .color(color: UIColor(bundleName: "AlertBackgroundDim"))
+        attributes.screenBackground = .color(color: EKColor(UIColor(bundleName: "AlertBackgroundDim")))
         attributes.position = EKAttributes.Position.center
         view.clipsToBounds = true
         view.layer.cornerRadius = 20

@@ -5,7 +5,7 @@
 //  Created by Daniel Huri on 4/29/18.
 //
 
-import Foundation
+import UIKit
 
 /**
  A stateless, threadsafe (unless described otherwise) entry point that contains the display and the dismissal logic of entries.
@@ -46,6 +46,16 @@ public final class SwiftEntryKit {
     
     /** Cannot be instantiated, customized, inherited. */
     private init() {}
+    
+    /**
+     Returns the window that displays the entry.
+     **Warning**: the returned `UIWindow` instance is `nil` in case
+     no entry is currently displayed.
+     This can be used
+     */
+    public class var window: UIWindow? {
+        return EKWindowProvider.shared.entryWindow
+    }
     
     /**
      Returns true if **any** entry is currently displayed.

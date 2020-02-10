@@ -6,9 +6,9 @@
 //  Copyright (c) 2018 huri000@gmail.com. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public class EKRatingSymbolView: UIView {
+final public class EKRatingSymbolView: UIView {
     
     private let button = UIButton()
     private let imageView = UIImageView()
@@ -23,7 +23,7 @@ public class EKRatingSymbolView: UIView {
             imageView.imageContent = newValue ? selectedImage : unselectedImage
         }
         get {
-            return imageView.animationImages == selectedImage.images
+            return imageView.image == selectedImage.images.first
         }
     }
     

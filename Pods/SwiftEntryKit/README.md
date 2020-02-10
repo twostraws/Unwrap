@@ -4,8 +4,17 @@
 [![Language](http://img.shields.io/badge/language-Swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
 [![Version](https://img.shields.io/cocoapods/v/SwiftEntryKit.svg?style=flat-square)](http://cocoapods.org/pods/SwiftEntryKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Accio: Supported](https://img.shields.io/badge/Accio-supported-0A7CF5.svg?style=flat)](https://github.com/JamitLabs/Accio)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 ![](https://travis-ci.com/huri000/SwiftEntryKit.svg?branch=master)
+
+## What's New?
+### 🌑 `1.1.4` - let there be dark
+`SwiftEntryKit` is now dark mode ready, and user interface styles are supported pre iOS 13 / Xcode 11!
+
+To know more about it, visit [Change Log](https://github.com/huri000/SwiftEntryKit/blob/master/CHANGELOG.md#110), and install the [example project](#example-project-installation).
+### 🤖 `1.0.4` - automata 
+Accessibility in presets is now supported, enabling all kinds of robotic activity for host projects.
 
 * [Overview](#overview)
   * [Features](#features)
@@ -32,6 +41,7 @@
     * [Scroll Behavior](#scroll-behavior)
     * [Haptic Feedback](#haptic-feedback)
     * [Lifecycle Events](#lifecycle-events)
+    * [Display Mode](#display-mode)
     * [Background Style](#background-style)
     * [Shadow](#shadow)
     * [Round Corners](#round-corners)
@@ -48,20 +58,19 @@
   * [Dealing With Safe Area](#dealing-with-safe-area)
   * [Dealing With Orientation Change](#dealing-with-orientation-change)
   * [Swift and Objective-C Interoperability](#swift-and-objective-c-interoperability)
-* [Known Issues](#known-issues)
 * [Author](#author)
 * [License](#license)
 
 ## Overview
 
-SwiftEntryKit is a simple and versatile content presenter written in Swift.
+SwiftEntryKit is a simple yet versatile content presenter written in Swift.
 
 ### Features
 
 Banners or pop-ups are called *Entries*.
 
 - Entries are displayed inside a separate UIWindow (of type EKWindow), so users are able to navigate the app freely while entries are being displayed in a non intrusive manner.
-- The kit offers beautiful [presets](#presets) that can be themed with your app colors and fonts.
+- The kit offers beautiful [presets](#presets) that can be themed with your own colors and fonts.
 - **Customization**: Entries are highly customizable
   - [x] Can be [positioned](#display-position) either at the top, center, or the bottom of the screen.
   - [x] Can be displayed within or outside the screen safe area.
@@ -70,7 +79,8 @@ Banners or pop-ups are called *Entries*.
   - [x] Transition [animations](#animations) are customizable - entrance, exit and pop (by another entry).
   - [x] The [user interaction](#user-interaction) with the entry or the screen can be intercepted.
   - [x] Entries can be enqueued or override previous entries using the [precedence](#precedence) attribute.
-  - [x] Entries have [display priority](#display-priority) attribute. That means that an entry can be dismissed only be other entry with an equal or higher priority. 
+  - [x] Each entry has a [display priority](#display-priority) attribute. That means that it can be dismissed only by other entry with an equal or higher priority. 
+  - [x] Presets support accessibility.
   - [x] Entries have an optional rubber banding effect while panning.
   - [x] Entries can be optionally dismissed using a simple [swipe gesture](#swiping-and-rubber-banding).
   - [x] Entries can be optionally injected with [lifecycle events](#lifecycle-events): *will* and *did* appear/disappear.
@@ -123,7 +133,7 @@ The Playground Screen | Top Toast Sample
 - Xcode 9 or any higher version.
 - Swift 4.0 or any higher version.
 - The library has not been tested with iOS 8.x.y or a lower version.
-- SwiftEntryKit leans heavily on [QuickLayout](https://github.com/huri000/QuickLayout) - A lightwight library written in Swift that is used to easily layout views programmatically.
+- SwiftEntryKit leans heavily on [QuickLayout](https://github.com/huri000/QuickLayout) - A lightweight library written in Swift that is used to easily layout views programmatically.
 
 ## Installation
 
@@ -146,7 +156,7 @@ source 'https://github.com/cocoapods/specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftEntryKit', '1.0.1'
+pod 'SwiftEntryKit', '1.2.3'
 ```
 
 Then, run the following command:
@@ -169,8 +179,27 @@ $ brew install carthage
 To integrate SwiftEntryKit into your Xcode project using Carthage, specify the following in your `Cartfile`:
 
 ```ogdl
-github "huri000/SwiftEntryKit" == 1.0.1
+github "huri000/SwiftEntryKit" == 1.2.3
 ```
+
+### Accio
+
+[Accio](https://github.com/JamitLabs/Accio) is a decentralized dependency manager driven by SwiftPM that works for iOS/tvOS/watchOS/macOS projects.
+
+You can install Accio with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew tap JamitLabs/Accio https://github.com/JamitLabs/Accio.git
+$ brew install accio
+```
+
+To integrate SwiftEntryKit into your Xcode project using Accio, specify the following in your `Package.swift` manifest:
+
+```swift
+.package(url: "https://github.com/huri000/SwiftEntryKit", .exact("1.2.3"))
+```
+
+After specifying `"SwiftEntryKit"` as a dependency of the target in which you want to use it, run `accio install`.
 
 ## Usage
 
@@ -247,7 +276,7 @@ attributes.position = .bottom
 The default value of `position` is `.top`.
 
 #### Precedence
-The precedence attribute of an entry describes the manner in which entries are pushed in. It offers 2 approaches for managing the presentation priority of multiple simultanious entries.
+The precedence attribute of an entry describes the manner in which entries are pushed in. It offers 2 approaches for managing the presentation priority of multiple simultaneous entries.
 
 ##### Override
 If the [display priority](#display-priority) is equal or higher than the currently displayed entry, override it.
@@ -469,6 +498,19 @@ attributes.lifecycleEvents.didDisappear = {
 }
 ```
 
+#### Display Mode
+To allow you to fully support any user interface style, `SwiftEntryKit` introduces two specialized types:
+- `EKColor` describes a color under light and dark modes.
+- `EKAttributes.BackgroundStyle.BlurStyle` describes a blur effect under light and dark modes. 
+
+The following forces `SwiftEntryKit` to display the entry on dark mode.
+```Swift
+attributes.displayMode = .dark
+```
+
+The possible values are: `.light`, `.dark`, `.inferred`.
+The default value is `.inferred`, which means that the entry will be displayed with the current user interface style.
+
 #### Background Style
 The entry and the screen can have various background styles, such as blur, color, gradient and even an image.
 
@@ -480,13 +522,13 @@ attributes.screenBackground = .clear
 
 Colored entry background and dimmed screen background:
 ```Swift
-attributes.entryBackground = .color(color: .white)
-attributes.screenBackground = .color(color: UIColor(white: 0.5, alpha: 0.5))
+attributes.entryBackground = .color(color: .standardContent)
+attributes.screenBackground = .color(color: EKColor(UIColor(white: 0.5, alpha: 0.5)))
 ```
 
 Gradient entry background (diagonal vector):
 ```Swift
-let colors: [UIColor] = [.red, .green, .blue]
+let colors: [EKColor] = ...
 attributes.entryBackground = .gradient(gradient: .init(colors: colors, startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
 ```
 
@@ -576,7 +618,7 @@ The entry is being popped animatedly:
 attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.2)))
 ```
 
-The entry is being overriden (Disappears promptly):
+The entry is being overridden (Disappears promptly):
 ```Swift
 attributes.popBehavior = .overridden
 ```
@@ -632,6 +674,7 @@ public struct EKAttributes
     public var lifecycleEvents: LifecycleEvents
 
     // Theme & Style
+    public var displayMode = DisplayMode.inferred
     public var entryBackground: BackgroundStyle
     public var screenBackground: BackgroundStyle
     public var shadow: Shadow
@@ -650,7 +693,7 @@ public struct EKAttributes
 
 You can use one of the presets that come with SwiftEntryKit, doing these 4 simple steps:
 
-1. Create your *EKAttributes* struct and set your preferrable properties.
+1. Create your *EKAttributes* struct and set your preferable properties.
 2. Create *EKNotificationMessage* struct (The Content) and set the content.
 3. Create *EKNotificationMessageView* (The View) and inject *EKNotificationMessage* struct to it.
 4. Display the entry using *SwiftEntryKit* class method.
@@ -660,7 +703,7 @@ You can use one of the presets that come with SwiftEntryKit, doing these 4 simpl
 ```Swift
 // Generate top floating entry and set some properties
 var attributes = EKAttributes.topFloat
-attributes.entryBackground = .gradient(gradient: .init(colors: [.red, .green], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
 attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
 attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
 attributes.statusBar = .dark
@@ -845,6 +888,12 @@ Orientation Change Demonstration |
 --- |
 ![orientation_change](https://github.com/huri000/assets/blob/master/swift-entrykit/orientation.gif)
 
+### Dark Mode in the Example Project
+
+You can tinker with the display mode using a segmented control on presets screen, forcing light and dark modes.
+All the presets are dark mode ready, but only some in the example project demonstrate dark mode capabilities.
+![light_dark](https://github.com/huri000/assets/blob/master/swift-entrykit/dark-light.gif)
+
 ### Swift and Objective-C Interoperability
 SwiftEntryKit's APIs use the Swift language exclusive syntax (enums, associated values, and more). 
 Therefore, `SwiftEntryKit` cannot be referenced directly from an Objective-C file (*.m*, *.h* or *.mm*).
@@ -853,19 +902,13 @@ Yet, it is pretty easy to integrate SwiftEntryKit into an Objective-C project us
 
 [This project](https://github.com/huri000/ObjcEntryKitExample) demonstrates that using Carthage and CocoaPods.  
 
-## Known Issues
-
-**Unable to find specification for SwiftEntryKit (=X.Y.Z)** - In case you get this error please review [this thread](https://github.com/huri000/SwiftEntryKit/issues/4).
-
-**Unable to use example project** - In case you are unable to install the example project please review [this thread](https://github.com/huri000/SwiftEntryKit/issues/31) and the [Example Project Installation](#example-project-installation) section.
-
 ## Author
 
 Daniel Huri, huri000@gmail.com
 
 ## Thank You
 
-Thanks Lily Azar, lilushkaa@gmail.com for those aweome preset icons. 
+Thanks Lily Azar, lilushkaa@gmail.com for those awesome preset icons. 
 
 ## Credits
 
