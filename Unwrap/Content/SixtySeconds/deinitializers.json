@@ -42,7 +42,7 @@
         },
         {
             "answer": "struct Olympics {\n\tfunc deinit() {\n\t\tprint(\"And now for the closing ceremony.\")\n\t}\n}",
-            "reason": "You don't write parentheses after <code>deinit<\/code>."
+            "reason": "You don't use <code>func<\/code> or write parentheses after <code>deinit<\/code>."
         },
         {
             "answer": "struct Fairytale {\n\tdeinit {\n\t\tprint(\"And they lived happily ever after.\")\n\t}\n}",

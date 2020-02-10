@@ -38,7 +38,7 @@
         },
         {
             "answer": "let captains: [String]? = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
-            "reason": "The <code>captains<\/code> array is optional, so this should read <code>captains?.last?.count<\/code>."
+            "reason": "The <code>captains<\/code> array is optional, so this should read <code>captains?.last?.count<\/code>. Also, the array should not end with a question mark."
         },
         {
             "answer": "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",

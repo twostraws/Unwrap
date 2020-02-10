@@ -54,7 +54,7 @@
         },
         {
             "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tlet target = 42\n\t\tself == target\n\t}\n}",
-            "reason": "This computed property is missing the <code>return<\/code> keyword."
+            "reason": "This computed property doesn't actually return a value."
         }
     ]
 }

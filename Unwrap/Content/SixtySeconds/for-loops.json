@@ -34,7 +34,7 @@
     "wrong": [
         {
             "answer": "print(\"Haters gonna \")\nfor _ in 1...4 {\n\tprint(\"hate\")\n}",
-            "reason": "This will print four lines of text."
+            "reason": "This will print five lines of text."
         },
         {
             "answer": "let albums = [\"1989\", \"Red\"]\nfor album in albums {\n\tprint(\"\\(album) was a great album!\")\n}",

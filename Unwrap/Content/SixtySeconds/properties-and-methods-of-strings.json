@@ -45,7 +45,7 @@
             "reason": "This is false, because strings are case-sensitive in Swift."
         },
         {
-            "answer": "let definitelyTrue = \"Fox in sox\"\ndefinitelyTrue.contains(\"socks\")",
+            "answer": "let definitelyTrue = \"Fox in box\"\ndefinitelyTrue.contains(\"socks\")",
             "reason": "This is false, because the string we're looking for doesn't exist in <code>definitelyTrue<\/code>."
         },
         {
