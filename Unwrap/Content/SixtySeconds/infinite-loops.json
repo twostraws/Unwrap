@@ -27,8 +27,8 @@
             "reason": "This is an infinite loop because <code>passengerCount<\/code> will always be 0 – multiplying 0 by 2 still makes 0."
         },
         {
-            "answer": "var starWarsSpinOffs = 0\nwhile true {\n\tprint(\"It's time for another spin-off!\")\n\tstarWarsSpinOffs += 1\n}",
-            "reason": "This is an infinite loop because <code>starWarsSpinOffs<\/code> will never become false."
+            "answer": "var wantStarWarsSpinOffs = true\nwhile wantStarWarsSpinOffs {\n\tprint(\"It's time for another spin-off!\")\n}",
+            "reason": "This is an infinite loop because <code>wantStarWarsSpinOffs<\/code> will never become false."
         }
     ],
     "wrong": [
