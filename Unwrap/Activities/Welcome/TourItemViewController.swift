@@ -15,7 +15,7 @@ class TourItemViewController: UIViewController, Storyboarded {
 
     var item: TourItem?
 
-    /// Load the appropriate tour item into our UI.
+    // Load the appropriate tour item into our UI.
     override func viewDidLoad() {
         super.viewDidLoad()
 

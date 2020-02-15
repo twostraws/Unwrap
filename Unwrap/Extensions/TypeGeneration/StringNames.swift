@@ -31,6 +31,7 @@ extension String: TypeGenerating {
                 let randomNumber = arc4random_uniform(100) + 1
                 let randomStreetType = streetTypes[Int(arc4random_uniform(UInt32(streetTypes.count)))]
                 let resolvedAddress = "\(randomNumber) \(randomValues[addressCounter]) \(randomStreetType)"
+                
                 values.append(resolvedAddress)
             }
         } else {
@@ -43,6 +44,7 @@ extension String: TypeGenerating {
     static func randomOperator() -> String {
         let operators = ["<", ">", "<=", ">=", "==", "!="]
         let chosen = operators[GKRandomSource.sharedRandom().nextInt(upperBound: operators.count)]
+        
         return chosen
     }
 

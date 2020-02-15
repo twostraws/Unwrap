@@ -12,7 +12,7 @@ class TourPageViewController: UIPageViewController, UIPageViewControllerDataSour
     weak var pageChangeDelegate: TourHostViewController?
     var allViewControllers = [UIViewController]()
 
-    /// Loads all our tour items into the page view controller and tells the delegate how many we have.
+    // Loads all our tour items into the page view controller and tells the delegate how many we have.
     override func viewDidLoad() {
         super.viewDidLoad()
 

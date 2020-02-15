@@ -45,7 +45,7 @@ class ChallengesViewController: UITableViewController, UserTracking {
         tableView.reloadData()
     }
 
-    /// This either starts today's challenge (if they haven't done it already), or shares their score.
+    // This either starts today's challenge (if they haven't done it already), or shares their score.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if !User.current.hasCompletedTodaysChallenge {

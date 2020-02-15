@@ -49,7 +49,7 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
         fetchArticles()
     }
 
-    /// Clears our tab badge as soon as we're shown.
+    // Clears our tab badge as soon as we're shown.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabBarItem.badgeValue = nil
@@ -74,7 +74,7 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
         }
     }
 
-    /// Called when the user selects a news story.
+    // Called when the user selects a news story.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = dataSource.article(at: indexPath.row)
         coordinator?.read(article)

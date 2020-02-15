@@ -16,12 +16,12 @@ class GradientView: UIView {
     /// The color at the end of the gradient.
     @IBInspectable var secondColor: UIColor = UIColor.black
 
-    /// Requests that we get CAGradientLayer backing for this view.
+    // Requests that we get CAGradientLayer backing for this view.
     override class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
 
-    /// When it's time to lay things out, set up our gradient layer using the specified colors.
+    // When it's time to lay things out, set up our gradient layer using the specified colors.
     override func layoutSubviews() {
         guard let layer = layer as? CAGradientLayer else { return }
         layer.colors = [firstColor.cgColor, secondColor.cgColor]

@@ -28,6 +28,7 @@ enum Unwrap {
 
     static func getEntropy() -> Int {
         entropy += 1
+        
         return entropy
     }
 
@@ -35,27 +36,31 @@ enum Unwrap {
     static var codeFont: UIFont {
         let metrics = UIFontMetrics(forTextStyle: .body)
         let baseFont = UIFont(name: "Menlo", size: 17) ?? UIFont.systemFont(ofSize: 17)
+        
         return metrics.scaledFont(for: baseFont)
     }
 
-    // Returns standard font, scaled up for Dynamic Type.
+    /// Standard font, scaled up for Dynamic Type.
     static var scaledBaseFont: UIFont {
         let baseFont = UIFont.systemFont(ofSize: 17)
         let metrics = UIFontMetrics(forTextStyle: .body)
+        
         return metrics.scaledFont(for: baseFont)
     }
 
-    // Returns standard bold font, scaled up for Dynamic Type.
+    /// Standard bold font, scaled up for Dynamic Type.
     static var scaledBoldFont: UIFont {
         let boldFont = UIFont.boldSystemFont(ofSize: 17)
         let metrics = UIFontMetrics(forTextStyle: .body)
+        
         return metrics.scaledFont(for: boldFont)
     }
 
-    // Returns standard extra bold font, scaled up for Dynamic Type.
+    /// Standard extra bold font, scaled up for Dynamic Type.
     static var scaledExtraBoldFont: UIFont {
         let boldFont = UIFont.systemFont(ofSize: 17, weight: .heavy)
         let metrics = UIFontMetrics(forTextStyle: .body)
+        
         return metrics.scaledFont(for: boldFont)
     }
 }

@@ -22,7 +22,7 @@ class MainTabBarController: UITabBarController, Storyboarded {
         viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
     }
 
-    /// If we get some launch options, figure out which one was requested and jump right to the correct tab.
+    /// Figures out which launch option was requested (if any) and jumps right to the correct tab.
     func handle(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
             handle(shortcutItem: item)
@@ -30,11 +30,12 @@ class MainTabBarController: UITabBarController, Storyboarded {
     }
 
     func handle(shortcutItem: UIApplicationShortcutItem) {
-        if shortcutItem.type == "com.hackingwithswift.unwrapswift.challenges" {
+        switch shortcutItem.type {
+        case "com.hackingwithswift.unwrapswift.challenges":
             selectedViewController = challenges.splitViewController
-        } else if shortcutItem.type == "com.hackingwithswift.unwrapswift.news" {
+        case "com.hackingwithswift.unwrapswift.news":
             selectedViewController = news.splitViewController
-        } else {
+        default:
             fatalError("Unknown shortcut item type: \(shortcutItem.type).")
         }
     }

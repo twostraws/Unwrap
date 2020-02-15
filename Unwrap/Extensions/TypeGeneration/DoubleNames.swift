@@ -13,6 +13,7 @@ extension Double: TypeGenerating {
     static func randomName() -> String {
         let names = ["days", "depth", "distance", "height", "hours", "minutes", "months", "multiplier", "score", "seconds", "temperature", "weeks", "weight", "width"]
         let chosen = names[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
+        
         return chosen
     }
 
@@ -31,10 +32,8 @@ extension Double: TypeGenerating {
 
         // if we aren't declaring a type make sure we always have some numbers
         // after the decimal point otherwise this is an integer
-        if type.isEmpty {
-            if !value.contains(".") {
-                value = value.appending(".0")
-            }
+        if type.isEmpty && !value.contains(".") {
+            value = value.appending(".0")
         }
 
         return "\(storage) \(name)\(type) = \(value)"

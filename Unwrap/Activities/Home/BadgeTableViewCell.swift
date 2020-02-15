@@ -22,6 +22,7 @@ class BadgeTableViewCell: UITableViewCell, UserTracking {
         // By setting accessibility element to false, we allow voiceover to access the elements inside
         isAccessibilityElement = false
     }
+    
     func userDataChanged() {
         collectionView.reloadData()
     }

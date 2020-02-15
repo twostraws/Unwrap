@@ -41,7 +41,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
     }
 
-    /// Configures the UI with the correct content for our current activity.
+    // Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +55,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
         prompt.attributedText = practiceData.question.fromSimpleHTML()
     }
 
-    /// Shows extra explanation to users to help them understand where the error is.
+    // Shows extra explanation to users to help them understand where the error is.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -73,7 +73,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
         coordinator?.skipPracticing()
     }
 
-    /// Triggered when the user taps a line. They can't submit the answer until a line has been chosen.
+    // Triggered when the user taps a line. They can't submit the answer until a line has been chosen.
     func selectionChanged() {
         if let number = dataSource.selectedAnswer {
             answerButton.setTitle("ERROR ON LINE \(number + 1)", for: .normal)
