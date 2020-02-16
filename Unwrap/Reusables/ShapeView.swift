@@ -22,12 +22,12 @@ class ShapeView: UIView {
     /// The path to draw.
     var path: UIBezierPath?
 
-    // Request a CAShapeLayer as our backing layer.
+    /// Request a CAShapeLayer as our backing layer.
     override class var layerClass: AnyClass {
         return CAShapeLayer.self
     }
 
-    // When it's time to layout our subviews, use this chance to scale up our path and place it in the shape layer. Paths should be normalized, meaning that they span the width and height 0 to 1. We then multiply that by our available space to make sure the path scales up neatly.
+    /// When it's time to layout our subviews, use this chance to scale up our path and place it in the shape layer. Paths should be normalized, meaning that they span the width and height 0 to 1. We then multiply that by our available space to make sure the path scales up neatly.
     override func layoutSubviews() {
         guard let layer = self.layer as? CAShapeLayer else { return }
 

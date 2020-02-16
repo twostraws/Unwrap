@@ -28,7 +28,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         navigationItem.rightBarButtonItem = helpButton
     }
 
-    // When running on a real device for a user that has been using the app for a while, this prompts for a review.
+    /// When running on a real device for a user that has been using the app for a while, this prompts for a review.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
@@ -55,7 +55,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
-    // Calculate the height for table section headers; the first section shouldn't have a title.
+    /// Calculate the height for table section headers; the first section shouldn't have a title.
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             // Using 0 for a section height doesn't work, so this value is effectively 0.
@@ -83,7 +83,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
-    // See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == 4 {
             if let cell = cell as? BadgeTableViewCell {
@@ -92,7 +92,7 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
-    // When the Share Score cell is tapped start the share score process, otherwise do nothing.
+    /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shareScorePath = IndexPath(row: 4, section: 1)
 

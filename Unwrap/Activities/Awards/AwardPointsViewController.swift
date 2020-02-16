@@ -112,7 +112,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         }
     }
 
-    // Go away when the user taps anywhere.
+    /// Go away when the user taps anywhere.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         coordinator?.finishedAwards()
     }

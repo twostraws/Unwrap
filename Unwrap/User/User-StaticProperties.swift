@@ -11,7 +11,7 @@ import UIKit
 extension User {
     static var current: User!
 
-    // How many points we award for fixed tasks.
+    /// How many points we award for fixed tasks.
     static let pointsForLearning = 100
     static let pointsForReviewing = 100
     static let pointsForPracticing = 20 // per question answered correctly

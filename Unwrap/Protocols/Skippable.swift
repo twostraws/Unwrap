@@ -17,7 +17,7 @@ protocol Skippable {
     func skipPracticing()
 }
 
-// Provide default implementations of both so they must be overridden as needed in each coordinator
+// provide default implementations of both so they must be overridden as needed in each coordinator
 extension Skippable {
     func skipReviewing() {
         fatalError("skipReviewing() was called but is not implemented here.")

@@ -40,14 +40,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NotificationCenter.default.addObserver(self, selector: #selector(cloudDataChanged), name: Zephyr.keysDidChangeOnCloudNotification, object: nil)
 
-        // Send in the main tab bar controller, which can create our initial coordinators.
+        /// Send in the main tab bar controller, which can create our initial coordinators.
         tabBarController = MainTabBarController()
         window?.rootViewController = tabBarController
 
-        // We want the tab bar controller to handle our launch options so we can jump right too various tabs as needed.
+        /// We want the tab bar controller to handle our launch options so we can jump right too various tabs as needed.
         tabBarController?.handle(launchOptions)
 
-        // If a user has requested to play a movie, always play sound
+        /// If a user has requested to play a movie, always play sound
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback, options: [])
 
         return true

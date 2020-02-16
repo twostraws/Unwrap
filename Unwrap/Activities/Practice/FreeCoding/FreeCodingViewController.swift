@@ -44,7 +44,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
         showHintButton()
     }
 
-    // Configures the UI with the correct content for our current activity.
+    /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 

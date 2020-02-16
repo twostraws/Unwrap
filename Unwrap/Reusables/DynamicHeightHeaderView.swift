@@ -23,7 +23,7 @@ class DynamicHeightHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    /// Creates the dynamic section header label, activates its constraints and sets its attributes.
+    /// Create the dynamic section header label, activates its constraints, and sets its attributes.
     private func configureHeader() {
         contentView.addSubview(headerLabel)
         contentView.backgroundColor = UIColor(bundleName: "BackgroundLight")

@@ -15,7 +15,7 @@ class WelcomeView: GradientView {
     @IBOutlet var skipTour: UIButton!
     @IBOutlet var tourContainer: UIView!
 
-    // Set up the animation that draws our logo and brings in our two buttons smoothly.
+    /// Set up the animation that draws our logo and brings in our two buttons smoothly.
     override func didMoveToSuperview() {
         logo.path = UIBezierPath.logo
         logo.draw(delay: 0.5, duration: 2, keyFrameValues: [0, 0.129, 0.373, 0.58, 0.928, 1.0])

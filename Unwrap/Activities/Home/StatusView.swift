@@ -38,7 +38,7 @@ class StatusView: UIImageView, UserTracking {
     var currentTotalPoints = 0
     var animatePastEnd = false
 
-    // Performs some one-time set up of child views, then positions the views appropriately.
+    /// Performs some one-time set up of child views, then positions the views appropriately.
     override func layoutSubviews() {
         super.layoutSubviews()
 

@@ -51,7 +51,7 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
     }
 
-    // Configures the UI with the correct content for our current activity.
+    /// Configures the UI with the correct content for our current activity.
     override func viewDidLoad() {
         super.viewDidLoad()
 

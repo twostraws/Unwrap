@@ -19,7 +19,7 @@ struct Badge: Decodable {
     /// A named color that specifies how this badge's icon should be tinted.
     var color: String
 
-    // These two specify how this badge should be unlocked.
+    /// These two specify how this badge should be unlocked.
     var criterion: String
     var value: String
 

@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    /// An array of stirngs, each representing a line from an original string.
+    /// An array of strings, each representing a line from an original string.
     var lines: [String] {
         return self.components(separatedBy: "\n")
     }

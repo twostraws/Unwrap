@@ -22,7 +22,7 @@ class MainTabBarController: UITabBarController, Storyboarded {
         viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
     }
 
-    /// Figures out which launch option was requested (if any) and jumps right to the correct tab.
+    /// If we get some launch options, figure out which one was requested and jump right to the correct tab.
     func handle(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
             handle(shortcutItem: item)

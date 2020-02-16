@@ -30,7 +30,7 @@ final class User: Codable {
 
     // MARK: - Stored properties
 
-    // Tracks app launches over days.
+    /// Tracks app launches over days.
     var streakDays = 1
     var bestStreak = 1
     var lastStreakEntry = Date()

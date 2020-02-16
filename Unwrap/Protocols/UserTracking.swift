@@ -19,7 +19,7 @@ extension Notification.Name {
 }
 
 extension UserTracking {
-    // A method that sets up this object to be notified when user data changes. Conforming types should not need to override this implementation.
+    /// A method that sets up this object to be notified when user data changes. Conforming types should not need to override this implementation.
     func registerForUserChanges() {
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: .userStatusChanged, object: nil)
     }
