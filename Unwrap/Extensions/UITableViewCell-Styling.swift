@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableViewCell {
     /// Styles a table view cell as representing a correct answer.
-    func correctAnswer() {
+    func setCorrectAnswerStyle() {
         backgroundColor = UIColor(bundleName: "ReviewCorrect")
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
@@ -21,7 +21,7 @@ extension UITableViewCell {
     }
 
     /// Styles a table view cell as representing a wrong answer.
-    func wrongAnswer() {
+    func setWrongAnswerStyle() {
         backgroundColor = UIColor(bundleName: "ReviewWrong")
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
@@ -32,7 +32,7 @@ extension UITableViewCell {
     }
 
     /// Styles a table view cell as representing an unknown answer.
-    func unknownAnswer() {
+    func setUnknownAnswerStyle() {
         if #available(iOS 13, *) {
             backgroundColor = .systemBackground
         } else {

@@ -26,13 +26,9 @@ class WebView: UIView {
 
         if #available(iOS 13, *) {
             backgroundColor = .systemBackground
+            webView.backgroundColor = .systemBackground
         } else {
             backgroundColor = .white
-        }
-
-        if #available(iOS 13, *) {
-            backgroundColor = .systemBackground
-            webView.backgroundColor = .systemBackground
         }
 
         // stop the web view from appearing full white initially; this is pretty blinding in dark mode!

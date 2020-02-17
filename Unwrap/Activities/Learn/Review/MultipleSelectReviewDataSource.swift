@@ -91,9 +91,9 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
                 cell.detailTextLabel?.textColor = .white
 
                 if answer.isCorrect {
-                    cell.correctAnswer()
+                    cell.setCorrectAnswerStyle()
                 } else {
-                    cell.wrongAnswer()
+                    cell.setWrongAnswerStyle()
                 }
             } else {
                 if #available(iOS 13, *) {
@@ -103,9 +103,9 @@ class MultipleSelectReviewDataSource: NSObject, UITableViewDataSource, UITableVi
                 }
 
                 if answer.isCorrect {
-                    cell.wrongAnswer()
+                    cell.setWrongAnswerStyle()
                 } else {
-                    cell.unknownAnswer()
+                    cell.setUnknownAnswerStyle()
                 }
             }
         }

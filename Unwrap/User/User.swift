@@ -28,7 +28,7 @@ final class User: Codable {
         case theme
     }
 
-    // MARK: Stored properties
+    // MARK: - Stored properties
 
     /// Tracks app launches over days.
     var streakDays = 1
@@ -67,7 +67,7 @@ final class User: Codable {
     /// Tracks which articles the user has read.
     var articlesRead = Set<URL>()
 
-    // MARK: Computed properties
+    // MARK: - Computed properties
 
     /// The total number of points for this user.
     var totalPoints: Int {
@@ -147,7 +147,7 @@ final class User: Codable {
         }
     }
 
-    // MARK: Methods
+    // MARK: - Methods
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
         updateStreak()

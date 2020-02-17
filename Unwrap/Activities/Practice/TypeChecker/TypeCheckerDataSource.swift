@@ -70,15 +70,15 @@ class TypeCheckerDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
         if isShowingAnswers {
             if answer.isSelected {
                 if answer.isCorrect {
-                    cell.correctAnswer()
+                    cell.setCorrectAnswerStyle()
                 } else {
-                    cell.wrongAnswer()
+                    cell.setWrongAnswerStyle()
                 }
             } else {
                 if answer.isCorrect {
-                    cell.wrongAnswer()
+                    cell.setWrongAnswerStyle()
                 } else {
-                    cell.unknownAnswer()
+                    cell.setUnknownAnswerStyle()
                 }
             }
         }
