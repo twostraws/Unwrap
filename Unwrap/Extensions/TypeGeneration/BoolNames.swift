@@ -7,14 +7,11 @@
 //
 
 import Foundation
-import GameplayKit
 
 extension Bool: TypeGenerating {
     static func randomName() -> String {
         let names = ["isAnimated", "isAuthenticated", "isActive", "isDeleted", "isEdited", "isEditing", "isEnabled", "isEncrypted", "isFirstResponder", "isFocused", "isHidden", "isLandscape", "isLoaded", "isLoggedIn", "isModal", "isOpaque", "isPortrait", "isPresented", "isRecognized", "isRead", "isReady", "isSaved", "isSelected", "isSorted", "isStatic", "isUnlocked", "isVisible", "isZoomed"]
-        let chosen = names[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
-        
-        return chosen
+        return names.randomElement()!
     }
 
     static func makeInstance() -> String {

@@ -7,14 +7,11 @@
 //
 
 import Foundation
-import GameplayKit
 
 extension Double: TypeGenerating {
     static func randomName() -> String {
         let names = ["days", "depth", "distance", "height", "hours", "minutes", "months", "multiplier", "score", "seconds", "temperature", "weeks", "weight", "width"]
-        let chosen = names[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
-        
-        return chosen
+        return names.randomElement()!
     }
 
     static func makeInstance() -> String {

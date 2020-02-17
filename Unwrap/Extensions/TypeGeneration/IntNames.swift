@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import GameplayKit
 
 extension Int: TypeGenerating {
     static func randomName() -> (name: String, nameNatural: String) {
         let names = ["age", "birds", "books", "bottles", "cars", "customers", "days", "employees", "goals", "high score", "hours", "minutes", "months", "number of users", "people", "points", "sales", "score", "seconds", "sides", "teams", "users", "weeks"]
-        let chosen = names[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
-        
+        let chosen = names.randomElement()!
+
         return (chosen.formatAsVariable(), chosen)
     }
 

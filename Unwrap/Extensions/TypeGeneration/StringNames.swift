@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import GameplayKit
 
 extension String: TypeGenerating {
     static func randomName() -> (name: String, nameNatural: String, values: [String]) {
@@ -20,7 +19,7 @@ extension String: TypeGenerating {
         ]
 
         let keysArray = Array(names.keys)
-        let randomItem = keysArray[GKRandomSource.sharedRandom().nextInt(upperBound: names.count)]
+        let randomItem = keysArray.randomElement()!
         let randomValues = names[randomItem]!.shuffled()
         let streetTypes = ["Road", "Street", "Avenue", "Court", "Lane", "Place", "Drive", "Terrace"]
 
@@ -28,10 +27,10 @@ extension String: TypeGenerating {
 
         if randomItem == "address" {
             for addressCounter in 0 ..< 10 {
-                let randomNumber = arc4random_uniform(100) + 1
-                let randomStreetType = streetTypes[Int(arc4random_uniform(UInt32(streetTypes.count)))]
+                let randomNumber = Int.random(in: 1...100)
+                let randomStreetType = streetTypes.randomElement()!
                 let resolvedAddress = "\(randomNumber) \(randomValues[addressCounter]) \(randomStreetType)"
-                
+
                 values.append(resolvedAddress)
             }
         } else {
@@ -43,8 +42,8 @@ extension String: TypeGenerating {
 
     static func randomOperator() -> String {
         let operators = ["<", ">", "<=", ">=", "==", "!="]
-        let chosen = operators[GKRandomSource.sharedRandom().nextInt(upperBound: operators.count)]
-        
+        let chosen = operators.randomElement()!
+
         return chosen
     }
 
