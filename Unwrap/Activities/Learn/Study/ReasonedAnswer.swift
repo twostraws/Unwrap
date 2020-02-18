@@ -8,7 +8,7 @@
 
 import Foundation
 
-// A type that stores some answer text along with an explanation of why it's incorrect.
+// A type that stores some answer text along with an explanation of why.
 struct ReasonedAnswer: Decodable {
     var answer: String
     var reason: String
