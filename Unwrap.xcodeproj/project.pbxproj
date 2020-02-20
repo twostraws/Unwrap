@@ -183,9 +183,9 @@
 		51D8FE7120ED3879004DFF83 /* TapToCodeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */; };
 		51D8FE7320ED3BF6004DFF83 /* TapToCodePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */; };
 		51D8FE7520EE040F004DFF83 /* TapToCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 51D8FE7420EE040F004DFF83 /* TapToCode.json */; };
-		51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1D78222D9648005CB620 /* WrongAnswer.swift */; };
 		51DDE52221107B170056020E /* PredictTheOutputAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */; };
 		51E35647223CE43400C05881 /* Float-Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E35646223CE43400C05881 /* Float-Random.swift */; };
+		51E678C623FECB360054FBA9 /* ReasonedAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E678C523FECB360054FBA9 /* ReasonedAnswer.swift */; };
 		51EFBEF3210CFED100211A8D /* String-Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF2210CFED100211A8D /* String-Attributed.swift */; };
 		51EFBEF5210D010300211A8D /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF4210D010300211A8D /* CreditsViewController.swift */; };
 		51EFBEFA210D111400211A8D /* NSRegularExpression-HardCoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFBEF9210D111400211A8D /* NSRegularExpression-HardCoded.swift */; };
@@ -821,9 +821,9 @@
 		51D8FE7020ED3879004DFF83 /* TapToCodeQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodeQuestion.swift; sourceTree = "<group>"; };
 		51D8FE7220ED3BF6004DFF83 /* TapToCodePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCodePractice.swift; sourceTree = "<group>"; };
 		51D8FE7420EE040F004DFF83 /* TapToCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TapToCode.json; sourceTree = "<group>"; };
-		51DB1D78222D9648005CB620 /* WrongAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongAnswer.swift; sourceTree = "<group>"; };
 		51DDE52121107B170056020E /* PredictTheOutputAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictTheOutputAnswer.swift; sourceTree = "<group>"; };
 		51E35646223CE43400C05881 /* Float-Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float-Random.swift"; sourceTree = "<group>"; };
+		51E678C523FECB360054FBA9 /* ReasonedAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReasonedAnswer.swift; sourceTree = "<group>"; };
 		51EFBEF2210CFED100211A8D /* String-Attributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Attributed.swift"; sourceTree = "<group>"; };
 		51EFBEF4210D010300211A8D /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		51EFBEF9210D111400211A8D /* NSRegularExpression-HardCoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression-HardCoded.swift"; sourceTree = "<group>"; };
@@ -1771,7 +1771,7 @@
 				5156459020E1163500CED877 /* StudyViewController.swift */,
 				51FE120C20E2532100F29889 /* StudyTextView.swift */,
 				51FE151D20E2814E00F29889 /* StudyReview.swift */,
-				51DB1D78222D9648005CB620 /* WrongAnswer.swift */,
+				51E678C523FECB360054FBA9 /* ReasonedAnswer.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -2881,6 +2881,7 @@
 				51DDE52221107B170056020E /* PredictTheOutputAnswer.swift in Sources */,
 				51C5642D20CCC5480093030C /* Chapter.swift in Sources */,
 				5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */,
+				51E678C623FECB360054FBA9 /* ReasonedAnswer.swift in Sources */,
 				51A4476B2108A108005D8665 /* Badge.swift in Sources */,
 				51C5642920CCC2520093030C /* LearnDataSource.swift in Sources */,
 				511FD6C62107CE9C0023E92C /* AlertHandling.swift in Sources */,
@@ -2954,7 +2955,6 @@
 				51862E5E20CE2C300086CD1B /* Formatted.swift in Sources */,
 				5189D9D720EA4AAC00E6E1D3 /* UIButton-Types.swift in Sources */,
 				51A447632107EF18005D8665 /* BadgeTableViewCell.swift in Sources */,
-				51DB1D79222D9648005CB620 /* WrongAnswer.swift in Sources */,
 				51A6D62720E651DA00FB6B46 /* FloatNames.swift in Sources */,
 				51A6D66820E6953100FB6B46 /* CodeErrorType.swift in Sources */,
 				B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */,
