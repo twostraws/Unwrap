@@ -12,7 +12,7 @@ class GlossaryViewController: UITableViewController {
     let dataSource = GlossaryDataSource()
 
     let noResultsLabel = UILabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,18 +28,18 @@ class GlossaryViewController: UITableViewController {
         setupNoResultsLabel()
         setupSearchController()
     }
-    
+
     func setupNoResultsLabel() {
         noResultsLabel.text = "No Results"
         noResultsLabel.font = Unwrap.scaledBoldFont
         noResultsLabel.isHidden = true
-        
+
         view.addSubview(noResultsLabel)
         noResultsLabel.translatesAutoresizingMaskIntoConstraints = false
         noResultsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-    
+
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = dataSource
@@ -48,7 +48,7 @@ class GlossaryViewController: UITableViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
+
     func searchPerformed(noResults: Bool) {
         tableView.reloadData()
         noResultsLabel.isHidden = !noResults

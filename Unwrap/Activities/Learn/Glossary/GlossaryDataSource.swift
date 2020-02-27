@@ -11,7 +11,7 @@ import UIKit
 /// Loads glossary entries from JSON and displays them grouped alphabetically.
 class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdating {
     weak var delegate: GlossaryViewController?
-    
+
     /// Stores all glossary entries grouped by their first letter
     var sortedEntries = [String: [GlossaryEntry]]()
 
@@ -20,7 +20,7 @@ class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdati
 
     /// Stores all entries from data file, used for filtering table view data during search
     var originalEntries = [GlossaryEntry]()
-    
+
     /// Loads the glossary definitions from JSON and groups them alphabetically
     override init() {
         super.init()
@@ -28,7 +28,8 @@ class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdati
         originalEntries = entries
         createSortedEntriesAndTitles(from: entries)
     }
-    
+
+    /// Creates the sortedEntries dictionary from a given array of GlossaryEntry and creates the section titles String array
     func createSortedEntriesAndTitles(from entries: [GlossaryEntry]) {
         sortedEntries = Dictionary(grouping: entries) { String($0.term.prefix(1)).uppercased() }
         sectionTitles = sortedEntries.keys.sorted()
@@ -63,17 +64,17 @@ class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdati
 
         return cell
     }
-    
+
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        
+
         if text.isEmpty {
             createSortedEntriesAndTitles(from: originalEntries)
-        }else {
+        } else {
             let filteredEntries = originalEntries.filter { return $0.term.lowercased().contains(text) }
             createSortedEntriesAndTitles(from: filteredEntries)
         }
-        
+
         delegate?.searchPerformed(noResults: sectionTitles.isEmpty)
     }
 }
