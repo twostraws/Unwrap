@@ -1,0 +1,52 @@
+{
+    "title": "Floats",
+    "postscript": "",
+    "reviewType": "multipleSelection",
+    "question": "Which of these lines create Floats?",
+    "hint": "Floats are any value that contain decimals.",
+    "syntaxHighlighting": true,
+    "correct": [
+        {
+            "answer": "var pi: Float = 3.145",
+            "reason": "This creates a Float with the name <code>pi<\/code>."
+        },
+        {
+            "answer": "let value: Float = 0.0",
+            "reason": "This creates a Float with the name <code>value<\/code>."
+        },
+        {
+            "answer": "let value: Float = 1",
+            "reason": "This creates a Float with the name <code>value<\/code>."
+        },
+        {
+            "answer": "let value: Float = 135",
+            "reason": "This creates a Float with the name <code>value<\/code>."
+        },
+       {
+            "answer": "let value: Float = 0",
+            "reason": "This creates a Float with the name <code>value<\/code>."
+        },
+        {
+            "answer": "var value: Float = 0",
+            "reason": "This creates a Float with the name <code>value<\/code>."
+        },
+    ],
+    "wrong": [
+        {
+            "answer": "var pi = 3.145",
+            "reason": "This creates a Double with the name <code>pi<\/code>."
+        },
+        {
+            "answer": "let value = 0.0",
+            "reason": "This creates a Double with the name <code>value<\/code>."
+        },
+        {
+            "answer": "var zoomed = 0",
+            "reason": "This creates an integer."
+        },
+        {
+            "answer": "var isLoaded = 1",
+            "reason": "This creates an integer."
+        }
+    ]
+}

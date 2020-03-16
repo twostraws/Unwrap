@@ -6,6 +6,7 @@
 			"Strings and integers",
 			"Multi-line strings",
 			"Doubles and booleans",
+			"Floats",
 			"String interpolation",
 			"Constants",
 			"Type annotations",

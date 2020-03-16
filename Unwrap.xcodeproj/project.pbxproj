@@ -11,6 +11,9 @@
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
 		4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */; };
 		4C8950C42253633F002F9FA6 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8950C32253633F002F9FA6 /* NewsTableViewCell.swift */; };
+		4CC91442241FD52300CB7FEB /* floats.html in Resources */ = {isa = PBXBuildFile; fileRef = 4CC91440241FD52200CB7FEB /* floats.html */; };
+		4CC91443241FD52300CB7FEB /* floats.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CC91441241FD52300CB7FEB /* floats.json */; };
+		4CC91445241FD92700CB7FEB /* floats.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC91444241FD92700CB7FEB /* floats.png */; };
 		4DF330FA7B825B71886020E9 /* Pods_UnwrapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFD8A2C064B3B2E474D67A1 /* Pods_UnwrapTests.framework */; };
 		510539F8211300D400B28328 /* UIImage-Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510539F7211300D400B28328 /* UIImage-Sharing.swift */; };
 		510539FA211307E800B28328 /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510539F9211307E800B28328 /* CoordinatedNavigationController.swift */; };
@@ -643,6 +646,9 @@
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
 		4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSingleSelectViewController.swift; sourceTree = "<group>"; };
 		4C8950C32253633F002F9FA6 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		4CC91440241FD52200CB7FEB /* floats.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = floats.html; sourceTree = "<group>"; };
+		4CC91441241FD52300CB7FEB /* floats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = floats.json; sourceTree = "<group>"; };
+		4CC91444241FD92700CB7FEB /* floats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floats.png; sourceTree = "<group>"; };
 		4DFD8A2C064B3B2E474D67A1 /* Pods_UnwrapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnwrapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510539F7211300D400B28328 /* UIImage-Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Sharing.swift"; sourceTree = "<group>"; };
 		510539F9211307E800B28328 /* CoordinatedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedNavigationController.swift; sourceTree = "<group>"; };
@@ -1928,6 +1934,9 @@
 				51FE126120E25F1100F29889 /* final-classes.json */,
 				51FE134E20E25F1100F29889 /* final-classes.mp4 */,
 				51FE121A20E25F1000F29889 /* final-classes.png */,
+				4CC91440241FD52200CB7FEB /* floats.html */,
+				4CC91441241FD52300CB7FEB /* floats.json */,
+				4CC91444241FD92700CB7FEB /* floats.png */,
 				51FE130F20E25F1100F29889 /* for-loops.html */,
 				51FE129620E25F1100F29889 /* for-loops.json */,
 				51FE137020E25F1100F29889 /* for-loops.mp4 */,
@@ -2377,6 +2386,7 @@
 				51FE14F420E25F1200F29889 /* protocols.html in Resources */,
 				51FE13E120E25F1200F29889 /* closures-with-multiple-parameters.html in Resources */,
 				514BF46821E6670000DE1483 /* glossary.json in Resources */,
+				4CC91443241FD52300CB7FEB /* floats.json in Resources */,
 				51FE139D20E25F1100F29889 /* tuples.mp4 in Resources */,
 				51FE13C720E25F1200F29889 /* parameter-labels.png in Resources */,
 				511FD6BC21073B210023E92C /* Help.json in Resources */,
@@ -2404,6 +2414,7 @@
 				51FE144720E25F1200F29889 /* properties-and-methods-of-arrays.html in Resources */,
 				51FE151120E25F1200F29889 /* lazy-properties.png in Resources */,
 				51FE13B520E25F1200F29889 /* unwrapping-optionals.json in Resources */,
+				4CC91445241FD92700CB7FEB /* floats.png in Resources */,
 				51FE14E520E25F1200F29889 /* strings-and-integers.html in Resources */,
 				5156459820E116EE00CED877 /* Colors.xcassets in Resources */,
 				51FE140F20E25F1200F29889 /* operator-overloading.html in Resources */,
@@ -2630,6 +2641,7 @@
 				51FE148020E25F1200F29889 /* parameter-labels.html in Resources */,
 				51FE13A220E25F1100F29889 /* unwrapping-with-guard.html in Resources */,
 				51FE147820E25F1200F29889 /* optional-try.mp4 in Resources */,
+				4CC91442241FD52300CB7FEB /* floats.html in Resources */,
 				51FE140020E25F1200F29889 /* complex-types-summary.mp4 in Resources */,
 				51FE14E620E25F1200F29889 /* writing-throwing-functions.html in Resources */,
 				51FE14E420E25F1200F29889 /* enum-associated-values.json in Resources */,
