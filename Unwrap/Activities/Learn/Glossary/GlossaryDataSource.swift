@@ -9,18 +9,30 @@
 import UIKit
 
 /// Loads glossary entries from JSON and displays them grouped alphabetically.
-class GlossaryDataSource: NSObject, UITableViewDataSource {
+class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdating {
+    weak var delegate: GlossaryViewController?
+
     /// Stores all glossary entries grouped by their first letter
     var sortedEntries = [String: [GlossaryEntry]]()
 
     /// Stores the alphabetical letters we want to show along the right edge
     var sectionTitles = [String]()
 
+    /// Stores all entries from data file, used for filtering table view data during search
+    var originalEntries = [GlossaryEntry]()
+
     /// Loads the glossary definitions from JSON and groups them alphabetically
     override init() {
+        super.init()
         let entries = Bundle.main.decode([GlossaryEntry].self, from: "glossary.json")
+        originalEntries = entries
+        createSortedEntriesAndTitles(from: entries)
+    }
+
+    /// Creates the sortedEntries dictionary from a given array of GlossaryEntry and creates the section titles String array
+    func createSortedEntriesAndTitles(from entries: [GlossaryEntry]) {
         sortedEntries = Dictionary(grouping: entries) { String($0.term.prefix(1)).uppercased() }
-        sectionTitles = [String](sortedEntries.keys).sorted()
+        sectionTitles = sortedEntries.keys.sorted()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,5 +63,18 @@ class GlossaryDataSource: NSObject, UITableViewDataSource {
         }
 
         return cell
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+
+        if text.isEmpty {
+            createSortedEntriesAndTitles(from: originalEntries)
+        } else {
+            let filteredEntries = originalEntries.filter { return $0.term.lowercased().contains(text) }
+            createSortedEntriesAndTitles(from: filteredEntries)
+        }
+
+        delegate?.searchPerformed(noResults: sectionTitles.isEmpty)
     }
 }
