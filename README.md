@@ -17,7 +17,7 @@ At its core lies almost 100 video lessons that teach all the fundamentals of the
 
 Once you’ve made some progress learning, you can dive into a selection of practice activities that make you write code by tapping, dragging, or typing, find errors, predict program output, and more. There are also daily challenges that test your overall language knowledge once per day, helping your new skills really sink in.
 
-At some point hopefully soon Unwrap will be available to download for free on the App Store. Until then, I’ve made the code available so that anyone who wants to can see how I structure my code and perhaps learn from it. If you’d like to help you’re most welcome to and there are many opportunities, but make sure you read the contribution guidelines first.
+[Unwrap](https://apps.apple.com/app/id1440611372) app is available to download for free on the App Store. I’ve made the code available so that anyone who wants to can see how I structure my code and perhaps learn from it. If you’d like to help you’re most welcome to and there are many opportunities, but make sure you read the contribution guidelines first.
 
 
 ## Trying it yourself
@@ -58,7 +58,7 @@ If you’d like to help, here are some suggestions ordered from most easy to mos
 
 1. Although I’m pretty happy with the app’s architecture, it could always be improved – if you have suggestions, let me know!
 2. I’ve added the basics of theme support, but it’s not implemented or tested yet. This could be expanded to work everywhere, and new themes could be added.
-3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. Some of the UI is now built in code already. To resolve this we could switch to building even more UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code. 
+3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. Some of the UI is now built in code already. To resolve this we could switch to building even more UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code.
 
 Again, please make sure you read the LICENSE.md and CONTRIBUTING.md files before you start just to avoid problems.
 
@@ -69,7 +69,7 @@ Unwrap was designed and built by Paul Hudson. Hacking with Swift, Swift in Sixty
 
 Unwrap is built using some third-party frameworks and fonts: [DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet), [Font Awesome](https://fontawesome.com/), [MKRingProgressView](https://github.com/maxkonovalov/MKRingProgressView), [QuickLayout](https://github.com/huri000/QuickLayout), [SDWebImage](https://github.com/SDWebImage/SDWebImage), [Sourceful](https://github.com/twostraws/Sourceful), [Zephyr](https://github.com/ArtSabintsev/Zephyr), and [SwiftEntryKit](https://github.com/huri000/SwiftEntryKit). Their licenses are stored inside their respective Pods directories, and are repeated inside the app’s credits screen.
 
-Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries. 
+Swift, the Swift logo, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop, iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac and macOS are trademarks of Apple Inc., registered in the U.S. and other countries.
 
 Unwrap includes an iMessage sticker pack that incorporates a variety of logos from around the Swift community – these are used with permission, and we're grateful to each person or project for granting that permission:
 
@@ -91,7 +91,7 @@ Unwrap includes an iMessage sticker pack that incorporates a variety of logos fr
 - The [Swift over Coffee](https://podcasts.apple.com/gb/podcast/swift-over-coffee/id1435076502) logo is copyright © 2019 Paul Hudson.
 - The [Swift Unwrapped](https://spec.fm/podcasts/swift-unwrapped) logo is copyright © 2019 Jesse Squires.
 - The [Swift Weekly Brief](https://swiftweekly.github.io) logo is copyright © 2019 Jesse Squires.
-- The [Unwrap](https://www.github.com/twostraws/Unwrap) logo is copyright © 2019 Paul Hudson.
+- The [Unwrap](https://apps.apple.com/app/id1440611372) logo is copyright © 2019 Paul Hudson.
 - The [Vapor](https://vapor.codes) logo is copyright © 2019 Qutheory, LLC.
 
 If you liked Unwrap and want more like it, I have [a whole website full of free Swift tutorials](https://www.hackingwithswift.com).
