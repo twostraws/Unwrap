@@ -77,7 +77,8 @@
             "print(numbers.filter{num in return num == 5}.count)",
             "print(numbers.filter{return $0 == 5}.count)",
             "print(numbers.filter{num in num == 5}.count)",
-            "print(numbers.filter{$0 == 5}.count)"
+            "print(numbers.filter{$0 == 5}.count)",
+            "var count = 0\nfor n in numbers where n == 5 {\ncount += 1\n}\nprint(count)"
         ]
     },
     {
