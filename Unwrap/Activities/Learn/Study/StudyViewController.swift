@@ -51,6 +51,11 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
         studyTextView.flashScrollIndicators()
     }
 
+    /// We are calling start speaking method in motion began because we want to start the speak when user shake the device.
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        coordinator?.startSpeaking(text: studyTextView.text)
+    }
+    
     // A centralized method for loading the content for this chapter, so it can be used in various places.
     func loadContent() {
         studyTextView.loadContent(chapter)

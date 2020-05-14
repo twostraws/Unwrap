@@ -15,6 +15,16 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
     var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
     var activeStudyReview: StudyReview!
+    
+    /// Check isSpeaking or not
+    var isSpeaking = false
+    
+    // Speaking Speed
+    let speakingSpeed = 0.5
+    
+    // Instantiating synthesizer and utterance here
+    let synthesizer = AVSpeechSynthesizer()
+    var utterance = AVSpeechUtterance()
 
     /// Whether or not the user can have multiple attempts at questions
     let retriesAllowed = true
@@ -45,6 +55,19 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
         splitViewController.delegate = SplitViewControllerDelegate.shared
+    }
+    
+    /// If user shake the device then this method is going to triggered.
+    func startSpeaking(text: String) {
+        if isSpeaking {
+            isSpeaking = false
+            synthesizer.stopSpeaking(at: .immediate)
+        } else {
+            isSpeaking = true
+            utterance = AVSpeechUtterance(string: text)
+            utterance.rate = Float(speakingSpeed)
+            synthesizer.speak(utterance)
+        }
     }
 
     /// Shows the list of common Swift terms
