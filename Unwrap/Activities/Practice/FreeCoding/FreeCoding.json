@@ -126,7 +126,7 @@
             "letvar parsed3:[String] = names.filter {name in\n\tname.hasPrefix(\"Terry\")\n}",
             "letvar parsed3:[String] = names.filter {name in\n\tname.split(separator: \" \")[0] == \"Terry\"\n}",
             "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n",
-            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n" 
+            "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n"
         ]
     },
     {
