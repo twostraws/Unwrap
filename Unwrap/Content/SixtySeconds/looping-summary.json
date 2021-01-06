@@ -27,7 +27,7 @@
             "reason": "This code is valid Swift."
         },
         {
-            "answer": "for _ in 1...3 {\n\tprint(\"Happy birthday to you\")\n}\nprint(\"Happy birthday dear Taylor\")\nprint(\"Happy birthday to you\")",
+            "answer": "for _ in 1..<3 {\n\tprint(\"Happy birthday to you\")\n}\nprint(\"Happy birthday dear Taylor\")\nprint(\"Happy birthday to you\")",
             "reason": "This code is valid Swift."
         }
     ],
