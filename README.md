@@ -31,7 +31,7 @@ As far as I know the app is feature complete, but there are likely to be errors 
 
 Any help you can offer with this project is most welcome, and trust me: there are opportunities big and small, so that someone with only a few weeks of Swift experience can help.
 
-**However, before you start please read the LICENSE.md and CONTRIBUTING.md files inside this repository.** Although all the source code of Unwrap is available under the MIT license, the assets are not redistributable – please see the license for more detail.
+**However, before you start please read the [LICENSE.md](LICENSE.md) and [CONTRIBUTING.md](CONTRIBUTING.md) files inside this repository.** Although all the source code of Unwrap is available under the MIT license, the assets are not redistributable – please see the license for more detail.
 
 If you’d like to help, here are some suggestions ordered from most easy to most difficult. I’ve added documentation to most if not all of the code, but there’s also a separate document in this repository called CONTRIBUTING.md that documents how the code is structured and how it works.
 
@@ -60,7 +60,7 @@ If you’d like to help, here are some suggestions ordered from most easy to mos
 2. I’ve added the basics of theme support, but it’s not implemented or tested yet. This could be expanded to work everywhere, and new themes could be added.
 3. The storyboard started off small and grew far too big for its boots. This is particularly annoying because many screens are similar. Some of the UI is now built in code already. To resolve this we could switch to building even more UI in code, starting with a direct copy of the storyboard, then try to refactor it so that similar view controllers are created using shared code.
 
-Again, please make sure you read the LICENSE.md and CONTRIBUTING.md files before you start just to avoid problems.
+Again, please make sure you read the [LICENSE.md](LICENSE.md) and [CONTRIBUTING.md](CONTRIBUTING.md) files before you start just to avoid problems.
 
 
 ## Credits
