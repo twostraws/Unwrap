@@ -41,6 +41,9 @@ extension String {
         // Homogenize brace style.
         replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
         replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
+        
+        // Homogenize statements with the optionalreturn keyword
+        replaced = replaced.solveOptionalReturnStatements()
 
         // Always place a line break immediately after an opening brace
         replaced = replaced.replacingOccurrences(of: "\\{(.)", with: "{\n$1", options: .regularExpression)
@@ -105,6 +108,19 @@ extension String {
         // Now do one last pass to remove any excess space from each line; we don't care how they indent.
         let lines = replaced.lines.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         replaced = lines.joined(separator: "\n")
+
+        return replaced
+    }
+    
+    /// A replacement of the optionalreturn keyword with a space. This gives us some extra flexibility to answers without needing to add extra ones.
+    func solveOptionalReturnStatements() -> String {
+        var replaced = self.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if replaced.isEmpty {
+            return replaced
+        }
+
+        replaced = replaced.replacingOccurrences(of: "\\ *optionalreturn *", with: " ", options: .regularExpression)
 
         return replaced
     }
