@@ -113,4 +113,84 @@ class ExtensionTests: XCTestCase {
         let anonymizedString5 = "func #1#"
         XCTAssertEqual(cleanString5.toAnonymizedVariables(), anonymizedString5)
     }
+    
+    /// Tests that a optionalreturn keyword work properly.
+    func testSolveOptionalReturnStatements() {
+        let cleanString1 = "    optionalreturn   "
+        let homogenizedString1 = " "
+        XCTAssertEqual(cleanString1.solveOptionalReturnStatements(), homogenizedString1)
+
+        let cleanString2 = "optionalreturn   "
+        let homogenizedString2 = " "
+        XCTAssertEqual(cleanString2.solveOptionalReturnStatements(), homogenizedString2)
+
+        let cleanString3 = "    optionalreturn"
+        let homogenizedString3 = " "
+        XCTAssertEqual(cleanString3.solveOptionalReturnStatements(), homogenizedString3)
+
+        let cleanString4 = "optionalreturn"
+        let homogenizedString4 = " "
+        XCTAssertEqual(cleanString4.solveOptionalReturnStatements(), homogenizedString4)
+
+        let cleanString5 = " optionalreturn"
+        let homogenizedString5 = " "
+        XCTAssertEqual(cleanString5.solveOptionalReturnStatements(), homogenizedString5)
+
+        let cleanString6 = "optionalreturn "
+        let homogenizedString6 = " "
+        XCTAssertEqual(cleanString6.solveOptionalReturnStatements(), homogenizedString6)
+
+        let cleanString7 = " optionalreturn "
+        let homogenizedString7 = " "
+        XCTAssertEqual(cleanString7.solveOptionalReturnStatements(), homogenizedString7)
+
+        let cleanString8 = "\n    optionalreturn   "
+        let homogenizedString8 = " "
+        XCTAssertEqual(cleanString8.solveOptionalReturnStatements(), homogenizedString8)
+
+        let cleanString9 = "\noptionalreturn   "
+        let homogenizedString9 = " "
+        XCTAssertEqual(cleanString9.solveOptionalReturnStatements(), homogenizedString9)
+
+        let cleanString10 = "\n    optionalreturn"
+        let homogenizedString10 = " "
+        XCTAssertEqual(cleanString10.solveOptionalReturnStatements(), homogenizedString10)
+
+        let cleanString11 = "\noptionalreturn"
+        let homogenizedString11 = " "
+        XCTAssertEqual(cleanString11.solveOptionalReturnStatements(), homogenizedString11)
+
+        let cleanString12 = "\n optionalreturn"
+        let homogenizedString12 = " "
+        XCTAssertEqual(cleanString12.solveOptionalReturnStatements(), homogenizedString12)
+
+        let cleanString13 = "\noptionalreturn "
+        let homogenizedString13 = " "
+        XCTAssertEqual(cleanString13.solveOptionalReturnStatements(), homogenizedString13)
+
+        let cleanString14 = "\n optionalreturn "
+        let homogenizedString14 = " "
+        XCTAssertEqual(cleanString14.solveOptionalReturnStatements(), homogenizedString14)
+
+        // this is a negative test
+        let cleanString15 = " optinalreturn "
+        let homogenizedString15 = " "
+        XCTAssertNotEqual(cleanString15.solveOptionalReturnStatements(), homogenizedString15)
+
+        let cleanString16 = "func myFunction(input1:String,input2:String) -> Bool{\n optionalreturn input1.lowercased() == input2.lowercased()\n}"
+        let homogenizedString16 = "func myFunction(input1:String,input2:String) -> Bool{\n input1.lowercased() == input2.lowercased()\n}"
+        XCTAssertEqual(cleanString16.solveOptionalReturnStatements(), homogenizedString16)
+
+        let cleanString17 = "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input1.lowercased() == input2.lowercased()\n}"
+        let homogenizedString17 = "func myFunction(input1:String,input2:String) -> Bool{\n input1.lowercased() == input2.lowercased()\n}"
+        XCTAssertEqual(cleanString17.solveOptionalReturnStatements(), homogenizedString17)
+
+        let cleanString18 = "func myFunction(input1:String,input2:String) -> Bool{optionalreturn input1.lowercased() == input2.lowercased()}"
+        let homogenizedString18 = "func myFunction(input1:String,input2:String) -> Bool{ input1.lowercased() == input2.lowercased()}"
+        XCTAssertEqual(cleanString18.solveOptionalReturnStatements(), homogenizedString18)
+
+        let cleanString19 = "func myFunction(input1:String,input2:String) -> Bool{ optionalreturn input1.lowercased() == input2.lowercased() }"
+        let homogenizedString19 = "func myFunction(input1:String,input2:String) -> Bool{ input1.lowercased() == input2.lowercased() }"
+        XCTAssertEqual(cleanString19.solveOptionalReturnStatements(), homogenizedString19)
+    }
 }
