@@ -46,7 +46,7 @@
         },
         {
             "answer": "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
-            "reason": "Accessing a dictionary key is optional, so this should read <code>oposites[\"light\"]?.uppercased()<\/code>."
+            "reason": "Accessing a dictionary key is optional, so this should read <code>opposites[\"light\"]?.uppercased()<\/code>."
         },
         {
             "answer": "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",

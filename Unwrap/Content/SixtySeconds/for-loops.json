@@ -2,7 +2,7 @@
     "title": "For loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This loop will print three lines of text \u2013 true or false?",
+    "question": "This code will print three lines of text \u2013 true or false?",
     "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
     "syntaxHighlighting": true,
     "correct": [
@@ -34,7 +34,7 @@
     "wrong": [
         {
             "answer": "print(\"Haters gonna \")\nfor _ in 1...4 {\n\tprint(\"hate\")\n}",
-            "reason": "This will print five lines of text."
+            "reason": "This will print five lines of text: one before the loop, and four inside the loop."
         },
         {
             "answer": "let albums = [\"1989\", \"Red\"]\nfor album in albums {\n\tprint(\"\\(album) was a great album!\")\n}",

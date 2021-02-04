@@ -41,8 +41,8 @@
             "reason": "This is invalid because <code>id<\/code> is not defined anywhere."
         },
         {
-            "answer": "applyFix() {\n\tprint(\"The fix is applied!\")\n}",
-            "reason": "This is missing the <code>func<\/code> keyword."
+            "answer": "function applyFix() {\n\tprint(\"The fix is applied!\")\n}",
+            "reason": "This uses <code>function</code> rather than <code>func<\/code>."
         },
         {
             "answer": "func study {\n\tprint(\"It's time to study.\")\n\tprint(\"I'm studying!\")\n\tprint(\"Bored now; time for Netflix.\")\n}\nstudy()",
