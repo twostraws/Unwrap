@@ -193,4 +193,50 @@ class ExtensionTests: XCTestCase {
         let homogenizedString19 = "func myFunction(input1:String,input2:String) -> Bool{ input1.lowercased() == input2.lowercased() }"
         XCTAssertEqual(cleanString19.solveOptionalReturnStatements(), homogenizedString19)
     }
+    
+    func testHomogenizeGuardStatements() {
+        let cleanString1 = "guard s==a else { \n return                \n  }\nreturn somethingelse\n}"
+        let homogenizedString1 = "guard s==a else { return }\nreturn somethingelse\n}"
+        XCTAssertEqual(cleanString1.homogenizeGuardStatements(), homogenizedString1)
+
+        let cleanString2 = "guardinput1else {  \n return              something       \n   }\nreturn somethingelse\n}"
+        let homogenizedString2 = "guardinput1else { return something }\nreturn somethingelse\n}"
+        XCTAssertEqual(cleanString2.homogenizeGuardStatements(), homogenizedString2)
+
+        let cleanString3 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else {  \n return              something       \n   }\nreturn false\n}"
+        let homogenizedString3 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else { return something }\nreturn false\n}"
+        XCTAssertEqual(cleanString3.homogenizeGuardStatements(), homogenizedString3)
+
+        let cleanString4 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else {  \n return        \n   }\nreturn false\n}"
+        let homogenizedString4 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else { return }\nreturn false\n}"
+        XCTAssertEqual(cleanString4.homogenizeGuardStatements(), homogenizedString4)
+
+        let cleanString5 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() !=&|\n input2.uppercased() else {\nreturn true\n}\nreturn false\n}"
+        let homogenizedString5 = "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\n}"
+        XCTAssertEqual(cleanString5.homogenizeGuardStatements(), homogenizedString5)
+
+        let cleanString6 = "func myFunction(input1:String,input2:String) -> Bool{\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {\nreturn true\n}\nreturn false\n}"
+        let homogenizedString6 = "func myFunction(input1:String,input2:String) -> Bool{\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\n}"
+        XCTAssertEqual(cleanString6.homogenizeGuardStatements(), homogenizedString6)
+
+        let cleanString7 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { \n return                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return true \n }\nreturn false\n}"
+        let homogenizedString7 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { return }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\n}"
+        XCTAssertEqual(cleanString7.homogenizeGuardStatements(), homogenizedString7)
+
+        let cleanString8 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { \n return                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return  \n }\nreturn false\n}"
+        let homogenizedString8 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { return }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return }\nreturn false\n}"
+        XCTAssertEqual(cleanString8.homogenizeGuardStatements(), homogenizedString8)
+
+        let cleanString9 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { \n     continue                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return  \n }\nreturn false\n}"
+        let homogenizedString9 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { continue }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return }\nreturn false\n}"
+        XCTAssertEqual(cleanString9.homogenizeGuardStatements(), homogenizedString9)
+
+        let cleanString10 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { \n     continue                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return    true   \n }\nreturn false\n}"
+        let homogenizedString10 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { continue }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\n}"
+        XCTAssertEqual(cleanString10.homogenizeGuardStatements(), homogenizedString10)
+
+        let cleanString11 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { \n     continue                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return    true   \n }\nreturn false\nguard s==a else { \n     continue                \n  }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else {  \n   return    true   \n }\nreturn false\n}"
+        let homogenizedString11 = "func myFunction(input1:String,input2:String) -> Bool{\nguard s==a else { continue }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\nguard s==a else { continue }\nif number == 8 {\nprint()\n} else {\nprint(\"something\")\n}\nguard input1.uppercased() !=&|\n input2.uppercased() else { return true }\nreturn false\n}"
+        XCTAssertEqual(cleanString11.homogenizeGuardStatements(), homogenizedString11)
+    }
 }

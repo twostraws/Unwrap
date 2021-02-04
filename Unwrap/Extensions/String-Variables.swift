@@ -28,6 +28,9 @@ extension String {
         if replaced.isEmpty {
             return replaced
         }
+        
+        // Homogenize guard statement to reduce the number of possible solutions
+        replaced = homogenizeGuardStatements()
 
         // Homogenize trailing closures: array.map { … } is always preferred to array.map({ … })
         replaced = replaced.replacingOccurrences(of: #"\(\{(.*?)\}\)"#, with: "{$1}", options: .regularExpression)
@@ -123,6 +126,90 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "\\ *optionalreturn *", with: " ", options: .regularExpression)
 
         return replaced
+    }
+    
+    /**
+     Homogenize guard statements in code to reduce the number of possible solutions
+     
+     If an else statement of each guard is suitable for expression in one line, new lines after { and before } and extra spaces in the else block will be removed.
+     - parameter code: code
+     - returns: Homogenized statement
+     # Example #
+     ```
+     guard ... else {  \n return     something   \n   } will be changed to guard ... else { return something }
+     guard ... else {  \n return                 \n   } will be changed to guard ... else { return }
+     guard ... else {\n   continue    \n              } will be changed to guard ... else { continue }
+     ```
+     */
+    func homogenizeGuardStatements() -> String {
+        var replaced = self
+
+        replaced = replacingOccurrences(of: #"else *\{ *\n *return"#,
+                                        with: "else { return",
+                                        in: replaced,
+                                        rangeRegexPattern: #"guard[ \w.()!=&|\n\t\\"\[\]]*else *\{ *\n *return *\w* *\n *\}"#)
+
+        replaced = replacingOccurrences(of: #"else *\{ *\n *continue"#,
+                                        with: "else { continue",
+                                        in: replaced,
+                                        rangeRegexPattern: #"guard[ \w.()!=&|\n\t\\"\[\]]*else *\{ *\n *continue *\w* *\n *\}"#)
+
+        replaced = replacingOccurrences(of: #" *\n *\}"#,
+                                        with: " }",
+                                        in: replaced,
+                                        rangeRegexPattern: #"guard[ \w.()!=&|\n\t\\"\[\]]*else *\{ *(return|continue) *\w* *\n *\}"#)
+
+        replaced = replacingOccurrences(of: #" {2,}"#,
+                                        with: " ",
+                                        in: replaced,
+                                        rangeRegexPattern: #"guard[ \w.()!=&|\n\t\\"\[\]]*else *\{ *(return|continue) *\w* *\}"#)
+
+        return replaced
+    }
+
+    /**
+     Replaces all occurrences of a target regex with a replacement in text parts that are the same as a range regex.
+     
+     - parameter targetRegexPattern: regex pattern for replace
+     - parameter replacement: replacement text
+     - parameter text: text in which we want to make changes
+     - parameter rangeRegexPattern: regex pattern to find the parts of the text where the replacement will be made
+     - returns: new text
+     */
+    fileprivate func replacingOccurrences(of targetRegexPattern: String, with replacement: String, in text: String, rangeRegexPattern: String) -> String {
+
+        var result = text
+
+        // Calculate a range regex and its matches in the result.
+        guard let rangeRegex = try? NSRegularExpression(pattern: rangeRegexPattern, options: []) else { return text }
+        let rangeMatches = rangeRegex.matches(in: result, options: [], range: NSRange(location: 0, length: result.utf16.count))
+
+        // This is a counter of a recalculated matches from loop.
+        var recalculatedMatchesCount = 0
+
+        // Loop over the range matches and in each iteration recalculates the range and makes changes to the result with that recalculated range.
+        for index in rangeMatches.indices {
+
+            // The result could be changed and we need to get new matches with a new length of result otherwise we could get an error.
+            let recalculatedMatches = rangeRegex.matches(in: result, options: [], range: NSRange(location: 0, length: result.utf16.count))
+
+            // In the first iteration, set the recalculated matches counter to the initial value.
+            if index == 0 {
+                recalculatedMatchesCount = recalculatedMatches.count
+            }
+
+            // Get a recalculated range from the recalculated regex matches.
+            // In some cases, the change in the result affects the number of matches found (there will be a loss in the previous iteration of the processed match due to the incorporated changes). In this case, the number of matches will be reduced and we must work with the match on index 0 in the current iteration.
+            let i = recalculatedMatches.count == recalculatedMatchesCount ? index : 0
+            let range = Range(recalculatedMatches[i].range, in: result)
+
+            // Set the recalculated matches counter to the current value.
+            recalculatedMatchesCount = recalculatedMatches.count
+
+            // Make changes to the result with the recalculated range.
+            result = result.replacingOccurrences(of: targetRegexPattern, with: replacement, options: .regularExpression, range: range)
+        }
+        return result
     }
 
     /// Replaces one instances of a search with a replacement wrapper. For example, it might be asked to replace all variable names using a replacement wrapper &, so it will replace "foo", "bar", and "baz" with &1&, &2&, and &3&.
