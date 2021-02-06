@@ -9,9 +9,23 @@
 import SwiftEntryKit
 import UIKit
 
+
+// haptic feedback class
+  class hapticFeedback {
+     static let feedback = hapticFeedback()
+     func hapticFeedbackCall() {
+         let generator = UINotificationFeedbackGenerator()
+         generator.notificationOccurred(.warning)
+     }
+ }
+
+
 extension UIViewController: AlertShowing {
     /// Does all the leg work of making any UIViewController be shown inside a pre-styled SwiftEntryKit alert.
     func presentAsAlert() {
+        //hapticFeedback call
+        hapticFeedback.feedback.hapticFeedbackCall()
+        
         var attributes = EKAttributes()
         attributes.displayDuration = .infinity
 
@@ -49,6 +63,8 @@ extension UIViewController: AlertShowing {
         if UserDefaults.standard.bool(forKey: defaultsName) == false {
             showAlert(title: title, body: message)
             UserDefaults.standard.set(true, forKey: defaultsName)
+            
         }
+        
     }
 }
