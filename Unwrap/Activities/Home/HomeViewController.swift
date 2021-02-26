@@ -12,7 +12,7 @@ import UIKit
 /// The main view controller you see in  the Home tab in the app.
 class HomeViewController: UITableViewController, Storyboarded, UserTracking {
     var coordinator: HomeCoordinator?
-    var dataSource = HomeDataSource()
+    var dataSource = HomeDataSource() // should be generic !
     var reviewRequested = false
 
     override func viewDidLoad() {
@@ -98,7 +98,8 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
 
         if indexPath == shareScorePath {
             let rect = tableView.rectForRow(at: indexPath)
-            coordinator?.shareScore(from: rect)
+            let text = StaticReader(text: "I'm on level \(User.current.rankNumber) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)")
+            coordinator?.share(ShareScore(sourceRect: rect, shareWhat: text))
         }
 
         tableView.deselectRow(at: indexPath, animated: true)

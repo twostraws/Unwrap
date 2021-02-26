@@ -595,6 +595,12 @@
 		51FE151B20E25F1200F29889 /* range-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139420E25F1100F29889 /* range-operators.html */; };
 		51FE151C20E25F1200F29889 /* protocol-extensions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139520E25F1100F29889 /* protocol-extensions.mp4 */; };
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
+		9149626E25E82502007822AD /* ShareScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149626D25E82502007822AD /* ShareScore.swift */; };
+		9149627325E8250C007822AD /* ShareBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149627225E8250C007822AD /* ShareBadge.swift */; };
+		9149627D25E82532007822AD /* Shareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149627C25E82532007822AD /* Shareable.swift */; };
+		9149628525E825B0007822AD /* StaticReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149628425E825B0007822AD /* StaticReader.swift */; };
+		9149628A25E825B8007822AD /* IReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149628925E825B8007822AD /* IReader.swift */; };
+		9149629D25E91FD1007822AD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149629C25E91FD1007822AD /* ReusableView.swift */; };
 		A9476512228DF2E7005CC249 /* DynamicHeightHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */; };
 		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
 		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
@@ -1234,6 +1240,12 @@
 		51FE139520E25F1100F29889 /* protocol-extensions.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "protocol-extensions.mp4"; sourceTree = "<group>"; };
 		51FE151D20E2814E00F29889 /* StudyReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyReview.swift; sourceTree = "<group>"; };
 		879EE4E91437B6378BB24AE1 /* Pods-Unwrap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unwrap.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unwrap/Pods-Unwrap.release.xcconfig"; sourceTree = "<group>"; };
+		9149626D25E82502007822AD /* ShareScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScore.swift; sourceTree = "<group>"; };
+		9149627225E8250C007822AD /* ShareBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBadge.swift; sourceTree = "<group>"; };
+		9149627C25E82532007822AD /* Shareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shareable.swift; sourceTree = "<group>"; };
+		9149628425E825B0007822AD /* StaticReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticReader.swift; sourceTree = "<group>"; };
+		9149628925E825B8007822AD /* IReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IReader.swift; sourceTree = "<group>"; };
+		9149629C25E91FD1007822AD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightHeaderView.swift; sourceTree = "<group>"; };
 		AA4718A94B659E9A42AEC33E /* Pods-UnwrapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnwrapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnwrapTests/Pods-UnwrapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -1377,6 +1389,9 @@
 				51CC13A02065B20500F37A67 /* Storyboarded.swift */,
 				511FD6C1210746CC0023E92C /* TappableTextViewDelegate.swift */,
 				51862E5B20CE13F00086CD1B /* UserTracking.swift */,
+				9149627C25E82532007822AD /* Shareable.swift */,
+				9149628925E825B8007822AD /* IReader.swift */,
+				9149629C25E91FD1007822AD /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1650,6 +1665,7 @@
 		51CC13612065607C00F37A67 /* Unwrap */ = {
 			isa = PBXGroup;
 			children = (
+				9149626325E824E2007822AD /* UtilServices */,
 				5178262B2188CE79007AD2F3 /* Unwrap.entitlements */,
 				51862E5520CE0EFB0086CD1B /* Activities */,
 				51CC13992065738D00F37A67 /* Extensions */,
@@ -2179,6 +2195,32 @@
 				51FE130920E25F1100F29889 /* writing-throwing-functions.png */,
 			);
 			path = SixtySeconds;
+			sourceTree = "<group>";
+		};
+		9149626325E824E2007822AD /* UtilServices */ = {
+			isa = PBXGroup;
+			children = (
+				9149626525E824ED007822AD /* SharingService */,
+				9149626425E824EA007822AD /* IO */,
+			);
+			path = UtilServices;
+			sourceTree = "<group>";
+		};
+		9149626425E824EA007822AD /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				9149628425E825B0007822AD /* StaticReader.swift */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		9149626525E824ED007822AD /* SharingService */ = {
+			isa = PBXGroup;
+			children = (
+				9149626D25E82502007822AD /* ShareScore.swift */,
+				9149627225E8250C007822AD /* ShareBadge.swift */,
+			);
+			path = SharingService;
 			sourceTree = "<group>";
 		};
 		A302CA35FC779D934F639FFC /* Pods */ = {
@@ -2849,6 +2891,7 @@
 				5153F4AA20EFCD9F009E829D /* AnswerHandling.swift in Sources */,
 				51A6D66A20E6954400FB6B46 /* Replacement.swift in Sources */,
 				51A6D66620E6948B00FB6B46 /* Answer.swift in Sources */,
+				9149627325E8250C007822AD /* ShareBadge.swift in Sources */,
 				51A6D62620E651DA00FB6B46 /* IntNames.swift in Sources */,
 				51A6D61B20E6512A00FB6B46 /* TypeCheckerPractice.swift in Sources */,
 				51862E6820CE7DE40086CD1B /* PracticeDataSource.swift in Sources */,
@@ -2866,6 +2909,7 @@
 				5153F49820EF763E009E829D /* ChallengesCoordinator.swift in Sources */,
 				5189D9DD20EA90B800E6E1D3 /* FreeCodingViewController.swift in Sources */,
 				5153F49A20EF8581009E829D /* UITableViewCell-Styling.swift in Sources */,
+				9149627D25E82532007822AD /* Shareable.swift in Sources */,
 				518FAE7720E4269E007F4675 /* MultipleSelectReviewViewController.swift in Sources */,
 				5153F4AC20EFFF49009E829D /* Sequenced.swift in Sources */,
 				51B61577233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift in Sources */,
@@ -2875,6 +2919,7 @@
 				51EFBEF5210D010300211A8D /* CreditsViewController.swift in Sources */,
 				51A6D66420E6913000FB6B46 /* SpotTheErrorDataSource.swift in Sources */,
 				51053A02211336F600B28328 /* TourPageViewController.swift in Sources */,
+				9149628525E825B0007822AD /* StaticReader.swift in Sources */,
 				51A447612107ED97005D8665 /* BadgesView.swift in Sources */,
 				511FD6C2210746CC0023E92C /* TappableTextViewDelegate.swift in Sources */,
 				511FD6AF2105EF220023E92C /* NewsArticle.swift in Sources */,
@@ -2907,6 +2952,7 @@
 				5153F4A820EFCD29009E829D /* Skippable.swift in Sources */,
 				511FD6BE210740860023E92C /* HelpTableViewCell.swift in Sources */,
 				51A6D62520E651DA00FB6B46 /* BoolNames.swift in Sources */,
+				9149629D25E91FD1007822AD /* ReusableView.swift in Sources */,
 				51596DFD20EE995F00952ADC /* CountingLabel.swift in Sources */,
 				51ADAEA520CE9004000D9DCF /* ChallengeResult.swift in Sources */,
 				51CC1395206568DE00F37A67 /* UIBezierPath-Logo.swift in Sources */,
@@ -2936,6 +2982,7 @@
 				51596DE820EE04A500952ADC /* TapToCodeViewController.swift in Sources */,
 				51A90DC2227AF0D60068A4F9 /* PleaseSelectViewController.swift in Sources */,
 				51A90DC0227A60AA0068A4F9 /* UISplitViewController-NavigationController.swift in Sources */,
+				9149628A25E825B8007822AD /* IReader.swift in Sources */,
 				511FD6C02107425F0023E92C /* TappableTextView.swift in Sources */,
 				51596DFB20EE94DC00952ADC /* AwardPointsViewController.swift in Sources */,
 				51C5642120CCB8250093030C /* LearnViewController.swift in Sources */,
@@ -2977,6 +3024,7 @@
 				5192587320E3A11200A85704 /* NSAttributedString-Formatting.swift in Sources */,
 				51A6D62B20E6527B00FB6B46 /* String-Variables.swift in Sources */,
 				5153F4A420EFA431009E829D /* AlertShowing.swift in Sources */,
+				9149626E25E82502007822AD /* ShareScore.swift in Sources */,
 				51C5642320CCB82B0093030C /* PracticeViewController.swift in Sources */,
 				51EFBEFD210DDB3100211A8D /* LightTheme.swift in Sources */,
 				51A6D66220E6911F00FB6B46 /* SpotTheErrorViewController.swift in Sources */,

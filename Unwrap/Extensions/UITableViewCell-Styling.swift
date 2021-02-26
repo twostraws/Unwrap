@@ -8,14 +8,15 @@
 
 import UIKit
 
-extension UITableViewCell {
+extension UITableViewCell: ReusableView {
     /// Styles a table view cell as representing a correct answer.
     func setCorrectAnswerStyle() {
         backgroundColor = UIColor(bundleName: "ReviewCorrect")
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         textLabel?.textColor = .white
         detailTextLabel?.textColor = .white
-
+        
+        
         // FIXME: iOS 12 used a clear color for the checkmark inside a selected table view cell, and the tint color affected the circle around the check. iOS 13 uses a white color for the checkmark, which means if we use pure white tint color the checkmark becomes invisible. Compromise: use a blended white, so the check still stands out, but the old behavior was nicer. Perhaps this will be fixed in the future.
         tintColor = UIColor.white.withAlphaComponent(0.35)
     }
@@ -41,5 +42,16 @@ extension UITableViewCell {
 
         multipleSelectionBackgroundView?.backgroundColor = backgroundColor
         tintColor = nil
+    }
+    
+    
+    // we'll do some refactoring here so -> feedData(from: Reader), so that it accept any data;
+    func feedData(title: String?, detailText: String?, accessLabel: String?, accessId: String? = nil) {
+        self.textLabel?.text = title
+        self.detailTextLabel?.text = detailText
+        self.accessibilityLabel = accessLabel
+        if let accessId = accessId {
+            self.accessibilityIdentifier = accessId
+        }
     }
 }

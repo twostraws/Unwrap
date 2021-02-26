@@ -25,16 +25,12 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         case 1:
             return "POINTS"
-
         case 2:
             return "STATS"
-
         case 3:
             return "STREAK"
-
         case 4:
             return "BADGES"
-
         default:
             fatalError("Unknown table view section: \(section).")
         }
@@ -45,23 +41,18 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         case 0:
             // status view
             return 2
-
         case 1:
             // score breakdown
             return 5
-
         case 2:
             // level stats
             return 3
-
         case 3:
             // streak
             return 2
-
         case 4:
             // badges
             return 1
-
         default:
             fatalError("Unknown table view section: \(section).")
         }
@@ -70,24 +61,15 @@ class HomeDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            if indexPath.row == 0 {
-                return makeStatus(in: tableView, indexPath: indexPath)
-            } else {
-                return makePointsSummary(in: tableView, indexPath: indexPath)
-            }
-
+            return indexPath.row == 0 ?  makeStatus(in: tableView, indexPath: indexPath) : makePointsSummary(in: tableView, indexPath: indexPath)
         case 1:
             return makePointsBreakdown(in: tableView, indexPath: indexPath)
-
         case 2:
             return makeStatistic(in: tableView, indexPath: indexPath)
-
         case 3:
             return makeStreak(in: tableView, indexPath: indexPath)
-
         case 4:
             return makeBadges(in: tableView, indexPath: indexPath)
-
         default:
             fatalError("Unknown index path: \(indexPath).")
         }
@@ -95,14 +77,10 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
     /// Shows the activity ring and current rank.
     func makeStatus(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Rank", for: indexPath) as? StatusTableViewCell else {
-            fatalError("Failed to dequeue a StatusTableViewCell.")
-        }
-
+        let cell: StatusTableViewCell = tableView.dequeue(for: indexPath)
         cell.statusView.shadowOpacity = 0
         cell.statusView.strokeColorStart = UIColor(bundleName: "Rank-Start")
         cell.statusView.strokeColorEnd = UIColor(bundleName: "Rank-End")
-
         return cell
     }
 
@@ -111,35 +89,21 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Points", for: indexPath)
         cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
         cell.accessibilityLabel = "\(User.current.totalPoints) points"
-
         return cell
     }
 
     /// Shows the user's points breakdown.
     func makePointsBreakdown(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Learning Points"
-            cell.detailTextLabel?.text = User.current.learnPoints.formatted
-            cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
-
+            cell.feedData(title: "Learning Points", detailText: User.current.learnPoints.formatted, accessLabel: "\(User.current.learnPoints) points from learning")
         case 1:
-            cell.textLabel?.text = "Review Points"
-            cell.detailTextLabel?.text = User.current.reviewPoints.formatted
-            cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
-
+            cell.feedData(title: "Review Points", detailText: User.current.reviewPoints.formatted, accessLabel: "\(User.current.reviewPoints) points from reviews")
         case 2:
-            cell.textLabel?.text = "Practice Points"
-            cell.detailTextLabel?.text = User.current.practicePoints.formatted
-            cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
-
+            cell.feedData(title: "Practice Points", detailText: User.current.practicePoints.formatted, accessLabel: "\(User.current.practicePoints) points from practicing")
         case 3:
-            cell.textLabel?.text = "Challenge Points"
-            cell.detailTextLabel?.text = User.current.challengePoints.formatted
-            cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
-
+            cell.feedData(title: "Challenge Points", detailText: User.current.challengePoints.formatted, accessLabel: "\(User.current.challengePoints) points from challenges")
         case 4:
             cell.textLabel?.text = "Share Score"
             cell.accessibilityTraits = .button
@@ -148,7 +112,6 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         default:
             fatalError("Unknown index path: \(indexPath).")
         }
-
         return cell
     }
 
@@ -158,26 +121,21 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Current Level"
-            cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
-            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
-
+            cell.feedData(title: "Current Level", detailText: "\(User.current.rankNumber)/21", accessLabel: "You are level \(User.current.rankNumber) of 21.")
         case 1:
-            cell.textLabel?.text = "Points Until Next Level"
-
+            var detailLabel: String
+            var accLabel: String
             if let points = User.current.pointsUntilNextRank {
-                cell.detailTextLabel?.text = String(points)
-                cell.accessibilityLabel = "You need \(points) more points to reach the next level."
+                detailLabel = String(points)
+                accLabel = "You need \(points) more points to reach the next level."
             } else {
-                cell.detailTextLabel?.text = "N/A"
-                cell.accessibilityLabel = "You are at the maximum level."
+                detailLabel = "N/A"
+                accLabel = "You are at the maximum level."
             }
+            cell.feedData(title: "Points Until Next Level", detailText: detailLabel, accessLabel: accLabel)
 
         case 2:
-            cell.textLabel?.text = "Daily Challenges"
-            cell.detailTextLabel?.text = String(User.current.dailyChallenges.count)
-            cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
-
+            cell.feedData(title: "Daily Challenges", detailText: String(User.current.dailyChallenges.count), accessLabel: "\(User.current.dailyChallenges) daily challenges completed.")
         default:
             fatalError("Unknown index path: \(indexPath).")
         }
@@ -190,21 +148,12 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Current Streak"
-            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
+            cell.feedData(title: "Current Streak", detailText: "\(User.current.streakDays)", accessLabel: "Your streak count is \(User.current.streakDays)", accessId: "Streak Reminder")
             //UITest reading accessibility label and not accessibility identifier in Storyboard
-            cell.accessibilityIdentifier = "Streak Reminder"
             return cell
-
         case 1:
-            cell.textLabel?.text = "Best Streak"
-            cell.detailTextLabel?.text = "\(User.current.bestStreak)"
-            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
-            //UITest reading accessibility label and not accessibility identifier in Storyboard
-            cell.accessibilityIdentifier = "Streak Reminder"
+            cell.feedData(title: "Best Streak", detailText: "\(User.current.bestStreak)", accessLabel: "Your best streak count is \(User.current.bestStreak)", accessId: "Streak Reminder")
             return cell
-
         default:
             fatalError("Unknown index path: \(indexPath).")
         }
@@ -213,11 +162,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
     /// Dequeue a reusable and clean table view cell to show an stat.
     func dequeueStatReusableCell(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
-        cell.textLabel?.textColor = nil
-        cell.detailTextLabel?.text = nil
-        cell.accessibilityLabel = nil
+        cell.feedData(title: nil, detailText: nil , accessLabel: nil)
         cell.accessibilityTraits = .none
-
         return cell
     }
 
@@ -226,13 +172,11 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Badges", for: indexPath) as? BadgeTableViewCell else {
             fatalError("Failed to dequeue a BadgeTableViewCell.")
         }
-
         cell.collectionView.dataSource = badgeDataSource
         cell.collectionView.delegate = badgeDataSource
 
         /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
         cell.layoutIfNeeded()
-
         return cell
     }
 }

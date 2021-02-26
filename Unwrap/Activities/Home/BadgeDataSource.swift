@@ -12,21 +12,21 @@ import UIKit
 class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, AlertShowing {
     /// An array of all badges the user can earn.
     let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return badges.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Badge", for: indexPath) as? BadgeCollectionViewCell else {
             fatalError("Failed to dequeue BadgeCollectionViewCell.")
         }
-
+        
         let badge = badges[indexPath.item]
         cell.imageView.image = badge.image
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = "Badge" + badge.name
-
+        
         /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
         if User.current.isBadgeEarned(badge) {
             cell.imageView.tintColor = UIColor(bundleName: badge.color)
@@ -38,19 +38,23 @@ class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
             cell.accessibilityTraits = .none
             cell.accessibilityValue = User.current.badgeProgress(badge).string
         }
-
+        
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let coordinator = collectionView.findCoordinator() as? HomeCoordinator else { return }
-
+        
         let badge = badges[indexPath.item]
-
+        
         /// Do not show badge details when voice over is running. For for earned badges we share directly and for not earned the accessibilityValue already tells the current progress.
         if UIAccessibility.isVoiceOverRunning {
+            
+            
             if User.current.isBadgeEarned(badge) {
-                coordinator.shareBadge(badge)
+                let text = StaticReader(text: "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)")
+                coordinator.share(ShareBadge(badge: badge, textToShare: text))
+                // now this share method accepts any type of share serivce as in turns each shareObject has the ability to share any text fetched from any where
             }
         } else {
             coordinator.showBadgeDetails(badge)

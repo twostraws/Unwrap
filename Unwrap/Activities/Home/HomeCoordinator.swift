@@ -64,50 +64,28 @@ class HomeCoordinator: Coordinator, AlertShowing {
         }
     }
 
-    /// Start sharing the user's current score.
-    func shareScore(from sourceRect: CGRect) {
-        let image = User.current.rankImage.imageForSharing
-        let text = "I'm on level \(User.current.rankNumber) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
-
-        let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
-        alert.completionWithItemsHandler = handleScoreSharingResult
-
-        // if we're on iPad there is nowhere sensible to anchor this from, so just center it
-        if let popOver = alert.popoverPresentationController {
-            popOver.sourceView = navigationController.topViewController?.view
-            popOver.sourceRect = sourceRect
-        }
-
-        navigationController.present(alert, animated: true)
+    // we could use DI
+    // Start sharing 'Dynamically dispatched'
+    func share(_ shareable: Shareable) {
+        var share = shareable
+        share.navigationController = navigationController
+        share.share()
     }
-
+    
     /// Show a dialog with the badge's description. If the badge has been earned then the dialog has an option to share otherwise the progress is presented.
     func showBadgeDetails(_ badge: Badge) {
         if User.current.isBadgeEarned(badge) {
             let body = badge.description.fromSimpleHTML()
             showAlert(title: badge.name, body: body, alternateTitle: "Share") { [weak self] in
-                self?.shareBadge(badge)
+                
+                
+                let text = StaticReader(text: "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)")
+                self?.share(ShareBadge(badge: badge, textToShare: text))
             }
         } else {
             let body = badge.description.centered() + User.current.badgeProgress(badge)
             showAlert(title: badge.name, body: body)
         }
-    }
-
-    /// Share a specific badge the user earned.
-    func shareBadge(_ badge: Badge) {
-        let image = badge.image.imageForSharing
-        let text = "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
-
-        let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
-
-        // if we're on iPad there is nowhere sensible to anchor this from, so just center it
-        if let popOver = alert.popoverPresentationController {
-            popOver.sourceView = self.navigationController.view
-            popOver.sourceRect = CGRect(x: self.navigationController.view.frame.midX, y: self.navigationController.view.frame.midY, width: 0, height: 0)
-        }
-
-        self.navigationController.present(alert, animated: true)
     }
 
     /// We need to catch them sharing their score successfully, because doing it at least once to Facebook or Twitter unlocks a badge.
