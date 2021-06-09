@@ -99,9 +99,8 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             fatalError("Failed to dequeue a StatusTableViewCell.")
         }
 
-        cell.statusView.shadowOpacity = 0
+        // Go ahead and prepare the rank symbol for display.
         cell.statusView.strokeColorStart = UIColor(bundleName: "Rank-Start")
-        cell.statusView.strokeColorEnd = UIColor(bundleName: "Rank-End")
 
         return cell
     }

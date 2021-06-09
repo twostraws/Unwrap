@@ -42,7 +42,7 @@
         },
         {
             "answer": "var hasForcePowers = \"true\"\nlet convertedHasForcePowers = Bool(hasForcePowers)",
-            "reason": "This will result in a constant set to true."
+            "reason": "This will result in an optional constant set to true."
         },
         {
             "answer": "struct Language {\n\tvar code: String\n\tinit?(code: String) {\n\t\tif code.hasPrefix(\"en-\") {\n\t\t\tself.code = code\n\t\t} else {\n\t\t\tprint(\"Sorry, only English variants are supported.\" )\n\t\t\treturn nil\n\t\t}\n\t}\n}\nlet language = Language(code: \"en-GB\")",
