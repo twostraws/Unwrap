@@ -27,7 +27,7 @@
             "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.lowercased() != input2.lowercased() else { return true }\nreturn false\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() != input2.uppercased(){\nreturn false\n}else{\nreturn true\n}\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() != input2.uppercased(){\nreturn false\n}\nreturn true\n}",
-            "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else { return true }\nreturn false\n}
+            "func myFunction(input1:String,input2:String) -> Bool{\nguard input1.uppercased() != input2.uppercased() else { return true }\nreturn false\n}"
         ]
     },
     {
