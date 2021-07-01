@@ -13,7 +13,6 @@ import UIKit
 class HomeViewController: UITableViewController, Storyboarded, UserTracking {
     var coordinator: HomeCoordinator?
     var dataSource = HomeDataSource()
-    var reviewRequested = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
