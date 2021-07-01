@@ -28,7 +28,7 @@ extension String {
         if replaced.isEmpty {
             return replaced
         }
-        
+
         // Homogenize guard statement to reduce the number of possible solutions
         replaced = homogenizeGuardStatements()
 
@@ -44,7 +44,7 @@ extension String {
         // Homogenize brace style.
         replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
         replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
-        
+
         // Homogenize statements with the optionalreturn keyword
         replaced = replaced.solveOptionalReturnStatements()
 
@@ -114,7 +114,7 @@ extension String {
 
         return replaced
     }
-    
+
     /// A replacement of the optionalreturn keyword with a space. This gives us some extra flexibility to answers without needing to add extra ones.
     func solveOptionalReturnStatements() -> String {
         var replaced = self.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -127,7 +127,7 @@ extension String {
 
         return replaced
     }
-    
+
     /**
      Homogenize guard statements in code to reduce the number of possible solutions
      

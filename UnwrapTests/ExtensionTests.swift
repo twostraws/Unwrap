@@ -113,7 +113,7 @@ class ExtensionTests: XCTestCase {
         let anonymizedString5 = "func #1#"
         XCTAssertEqual(cleanString5.toAnonymizedVariables(), anonymizedString5)
     }
-    
+
     /// Tests that a optionalreturn keyword work properly.
     func testSolveOptionalReturnStatements() {
         let cleanString1 = "    optionalreturn   "
@@ -193,7 +193,7 @@ class ExtensionTests: XCTestCase {
         let homogenizedString19 = "func myFunction(input1:String,input2:String) -> Bool{ input1.lowercased() == input2.lowercased() }"
         XCTAssertEqual(cleanString19.solveOptionalReturnStatements(), homogenizedString19)
     }
-    
+
     func testHomogenizeGuardStatements() {
         let cleanString1 = "guard s==a else { \n return                \n  }\nreturn somethingelse\n}"
         let homogenizedString1 = "guard s==a else { return }\nreturn somethingelse\n}"

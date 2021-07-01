@@ -193,7 +193,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.text = "Current Streak"
             cell.detailTextLabel?.text = "\(User.current.streakDays)"
             cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
-            //UITest reading accessibility label and not accessibility identifier in Storyboard
+            // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
@@ -201,7 +201,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             cell.textLabel?.text = "Best Streak"
             cell.detailTextLabel?.text = "\(User.current.bestStreak)"
             cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
-            //UITest reading accessibility label and not accessibility identifier in Storyboard
+            // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
