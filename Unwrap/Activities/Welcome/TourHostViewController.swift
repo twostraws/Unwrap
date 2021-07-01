@@ -14,7 +14,7 @@ class TourHostViewController: UIViewController {
     /// Configures our child so that it can report back how many pages if contains and when page changes happen so we can update the page control.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let child = segue.destination as? TourPageViewController {
-            //Some property on ChildVC that needs to be set
+            // Some property on ChildVC that needs to be set
             child.pageChangeDelegate = self
         }
     }
