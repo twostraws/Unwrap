@@ -1,6 +1,6 @@
 {
     "title": "Creating your own structs",
-    "postscript": "In Swift we write the names of types such as Int, String, and MyStruct with a capitalized first letter, and the names of variables and constants with a lowercase first letter.",
+    "postscript": "In Swift we write the names of types such as Int, String and MyStruct with a capitalized first letter, and the names of variables and constants with a lowercase first letter.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
     "hint": "When you create an instance of a struct, Swift will ask you to provide values for all its properties. These parameters must have the same names as the properties themselves, and must be in the same order they were defined.",
