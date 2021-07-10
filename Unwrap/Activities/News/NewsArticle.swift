@@ -25,6 +25,4 @@ struct NewsArticle: Decodable {
     /// The URL to the main image for the article at a good size for this device.
     var mainImage: URL
 
-    /// The date this article was published.
-    var publishedDate: Date
 }
