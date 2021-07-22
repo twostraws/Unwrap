@@ -1,6 +1,0 @@
-framework module Sourceful {
-  umbrella header "Sourceful-umbrella.h"
-
-  export *
-  module * { export * }
-}

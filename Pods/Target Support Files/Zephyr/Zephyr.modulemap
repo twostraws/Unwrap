@@ -1,6 +1,0 @@
-framework module Zephyr {
-  umbrella header "Zephyr-umbrella.h"
-
-  export *
-  module * { export * }
-}
