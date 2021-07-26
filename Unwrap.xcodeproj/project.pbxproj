@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -594,6 +594,12 @@
 		51FE151B20E25F1200F29889 /* range-operators.html in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139420E25F1100F29889 /* range-operators.html */; };
 		51FE151C20E25F1200F29889 /* protocol-extensions.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51FE139520E25F1100F29889 /* protocol-extensions.mp4 */; };
 		51FE151E20E2814E00F29889 /* StudyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FE151D20E2814E00F29889 /* StudyReview.swift */; };
+		5F2EF28426AE34C3008F29E4 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */; };
+		5F2EF28726AE3634008F29E4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28626AE3634008F29E4 /* SDWebImage */; };
+		5F2EF28A26AE368B008F29E4 /* MKRingProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28926AE368B008F29E4 /* MKRingProgressView */; };
+		5F2EF28D26AE36DA008F29E4 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28C26AE36DA008F29E4 /* Sourceful */; };
+		5F2EF29026AE39EE008F29E4 /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */; };
+		5F2EF29326AE40B9008F29E4 /* Zephyr in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF29226AE40B9008F29E4 /* Zephyr */; };
 		A9476512228DF2E7005CC249 /* DynamicHeightHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9476511228DF2E7005CC249 /* DynamicHeightHeaderView.swift */; };
 		B93AEC4B2273DB68005A50DF /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4A2273DB68005A50DF /* PracticeTableViewCell.swift */; };
 		B93AEC4D2273DE70005A50DF /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AEC4C2273DE70005A50DF /* ChallengeTableViewCell.swift */; };
@@ -1242,6 +1248,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2EF28726AE3634008F29E4 /* SDWebImage in Frameworks */,
+				5F2EF28D26AE36DA008F29E4 /* Sourceful in Frameworks */,
+				5F2EF28A26AE368B008F29E4 /* MKRingProgressView in Frameworks */,
+				5F2EF28426AE34C3008F29E4 /* SwiftEntryKit in Frameworks */,
+				5F2EF29326AE40B9008F29E4 /* Zephyr in Frameworks */,
+				5F2EF29026AE39EE008F29E4 /* DZNEmptyDataSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2191,6 +2203,14 @@
 				5192DDCF2273E05F0081C6DE /* PBXTargetDependency */,
 			);
 			name = Unwrap;
+			packageProductDependencies = (
+				5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */,
+				5F2EF28626AE3634008F29E4 /* SDWebImage */,
+				5F2EF28926AE368B008F29E4 /* MKRingProgressView */,
+				5F2EF28C26AE36DA008F29E4 /* Sourceful */,
+				5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */,
+				5F2EF29226AE40B9008F29E4 /* Zephyr */,
+			);
 			productName = Unwrap;
 			productReference = 51CC135F2065607C00F37A67 /* Unwrap.app */;
 			productType = "com.apple.product-type.application";
@@ -2220,7 +2240,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Hacking with Swift";
 				TargetAttributes = {
 					5192DDC82273E05E0081C6DE = {
@@ -2254,6 +2274,14 @@
 				Base,
 			);
 			mainGroup = 51CC13562065607C00F37A67;
+			packageReferences = (
+				5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+				5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */,
+				5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */,
+				5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
+				5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */,
+			);
 			productRefGroup = 51CC13602065607C00F37A67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3016,6 +3044,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3041,7 +3070,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -3077,6 +3106,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -3096,7 +3126,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -3234,6 +3264,90 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
+		5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+		5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxkonovalov/MKRingProgressView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+		5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful.git";
+			requirement = {
+				kind = revision;
+				revision = 3e3bec0486229f623fdf24455806e8c63b837afd;
+			};
+		};
+		5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Zephyr";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
+		};
+		5F2EF28626AE3634008F29E4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		5F2EF28926AE368B008F29E4 /* MKRingProgressView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */;
+			productName = MKRingProgressView;
+		};
+		5F2EF28C26AE36DA008F29E4 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+		5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */;
+			productName = DZNEmptyDataSet;
+		};
+		5F2EF29226AE40B9008F29E4 /* Zephyr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */;
+			productName = Zephyr;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51CC13572065607C00F37A67 /* Project object */;
 }

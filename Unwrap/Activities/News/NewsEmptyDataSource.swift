@@ -37,7 +37,7 @@ class NewsEmptyDataSource: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     }
 
     /// Called when the retry button is tapped.
-    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
         delegate?.fetchArticles()
     }
 }
