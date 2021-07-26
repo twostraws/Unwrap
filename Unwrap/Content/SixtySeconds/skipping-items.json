@@ -34,7 +34,7 @@
     "wrong": [
         {
             "answer": "for i in 1...5 {\n\tif i == 5 {\n\t\tcontinue\n\t}\n\tlet sum = i + i\n\tprint(\"\\(i) + \\(i) is \\(sum).\")\n}",
-            "reason": "Ths will print four lines of text."
+            "reason": "This will print four lines of text."
         },
         {
             "answer": "for square in [4, 9, 16, 25, 36] {\n\tif square >= 25 {\n\t\tcontinue\n\t} else {\n\t\tprint(\"What's the square root of \\(square)?\")\n\t}\n}",
