@@ -134,7 +134,7 @@ class TapToCodeDataSource: NSObject, UICollectionViewDataSource, UICollectionVie
         return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
 
-    // Tapping words either moves from them fro used to all, or from all to used.
+    // Tapping words either moves them from used to all or from all to used.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == usedWordsCollectionView {
             // We're moving a word from used to all.
