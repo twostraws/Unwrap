@@ -15,9 +15,6 @@ struct TypeCheckerPractice: PracticeActivity {
     /// The user-facing question the user needs to answer. This varies depending on what type we want users to find.
     var question: String
 
-    /// The user-facing hint giving the user a nudge. This is always fixed.
-    let hint = "Remember that 0 is an integer, but 0.0 is a double."
-
     /// An array of all the possible types.
     var answers = [Answer]()
 
