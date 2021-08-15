@@ -3286,8 +3286,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxkonovalov/MKRingProgressView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.3;
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.3.0;
 			};
 		};
 		5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
