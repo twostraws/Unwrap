@@ -82,12 +82,9 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 1{
             if editingStyle == .delete{
                 User.current.dailyChallenges.remove(at: indexPath.row)
                 tableView.reloadData()
             }
-            
-        }
     }
 }
