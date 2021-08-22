@@ -73,7 +73,7 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
             return cell
         }
     }
-    //MARK:- Swipe to delete
+    /// Swipe to delete
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if indexPath.section == 1{
             return true
@@ -85,6 +85,7 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
             if editingStyle == .delete{
                 User.current.dailyChallenges.remove(at: indexPath.row)
                 tableView.reloadData()
+                User.current.save()
             }
     }
 }
