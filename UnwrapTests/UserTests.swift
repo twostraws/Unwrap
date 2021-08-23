@@ -152,4 +152,20 @@ class UserTests: XCTestCase {
         user.updateStreak()
         XCTAssertEqual(user.bestStreak, 25, "Best streak should not be updated")
     }
+
+    /// Testing user data reset.
+    func testResetProgress() {
+        let user = User()
+
+        let result = ChallengeResult(date: Date(), score: 1000)
+        user.dailyChallenges.append(result)
+        user.practiceSessions.insert("Test session")
+        user.practicePoints += 100
+
+        user.resetProgress()
+
+        XCTAssertTrue(user.dailyChallenges.isEmpty, "Daily challenges should be empty.")
+        XCTAssertTrue(user.practiceSessions.isEmpty, "Practice sessions should be empty.")
+        XCTAssertEqual(user.practicePoints, 0, "Practice points should be 0.")
+    }
 }

@@ -50,6 +50,22 @@ class HomeCoordinator: Coordinator, AlertShowing {
         viewController.presentAsAlert()
     }
 
+    /// Show the options to reset user progress.
+    func showResetProgressOptions() {
+        let alert = UIAlertController(title: "Reset data", message: nil, preferredStyle: .alert)
+
+        let resetProgressAction = UIAlertAction(title: "Reset", style: .destructive) { _ in
+            User.current.resetProgress()
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alert.addAction(resetProgressAction)
+        alert.addAction(cancelAction)
+
+        navigationController.present(alert, animated: true)
+    }
+
     /// Show the help screen.
     @objc func showHelp() {
         let viewController = HelpViewController(style: .plain)
