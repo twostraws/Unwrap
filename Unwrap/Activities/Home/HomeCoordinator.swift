@@ -57,12 +57,10 @@ class HomeCoordinator: Coordinator, AlertShowing {
         let resetProgressAction = UIAlertAction(title: "Reset", style: .destructive) { _ in
             User.current.resetProgress()
         }
-
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
         alert.addAction(resetProgressAction)
         alert.addAction(cancelAction)
-
         navigationController.present(alert, animated: true)
     }
 
