@@ -21,7 +21,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         switch section {
         case 0:
             // status view
-            return 1
+            return 2
 
         case 1:
             // score breakdown
@@ -47,13 +47,11 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            return makeStatus(in: collectionView, indexPath: indexPath)
-
-//            if indexPath.row == 0 {
-//                return makeStatus(in: collectionView, indexPath: indexPath)
-//            } else {
-//                return makePointsSummary(in: tableView, indexPath: indexPath)
-//            }
+            if indexPath.item == 0 {
+                return makeStatus(in: collectionView, indexPath: indexPath)
+            } else {
+                return makePointsSummary(in: collectionView, indexPath: indexPath)
+            }
 
 //        case 1:
 //            return makePointsBreakdown(in: tableView, indexPath: indexPath)
@@ -166,15 +164,16 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-//    /// Shows the user's total points in large text.
-//    func makePointsSummary(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionView {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath)
-//        cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
-//        cell.accessibilityLabel = "\(User.current.totalPoints) points"
-//
-//        return cell
-//    }
-//
+    /// Shows the user's total points in large text.
+    func makePointsSummary(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath)
+        let totalPoints = User.current.totalPoints
+        //cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
+        cell.accessibilityLabel = "\(totalPoints) points"
+
+        return cell
+    }
+
 //    /// Shows the user's points breakdown.
 //    func makePointsBreakdown(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
 //        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
