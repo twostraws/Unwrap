@@ -14,7 +14,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
     // We have five sections: the status view, points, stats, streak, and badges.
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -53,12 +53,12 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
                 return makePointsSummary(in: collectionView, indexPath: indexPath)
             }
 
-//        case 1:
-//            return makePointsBreakdown(in: tableView, indexPath: indexPath)
-//
-//        case 2:
-//            return makeStatistic(in: tableView, indexPath: indexPath)
-//
+        case 1:
+            return makePointsBreakdown(in: collectionView, indexPath: indexPath)
+
+        case 2:
+            return makeStatistic(in: collectionView, indexPath: indexPath)
+
 //        case 3:
 //            return makeStreak(in: tableView, indexPath: indexPath)
 //
@@ -70,11 +70,6 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 
-//    // We have five sections: the status view, points, stats, streak, and badges.
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 5
-//    }
-//
 //    // All sections have a title except the first one.
 //    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
 //        switch section {
@@ -174,76 +169,76 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-//    /// Shows the user's points breakdown.
-//    func makePointsBreakdown(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-//        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-//
-//        switch indexPath.row {
-//        case 0:
+    /// Shows the user's points breakdown.
+    func makePointsBreakdown(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
+
+        switch indexPath.row {
+        case 0:
 //            cell.textLabel?.text = "Learning Points"
 //            cell.detailTextLabel?.text = User.current.learnPoints.formatted
-//            cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
-//
-//        case 1:
+            cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
+
+        case 1:
 //            cell.textLabel?.text = "Review Points"
 //            cell.detailTextLabel?.text = User.current.reviewPoints.formatted
-//            cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
-//
-//        case 2:
+            cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
+
+        case 2:
 //            cell.textLabel?.text = "Practice Points"
 //            cell.detailTextLabel?.text = User.current.practicePoints.formatted
-//            cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
-//
-//        case 3:
+            cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
+
+        case 3:
 //            cell.textLabel?.text = "Challenge Points"
 //            cell.detailTextLabel?.text = User.current.challengePoints.formatted
-//            cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
-//
-//        case 4:
+            cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
+
+        case 4:
 //            cell.textLabel?.text = "Share Score"
-//            cell.accessibilityTraits = .button
+            cell.accessibilityTraits = .button
 //            cell.textLabel?.textColor = UIColor(bundleName: "Primary")
-//
-//        default:
-//            fatalError("Unknown index path: \(indexPath).")
-//        }
-//
-//        return cell
-//    }
-//
-//    /// Shows how the user is progressing through levels.
-//    func makeStatistic(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-//        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-//
-//        switch indexPath.row {
-//        case 0:
+
+        default:
+            fatalError("Unknown index path: \(indexPath).")
+        }
+
+        return cell
+    }
+
+    /// Shows how the user is progressing through levels.
+    func makeStatistic(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
+
+        switch indexPath.row {
+        case 0:
 //            cell.textLabel?.text = "Current Level"
 //            cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
-//            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
-//
-//        case 1:
+            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
+
+        case 1:
 //            cell.textLabel?.text = "Points Until Next Level"
-//
-//            if let points = User.current.pointsUntilNextRank {
+
+            if let points = User.current.pointsUntilNextRank {
 //                cell.detailTextLabel?.text = String(points)
-//                cell.accessibilityLabel = "You need \(points) more points to reach the next level."
-//            } else {
+                cell.accessibilityLabel = "You need \(points) more points to reach the next level."
+            } else {
 //                cell.detailTextLabel?.text = "N/A"
-//                cell.accessibilityLabel = "You are at the maximum level."
-//            }
-//
-//        case 2:
+                cell.accessibilityLabel = "You are at the maximum level."
+            }
+
+        case 2:
 //            cell.textLabel?.text = "Daily Challenges"
 //            cell.detailTextLabel?.text = String(User.current.dailyChallenges.count)
-//            cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
-//
-//        default:
-//            fatalError("Unknown index path: \(indexPath).")
-//        }
-//
-//        return cell
-//    }
-//
+            cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
+
+        default:
+            fatalError("Unknown index path: \(indexPath).")
+        }
+
+        return cell
+    }
+
 //    /// Shows the user's streak record.
 //    func makeStreak(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
 //        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
@@ -269,16 +264,16 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 //        }
 //    }
 
-//    /// Dequeue a reusable and clean table view cell to show an stat.
-//    func dequeueStatReusableCell(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
+    /// Dequeue a reusable and clean collection view cell to show an stat.
+    func dequeueStatReusableCell(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stat", for: indexPath)
 //        cell.textLabel?.textColor = nil
 //        cell.detailTextLabel?.text = nil
-//        cell.accessibilityLabel = nil
-//        cell.accessibilityTraits = .none
-//
-//        return cell
-//    }
+        cell.accessibilityLabel = nil
+        cell.accessibilityTraits = .none
+
+        return cell
+    }
 
 //    /// Shows all the badges the user has earned.
 //    func makeBadges(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {

@@ -60,6 +60,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             switch section {
             case 0:
                 return self.statusSection()
+            case 1:
+                return self.scoreSection()
+            case 2:
+                return self.statsSection()
             default:
                 fatalError("Unknown section: \(section).")
             }
@@ -73,8 +77,28 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let itemSize2 = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
         let item2 = NSCollectionLayoutItem(layoutSize: itemSize2)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(290))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item, item2])
+
+        return NSCollectionLayoutSection(group: group)
+    }
+
+    private func scoreSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(220))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 5)
+
+        return NSCollectionLayoutSection(group: group)
+    }
+
+    private func statsSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(132))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 3)
 
         return NSCollectionLayoutSection(group: group)
     }
