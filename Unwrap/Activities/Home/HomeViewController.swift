@@ -64,6 +64,8 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
                 return self.scoreSection()
             case 2:
                 return self.statsSection()
+            case 3:
+                return self.streakSection()
             default:
                 fatalError("Unknown section: \(section).")
             }
@@ -99,6 +101,16 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(132))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 3)
+
+        return NSCollectionLayoutSection(group: group)
+    }
+
+    private func streakSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(88))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 2)
 
         return NSCollectionLayoutSection(group: group)
     }

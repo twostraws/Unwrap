@@ -8,13 +8,13 @@
 
 import UIKit
 
-/// Manages all the rows in the Home table view. This is a fairly grim class and really ought to be refactored.
+/// Manages all the items in the Home table view. This is a fairly grim class and really ought to be refactored.
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     var badgeDataSource = BadgeDataSource()
 
     // We have five sections: the status view, points, stats, streak, and badges.
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,9 +59,9 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         case 2:
             return makeStatistic(in: collectionView, indexPath: indexPath)
 
-//        case 3:
-//            return makeStreak(in: tableView, indexPath: indexPath)
-//
+        case 3:
+            return makeStreak(in: collectionView, indexPath: indexPath)
+
 //        case 4:
 //            return makeBadges(in: tableView, indexPath: indexPath)
 
@@ -92,59 +92,6 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 //            fatalError("Unknown table view section: \(section).")
 //        }
 //    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch section {
-//        case 0:
-//            // status view
-//            return 2
-//
-//        case 1:
-//            // score breakdown
-//            return 5
-//
-//        case 2:
-//            // level stats
-//            return 3
-//
-//        case 3:
-//            // streak
-//            return 2
-//
-//        case 4:
-//            // badges
-//            return 1
-//
-//        default:
-//            fatalError("Unknown table view section: \(section).")
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch indexPath.section {
-//        case 0:
-//            if indexPath.row == 0 {
-//                return makeStatus(in: tableView, indexPath: indexPath)
-//            } else {
-//                return makePointsSummary(in: tableView, indexPath: indexPath)
-//            }
-//
-//        case 1:
-//            return makePointsBreakdown(in: tableView, indexPath: indexPath)
-//
-//        case 2:
-//            return makeStatistic(in: tableView, indexPath: indexPath)
-//
-//        case 3:
-//            return makeStreak(in: tableView, indexPath: indexPath)
-//
-//        case 4:
-//            return makeBadges(in: tableView, indexPath: indexPath)
-//
-//        default:
-//            fatalError("Unknown index path: \(indexPath).")
-//        }
-//    }
 
     /// Shows the activity ring and current rank.
     func makeStatus(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
@@ -173,7 +120,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     func makePointsBreakdown(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
 
-        switch indexPath.row {
+        switch indexPath.item {
         case 0:
 //            cell.textLabel?.text = "Learning Points"
 //            cell.detailTextLabel?.text = User.current.learnPoints.formatted
@@ -210,7 +157,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     func makeStatistic(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
 
-        switch indexPath.row {
+        switch indexPath.item {
         case 0:
 //            cell.textLabel?.text = "Current Level"
 //            cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
@@ -239,30 +186,30 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-//    /// Shows the user's streak record.
-//    func makeStreak(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-//        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-//        switch indexPath.row {
-//        case 0:
+    /// Shows the user's streak record.
+    func makeStreak(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
+        switch indexPath.item {
+        case 0:
 //            cell.textLabel?.text = "Current Streak"
 //            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-//            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
-//            // UITest reading accessibility label and not accessibility identifier in Storyboard
-//            cell.accessibilityIdentifier = "Streak Reminder"
-//            return cell
-//
-//        case 1:
+            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
+            // UITest reading accessibility label and not accessibility identifier in Storyboard
+            cell.accessibilityIdentifier = "Streak Reminder"
+            return cell
+
+        case 1:
 //            cell.textLabel?.text = "Best Streak"
 //            cell.detailTextLabel?.text = "\(User.current.bestStreak)"
-//            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
-//            // UITest reading accessibility label and not accessibility identifier in Storyboard
-//            cell.accessibilityIdentifier = "Streak Reminder"
-//            return cell
-//
-//        default:
-//            fatalError("Unknown index path: \(indexPath).")
-//        }
-//    }
+            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
+            // UITest reading accessibility label and not accessibility identifier in Storyboard
+            cell.accessibilityIdentifier = "Streak Reminder"
+            return cell
+
+        default:
+            fatalError("Unknown index path: \(indexPath).")
+        }
+    }
 
     /// Dequeue a reusable and clean collection view cell to show an stat.
     func dequeueStatReusableCell(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
