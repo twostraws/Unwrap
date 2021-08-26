@@ -109,9 +109,12 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
     /// Shows the user's total points in large text.
     func makePointsSummary(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath) as? PointsCollectionViewCell else {
+            fatalError("Failed to dequeue a PointsCollectionViewCell.")
+        }
+        
         let totalPoints = User.current.totalPoints
-        //cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
+        cell.textLabel.attributedText = NSAttributedString.makeTitle("Points", subtitle: totalPoints.formatted)
         cell.accessibilityLabel = "\(totalPoints) points"
 
         return cell

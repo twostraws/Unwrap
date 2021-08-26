@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */; };
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
@@ -640,6 +641,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
@@ -1555,6 +1557,7 @@
 				51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */,
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
 				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
+				1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */,
 				51C5642620CCBAB40093030C /* StatusView.swift */,
 				51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */,
 				51A447682108A0C3005D8665 /* BadgeDataSource.swift */,
@@ -2898,6 +2901,7 @@
 				51EFBEF3210CFED100211A8D /* String-Attributed.swift in Sources */,
 				51B87CE4210BC12E00FE773A /* StatusTableViewCell.swift in Sources */,
 				51CC13A12065B20500F37A67 /* Storyboarded.swift in Sources */,
+				1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */,
 				5192241C210E2767007D7D74 /* DarkTheme.swift in Sources */,
 				51A447692108A0C3005D8665 /* BadgeDataSource.swift in Sources */,
 				B9AC3C9C227B1262007AC17C /* WebViewController.swift in Sources */,

@@ -1711,7 +1711,7 @@
                                     <outlet property="statusView" destination="atU-zx-3pO" id="Rwu-ar-0su"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Points" id="oqZ-xg-ehR" userLabel="Points">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Points" id="oqZ-xg-ehR" userLabel="Points" customClass="PointsCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="210" width="375" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eW6-60-e8X">
@@ -1742,6 +1742,9 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="375" height="89"/>
+                                <connections>
+                                    <outlet property="textLabel" destination="W7b-L4-7Qf" id="F5m-VC-VNW"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Stat" id="Tv1-C6-wnO" userLabel="Stat">
                                 <rect key="frame" x="0.0" y="309" width="375" height="44"/>
