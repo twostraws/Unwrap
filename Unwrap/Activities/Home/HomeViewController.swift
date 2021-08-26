@@ -162,9 +162,21 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let shareScorePath = IndexPath(item: 4, section: 1)
+        let badgeSection = 4
 
         if indexPath == shareScorePath, let attributes = collectionView.layoutAttributesForItem(at: indexPath) {
             coordinator?.shareScore(from: attributes.frame)
+        } else if indexPath.section == badgeSection {
+            let badge = dataSource.badges[indexPath.item]
+
+            /// Do not show badge details when voice over is running. For for earned badges we share directly and for not earned the accessibilityValue already tells the current progress.
+            if UIAccessibility.isVoiceOverRunning {
+                if User.current.isBadgeEarned(badge) {
+                    coordinator?.shareBadge(badge)
+                }
+            } else {
+                coordinator?.showBadgeDetails(badge)
+            }
         }
 
         collectionView.deselectItem(at: indexPath, animated: true)
