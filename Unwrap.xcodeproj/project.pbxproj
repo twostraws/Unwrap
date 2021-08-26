@@ -107,7 +107,6 @@
 		519CD3D420EBA601007110BD /* RearrangeTheLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D320EBA601007110BD /* RearrangeTheLinesViewController.swift */; };
 		519CD3D620EBA6ED007110BD /* RearrangeTheLinesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D520EBA6ED007110BD /* RearrangeTheLinesDataSource.swift */; };
 		51A447612107ED97005D8665 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A447602107ED97005D8665 /* BadgesView.swift */; };
-		51A447632107EF18005D8665 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A447622107EF18005D8665 /* BadgeTableViewCell.swift */; };
 		51A447652107F6F8005D8665 /* Badges.json in Resources */ = {isa = PBXBuildFile; fileRef = 51A447642107F6F8005D8665 /* Badges.json */; };
 		51A4476721089FF0005D8665 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */; };
 		51A447692108A0C3005D8665 /* BadgeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A447682108A0C3005D8665 /* BadgeDataSource.swift */; };
@@ -744,7 +743,6 @@
 		519CD3D320EBA601007110BD /* RearrangeTheLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearrangeTheLinesViewController.swift; sourceTree = "<group>"; };
 		519CD3D520EBA6ED007110BD /* RearrangeTheLinesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearrangeTheLinesDataSource.swift; sourceTree = "<group>"; };
 		51A447602107ED97005D8665 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
-		51A447622107EF18005D8665 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 		51A447642107F6F8005D8665 /* Badges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Badges.json; sourceTree = "<group>"; };
 		51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		51A447682108A0C3005D8665 /* BadgeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDataSource.swift; sourceTree = "<group>"; };
@@ -1560,7 +1558,6 @@
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
 				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
 				51C5642620CCBAB40093030C /* StatusView.swift */,
-				51A447622107EF18005D8665 /* BadgeTableViewCell.swift */,
 				51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */,
 				51A447682108A0C3005D8665 /* BadgeDataSource.swift */,
 				51A447602107ED97005D8665 /* BadgesView.swift */,
@@ -2892,7 +2889,6 @@
 				51596DF420EE35D700952ADC /* TapToCodeModel.swift in Sources */,
 				51862E5E20CE2C300086CD1B /* Formatted.swift in Sources */,
 				5189D9D720EA4AAC00E6E1D3 /* UIButton-Types.swift in Sources */,
-				51A447632107EF18005D8665 /* BadgeTableViewCell.swift in Sources */,
 				51A6D62720E651DA00FB6B46 /* FloatNames.swift in Sources */,
 				51A6D66820E6953100FB6B46 /* CodeErrorType.swift in Sources */,
 				B93AEC4F2273DF03005A50DF /* PreviousChallengeTableViewCell.swift in Sources */,
