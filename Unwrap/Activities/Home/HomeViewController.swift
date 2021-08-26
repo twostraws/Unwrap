@@ -159,26 +159,16 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 //        }
 //    }
 
-    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.section == 4 {
-//            if let cell = cell as? BadgeTableViewCell {
-//                cell.applyLayoutWorkaround()
-//            }
-//        }
-//    }
-
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let shareScorePath = IndexPath(row: 4, section: 1)
-//
-//        if indexPath == shareScorePath {
-//            let rect = tableView.rectForRow(at: indexPath)
-//            coordinator?.shareScore(from: rect)
-//        }
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shareScorePath = IndexPath(item: 4, section: 1)
+
+        if indexPath == shareScorePath, let attributes = collectionView.layoutAttributesForItem(at: indexPath) {
+            coordinator?.shareScore(from: attributes.frame)
+        }
+
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
