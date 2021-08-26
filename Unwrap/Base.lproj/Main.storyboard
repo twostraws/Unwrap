@@ -656,7 +656,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badge" id="l1K-4j-OE4" customClass="BadgeCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
+                                                        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badg" id="l1K-4j-OE4" customClass="BadgeCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1786,14 +1786,14 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="375" height="44"/>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badge" id="o7c-7h-PLK" userLabel="Badge">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badge" id="o7c-7h-PLK" userLabel="Badge" customClass="BadgeCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
                                 <rect key="frame" x="157.5" y="417" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yfV-tp-lam">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQQ-ef-qHv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQQ-ef-qHv">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         </imageView>
                                     </subviews>
@@ -1805,6 +1805,9 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="60" height="60"/>
+                                <connections>
+                                    <outlet property="imageView" destination="cQQ-ef-qHv" id="v0N-gV-YMW"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

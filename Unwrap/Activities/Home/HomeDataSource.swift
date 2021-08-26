@@ -10,11 +10,12 @@ import UIKit
 
 /// Manages all the items in the Home table view. This is a fairly grim class and really ought to be refactored.
 class HomeDataSource: NSObject, UICollectionViewDataSource {
-    var badgeDataSource = BadgeDataSource()
+    /// An array of all badges the user can earn.
+    let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
 
     // We have five sections: the status view, points, stats, streak, and badges.
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,7 +38,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         case 4:
             // badges
-            return 1
+            return badges.count
 
         default:
             fatalError("Unknown collection view section: \(section).")
@@ -62,8 +63,8 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         case 3:
             return makeStreak(in: collectionView, indexPath: indexPath)
 
-//        case 4:
-//            return makeBadges(in: tableView, indexPath: indexPath)
+        case 4:
+            return makeBadge(in: collectionView, indexPath: indexPath)
 
         default:
             fatalError("Unknown index path: \(indexPath).")
@@ -222,18 +223,29 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-//    /// Shows all the badges the user has earned.
-//    func makeBadges(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Badges", for: indexPath) as? BadgeTableViewCell else {
-//            fatalError("Failed to dequeue a BadgeTableViewCell.")
-//        }
-//
-//        cell.collectionView.dataSource = badgeDataSource
-//        cell.collectionView.delegate = badgeDataSource
-//
-//        /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-//        cell.layoutIfNeeded()
-//
-//        return cell
-//    }
+    /// Shows all the badges the user has earned.
+    func makeBadge(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Badge", for: indexPath) as? BadgeCollectionViewCell else {
+            fatalError("Failed to dequeue a BadgeCollectionViewCell.")
+        }
+
+        let badge = badges[indexPath.item]
+        cell.imageView.image = badge.image
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = "Badge" + badge.name
+
+        /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
+        if User.current.isBadgeEarned(badge) {
+            cell.imageView.tintColor = UIColor(bundleName: badge.color)
+            cell.accessibilityTraits = .button
+            cell.accessibilityValue = "Earned"
+            cell.accessibilityHint = "Share Badge"
+        } else {
+            cell.imageView.tintColor = UIColor(bundleName: "Locked")
+            cell.accessibilityTraits = .none
+            cell.accessibilityValue = User.current.badgeProgress(badge).string
+        }
+
+        return cell
+    }
 }

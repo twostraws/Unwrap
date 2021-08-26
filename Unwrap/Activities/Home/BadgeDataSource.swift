@@ -9,13 +9,9 @@
 import UIKit
 
 /// The data source for the badges collection view. This loads the list of badges, then serves them up as individual cells.
-class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, AlertShowing {
+class BadgeDataSource {
     /// An array of all badges the user can earn.
     let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return badges.count
-    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Badge", for: indexPath) as? BadgeCollectionViewCell else {

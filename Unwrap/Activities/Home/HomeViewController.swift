@@ -66,6 +66,8 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
                 return self.statsSection()
             case 3:
                 return self.streakSection()
+            case 4:
+                return self.badgeSection()
             default:
                 fatalError("Unknown section: \(section).")
             }
@@ -113,6 +115,20 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 2)
 
         return NSCollectionLayoutSection(group: group)
+    }
+
+    private func badgeSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(60), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 5)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 24, trailing: 16)
+
+        return section
     }
 
     /// Calculate the height for table section headers; the first section shouldn't have a title.
