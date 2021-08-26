@@ -1711,86 +1711,82 @@
                                     <outlet property="statusView" destination="atU-zx-3pO" id="Rwu-ar-0su"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Points" id="oqZ-xg-ehR" userLabel="Points" customClass="PointsCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="210" width="375" height="89"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Points" id="wTo-5e-v89" customClass="PointsCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="210" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eW6-60-e8X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L03-s9-ddV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W7b-L4-7Qf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px2-eY-Vhf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <attributedString key="attributedText">
                                                 <fragment>
                                                     <string key="content">POINTS
 </string>
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="17"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content="100,000">
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="system" size="48"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <font key="NSFont" size="48" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="px2-eY-Vhf" firstAttribute="leading" secondItem="L03-s9-ddV" secondAttribute="leading" id="CKP-4G-Qk2"/>
+                                        <constraint firstAttribute="bottom" secondItem="px2-eY-Vhf" secondAttribute="bottom" id="LSg-xf-Dz7"/>
+                                        <constraint firstItem="px2-eY-Vhf" firstAttribute="top" secondItem="L03-s9-ddV" secondAttribute="top" id="NGO-Vq-9Vk"/>
+                                        <constraint firstAttribute="trailing" secondItem="px2-eY-Vhf" secondAttribute="trailing" id="RHo-D6-ECi"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="375" height="89"/>
+                                <size key="customSize" width="375" height="100"/>
                                 <connections>
-                                    <outlet property="textLabel" destination="W7b-L4-7Qf" id="F5m-VC-VNW"/>
+                                    <outlet property="textLabel" destination="px2-eY-Vhf" id="91c-db-DPf"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Stat" id="Tv1-C6-wnO" userLabel="Stat">
-                                <rect key="frame" x="0.0" y="309" width="375" height="44"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Stat" id="ram-0d-uGf" customClass="StatCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BPh-Sq-GM5">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QfE-2P-Q9U">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="yqV-QR-nDf">
-                                            <rect key="frame" x="16" y="14" width="28.5" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axu-KD-klc">
+                                            <rect key="frame" x="16" y="11.5" width="33" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="LSP-HJ-lXb">
-                                            <rect key="frame" x="321.5" y="14" width="37.5" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSc-pR-ggP">
+                                            <rect key="frame" x="315" y="11.5" width="44" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HSc-pR-ggP" firstAttribute="centerY" secondItem="QfE-2P-Q9U" secondAttribute="centerY" id="OOr-hS-3tX"/>
+                                        <constraint firstAttribute="trailing" secondItem="HSc-pR-ggP" secondAttribute="trailing" constant="16" id="bE7-hH-hDU"/>
+                                        <constraint firstItem="HSc-pR-ggP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Axu-KD-klc" secondAttribute="trailing" id="bTe-Lq-Hod"/>
+                                        <constraint firstItem="Axu-KD-klc" firstAttribute="leading" secondItem="QfE-2P-Q9U" secondAttribute="leading" constant="16" id="gSl-sB-OgP"/>
+                                        <constraint firstItem="Axu-KD-klc" firstAttribute="centerY" secondItem="QfE-2P-Q9U" secondAttribute="centerY" id="oPB-Eq-t4V"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="375" height="44"/>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StreakReminder" id="GDv-FS-dSQ" userLabel="StreakReminder">
-                                <rect key="frame" x="0.0" y="363" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bsv-qw-Xnp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="N1v-p8-O0j">
-                                            <rect key="frame" x="16" y="14" width="28.5" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="375" height="44"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="HSc-pR-ggP" id="f4R-cc-NCG"/>
+                                    <outlet property="textLabel" destination="Axu-KD-klc" id="TRk-0y-lCa"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badge" id="o7c-7h-PLK" userLabel="Badge" customClass="BadgeCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="157.5" y="417" width="60" height="60"/>
+                                <rect key="frame" x="157.5" y="374" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yfV-tp-lam">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>

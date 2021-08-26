@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */; };
+		1770837D26D7CCE400C078AF /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */; };
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
@@ -642,6 +643,7 @@
 
 /* Begin PBXFileReference section */
 		1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
@@ -1558,6 +1560,7 @@
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
 				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
 				1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */,
+				1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */,
 				51C5642620CCBAB40093030C /* StatusView.swift */,
 				51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */,
 				51A447682108A0C3005D8665 /* BadgeDataSource.swift */,
@@ -2907,6 +2910,7 @@
 				B9AC3C9C227B1262007AC17C /* WebViewController.swift in Sources */,
 				5153F4A020EF9409009E829D /* TypeCheckerDataSource.swift in Sources */,
 				51053A0421135C6000B28328 /* TourItem.swift in Sources */,
+				1770837D26D7CCE400C078AF /* StatCollectionViewCell.swift in Sources */,
 				51B3A7CA20CCCAF2000ACA6D /* HomeDataSource.swift in Sources */,
 				5192587320E3A11200A85704 /* NSAttributedString-Formatting.swift in Sources */,
 				51A6D62B20E6527B00FB6B46 /* String-Variables.swift in Sources */,

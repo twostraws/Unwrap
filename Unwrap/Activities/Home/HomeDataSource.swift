@@ -112,7 +112,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath) as? PointsCollectionViewCell else {
             fatalError("Failed to dequeue a PointsCollectionViewCell.")
         }
-        
+
         let totalPoints = User.current.totalPoints
         cell.textLabel.attributedText = NSAttributedString.makeTitle("Points", subtitle: totalPoints.formatted)
         cell.accessibilityLabel = "\(totalPoints) points"
@@ -126,29 +126,29 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         switch indexPath.item {
         case 0:
-//            cell.textLabel?.text = "Learning Points"
-//            cell.detailTextLabel?.text = User.current.learnPoints.formatted
+            cell.textLabel?.text = "Learning Points"
+            cell.detailLabel?.text = User.current.learnPoints.formatted
             cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
 
         case 1:
-//            cell.textLabel?.text = "Review Points"
-//            cell.detailTextLabel?.text = User.current.reviewPoints.formatted
+            cell.textLabel?.text = "Review Points"
+            cell.detailLabel?.text = User.current.reviewPoints.formatted
             cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
 
         case 2:
-//            cell.textLabel?.text = "Practice Points"
-//            cell.detailTextLabel?.text = User.current.practicePoints.formatted
+            cell.textLabel?.text = "Practice Points"
+            cell.detailLabel?.text = User.current.practicePoints.formatted
             cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
 
         case 3:
-//            cell.textLabel?.text = "Challenge Points"
-//            cell.detailTextLabel?.text = User.current.challengePoints.formatted
+            cell.textLabel?.text = "Challenge Points"
+            cell.detailLabel?.text = User.current.challengePoints.formatted
             cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
 
         case 4:
-//            cell.textLabel?.text = "Share Score"
+            cell.textLabel?.text = "Share Score"
             cell.accessibilityTraits = .button
-//            cell.textLabel?.textColor = UIColor(bundleName: "Primary")
+            cell.textLabel?.textColor = UIColor(bundleName: "Primary")
 
         default:
             fatalError("Unknown index path: \(indexPath).")
@@ -163,24 +163,25 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         switch indexPath.item {
         case 0:
-//            cell.textLabel?.text = "Current Level"
-//            cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
-            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
+            let rankNumber = User.current.rankNumber
+            cell.textLabel?.text = "Current Level"
+            cell.detailLabel?.text = "\(rankNumber)/21"
+            cell.accessibilityLabel = "You are level \(rankNumber) of 21."
 
         case 1:
-//            cell.textLabel?.text = "Points Until Next Level"
+            cell.textLabel?.text = "Points Until Next Level"
 
             if let points = User.current.pointsUntilNextRank {
-//                cell.detailTextLabel?.text = String(points)
+                cell.detailLabel?.text = String(points)
                 cell.accessibilityLabel = "You need \(points) more points to reach the next level."
             } else {
-//                cell.detailTextLabel?.text = "N/A"
+                cell.detailLabel?.text = "N/A"
                 cell.accessibilityLabel = "You are at the maximum level."
             }
 
         case 2:
-//            cell.textLabel?.text = "Daily Challenges"
-//            cell.detailTextLabel?.text = String(User.current.dailyChallenges.count)
+            cell.textLabel?.text = "Daily Challenges"
+            cell.detailLabel?.text = String(User.current.dailyChallenges.count)
             cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
 
         default:
@@ -195,17 +196,19 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         let cell = dequeueStatReusableCell(in: collectionView, indexPath: indexPath)
         switch indexPath.item {
         case 0:
-//            cell.textLabel?.text = "Current Streak"
-//            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
+            let streakDays = User.current.streakDays
+            cell.textLabel?.text = "Current Streak"
+            cell.detailLabel?.text = "\(streakDays)"
+            cell.accessibilityLabel = "Your streak count is \(streakDays)"
             // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
         case 1:
-//            cell.textLabel?.text = "Best Streak"
-//            cell.detailTextLabel?.text = "\(User.current.bestStreak)"
-            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
+            let bestStreak = User.current.bestStreak
+            cell.textLabel?.text = "Best Streak"
+            cell.detailLabel?.text = "\(bestStreak)"
+            cell.accessibilityLabel = "Your best streak count is \(bestStreak)"
             // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell
@@ -215,11 +218,14 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 
-    /// Dequeue a reusable and clean collection view cell to show an stat.
-    func dequeueStatReusableCell(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stat", for: indexPath)
-//        cell.textLabel?.textColor = nil
-//        cell.detailTextLabel?.text = nil
+    /// Dequeue a reusable and clean collection view cell to show a stat.
+    func dequeueStatReusableCell(in collectionView: UICollectionView, indexPath: IndexPath) -> StatCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stat", for: indexPath) as? StatCollectionViewCell else {
+            fatalError("Failed to dequeue a StatCollectionViewCell.")
+        }
+
+        cell.textLabel?.textColor = nil
+        cell.detailLabel?.text = nil
         cell.accessibilityLabel = nil
         cell.accessibilityTraits = .none
 
