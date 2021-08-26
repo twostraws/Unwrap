@@ -141,24 +141,6 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 //        }
 //    }
 
-//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 4 {
-//            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-//            return 550
-//        } else {
-//            return UITableView.automaticDimension
-//        }
-//    }
-
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 4 {
-//            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-//            return 550
-//        } else {
-//            return UITableView.automaticDimension
-//        }
-//    }
-
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let shareScorePath = IndexPath(item: 4, section: 1)
