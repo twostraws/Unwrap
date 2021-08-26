@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
 		4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */; };
@@ -641,6 +642,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
 		4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSingleSelectViewController.swift; sourceTree = "<group>"; };
@@ -1556,6 +1558,7 @@
 				51C5641E20CCB8170093030C /* HomeViewController.swift */,
 				51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */,
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
+				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
 				51C5642620CCBAB40093030C /* StatusView.swift */,
 				51A447622107EF18005D8665 /* BadgeTableViewCell.swift */,
 				51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */,
@@ -2789,6 +2792,7 @@
 				51D8FE7120ED3879004DFF83 /* TapToCodeQuestion.swift in Sources */,
 				5189D9D520EA3B4E00E6E1D3 /* KeyboardAvoidingScrollView.swift in Sources */,
 				510539FC211308CF00B28328 /* UIResponder-Coordinated.swift in Sources */,
+				17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */,
 				51A6D63920E6539800FB6B46 /* PredictTheOutputQuestion.swift in Sources */,
 				510539FA211307E800B28328 /* CoordinatedNavigationController.swift in Sources */,
 				511458FC20E5694D003BABAD /* ReviewViewController.swift in Sources */,
@@ -3070,7 +3074,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -3126,7 +3130,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

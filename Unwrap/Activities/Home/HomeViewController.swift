@@ -10,7 +10,7 @@ import StoreKit
 import UIKit
 
 /// The main view controller you see in  the Home tab in the app.
-class HomeViewController: UITableViewController, Storyboarded, UserTracking {
+class HomeViewController: UICollectionViewController, Storyboarded, UserTracking {
     var coordinator: HomeCoordinator?
     var dataSource = HomeDataSource()
 
@@ -21,7 +21,8 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
 
         title = "Home"
         registerForUserChanges()
-        tableView.dataSource = dataSource
+        collectionView.dataSource = dataSource
+        collectionView.collectionViewLayout = makeLayout()
 
         let helpButton = UIBarButtonItem(title: "Help", style: .plain, target: coordinator, action: #selector(HomeCoordinator.showHelp))
         navigationItem.rightBarButtonItem = helpButton
@@ -54,57 +55,78 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
-    /// Calculate the height for table section headers; the first section shouldn't have a title.
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            // Using 0 for a section height doesn't work, so this value is effectively 0.
-            return CGFloat.leastNonzeroMagnitude
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 4 {
-            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-            return 550
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 4 {
-            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-            return 550
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 4 {
-            if let cell = cell as? BadgeTableViewCell {
-                cell.applyLayoutWorkaround()
+    private func makeLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
+            switch section {
+            case 0:
+                return self.statusSection()
+            default:
+                fatalError("Unknown section: \(section).")
             }
         }
     }
 
-    /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shareScorePath = IndexPath(row: 4, section: 1)
+    private func statusSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        if indexPath == shareScorePath {
-            let rect = tableView.rectForRow(at: indexPath)
-            coordinator?.shareScore(from: rect)
-        }
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
-        tableView.deselectRow(at: indexPath, animated: true)
+        return NSCollectionLayoutSection(group: group)
     }
+
+    /// Calculate the height for table section headers; the first section shouldn't have a title.
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if section == 0 {
+//            // Using 0 for a section height doesn't work, so this value is effectively 0.
+//            return CGFloat.leastNonzeroMagnitude
+//        } else {
+//            return UITableView.automaticDimension
+//        }
+//    }
+
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 4 {
+//            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+//            return 550
+//        } else {
+//            return UITableView.automaticDimension
+//        }
+//    }
+
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 4 {
+//            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+//            return 550
+//        } else {
+//            return UITableView.automaticDimension
+//        }
+//    }
+
+    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.section == 4 {
+//            if let cell = cell as? BadgeTableViewCell {
+//                cell.applyLayoutWorkaround()
+//            }
+//        }
+//    }
+
+    /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let shareScorePath = IndexPath(row: 4, section: 1)
+//
+//        if indexPath == shareScorePath {
+//            let rect = tableView.rectForRow(at: indexPath)
+//            coordinator?.shareScore(from: rect)
+//        }
+//
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
-        tableView.reloadData()
+        collectionView.reloadData()
     }
 }
