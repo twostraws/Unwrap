@@ -71,28 +71,43 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 
-//    // All sections have a title except the first one.
-//    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-//        switch section {
-//        case 0:
-//            return nil
-//
-//        case 1:
-//            return "POINTS"
-//
-//        case 2:
-//            return "STATS"
-//
-//        case 3:
-//            return "STREAK"
-//
-//        case 4:
-//            return "BADGES"
-//
-//        default:
-//            fatalError("Unknown table view section: \(section).")
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            return makeHeader(in: collectionView, indexPath: indexPath)
+        default:
+            fatalError("Unknown ElementOfKind: \(kind).")
+        }
+    }
+
+    func makeHeader(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionReusableView {
+        guard let view = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "Header",
+            for: indexPath) as? HeaderSupplementaryView
+        else {
+            fatalError("Failed to dequeue a HeaderSupplementaryView.")
+        }
+
+        switch indexPath.section {
+        case 1:
+            view.textLabel.text = "POINTS"
+
+        case 2:
+            view.textLabel.text = "STATS"
+
+        case 3:
+            view.textLabel.text = "STREAK"
+
+        case 4:
+            view.textLabel.text = "BADGES"
+
+        default:
+            fatalError("Unknown index path: \(indexPath).")
+        }
+
+        return view
+    }
 
     /// Shows the activity ring and current rank.
     func makeStatus(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17525A4826D908370052FB57 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17525A4726D908370052FB57 /* HeaderSupplementaryView.swift */; };
 		1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */; };
 		1770837D26D7CCE400C078AF /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */; };
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
@@ -642,6 +643,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17525A4726D908370052FB57 /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1557,6 +1559,7 @@
 				5153F49320EF761B009E829D /* HomeCoordinator.swift */,
 				51C5641E20CCB8170093030C /* HomeViewController.swift */,
 				51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */,
+				17525A4726D908370052FB57 /* HeaderSupplementaryView.swift */,
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
 				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
 				1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */,
@@ -2920,6 +2923,7 @@
 				51A6D66220E6911F00FB6B46 /* SpotTheErrorViewController.swift in Sources */,
 				51CC13932065678A00F37A67 /* WelcomeView.swift in Sources */,
 				5189D9DB20EA8F8700E6E1D3 /* FreeCodingPractice.swift in Sources */,
+				17525A4826D908370052FB57 /* HeaderSupplementaryView.swift in Sources */,
 				51A6D62820E651DA00FB6B46 /* StringNames.swift in Sources */,
 				51CC139F2065AE9000F37A67 /* Coordinator.swift in Sources */,
 				51A6D63F20E653A300FB6B46 /* SpotTheErrorQuestion.swift in Sources */,

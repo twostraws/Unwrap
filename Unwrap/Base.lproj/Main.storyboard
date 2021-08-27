@@ -1676,13 +1676,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IG4-2l-O8D">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Rank" id="qKG-Fh-pzs" userLabel="Rank" customClass="StatusCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pVv-h7-9tz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -1712,7 +1712,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Points" id="wTo-5e-v89" customClass="PointsCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="210" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="260" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L03-s9-ddV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -1752,7 +1752,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Stat" id="ram-0d-uGf" customClass="StatCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="320" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="370" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QfE-2P-Q9U">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1786,7 +1786,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Badge" id="o7c-7h-PLK" userLabel="Badge" customClass="BadgeCollectionViewCell" customModule="Unwrap" customModuleProvider="target">
-                                <rect key="frame" x="157.5" y="374" width="60" height="60"/>
+                                <rect key="frame" x="157.5" y="424" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yfV-tp-lam">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -1809,6 +1809,32 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="u14-xQ-Ec0" userLabel="Header" customClass="HeaderSupplementaryView" customModule="Unwrap" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvH-NQ-2y9">
+                                    <rect key="frame" x="8" y="15" width="359" height="20.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Header">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="17"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="BackgroundLight"/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="yvH-NQ-2y9" secondAttribute="trailing" id="dbS-PT-Kn3"/>
+                                <constraint firstItem="yvH-NQ-2y9" firstAttribute="centerY" secondItem="u14-xQ-Ec0" secondAttribute="centerY" id="sdb-aK-iPc"/>
+                                <constraint firstItem="yvH-NQ-2y9" firstAttribute="leading" secondItem="u14-xQ-Ec0" secondAttribute="leadingMargin" id="wOk-xC-zGE"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="textLabel" destination="yvH-NQ-2y9" id="M09-Ih-bZa"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="aon-jy-6qU" id="SNr-Gb-x0c"/>
                             <outlet property="delegate" destination="aon-jy-6qU" id="5mb-oT-fkp"/>
@@ -1826,6 +1852,9 @@
         <image name="News" width="25" height="17"/>
         <namedColor name="BackgroundDark">
             <color red="0.36800000071525574" green="0.44600000977516174" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="BackgroundLight">
+            <color red="0.96799999475479126" green="0.96799999475479126" blue="0.96799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.035294117647058823" green="0.50196078431372548" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

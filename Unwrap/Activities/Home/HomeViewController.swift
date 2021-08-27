@@ -74,14 +74,24 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         }
     }
 
+    private func header() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50.0))
+
+        return NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+    }
+
     private func statusSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let itemSize2 = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
         let item2 = NSCollectionLayoutItem(layoutSize: itemSize2)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(290))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(490))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item, item2])
 
         return NSCollectionLayoutSection(group: group)
@@ -94,7 +104,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(220))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 5)
 
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
     }
 
     private func statsSection() -> NSCollectionLayoutSection {
@@ -104,7 +117,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(132))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 3)
 
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
     }
 
     private func streakSection() -> NSCollectionLayoutSection {
@@ -114,7 +130,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(88))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 2)
 
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
     }
 
     private func badgeSection() -> NSCollectionLayoutSection {
@@ -127,6 +146,7 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 24, trailing: 16)
+        section.boundarySupplementaryItems = [header()]
 
         return section
     }
