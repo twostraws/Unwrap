@@ -34,7 +34,7 @@ struct StudyReview: Decodable {
     /// When set to true syntax highlight this text at runtime; when set to false, just bold <code> blocks;.
     var syntaxHighlighting: Bool
 
-    /// Loads one review filew for a specific chapter
+    /// Loads one review file for a specific chapter
     static func review(for name: String) -> StudyReview {
         var review = Bundle.main.decode(StudyReview.self, from: "\(name).json")
         review.correct = review.correct.shuffled()
