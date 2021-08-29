@@ -46,8 +46,8 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         extendedLayoutIncludesOpaqueBars = true
 
-        totalPoints.title = "TOTAL"
-        earnedPoints.title = "EARNED"
+        totalPoints.title = NSLocalizedString("TOTAL", comment: "")
+        earnedPoints.title = NSLocalizedString("EARNED", comment: "")
 
         // Configure the status view so that it looks good on a white background, and can animate past 100% so that we can rank up without the animation going back to the start.
         statusView.useTemplateImages = true
@@ -59,8 +59,8 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         // Configure two of our title/subtitle labels so users can see points moving from one place to another.
         totalPoints.textColor = .white
         earnedPoints.textColor = .white
-        totalPoints.attributedText = NSAttributedString.makeTitle("TOTAL", subtitle: User.current.totalPoints.formatted)
-        earnedPoints.attributedText = NSAttributedString.makeTitle("EARNED", subtitle: pointsToAward.formatted)
+        totalPoints.attributedText = NSAttributedString.makeTitle(NSLocalizedString("TOTAL", comment: ""), subtitle: User.current.totalPoints.formatted)
+        earnedPoints.attributedText = NSAttributedString.makeTitle(NSLocalizedString("EARNED", comment: ""), subtitle: pointsToAward.formatted)
 
         // If we're on iPad, the "Tap to continue" label should not be shown
         if UIDevice.current.userInterfaceIdiom == .pad {

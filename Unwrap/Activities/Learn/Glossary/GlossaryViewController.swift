@@ -16,7 +16,7 @@ class GlossaryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Glossary"
+        title = NSLocalizedString("Glossary", comment: "")
         extendedLayoutIncludesOpaqueBars = true
         navigationItem.largeTitleDisplayMode = .never
 
@@ -30,7 +30,7 @@ class GlossaryViewController: UITableViewController {
     }
 
     func setupNoResultsLabel() {
-        noResultsLabel.text = "No Results"
+        noResultsLabel.text = NSLocalizedString("No Results", comment: "")
         noResultsLabel.font = Unwrap.scaledBoldFont
         noResultsLabel.isHidden = true
 
@@ -44,7 +44,7 @@ class GlossaryViewController: UITableViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = dataSource
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = NSLocalizedString("Search", comment: "")
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }

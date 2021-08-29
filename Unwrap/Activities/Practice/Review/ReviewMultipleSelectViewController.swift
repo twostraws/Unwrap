@@ -14,6 +14,6 @@ class ReviewMultipleSelectViewController: MultipleSelectReviewViewController {
     }
 
     override func getTitle() -> String {
-        return "Review" + (coordinator?.titleSuffix(for: self) ?? "")
+        return NSLocalizedString("Review", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
     }
 }

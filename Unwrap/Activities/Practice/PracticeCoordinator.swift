@@ -34,7 +34,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
 
         // Set up the detail view controller
         splitViewController.viewControllers = [primaryNavigationController, PleaseSelectViewController.instantiate()]
-        splitViewController.tabBarItem = UITabBarItem(title: "Practice", image: UIImage(bundleName: "Practice"), tag: 2)
+        splitViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Practice", comment: ""), image: UIImage(bundleName: "Practice"), tag: 2)
 
         if #available(iOS 13, *) {
             if splitViewController.traitCollection.userInterfaceIdiom == .phone {
@@ -52,7 +52,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
     func startPracticing(_ activity: PracticeActivity.Type) -> Bool {
         if activity.isLocked {
             // They can't access this practice activity yet.
-            showAlert(title: "Activity Locked", body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.")
+            showAlert(title: NSLocalizedString("Activity Locked", comment: ""), body: "You need to complete the chapter \"\(activity.lockedUntil)\" before you can practice this.") //
 
             if splitViewController.isCollapsed == false {
                 splitViewController.showDetailViewController(PleaseSelectViewController.instantiate(), sender: self)

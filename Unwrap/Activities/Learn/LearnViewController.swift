@@ -20,8 +20,8 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "Learn"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Glossary", style: .plain, target: self, action: #selector(showGlossary))
+        title = NSLocalizedString("Learn", comment: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Glossary", comment: ""), style: .plain, target: self, action: #selector(showGlossary))
         registerForUserChanges()
         extendedLayoutIncludesOpaqueBars = true
 

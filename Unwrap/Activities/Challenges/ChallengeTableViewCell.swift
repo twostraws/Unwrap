@@ -13,10 +13,10 @@ class ChallengeTableViewCell: UITableViewCell {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         accessoryType = .disclosureIndicator
 
-        textLabel?.text = "Start"
+        textLabel?.text = NSLocalizedString("Start", comment: "")
         textLabel?.font = .preferredFont(forTextStyle: .title1)
 
-        detailTextLabel?.text = "Each daily challenge may be attempted only once."
+        detailTextLabel?.text = NSLocalizedString("Each daily challenge may be attempted only once.", comment: "")
         detailTextLabel?.font = Unwrap.scaledBaseFont
         detailTextLabel?.numberOfLines = 0
     }

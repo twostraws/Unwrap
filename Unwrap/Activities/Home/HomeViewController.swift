@@ -19,11 +19,11 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "Home"
+        title = NSLocalizedString("Home", comment: "")
         registerForUserChanges()
         tableView.dataSource = dataSource
 
-        let helpButton = UIBarButtonItem(title: "Help", style: .plain, target: coordinator, action: #selector(HomeCoordinator.showHelp))
+        let helpButton = UIBarButtonItem(title: NSLocalizedString("Help", comment: ""), style: .plain, target: coordinator, action: #selector(HomeCoordinator.showHelp))
         navigationItem.rightBarButtonItem = helpButton
     }
 

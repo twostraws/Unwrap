@@ -36,11 +36,11 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Free Coding" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Free Coding", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
         showHintButton()
     }
 
@@ -72,13 +72,13 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        showFirstTimeAlert(name: "FreeCoding", title: "Tip", message: "Unwrap is able to understand a variety of different solutions to each problem, but it's not perfect. If you enter a valid solution that is not accepted, please let us know so we can add it and make Unwrap better for everyone!")
+        showFirstTimeAlert(name: "FreeCoding", title: NSLocalizedString("Tip", comment: ""), message: NSLocalizedString("Unwrap is able to understand a variety of different solutions to each problem, but it's not perfect. If you enter a valid solution that is not accepted, please let us know so we can add it and make Unwrap better for everyone!", comment: ""))
     }
 
     /// Shows the hint button. This gets called in more than one place, because we replace it with a Done button when the text view is being edited.
     @objc func showHintButton() {
         textView?.contentTextView.resignFirstResponder()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     @objc func hint() {
@@ -112,7 +112,7 @@ class FreeCodingViewController: UIViewController, Storyboarded, PracticingViewCo
 
     /// Give users the choice of trying again or skipping
     func skipOrRetry() {
-        showAlert(title: "That's not quite right!", body: "Check your code carefully, and try going for the simplest solution that works.", coordinator: nil, alternateTitle: nil, alternateAction: nil)
+        showAlert(title: NSLocalizedString("That's not quite right!", comment: ""), body: NSLocalizedString("Check your code carefully, and try going for the simplest solution that works.", comment: ""), coordinator: nil, alternateTitle: nil, alternateAction: nil)
     }
 
     /// Allows users to dismiss the keyboard when they are ready, so they can tap submit

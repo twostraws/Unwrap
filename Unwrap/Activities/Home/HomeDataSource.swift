@@ -24,16 +24,16 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             return nil
 
         case 1:
-            return "POINTS"
+            return NSLocalizedString("POINTS", comment: "")
 
         case 2:
-            return "STATS"
+            return NSLocalizedString("STATS", comment: "")
 
         case 3:
-            return "STREAK"
+            return NSLocalizedString("STREAK", comment: "")
 
         case 4:
-            return "BADGES"
+            return NSLocalizedString("BADGES", comment: "")
 
         default:
             fatalError("Unknown table view section: \(section).")
@@ -109,7 +109,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
     /// Shows the user's total points in large text.
     func makePointsSummary(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Points", for: indexPath)
-        cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
+        cell.textLabel?.attributedText = NSAttributedString.makeTitle(NSLocalizedString("Points", comment: ""), subtitle: User.current.totalPoints.formatted)
         cell.accessibilityLabel = "\(User.current.totalPoints) points"
 
         return cell
@@ -121,27 +121,27 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Learning Points"
+            cell.textLabel?.text = NSLocalizedString("Learning Points", comment: "")
             cell.detailTextLabel?.text = User.current.learnPoints.formatted
-            cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("%d points from learning", comment: ""), User.current.learnPoints)
 
         case 1:
-            cell.textLabel?.text = "Review Points"
+            cell.textLabel?.text = NSLocalizedString("Review Points", comment: "")
             cell.detailTextLabel?.text = User.current.reviewPoints.formatted
-            cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("%d points from reviews", comment: ""), User.current.reviewPoints)
 
         case 2:
-            cell.textLabel?.text = "Practice Points"
+            cell.textLabel?.text = NSLocalizedString("Practice Points", comment: "")
             cell.detailTextLabel?.text = User.current.practicePoints.formatted
-            cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("%d points from practicing", comment: ""), User.current.practicePoints)
 
         case 3:
-            cell.textLabel?.text = "Challenge Points"
+            cell.textLabel?.text = NSLocalizedString("Challenge Points", comment: "")
             cell.detailTextLabel?.text = User.current.challengePoints.formatted
-            cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("%d points from challenges", comment: ""), User.current.challengePoints)
 
         case 4:
-            cell.textLabel?.text = "Share Score"
+            cell.textLabel?.text = NSLocalizedString("Share Score", comment: "")
             cell.accessibilityTraits = .button
             cell.textLabel?.textColor = UIColor(bundleName: "Primary")
 
@@ -158,25 +158,26 @@ class HomeDataSource: NSObject, UITableViewDataSource {
 
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Current Level"
+            cell.textLabel?.text = NSLocalizedString("Current Level", comment: "")
             cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
-            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
+            let levels = 21
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("You are on level %d of %d.", comment: ""), User.current.rankNumber, levels)
 
         case 1:
-            cell.textLabel?.text = "Points Until Next Level"
+            cell.textLabel?.text = NSLocalizedString("Points Until Next Level", comment: "")
 
             if let points = User.current.pointsUntilNextRank {
                 cell.detailTextLabel?.text = String(points)
-                cell.accessibilityLabel = "You need \(points) more points to reach the next level."
+                cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("You need %d more points to reach the next level.", comment: ""), points)
             } else {
-                cell.detailTextLabel?.text = "N/A"
-                cell.accessibilityLabel = "You are at the maximum level."
+                cell.detailTextLabel?.text = NSLocalizedString("N/A", comment: "")
+                cell.accessibilityLabel = NSLocalizedString("You are at the maximum level.", comment: "")
             }
 
         case 2:
-            cell.textLabel?.text = "Daily Challenges"
+            cell.textLabel?.text = NSLocalizedString("Daily Challenges", comment: "")
             cell.detailTextLabel?.text = String(User.current.dailyChallenges.count)
-            cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("%d daily challenges completed.", comment: ""), User.current.dailyChallenges)
 
         default:
             fatalError("Unknown index path: \(indexPath).")
@@ -190,17 +191,17 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Current Streak"
-            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
+            cell.textLabel?.text = NSLocalizedString("Current Streak", comment: "")
+            cell.detailTextLabel?.text = String(User.current.streakDays)
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("Your streak count is %d", comment: ""), User.current.streakDays)
             // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell
 
         case 1:
-            cell.textLabel?.text = "Best Streak"
+            cell.textLabel?.text = NSLocalizedString("Best Streak", comment: "")
             cell.detailTextLabel?.text = "\(User.current.bestStreak)"
-            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
+            cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("Your best streak count is %d", comment: ""), User.current.bestStreak)
             // UITest reading accessibility label and not accessibility identifier in Storyboard
             cell.accessibilityIdentifier = "Streak Reminder"
             return cell

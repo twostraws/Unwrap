@@ -96,7 +96,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        title = "Failed to load"
+        title = NSLocalizedString("Failed to load", comment: "")
         internalWebView.loadingDidFinish()
         refreshButton?.isEnabled = true
         updateBackForwardState()

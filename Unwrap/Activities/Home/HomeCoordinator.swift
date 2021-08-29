@@ -26,7 +26,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
         navigationController.coordinator = self
 
         let viewController = HomeViewController.instantiate()
-        viewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(bundleName: "Home"), tag: 0)
+        viewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: ""), image: UIImage(bundleName: "Home"), tag: 0)
         viewController.coordinator = self
 
         navigationController.viewControllers = [viewController]
@@ -67,7 +67,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
     /// Start sharing the user's current score.
     func shareScore(from sourceRect: CGRect) {
         let image = User.current.rankImage.imageForSharing
-        let text = "I'm on level \(User.current.rankNumber) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
+        let text = String.localizedStringWithFormat(NSLocalizedString("I'm on level %d in Unwrap by @twostraws. Download it here: %s", comment: ""), User.current.rankNumber, Unwrap.appURL.absoluteString)
 
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         alert.completionWithItemsHandler = handleScoreSharingResult
@@ -97,7 +97,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
     /// Share a specific badge the user earned.
     func shareBadge(_ badge: Badge) {
         let image = badge.image.imageForSharing
-        let text = "I earned the badge \(badge.name) in Unwrap by @twostraws. Download it here: \(Unwrap.appURL)"
+        let text = String.localizedStringWithFormat(NSLocalizedString("I earned the badge %s in Unwrap by @twostraws. Download it here: %s", comment: ""), badge.name, Unwrap.appURL.absoluteString)
 
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
 

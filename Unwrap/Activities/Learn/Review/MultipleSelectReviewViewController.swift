@@ -33,7 +33,7 @@ class MultipleSelectReviewViewController: ReviewViewController, Storyboarded {
     }
 
     func getTitle() -> String {
-        return "Review"
+        return NSLocalizedString("Review", comment: "")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +50,7 @@ class MultipleSelectReviewViewController: ReviewViewController, Storyboarded {
             dataSource.isShowingAnswers = true
             tableView.reloadData()
 
-            answerButton.setTitle("CONTINUE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
             navigationItem.leftBarButtonItem?.isEnabled = false
         }
     }

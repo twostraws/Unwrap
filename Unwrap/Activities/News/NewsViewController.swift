@@ -26,8 +26,8 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "News"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Buy Swift Books", style: .plain, target: coordinator, action: #selector(NewsCoordinator.buyBooks))
+        title = NSLocalizedString("News", comment: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Buy Swift Books", comment: ""), style: .plain, target: coordinator, action: #selector(NewsCoordinator.buyBooks))
 
         dataSource.delegate = self
         tableView.dataSource = dataSource

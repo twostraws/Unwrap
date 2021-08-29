@@ -43,12 +43,12 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Tap to Code" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Tap to Code", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     /// Configures the UI with the correct content for our current activity.
@@ -99,7 +99,7 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
     }
 
     @objc func hint() {
-        showAlert(body: "All the code components need to be used somewhere – try rearranging them until you're happy.")
+        showAlert(body: NSLocalizedString("All the code components need to be used somewhere – try rearranging them until you're happy.", comment: ""))
     }
 
     @objc func skip() {
@@ -122,11 +122,11 @@ class TapToCodeViewController: UIViewController, Storyboarded, PracticingViewCon
     // Triggered when all the components are used or not, so we can show the correct prompt.
     func updateAnswerButton() {
         if dataSource.readyToCheck {
-            answerButton.setTitle("SUBMIT", for: .normal)
+            answerButton.setTitle(NSLocalizedString("SUBMIT", comment: ""), for: .normal)
             answerButton.backgroundColor = UIColor(bundleName: "Primary")
             answerButton.isEnabled = true
         } else {
-            answerButton.setTitle("USE ALL THE CODE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("USE ALL THE CODE", comment: ""), for: .normal)
             answerButton.backgroundColor = UIColor(bundleName: "PrimaryDisabled")
             answerButton.isEnabled = false
         }

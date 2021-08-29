@@ -24,7 +24,7 @@ class HelpViewController: UITableViewController, TappableTextViewDelegate {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(showCredits))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Credits", comment: ""), style: .plain, target: self, action: #selector(showCredits))
 
         tableView.dataSource = dataSource
         tableView.delegate = dataSource

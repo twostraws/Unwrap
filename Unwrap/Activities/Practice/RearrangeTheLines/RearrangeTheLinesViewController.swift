@@ -33,12 +33,12 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Rearrange the Lines" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Rearrange the Lines", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     /// Configures the UI with the correct content for our current activity.
@@ -80,7 +80,7 @@ class RearrangeTheLinesViewController: UIViewController, Storyboarded, Practicin
             tableView.reloadData()
 
             navigationItem.leftBarButtonItem?.isEnabled = false
-            answerButton.setTitle("CONTINUE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
 
             if practiceData.answerIsCorrect(dataSource.currentCode) {
                 answerButton.correctAnswer()

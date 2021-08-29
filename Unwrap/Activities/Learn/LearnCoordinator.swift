@@ -33,7 +33,7 @@ class LearnCoordinator: Coordinator, Awarding, Skippable, AlertHandling, AnswerH
         detailViewController.selectionMode = .learn
 
         splitViewController.viewControllers = [primaryNavigationController, detailViewController]
-        splitViewController.tabBarItem = UITabBarItem(title: "Learn", image: UIImage(bundleName: "Learn"), tag: 1)
+        splitViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Learn", comment: ""), image: UIImage(bundleName: "Learn"), tag: 1)
 
         if #available(iOS 13, *) {
             if splitViewController.traitCollection.userInterfaceIdiom == .phone {

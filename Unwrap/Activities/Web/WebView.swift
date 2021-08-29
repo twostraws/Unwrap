@@ -106,7 +106,8 @@ class WebView: UIView {
         var shareItems: [Any] = [url]
 
         if let webViewTitle = webView.title {
-            shareItems.append("\(webViewTitle) (via @twostraws)")
+            let twoStraws = "@twostraws"
+            shareItems.append(String.localizedStringWithFormat(NSLocalizedString("%s (via %s)", comment: ""), webViewTitle, twoStraws))
         }
 
         return shareItems

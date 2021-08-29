@@ -32,7 +32,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     override func configureNavigation() {
         super.configureNavigation()
-        title = "Review" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Review", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
     }
 
     override func viewDidLoad() {
@@ -66,7 +66,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     func showAnswer(selected: UIButton) {
         isShowingAnswer = true
         navigationItem.leftBarButtonItem?.isEnabled = false
-        selected.setTitle("CONTINUE", for: .normal)
+        selected.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
 
         // disable the other button
         if selected == trueButton {

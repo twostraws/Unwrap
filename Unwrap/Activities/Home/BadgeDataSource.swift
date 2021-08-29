@@ -25,14 +25,14 @@ class BadgeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDel
         let badge = badges[indexPath.item]
         cell.imageView.image = badge.image
         cell.isAccessibilityElement = true
-        cell.accessibilityLabel = "Badge" + badge.name
+        cell.accessibilityLabel = .localizedStringWithFormat(NSLocalizedString("Badge %s", comment: ""), badge.name)
 
         /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
         if User.current.isBadgeEarned(badge) {
             cell.imageView.tintColor = UIColor(bundleName: badge.color)
             cell.accessibilityTraits = .button
-            cell.accessibilityValue = "Earned"
-            cell.accessibilityHint = "Share Badge"
+            cell.accessibilityValue = NSLocalizedString("Earned", comment: "")
+            cell.accessibilityHint = NSLocalizedString("Share Badge", comment: "")
         } else {
             cell.imageView.tintColor = UIColor(bundleName: "Locked")
             cell.accessibilityTraits = .none

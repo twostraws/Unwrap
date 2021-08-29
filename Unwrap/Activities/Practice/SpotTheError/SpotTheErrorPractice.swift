@@ -11,10 +11,10 @@ import UIKit
 /// The Spot the Error practice activity. Shows users some code that contains a single random mistake, and asks them to identify it.
 struct SpotTheErrorPractice: PracticeActivity {
     /// The user-facing question the user needs to answer. This one is always fixed.
-    let question = "Which line of code contains an error?"
+    let question = NSLocalizedString("Which line of code contains an error?", comment: "")
 
     /// The user-facing hint giving the user a nudge. Like the question, this is always fixed.
-    let hint = "If there is an error, it will only be on one line. If you see one line contradict another, the earlier line will always be correct."
+    let hint = NSLocalizedString("If there is an error, it will only be on one line. If you see one line contradict another, the earlier line will always be correct.", comment: "")
 
     /// All user-facing the code lines used in the activity.
     var code = [String]()
@@ -25,8 +25,8 @@ struct SpotTheErrorPractice: PracticeActivity {
     /// The line number containing the error.
     var lineNumber = 0
 
-    static let name = "Spot the Error"
-    static let subtitle = "Master Swift's type system through examples"
+    static let name = NSLocalizedString("Spot the Error", comment: "")
+    static let subtitle = NSLocalizedString("Master Swift's type system through examples", comment: "")
     static let lockedUntil = "Default parameters"
     static let icon = UIImage(bundleName: "Practice-SpotTheError")
 

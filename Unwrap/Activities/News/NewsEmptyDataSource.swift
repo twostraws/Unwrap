@@ -15,13 +15,13 @@ class NewsEmptyDataSource: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     weak var delegate: NewsViewController?
 
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "News"
+        let str = NSLocalizedString("News", comment: "")
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "We couldn't download the news right now. Please tap the button below to try again."
+        let str = NSLocalizedString("We couldn't download the news right now. Please tap the button below to try again.", comment: "")
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
@@ -31,7 +31,7 @@ class NewsEmptyDataSource: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     }
 
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
-        let str = "Try Again"
+        let str = NSLocalizedString("Try Again", comment: "")
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .callout)]
         return NSAttributedString(string: str, attributes: attrs)
     }

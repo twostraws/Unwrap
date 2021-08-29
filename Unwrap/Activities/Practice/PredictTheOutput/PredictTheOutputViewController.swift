@@ -35,12 +35,12 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Predict the Output" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Predict the Output", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     /// Configures the UI with the correct content for our current activity.
@@ -59,7 +59,7 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
         // Attach the Submit button directly to the keyboard to make input faster.
         let submitButton = UIButton.primary(frame: CGRect(x: 0, y: 0, width: 50, height: UIButton.primaryButtonHeight))
-        submitButton.setTitle("SUBMIT", for: .normal)
+        submitButton.setTitle(NSLocalizedString("SUBMIT", comment: ""), for: .normal)
         submitButton.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
         answerEntry.inputAccessoryView = submitButton
     }
@@ -94,7 +94,7 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
             isShowingAnswers = true
 
             navigationItem.leftBarButtonItem?.isEnabled = false
-            answerButton.setTitle("CONTINUE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
 
             if isUserCorrect {
                 answerButton.correctAnswer()
@@ -107,7 +107,7 @@ class PredictTheOutputViewController: UIViewController, Storyboarded, Practicing
 
     func addReasonToTitle() {
         let newTopString = NSMutableAttributedString(attributedString: "\(practiceData.question)\n\n".fromSimpleHTML())
-        let newBottomString = "This code will print \"\(practiceData.correctAnswer)\".".fromSimpleHTML().formattedAsExplanation()
+        let newBottomString = String.localizedStringWithFormat(NSLocalizedString("This code will print \"%s\".", comment: ""), practiceData.correctAnswer).fromSimpleHTML().formattedAsExplanation()
 
         newTopString.append(newBottomString)
         prompt.attributedText = newTopString

@@ -19,8 +19,8 @@ class TapToCodePractice: PracticeActivity {
     // Any code we should show before the user-replaceable code.
     var existingCode: String
 
-    static let name = "Tap to Code"
-    static let subtitle = "Build working code by tapping components"
+    static let name = NSLocalizedString("Tap to Code", comment: "")
+    static let subtitle = NSLocalizedString("Build working code by tapping components", comment: "")
     static let lockedUntil = "Infinite Loops"
     static let icon = UIImage(bundleName: "Practice-TapToCode")
 

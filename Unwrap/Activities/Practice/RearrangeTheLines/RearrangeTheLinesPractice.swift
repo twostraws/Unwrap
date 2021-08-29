@@ -19,8 +19,8 @@ struct RearrangeTheLinesPractice: PracticeActivity {
     /// The user-facing code that should be shown on screen, line by line, in the correct order.
     var code: [String]
 
-    static let name = "Rearrange the Lines"
-    static let subtitle = "Rearrange code to make it build"
+    static let name = NSLocalizedString("Rearrange the Lines", comment: "")
+    static let subtitle = NSLocalizedString("Rearrange code to make it build", comment: "")
     static let lockedUntil = "Mutability"
     static let icon = UIImage(bundleName: "Practice-RearrangeTheLines")
 

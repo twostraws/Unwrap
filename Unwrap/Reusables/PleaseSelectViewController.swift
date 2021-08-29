@@ -24,20 +24,20 @@ class PleaseSelectViewController: UIViewController, Storyboarded {
 
         switch selectionMode {
         case .learn:
-            prompt.text = "Please select a topic to learn"
+            prompt.text = NSLocalizedString("Please select a topic to learn", comment: "")
 
         case .challenges:
             if User.current.hasCompletedTodaysChallenge {
-                prompt.text = "Come back tomorrow"
+                prompt.text = NSLocalizedString("Come back tomorrow", comment: "")
             } else {
-                prompt.text = "Start today's challenge when you're ready"
+                prompt.text = NSLocalizedString("Start today's challenge when you're ready", comment: "")
             }
 
         case .news:
-            prompt.text = "Please select an article to read"
+            prompt.text = NSLocalizedString("Please select an article to read", comment: "")
 
         case .practice:
-            prompt.text = "Please select a practice activity to begin"
+            prompt.text = NSLocalizedString("Please select a practice activity to begin", comment: "")
 
         default:
             prompt.text = ""

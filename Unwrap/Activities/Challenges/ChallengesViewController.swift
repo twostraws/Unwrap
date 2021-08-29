@@ -20,7 +20,7 @@ class ChallengesViewController: UITableViewController, UserTracking {
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "Challenges"
+        title = NSLocalizedString("Challenges", comment: "")
         registerForUserChanges()
 
         tableView.dataSource = dataSource

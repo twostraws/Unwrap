@@ -24,7 +24,7 @@ class CreditsViewController: UIViewController, TappableTextViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-        title = "Credits"
+        title = NSLocalizedString("Credits", comment: "")
         loadCredits()
 	}
 

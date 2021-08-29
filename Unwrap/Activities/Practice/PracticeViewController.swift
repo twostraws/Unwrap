@@ -20,7 +20,7 @@ class PracticeViewController: UITableViewController, UserTracking {
 
         assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
 
-        title = "Practice"
+        title = NSLocalizedString("Practice", comment: "")
         registerForUserChanges()
         tableView.dataSource = dataSource
         tableView.register(PracticeTableViewCell.self, forCellReuseIdentifier: "Cell")

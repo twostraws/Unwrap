@@ -38,7 +38,7 @@ class PracticeDataSource: NSObject, UITableViewDataSource {
         cell.textLabel?.text = activity.name
 
         if activity.isLocked {
-            cell.detailTextLabel?.text = "Complete \"\(activity.lockedUntil)\" to unlock."
+            cell.detailTextLabel?.text = .localizedStringWithFormat(NSLocalizedString("Complete \"%s\" to unlock.", comment: ""), activity.lockedUntil)
             cell.imageView?.image = UIImage(bundleName: "Lock")
             cell.imageView?.tintColor = UIColor(bundleName: "Locked")
             cell.accessoryType = .none

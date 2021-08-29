@@ -11,10 +11,10 @@ import UIKit
 /// The Predict the Output practice activity. Shows users some code and asks them to type in what it will print when run.
 struct PredictTheOutputPractice: PracticeActivity {
     /// The user-facing question the user needs to answer.
-    let question = "What will be printed when this code runs?"
+    let question = NSLocalizedString("What will be printed when this code runs?", comment: "")
 
     /// The user-facing hint giving the user a nudge.
-    let hint = "You need to follow the logic line by line, as if it were running on a real device."
+    let hint = NSLocalizedString("You need to follow the logic line by line, as if it were running on a real device.", comment: "")
 
     /// The user-facing code that should be shown on screen.
     var code = ""
@@ -26,8 +26,8 @@ struct PredictTheOutputPractice: PracticeActivity {
         return process(answer)
     }
 
-    static let name = "Predict the Output"
-    static let subtitle = "Read code then predict the output"
+    static let name = NSLocalizedString("Predict the Output", comment: "")
+    static let subtitle = NSLocalizedString("Read code then predict the output", comment: "")
     static let lockedUntil = "Functions: Summary"
     static let icon = UIImage(bundleName: "Practice-PredictTheOutput")
 

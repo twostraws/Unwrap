@@ -17,16 +17,16 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Today's challenge"
+            return NSLocalizedString("Today's challenge", comment: "")
         } else {
-            return "Previous challenges"
+            return NSLocalizedString("Previous challenges", comment: "")
         }
     }
 
     // This tells users that tapping the date of a previous challenge will share it, because it's not obvious.
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 1 && User.current.dailyChallenges.count > 0 {
-            return "Tap any date to share your score."
+            return NSLocalizedString("Tap any date to share your score.", comment: "")
         }
 
         return nil
@@ -48,7 +48,7 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
                 cell.accessoryType = .none
                 cell.selectionStyle = .none
-                cell.textLabel?.text = "Come Back Tomorrow"
+                cell.textLabel?.text = NSLocalizedString("Come Back Tomorrow", comment: "")
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
@@ -60,13 +60,13 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PreviousChallenge", for: indexPath)
 
             if User.current.dailyChallenges.isEmpty {
-                cell.textLabel?.text = "No completed challenges yet"
+                cell.textLabel?.text = NSLocalizedString("No completed challenges yet", comment: "")
                 cell.detailTextLabel?.text = nil
                 cell.selectionStyle = .none
             } else {
                 let challenge = User.current.dailyChallenges[indexPath.row]
-                cell.textLabel?.text = "\(challenge.date.formatted)"
-                cell.detailTextLabel?.text = "Score: \(challenge.score)"
+                cell.textLabel?.text = String(challenge.date.formatted)
+                cell.detailTextLabel?.text = .localizedStringWithFormat(NSLocalizedString("Score: %d", comment: ""), challenge.score)
                 cell.selectionStyle = .default
             }
 

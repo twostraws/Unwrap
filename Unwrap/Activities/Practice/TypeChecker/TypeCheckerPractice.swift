@@ -18,8 +18,8 @@ struct TypeCheckerPractice: PracticeActivity {
     /// An array of all the possible types.
     var answers = [Answer]()
 
-    static let name = "Type Checker"
-    static let subtitle = "Identify data types more easily"
+    static let name = NSLocalizedString("Type Checker", comment: "")
+    static let subtitle = NSLocalizedString("Identify data types more easily", comment: "")
     static let lockedUntil = "Type annotations"
     static let icon = UIImage(bundleName: "Practice-TypeChecker")
 
@@ -38,9 +38,9 @@ struct TypeCheckerPractice: PracticeActivity {
 
         // Format the question correctly depending on whether the type starts with a vowel.
         if types[0].type.startsWithVowel {
-            question = "Which of these produces an <code>\(types[0].type)</code>?"
+            question = .localizedStringWithFormat(NSLocalizedString("Which of these produces an <code>%s</code>?", comment: ""), types[0].type)
         } else {
-            question = "Which of these produces a <code>\(types[0].type)</code>?"
+            question = .localizedStringWithFormat(NSLocalizedString("Which of these produces a <code>%s</code>?", comment: ""), types[0].type)
         }
 
         let correctAnswers = Int.random(in: 4...6)
@@ -55,7 +55,7 @@ struct TypeCheckerPractice: PracticeActivity {
             let randomType = types.randomElement()!
 
             if randomType.type != correctType {
-                answers.append(Answer(text: randomType.function(), subtitle: "This doesn't have the type you're looking for.", isCorrect: false, isSelected: false))
+                answers.append(Answer(text: randomType.function(), subtitle: NSLocalizedString("This doesn't have the type you're looking for.", comment: ""), isCorrect: false, isSelected: false))
             }
         }
 

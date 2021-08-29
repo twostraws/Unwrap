@@ -11,8 +11,8 @@ import UIKit
 /// The Free Coding practice activity. Shows users a question and asks them to write Swift code to solve the problem.
 struct ReviewPractice: PracticeActivity {
 
-    static let name = "Review"
-    static let subtitle = "Go over questions you've already learned"
+    static let name = NSLocalizedString("Review", comment: "")
+    static let subtitle = NSLocalizedString("Go over questions you've already learned", comment: "")
     static let lockedUntil = "Variables"
     static let icon = UIImage(bundleName: "Practice-Review")
 

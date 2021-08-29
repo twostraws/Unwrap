@@ -39,20 +39,20 @@ extension User {
             }
 
             if awardedScore == 0 {
-                progress = "\n\nYou have not completed anything in this section yet."
+                progress = NSLocalizedString("\n\nYou have not completed anything in this section yet.", comment: "")
             } else {
-                progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) chapters!"
+                progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have completed %d out of %d chapters!", comment: ""), awardedScore / 200, totalSections)
             }
 
             return progress.centered()
 
         } else if badge.criterion == "practice" {
             if practiceSessions.count(for: badge.value) < 1 {
-                progress = "\n\nYou have not practiced with this yet."
+                progress = NSLocalizedString("\n\nYou have not practiced with this yet.", comment: "")
             } else if practiceSessions.count(for: badge.value) == 1 {
-                progress = "\n\nYou have practiced \(practiceSessions.count(for: badge.value)) time!"
+                progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have practiced %d time!", comment: ""), practiceSessions.count(for: badge.value))
             } else {
-                progress = "\n\nYou have practiced \(practiceSessions.count(for: badge.value)) times!"
+                progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have practiced %d times!", comment: ""), practiceSessions.count(for: badge.value))
             }
 
             return progress.centered()
@@ -60,42 +60,42 @@ extension User {
             switch badge.criterion {
             case "streak":
                 if bestStreak == 1 {
-                    progress = "\n\nYou have only played one day."
+                    progress = NSLocalizedString("\n\nYou have only played one day.", comment: "")
                 } else {
-                    progress = "\n\nYour best streak is \(bestStreak) days!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYour best streak is %d days!", comment: ""), bestStreak)
                 }
 
                 return progress.centered()
 
             case "challenge":
                 if dailyChallenges.count < 1 {
-                    progress = "\n\nYou have not completed any challenges yet."
+                    progress = NSLocalizedString("\n\nYou have not completed any challenges yet.", comment: "")
                 } else if dailyChallenges.count == 1 {
-                    progress = "\n\nYou have completed \(dailyChallenges.count) challenge!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have completed %d challenge!", comment: ""), dailyChallenges.count)
                 } else {
-                    progress = "\n\nYou have completed \(dailyChallenges.count) challenges!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have completed %d challenges!", comment: ""), dailyChallenges.count)
                 }
 
                 return progress.centered()
 
             case "news":
                 if readNewsCount < 1 {
-                    progress = "\n\nYou have not read any news articles yet."
+                    progress = NSLocalizedString("\n\nYou have not read any news articles yet.", comment: "")
                 } else if readNewsCount == 1 {
-                    progress = "\n\nYou have read \(readNewsCount) news article!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have read %d news article!", comment: ""), readNewsCount)
                 } else {
-                    progress = "\n\nYou have read \(readNewsCount) news article!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have read %d news articles!", comment: ""), readNewsCount)
                 }
 
                 return progress.centered()
 
             case "share":
                 if scoreShareCount < 1 {
-                    progress = "\n\nYou have not shared your score yet."
+                    progress = NSLocalizedString("\n\nYou have not shared your score yet.", comment: "")
                 } else if scoreShareCount == 1 {
-                    progress = "\n\nYou have shared your score \(scoreShareCount) time!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have shared your score %d time!", comment: ""), scoreShareCount)
                 } else {
-                    progress = "\n\nYou have shared your score \(scoreShareCount) times!"
+                    progress = .localizedStringWithFormat(NSLocalizedString("\n\nYou have shared your score %d times!", comment: ""), scoreShareCount)
                 }
 
                 return progress.centered()

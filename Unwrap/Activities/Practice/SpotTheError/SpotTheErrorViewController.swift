@@ -33,12 +33,12 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Spot the Error" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Spot the Error", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     /// Configures the UI with the correct content for our current activity.
@@ -59,7 +59,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        showFirstTimeAlert(name: "SpotTheError", title: "Tip", message: "You should mentally run the code from top to bottom, meaning that if line 3 says an integer should be returned and line 10 tries to return a string, line 10 is the wrong one.")
+        showFirstTimeAlert(name: "SpotTheError", title: NSLocalizedString("Tip", comment: ""), message: NSLocalizedString("You should mentally run the code from top to bottom, meaning that if line 3 says an integer should be returned and line 10 tries to return a string, line 10 is the wrong one.", comment: ""))
 
         // warn users there might be more cells to scroll through
         tableView.flashScrollIndicators()
@@ -99,7 +99,7 @@ class SpotTheErrorViewController: UIViewController, Storyboarded, PracticingView
             tableView.reloadData()
 
             navigationItem.leftBarButtonItem?.isEnabled = false
-            answerButton.setTitle("CONTINUE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
 
             if dataSource.isUserCorrect {
                 answerButton.correctAnswer()

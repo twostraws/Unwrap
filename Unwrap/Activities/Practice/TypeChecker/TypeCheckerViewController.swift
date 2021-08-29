@@ -33,12 +33,12 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
 
     /// Run all our navigation bar code super early to avoid bad animations on iPhone
     func configureNavigation() {
-        title = "Type Practice" + (coordinator?.titleSuffix(for: self) ?? "")
+        title = NSLocalizedString("Type Practice", comment: "") + (coordinator?.titleSuffix(for: self) ?? "")
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(skip))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hint", style: .plain, target: self, action: #selector(hint))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Skip", comment: ""), style: .plain, target: self, action: #selector(skip))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Hint", comment: ""), style: .plain, target: self, action: #selector(hint))
     }
 
     /// Configures the UI with the correct content for our current activity.
@@ -64,7 +64,7 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
     }
 
     @objc func hint() {
-        showAlert(body: "Any code without an explicit type will rely on type inference instead.")
+        showAlert(body: NSLocalizedString("Any code without an explicit type will rely on type inference instead.", comment: ""))
     }
 
     @objc func skip() {
@@ -79,7 +79,7 @@ class TypeCheckerViewController: UIViewController, Storyboarded, PracticingViewC
             dataSource.isShowingAnswers = true
             tableView.reloadData()
 
-            answerButton.setTitle("CONTINUE", for: .normal)
+            answerButton.setTitle(NSLocalizedString("CONTINUE", comment: ""), for: .normal)
             navigationItem.leftBarButtonItem?.isEnabled = false
         }
     }

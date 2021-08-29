@@ -62,7 +62,7 @@ final class User: Codable {
     }
 
     /// Tracks the currently enabled theme.
-    var theme = "Light"
+    var theme = NSLocalizedString("Light", comment: "")
 
     /// Tracks which articles the user has read.
     var articlesRead = Set<URL>()

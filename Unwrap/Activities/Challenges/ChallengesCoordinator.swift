@@ -40,7 +40,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         detailViewController.selectionMode = .challenges
 
         splitViewController.viewControllers = [primaryNavigationController, detailViewController]
-        splitViewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
+        splitViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Challenges", comment: ""), image: UIImage(bundleName: "Challenges"), tag: 3)
 
         // make this split view controller behave sensibly on iPad
         splitViewController.preferredDisplayMode = .allVisible
@@ -115,14 +115,14 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
     /// Generates a UIAlertController that lets users skip the current challenge question (if they have skips remaining) or exit the whole challenge.
     func addSkip(then nextAction: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Are you sure?", message: "You can skip only three questions during a challenge, and if you quit you won't be able to take a daily challenge again until tomorrow.\n\nYou have \(skipsRemaining.spelledOut) remaining.", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Are you sure?", comment: ""), message: "You can skip only three questions during a challenge, and if you quit you won't be able to take a daily challenge again until tomorrow.\n\nYou have \(skipsRemaining.spelledOut) remaining.", preferredStyle: .alert) //
 
-        let skipAction = UIAlertAction(title: "Skip Question", style: .default) { _ in
+        let skipAction = UIAlertAction(title: NSLocalizedString("Skip Question", comment: ""), style: .default) { _ in
             self.skipsRemaining -= 1
             nextAction()
         }
 
-        let quitAction = UIAlertAction(title: "End Challenge", style: .destructive) { _ in
+        let quitAction = UIAlertAction(title: NSLocalizedString("End Challenge", comment: ""), style: .destructive) { _ in
             // immediately score today's challenge as zero so they can't retake
             User.current.completedChallenge(score: 0)
 
@@ -130,7 +130,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
             self.returnToStart(activityType: .challenges)
         }
 
-        let continueAction = UIAlertAction(title: "Continue", style: .cancel)
+        let continueAction = UIAlertAction(title: NSLocalizedString("Continue", comment: ""), style: .cancel)
 
         if skipsRemaining > 0 {
             // Only add the skip action if they still have skips available.
@@ -144,7 +144,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
 
     /// Called from the main Challenges table view so that users can share their scores with friends online.
     func shareScore(_ challenge: ChallengeResult, from sourceRect: CGRect) {
-        let text = "I scored \(challenge.score) in Unwrap's daily challenge for \(challenge.date.formatted). Download it here: \(Unwrap.appURL) (via @twostraws)"
+        let text = String.localizedStringWithFormat(NSLocalizedString("I scored %d in Unwrap's daily challenge for %s. Download it here: %s (via @twostraws)", comment: ""), challenge.score, challenge.date.formatted, Unwrap.appURL.absoluteString)
 
         let alert = UIActivityViewController(activityItems: [text], applicationActivities: nil)
 

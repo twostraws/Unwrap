@@ -22,7 +22,7 @@ class StudyViewController: UIViewController, TappableTextViewDelegate {
     func configureNavigation() {
         navigationItem.largeTitleDisplayMode = .never
         extendedLayoutIncludesOpaqueBars = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Next", comment: ""), style: .plain, target: coordinator, action: #selector(LearnCoordinator.finishedStudying))
 
         // always include the safe area insets in the scroll view content adjustment
         studyTextView.contentInsetAdjustmentBehavior = .always

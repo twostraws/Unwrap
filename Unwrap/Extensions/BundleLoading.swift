@@ -84,9 +84,9 @@ extension String {
         let currentTheme: String
 
         if UIApplication.activeTraitCollection.userInterfaceStyle == .dark {
-            currentTheme = "Dark"
+            currentTheme = NSLocalizedString("Dark", comment: "")
         } else {
-            currentTheme = "Light"
+            currentTheme = NSLocalizedString("Light", comment: "")
         }
 
         var styleContents = String(bundleName: "\(currentTheme)Theme.css")

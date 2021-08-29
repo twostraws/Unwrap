@@ -22,8 +22,8 @@ struct FreeCodingPractice: PracticeActivity {
     /// An array of possible answers that correctly answer the question.
     var answers: [String]
 
-    static let name = "Free Coding"
-    static let subtitle = "Write code to solve problems"
+    static let name = NSLocalizedString("Free Coding", comment: "")
+    static let subtitle = NSLocalizedString("Write code to solve problems", comment: "")
     static let lockedUntil = "Typecasting"
     static let icon = UIImage(bundleName: "Practice-FreeCoding")
 
