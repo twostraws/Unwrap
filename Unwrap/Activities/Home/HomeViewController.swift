@@ -75,7 +75,7 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     }
 
     private func header() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50.0))
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(56))
 
         return NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -142,24 +142,14 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 5)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 24, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 24, trailing: 0)
         section.boundarySupplementaryItems = [header()]
 
         return section
     }
-
-    /// Calculate the height for table section headers; the first section shouldn't have a title.
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//            // Using 0 for a section height doesn't work, so this value is effectively 0.
-//            return CGFloat.leastNonzeroMagnitude
-//        } else {
-//            return UITableView.automaticDimension
-//        }
-//    }
 
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
