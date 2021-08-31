@@ -9,7 +9,7 @@
 import UIKit
 
 /// The view controller you see in the News tab in the app.
-class NewsViewController: UITableViewController, UIViewControllerPreviewingDelegate {
+class NewsViewController: UITableViewController, UIContextMenuInteractionDelegate {
     var coordinator: NewsCoordinator?
 
     /// This handles all the rows in our table view, including downloading news.
@@ -38,8 +38,7 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
         tableView.emptyDataSetDelegate = emptyDataSource
         tableView.tableFooterView = UIView()
         emptyDataSource.delegate = self
-
-        registerForPreviewing(with: self, sourceView: tableView)
+        tableView.addInteraction(UIContextMenuInteraction(delegate: self))
 
         // Allow folks to pull to refresh stories. Honestly, this will never actually do anything because it's not like I publish *that* often, but it's a bit like close buttons on an elevator – people expect them to work.
         refreshControl = UIRefreshControl()
@@ -82,19 +81,16 @@ class NewsViewController: UITableViewController, UIViewControllerPreviewingDeleg
     }
 
     /// Called when the user 3D touches on a news story.
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         if let indexPath = tableView.indexPathForRow(at: location) {
-            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             currentSelectedArticle = dataSource.article(at: indexPath.row)
-            return coordinator?.articleViewController(for: currentSelectedArticle)
+            let controller = coordinator?.articleViewController(for: currentSelectedArticle)
+
+            return UIContextMenuConfiguration(identifier: nil, previewProvider: {
+                return controller
+            }, actionProvider: nil)
         }
 
         return nil
-    }
-
-    /// Called when the user 3D touches harder on a news story.
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        coordinator?.startReading(using: viewControllerToCommit, withURL: currentSelectedArticle.url)
-        tableView.reloadData()
     }
 }

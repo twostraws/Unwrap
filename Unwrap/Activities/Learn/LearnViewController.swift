@@ -9,7 +9,7 @@
 import UIKit
 
 /// The main view controller you see in  the Home tab in the app.
-class LearnViewController: UITableViewController, UserTracking, UIViewControllerPreviewingDelegate {
+class LearnViewController: UITableViewController, UserTracking, UIContextMenuInteractionDelegate {
     var coordinator: LearnCoordinator?
 
     /// This handles all the rows in our table view.
@@ -27,7 +27,7 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
 
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
-        registerForPreviewing(with: self, sourceView: tableView)
+        tableView.addInteraction(UIContextMenuInteraction(delegate: self))
         dataSource.delegate = self
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -44,18 +44,17 @@ class LearnViewController: UITableViewController, UserTracking, UIViewController
         coordinator?.startStudying(title: title)
     }
 
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         if let indexPath = tableView.indexPathForRow(at: location) {
-            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             let selectedChapter = dataSource.title(for: indexPath)
-            return coordinator?.studyViewController(for: selectedChapter)
+            let controller = coordinator?.studyViewController(for: selectedChapter)
+
+            return UIContextMenuConfiguration(identifier: nil, previewProvider: {
+                return controller
+            }, actionProvider: nil)
         }
 
         return nil
-    }
-
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        coordinator?.startStudying(using: viewControllerToCommit)
     }
 
     @objc func showGlossary() {
