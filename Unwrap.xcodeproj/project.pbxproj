@@ -11,6 +11,7 @@
 		1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */; };
 		1770837D26D7CCE400C078AF /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */; };
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
+		17A6965526DE251F00FE0203 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
 		4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */; };
@@ -647,6 +648,7 @@
 		1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
 		4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSingleSelectViewController.swift; sourceTree = "<group>"; };
@@ -1560,6 +1562,7 @@
 				51C5641E20CCB8170093030C /* HomeViewController.swift */,
 				51B3A7C920CCCAF2000ACA6D /* HomeDataSource.swift */,
 				17525A4726D908370052FB57 /* HeaderSupplementaryView.swift */,
+				17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */,
 				51B87CE3210BC12E00FE773A /* StatusTableViewCell.swift */,
 				17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */,
 				1770837A26D7C4A200C078AF /* PointsCollectionViewCell.swift */,
@@ -2807,6 +2810,7 @@
 				5153F49820EF763E009E829D /* ChallengesCoordinator.swift in Sources */,
 				5189D9DD20EA90B800E6E1D3 /* FreeCodingViewController.swift in Sources */,
 				5153F49A20EF8581009E829D /* UITableViewCell-Styling.swift in Sources */,
+				17A6965526DE251F00FE0203 /* BackgroundSupplementaryView.swift in Sources */,
 				518FAE7720E4269E007F4675 /* MultipleSelectReviewViewController.swift in Sources */,
 				5153F4AC20EFFF49009E829D /* Sequenced.swift in Sources */,
 				51B61577233947DC001FDF64 /* UIApplication-ActiveTraitCollection.swift in Sources */,

@@ -1826,6 +1826,7 @@
                                         <constraint firstAttribute="bottom" secondItem="cQQ-ef-qHv" secondAttribute="bottom" id="kfh-Vs-xEM"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="60" height="60"/>
                                 <connections>
                                     <outlet property="imageView" destination="cQQ-ef-qHv" id="v0N-gV-YMW"/>

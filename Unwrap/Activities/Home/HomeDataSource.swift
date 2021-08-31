@@ -100,6 +100,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             view.textLabel.text = "STREAK"
 
         case 4:
+            view.backgroundColor = .systemGroupedBackground
             view.textLabel.text = "BADGES"
 
         default:

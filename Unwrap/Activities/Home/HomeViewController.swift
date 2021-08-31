@@ -56,7 +56,7 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     }
 
     private func makeLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
+        let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
             switch section {
             case 0:
                 return self.statusSection()
@@ -72,6 +72,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
                 fatalError("Unknown section: \(section).")
             }
         }
+
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
+
+        return layout
     }
 
     private func header() -> NSCollectionLayoutBoundarySupplementaryItem {
@@ -137,16 +141,18 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     }
 
     private func badgeSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(60), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(60), heightDimension: .absolute(60))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 5)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16)
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 24, trailing: 0)
+        section.interGroupSpacing = 16
         section.boundarySupplementaryItems = [header()]
+        let background = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+        section.decorationItems = [background]
 
         return section
     }
