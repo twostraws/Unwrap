@@ -19,10 +19,11 @@ enum HomeSectionType {
     case score
     case stats
     case streak
-    case badge
+    case badges
 }
 
 struct HomeItem {
+    var name: String?
     var type: HomeItemType
 }
 

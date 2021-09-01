@@ -36,11 +36,10 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = sections[indexPath.section]
+        let item = section.items[indexPath.item]
 
         switch section.type {
         case .status:
-            let item = section.items[indexPath.item]
-
             switch item.type {
             case .status:
                 return makeStatus(in: collectionView, indexPath: indexPath)
@@ -49,12 +48,12 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
                 return makePointsSummary(in: collectionView, indexPath: indexPath)
 
             default:
-                fatalError("Invalid HomeItemType: \(item.type).")
+                fatalError("Invalid item type: \(item.type).")
             }
         case .score, .stats, .streak:
             return makeStat(in: collectionView, indexPath: indexPath)
 
-        case .badge:
+        case .badges:
             return makeBadge(in: collectionView, indexPath: indexPath)
         }
     }
@@ -68,7 +67,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 
-    // MARK: - Private methods
+    // MARK: - Methods
 
     private func makeSections() -> [HomeSection] {
         let status = HomeSection(title: nil, type: .status, items: [
@@ -78,7 +77,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         let badges = HomeSection(
             title: "BADGES",
-            type: .badge,
+            type: .badges,
             items: Array(repeating: HomeItem(type: .badge), count: badges.count)
         )
 
@@ -158,13 +157,13 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     }
 
     private func makeStreakSection() -> HomeSection {
-        let streakDays = HomeItem(type: .stat(
+        let streakDays = HomeItem(name: "Streak Reminder", type: .stat(
             textLabel: "Current Streak",
             detailLabel: "\(User.current.streakDays)",
             accessibilityLabel: "Your streak count is \(User.current.streakDays)"
         ))
 
-        let bestStreak = HomeItem(type: .stat(
+        let bestStreak = HomeItem(name: "Streak Reminder", type: .stat(
             textLabel: "Best Streak",
             detailLabel: "\(User.current.bestStreak)",
             accessibilityLabel: "Your best streak count is \(User.current.bestStreak)"
@@ -188,7 +187,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         let section = sections[indexPath.section]
         view.textLabel.text = section.title
 
-        if section.type == .badge {
+        if section.type == .badges {
             view.backgroundColor = .systemGroupedBackground
         }
 
@@ -227,14 +226,14 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             cell.textLabel?.text = textLabel
             cell.detailLabel?.text = detailLabel
             cell.accessibilityLabel = accessibilityLabel
-
+            cell.accessibilityIdentifier = item.name
         case .share:
             cell.textLabel?.text = "Share Score"
             cell.accessibilityTraits = .button
             cell.textLabel?.textColor = UIColor(bundleName: "Primary")
 
         default:
-            fatalError("Invalid HomeItemType: \(item.type).")
+            fatalError("Invalid item type: \(item.type).")
         }
 
         return cell

@@ -11,8 +11,12 @@ import UIKit
 
 /// The main view controller you see in  the Home tab in the app.
 class HomeViewController: UICollectionViewController, Storyboarded, UserTracking {
+    // MARK: - Properties
+
     var coordinator: HomeCoordinator?
     var dataSource = HomeDataSource()
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,8 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         preheatBadges()
     }
 
+    // MARK: - Methods
+
     /// This briefly touches the images for our badges, which helps scrolling performance when users see the collection view for the first time. Even though this won't cause the images to be fully loaded, it still about halves the overall rendering time.
     func preheatBadges() {
         let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
@@ -54,6 +60,13 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             _ = badge.image
         }
     }
+
+    /// Refreshes everything when the user changes.
+    func userDataChanged() {
+        collectionView.reloadData()
+    }
+
+    // MARK: - Layout
 
     private func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
@@ -66,45 +79,48 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
                 return self.statsSection()
             case .streak:
                 return self.streakSection()
-            case .badge:
-                return self.badgeSection()
+            case .badges:
+                return self.badgesSection()
             }
         }
 
         layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
-
         return layout
     }
 
     private func header() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(56))
-
         return NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .absolute(56)
+            ),
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
     }
 
     private func statusSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let statusSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
+        let status = NSCollectionLayoutItem(layoutSize: statusSize)
 
-        let itemSize2 = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
-        let item2 = NSCollectionLayoutItem(layoutSize: itemSize2)
+        let pointsSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
+        let points = NSCollectionLayoutItem(layoutSize: pointsSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(490))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item, item2])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [status, points])
 
         return NSCollectionLayoutSection(group: group)
     }
 
     private func scoreSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .score })?.items.count ?? 0
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(220))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 5)
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
 
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header()]
@@ -113,11 +129,14 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     }
 
     private func statsSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .stats })?.items.count ?? 0
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(132))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 3)
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
 
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header()]
@@ -126,11 +145,14 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
     }
 
     private func streakSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .streak })?.items.count ?? 0
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(88))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 2)
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
 
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header()]
@@ -138,11 +160,12 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         return section
     }
 
-    private func badgeSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(60), heightDimension: .absolute(60))
+    private func badgesSection() -> NSCollectionLayoutSection {
+        let size: CGFloat = 60
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(size), heightDimension: .absolute(size))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(size))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 5)
 
         let section = NSCollectionLayoutSection(group: group)
@@ -156,14 +179,21 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         return section
     }
 
+    // MARK: - UICollectionViewDelegate
+
     /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let shareScorePath = IndexPath(item: 4, section: 1)
-        let badgeSection = 4
+        let section = dataSource.sections[indexPath.section]
+        let item = section.items[indexPath.item]
 
-        if indexPath == shareScorePath, let attributes = collectionView.layoutAttributesForItem(at: indexPath) {
+        switch (section.type, item.type) {
+        case (.score, .share):
+            guard let attributes = collectionView.layoutAttributesForItem(at: indexPath) else {
+                return
+            }
+
             coordinator?.shareScore(from: attributes.frame)
-        } else if indexPath.section == badgeSection {
+        case (.badges, .badge):
             let badge = dataSource.badges[indexPath.item]
 
             /// Do not show badge details when voice over is running. For for earned badges we share directly and for not earned the accessibilityValue already tells the current progress.
@@ -174,13 +204,10 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             } else {
                 coordinator?.showBadgeDetails(badge)
             }
+        default:
+            return
         }
 
         collectionView.deselectItem(at: indexPath, animated: true)
-    }
-
-    /// Refreshes everything when the user changes.
-    func userDataChanged() {
-        collectionView.reloadData()
     }
 }
