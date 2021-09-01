@@ -10,5 +10,29 @@ import UIKit
 
 /// One cell inside the badges collection view.
 class BadgeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet private var imageView: UIImageView!
+
+    var badge: Badge? {
+        didSet {
+            guard let badge = badge else {
+                return
+            }
+
+            imageView.image = badge.image
+            isAccessibilityElement = true
+            accessibilityLabel = "Badge" + badge.name
+
+            /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
+            if User.current.isBadgeEarned(badge) {
+                imageView.tintColor = UIColor(bundleName: badge.color)
+                accessibilityTraits = .button
+                accessibilityValue = "Earned"
+                accessibilityHint = "Share Badge"
+            } else {
+                imageView.tintColor = UIColor(bundleName: "Locked")
+                accessibilityTraits = .none
+                accessibilityValue = User.current.badgeProgress(badge).string
+            }
+        }
+    }
 }

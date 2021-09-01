@@ -57,19 +57,17 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 
     private func makeLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
-            switch section {
-            case 0:
+            switch self.dataSource.sections[section].type {
+            case .status:
                 return self.statusSection()
-            case 1:
+            case .score:
                 return self.scoreSection()
-            case 2:
+            case .stats:
                 return self.statsSection()
-            case 3:
+            case .streak:
                 return self.streakSection()
-            case 4:
+            case .badge:
                 return self.badgeSection()
-            default:
-                fatalError("Unknown section: \(section).")
             }
         }
 
@@ -151,6 +149,7 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 24, trailing: 0)
         section.interGroupSpacing = 16
         section.boundarySupplementaryItems = [header()]
+
         let background = NSCollectionLayoutDecorationItem.background(elementKind: "background")
         section.decorationItems = [background]
 

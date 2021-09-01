@@ -12,4 +12,13 @@ import UIKit
 class StatCollectionViewCell: UICollectionViewCell {
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var detailLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        textLabel.textColor = nil
+        detailLabel.text = nil
+        accessibilityLabel = nil
+        accessibilityTraits = .none
+    }
 }

@@ -12,6 +12,7 @@
 		1770837D26D7CCE400C078AF /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */; };
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
 		17A6965526DE251F00FE0203 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */; };
+		17A6965726DE47BA00FE0203 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6965626DE47BA00FE0203 /* HomeSection.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
 		4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */; };
@@ -112,7 +113,6 @@
 		519CD3D620EBA6ED007110BD /* RearrangeTheLinesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D520EBA6ED007110BD /* RearrangeTheLinesDataSource.swift */; };
 		51A447652107F6F8005D8665 /* Badges.json in Resources */ = {isa = PBXBuildFile; fileRef = 51A447642107F6F8005D8665 /* Badges.json */; };
 		51A4476721089FF0005D8665 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */; };
-		51A447692108A0C3005D8665 /* BadgeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A447682108A0C3005D8665 /* BadgeDataSource.swift */; };
 		51A4476B2108A108005D8665 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4476A2108A108005D8665 /* Badge.swift */; };
 		51A4476D210926FE005D8665 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4476C210926FE005D8665 /* CountedSet.swift */; };
 		51A6D61B20E6512A00FB6B46 /* TypeCheckerPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6D61A20E6512A00FB6B46 /* TypeCheckerPractice.swift */; };
@@ -649,6 +649,7 @@
 		1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
+		17A6965626DE47BA00FE0203 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
 		4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSingleSelectViewController.swift; sourceTree = "<group>"; };
@@ -751,7 +752,6 @@
 		519CD3D520EBA6ED007110BD /* RearrangeTheLinesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearrangeTheLinesDataSource.swift; sourceTree = "<group>"; };
 		51A447642107F6F8005D8665 /* Badges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Badges.json; sourceTree = "<group>"; };
 		51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		51A447682108A0C3005D8665 /* BadgeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDataSource.swift; sourceTree = "<group>"; };
 		51A4476A2108A108005D8665 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		51A4476C210926FE005D8665 /* CountedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountedSet.swift; sourceTree = "<group>"; };
 		51A6D61A20E6512A00FB6B46 /* TypeCheckerPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCheckerPractice.swift; sourceTree = "<group>"; };
@@ -1569,9 +1569,9 @@
 				1770837C26D7CCE400C078AF /* StatCollectionViewCell.swift */,
 				51C5642620CCBAB40093030C /* StatusView.swift */,
 				51A4476621089FF0005D8665 /* BadgeCollectionViewCell.swift */,
-				51A447682108A0C3005D8665 /* BadgeDataSource.swift */,
 				51A4476A2108A108005D8665 /* Badge.swift */,
 				51A447642107F6F8005D8665 /* Badges.json */,
+				17A6965626DE47BA00FE0203 /* HomeSection.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2826,6 +2826,7 @@
 				51C5642D20CCC5480093030C /* Chapter.swift in Sources */,
 				5153F49220EF7430009E829D /* LearnCoordinator.swift in Sources */,
 				51E678C623FECB360054FBA9 /* ReasonedAnswer.swift in Sources */,
+				17A6965726DE47BA00FE0203 /* HomeSection.swift in Sources */,
 				51A4476B2108A108005D8665 /* Badge.swift in Sources */,
 				51C5642920CCC2520093030C /* LearnDataSource.swift in Sources */,
 				511FD6C62107CE9C0023E92C /* AlertHandling.swift in Sources */,
@@ -2913,7 +2914,6 @@
 				51CC13A12065B20500F37A67 /* Storyboarded.swift in Sources */,
 				1770837B26D7C4A200C078AF /* PointsCollectionViewCell.swift in Sources */,
 				5192241C210E2767007D7D74 /* DarkTheme.swift in Sources */,
-				51A447692108A0C3005D8665 /* BadgeDataSource.swift in Sources */,
 				B9AC3C9C227B1262007AC17C /* WebViewController.swift in Sources */,
 				5153F4A020EF9409009E829D /* TypeCheckerDataSource.swift in Sources */,
 				51053A0421135C6000B28328 /* TourItem.swift in Sources */,

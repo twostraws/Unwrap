@@ -15,5 +15,9 @@ class StatusCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // By setting accessibility element to false, we allow voiceover to access the elements inside
         isAccessibilityElement = false
+
+        statusView.shadowOpacity = 0
+        statusView.strokeColorStart = UIColor(bundleName: "Rank-Start")
+        statusView.strokeColorEnd = UIColor(bundleName: "Rank-End")
     }
 }

@@ -10,5 +10,12 @@ import Foundation
 import UIKit
 
 class PointsCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var textLabel: UILabel!
+    @IBOutlet private var textLabel: UILabel!
+
+    var points: Int = 0 {
+        didSet {
+            textLabel.attributedText = NSAttributedString.makeTitle("Points", subtitle: points.formatted)
+            accessibilityLabel = "\(points) points"
+        }
+    }
 }
