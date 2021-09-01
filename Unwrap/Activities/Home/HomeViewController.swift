@@ -63,6 +63,7 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
 
     /// Refreshes everything when the user changes.
     func userDataChanged() {
+        dataSource.updateSections()
         collectionView.reloadData()
     }
 

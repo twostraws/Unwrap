@@ -21,7 +21,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     override init() {
         super.init()
 
-        sections = makeSections()
+        updateSections()
     }
 
     // MARK: - UICollectionViewDataSource
@@ -69,7 +69,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: - Methods
 
-    private func makeSections() -> [HomeSection] {
+    func updateSections() {
         let status = HomeSection(title: nil, type: .status, items: [
             HomeItem(type: .status),
             HomeItem(type: .summary)
@@ -81,7 +81,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             items: Array(repeating: HomeItem(type: .badge), count: badges.count)
         )
 
-        return [status, makeScoreSection(), makeStatsSection(), makeStreakSection(), badges]
+        sections = [status, makeScoreSection(), makeStatsSection(), makeStreakSection(), badges]
     }
 
     private func makeScoreSection() -> HomeSection {
@@ -220,6 +220,11 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
 
         let item = sections[indexPath.section].items[indexPath.item]
+        cell.textLabel?.textColor = nil
+        cell.detailLabel?.text = nil
+        cell.accessibilityLabel = nil
+        cell.accessibilityIdentifier = nil
+        cell.accessibilityTraits = .none
 
         switch item.type {
         case .stat(let textLabel, let detailLabel, let accessibilityLabel):
@@ -227,6 +232,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             cell.detailLabel?.text = detailLabel
             cell.accessibilityLabel = accessibilityLabel
             cell.accessibilityIdentifier = item.name
+
         case .share:
             cell.textLabel?.text = "Share Score"
             cell.accessibilityTraits = .button
