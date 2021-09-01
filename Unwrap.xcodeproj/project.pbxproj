@@ -13,6 +13,7 @@
 		17835A9F26D689AB0074DE77 /* StatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */; };
 		17A6965526DE251F00FE0203 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */; };
 		17A6965726DE47BA00FE0203 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6965626DE47BA00FE0203 /* HomeSection.swift */; };
+		17ACA09726DFBC6F00655C1B /* HomeDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ACA09626DFBC6F00655C1B /* HomeDataSourceTests.swift */; };
 		4C41E3132207C678009D580E /* ReviewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41E3122207C678009D580E /* ReviewPractice.swift */; };
 		4C7232A0221C186400D169E9 /* ReviewMultipleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */; };
 		4C7232A2221C223600D169E9 /* ReviewSingleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */; };
@@ -650,6 +651,7 @@
 		17835A9E26D689AB0074DE77 /* StatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionViewCell.swift; sourceTree = "<group>"; };
 		17A6965426DE251F00FE0203 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
 		17A6965626DE47BA00FE0203 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		17ACA09626DFBC6F00655C1B /* HomeDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceTests.swift; sourceTree = "<group>"; };
 		4C41E3122207C678009D580E /* ReviewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPractice.swift; sourceTree = "<group>"; };
 		4C72329F221C186400D169E9 /* ReviewMultipleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleSelectViewController.swift; sourceTree = "<group>"; };
 		4C7232A1221C223600D169E9 /* ReviewSingleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSingleSelectViewController.swift; sourceTree = "<group>"; };
@@ -1672,6 +1674,7 @@
 				51FA55C22117E32300C38188 /* ContentTests.swift */,
 				51FA55D6211891C700C38188 /* CountedSetTests.swift */,
 				51FA55D2211879E100C38188 /* ExtensionTests.swift */,
+				17ACA09626DFBC6F00655C1B /* HomeDataSourceTests.swift */,
 				51FA55C42117EC1A00C38188 /* PracticeTests.swift */,
 				51CC13772065607F00F37A67 /* UnwrapTests.swift */,
 				51FA55C821182C0900C38188 /* UserTests.swift */,
@@ -2948,6 +2951,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51FA55D521187B6E00C38188 /* BundleLoadingTests.swift in Sources */,
+				17ACA09726DFBC6F00655C1B /* HomeDataSourceTests.swift in Sources */,
 				51FA55D7211891C700C38188 /* CountedSetTests.swift in Sources */,
 				51FA55C921182C0900C38188 /* UserTests.swift in Sources */,
 				51CC13782065607F00F37A67 /* UnwrapTests.swift in Sources */,
