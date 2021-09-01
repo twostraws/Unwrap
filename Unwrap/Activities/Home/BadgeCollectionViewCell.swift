@@ -22,7 +22,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             isAccessibilityElement = true
             accessibilityLabel = "Badge" + badge.name
 
-            /// Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
+            // Highlight earned badges in whatever color was specified in the JSON. Also configures the accessibility values.
             if User.current.isBadgeEarned(badge) {
                 imageView.tintColor = UIColor(bundleName: badge.color)
                 accessibilityTraits = .button
