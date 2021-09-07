@@ -73,7 +73,8 @@ class HelpDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         switch selected.action {
         case "showTour":
             coordinator?.showTour()
-
+        case "resetProgress":
+            coordinator?.showResetProgressOptions()
         default:
             break
         }

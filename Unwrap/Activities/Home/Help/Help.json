@@ -24,6 +24,11 @@
 		"text": "<p>Tap here to show the introductory tour again.</p>",
 		"action": "showTour"
 	},
+    {
+        "title": "How can I reset my data?",
+        "text": "<p>Tap here to show reset options.</p>",
+        "action": "resetProgress"
+    },
 	{
 		"title": "About this app",
         "text": "<p>I wrote this app to make it easier for everyone to learn and practice Swift. I already wrote a lot of books about Swift – you can find out more at <a href=\"https://www.hackingwithswift.com\">hackingwithswift.com</a> – but this app was designed to be more fun and more interactive, so hopefully you'll find it useful.</p><p>If you'd like to learn how the app was made (it's written in Swift, naturally!), you can download the source code for yourself from <a href=\"https://www.github.com/twostraws/Unwrap\">github.com/twostraws/Unwrap</a>. Contributions are welcome!</p>",
