@@ -262,6 +262,7 @@
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\nletvar remainder = i % 2\nguard remainder != 0 else {\neven1.append(i)\ncontinue\n}\ncontinue\n}",
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\nletvar remainder = i % 2\nguard remainder != 1 else { continue }\neven1.append(i)\n}",
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\nletvar remainder = i % 2\nguard remainder == 1 else {\neven1.append(i)\ncontinue\n}\ncontinue\n}",
+            "var even1:[Int] = [Int]()\nfor i in 1...100 where i % 2 == 0 {\neven1.append(i)\n}", // added this solution
             "var even3:[Int] = [Int]()\nfor i in 1..<101 {\n\tif i % 2 == 0 {\n\t\teven3.append(i)\n\t}\n}",
             "var even1:[Int] = [Int]()\nfor i in 1..<101 {\nif i % 2 != 1 {\neven1.append(i)\n}\n}",
             "var even1:[Int] = [Int]()\nfor i in 1..<101 {\nif i % 2 == 1 { continue }\neven1.append(i)\n}",
@@ -280,6 +281,7 @@
             "var even1:[Int] = [Int]()\nfor i in 1..<101 {\nletvar remainder = i % 2\nguard remainder != 0 else {\neven1.append(i)\ncontinue\n}\ncontinue\n}",
             "var even1:[Int] = [Int]()\nfor i in 1..<101 {\nletvar remainder = i % 2\nguard remainder != 1 else { continue }\neven1.append(i)\n}",
             "var even1:[Int] = [Int]()\nfor i in 1..<101 {\nletvar remainder = i % 2\nguard remainder == 1 else {\neven1.append(i)\ncontinue\n}\ncontinue\n}",
+            "var even1:[Int] = [Int]()\nfor i in 1..<101 where i % 2 == 0 {\neven1.append(i)\n}", // added this solution
             "var even5:[Int] = [Int]()\nfor i in stride(from: 2, through: 100, by: 2) {\n\teven5.append(i)\n}",
             "letvar even6:[Int] = (1...100).filter { optionalreturn $0 % 2 == 0 }",
             "letvar even7:[Int] = (1...100).filter { num in optionalreturn num % 2 == 0 }",
