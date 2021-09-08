@@ -84,7 +84,7 @@ class AwardPointsViewController: UIViewController, Storyboarded {
         }
 
         totalPoints.count(start: User.current.totalPoints, end: User.current.totalPoints + pointsToAward)
-        earnedPoints.count(start: pointsToAward, end: 0)
+        earnedPoints.count(start: 0, end: pointsToAward)
 
         if levelUpOccurred {
             // We're going to trigger a gentle vibration.
