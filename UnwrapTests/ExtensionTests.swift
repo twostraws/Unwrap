@@ -112,6 +112,11 @@ class ExtensionTests: XCTestCase {
         let cleanString5 = "func a"
         let anonymizedString5 = "func #1#"
         XCTAssertEqual(cleanString5.toAnonymizedVariables(), anonymizedString5)
+        
+        // watch out for ellipsis '…' character
+        let cleanString6 = "…"
+        let anonymizedString6 = " ... "
+        XCTAssertEqual(cleanString6.toAnonymizedVariables(), anonymizedString6)
     }
 
     /// Tests that a optionalreturn keyword work properly.
