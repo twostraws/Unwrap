@@ -33,7 +33,7 @@ struct Condition: Decodable {
                 // evaluate this condition as an integer
                 return intLeft > intRight
             } else {
-                // evalute as a string
+                // evaluate as a string
                 return resolvedLeft > resolvedRight
             }
 
@@ -42,7 +42,7 @@ struct Condition: Decodable {
                 // evaluate this condition as an integer
                 return intLeft >= intRight
             } else {
-                // evalute as a string
+                // evaluate as a string
                 return resolvedLeft >= resolvedRight
             }
 
@@ -51,7 +51,7 @@ struct Condition: Decodable {
                 // evaluate this condition as an integer
                 return intLeft < intRight
             } else {
-                // evalute as a string
+                // evaluate as a string
                 return resolvedLeft < resolvedRight
             }
 
@@ -60,7 +60,7 @@ struct Condition: Decodable {
                 // evaluate this condition as an integer
                 return intLeft <= intRight
             } else {
-                // evalute as a string
+                // evaluate as a string
                 return resolvedLeft <= resolvedRight
             }
 

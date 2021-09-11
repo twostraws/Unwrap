@@ -10,10 +10,13 @@ import StoreKit
 import UIKit
 
 /// The main view controller you see in  the Home tab in the app.
-class HomeViewController: UITableViewController, Storyboarded, UserTracking {
+class HomeViewController: UICollectionViewController, Storyboarded, UserTracking {
+    // MARK: - Properties
+
     var coordinator: HomeCoordinator?
     var dataSource = HomeDataSource()
-    var reviewRequested = false
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,8 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
 
         title = "Home"
         registerForUserChanges()
-        tableView.dataSource = dataSource
+        collectionView.dataSource = dataSource
+        collectionView.collectionViewLayout = makeLayout()
 
         let helpButton = UIBarButtonItem(title: "Help", style: .plain, target: coordinator, action: #selector(HomeCoordinator.showHelp))
         navigationItem.rightBarButtonItem = helpButton
@@ -46,6 +50,8 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         preheatBadges()
     }
 
+    // MARK: - Methods
+
     /// This briefly touches the images for our badges, which helps scrolling performance when users see the collection view for the first time. Even though this won't cause the images to be fully loaded, it still about halves the overall rendering time.
     func preheatBadges() {
         let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
@@ -55,57 +61,154 @@ class HomeViewController: UITableViewController, Storyboarded, UserTracking {
         }
     }
 
-    /// Calculate the height for table section headers; the first section shouldn't have a title.
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            // Using 0 for a section height doesn't work, so this value is effectively 0.
-            return CGFloat.leastNonzeroMagnitude
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 4 {
-            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-            return 550
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 4 {
-            /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-            return 550
-        } else {
-            return UITableView.automaticDimension
-        }
-    }
-
-    /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 4 {
-            if let cell = cell as? BadgeTableViewCell {
-                cell.applyLayoutWorkaround()
-            }
-        }
-    }
-
-    /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shareScorePath = IndexPath(row: 4, section: 1)
-
-        if indexPath == shareScorePath {
-            let rect = tableView.rectForRow(at: indexPath)
-            coordinator?.shareScore(from: rect)
-        }
-
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-
     /// Refreshes everything when the user changes.
     func userDataChanged() {
-        tableView.reloadData()
+        dataSource.updateSections()
+        collectionView.reloadData()
+    }
+
+    // MARK: - Layout
+
+    private func makeLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
+            switch self.dataSource.sections[section].type {
+            case .status:
+                return self.statusSection()
+            case .score:
+                return self.scoreSection()
+            case .stats:
+                return self.statsSection()
+            case .streak:
+                return self.streakSection()
+            case .badges:
+                return self.badgesSection()
+            }
+        }
+
+        layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
+        return layout
+    }
+
+    private func header() -> NSCollectionLayoutBoundarySupplementaryItem {
+        return NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .absolute(56)
+            ),
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+    }
+
+    private func statusSection() -> NSCollectionLayoutSection {
+        let statusSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
+        let status = NSCollectionLayoutItem(layoutSize: statusSize)
+
+        let pointsSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
+        let points = NSCollectionLayoutItem(layoutSize: pointsSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(490))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [status, points])
+
+        return NSCollectionLayoutSection(group: group)
+    }
+
+    private func scoreSection() -> NSCollectionLayoutSection {
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .score })?.items.count ?? 0
+
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
+    }
+
+    private func statsSection() -> NSCollectionLayoutSection {
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .stats })?.items.count ?? 0
+
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
+    }
+
+    private func streakSection() -> NSCollectionLayoutSection {
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == .streak })?.items.count ?? 0
+
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
+    }
+
+    private func badgesSection() -> NSCollectionLayoutSection {
+        let size: CGFloat = 60
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(size), heightDimension: .absolute(size))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(size))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 5)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 24, trailing: 0)
+        section.interGroupSpacing = 16
+        section.boundarySupplementaryItems = [header()]
+
+        let background = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+        section.decorationItems = [background]
+
+        return section
+    }
+
+    // MARK: - UICollectionViewDelegate
+
+    /// When the Share Score cell is tapped start the share score process, otherwise do nothing.
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = dataSource.sections[indexPath.section]
+        let item = section.items[indexPath.item]
+
+        switch (section.type, item.type) {
+        case (.score, .share):
+            guard let attributes = collectionView.layoutAttributesForItem(at: indexPath) else {
+                return
+            }
+
+            coordinator?.shareScore(from: attributes.frame)
+        case (.badges, .badge):
+            let badge = dataSource.badges[indexPath.item]
+
+            /// Do not show badge details when voice over is running. For for earned badges we share directly and for not earned the accessibilityValue already tells the current progress.
+            if UIAccessibility.isVoiceOverRunning {
+                if User.current.isBadgeEarned(badge) {
+                    coordinator?.shareBadge(badge)
+                }
+            } else {
+                coordinator?.showBadgeDetails(badge)
+            }
+        default:
+            return
+        }
+
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }

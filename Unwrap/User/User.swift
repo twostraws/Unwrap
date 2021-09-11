@@ -362,4 +362,13 @@ final class User: Codable {
         save()
     }
 
+    /// Reset user progress.
+    func resetProgress() {
+        dailyChallenges.removeAll()
+        practiceSessions = CountedSet<String>()
+        practicePoints = 0
+        reviewedSections.removeAll()
+        learnedSections.removeAll()
+        statusChanged()
+    }
 }

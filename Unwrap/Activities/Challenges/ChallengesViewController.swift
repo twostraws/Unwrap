@@ -29,7 +29,6 @@ class ChallengesViewController: UITableViewController, UserTracking {
         extendedLayoutIncludesOpaqueBars = true
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDataChanged), name: UIApplication.willEnterForegroundNotification, object: nil)
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

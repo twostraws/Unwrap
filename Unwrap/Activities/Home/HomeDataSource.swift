@@ -8,231 +8,250 @@
 
 import UIKit
 
-/// Manages all the rows in the Home table view. This is a fairly grim class and really ought to be refactored.
-class HomeDataSource: NSObject, UITableViewDataSource {
-    var badgeDataSource = BadgeDataSource()
+/// Manages all the items in the Home table view. This is a fairly grim class and really ought to be refactored.
+class HomeDataSource: NSObject, UICollectionViewDataSource {
+    // MARK: - Properties
 
-    // We have five sections: the status view, points, stats, streak, and badges.
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+    /// An array of all badges the user can earn.
+    let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
+    private (set)var sections = [HomeSection]()
+
+    // MARK: - Init
+
+    override init() {
+        super.init()
+
+        updateSections()
     }
 
-    // All sections have a title except the first one.
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return nil
+    // MARK: - UICollectionViewDataSource
 
-        case 1:
-            return "POINTS"
-
-        case 2:
-            return "STATS"
-
-        case 3:
-            return "STREAK"
-
-        case 4:
-            return "BADGES"
-
-        default:
-            fatalError("Unknown table view section: \(section).")
-        }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return sections.count
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            // status view
-            return 2
-
-        case 1:
-            // score breakdown
-            return 5
-
-        case 2:
-            // level stats
-            return 3
-
-        case 3:
-            // streak
-            return 2
-
-        case 4:
-            // badges
-            return 1
-
-        default:
-            fatalError("Unknown table view section: \(section).")
-        }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sections[section].items.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            if indexPath.row == 0 {
-                return makeStatus(in: tableView, indexPath: indexPath)
-            } else {
-                return makePointsSummary(in: tableView, indexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let section = sections[indexPath.section]
+        let item = section.items[indexPath.item]
+
+        switch section.type {
+        case .status:
+            switch item.type {
+            case .status:
+                return makeStatus(in: collectionView, indexPath: indexPath)
+
+            case .summary:
+                return makePointsSummary(in: collectionView, indexPath: indexPath)
+
+            default:
+                fatalError("Invalid item type: \(item.type).")
             }
+        case .score, .stats, .streak:
+            return makeStat(in: collectionView, indexPath: indexPath)
 
-        case 1:
-            return makePointsBreakdown(in: tableView, indexPath: indexPath)
-
-        case 2:
-            return makeStatistic(in: tableView, indexPath: indexPath)
-
-        case 3:
-            return makeStreak(in: tableView, indexPath: indexPath)
-
-        case 4:
-            return makeBadges(in: tableView, indexPath: indexPath)
-
-        default:
-            fatalError("Unknown index path: \(indexPath).")
+        case .badges:
+            return makeBadge(in: collectionView, indexPath: indexPath)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            return makeHeader(in: collectionView, indexPath: indexPath)
+        default:
+            fatalError("Unknown ElementOfKind: \(kind).")
+        }
+    }
+
+    // MARK: - Methods
+
+    func updateSections() {
+        let status = HomeSection(title: nil, type: .status, items: [
+            HomeItem(type: .status),
+            HomeItem(type: .summary)
+        ])
+
+        let badges = HomeSection(
+            title: "BADGES",
+            type: .badges,
+            items: Array(repeating: HomeItem(type: .badge), count: badges.count)
+        )
+
+        sections = [status, makeScoreSection(), makeStatsSection(), makeStreakSection(), badges]
+    }
+
+    private func makeScoreSection() -> HomeSection {
+        let learningPoints = HomeItem(type: .stat(
+            textLabel: "Learning Points",
+            detailLabel: User.current.learnPoints.formatted,
+            accessibilityLabel: "\(User.current.learnPoints) points from learning"
+        ))
+
+        let reviewPoints = HomeItem(type: .stat(
+            textLabel: "Review Points",
+            detailLabel: User.current.reviewPoints.formatted,
+            accessibilityLabel: "\(User.current.reviewPoints) points from reviews"
+        ))
+
+        let practicePoints = HomeItem(type: .stat(
+            textLabel: "Practice Points",
+            detailLabel: User.current.practicePoints.formatted,
+            accessibilityLabel: "\(User.current.practicePoints) points from practicing"
+        ))
+
+        let challengePoints = HomeItem(type: .stat(
+            textLabel: "Challenge Points",
+            detailLabel: User.current.challengePoints.formatted,
+            accessibilityLabel: "\(User.current.challengePoints) points from challenges"
+        ))
+
+        return HomeSection(title: "POINTS", type: .score, items: [
+            learningPoints,
+            reviewPoints,
+            practicePoints,
+            challengePoints,
+            HomeItem(type: .share)
+        ])
+    }
+
+    private func makePointsItem() -> HomeItem {
+        let textLabel = "Points Until Next Level"
+
+        if let points = User.current.pointsUntilNextRank {
+            return HomeItem(type: .stat(
+                textLabel: textLabel,
+                detailLabel: String(points),
+                accessibilityLabel: "You need \(points) more points to reach the next level."
+            ))
+        } else {
+            return HomeItem(type: .stat(
+                textLabel: textLabel,
+                detailLabel: "N/A",
+                accessibilityLabel: "You are at the maximum level."
+            ))
+        }
+    }
+
+    private func makeStatsSection() -> HomeSection {
+        let currentLevel = HomeItem(type: .stat(
+            textLabel: "Current Level",
+            detailLabel: "\(User.current.rankNumber)/21",
+            accessibilityLabel: "You are level \(User.current.rankNumber) of 21."
+        ))
+
+        let dailyChallenges = HomeItem(type: .stat(
+            textLabel: "Daily Challenges",
+            detailLabel: String(User.current.dailyChallenges.count),
+            accessibilityLabel: "\(User.current.dailyChallenges) daily challenges completed."
+        ))
+
+        return HomeSection(title: "STATS", type: .stats, items: [
+            currentLevel,
+            makePointsItem(),
+            dailyChallenges
+        ])
+    }
+
+    private func makeStreakSection() -> HomeSection {
+        let streakDays = HomeItem(name: "Streak Reminder", type: .stat(
+            textLabel: "Current Streak",
+            detailLabel: "\(User.current.streakDays)",
+            accessibilityLabel: "Your streak count is \(User.current.streakDays)"
+        ))
+
+        let bestStreak = HomeItem(name: "Streak Reminder", type: .stat(
+            textLabel: "Best Streak",
+            detailLabel: "\(User.current.bestStreak)",
+            accessibilityLabel: "Your best streak count is \(User.current.bestStreak)"
+        ))
+
+        return HomeSection(title: "STREAK", type: .streak, items: [
+            streakDays,
+            bestStreak
+        ])
+    }
+
+    private func makeHeader(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionReusableView {
+        guard let view = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "Header",
+            for: indexPath) as? HeaderSupplementaryView
+        else {
+            fatalError("Failed to dequeue a HeaderSupplementaryView.")
+        }
+
+        let section = sections[indexPath.section]
+        view.textLabel.text = section.title
+
+        if section.type == .badges {
+            view.backgroundColor = .systemGroupedBackground
+        }
+
+        return view
     }
 
     /// Shows the activity ring and current rank.
-    func makeStatus(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Rank", for: indexPath) as? StatusTableViewCell else {
-            fatalError("Failed to dequeue a StatusTableViewCell.")
+    private func makeStatus(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Rank", for: indexPath) as? StatusCollectionViewCell else {
+            fatalError("Failed to dequeue a StatusCollectionViewCell.")
         }
-
-        cell.statusView.shadowOpacity = 0
-        cell.statusView.strokeColorStart = UIColor(bundleName: "Rank-Start")
-        cell.statusView.strokeColorEnd = UIColor(bundleName: "Rank-End")
 
         return cell
     }
 
     /// Shows the user's total points in large text.
-    func makePointsSummary(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Points", for: indexPath)
-        cell.textLabel?.attributedText = NSAttributedString.makeTitle("Points", subtitle: User.current.totalPoints.formatted)
-        cell.accessibilityLabel = "\(User.current.totalPoints) points"
+    private func makePointsSummary(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Points", for: indexPath) as? PointsCollectionViewCell else {
+            fatalError("Failed to dequeue a PointsCollectionViewCell.")
+        }
 
+        cell.points = User.current.totalPoints
         return cell
     }
 
-    /// Shows the user's points breakdown.
-    func makePointsBreakdown(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
+    /// Dequeue a reusable and clean collection view cell to show a stat.
+    private func makeStat(in collectionView: UICollectionView, indexPath: IndexPath) -> StatCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stat", for: indexPath) as? StatCollectionViewCell else {
+            fatalError("Failed to dequeue a StatCollectionViewCell.")
+        }
 
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Learning Points"
-            cell.detailTextLabel?.text = User.current.learnPoints.formatted
-            cell.accessibilityLabel = "\(User.current.learnPoints) points from learning"
+        let item = sections[indexPath.section].items[indexPath.item]
+        cell.textLabel?.textColor = nil
+        cell.detailLabel?.text = nil
+        cell.accessibilityLabel = nil
+        cell.accessibilityIdentifier = nil
+        cell.accessibilityTraits = .none
 
-        case 1:
-            cell.textLabel?.text = "Review Points"
-            cell.detailTextLabel?.text = User.current.reviewPoints.formatted
-            cell.accessibilityLabel = "\(User.current.reviewPoints) points from reviews"
+        switch item.type {
+        case .stat(let textLabel, let detailLabel, let accessibilityLabel):
+            cell.textLabel?.text = textLabel
+            cell.detailLabel?.text = detailLabel
+            cell.accessibilityLabel = accessibilityLabel
+            cell.accessibilityIdentifier = item.name
 
-        case 2:
-            cell.textLabel?.text = "Practice Points"
-            cell.detailTextLabel?.text = User.current.practicePoints.formatted
-            cell.accessibilityLabel = "\(User.current.practicePoints) points from practicing"
-
-        case 3:
-            cell.textLabel?.text = "Challenge Points"
-            cell.detailTextLabel?.text = User.current.challengePoints.formatted
-            cell.accessibilityLabel = "\(User.current.challengePoints) points from challenges"
-
-        case 4:
+        case .share:
             cell.textLabel?.text = "Share Score"
             cell.accessibilityTraits = .button
             cell.textLabel?.textColor = UIColor(bundleName: "Primary")
 
         default:
-            fatalError("Unknown index path: \(indexPath).")
+            fatalError("Invalid item type: \(item.type).")
         }
-
-        return cell
-    }
-
-    /// Shows how the user is progressing through levels.
-    func makeStatistic(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Current Level"
-            cell.detailTextLabel?.text = "\(User.current.rankNumber)/21"
-            cell.accessibilityLabel = "You are level \(User.current.rankNumber) of 21."
-
-        case 1:
-            cell.textLabel?.text = "Points Until Next Level"
-
-            if let points = User.current.pointsUntilNextRank {
-                cell.detailTextLabel?.text = String(points)
-                cell.accessibilityLabel = "You need \(points) more points to reach the next level."
-            } else {
-                cell.detailTextLabel?.text = "N/A"
-                cell.accessibilityLabel = "You are at the maximum level."
-            }
-
-        case 2:
-            cell.textLabel?.text = "Daily Challenges"
-            cell.detailTextLabel?.text = String(User.current.dailyChallenges.count)
-            cell.accessibilityLabel = "\(User.current.dailyChallenges) daily challenges completed."
-
-        default:
-            fatalError("Unknown index path: \(indexPath).")
-        }
-
-        return cell
-    }
-
-    /// Shows the user's streak record.
-    func makeStreak(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueStatReusableCell(in: tableView, indexPath: indexPath)
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Current Streak"
-            cell.detailTextLabel?.text = "\(User.current.streakDays)"
-            cell.accessibilityLabel = "Your streak count is \(User.current.streakDays)"
-            // UITest reading accessibility label and not accessibility identifier in Storyboard
-            cell.accessibilityIdentifier = "Streak Reminder"
-            return cell
-
-        case 1:
-            cell.textLabel?.text = "Best Streak"
-            cell.detailTextLabel?.text = "\(User.current.bestStreak)"
-            cell.accessibilityLabel = "Your best streak count is \(User.current.bestStreak)"
-            // UITest reading accessibility label and not accessibility identifier in Storyboard
-            cell.accessibilityIdentifier = "Streak Reminder"
-            return cell
-
-        default:
-            fatalError("Unknown index path: \(indexPath).")
-        }
-    }
-
-    /// Dequeue a reusable and clean table view cell to show an stat.
-    func dequeueStatReusableCell(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Stat", for: indexPath)
-        cell.textLabel?.textColor = nil
-        cell.detailTextLabel?.text = nil
-        cell.accessibilityLabel = nil
-        cell.accessibilityTraits = .none
 
         return cell
     }
 
     /// Shows all the badges the user has earned.
-    func makeBadges(in tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Badges", for: indexPath) as? BadgeTableViewCell else {
-            fatalError("Failed to dequeue a BadgeTableViewCell.")
+    private func makeBadge(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Badge", for: indexPath) as? BadgeCollectionViewCell else {
+            fatalError("Failed to dequeue a BadgeCollectionViewCell.")
         }
 
-        cell.collectionView.dataSource = badgeDataSource
-        cell.collectionView.delegate = badgeDataSource
-
-        /// See the comment for BadgeTableViewCell.applyLayoutWorkaround()
-        cell.layoutIfNeeded()
-
+        cell.badge = badges[indexPath.item]
         return cell
     }
 }

@@ -45,24 +45,6 @@ class ShapeView: UIView {
         layer.path = pathCopy.cgPath
     }
 
-    /// Makes the shape view draw itself by animating the strokeEnd property of the underlying shape layer.
-    func draw(delay: CFTimeInterval, duration: CFTimeInterval) {
-        guard let layer = self.layer as? CAShapeLayer else { return }
-
-        layer.strokeEnd = 0
-
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.beginTime = CACurrentMediaTime() + delay
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        animation.fillMode = .backwards
-        layer.add(animation, forKey: "line")
-
-        layer.strokeEnd = 1
-    }
-
     /// Makes the shape view draw itself by animating the strokeEnd property of the underlying shape layer. This variant uses keyframes, allowing for more precise control over the draw animation.
     func draw(delay: CFTimeInterval, duration: Double, keyFrameValues values: [NSNumber]) {
         guard let layer = self.layer as? CAShapeLayer else { return }
