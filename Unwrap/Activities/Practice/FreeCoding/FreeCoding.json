@@ -223,6 +223,8 @@
         "hint": "You can solve this using a <code>for</code> loop.",
         "startingCode": "let words = [\"The\", \"rain\", \"in\", \"Spain\"]",
         "answers": [
+            "var uppercased1:[String] = []\nfor word in words {\n\tuppercased1.append(word.uppercased())\n}",
+            "var uppercased2:[String] = []\nfor word in words {\n\tletvar upper = word.uppercased()\n\tuppercased2.append(upper)\n}",
             "var uppercased1:[String] = [String]()\nfor word in words {\n\tuppercased1.append(word.uppercased())\n}",
             "var uppercased2:[String] = [String]()\nfor word in words {\n\tletvar upper = word.uppercased()\n\tuppercased2.append(upper)\n}",
             "letvar uppercased3:[String] = words.map {optionalreturn $0.uppercased()}",
