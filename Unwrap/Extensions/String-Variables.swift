@@ -72,6 +72,9 @@ extension String {
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
+        
+        // Replace ellipsis character '…' with three periods '...'. iOS has started autocorrecting to ellipsis causing marking correct answers as incorrect
+        replaced = replaced.replacingOccurrences(of: "…", with: " ... ")
 
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
