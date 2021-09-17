@@ -78,7 +78,10 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         let badges = HomeSection(
             title: "BADGES",
             type: .badges,
-            items: Array(repeating: HomeItem(type: .badge), count: badges.count)
+            // Error : "variable used within its own initial value"
+            // Issue: badges was used within its own instanatiation expression
+            // Fix: added self.badges.count instead of badges.count
+            items: Array(repeating: HomeItem(type: .badge), count: self.badges.count)
         )
 
         sections = [status, makeScoreSection(), makeStatsSection(), makeStreakSection(), badges]

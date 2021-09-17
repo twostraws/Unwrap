@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DZNEmptyDataSet",
+        "repositoryURL": "https://github.com/dzenbot/DZNEmptyDataSet",
+        "state": {
+          "branch": "master",
+          "revision": "9bffa69a83a9fa58a14b3cf43cb6dd8a63774179",
+          "version": null
+        }
+      },
+      {
+        "package": "MKRingProgressView",
+        "repositoryURL": "https://github.com/maxkonovalov/MKRingProgressView",
+        "state": {
+          "branch": null,
+          "revision": "660888aab1d2ab0ed7eb9eb53caec12af4955fa7",
+          "version": "2.3.0"
+        }
+      },
+      {
+        "package": "QuickLayout",
+        "repositoryURL": "https://github.com/huri000/QuickLayout",
+        "state": {
+          "branch": null,
+          "revision": "6be62decbe508d8fc8f9dbafc349d05bab03c38b",
+          "version": "3.0.1"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
+        }
+      },
+      {
+        "package": "Sourceful",
+        "repositoryURL": "https://github.com/twostraws/Sourceful.git",
+        "state": {
+          "branch": null,
+          "revision": "3e3bec0486229f623fdf24455806e8c63b837afd",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftEntryKit",
+        "repositoryURL": "https://github.com/huri000/SwiftEntryKit",
+        "state": {
+          "branch": null,
+          "revision": "c2d42574e4fe4e1f9719843f35add7922942a16b",
+          "version": "1.2.7"
+        }
+      },
+      {
+        "package": "Zephyr",
+        "repositoryURL": "https://github.com/ArtSabintsev/Zephyr",
+        "state": {
+          "branch": null,
+          "revision": "681a4c68966a20fde9ec27f2e8c7274c107ec535",
+          "version": "3.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
