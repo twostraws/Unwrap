@@ -35,7 +35,6 @@ class HomeCoordinator: Coordinator, AlertShowing {
             /// If this is the first time the app is running, wait a tiny fraction of time before showing the welcome screen.
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Put the contents of showTour in here directly to avoid trying to capture `self` during an initializer.
-                // Added to 'to' between 'directly' and 'avoid'
                 let viewController = WelcomeViewController.instantiate()
                 viewController.presentAsAlert()
 
