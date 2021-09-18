@@ -73,10 +73,9 @@ class ChallengesDataSource: NSObject, UITableViewDataSource {
             return cell
         }
     }
-    
     /// Swipe to delete
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.section == 1 && User.current.dailyChallenges.count > 0 { //** Added spaaces to silence warnings from swift lint **
+        if indexPath.section == 1 && User.current.dailyChallenges.count > 0 {
             return true
         } else {
             return false
