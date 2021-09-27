@@ -34,7 +34,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
         if isFirstRun {
             /// If this is the first time the app is running, wait a tiny fraction of time before showing the welcome screen.
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                // Put the contents of showTour in here directly avoid trying to capture `self` during an initializer.
+                // Put the contents of showTour in here directly to avoid trying to capture `self` during an initializer.
                 let viewController = WelcomeViewController.instantiate()
                 viewController.presentAsAlert()
 
@@ -86,7 +86,7 @@ class HomeCoordinator: Coordinator, AlertShowing {
         let alert = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
         alert.completionWithItemsHandler = handleScoreSharingResult
 
-        // if we're on iPad there is nowhere sensible to anchor this from, so just center it
+        // If we're on iPad there is nowhere sensible to anchor this from, so just center it.
         if let popOver = alert.popoverPresentationController {
             popOver.sourceView = navigationController.topViewController?.view
             popOver.sourceRect = sourceRect
