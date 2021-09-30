@@ -72,7 +72,7 @@ extension String {
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
         replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
-        
+
         // Replace ellipsis character '…' with three periods '...'. iOS has started autocorrecting to ellipsis causing marking correct answers as incorrect
         replaced = replaced.replacingOccurrences(of: "…", with: " ... ")
 
