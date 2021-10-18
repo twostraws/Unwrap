@@ -3287,7 +3287,7 @@
 			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.7;
+				minimumVersion = 2.0.0;
 			};
 		};
 		5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
