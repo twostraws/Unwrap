@@ -29,6 +29,10 @@ a {
     text-decoration: none;
 }
 
+/*native HTML-solutions for screen-readers tags don't work here, only this tricky one*/
+a.voiceOver {
+    font-size: 1px;
+}
 
 /* 
 	Getting nice syntax highlighting is tricky!
