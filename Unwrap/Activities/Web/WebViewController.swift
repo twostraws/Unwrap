@@ -55,6 +55,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
         refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: internalWebView, action: #selector(internalWebView.reload))
         navigationItem.setRightBarButton(refreshButton, animated: true)
+		navigationItem.setLeftBarButtonItems(toolbarItems, animated: true)
 
         // All three of these become disabled immediately when page loading starts, so we need the below so they don't start active then immediately deactivate.
         backButton.isEnabled = false
