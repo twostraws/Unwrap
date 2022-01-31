@@ -115,7 +115,7 @@ class ExtensionTests: XCTestCase {
 
         // watch out for ellipsis '…' character
         let cleanString6 = "…"
-        let anonymizedString6 = " ... "
+        let anonymizedString6 = "..."
         XCTAssertEqual(cleanString6.toAnonymizedVariables(), anonymizedString6)
     }
 
