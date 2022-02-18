@@ -99,20 +99,20 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             alignment: .top
         )
     }
-    
+
     private func buildSection(for type: HomeSectionType) -> NSCollectionLayoutSection {
         let itemHeight: CGFloat = 44
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let itemsCount = dataSource.sections.first(where: { $0.type == type })?.items.count ?? 0
-        
+
         let groupHeight = itemHeight * CGFloat(itemsCount)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
-        
+
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header()]
-        
+
         return section
     }
 
