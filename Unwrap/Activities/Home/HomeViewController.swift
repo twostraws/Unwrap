@@ -99,19 +99,6 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             alignment: .top
         )
     }
-
-    private func statusSection() -> NSCollectionLayoutSection {
-        let statusSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
-        let status = NSCollectionLayoutItem(layoutSize: statusSize)
-
-        let pointsSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
-        let points = NSCollectionLayoutItem(layoutSize: pointsSize)
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(490))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [status, points])
-
-        return NSCollectionLayoutSection(group: group)
-    }
     
     private func buildSection(for type: HomeSectionType) -> NSCollectionLayoutSection {
         let itemHeight: CGFloat = 44
@@ -127,6 +114,19 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         section.boundarySupplementaryItems = [header()]
         
         return section
+    }
+
+    private func statusSection() -> NSCollectionLayoutSection {
+        let statusSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
+        let status = NSCollectionLayoutItem(layoutSize: statusSize)
+
+        let pointsSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(90))
+        let points = NSCollectionLayoutItem(layoutSize: pointsSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(490))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [status, points])
+
+        return NSCollectionLayoutSection(group: group)
     }
 
     private func badgesSection() -> NSCollectionLayoutSection {
