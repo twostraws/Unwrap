@@ -42,7 +42,7 @@
         },
         {
             "answer": "struct Sport {\n\tvar name: String\n\tvar isOlympicSport: Bool\n}\nlet chessBoxing = Sport(name: \"Chessboxing\", isOlympicSport: \"false\")",
-            "reason": "The <code>isOlympicSport<\/code> property is a Boolean, but this attempts to create a <code>Sport<\/code> instance by providing with a string."
+            "reason": "The <code>isOlympicSport<\/code> property is a Boolean, but this attempts to create a <code>Sport<\/code> instance by providing it with a string."
         },
         {
             "answer": "struct Media {\n\tvar type: String\n\tvar users: Int\n\tinit() {\n\t\t\n\t}\n}\nlet tv = Media(type: \"Television\", users: 10_000_000)",
