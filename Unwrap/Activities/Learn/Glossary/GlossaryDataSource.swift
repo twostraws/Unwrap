@@ -58,7 +58,16 @@ class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdati
         let key = sectionTitles[indexPath.section]
         if let entries = sortedEntries[key] {
             let entry = entries[indexPath.row]
-            cell.textLabel?.text = entry.term
+            
+            // 添加搜索关键词高亮效果
+            let attrText = NSMutableAttributedString(string: entry.term)
+            if let searchText = delegate?.navigationItem.searchController?.searchBar.text, let highlightRange = attrText.string.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) {
+                let nsRange = NSRange(highlightRange, in: attrText.string)
+                attrText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.systemYellow, NSAttributedString.Key.font: Unwrap.scaledExtraBoldFont], range: nsRange)
+            }
+            cell.textLabel?.attributedText = attrText
+            
+//            cell.textLabel?.text = entry.term
             cell.detailTextLabel?.attributedText = entry.description.fromSimpleHTML()
         }
 
