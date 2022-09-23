@@ -50,11 +50,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         backButton = UIBarButtonItem(image: UIImage(bundleName: "Back"), style: .plain, target: internalWebView, action: #selector(internalWebView.goBack))
         forwardButton = UIBarButtonItem(image: UIImage(bundleName: "Forward"), style: .plain, target: internalWebView, action: #selector(internalWebView.goForward))
         shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
-
-        toolbarItems = [backButton, fixedSpace, forwardButton, flexibleSpace, shareButton]
-
         refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: internalWebView, action: #selector(internalWebView.reload))
-        navigationItem.setRightBarButton(refreshButton, animated: true)
+
+        toolbarItems = [forwardButton, fixedSpace, backButton, flexibleSpace, shareButton, refreshButton]
+
+        navigationItem.setRightBarButtonItems(toolbarItems, animated: true)
 
         // All three of these become disabled immediately when page loading starts, so we need the below so they don't start active then immediately deactivate.
         backButton.isEnabled = false
