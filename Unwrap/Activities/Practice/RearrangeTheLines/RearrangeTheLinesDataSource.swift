@@ -79,7 +79,8 @@ class RearrangeTheLinesDataSource: NSObject, UITableViewDataSource, UITableViewD
 
     /// Make sure all cells are movable, because that's kind of the point of this activity.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        /// Added this condition so that user will not able to rearrage the rows after submitting the question. issue-222: https://github.com/twostraws/Unwrap/issues/222
+        return (isShowingAnswers == false)
     }
 
     /// Handle cell moves correctly.
