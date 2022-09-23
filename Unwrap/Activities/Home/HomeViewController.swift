@@ -75,11 +75,11 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
             case .status:
                 return self.statusSection()
             case .score:
-                return self.scoreSection()
+                return self.buildSection(for: .score)
             case .stats:
-                return self.statsSection()
+                return self.buildSection(for: .stats)
             case .streak:
-                return self.streakSection()
+                return self.buildSection(for: .streak)
             case .badges:
                 return self.badgesSection()
             }
@@ -100,6 +100,22 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         )
     }
 
+    private func buildSection(for type: HomeSectionType) -> NSCollectionLayoutSection {
+        let itemHeight: CGFloat = 44
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let itemsCount = dataSource.sections.first(where: { $0.type == type })?.items.count ?? 0
+
+        let groupHeight = itemHeight * CGFloat(itemsCount)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header()]
+
+        return section
+    }
+
     private func statusSection() -> NSCollectionLayoutSection {
         let statusSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
         let status = NSCollectionLayoutItem(layoutSize: statusSize)
@@ -111,54 +127,6 @@ class HomeViewController: UICollectionViewController, Storyboarded, UserTracking
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [status, points])
 
         return NSCollectionLayoutSection(group: group)
-    }
-
-    private func scoreSection() -> NSCollectionLayoutSection {
-        let itemHeight: CGFloat = 44
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let itemsCount = dataSource.sections.first(where: { $0.type == .score })?.items.count ?? 0
-
-        let groupHeight = itemHeight * CGFloat(itemsCount)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header()]
-
-        return section
-    }
-
-    private func statsSection() -> NSCollectionLayoutSection {
-        let itemHeight: CGFloat = 44
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let itemsCount = dataSource.sections.first(where: { $0.type == .stats })?.items.count ?? 0
-
-        let groupHeight = itemHeight * CGFloat(itemsCount)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header()]
-
-        return section
-    }
-
-    private func streakSection() -> NSCollectionLayoutSection {
-        let itemHeight: CGFloat = 44
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let itemsCount = dataSource.sections.first(where: { $0.type == .streak })?.items.count ?? 0
-
-        let groupHeight = itemHeight * CGFloat(itemsCount)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(groupHeight))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: itemsCount)
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header()]
-
-        return section
     }
 
     private func badgesSection() -> NSCollectionLayoutSection {
