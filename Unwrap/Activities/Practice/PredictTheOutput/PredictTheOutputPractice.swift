@@ -65,11 +65,9 @@ struct PredictTheOutputPractice: PracticeActivity {
             guard let conditions = answer.conditions else { return answer }
 
             // Still here? Go through all conditions and check they are true for our values.
-            for condition in conditions {
-                if condition.evaluatesTrue(values: values, operators: operators) {
+            for condition in conditions where condition.evaluatesTrue(values: values, operators: operators) {
                     // All conditions are true, so use this answer.
                     return answer
-                }
             }
         }
 
