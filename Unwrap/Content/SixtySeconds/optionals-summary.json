@@ -7,11 +7,11 @@
     "syntaxHighlighting": true,
     "correct": [
         {
-            "answer": "let cat: String? = \"Toby\"\nif let cat = cat {\n\tprint(\"The cat's name is \\(cat).\")\n}\n",
+            "answer": "let cat: String? = \"Toby\"\nif let cat {\n\tprint(\"The cat's name is \\(cat).\")\n}\n",
             "reason": "This code is valid Swift."
         },
         {
-            "answer": "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)",
+            "answer": "func mowGrass(to height: Double?) {\n\tguard let height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)",
             "reason": "This code is valid Swift."
         },
         {

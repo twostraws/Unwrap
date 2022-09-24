@@ -1,39 +1,39 @@
 {
     "title": "Unwrapping with guard",
-    "postscript": "It's common to use both <code>if let<\/code> and <code>guard let<\/code> to unwrap optionals into a constant of the same name. For example, <code>guard let name = name else { return }<\/code>",
+    "postscript": "It's common to use both <code>if let<\/code> and <code>guard let<\/code> to unwrap optionals into a constant of the same name. For example, <code>guard let name else { return }<\/code>",
     "reviewType": "singleSelection",
     "question": "This code will print a message \u2013 true or false?",
     "hint": "If your <code>guard let<\/code> condition fails, you must exit the current method, loop, or condition before the <code>else<\/code> block ends.",
     "syntaxHighlighting": true,
     "correct": [
         {
-            "answer": "func validate(password: String?) -> Bool {\n\tguard let password = password else {\n\t\treturn false\n\t}\n\tif password == \"fr0sties\" {\n\t\tprint(\"Authenticated successfully!\")\n\t\treturn true\n\t}\n\treturn false\n}\nvalidate(password: \"fr0sties\")",
+            "answer": "func validate(password: String?) -> Bool {\n\tguard let password else {\n\t\treturn false\n\t}\n\tif password == \"fr0sties\" {\n\t\tprint(\"Authenticated successfully!\")\n\t\treturn true\n\t}\n\treturn false\n}\nvalidate(password: \"fr0sties\")",
             "reason": "This code will print a message."
         },
         {
-            "answer": "func test(number: Int?) {\n\tguard let number = number else { return }\n\tprint(\"Number is \\(number)\")\n}\ntest(number: 42)",
+            "answer": "func test(number: Int?) {\n\tguard let number else { return }\n\tprint(\"Number is \\(number)\")\n}\ntest(number: 42)",
             "reason": "This code will print a message."
         },
         {
-            "answer": "func isLongEnough(_ string: String?) -> Bool {\n\tguard let string = string else { return false }\n\tif string.count >= 8 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif isLongEnough(\"Mario Odyssey\") {\n\tprint(\"Let's play that!\")\n}",
+            "answer": "func isLongEnough(_ string: String?) -> Bool {\n\tguard let string else { return false }\n\tif string.count >= 8 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif isLongEnough(\"Mario Odyssey\") {\n\tprint(\"Let's play that!\")\n}",
             "reason": "This code will print a message."
         },
         {
-            "answer": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}",
+            "answer": "func double(number: Int?) -> Int? {\n\tguard let number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nlet input = 5\nif let doubled = double(number: input) {\n\tprint(\"\\(input) doubled is \\(doubled).\")\n}",
             "reason": "This code will print a message."
         },
         {
-            "answer": "func uppercase(string: String?) -> String? {\n\tguard let string = string else {\n\t\treturn nil\n\t}\n\treturn string.uppercased()\n}\nif let result = uppercase(string: \"Hello\") {\n\tprint(result)\n}",
+            "answer": "func uppercase(string: String?) -> String? {\n\tguard let string else {\n\t\treturn nil\n\t}\n\treturn string.uppercased()\n}\nif let result = uppercase(string: \"Hello\") {\n\tprint(result)\n}",
             "reason": "This code will print a message."
         },
         {
-            "answer": "func describe(occupation: String?) {\n\tguard let occupation = occupation else {\n\t\tprint(\"You don't have a job.\")\n\t\treturn\n\t}\n\tprint(\"You are an \\(occupation).\")\n}\nlet job = \"engineer\"\ndescribe(occupation: job)",
+            "answer": "func describe(occupation: String?) {\n\tguard let occupation else {\n\t\tprint(\"You don't have a job.\")\n\t\treturn\n\t}\n\tprint(\"You are an \\(occupation).\")\n}\nlet job = \"engineer\"\ndescribe(occupation: job)",
             "reason": "This code will print a message."
         }
     ],
     "wrong": [
         {
-            "answer": "func username(for id: Int?) -> String {\n\tguard let id = id else {\n\t\treturn nil\n\t}\n\tif id == 1989 {\n\t\treturn \"Taylor Swift\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let user = username(for: 1989) {\n\tprint(\"Hello, \\(user)!\")\n}",
+            "answer": "func username(for id: Int?) -> String {\n\tguard let id else {\n\t\treturn nil\n\t}\n\tif id == 1989 {\n\t\treturn \"Taylor Swift\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let user = username(for: 1989) {\n\tprint(\"Hello, \\(user)!\")\n}",
             "reason": "This code acts as if <code>username<\/code> returns an optional string; it does not."
         },
         {
@@ -42,18 +42,18 @@
         },
         {
             "answer": "func playOpera(by composer: String?) -> String? {\n\tlet composer = composer else {\n\t\treturn \"Please specify a composer.\"\n\t}\n\tif composer == \"Mozart\" {\n\t\treturn \"Le nozze di Figaro\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let opera = playOpera(by: \"Mozart\") {\n\tprint(opera)\n}",
-            "reason": "<code>let composer = composer else<\/code> should read <code>guard let composer = composer else<\/code>."
+            "reason": "<code>let composer = composer else<\/code> should read <code>guard let composer else<\/code>."
         },
         {
             "answer": "func plantTree(_ type: String?) {\n\tguard let type else {\n\t\treturn\n\t}\n\tprint(\"Planting a \\(type).\")\n}\nplantTree(\"willow\")",
-            "reason": "This needs to provide a name for the unwrapped <code>type<\/code> parameter, such as <code>guard let type = type else<\/code>."
+            "reason": "This needs to provide a name for the unwrapped <code>type<\/code> parameter, such as <code>guard let type else<\/code>."
         },
         {
-            "answer": "func playScale(name: String?) {\n\tguard let name = name {\n\t\treturn\n\t}\n\tprint(\"Playing the \\(name) scale.\")\n}\nplayScale(name: \"C\")",
+            "answer": "func playScale(name: String?) {\n\tguard let name {\n\t\treturn\n\t}\n\tprint(\"Playing the \\(name) scale.\")\n}\nplayScale(name: \"C\")",
             "reason": "<code>guard<\/code> must be followed by <code>else<\/code>."
         },
         {
-            "answer": "func add3(to number: Int) -> Int {\n\tguard let number = number else {\n\t\treturn 3\n\t}\n\treturn number + 3\n}\nlet added = add3(to: 5)\nprint(added)",
+            "answer": "func add3(to number: Int) -> Int {\n\tguard let number else {\n\t\treturn 3\n\t}\n\treturn number + 3\n}\nlet added = add3(to: 5)\nprint(added)",
             "reason": "The <code>number<\/code> parameter is not optional, so we can't use <code>guard let<\/code> to unwrap it."
         }
     ]
