@@ -127,7 +127,7 @@
 	{
 		"question": "This code should create then call a function that doubles a number, or returns nil if it's missing.",
 		"hint": "The <code>guard</code> statement should be the first thing inside <code>double()</code>.",
-		"code": "func double(number: Int?) -> Int? {\n\tguard let number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nif let doubled = double(number: 5) {\n\tprint(\"The result was \\(doubled).\")\n}"
+		"code": "func double(number: Int?) -> Int? {\n\tguard let number = number else {\n\t\treturn nil\n\t}\n\treturn number * 2\n}\nif let doubled = double(number: 5) {\n\tprint(\"The result was \\(doubled).\")\n}"
 	},
 	{
 		"question": "This code should create two classes, then print a fact.",
@@ -137,7 +137,7 @@
 	{
 		"question": "This code should mow grass to a specific height if it was provided.",
 		"hint": "The <code>guard</code> statement should be the first thing inside <code>mowGrass()</code>.",
-		"code": "func mowGrass(to height: Double?) {\n\tguard let height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)"
+		"code": "func mowGrass(to height: Double?) {\n\tguard let height = height else { return }\n\tprint(\"Mowing the grass to \\(height).\")\n}\nmowGrass(to: 6.0)"
 	},
 	{
 		"question": "This code should print out all even numbers in an array.",
