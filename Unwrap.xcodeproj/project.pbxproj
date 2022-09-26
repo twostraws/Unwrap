@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,7 +107,7 @@
 		5192241C210E2767007D7D74 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192241B210E2767007D7D74 /* DarkTheme.swift */; };
 		5192587320E3A11200A85704 /* NSAttributedString-Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192587220E3A11200A85704 /* NSAttributedString-Formatting.swift */; };
 		5192DDCC2273E05F0081C6DE /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5192DDCB2273E05F0081C6DE /* Stickers.xcassets */; };
-		5192DDD02273E05F0081C6DE /* Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5192DDC92273E05E0081C6DE /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5192DDD02273E05F0081C6DE /* Stickers.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5192DDC92273E05E0081C6DE /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		519CD3D020EBA208007110BD /* RearrangeTheLines.json in Resources */ = {isa = PBXBuildFile; fileRef = 519CD3CF20EBA208007110BD /* RearrangeTheLines.json */; };
 		519CD3D220EBA35B007110BD /* RearrangeTheLinesPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D120EBA35B007110BD /* RearrangeTheLinesPractice.swift */; };
 		519CD3D420EBA601007110BD /* RearrangeTheLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CD3D320EBA601007110BD /* RearrangeTheLinesViewController.swift */; };
@@ -631,15 +631,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5192DD852273DCE20081C6DE /* Embed App Extensions */ = {
+		5192DD852273DCE20081C6DE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5192DDD02273E05F0081C6DE /* Stickers.appex in Embed App Extensions */,
+				5192DDD02273E05F0081C6DE /* Stickers.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -2207,7 +2207,7 @@
 				51CC135C2065607C00F37A67 /* Frameworks */,
 				51CC135D2065607C00F37A67 /* Resources */,
 				C90D15D421EA485C004116DB /* Swiftlint */,
-				5192DD852273DCE20081C6DE /* Embed App Extensions */,
+				5192DD852273DCE20081C6DE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -2252,7 +2252,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Hacking with Swift";
 				TargetAttributes = {
 					5192DDC82273E05E0081C6DE = {
@@ -2278,7 +2278,7 @@
 				};
 			};
 			buildConfigurationList = 51CC135A2065607C00F37A67 /* Build configuration list for PBXProject "Unwrap" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
