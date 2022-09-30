@@ -47,7 +47,7 @@ class SpotTheErrorDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.attributedText = practiceData.code[indexPath.row].syntaxHighlighted()
         cell.textLabel?.font = Unwrap.codeFont
 
-        if let selectedAnswer = selectedAnswer, isShowingAnswers == true {
+        if let selectedAnswer, isShowingAnswers == true {
             cell.textLabel?.textColor = .white
 
             if indexPath.row == selectedAnswer {

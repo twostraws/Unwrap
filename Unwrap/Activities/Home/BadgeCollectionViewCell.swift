@@ -14,7 +14,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
 
     var badge: Badge? {
         didSet {
-            guard let badge = badge else {
+            guard let badge else {
                 return
             }
 

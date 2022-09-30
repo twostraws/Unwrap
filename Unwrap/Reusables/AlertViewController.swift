@@ -76,7 +76,7 @@ class AlertViewController: UIViewController, Storyboarded {
 
     /// Called when the OK button was tapped. If we have a coordinator let it decide what should happen; if not, just dismiss the alert.
     @IBAction func continueTapped(_ sender: Any) {
-        if let coordinator = coordinator {
+        if let coordinator {
             coordinator.alertDismissed(type: alertType)
         } else {
             // we don't have a coordinator – just dismiss

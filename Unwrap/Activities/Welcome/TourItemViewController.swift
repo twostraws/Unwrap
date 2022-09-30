@@ -19,7 +19,7 @@ class TourItemViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard  let item = item else {
+        guard let item else {
             fatalError("Attempted to create a TourItemViewController with no tour item.")
         }
 
