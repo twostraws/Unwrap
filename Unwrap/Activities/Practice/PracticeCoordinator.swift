@@ -44,7 +44,7 @@ class PracticeCoordinator: Coordinator, Awarding, Skippable, AnswerHandling, Ale
         }
 
         // make this split view controller behave sensibly on iPad
-        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.preferredDisplayMode = .oneBesideSecondary
         splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 

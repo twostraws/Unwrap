@@ -15,13 +15,20 @@ extension UIButton {
     /// Creates a main app button in our primary color.
     static func primary(frame: CGRect) -> UIButton {
         let button = UIButton(type: .custom)
+        var configuration = UIButton.Configuration.filled()
 
-        button.showsTouchWhenHighlighted = true
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(bundleName: "Primary")
+        configuration.baseBackgroundColor = UIColor(bundleName: "Primary")
+        configuration.baseForegroundColor = .white
+        configuration.imagePadding = 20
+        configuration.cornerStyle = .fixed
+        configuration.background.cornerRadius = 0
+        configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.boldSystemFont(ofSize: 22)
+            return outgoing
+        }
+        button.configuration = configuration
         button.tintColor = .white
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         button.frame = frame
 
         return button
@@ -30,24 +37,42 @@ extension UIButton {
     /// Creates a main app button in our secondary color.
     static func secondary(frame: CGRect) -> UIButton {
         let button = UIButton.primary(frame: frame)
-        button.backgroundColor = UIColor(bundleName: "Secondary")
+        button.setBackgroundColor(UIColor(bundleName: "Secondary"))
         return button
     }
 
     /// Adjusts a button so that it represents a correct answer.
     func correctAnswer() {
-        setImage(UIImage(bundleName: "Check"), for: .normal)
-        backgroundColor = UIColor(bundleName: "ReviewCorrect")
+        setAppearance(image: UIImage(bundleName: "Check"), backgroundColor: UIColor(bundleName: "ReviewCorrect"))
     }
 
     /// Adjusts a button so that it represents a wrong answer.
     func wrongAnswer() {
-        setImage(UIImage(bundleName: "Cross"), for: .normal)
-        backgroundColor = UIColor(bundleName: "ReviewWrong")
+        setAppearance(image: UIImage(bundleName: "Cross"), backgroundColor: UIColor(bundleName: "ReviewWrong"))
     }
 
     func disable() {
-        backgroundColor = UIColor(bundleName: "Disabled")
+        setBackgroundColor(UIColor(bundleName: "Disabled"))
         isUserInteractionEnabled = false
+    }
+
+    private func setAppearance(image: UIImage, backgroundColor: UIColor) {
+        if var configuration {
+            configuration.image = image
+            configuration.baseBackgroundColor = backgroundColor
+            self.configuration = configuration
+        } else {
+            setImage(image, for: .normal)
+            self.backgroundColor = backgroundColor
+        }
+    }
+
+    private func setBackgroundColor(_ color: UIColor) {
+        if var configuration {
+            configuration.baseBackgroundColor = color
+            self.configuration = configuration
+        } else {
+            backgroundColor = color
+        }
     }
 }

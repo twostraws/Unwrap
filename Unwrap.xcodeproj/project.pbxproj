@@ -172,6 +172,7 @@
 		51C5642920CCC2520093030C /* LearnDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5642820CCC2520093030C /* LearnDataSource.swift */; };
 		51C5642D20CCC5480093030C /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5642C20CCC5480093030C /* Chapter.swift */; };
 		51CC13632065607C00F37A67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13622065607C00F37A67 /* AppDelegate.swift */; };
+		26D0713A2E5A000000000001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D071392E5A000000000001 /* SceneDelegate.swift */; };
 		51CC13652065607C00F37A67 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC13642065607C00F37A67 /* WelcomeViewController.swift */; };
 		51CC13682065607C00F37A67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CC13662065607C00F37A67 /* Main.storyboard */; };
 		51CC136D2065607F00F37A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CC136B2065607F00F37A67 /* LaunchScreen.storyboard */; };
@@ -813,6 +814,7 @@
 		51C5642C20CCC5480093030C /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		51CC135F2065607C00F37A67 /* Unwrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unwrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CC13622065607C00F37A67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26D071392E5A000000000001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		51CC13642065607C00F37A67 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		51CC13672065607C00F37A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51CC136C2065607F00F37A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1656,6 +1658,7 @@
 				51862E5820CE11B40086CD1B /* User */,
 				5156459220E116EE00CED877 /* Content */,
 				51CC13622065607C00F37A67 /* AppDelegate.swift */,
+				26D071392E5A000000000001 /* SceneDelegate.swift */,
 				51B3A7C720CCC74B000ACA6D /* MainTabBarController.swift */,
 				51A90DC3227AFC060068A4F9 /* SplitViewControllerDelegate.swift */,
 				511FD6B221065BF80023E92C /* Unwrap.swift */,
@@ -2251,8 +2254,9 @@
 		51CC13572065607C00F37A67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 2660;
 				ORGANIZATIONNAME = "Hacking with Swift";
 				TargetAttributes = {
 					5192DDC82273E05E0081C6DE = {
@@ -2891,6 +2895,7 @@
 				51EFBEFA210D111400211A8D /* NSRegularExpression-HardCoded.swift in Sources */,
 				5144932E20E55FF400D15AA5 /* SingleSelectReviewViewController.swift in Sources */,
 				51CC13632065607C00F37A67 /* AppDelegate.swift in Sources */,
+				26D0713A2E5A000000000001 /* SceneDelegate.swift in Sources */,
 				51E35647223CE43400C05881 /* Float-Random.swift in Sources */,
 				FE81585F2274F8C2007E5E11 /* User-Progress.swift in Sources */,
 				51CC139D2065AB8500F37A67 /* GradientView.swift in Sources */,
@@ -3004,7 +3009,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Stickers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.5;
@@ -3023,7 +3027,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Stickers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.5;
@@ -3071,8 +3074,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6F5N3D8ZSB;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3091,6 +3096,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -3133,8 +3139,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6F5N3D8ZSB;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -3146,6 +3154,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
@@ -3161,8 +3170,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Unwrap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3184,8 +3193,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = Unwrap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3202,10 +3211,8 @@
 		51CC138B2065607F00F37A67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = UnwrapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3223,10 +3230,8 @@
 		51CC138C2065607F00F37A67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
 				INFOPLIST_FILE = UnwrapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

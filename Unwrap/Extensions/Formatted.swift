@@ -20,7 +20,7 @@ extension Int {
     /// Returns a number formatted as words, e.g. "ten".
     var spelledOut: String {
         // If this is any sort of English language then convert the integer to words, otherwise just use the integer. This avoids a chunk of English text appearing with a different language number appearing in the middle.
-        if Locale.current.languageCode == "en" {
+        if Locale.current.language.languageCode?.identifier == "en" {
             let formatter = NumberFormatter()
             formatter.numberStyle = .spellOut
             return formatter.string(from: NSNumber(value: self)) ?? ""

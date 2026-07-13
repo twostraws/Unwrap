@@ -38,10 +38,12 @@ class NewsDataSource: NSObject, UITableViewDataSource {
 
     /// Downloads the latest news from Hacking with Swift.
     func fetchArticles() {
+        let displayScale = delegate?.traitCollection.displayScale ?? 1
+
         DispatchQueue.global().async {
             // Request images that are 84 points wide at whatever scale the device uses. 84 was arrived through testing – it's the largest that still looks good in iPhone SE, while still giving us a 3:2 aspect ratio.
 
-            let scale = Int(UIScreen.main.scale)
+            let scale = Int(displayScale)
             let url = URL(staticString: "https://www.hackingwithswift.com/articles/json/summary/84-@\(scale)x")
 
             do {
@@ -95,7 +97,7 @@ class NewsDataSource: NSObject, UITableViewDataSource {
         newsCell.imageView?.sd_setImage(with: article.mainImage, placeholderImage: UIImage(bundleName: "News-Placeholder"))
 
         // draw a micro-width border around images so that white images don't just spill over to the rest of the cell
-        newsCell.imageView?.layer.borderWidth = 1 / UIScreen.main.scale
+        newsCell.imageView?.layer.borderWidth = 1 / tableView.traitCollection.displayScale
         newsCell.imageView?.layer.borderColor = UIColor.lightGray.cgColor
 
         return newsCell

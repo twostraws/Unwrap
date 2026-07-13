@@ -3,7 +3,7 @@ disabled_rules: # rule identifiers to exclude from running
   - identifier_name
   - line_length
   - unused_closure_parameter
-  - redundant_optional_initialization
+  - implicit_optional_initialization
   - function_body_length
   - cyclomatic_complexity
   - force_cast

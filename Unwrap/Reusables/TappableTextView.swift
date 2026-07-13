@@ -46,19 +46,24 @@ class TappableTextView: UITextView, UITextViewDelegate {
     }
 
     /// Handle non-attributed link taps either by handling them directly (we don't care about mailto: etc), or by passing them on to our delegate.
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+    func textView(_ textView: UITextView, primaryActionFor textItem: UITextItem, defaultAction: UIAction) -> UIAction? {
+        guard case let .link(url) = textItem.content else {
+            return defaultAction
+        }
+
         // Don't let delegates handle email addresses, because the system does this best.
-        if URL.scheme?.hasPrefix("mailto") == true {
-            return true
+        if url.scheme?.hasPrefix("mailto") == true {
+            return defaultAction
         }
 
-        // Rate limit how often we trigger link taps to avoid double taps causing a problem.
-        if lastURLInteraction + 0.2 < CFAbsoluteTimeGetCurrent() {
-            lastURLInteraction = CFAbsoluteTimeGetCurrent()
-            linkDelegate?.linkTapped(URL)
-        }
+        return UIAction { [weak self] _ in
+            guard let self else { return }
 
-        // Signal that we've handled the tap.
-        return false
+            // Rate limit how often we trigger link taps to avoid double taps causing a problem.
+            if self.lastURLInteraction + 0.2 < CFAbsoluteTimeGetCurrent() {
+                self.lastURLInteraction = CFAbsoluteTimeGetCurrent()
+                self.linkDelegate?.linkTapped(url)
+            }
+        }
     }
 }

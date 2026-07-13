@@ -14,7 +14,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
     /// An array of all badges the user can earn.
     let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
-    private (set)var sections = [HomeSection]()
+    private(set) var sections = [HomeSection]()
 
     // MARK: - Init
 

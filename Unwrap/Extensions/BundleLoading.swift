@@ -60,7 +60,7 @@ extension String {
             fatalError("Unable to locate \(bundleName).")
         }
 
-        guard let contents = try? String(contentsOf: url) else {
+        guard let contents = try? String(contentsOf: url, encoding: .utf8) else {
             fatalError("Unable to read \(bundleName).")
         }
 

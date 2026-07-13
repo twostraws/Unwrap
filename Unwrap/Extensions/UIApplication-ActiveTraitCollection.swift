@@ -9,10 +9,16 @@
 import UIKit
 
 extension UIApplication {
-    /** Attempts to return the active trait collection for the first window, or an empty trait collection otherwise. Because this specifically uses the first window for the trait collection, it should only be used for system-wide settings – dark mode, scale, etc.
+    /** Attempts to return the active trait collection for the foreground scene's key window, or an empty trait collection otherwise. This should only be used for system-wide settings – dark mode, scale, etc.
      */
     static var activeTraitCollection: UITraitCollection {
-        if let activeTraits = UIApplication.shared.windows.first?.traitCollection {
+        let windowScenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        let windowScene = windowScenes.first { $0.activationState == .foregroundActive }
+            ?? windowScenes.first { $0.activationState == .foregroundInactive }
+            ?? windowScenes.first
+        let window = windowScene?.windows.first { $0.isKeyWindow } ?? windowScene?.windows.first
+
+        if let activeTraits = window?.traitCollection {
             return activeTraits
         } else {
             return UITraitCollection()

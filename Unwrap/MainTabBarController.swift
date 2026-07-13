@@ -22,21 +22,18 @@ class MainTabBarController: UITabBarController, Storyboarded {
         viewControllers = [home.navigationController, learn.splitViewController, practice.splitViewController, challenges.splitViewController, news.splitViewController]
     }
 
-    /// If we get some launch options, figure out which one was requested and jump right to the correct tab.
-    func handle(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        if let item = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
-            handle(shortcutItem: item)
-        }
-    }
-
-    func handle(shortcutItem: UIApplicationShortcutItem) {
+    /// Selects the tab requested by a Home Screen quick action.
+    @discardableResult
+    func handle(shortcutItem: UIApplicationShortcutItem) -> Bool {
         switch shortcutItem.type {
         case "com.hackingwithswift.unwrapswift.challenges":
             selectedViewController = challenges.splitViewController
+            return true
         case "com.hackingwithswift.unwrapswift.news":
             selectedViewController = news.splitViewController
+            return true
         default:
-            fatalError("Unknown shortcut item type: \(shortcutItem.type).")
+            return false
         }
     }
 }

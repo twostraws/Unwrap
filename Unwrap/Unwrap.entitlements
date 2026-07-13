@@ -5,6 +5,6 @@
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array/>
 	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
-	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
+	<string>B5C26XE59E.$(CFBundleIdentifier)</string>
 </dict>
 </plist>

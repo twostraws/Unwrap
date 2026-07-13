@@ -35,7 +35,7 @@ class NewsCoordinator: Coordinator {
         splitViewController.tabBarItem = UITabBarItem(title: "News", image: UIImage(bundleName: "News"), tag: 4)
 
         // make this split view controller behave sensibly on iPad
-        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.preferredDisplayMode = .oneBesideSecondary
         splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 

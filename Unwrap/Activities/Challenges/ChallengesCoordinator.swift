@@ -43,7 +43,7 @@ class ChallengesCoordinator: Coordinator, Awarding, Skippable, AnswerHandling {
         splitViewController.tabBarItem = UITabBarItem(title: "Challenges", image: UIImage(bundleName: "Challenges"), tag: 3)
 
         // make this split view controller behave sensibly on iPad
-        splitViewController.preferredDisplayMode = .allVisible
+        splitViewController.preferredDisplayMode = .oneBesideSecondary
         splitViewController.delegate = SplitViewControllerDelegate.shared
     }
 
