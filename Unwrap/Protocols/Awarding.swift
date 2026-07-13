@@ -33,6 +33,9 @@ extension Awarding {
                 self.returnToStart()
             }
         } else {
+            // Make sure to show the root view controller in the master view controller.
+            splitViewController.popToRootViewController()
+            
             // Show the awards screen alongside the master view controller.
             splitViewController.showDetailViewController(viewController, sender: self)
         }
