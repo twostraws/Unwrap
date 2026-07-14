@@ -6,13 +6,40 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import XCTest
+import Testing
 @testable import Unwrap
 
 /// Tests that practice activities work correctly.
-class PracticeTests: XCTestCase {
+@Suite("Practice activities", .serialized)
+struct PracticeTests {
+    nonisolated enum FreeCodingExercise: CaseIterable {
+        case stringComparison
+        case evenNumbers
+        case countingValues
+        case propertyObservers
+        case filteringNames
+    }
+
+    @Test("Free Coding answer banks", arguments: FreeCodingExercise.allCases)
+    func freeCoding(exercise: FreeCodingExercise) {
+        switch exercise {
+        case .stringComparison:
+            checkStringComparisonAnswers()
+        case .evenNumbers:
+            checkEvenNumberAnswers()
+        case .countingValues:
+            checkCountingValueAnswers()
+        case .propertyObservers:
+            checkPropertyObserverAnswers()
+        case .filteringNames:
+            checkFilteringNameAnswers()
+        }
+    }
+}
+
+extension PracticeTests {
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding1() {
+    private func checkStringComparisonAnswers() {
         let question = "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use."
         let answers = [
             "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
@@ -62,18 +89,18 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+            #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
             let result = test.check(answer: answer)
-            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+            #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding2() {
+    private func checkEvenNumberAnswers() {
         let question = "Write code that loops from 1 through 100 to create an array of all even numbers."
         let answers = [
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
@@ -122,19 +149,20 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            print(answer.toAnonymizedVariables())
-            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+            #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
             let result = test.check(answer: answer)
-            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+            #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
+}
 
+extension PracticeTests {
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding3() {
+    private func checkCountingValueAnswers() {
         let question = "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total."
         let answers = [
             "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
@@ -184,18 +212,18 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+            #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
             let result = test.check(answer: answer)
-            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+            #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding4() {
+    private func checkPropertyObserverAnswers() {
         let question = "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value."
         let answers = [
             "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
@@ -218,18 +246,18 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+            #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
             let result = test.check(answer: answer)
-            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+            #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
-    func testFreeCoding5() {
+    private func checkFilteringNameAnswers() {
         let question = "Write code that creates an array containing all the people with the first name Terry."
         let answers = [
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
@@ -280,65 +308,70 @@ class PracticeTests: XCTestCase {
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
             let result = test.check(answer: answer)
-            XCTAssertTrue(result.isCorrect, "This answer should be correct: \(answer)")
+            #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
             let result = test.check(answer: answer)
-            XCTAssertFalse(result.isCorrect, "This answer should be wrong: \(answer).")
+            #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
+}
 
+extension PracticeTests {
     /// Generates a variety of Predict the Output practice questions so we give everything a thorough going over.
-    func testPredictTheOutput() {
-        // test a wide variety of possible examples
-        for _ in 1...100 {
-            let test = PredictTheOutputPractice()
-            XCTAssert(test.answerIsCorrect(test.answer), "Checking the answer against itself should always be true.")
-        }
+    @Test("Generated Predict the Output answers validate", arguments: 1...100)
+    func predictTheOutput(iteration: Int) {
+        let test = PredictTheOutputPractice()
+
+        #expect(
+            test.answerIsCorrect(test.answer),
+            "Generated answer \(iteration) should validate against itself."
+        )
     }
 
     /// Generates a variety of Rearrange the Lines practice questions, checking both the original answer and the original answer minus whitespace.
-    func testRearrangeTheLines() {
-        // test a wide variety of possible examples
-        for _ in 1...100 {
-            let test = RearrangeTheLinesPractice()
-            XCTAssertTrue(test.answerIsCorrect(test.code), "Checking the answer against itself should always be true.")
+    @Test("Generated Rearrange the Lines answers tolerate whitespace", arguments: 1...100)
+    func rearrangeTheLines(iteration: Int) {
+        let test = RearrangeTheLinesPractice()
+        #expect(test.answerIsCorrect(test.code), "Generated answer \(iteration) should validate against itself.")
 
-            /// Add some dummy whitespace and check again.
-            let adjustedCode = test.code.map {
-                return "\t" + $0 + "\t"
-            }
+        let adjustedCode = test.code.map { "\t" + $0 + "\t" }
 
-            XCTAssertTrue(test.answerIsCorrect(adjustedCode), "Whitespace should be ignored when rearranging the lines, so that any brace can be used anywhere.")
-        }
+        #expect(
+            test.answerIsCorrect(adjustedCode),
+            "Whitespace should be ignored in generated answer \(iteration)."
+        )
     }
 
     /// Generates a variety of Spot the Error activities, ensuring each one returns something other than lineNumber being -1.
-    func testSpotTheError() {
-        // test a wide variety of possible examples
-        for _ in 1...100 {
-            let test = SpotTheErrorPractice()
-            XCTAssertNotEqual(test.lineNumber, -1, "No errors were found in Spot the Error. Error was supposed to be \(test.error), with code \(test.code)")
-        }
+    @Test("Generated Spot the Error questions contain an error", arguments: 1...100)
+    func spotTheError(iteration: Int) {
+        let test = SpotTheErrorPractice()
+
+        #expect(
+            test.lineNumber != -1,
+            "Generated question \(iteration) should contain \(test.error) in \(test.code)."
+        )
     }
 
     /// Generates a wide variety of tap to code examples, ensuring each one generates at least two test components.
-    func testTapToCode() {
-        // test a wide variety of possible examples
-        for _ in 1...100 {
-            let test = TapToCodePractice()
-            XCTAssertGreaterThanOrEqual(test.components.count, 2, "Tap to Code practice questions must have at least two components.")
-        }
+    @Test("Generated Tap to Code questions contain multiple components", arguments: 1...100)
+    func tapToCode(iteration: Int) {
+        let test = TapToCodePractice()
+
+        #expect(
+            test.components.count >= 2,
+            "Generated Tap to Code question \(iteration) should have at least two components."
+        )
     }
 
     /// Generates a huge variety of examples for our Type Checkere.
-    func testTypeChecker() {
-        // test a wide variety of possible examples
-        for _ in 1...100 {
-            let test = TypeCheckerPractice()
-            XCTAssertEqual(test.answers.count, 10, "There should be precisely 10 test answers.")
-        }
+    @Test("Generated Type Checker questions contain ten answers", arguments: 1...100)
+    func typeChecker(iteration: Int) {
+        let test = TypeCheckerPractice()
+
+        #expect(test.answers.count == 10, "Generated question \(iteration) should have exactly ten answers.")
     }
 }

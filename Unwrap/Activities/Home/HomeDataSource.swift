@@ -140,6 +140,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     }
 
     private func makeStatsSection() -> HomeSection {
+        let dailyChallengeCount = User.current.dailyChallenges.count
         let currentLevel = HomeItem(type: .stat(
             textLabel: "Current Level",
             detailLabel: "\(User.current.rankNumber)/21",
@@ -148,8 +149,10 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         let dailyChallenges = HomeItem(type: .stat(
             textLabel: "Daily Challenges",
-            detailLabel: String(User.current.dailyChallenges.count),
-            accessibilityLabel: "\(User.current.dailyChallenges) daily challenges completed."
+            detailLabel: String(dailyChallengeCount),
+            accessibilityLabel: dailyChallengeCount == 1
+                ? "1 daily challenge completed."
+                : "\(dailyChallengeCount) daily challenges completed."
         ))
 
         return HomeSection(title: "STATS", type: .stats, items: [

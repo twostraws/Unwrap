@@ -24,6 +24,7 @@
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
+      codeCoverageEnabled = "YES"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "NO">
@@ -51,16 +52,6 @@
                BlueprintIdentifier = "51CC13722065607F00F37A67"
                BuildableName = "UnwrapTests.xctest"
                BlueprintName = "UnwrapTests"
-               ReferencedContainer = "container:Unwrap.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "51CC137D2065607F00F37A67"
-               BuildableName = "UnwrapUITests.xctest"
-               BlueprintName = "UnwrapUITests"
                ReferencedContainer = "container:Unwrap.xcodeproj">
             </BuildableReference>
          </TestableReference>

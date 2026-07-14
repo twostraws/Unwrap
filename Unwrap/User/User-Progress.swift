@@ -26,7 +26,7 @@ extension User {
 
             for i in 1...totalSections {
                 let section = conditionChapter.sections[i-1]
-                let score = User.current.ratingForSection(section.bundleName)
+                let score = ratingForSection(section.bundleName)
                 if score == 100 {
                     awardedScore += 0
                 } else {
@@ -84,7 +84,7 @@ extension User {
                 } else if readNewsCount == 1 {
                     progress = "\n\nYou have read \(readNewsCount) news article!"
                 } else {
-                    progress = "\n\nYou have read \(readNewsCount) news article!"
+                    progress = "\n\nYou have read \(readNewsCount) news articles!"
                 }
 
                 return progress.centered()

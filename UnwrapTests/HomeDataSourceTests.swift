@@ -6,54 +6,55 @@
 //  Copyright © 2021 Hacking with Swift. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import Unwrap
 
-class HomeDataSourceTests: XCTestCase {
+extension UserCoreTests {
+    @Test("Home exposes every badge to a new user without earning it")
+    func homeBadges() throws {
+        try withFreshHomeDataSource { dataSource in
+            let user = User()
 
-    /// Create an instance of HomeDataSource
-    let dataSource = HomeDataSource()
-
-    func testBadges() {
-        let user = User()
-
-        XCTAssertEqual(dataSource.badges.count, 25)
-        let badge = dataSource.badges[10]
-        XCTAssertFalse(user.isBadgeEarned(badge))
+            #expect(dataSource.badges.count == 25)
+            try #require(dataSource.badges.indices.contains(10))
+            #expect(user.isBadgeEarned(dataSource.badges[10]) == false)
+        }
     }
 
-    func testSections() {
-        XCTAssertEqual(dataSource.sections.count, 5)
-
-        let types: [HomeSectionType] = [.status, .score, .stats, .streak, .badges]
-        XCTAssertTrue(dataSource.sections.map({ $0.type }).elementsEqual(types))
-
-        let titles = [nil, "POINTS", "STATS", "STREAK", "BADGES"]
-        XCTAssertTrue(dataSource.sections.map({ $0.title }).elementsEqual(titles))
+    @Test("Home sections have the expected order and titles")
+    func homeSectionMetadata() {
+        withFreshHomeDataSource { dataSource in
+            #expect(dataSource.sections.count == 5)
+            #expect(dataSource.sections.map(\.type) == [.status, .score, .stats, .streak, .badges])
+            #expect(dataSource.sections.map(\.title) == [nil, "POINTS", "STATS", "STREAK", "BADGES"])
+        }
     }
 
-    func testStatusSection() {
-        let section = dataSource.sections.first(where: { $0.type == .status })
-        XCTAssertEqual(section?.items.count, 2)
+    @Test(
+        "Each home section has the expected item count",
+        arguments: [
+            (0, 2),
+            (1, 5),
+            (2, 3),
+            (3, 2),
+            (4, 25)
+        ]
+    )
+    func homeSectionItemCounts(sectionIndex: Int, expectedCount: Int) throws {
+        try withFreshHomeDataSource { dataSource in
+            try #require(dataSource.sections.indices.contains(sectionIndex))
+            #expect(dataSource.sections[sectionIndex].items.count == expectedCount)
+
+            if dataSource.sections[sectionIndex].type == .badges {
+                #expect(dataSource.sections[sectionIndex].items.count == dataSource.badges.count)
+            }
+        }
     }
 
-    func testScoreSection() {
-        let section = dataSource.sections.first(where: { $0.type == .score })
-        XCTAssertEqual(section?.items.count, 5)
-    }
-
-    func testStatsSection() {
-        let section = dataSource.sections.first(where: { $0.type == .stats })
-        XCTAssertEqual(section?.items.count, 3)
-    }
-
-    func testStreakSection() {
-        let section = dataSource.sections.first(where: { $0.type == .streak })
-        XCTAssertEqual(section?.items.count, 2)
-    }
-
-    func testBadgesSection() {
-        let section = dataSource.sections.first(where: { $0.type == .badges })
-        XCTAssertEqual(section?.items.count, dataSource.badges.count)
+    private func withFreshHomeDataSource<T>(_ operation: (HomeDataSource) throws -> T) rethrows -> T {
+        let previousUser: User? = User.current
+        User.current = User()
+        defer { User.current = previousUser }
+        return try operation(HomeDataSource())
     }
 }

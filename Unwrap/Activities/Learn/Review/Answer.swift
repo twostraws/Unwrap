@@ -13,4 +13,9 @@ struct Answer {
     var subtitle: String
     var isCorrect: Bool
     var isSelected: Bool
+
+    /// Returns whether choosing True or False for this answer was correct.
+    func isCorrectAnswer(for selectedTrue: Bool) -> Bool {
+        selectedTrue == isCorrect
+    }
 }

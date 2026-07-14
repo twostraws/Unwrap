@@ -159,21 +159,21 @@ final class User: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        streakDays = try container.decode(Int.self, forKey: .streakDays)
-        bestStreak = try container.decode(Int.self, forKey: .bestStreak)
-        lastStreakEntry = try container.decode(Date.self, forKey: .lastStreakEntry)
+        streakDays = try container.decodeIfPresent(Int.self, forKey: .streakDays) ?? 1
+        bestStreak = try container.decodeIfPresent(Int.self, forKey: .bestStreak) ?? 1
+        lastStreakEntry = try container.decodeIfPresent(Date.self, forKey: .lastStreakEntry) ?? Date()
 
-        learnedSections = try container.decode(Set<String>.self, forKey: .learnedSections)
-        reviewedSections = try container.decode(Set<String>.self, forKey: .reviewedSections)
-        practiceSessions = try container.decode(CountedSet<String>.self, forKey: .practiceSessions)
-        practicePoints = try container.decode(Int.self, forKey: .practicePoints)
-        dailyChallenges = try container.decode([ChallengeResult].self, forKey: .dailyChallenges)
+        learnedSections = try container.decodeIfPresent(Set<String>.self, forKey: .learnedSections) ?? []
+        reviewedSections = try container.decodeIfPresent(Set<String>.self, forKey: .reviewedSections) ?? []
+        practiceSessions = try container.decodeIfPresent(CountedSet<String>.self, forKey: .practiceSessions) ?? CountedSet<String>()
+        practicePoints = try container.decodeIfPresent(Int.self, forKey: .practicePoints) ?? 0
+        dailyChallenges = try container.decodeIfPresent([ChallengeResult].self, forKey: .dailyChallenges) ?? []
 
-        scoreShareCount = try container.decode(Int.self, forKey: .scoreShareCount)
-        latestNewsArticle = try container.decode(Int.self, forKey: .latestNewsArticle)
-        articlesRead = try container.decode(Set<URL>.self, forKey: .articlesRead)
+        scoreShareCount = try container.decodeIfPresent(Int.self, forKey: .scoreShareCount) ?? 0
+        latestNewsArticle = try container.decodeIfPresent(Int.self, forKey: .latestNewsArticle) ?? 0
+        articlesRead = try container.decodeIfPresent(Set<URL>.self, forKey: .articlesRead) ?? []
 
-        theme = try container.decode(String.self, forKey: .theme)
+        theme = try container.decodeIfPresent(String.self, forKey: .theme) ?? "Light"
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
 
@@ -238,9 +238,15 @@ final class User: Codable {
         // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
         NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
 
+        // Keep unit-test persistence deterministic so one test cannot leave a save queued for another test.
+        if User.isRunningTests {
+            save()
+            return
+        }
+
         // Write the change out to disk at the next available chance; again, we don't want to do this immediately to avoid reading and writing at the same time.
-        DispatchQueue.main.async {
-            User.current.save()
+        Task { @MainActor in
+            self.save()
         }
     }
 
@@ -332,7 +338,11 @@ final class User: Codable {
 
     /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.
     @objc func updateStreak() {
-        let today = Date()
+        reconcileStreak(at: Date())
+    }
+
+    /// Updates the user's streak relative to a supplied date, allowing deterministic testing around day boundaries.
+    func reconcileStreak(at today: Date) {
         let elapsedDays: Int
         guard lastStreakEntry.isSameDay(as: today) == false else { return }
         // We want to see if today is more recent than sync'd lastStreakEntry. This will be true if we are first in app during or after a calendar day change. Otherwise, our lastStreakEntry is newer and we need to calculate elapsed days the other way.

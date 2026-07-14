@@ -10,9 +10,15 @@ import AVKit
 import UIKit
 import Zephyr
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if ProcessInfo.processInfo.environment["IS_TESTING"] == "1" {
+            User.destroyTestUser()
+            User.current = User.load(testMode: true) ?? User()
+            return true
+        }
+
         // Instantiate UserDefaults keys to be monitored
         let defaults = UserDefaults()
         defaults.register(defaults: ["User": NSData(), "Test User": NSData()])

@@ -6,166 +6,176 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import XCTest
+import Foundation
+import Testing
 @testable import Unwrap
 
-/// Tests that our user data is persisted correctly.
-class UserTests: XCTestCase {
-    /// Tracks which practice section the user just entered,
-    let testSection = "variables"
-
-    /// Ensure clean users have no badges.
-    func testCleanUser() {
-        let user = User()
-        XCTAssert(user.totalPoints == 0, "New users must start with zero points.")
+extension UserCoreTests {
+    @Test("A clean user has no points")
+    func cleanUser() {
+        #expect(User().totalPoints == 0, "New users must start with zero points.")
     }
 
-    /// Tests that loading a fresh user will fail and fall back to a new user, and ca cm
-    func testLoading() {
+    @Test("A user can be loaded after being saved")
+    func loading() {
+        let defaults = UserDefaults.standard
+        let previousTestData = defaults.data(forKey: "TestUser")
+        defer {
+            if let previousTestData {
+                defaults.set(previousTestData, forKey: "TestUser")
+            } else {
+                defaults.removeObject(forKey: "TestUser")
+            }
+        }
+
         User.destroyTestUser()
+        #expect(User.load(testMode: true) == nil, "Loading a nonexistent user should fail.")
 
-        let missingUser = User.load(testMode: true)
-        XCTAssert(missingUser == nil, "Loading a non-existing user should fail.")
+        User().save(testMode: true)
 
-        let testUser = User()
-        testUser.save(testMode: true)
-
-        let loadedUser = User.load(testMode: true)
-        XCTAssert(loadedUser != nil, "Loading a saved user should always return something.")
+        #expect(User.load(testMode: true) != nil, "Loading a saved user should succeed.")
     }
 
-    /// Tests that completing chapter learning is stored correctly.
-    func testLearning() {
+    @Test("Learning a section records its points")
+    func learning() {
         let user = User()
 
-        XCTAssertFalse(user.hasLearned(testSection), "A new user should not have learned any sections.")
-        XCTAssert(user.ratingForSection(testSection) == 0, "The rating for an unlearned section should be 0.")
+        #expect(!user.hasLearned(legacyTestSection), "A new user should not have learned any sections.")
+        #expect(user.ratingForSection(legacyTestSection) == 0)
 
-        user.learnedSection(testSection)
+        user.learnedSection(legacyTestSection)
 
-        XCTAssert(user.hasLearned(testSection), "Learning a section should store it correctly.")
-        XCTAssert(user.learnPoints == User.pointsForLearning, "Learning one section should give the user the correct number of points.")
-        XCTAssert(user.totalPoints == User.pointsForLearning, "Learning a section should give the user the correct number of points.")
-        XCTAssert(user.ratingForSection(testSection) == User.pointsForLearning, "The rating for a section should be equal to its points for learning plus its points for reviewing, as appropriate.")
+        #expect(user.hasLearned(legacyTestSection))
+        #expect(user.learnPoints == User.pointsForLearning)
+        #expect(user.totalPoints == User.pointsForLearning)
+        #expect(user.ratingForSection(legacyTestSection) == User.pointsForLearning)
     }
 
-    /// Test that relearning a topic (i.e., completing it more than once.)
-    func testRelearning() {
+    @Test("Repeated learning remains idempotent", arguments: [1, 2, 3, 10])
+    func repeatedLearning(completionCount: Int) {
         let user = User()
-        user.learnedSection(testSection)
-        user.learnedSection(testSection)
-        user.learnedSection(testSection)
 
-        XCTAssert(user.learnPoints == User.pointsForLearning, "Learning one section should give the user the correct number of points.")
-        XCTAssert(user.totalPoints == User.pointsForLearning, "Learning a section should give the user the correct number of points.")
-        XCTAssert(user.ratingForSection(testSection) == User.pointsForLearning, "Learning one section should give the user the correct number of points.")
+        for _ in 0..<completionCount {
+            user.learnedSection(legacyTestSection)
+        }
+
+        #expect(user.learnPoints == User.pointsForLearning)
+        #expect(user.totalPoints == User.pointsForLearning)
+        #expect(user.ratingForSection(legacyTestSection) == User.pointsForLearning)
     }
 
-    /// Tests that reviewing a chapter gest stored correctly.
-    func testReviewing() {
+    @Test("Reviewing a section records learning and review points")
+    func reviewing() {
         let user = User()
-        user.reviewedSection(testSection)
 
-        XCTAssert(user.hasLearned(testSection), "Reviewing one section means the user must also have learned it.")
-        XCTAssert(user.hasReviewed(testSection), "Reviewing a section should store it correctly.")
+        user.reviewedSection(legacyTestSection)
 
-        XCTAssert(user.learnPoints == User.pointsForLearning, "Reviewing one section means the user must also have learned it.")
-        XCTAssert(user.reviewPoints == User.pointsForReviewing, "Reviewing one section should give the user the correct number of points.")
-        XCTAssert(user.totalPoints == User.pointsForLearning + User.pointsForReviewing, "Learning and reviewing a section should give the user the correct number of points.")
-        XCTAssert(user.ratingForSection(testSection) == User.pointsForLearning + User.pointsForReviewing, "Reviewing one section should give the user the correct number of points.")
+        #expect(user.hasLearned(legacyTestSection))
+        #expect(user.hasReviewed(legacyTestSection))
+        #expect(user.learnPoints == User.pointsForLearning)
+        #expect(user.reviewPoints == User.pointsForReviewing)
+        #expect(user.totalPoints == User.pointsForLearning + User.pointsForReviewing)
+        #expect(
+            user.ratingForSection(legacyTestSection)
+                == User.pointsForLearning + User.pointsForReviewing
+        )
     }
 
-    /// Tests that completing a challenge gets stored correctly.
-    func testChallenge() {
+    @Test("Completing a challenge records its score")
+    func challenge() {
         let user = User()
-        let challengeScore = 1000
+        let challengeScore = 1_000
 
-        XCTAssertFalse(user.hasCompletedTodaysChallenge, "A new user cannot have completed today's challenge.")
+        #expect(!user.hasCompletedTodaysChallenge)
+
         user.completedChallenge(score: challengeScore)
-        XCTAssertTrue(user.hasCompletedTodaysChallenge, "Completing today's challenge must stop the user from taking the challenge again.")
 
-        XCTAssert(user.dailyChallenges.count == 1, "Taking one challenge ought to be stored as such.")
-        XCTAssert(user.challengePoints == challengeScore, "Scoring \(challengeScore) in a challenge ought to give the user the correct number of points.")
-        XCTAssert(user.totalPoints == challengeScore, "Scoring \(challengeScore) in a challenge ought to give the user the correct number of points.")
+        #expect(user.hasCompletedTodaysChallenge)
+        #expect(user.dailyChallenges.count == 1)
+        #expect(user.challengePoints == challengeScore)
+        #expect(user.totalPoints == challengeScore)
     }
 
-    /// Tests that sharing a score unlocks a badge.
-    func testShareCounting() {
+    @Test("Sharing a score is counted")
+    func shareCounting() {
         let user = User()
+
         user.sharedScore()
-        XCTAssert(user.scoreShareCount == 1, "The user sharing their score should be tracked correctly.")
+
+        #expect(user.scoreShareCount == 1)
     }
 
-    /// Tests that reading news stories gets tracked correctly.
-    func testNewsReading() {
+    @Test("Reading distinct news stories is counted")
+    func newsReading() {
         let user = User()
         let targetCount = 3
 
-        for i in 1...targetCount {
-            user.readNewsStory(forURL: URL(fileURLWithPath: String(i)))
+        for index in 0..<targetCount {
+            user.readNewsStory(forURL: URL(fileURLWithPath: "/news/legacy-\(index)"))
         }
 
-        XCTAssert(user.readNewsCount == targetCount, "Reading one news story should be stored correctly.")
+        #expect(user.readNewsCount == targetCount)
     }
 
-    /// Tests that rank promotions work correctly.
-    func testRankPromotion() {
+    @Test("Reaching a rank boundary promotes the user")
+    func rankPromotion() throws {
         let user = User()
-        XCTAssert(user.rankNumber == 1, "New users should start at rank 1.")
+        let pointsNeeded = try #require(user.pointsUntilNextRank)
 
-        let pointsNeeded = user.pointsUntilNextRank ?? 0
+        #expect(user.rankNumber == 1)
+
         user.completedChallenge(score: pointsNeeded)
 
-        XCTAssert(user.rankNumber == 2, "Giving a new user \(pointsNeeded) points should move them to rank 2.")
-        XCTAssert(user.pointsTowardsNextRank == 0, "Giving a new user the precise number of points to rank up should mean they have no points towards the subsequent rank.")
+        #expect(user.rankNumber == 2)
+        #expect(user.pointsTowardsNextRank == 0)
     }
 
-    /// Tests that streaks work correctly.
-    func testStreakCounting() {
+    @Test("A consecutive day increments the current and best streak")
+    func streakCounting() throws {
         let user = User()
-        XCTAssertEqual(user.streakDays, 1, "New users should start with a streak count of 1.")
+        let today = Date()
 
-        user.updateStreak()
-        XCTAssertEqual(user.streakDays, 1, "Streak count should not change in the same day.")
+        user.lastStreakEntry = today
+        user.reconcileStreak(at: today)
+        #expect(user.streakDays == 1)
 
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-        user.lastStreakEntry = yesterday
-        user.updateStreak()
-        XCTAssertEqual(user.streakDays, 2, "Streak count should change for next day.")
-        XCTAssertEqual(user.bestStreak, 2, "Best streak should be updated")
+        user.lastStreakEntry = try #require(Calendar.current.date(byAdding: .day, value: -1, to: today))
+        user.reconcileStreak(at: today)
+
+        #expect(user.streakDays == 2)
+        #expect(user.bestStreak == 2)
     }
 
-    /// Testing best streak
-    func testBestStreakCounting() {
+    @Test("A current streak never reduces the best streak")
+    func bestStreakCounting() throws {
         let user = User()
+        let today = Date()
+        let yesterday = try #require(Calendar.current.date(byAdding: .day, value: -1, to: today))
 
-        user.updateStreak()
-        XCTAssertEqual(user.bestStreak, 1, "Best streak should be updated")
-
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         user.lastStreakEntry = yesterday
-        user.updateStreak()
-        XCTAssertEqual(user.bestStreak, 2, "Best streak should be updated")
+        user.reconcileStreak(at: today)
+        #expect(user.bestStreak == 2)
 
         user.bestStreak = 25
         user.lastStreakEntry = yesterday
-        user.updateStreak()
-        XCTAssertEqual(user.bestStreak, 25, "Best streak should not be updated")
+        user.reconcileStreak(at: today)
+
+        #expect(user.bestStreak == 25)
     }
 
-    /// Testing user data reset.
-    func testResetProgress() {
+    @Test("Resetting progress clears challenge and practice data")
+    func legacyResetProgress() {
         let user = User()
-
-        let result = ChallengeResult(date: Date(), score: 1000)
-        user.dailyChallenges.append(result)
+        user.dailyChallenges.append(ChallengeResult(date: Date(), score: 1_000))
         user.practiceSessions.insert("Test session")
-        user.practicePoints += 100
+        user.practicePoints = 100
 
         user.resetProgress()
 
-        XCTAssertTrue(user.dailyChallenges.isEmpty, "Daily challenges should be empty.")
-        XCTAssertTrue(user.practiceSessions.isEmpty, "Practice sessions should be empty.")
-        XCTAssertEqual(user.practicePoints, 0, "Practice points should be 0.")
+        #expect(user.dailyChallenges.isEmpty)
+        #expect(user.practiceSessions.isEmpty)
+        #expect(user.practicePoints == 0)
     }
+
+    private var legacyTestSection: String { "variables" }
 }

@@ -20,16 +20,7 @@ class RearrangeTheLinesDataSource: NSObject, UITableViewDataSource, UITableViewD
 
     // Loops over all our code to find whether it's correct or not. We can't just do a simple array comparison because we need to remove whitespace – we don't care if the user matched one brace with another when the indents are different, for example.
     var isUserCorrect: Bool {
-        for lineNumber in 0 ..< practiceData.code.count {
-            let correctCode = practiceData.code[lineNumber].trimmingCharacters(in: .whitespacesAndNewlines)
-            let actualCode = currentCode[lineNumber].trimmingCharacters(in: .whitespacesAndNewlines)
-
-            if correctCode != actualCode {
-                return false
-            }
-        }
-
-        return true
+        practiceData.answerIsCorrect(currentCode)
     }
 
     init(practiceData: RearrangeTheLinesPractice) {

@@ -12,6 +12,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard ProcessInfo.processInfo.environment["IS_TESTING"] != "1" else {
+            return
+        }
+
         guard let windowScene = scene as? UIWindowScene else {
             return
         }

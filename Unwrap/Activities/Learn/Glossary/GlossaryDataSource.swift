@@ -74,12 +74,12 @@ class GlossaryDataSource: NSObject, UITableViewDataSource, UISearchResultsUpdati
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        guard let text = searchController.searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
 
         if text.isEmpty {
             createSortedEntriesAndTitles(from: originalEntries)
         } else {
-            let filteredEntries = originalEntries.filter { return $0.term.lowercased().contains(text) }
+            let filteredEntries = originalEntries.filter { $0.term.localizedStandardContains(text) }
             createSortedEntriesAndTitles(from: filteredEntries)
         }
 

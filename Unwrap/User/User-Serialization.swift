@@ -15,11 +15,16 @@ extension User {
     /// The UserDefaults key where the test user is stored so we don't break the live user when running tests.
     fileprivate static var testKeyName: String { return "TestUser" }
 
+    /// Returns true when the app is running as the host for its unit tests.
+    static var isRunningTests: Bool {
+        return ProcessInfo.processInfo.environment["IS_TESTING"] == "1"
+    }
+
     /// Loads a user from UserDefaults, or returns nil if there was none.
-    static func load(testMode: Bool = false) -> User? {
+    static func load(testMode: Bool? = nil) -> User? {
         let keyName: String
 
-        if testMode == true {
+        if testMode ?? isRunningTests {
             keyName = testKeyName
         } else {
             keyName = liveKeyName
@@ -39,10 +44,10 @@ extension User {
     }
 
     /// Saves a user to user defaults.
-    func save(testMode: Bool = false) {
+    func save(testMode: Bool? = nil) {
         let keyName: String
 
-        if testMode == true {
+        if testMode ?? User.isRunningTests {
             keyName = User.testKeyName
         } else {
             keyName = User.liveKeyName

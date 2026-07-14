@@ -12,19 +12,22 @@ import UIKit
 class WordCollectionViewCell: UICollectionViewCell {
     @IBOutlet var textLabel: UILabel!
 
-    override func awakeFromNib() {
-        clipsToBounds = false
+    nonisolated override func awakeFromNib() {
+        MainActor.assumeIsolated {
+            super.awakeFromNib()
+            clipsToBounds = false
 
-        // Give each cell a gentle border…
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.gray.cgColor
+            // Give each cell a gentle border…
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.gray.cgColor
 
-        // …and a very gentle shadow.
-        layer.shadowOpacity = 0.2
-        layer.cornerRadius = 5
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 2
-        layer.shadowOffset = CGSize(width: 1, height: 1)
+            // …and a very gentle shadow.
+            layer.shadowOpacity = 0.2
+            layer.cornerRadius = 5
+            layer.shadowColor = UIColor.black.cgColor
+            layer.shadowRadius = 2
+            layer.shadowOffset = CGSize(width: 1, height: 1)
+        }
     }
 
     // Style this as being in the correct position.

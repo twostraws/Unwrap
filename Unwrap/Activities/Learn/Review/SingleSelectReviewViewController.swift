@@ -26,6 +26,9 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
     /// Set to true when the user has selected their answer and we are now telling them whether they are correct or not.
     var isShowingAnswer = false
 
+    /// Stores whether the user's True or False selection was correct.
+    var submittedAnswerWasCorrect = false
+
     /// A lexer to highlight our source code.
     let lexer = SwiftLexer()
 
@@ -57,7 +60,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
 
     @IBAction func selectAnswer(_ sender: UIButton) {
         if isShowingAnswer {
-            coordinator?.answerSubmitted(from: self, wasCorrect: currentAnswer.isCorrect)
+            coordinator?.answerSubmitted(from: self, wasCorrect: submittedAnswerWasCorrect)
         } else {
             showAnswer(selected: sender)
         }
@@ -65,6 +68,7 @@ class SingleSelectReviewViewController: ReviewViewController, Storyboarded {
 
     func showAnswer(selected: UIButton) {
         isShowingAnswer = true
+        submittedAnswerWasCorrect = currentAnswer.isCorrectAnswer(for: selected == trueButton)
         navigationItem.leftBarButtonItem?.isEnabled = false
         selected.setTitle("CONTINUE", for: .normal)
 

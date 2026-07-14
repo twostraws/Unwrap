@@ -6,44 +6,58 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import XCTest
+import Foundation
+import Testing
+import UIKit
 @testable import Unwrap
 
 /// Tests that content can be loaded from our app bundle.
-class BundleLoadingTests: XCTestCase {
+@Suite("Bundle loading")
+struct BundleLoadingTests {
     /// Tests decoding a type from JSON.
-    func testDecoding() {
-        _ = Bundle.main.decode([TourItem].self, from: "Tour.json")
+    @Test("JSON resources decode")
+    func decoding() {
+        let items = Bundle.main.decode([TourItem].self, from: "Tour.json")
+        #expect(items.isEmpty == false)
     }
 
     /// Tests loading a Data instance from the app bundle.
-    func testDataLoading() {
-        _ = Data(bundleName: "variables.json")
+    @Test("Data resources load")
+    func dataLoading() {
+        let data = Data(bundleName: "variables.json")
+        #expect(data.isEmpty == false)
     }
 
     /// Tests loading a String instance from the app bundle.
-    func testStringLoading() {
-        _ = String(bundleName: "variables.json")
+    @Test("String resources load")
+    func stringLoading() {
+        let string = String(bundleName: "variables.json")
+        #expect(string.isEmpty == false)
     }
 
     /// Tests that strings can be formatted in a bundle-friendly way.
-    func testStringBundleNames() {
+    @Test("Strings form bundle names")
+    func stringBundleNames() {
         let testString = "This?is , a:test'"
-        XCTAssertEqual(testString.bundleName, "thisis--atest")
+        #expect(testString.bundleName == "thisis--atest")
     }
 
     /// Tests loading the wrapper HTML from our bundle.
-    func testLoadingWrapperHTML() {
-        _ = String.wrapperHTML(width: 320)
+    @Test("Wrapper HTML loads")
+    func loadingWrapperHTML() {
+        let wrapper = String.wrapperHTML(width: 320)
+        #expect(wrapper.isEmpty == false)
     }
 
     /// Tests loading a named color instance from the app bundle.
-    func testNamedColors() {
+    @Test("Named colors load")
+    func namedColors() {
         _ = UIColor(bundleName: "Primary")
     }
 
     /// Tests loading a UIImage instance from the app bundle.
-    func testImages() {
+    @Test("Images load")
+    func images() {
         _ = UIImage(bundleName: "Rank Level 1")
     }
 }

@@ -64,10 +64,9 @@ struct PredictTheOutputPractice: PracticeActivity {
             // If this answer has no conditions use it immediately.
             guard let conditions = answer.conditions else { return answer }
 
-            // Still here? Go through all conditions and check they are true for our values.
-            for condition in conditions where condition.evaluatesTrue(values: values, operators: operators) {
-                    // All conditions are true, so use this answer.
-                    return answer
+            // Still here? Check that every condition is true for our values.
+            if conditions.allSatisfy({ $0.evaluatesTrue(values: values, operators: operators) }) {
+                return answer
             }
         }
 
@@ -93,11 +92,15 @@ struct PredictTheOutputPractice: PracticeActivity {
 
     /// Reduces the chance of basic differences by removing smart quotes and extra spaces, but *not* collapsing case – we do that inside answerIsCorrect() so that our correctAnswer property is formatted nicely for users.
     private func process(_ string: String) -> String {
-        var result = string.replacingOccurrences(of: "“", with: "\"")
-        result = result.replacingOccurrences(of: "”", with: "\"")
-        result = result.replacingOccurrences(of: "‘", with: "'")
-        result = result.replacingOccurrences(of: "’", with: "'")
-        result = result.replacingOccurrences(of: "  ", with: " ")
+        var result = string.replacing("“", with: "\"")
+        result = result.replacing("”", with: "\"")
+        result = result.replacing("‘", with: "'")
+        result = result.replacing("’", with: "'")
+
+        while result.contains("  ") {
+            result = result.replacing("  ", with: " ")
+        }
+
         return result
     }
 }

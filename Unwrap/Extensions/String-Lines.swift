@@ -16,9 +16,11 @@ extension String {
 
     /// Calculates the first line where two strings differ, or returns -1.
     func lineDiff(from other: String) -> Int {
+        let ourLines = lines
+        let theirLines = other.lines
         var counter = 0
 
-        for (ourLine, theirLine) in zip(self.lines, other.lines) {
+        for (ourLine, theirLine) in zip(ourLines, theirLines) {
             if ourLine != theirLine {
                 return counter
             }
@@ -26,6 +28,6 @@ extension String {
             counter += 1
         }
 
-        return -1
+        return ourLines.count == theirLines.count ? -1 : counter
     }
 }
