@@ -3,6 +3,7 @@
 		"name": "Simply Read",
 		"description": "Cleared all Simple Types chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "eyeglasses",
 		"criterion": "read",
 		"value": "simple-types"
 	},
@@ -10,6 +11,7 @@
 		"name": "It's Complicated",
 		"description": "Cleared all Complex Types chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "square.stack.3d.up.fill",
 		"criterion": "read",
 		"value": "complex-types"
 	},
@@ -17,6 +19,7 @@
 		"name": "Hello? Operator?",
 		"description": "Cleared all Operators and Conditions chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "plus.forwardslash.minus",
 		"criterion": "read",
 		"value": "operators-and-conditions"
 	},
@@ -24,6 +27,7 @@
 		"name": "Thrown For A Loop",
 		"description": "Cleared all Looping chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "repeat",
 		"criterion": "read",
 		"value": "looping"
 	},
@@ -31,6 +35,7 @@
 		"name": "Functioning Adult",
 		"description": "Cleared all Functions chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "function",
 		"criterion": "read",
 		"value": "functions"
 	},
@@ -38,6 +43,7 @@
 		"name": "Closed For Business",
 		"description": "Cleared all Closures chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "curlybraces",
 		"criterion": "read",
 		"value": "closures"
 	},
@@ -45,6 +51,7 @@
 		"name": "Strictly Structs",
 		"description": "Cleared all Structs chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "cube.fill",
 		"criterion": "read",
 		"value": "structs"
 	},
@@ -52,6 +59,7 @@
 		"name": "A Class Of Their Own",
 		"description": "Cleared all Classes chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "crown.fill",
 		"criterion": "read",
 		"value": "classes"
 	},
@@ -59,6 +67,7 @@
 		"name": "Protocol Droid",
 		"description": "Cleared all Protocols chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "checklist",
 		"criterion": "read",
 		"value": "protocols"
 	},
@@ -66,6 +75,7 @@
 		"name": "Optionals, Maybe",
 		"description": "Cleared all Optionals chapters.",
 		"color": "Badge-Chapter",
+		"symbolName": "questionmark.diamond.fill",
 		"criterion": "read",
 		"value": "optionals"
 	},
@@ -73,6 +83,7 @@
 		"name": "One Of A Type",
 		"description": "Completed Type Practice ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "tag.fill",
 		"criterion": "practice",
 		"value": "type-practice"
 	},
@@ -80,6 +91,7 @@
 		"name": "Bug Hunter",
 		"description": "Completed Spot the Error ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "ladybug.fill",
 		"criterion": "practice",
 		"value": "spot-the-error"
 	},
@@ -87,6 +99,7 @@
 		"name": "Human Compiler",
 		"description": "Completed Predict the Output ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "cpu.fill",
 		"criterion": "practice",
 		"value": "predict-the-output"
 	},
@@ -94,6 +107,7 @@
 		"name": "Freestyler",
 		"description": "Completed Free Coding ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "chevron.left.forwardslash.chevron.right",
 		"criterion": "practice",
 		"value": "free-coding"
 	},
@@ -101,6 +115,7 @@
 		"name": "The Unjumbler",
 		"description": "Completed Rearrange the Lines ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "arrow.up.arrow.down",
 		"criterion": "practice",
 		"value": "rearrange-the-lines"
 	},
@@ -108,6 +123,7 @@
 		"name": "All Tapped Out",
 		"description": "Completed Tap to Code ten times.",
 		"color": "Badge-Practice",
+		"symbolName": "hand.tap.fill",
 		"criterion": "practice",
 		"value": "tap-to-code"
 	},
@@ -115,6 +131,7 @@
 		"name": "Short Streak",
 		"description": "Launched the app five days in a row.",
 		"color": "Badge-Streak",
+		"symbolName": "sparkle",
 		"criterion": "streak",
 		"value": "5"
 	},
@@ -122,6 +139,7 @@
 		"name": "Medium Streak",
 		"description": "Launched the app 10 days in a row.",
 		"color": "Badge-Streak",
+		"symbolName": "sparkles",
 		"criterion": "streak",
 		"value": "10"
 	},
@@ -129,6 +147,7 @@
 		"name": "Long Streak",
 		"description": "Launched the app 30 days in a row.",
 		"color": "Badge-Streak",
+		"symbolName": "flame.fill",
 		"criterion": "streak",
 		"value": "30"
 	},
@@ -136,6 +155,7 @@
 		"name": "Epic Streak",
 		"description": "Launched the app 100 days in a row.",
 		"color": "Badge-Streak",
+		"symbolName": "bolt.fill",
 		"criterion": "streak",
 		"value": "100"
 	},
@@ -143,6 +163,7 @@
 		"name": "Amateur Challenger",
 		"description": "Completed five daily challenges.",
 		"color": "Badge-Challenge",
+		"symbolName": "flag.fill",
 		"criterion": "challenge",
 		"value": "5"
 	},
@@ -150,6 +171,7 @@
 		"name": "Experienced Challenger",
 		"description": "Completed 20 daily challenges.",
 		"color": "Badge-Challenge",
+		"symbolName": "medal.fill",
 		"criterion": "challenge",
 		"value": "20"
 	},
@@ -157,6 +179,7 @@
 		"name": "Veteran Challenger",
 		"description": "Completed 50 daily challenges.",
 		"color": "Badge-Challenge",
+		"symbolName": "trophy.fill",
 		"criterion": "challenge",
 		"value": "50"
 	},
@@ -164,14 +187,8 @@
 		"name": "Keen Reader",
 		"description": "Read 20 news stories.",
 		"color": "Badge-Misc",
+		"symbolName": "newspaper.fill",
 		"criterion": "news",
 		"value": "20"
-	},
-	{
-		"name": "Social Sharer",
-		"description": "Shared your score to Twitter or Facebook at least once.",
-		"color": "Badge-Misc",
-		"criterion": "share",
-		"value": "1"
 	}
 ]

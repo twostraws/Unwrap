@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "Classes are similar to structs in that they allow you to create new types with properties and methods, but they have five important differences and I’m going to walk you through each of those differences one at a time."
+        },
+        {
+            "text": "The first difference between classes and structs is that classes never come with a memberwise initializer. This means if you have properties in your class, you must always create your own initializer."
+        },
+        {
+            "text": "For example:"
+        },
+        {
+            "code": "class Dog {\n  var name: String\n  var breed: String\n  init(name: String, breed: String) {\n    self.name = name\n    self.breed = breed\n  }\n}"
+        },
+        {
+            "text": "Creating instances of that class looks just the same as if it were a struct:"
+        },
+        {
+            "code": "let poppy = Dog(name: \"Poppy\", breed: \"Poodle\")"
+        }
+    ],
     "title": "Creating your own classes",
     "postscript": "If a class has properties, it needs an initializer. The only exception is if all properties have default values, in which case an initializer isn't needed.",
     "reviewType": "singleSelection",
@@ -8,41 +28,41 @@
     "correct": [
         {
             "answer": "class TIE {\n\tvar name: String\n\tvar speed: Int\n\tinit(name: String, speed: Int) {\n\t\tself.name = name\n\t\tself.speed = speed\n\t}\n}\nlet fighter = TIE(name: \"TIE Fighter\", speed: 50)\nlet interceptor = TIE(name: \"TIE Interceptor\", speed: 70)",
-            "reason": "This code defines a valid class called <code>TIE<\/code>."
+            "reason": "This code defines a valid class called `TIE`."
         },
         {
             "answer": "class Podcast {\n\tvar hosts: [String]\n\tinit(hosts: [String]) {\n\t\tself.hosts = hosts\n\t}\n}",
-            "reason": "This code defines a valid class called <code>Podcast<\/code>."
+            "reason": "This code defines a valid class called `Podcast`."
         },
         {
             "answer": "class BoardGame {\n\tvar name: String\n\tvar minimumPlayers = 1\n\tvar maximumPlayers = 4\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}",
-            "reason": "This code defines a valid class called <code>BoardGame<\/code>."
+            "reason": "This code defines a valid class called `BoardGame`."
         },
         {
             "answer": "class VideoGame {\n\tvar hero: String\n\tvar enemy: String\n\tinit(heroName: String, enemyName: String) {\n\t\tself.hero = heroName\n\t\tself.enemy = enemyName\n\t}\n}\nlet monkeyIsland = VideoGame(heroName: \"Guybrush Threepwood\", enemyName: \"LeChuck\")",
-            "reason": "This code defines a valid class called <code>VideoGame<\/code>."
+            "reason": "This code defines a valid class called `VideoGame`."
         },
         {
             "answer": "class ThemePark {\n\tvar entryPrice: Int\n\tvar rides: [String]\n\tinit(rides: [String]) {\n\t\tself.rides = rides\n\t\tself.entryPrice = rides.count * 2\n\t}\n}",
-            "reason": "This code defines a valid class called <code>ThemePark<\/code>."
+            "reason": "This code defines a valid class called `ThemePark`."
         },
         {
             "answer": "class Empty { }\nlet nothing = Empty()",
-            "reason": "This code defines a valid class called <code>Empty<\/code>."
+            "reason": "This code defines a valid class called `Empty`."
         }
     ],
     "wrong": [
         {
             "answer": "class Painting {\n\tvar title: String\n\tvar artist: String\n\tvar paintType: String\n\tfunc init(title: String, artist: String, paintType: String) {\n\t\tself.title = title\n\t\tself.artist = artist\n\t\tself.paintType = paintType\n\t}\n}",
-            "reason": "<code>init()</code> must not have the <code>func<\/code> keyword before it."
+            "reason": "`init()` must not have the `func` keyword before it."
         },
         {
             "answer": "class Image {\n\tvar filename: String\n\tvar isAnimated: Bool\n\tinit(filename: String, isAnimated: Bool) {\n\t\tfilename = filename\n\t\tisAnimated = isAnimated\n\t}\n}",
-            "reason": "Because the parameters and properties have the same names, Swift requires that we use <code>self.<\/code> to distinguish the properties."
+            "reason": "Because the parameters and properties have the same names, Swift requires that we use `self.` to distinguish the properties."
         },
         {
             "answer": "class Singer {\n\tvar name: String\n\tvar favoriteSong: String\n\tinit(name: String, song: String) {\n\t\tself.name = name\n\t\tself.song = song\n\t}\n}\nlet taylor = Singer(name: \"Taylor Swift\", song: \"Blank Space\")",
-            "reason": "This class has a property called <code>favoriteSong<\/code>, but the rest of the code uses <code>song<\/code> instead."
+            "reason": "This class has a property called `favoriteSong`, but the rest of the code uses `song` instead."
         },
         {
             "answer": "struct Poll {\n\tvar question: String\n\tvar option1: String\n\tvar option2: String\n\tvar votes: [Int]\n}\nlet question = \"Jet black or rose gold?\"\nlet poll = Poll(question: question, option1: \"Jet black\", option2: \"Rose gold\", votes: [0, 0, 0, 0, 1, 0, 1])",
@@ -54,7 +74,7 @@
         },
         {
             "answer": "class Attendee {\n\tvar badgeNumber = 0\n\tvar name = \"Anonymous\"\n\tvar company = \"Unknown\"\n\tinit(badge: Int) {\n\t\tself.badgeNumber = badgeNumber\n\t}\n}",
-            "reason": "This attempts to assign a property to itself; it should probably read <code>badgeNumber = badge<\/code>."
+            "reason": "This attempts to assign a property to itself; it should probably read `badgeNumber = badge`."
         }
     ]
 }

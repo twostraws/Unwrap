@@ -1,9 +1,26 @@
 {
+    "content": [
+        {
+            "text": "An alternative to `if let` is `guard let`, which also unwraps optionals. `guard let` will unwrap an optional for you, but if it finds `nil` inside it expects you to exit the function, loop, or condition you used it in."
+        },
+        {
+            "text": "However, the major difference between `if let` and `guard let` is that your unwrapped optional remains usable after the `guard` code."
+        },
+        {
+            "text": "Let’s try it out with a `greet()` function. This will accept an optional string as its only parameter and try to unwrap it, but if there’s nothing inside it will print a message and exit. Because optionals unwrapped using `guard let` stay around after the `guard` finishes, we can print the unwrapped string at the end of the function:"
+        },
+        {
+            "code": "func greet(_ name: String?) {\n  guard let unwrapped = name else {\n    print(\"You didn't provide a name!\")\n    return\n  }\n  print(\"Hello, \\(unwrapped)!\")\n}"
+        },
+        {
+            "text": "Using `guard let` lets you deal with problems at the start of your functions, then exit immediately. This means the rest of your function is the happy path – the path your code takes if everything is correct."
+        }
+    ],
     "title": "Unwrapping with guard",
-    "postscript": "It's common to use both <code>if let<\/code> and <code>guard let<\/code> to unwrap optionals into a constant of the same name. For example, <code>guard let name = name else { return }<\/code>",
+    "postscript": "It's common to use both `if let` and `guard let` to unwrap optionals into a constant of the same name. For example, `guard let name = name else { return }`",
     "reviewType": "singleSelection",
     "question": "This code will print a message \u2013 true or false?",
-    "hint": "If your <code>guard let<\/code> condition fails, you must exit the current method, loop, or condition before the <code>else<\/code> block ends.",
+    "hint": "If your `guard let` condition fails, you must exit the current method, loop, or condition before the `else` block ends.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,27 +51,27 @@
     "wrong": [
         {
             "answer": "func username(for id: Int?) -> String {\n\tguard let id = id else {\n\t\treturn nil\n\t}\n\tif id == 1989 {\n\t\treturn \"Taylor Swift\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let user = username(for: 1989) {\n\tprint(\"Hello, \\(user)!\")\n}",
-            "reason": "This code acts as if <code>username<\/code> returns an optional string; it does not."
+            "reason": "This code acts as if `username` returns an optional string; it does not."
         },
         {
             "answer": "func verify(age: Int?) -> Bool {\n\tguard age >= 18 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\nif verify(age: 28) {\n\tprint(\"You're old enough.\")\n} else {\n\tprint(\"Come back in a few years.\")\n}",
-            "reason": "<code>guard<\/code> must be followed by <code>else<\/code>."
+            "reason": "`guard` must be followed by `else`."
         },
         {
             "answer": "func playOpera(by composer: String?) -> String? {\n\tlet composer = composer else {\n\t\treturn \"Please specify a composer.\"\n\t}\n\tif composer == \"Mozart\" {\n\t\treturn \"Le nozze di Figaro\"\n\t} else {\n\t\treturn nil\n\t}\n}\nif let opera = playOpera(by: \"Mozart\") {\n\tprint(opera)\n}",
-            "reason": "<code>let composer = composer else<\/code> should read <code>guard let composer = composer else<\/code>."
+            "reason": "`let composer = composer else` should read `guard let composer = composer else`."
         },
         {
             "answer": "func plantTree(_ type: String?) {\n\tguard let type else {\n\t\treturn\n\t}\n\tprint(\"Planting a \\(type).\")\n}\nplantTree(\"willow\")",
-            "reason": "This needs to provide a name for the unwrapped <code>type<\/code> parameter, such as <code>guard let type = type else<\/code>."
+            "reason": "This needs to provide a name for the unwrapped `type` parameter, such as `guard let type = type else`."
         },
         {
             "answer": "func playScale(name: String?) {\n\tguard let name = name {\n\t\treturn\n\t}\n\tprint(\"Playing the \\(name) scale.\")\n}\nplayScale(name: \"C\")",
-            "reason": "<code>guard<\/code> must be followed by <code>else<\/code>."
+            "reason": "`guard` must be followed by `else`."
         },
         {
             "answer": "func add3(to number: Int) -> Int {\n\tguard let number = number else {\n\t\treturn 3\n\t}\n\treturn number + 3\n}\nlet added = add3(to: 5)\nprint(added)",
-            "reason": "The <code>number<\/code> parameter is not optional, so we can't use <code>guard let<\/code> to unwrap it."
+            "reason": "The `number` parameter is not optional, so we can't use `guard let` to unwrap it."
         }
     ]
 }

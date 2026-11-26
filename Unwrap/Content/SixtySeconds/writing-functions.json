@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Functions let us re-use code, which means we can write a function to do something interesting then run that function from lots of places. Repeating code is generally a bad idea, and functions help us avoid doing that."
+        },
+        {
+            "text": "To start with, we’re going to write a function that prints help information for users of our app. We might need this anywhere in our app, so having it as a function is a good idea."
+        },
+        {
+            "text": "Swift functions start with the `func` keyword, then your function name, then open and close parentheses. All the body of your function – the code that should be run when the function is requested – is placed inside braces."
+        },
+        {
+            "text": "Let’s write the `printHelp()` function now:"
+        },
+        {
+            "code": "func printHelp() {\n  let message = \"\"\"\nWelcome to MyApp!\nRun this app inside a directory of images and\nMyApp will resize them all into thumbnails\n\"\"\"\n  print(message)\n}"
+        },
+        {
+            "text": "We can now run that using `printHelp()` by itself:"
+        },
+        {
+            "code": "printHelp()"
+        },
+        {
+            "text": "Running a function is often referred to as *calling* a function."
+        }
+    ],
     "title": "Writing functions",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -38,15 +64,15 @@
         },
         {
             "answer": "func shipOrders() {\n\tlet orders = [1, 2, 3, 4, 5]\n\tfor order in orders {\n\t\tprint(\"Shipping order \\(id)\")\n\t}\n}\nshipOrders()",
-            "reason": "This is invalid because <code>id<\/code> is not defined anywhere."
+            "reason": "This is invalid because `id` is not defined anywhere."
         },
         {
             "answer": "function applyFix() {\n\tprint(\"The fix is applied!\")\n}",
-            "reason": "This uses <code>function</code> rather than <code>func<\/code>."
+            "reason": "This uses `function` rather than `func`."
         },
         {
             "answer": "func study {\n\tprint(\"It's time to study.\")\n\tprint(\"I'm studying!\")\n\tprint(\"Bored now; time for Netflix.\")\n}\nstudy()",
-            "reason": "This is missing parentheses after <code>func study<\/code>."
+            "reason": "This is missing parentheses after `func study`."
         },
         {
             "answer": "func readUserInput() {\n\twhile true {\n\t\tprint(\"Reading user input...\")\n\t\tbreak\n\t}\nreadUserInput()",

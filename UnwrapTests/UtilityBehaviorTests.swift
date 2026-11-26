@@ -5,7 +5,6 @@
 
 import Foundation
 import Testing
-import UIKit
 @testable import Unwrap
 
 @Suite("Core utility behavior")
@@ -29,7 +28,7 @@ struct UtilityBehaviorTests {
         #expect(countedSet.count(for: "swift") == 1)
         countedSet.remove("swift")
         countedSet.remove("swift")
-        #expect(!countedSet.contains("swift"))
+        #expect(countedSet.contains("swift") == false)
         #expect(countedSet.count == 1)
     }
 
@@ -51,55 +50,63 @@ struct UtilityBehaviorTests {
         #expect(decoded.count(for: 30) == 0)
     }
 
-    @Test("lineDiff handles equal strings, changed lines, and unequal line counts")
-    func lineDifferences() {
-        #expect("".lineDiff(from: "") == -1)
-        #expect("same".lineDiff(from: "same") == -1)
-        #expect("first\nsecond".lineDiff(from: "changed\nsecond") == 0)
-        #expect("first\nsecond".lineDiff(from: "first\nchanged") == 1)
-        #expect("same".lineDiff(from: "same\nextra") == 1)
-        #expect("same\nextra".lineDiff(from: "same") == 1)
-        #expect("same\n".lineDiff(from: "same") == 1)
-    }
-
-    @Test("Small string helpers preserve their documented behavior")
+    @Test("Small string helpers preserve filename and line behavior")
     func stringHelpers() {
         #expect("".lines == [""])
         #expect("one\ntwo\n".lines == ["one", "two", ""])
-
-        #expect("Andrew".startsWithVowel)
-        #expect("URSULA".startsWithVowel)
-        #expect(!"Swift".startsWithVowel)
-        #expect(!"".startsWithVowel)
-
-        let source = "\\(name) -> String"
-        let expected = "\\\u{2060}(name) -\u{2060}> String"
-        #expect(source.fixingLineWrapping() == expected)
-
-        #expect("Number of cars".formatAsVariable() == "numberOfCars")
         #expect("This?is , a:test'".bundleName == "thisis--atest")
     }
 
-    @Test("Placeholder filters handle words, graphemes, and absent filters")
+    @Test("Native placeholder filters handle words, graphemes, and unknown filters")
     func placeholderFilters() {
-        #expect("Swift".applyingFilter("count") == "5")
-        #expect("👩🏽‍💻".applyingFilter("count") == "1")
-        #expect("hello world".applyingFilter("capitalized") == "Hello World")
-        #expect("swift language".applyingFilter("capitalizedFirst") == "Swift language")
-        #expect("".applyingFilter("capitalizedFirst") == "")
+        let resolver = PracticePlaceholderResolver(random: SeededRandomSource(seed: 1))
 
-        #expect("hello world|capitalized".resolvingFilters() == "Hello World")
-        #expect("plain text".resolvingFilters() == "plain text")
-        #expect("one|two|three".resolvingFilters() == "one|two|three")
+        #expect(resolver.applyingFilter(to: "Swift|count") == "5")
+        #expect(resolver.applyingFilter(to: "👩🏽‍💻|count") == "1")
+        #expect(resolver.applyingFilter(to: "hello world|capitalized") == "Hello World")
+        #expect(resolver.applyingFilter(to: "swift language|capitalizedFirst") == "Swift language")
+        #expect(resolver.applyingFilter(to: "|capitalizedFirst") == "")
+        #expect(resolver.applyingFilter(to: "plain text") == "plain text")
+        #expect(resolver.applyingFilter(to: "one|unknown") == "one|unknown")
     }
 
-    @Test("NSRange substring conversion respects extended Unicode graphemes")
-    func unicodeSubstring() {
-        let source = "A👩🏽‍💻B"
-        let expected = "👩🏽‍💻"
-        let range = (source as NSString).range(of: expected)
+    @Test("Native placeholder references resolve names and values")
+    func placeholderReferences() {
+        let resolver = PracticePlaceholderResolver(random: SeededRandomSource(seed: 1))
+        let context = PracticePlaceholderResolver.Context(
+            names: ["numberOfCars"],
+            naturalNames: ["number of cars"],
+            values: ["12"],
+            operators: []
+        )
+        let template = "NAME_0; NAME_NATURAL_0|capitalizedFirst; NAME_NATURAL_0|count; VALUE_0"
 
-        #expect(source.substring(at: range) == expected)
+        #expect(
+            resolver.resolveReferences(in: template, context: context)
+                == "numberOfCars; Number of cars; 14; 12"
+        )
+    }
+
+    @Test("Placeholder calculations reject arithmetic overflow")
+    func placeholderCalculationOverflow() throws {
+        let resolver = PracticePlaceholderResolver(random: SeededRandomSource(seed: 1))
+        let overflowingExpressions = [
+            "\(Int.max) + 1",
+            "\(Int.max) * 2",
+            "(-\(Int.max) - 1) / -1",
+            "-(-\(Int.max) - 1)"
+        ]
+
+        #expect(try resolver.resolve("${2 + 3 * 4}").output == "14")
+
+        for expression in overflowingExpressions {
+            do {
+                _ = try resolver.resolve("${\(expression)}")
+                Issue.record("Overflowing calculation should be rejected: \(expression)")
+            } catch let error as PracticeContentError {
+                #expect(error == .invalidContent(expression))
+            }
+        }
     }
 
     @Test("Regex replacement changes exactly one capture")
@@ -112,25 +119,11 @@ struct UtilityBehaviorTests {
         #expect("cat".replacingOne(of: "(dog)", with: "bird") == "cat")
     }
 
-    @Test("HTML wrappers resolve style, width, and image substitutions")
-    func bundleWrapperSubstitutions() throws {
-        let width: CGFloat = 347
-        let resourceURL = try #require(Bundle.main.resourceURL)
-        let full = String.wrapperHTML(width: width)
-        let slim = String.wrapperHTML(width: width, slimLayout: true)
+    @Test("Regex replacement respects extended Unicode graphemes")
+    func unicodeRegexReplacement() {
+        let source = "A👩🏽‍💻B"
 
-        for wrapper in [full, slim] {
-            #expect(!wrapper.contains("[STYLE]"))
-            #expect(!wrapper.contains("[FONTSIZE]"))
-            #expect(!wrapper.contains("[IMAGEWIDTH]"))
-            #expect(wrapper.contains("\(width)px"))
-            #expect(wrapper.contains("[BODY]"))
-        }
-
-        #expect(full.contains("playVideo"))
-        #expect(full.contains("<img src=\"\(resourceURL)/"))
-        #expect(!slim.contains("playVideo"))
-        #expect(!slim.contains("<img src="))
+        #expect(source.replacingOne(of: "(👩🏽‍💻)", with: "Swift") == "ASwiftB")
     }
 
     private func occurrences(of needle: String, in haystack: String) -> Int {

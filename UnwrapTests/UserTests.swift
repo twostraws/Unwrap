@@ -36,6 +36,26 @@ extension UserCoreTests {
         #expect(User.load(testMode: true) != nil, "Loading a saved user should succeed.")
     }
 
+    @Test("Constructing a user with a historical date never persists intermediate state")
+    func constructionIsSideEffectFree() {
+        let defaults = UserDefaults.standard
+        let previousTestData = defaults.data(forKey: User.testUserKey)
+        defer {
+            if let previousTestData {
+                defaults.set(previousTestData, forKey: User.testUserKey)
+            } else {
+                defaults.removeObject(forKey: User.testUserKey)
+            }
+        }
+
+        User.destroyTestUser()
+        let historicalDate = Date(timeIntervalSince1970: 1_000)
+        let user = User(now: historicalDate)
+
+        #expect(user.lastStreakEntry == historicalDate)
+        #expect(defaults.data(forKey: User.testUserKey) == nil)
+    }
+
     @Test("Learning a section records its points")
     func learning() {
         let user = User()
@@ -86,23 +106,14 @@ extension UserCoreTests {
         let user = User()
         let challengeScore = 1_000
 
-        #expect(!user.hasCompletedTodaysChallenge)
+        #expect(!user.hasCompletedChallenge(on: .now))
 
         user.completedChallenge(score: challengeScore)
 
-        #expect(user.hasCompletedTodaysChallenge)
+        #expect(user.hasCompletedChallenge(on: .now))
         #expect(user.dailyChallenges.count == 1)
         #expect(user.challengePoints == challengeScore)
         #expect(user.totalPoints == challengeScore)
-    }
-
-    @Test("Sharing a score is counted")
-    func shareCounting() {
-        let user = User()
-
-        user.sharedScore()
-
-        #expect(user.scoreShareCount == 1)
     }
 
     @Test("Reading distinct news stories is counted")
@@ -127,7 +138,6 @@ extension UserCoreTests {
         user.completedChallenge(score: pointsNeeded)
 
         #expect(user.rankNumber == 2)
-        #expect(user.pointsTowardsNextRank == 0)
     }
 
     @Test("A consecutive day increments the current and best streak")

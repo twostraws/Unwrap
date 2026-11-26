@@ -6,31 +6,25 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 /// One badge the user can earn.
-struct Badge: Decodable {
+struct Badge: Decodable, Hashable, Identifiable {
     /// The user-facing name for this badge.
-    var name: String
+    let name: String
 
     /// The user-facing description for this badge.
-    var description: String
+    let description: String
 
     /// A named color that specifies how this badge's icon should be tinted.
-    var color: String
+    let color: String
+
+    /// The SF Symbol drawn inside this badge's ring.
+    let symbolName: String
 
     /// These two specify how this badge should be unlocked.
-    var criterion: String
-    var value: String
+    let criterion: String
+    let value: String
 
-    /// This converts the badge's name into its icon name
-    var filename: String {
-        let cleanBadgeName = name.replacingOccurrences(of: "[\\?',]", with: "", options: .regularExpression)
-        return cleanBadgeName.replacingOccurrences(of: " ", with: "-")
-    }
-
-    /// The image for this badge.
-    var image: UIImage {
-        return UIImage(bundleName: "Badge-\(filename)")
-    }
+    var id: String { name }
 }

@@ -5,333 +5,386 @@
 
 import Foundation
 import Testing
-import UIKit
 @testable import Unwrap
 
 @Suite("Practice conditions")
 struct PracticeConditionTests {
-    nonisolated struct ConditionExpectation {
+    struct ConditionExpectation {
         let left: String
         let check: String
         let right: String
         let expectedResult: Bool
     }
 
-    private nonisolated static let conditionExpectations = [
-        ConditionExpectation(left: "2", check: ">", right: "1", expectedResult: true),
-        ConditionExpectation(left: "1", check: ">", right: "1", expectedResult: false),
-        ConditionExpectation(left: "0", check: ">", right: "1", expectedResult: false),
-        ConditionExpectation(left: "2", check: ">=", right: "1", expectedResult: true),
-        ConditionExpectation(left: "1", check: ">=", right: "1", expectedResult: true),
-        ConditionExpectation(left: "0", check: ">=", right: "1", expectedResult: false),
-        ConditionExpectation(left: "0", check: "<", right: "1", expectedResult: true),
-        ConditionExpectation(left: "1", check: "<", right: "1", expectedResult: false),
-        ConditionExpectation(left: "2", check: "<", right: "1", expectedResult: false),
-        ConditionExpectation(left: "0", check: "<=", right: "1", expectedResult: true),
-        ConditionExpectation(left: "1", check: "<=", right: "1", expectedResult: true),
-        ConditionExpectation(left: "2", check: "<=", right: "1", expectedResult: false),
-        ConditionExpectation(left: "1", check: "==", right: "1", expectedResult: true),
-        ConditionExpectation(left: "1", check: "==", right: "2", expectedResult: false),
-        ConditionExpectation(left: "1", check: "!=", right: "2", expectedResult: true),
-        ConditionExpectation(left: "1", check: "!=", right: "1", expectedResult: false)
-    ]
+    @Test("Every comparison operator handles numeric boundaries")
+    func numericComparisonBoundaries() throws {
+        let expectations = [
+            ConditionExpectation(left: "2", check: ">", right: "1", expectedResult: true),
+            ConditionExpectation(left: "1", check: ">", right: "1", expectedResult: false),
+            ConditionExpectation(left: "0", check: ">", right: "1", expectedResult: false),
+            ConditionExpectation(left: "2", check: ">=", right: "1", expectedResult: true),
+            ConditionExpectation(left: "1", check: ">=", right: "1", expectedResult: true),
+            ConditionExpectation(left: "0", check: ">=", right: "1", expectedResult: false),
+            ConditionExpectation(left: "0", check: "<", right: "1", expectedResult: true),
+            ConditionExpectation(left: "1", check: "<", right: "1", expectedResult: false),
+            ConditionExpectation(left: "2", check: "<", right: "1", expectedResult: false),
+            ConditionExpectation(left: "0", check: "<=", right: "1", expectedResult: true),
+            ConditionExpectation(left: "1", check: "<=", right: "1", expectedResult: true),
+            ConditionExpectation(left: "2", check: "<=", right: "1", expectedResult: false),
+            ConditionExpectation(left: "1", check: "==", right: "1", expectedResult: true),
+            ConditionExpectation(left: "1", check: "==", right: "2", expectedResult: false),
+            ConditionExpectation(left: "1", check: "!=", right: "2", expectedResult: true),
+            ConditionExpectation(left: "1", check: "!=", right: "1", expectedResult: false)
+        ]
 
-    @Test("Every comparison operator handles its boundaries", arguments: Self.conditionExpectations)
-    func comparisonOperators(expectation: ConditionExpectation) {
-        let condition = Condition(left: "VALUE_0", check: expectation.check, right: "VALUE_1")
-
-        #expect(condition.evaluatesTrue(values: [expectation.left, expectation.right], operators: []) == expectation.expectedResult)
+        for expectation in expectations {
+            let output = try resolvedOutput(
+                left: expectation.left,
+                check: expectation.check,
+                right: expectation.right
+            )
+            let expectedOutput = expectation.expectedResult ? "matched" : "fallback"
+            #expect(
+                output == expectedOutput,
+                "\(expectation.left) \(expectation.check) \(expectation.right) resolved to \(output)."
+            )
+        }
     }
 
-    @Test("An operator placeholder uses the supplied operator")
-    func operatorPlaceholder() {
-        let condition = Condition(left: "2", check: "OPERATOR_0", right: "1")
-
-        #expect(condition.evaluatesTrue(values: [], operators: [">"]))
-        #expect(!condition.evaluatesTrue(values: [], operators: ["<"]))
+    @Test("Non-numeric operands use lexical string comparison")
+    func stringComparison() throws {
+        #expect(try resolvedOutput(left: "apple", check: "<", right: "banana") == "matched")
+        #expect(try resolvedOutput(left: "zebra", check: "<", right: "banana") == "fallback")
+        #expect(try resolvedOutput(left: "Swift", check: "==", right: "Swift") == "matched")
+        #expect(try resolvedOutput(left: "Swift", check: "!=", right: "Swift") == "fallback")
     }
 
-    @Test("Non-numeric operands are compared as strings")
-    func stringComparison() {
-        let condition = Condition(left: "apple", check: "<", right: "banana")
+    @Test("Operator placeholders use the generated operator")
+    func operatorPlaceholder() throws {
+        let data = try predictionData(
+            code: "let result = 2 RANDOM_OPERATOR 1",
+            left: "2",
+            check: "OPERATOR_0",
+            right: "1"
+        )
 
-        #expect(condition.evaluatesTrue(values: [], operators: []))
+        for seed in 0..<100 {
+            let state = try predictState(data: data, seed: seed)
+            let shouldMatch = state.code.contains(" > ")
+                || state.code.contains(" >= ")
+                || state.code.contains(" != ")
+            #expect(state.correctOutput == (shouldMatch ? "matched" : "fallback"))
+        }
     }
+
+    @Test("Unsupported comparison operators report invalid content")
+    func unsupportedOperator() throws {
+        let data = try predictionData(code: "print(1)", left: "1", check: "~=", right: "1")
+
+        do {
+            _ = try predictState(data: data, seed: 0)
+            Issue.record("An unsupported comparison operator should throw.")
+        } catch let error as PracticeContentError {
+            #expect(error == .invalidContent("PredictTheOutput condition"))
+        }
+    }
+
+    private func resolvedOutput(left: String, check: String, right: String) throws -> String {
+        let data = try predictionData(code: "print(1)", left: left, check: check, right: right)
+        return try predictState(data: data, seed: 0).correctOutput
+    }
+
+    private func predictState(data: Data, seed: Int) throws -> PredictOutputQuestionState {
+        let factory = PracticeQuestionFactory(
+            user: User(),
+            random: SeededRandomSource(seed: UInt64(seed)),
+            loadData: { name in
+                guard name == "PredictTheOutput.json" else {
+                    throw BundleResourceError.missingResource(name)
+                }
+
+                return data
+            }
+        )
+
+        guard case .predictOutput(let state) = try factory.makeQuestion(for: .predictTheOutput) else {
+            throw PracticeContentError.invalidContent("PredictTheOutput.json")
+        }
+
+        return state
+    }
+
+    private func predictionData(code: String, left: String, check: String, right: String) throws -> Data {
+        let object: [[String: Any]] = [[
+            "code": code,
+            "answers": [
+                [
+                    "conditions": [["left": left, "check": check, "right": right]],
+                    "text": "matched"
+                ],
+                ["text": "fallback"]
+            ]
+        ]]
+        return try JSONSerialization.data(withJSONObject: object)
+    }
+
 }
 
-@Suite("Free Coding")
+@Suite("Free Coding", .serialized)
 struct FreeCodingLogicTests {
     @Test("Every bundled canonical answer is accepted")
-    func bundledCanonicalAnswers() {
-        let questions = Bundle.main.decode([FreeCodingQuestion].self, from: "FreeCoding.json")
+    func bundledCanonicalAnswers() throws {
+        let questions = try Bundle.main.decode(
+            [FreeCodingContent].self,
+            from: "FreeCoding.json"
+        )
+        let evaluator = FreeCodingEvaluator()
 
         #expect(questions.count == 11)
 
         for question in questions {
-            let fullPractice = FreeCodingPractice(
-                question: question.question,
-                hint: question.hint,
-                startingCode: question.startingCode,
-                answers: question.answers
+            #expect(
+                evaluator.evaluate(
+                    answer: "",
+                    startingCode: question.startingCode,
+                    acceptedAnswers: question.answers
+                ).isCorrect == false
             )
 
-            #expect(!fullPractice.check(answer: "").isCorrect)
-
-            if !question.startingCode.isEmpty {
-                #expect(!fullPractice.check(answer: question.startingCode).isCorrect)
+            if question.startingCode.isEmpty == false {
+                #expect(
+                    evaluator.evaluate(
+                        answer: question.startingCode,
+                        startingCode: question.startingCode,
+                        acceptedAnswers: question.answers
+                    ).isCorrect == false
+                )
             }
 
-            for answer in question.answers {
-                let practice = FreeCodingPractice(
-                    question: question.question,
-                    hint: question.hint,
-                    startingCode: question.startingCode,
-                    answers: [answer]
-                )
-
-                let representativeAnswer = answer
+            for acceptedAnswer in question.answers {
+                let representativeAnswer = acceptedAnswer
                     .replacing("letvar", with: "var")
                     .replacing("optionalreturn", with: "")
 
                 #expect(
-                    practice.check(answer: representativeAnswer).isCorrect,
-                    "Canonical answer pattern should accept representative Swift: \(representativeAnswer)"
+                    evaluator.evaluate(
+                        answer: representativeAnswer,
+                        startingCode: question.startingCode,
+                        acceptedAnswers: [acceptedAnswer]
+                    ).isCorrect,
+                    "Canonical pattern rejected representative Swift: \(representativeAnswer)"
                 )
 
-                let answerWithStartingCode = "\(question.startingCode)\n\(representativeAnswer)"
+                let answerWithStartingCode = question.startingCode.isEmpty
+                    ? representativeAnswer
+                    : "\(question.startingCode)\n\(representativeAnswer)"
                 #expect(
-                    practice.check(answer: answerWithStartingCode).isCorrect,
-                    "Starting code plus representative Swift should be accepted: \(representativeAnswer)"
+                    evaluator.evaluate(
+                        answer: answerWithStartingCode,
+                        startingCode: question.startingCode,
+                        acceptedAnswers: [acceptedAnswer]
+                    ).isCorrect,
+                    "Starting code plus canonical Swift was rejected: \(representativeAnswer)"
                 )
             }
         }
     }
 
-    @Test("Captured string placeholders are returned")
-    func capturedStringPlaceholder() {
-        let practice = FreeCodingPractice(
-            question: "Print a name.",
-            hint: "",
+    @Test("String and number placeholders return captured values")
+    func capturedPlaceholders() {
+        let evaluator = FreeCodingEvaluator()
+        let stringResult = evaluator.evaluate(
+            answer: #"print("Taylor")"#,
             startingCode: "",
-            answers: [#"print("0_STRING")"#]
+            acceptedAnswers: [#"print("0_STRING")"#]
+        )
+        let numberResult = evaluator.evaluate(
+            answer: "let score = 12_345",
+            startingCode: "",
+            acceptedAnswers: ["letvar score = 0_NUMBER"]
         )
 
-        let result = practice.check(answer: #"print("Taylor")"#)
+        #expect(stringResult == FreeCodingEvaluator.Evaluation(isCorrect: true, matches: ["Taylor"]))
+        #expect(numberResult == FreeCodingEvaluator.Evaluation(isCorrect: true, matches: ["12_345"]))
+    }
 
-        #expect(result.isCorrect)
-        #expect(result.matches == ["Taylor"])
+    @Test("Smart punctuation in a typed answer is still accepted")
+    func smartPunctuationIsNormalized() {
+        let evaluator = FreeCodingEvaluator()
+
+        // Both iOS and macOS substitute curly quotes and apostrophes as the user types, so an
+        // otherwise correct answer must not be rejected just because it contains a string literal.
+        let curlyQuotes = evaluator.evaluate(
+            answer: "print(\u{201C}Taylor\u{201D})",
+            startingCode: "",
+            acceptedAnswers: [#"print("0_STRING")"#]
+        )
+        let curlyApostrophe = evaluator.evaluate(
+            answer: "print(\"Let\u{2019}s go\")",
+            startingCode: "",
+            acceptedAnswers: [#"print("Let's go")"#]
+        )
+
+        #expect(curlyQuotes == FreeCodingEvaluator.Evaluation(isCorrect: true, matches: ["Taylor"]))
+        #expect(curlyApostrophe.isCorrect)
+    }
+
+    @Test("An empty canonical expression is rejected")
+    func emptyExpression() {
+        do {
+            _ = try FreeCodingEvaluator().expression(from: "")
+            Issue.record("An empty accepted answer should not produce a regular expression.")
+        } catch let error as PracticeContentError {
+            #expect(error == .invalidContent("Free Coding answer"))
+        } catch {
+            Issue.record("Unexpected error: \(error)")
+        }
+    }
+
+    @Test("Text the learner types into Free Coding is rehighlighted without changing it")
+    func editorKeepsTypedText() {
+        var editor = FreeCodingEditorState(source: "let name = ", colorScheme: .light)
+        #expect(editor.source == "let name = ")
+
+        for character in "\"Taylor\"" {
+            editor.insert(character, colorScheme: .light)
+        }
+        #expect(editor.source == "let name = \"Taylor\"")
+
+        editor.receiveEditedText(AttributedString("let name = \"Taylor\"\nprint(name)"), colorScheme: .dark)
+        #expect(editor.source == "let name = \"Taylor\"\nprint(name)")
+
+        let highlighted = SwiftCodeHighlighter().attributedString(for: editor.source, colorScheme: .dark)
+        #expect(editor.attributedText == highlighted)
+
+        // Rehighlighting text that's already highlighted for this color scheme changes nothing.
+        let settled = editor
+        editor.rehighlight(colorScheme: .dark)
+        #expect(editor == settled)
+    }
+
+    @Test("A wrong Practice answer remains editable until the learner gets it right")
+    func questionStateTransitions() {
+        var state = FreeCodingQuestionState(
+            prompt: "Print Swift.",
+            hint: "Use print().",
+            startingCode: "let language = \"Swift\"",
+            acceptedAnswers: ["print(language)"]
+        )
+
+        #expect(state.editor.source == "let language = \"Swift\"\n")
+        let initialResult = state.check()
+        #expect(initialResult == .retryableIncorrect)
+        #expect(state.phase == .editing)
+        #expect(state.outcome == nil)
+
+        var correctEditor = FreeCodingEditorState(
+            source: "let language = \"Swift\"\nprint(language)",
+            colorScheme: .light
+        )
+        correctEditor.insert("\n", colorScheme: .light)
+        state.updateEditor(correctEditor)
+        let correctResult = state.check()
+        #expect(correctResult == .correct)
+        #expect(state.phase == .locked)
+        #expect(state.outcome == .correct)
+        let repeatedResult = state.check()
+        #expect(repeatedResult == nil)
+
+        let lockedSource = state.editor.source
+        state.insert("!", colorScheme: .light)
+        state.updateEditor(FreeCodingEditorState(source: "changed", colorScheme: .light))
+        #expect(state.editor.source == lockedSource)
+    }
+
+    @Test("A wrong Challenge answer locks immediately")
+    func challengeAnswerLocks() {
+        var state = FreeCodingQuestionState(
+            prompt: "Create a value.",
+            hint: "Use var.",
+            startingCode: "let seed = 1",
+            acceptedAnswers: ["letvar value = seedoptionalreturn"]
+        )
+
+        let result = state.check(allowsRetry: false)
+        #expect(result == .incorrect)
+        #expect(state.phase == .locked)
+        #expect(state.outcome == .incorrect)
+
+        let lockedSource = state.editor.source
+        state.insert("!", colorScheme: .light)
+        #expect(state.editor.source == lockedSource)
     }
 }
 
 @Suite("Predict the Output")
-struct PredictTheOutputLogicTests {
-    nonisolated struct OutputNormalizationExpectation {
-        let target: String
-        let submitted: String
-        let expectedResult: Bool
-    }
+struct PredictOutputLogicTests {
+    @Test("Submitted output normalizes case, quotes, apostrophes, and repeated spaces")
+    func outputNormalization() {
+        let expectations = [
+            (target: "Hello, Swift!", submitted: "hello, swift!", expected: true),
+            (target: "She said \"Hello\".", submitted: "She said “Hello”.", expected: true),
+            (target: "It's ready", submitted: "It’s ready", expected: true),
+            (target: "one two", submitted: "one    two", expected: true),
+            (target: "one\ntwo", submitted: " \none\ntwo\n\t", expected: true),
+            (target: "one\ntwo", submitted: "one two", expected: false),
+            (target: "one two", submitted: "one three", expected: false)
+        ]
 
-    private nonisolated static let outputNormalizationExpectations = [
-        OutputNormalizationExpectation(target: "Hello, Swift!", submitted: "hello, swift!", expectedResult: true),
-        OutputNormalizationExpectation(target: "She said \"Hello\".", submitted: "She said “Hello”.", expectedResult: true),
-        OutputNormalizationExpectation(target: "It's ready", submitted: "It’s ready", expectedResult: true),
-        OutputNormalizationExpectation(target: "one two", submitted: "one    two", expectedResult: true),
-        OutputNormalizationExpectation(target: "one two", submitted: "one three", expectedResult: false)
-    ]
-
-    @Test("Submitted output is normalized", arguments: Self.outputNormalizationExpectations)
-    func outputNormalization(expectation: OutputNormalizationExpectation) {
-        var practice = PredictTheOutputPractice()
-        practice.answer = expectation.target
-
-        #expect(practice.answerIsCorrect(expectation.submitted) == expectation.expectedResult)
-    }
-
-    @Test("Every condition must match before an answer is selected")
-    func allConditionsMustMatch() {
-        let question = PredictTheOutputQuestion(
-            code: "let value = RANDOM_SMALL_INT",
-            answers: [
-                PredictTheOutputAnswer(
-                    conditions: [
-                        Condition(left: "VALUE_0", check: ">", right: "0"),
-                        Condition(left: "VALUE_0", check: "<", right: "0")
-                    ],
-                    text: "Incorrect conditional answer"
-                ),
-                PredictTheOutputAnswer(conditions: nil, text: "Fallback answer")
-            ]
-        )
-
-        let resolved = PredictTheOutputPractice().resolve(question: question)
-
-        #expect(resolved.answer == "Fallback answer")
-    }
-
-    @Test("An answer is selected when all its conditions match")
-    func allConditionsMatch() {
-        let question = PredictTheOutputQuestion(
-            code: "let value = RANDOM_SMALL_INT",
-            answers: [
-                PredictTheOutputAnswer(
-                    conditions: [
-                        Condition(left: "VALUE_0", check: ">", right: "0"),
-                        Condition(left: "VALUE_0", check: "<=", right: "10")
-                    ],
-                    text: "Conditional answer"
-                ),
-                PredictTheOutputAnswer(conditions: nil, text: "Fallback answer")
-            ]
-        )
-
-        let resolved = PredictTheOutputPractice().resolve(question: question)
-
-        #expect(resolved.answer == "Conditional answer")
-    }
-
-    @Test("A nil-condition answer acts as the fallback")
-    func fallbackAnswer() {
-        let question = PredictTheOutputQuestion(
-            code: "let value = RANDOM_SMALL_INT",
-            answers: [
-                PredictTheOutputAnswer(
-                    conditions: [Condition(left: "VALUE_0", check: "<", right: "0")],
-                    text: "Conditional answer"
-                ),
-                PredictTheOutputAnswer(conditions: nil, text: "Fallback answer")
-            ]
-        )
-
-        let resolved = PredictTheOutputPractice().resolve(question: question)
-
-        #expect(resolved.answer == "Fallback answer")
-    }
-
-    @Test("Every bundled question resolves completely and accepts its answer")
-    func bundledQuestionsResolve() {
-        let questions = Bundle.main.decode([PredictTheOutputQuestion].self, from: "PredictTheOutput.json")
-        var practice = PredictTheOutputPractice()
-
-        for question in questions {
-            for _ in 0 ..< 20 {
-                let resolved = practice.resolve(question: question)
-
-                #expect(!containsUnresolvedPlaceholder(in: resolved.code))
-                #expect(!containsUnresolvedPlaceholder(in: resolved.answer))
-
-                practice.answer = resolved.answer
-                #expect(practice.answerIsCorrect(resolved.answer))
-            }
+        for expectation in expectations {
+            var state = PredictOutputQuestionState(code: "print(value)", correctOutput: expectation.target)
+            state.updateAnswer(expectation.submitted)
+            let result = state.submit()
+            #expect(result?.isCorrect == expectation.expected)
         }
     }
 
-    private func containsUnresolvedPlaceholder(in string: String) -> Bool {
-        let pattern = #"RANDOM_|CONSTANT_OR_VARIABLE|TRUE_OR_FALSE|NAME_(?:NATURAL_)?[0-9]|VALUE_[0-9]|OPERATOR_[0-9]|\$\{"#
-        return string.range(of: pattern, options: .regularExpression) != nil
-    }
-}
+    @Test(
+        "Whitespace around a correct answer doesn't make it wrong",
+        arguments: [
+            "Counted to 4 ",
+            " Counted to 4",
+            "Counted to 4\n",
+            "  Counted to 4  ",
+            "\tCounted to 4\t",
+            "\r\nCounted to 4\r\n",
+            " \t\nCounted to 4\n\t "
+        ]
+    )
+    func surroundingWhitespace(submitted: String) {
+        var state = PredictOutputQuestionState(code: "print(\"Counted to \\(counter)\")", correctOutput: "Counted to 4")
+        state.updateAnswer(submitted)
 
-@Suite("Rearrange the Lines")
-struct RearrangeTheLinesLogicTests {
-    @Test("Correctness requires the same lines in the same order")
-    func answerCorrectness() {
-        let practice = makePractice()
-
-        #expect(practice.answerIsCorrect(["let value = 42", "print(value)"]))
-        #expect(practice.answerIsCorrect(["  let value = 42\t", "\tprint(value)  "]))
-        #expect(!practice.answerIsCorrect(["print(value)", "let value = 42"]))
-        #expect(!practice.answerIsCorrect(["let value = 42"]))
-        #expect(!practice.answerIsCorrect(["let value = 42", "print(value)", "print(value)"]))
-    }
-
-    @Test("The data source handles missing and additional lines safely")
-    func dataSourceCardinality() {
-        let practice = makePractice()
-        let dataSource = RearrangeTheLinesDataSource(practiceData: practice)
-
-        dataSource.currentCode = practice.code
-        #expect(dataSource.isUserCorrect)
-
-        dataSource.currentCode = [practice.code[0]]
-        #expect(!dataSource.isUserCorrect)
-
-        dataSource.currentCode = practice.code + ["print(value)"]
-        #expect(!dataSource.isUserCorrect)
+        #expect(state.submit() == .correct)
     }
 
-    private func makePractice() -> RearrangeTheLinesPractice {
-        var practice = RearrangeTheLinesPractice()
-        practice.question = "Put the lines in order."
-        practice.hint = "Create the value before using it."
-        practice.code = ["let value = 42", "print(value)"]
-        return practice
-    }
-}
+    @Test("Punctuation and spacing inside the answer still have to match")
+    func meaningfulDifferences() {
+        let wrongAnswers = [
+            "Counted to4", "Countedto 4", "Counted to 4.", "Counted to 5", "4", "",
+            "\t Counted to 5\n", "Counted\nto 4", "Counted\tto 4", " \t\n "
+        ]
 
-@Suite("Tap to Code")
-struct TapToCodeModelTests {
-    @Test("Moving words preserves counts and the complete multiset")
-    func movingWordsPreservesContent() {
-        var model = makeModel()
-        let expectedWords = model.correctWords.sorted()
-        let movedWord = model.allWords[0]
+        for submitted in wrongAnswers {
+            var state = PredictOutputQuestionState(code: "print(value)", correctOutput: "Counted to 4")
+            state.updateAnswer(submitted)
 
-        model.moveToUsed(IndexPath(item: 0, section: 0), to: IndexPath(item: 0, section: 0))
-
-        #expect(model.usedWords == [movedWord])
-        #expect(model.allWords.count == 2)
-        #expect((model.usedWords + model.allWords).sorted() == expectedWords)
-
-        model.moveToAll(IndexPath(item: 0, section: 0), to: IndexPath(item: model.allWords.count, section: 0))
-
-        #expect(model.usedWords.isEmpty)
-        #expect(model.allWords.count == 3)
-        #expect(model.allWords.sorted() == expectedWords)
-    }
-
-    @Test("Counts are routed to the matching collection")
-    func collectionCounts() {
-        var model = makeModel()
-        let allWords = AllWordsCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        let usedWords = UsedWordsCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-
-        #expect(model.count(for: allWords) == 3)
-        #expect(model.count(for: usedWords) == 0)
-
-        model.moveToUsed(IndexPath(item: 0, section: 0), to: IndexPath(item: 0, section: 0))
-
-        #expect(model.count(for: allWords) == 2)
-        #expect(model.count(for: usedWords) == 1)
-    }
-
-    @Test("Only the complete correct order is accepted")
-    func correctnessAndRearranging() throws {
-        var model = makeModel()
-
-        #expect(!model.isUserCorrect)
-
-        for correctWord in model.correctWords {
-            let source = try #require(model.allWords.firstIndex(of: correctWord))
-            let destination = model.usedWords.count
-            model.moveToUsed(IndexPath(item: source, section: 0), to: IndexPath(item: destination, section: 0))
+            #expect(state.submit() == .incorrect, "\"\(submitted)\" should not be accepted.")
         }
-
-        #expect(model.allWords.isEmpty)
-        #expect(model.isUserCorrect)
-
-        model.rearrange(IndexPath(item: 0, section: 0), to: IndexPath(item: 2, section: 0))
-        #expect(!model.isUserCorrect)
-
-        model.rearrange(IndexPath(item: 2, section: 0), to: IndexPath(item: 0, section: 0))
-        #expect(model.isUserCorrect)
     }
 
-    private func makeModel() -> TapToCodeModel {
-        let practice = TapToCodePractice()
-        practice.question = "Build the code."
-        practice.existingCode = ""
-        practice.components = ["alpha", "beta", "gamma"]
+    @Test("The first submission locks both the answer and outcome")
+    func firstSubmissionWins() {
+        var state = PredictOutputQuestionState(code: "print(42)", correctOutput: "42")
+        state.updateAnswer("41")
 
-        return TapToCodeModel(practiceData: practice, names: [], namesNatural: [], values: [], operators: [])
+        let initialResult = state.submit()
+        #expect(initialResult == .incorrect)
+        #expect(state.isLocked)
+        state.updateAnswer("42")
+        #expect(state.answer == "41")
+        let repeatedResult = state.submit()
+        #expect(repeatedResult == nil)
+        #expect(state.outcome == .incorrect)
     }
 }

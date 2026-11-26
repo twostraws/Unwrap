@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Because closures can be used just like strings and integers, you can pass them into functions. The syntax for this can hurt your brain at first, so we’re going to take it slow."
+        },
+        {
+            "text": "First, here’s our basic `driving()` closure again"
+        },
+        {
+            "code": "let driving = {\n  print(\"I'm driving in my car\")\n}"
+        },
+        {
+            "text": "If we wanted to pass that closure into a function so it can be run inside that function, we would specify the parameter type as `() -> Void`. That means “accepts no parameters, and returns `Void`” – Swift’s way of saying “nothing”."
+        },
+        {
+            "text": "So, we can write a `travel()` function that accepts different kinds of traveling actions, and prints a message before and after:"
+        },
+        {
+            "code": "func travel(action: () -> Void) {\n  print(\"I'm getting ready to go.\")\n  action()\n  print(\"I arrived!\")\n}"
+        },
+        {
+            "text": "We can now call that using our `driving` closure, like this:"
+        },
+        {
+            "code": "travel(action: driving)"
+        }
+    ],
     "title": "Closures as parameters",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +60,27 @@
     "wrong": [
         {
             "answer": "let resignation = { (name: String) in\n\tprint(\"Dear \\(name), I'm outta here!\")\n}\nfunc printDocument(contents: () -> Void) {\n\tprint(\"Connecting to printer...\")\n\tprint(\"Sending document...\")\n\tcontents()\n}\nprintDocument(contents: resignation)",
-            "reason": "<code>printDocument()<\/code> says its parameter must be a closure that accepts no parameters, but the closure it is given takes a string."
+            "reason": "`printDocument()` says its parameter must be a closure that accepts no parameters, but the closure it is given takes a string."
         },
         {
             "answer": "let evilRobot = {\n\tprint(\"EXTERMINATE\")\n}\nfunc buildRobot(personality: () -> Void) {\n\tprint(\"Time to turn on the robot!\")\n\tpersonality()\n}\nbuildRobot(using: evilRobot)",
-            "reason": "The parameter should be named <code>personality<\/code>, not <code>using<\/code>."
+            "reason": "The parameter should be named `personality`, not `using`."
         },
         {
             "answer": "let driveSafely = {\n\treturn \"I'm being a considerate driver\"\n}\nfunc drive(using driving: () -> Void) {\n\tprint(\"Let's get in the car\")\n\tdriving()\n\tprint(\"We're there!\")\n}\ndrive(using: driveSafely)",
-            "reason": "<code>drive()</code> says its parameter must be a closure that accepts no parameters and returns nothing, but the closure it is given returns a string."
+            "reason": "`drive()` says its parameter must be a closure that accepts no parameters and returns nothing, but the closure it is given returns a string."
         },
         {
             "answer": "var playWithDog = {\n\tprint(\"Fetch!\")\n}\nfunc play(using playType: () -> Void) -> String {\n\tprint(\"Let's play a game\")\n\tplayType()\n}\nplay(using: playWithDog)",
-            "reason": "The <code>play()</code> function says it will return a string, but does not return anything."
+            "reason": "The `play()` function says it will return a string, but does not return anything."
         },
         {
             "answer": "var makeFromStraw = {\n\tprint(\"Let's build it out of straw\")\n}\nfunc buildHouse(using buildingStyle: () -> Void) {\n\tbuildingStyle\n\tprint(\"It's ready - can anyone blow it down?\")\n}",
-            "reason": "This code is missing parentheses after the call to <code>buildingStyle<\/code> – it should be <code>buildingStyle()<\/code>."
+            "reason": "This code is missing parentheses after the call to `buildingStyle` – it should be `buildingStyle()`."
         },
         {
             "answer": "var swift {\n\tprint(\"Cool - I can use closures!\")\n}\nfunc writeCode(using language: () -> Void) {\n\tlanguage()\n\tprint(\"That'll be eleventy billion dollars, please.\")\n}",
-            "reason": "<code>var swift {<\/code> is invalid syntax in Swift."
+            "reason": "`var swift {` is invalid syntax in Swift."
         }
     ]
 }

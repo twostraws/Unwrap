@@ -13,21 +13,4 @@ extension String {
     var lines: [String] {
         return self.components(separatedBy: "\n")
     }
-
-    /// Calculates the first line where two strings differ, or returns -1.
-    func lineDiff(from other: String) -> Int {
-        let ourLines = lines
-        let theirLines = other.lines
-        var counter = 0
-
-        for (ourLine, theirLine) in zip(ourLines, theirLines) {
-            if ourLine != theirLine {
-                return counter
-            }
-
-            counter += 1
-        }
-
-        return ourLines.count == theirLines.count ? -1 : counter
-    }
 }

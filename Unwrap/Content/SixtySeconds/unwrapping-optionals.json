@@ -1,9 +1,38 @@
 {
+    "content": [
+        {
+            "text": "Optional strings might contain a string like “Hello” or they might be nil – nothing at all."
+        },
+        {
+            "text": "Consider this optional string:"
+        },
+        {
+            "code": "var name: String? = nil"
+        },
+        {
+            "text": "What happens if we use `name.count`? A real string has a `count` property that stores how many letters it has, but this is `nil` – it’s empty memory, not a string, so it doesn’t have a `count`."
+        },
+        {
+            "text": "Because of this, trying to read `name.count` is unsafe and Swift won’t allow it. Instead, we must look inside the optional and see what’s there – a process known as *unwrapping*."
+        },
+        {
+            "text": "A common way of unwrapping optionals is with `if let` syntax, which unwraps with a condition. If there was a value inside the optional then you can use it, but if there wasn’t the condition fails."
+        },
+        {
+            "text": "For example:"
+        },
+        {
+            "code": "if let unwrapped = name {\n  print(\"\\(unwrapped.count) letters\")\n} else {\n  print(\"Missing name.\")\n}"
+        },
+        {
+            "text": "If `name` holds a string, it will be put inside `unwrapped` as a regular `String` and we can read its `count` property inside the condition. Alternatively, if `name` is empty, the `else` code will be run."
+        }
+    ],
     "title": "Unwrapping optionals",
     "postscript": "You can only unwrap optionals. Trying to unwrap non-optional values will cause an error.",
     "reviewType": "singleSelection",
     "question": "This code will print a message \u2013 true or false?",
-    "hint": "The code inside <code>if let<\/code> will only be run if there was a value inside your optional.",
+    "hint": "The code inside `if let` will only be run if there was a value inside your optional.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,27 +63,27 @@
     "wrong": [
         {
             "answer": "var score: Int = nil\nscore = 556\nif let playerScore = score {\n\tprint(\"You scored \\(playerScore) points.\")\n}",
-            "reason": "This attempts to assign <code>nil<\/code> to a non-optional integer."
+            "reason": "This attempts to assign `nil` to a non-optional integer."
         },
         {
             "answer": "let favoriteTennisPlayer: String? = \"Andy Murray\"\nif let player {\n\tprint(\"Let's watch \\(player)'s highlights video on YouTube.\")\n}",
-            "reason": "<code>if let<\/code> needs to bind an optional to a new, unwrapped name, such as <code>if let player = player<\/code>."
+            "reason": "`if let` needs to bind an optional to a new, unwrapped name, such as `if let player = player`."
         },
         {
             "answer": "let menuItems: [String]? = [\"Pizza\", \"Pasta\"]\nif let items = menuItems {\n\tprint(\"There are \\(menuItems.count) items to choose from.\")\n}",
-            "reason": "This attempts to use <code>menuItems<\/code> inside the <code>if let<\/code>, when really it should use <code>items<\/code>."
+            "reason": "This attempts to use `menuItems` inside the `if let`, when really it should use `items`."
         },
         {
             "answer": "var weatherForecast: String = \"sunny\"\nif let forecast = weatherForecast {\n\tprint(\"The forecast is \\(forecast).\")\n} else {\n\tprint(\"No forecast available.\")\n}",
-            "reason": "This attempts to use <code>if let<\/code> to unwrap <code>weatherForecast<\/code>, which is not optional."
+            "reason": "This attempts to use `if let` to unwrap `weatherForecast`, which is not optional."
         },
         {
             "answer": "let tableHeight: Double? = 100\nif tableHeight > 85.0 {\n\tprint(\"The table is too high.\")\n}",
-            "reason": "This attempts to compare an optional <code>Double<\/code> against 85, which is not possible."
+            "reason": "This attempts to compare an optional `Double` against 85, which is not possible."
         },
         {
             "answer": "var bestScore: Int? = nil\nbestScore = 101\nif bestScore > 100 {\n\tprint(\"You got a high score!\")\n} else {\n\tprint(\"Better luck next time.\")\n}",
-            "reason": "This attempts to compare an optional <code>Int<\/code> against 100, which is not possible."
+            "reason": "This attempts to compare an optional `Int` against 100, which is not possible."
         }
     ]
 }

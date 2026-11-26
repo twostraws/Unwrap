@@ -1,52 +1,84 @@
 {
+    "content": [
+        {
+            "text": "Back when we were talking about throwing functions, we looked at this code:"
+        },
+        {
+            "code": "enum PasswordError: Error {\n  case obvious\n}\nfunc checkPassword(_ password: String) throws -> Bool {\n  if password == \"password\" {\n    throw PasswordError.obvious\n  }\n  return true\n}\ndo {\n  try checkPassword(\"password\")\n  print(\"That password is good!\")\n} catch {\n  print(\"You can't use that password.\")\n}"
+        },
+        {
+            "text": "That runs a throwing function, using `do`, `try`, and `catch` to handle errors gracefully."
+        },
+        {
+            "text": "There are two alternatives to `try`, both of which will make more sense now that you understand optionals and force unwrapping."
+        },
+        {
+            "text": "The first is `try?`, and changes throwing functions into functions that return an optional. If the function throws an error you’ll be sent `nil` as the result, otherwise you’ll get the return value wrapped as an optional."
+        },
+        {
+            "text": "Using `try?` we can run `checkPassword()` like this:"
+        },
+        {
+            "code": "if let result = try? checkPassword(\"password\") {\n  print(\"Result was \\(result)\")\n} else {\n  print(\"D'oh.\")\n}"
+        },
+        {
+            "text": "The other alternative is `try!`, which you can use when you know for sure that the function will not fail. If the function *does* throw an error, your code will crash."
+        },
+        {
+            "text": "Using `try!` we can rewrite the code to this:"
+        },
+        {
+            "code": "try! checkPassword(\"sekrit\")\nprint(\"OK!\")"
+        }
+    ],
     "title": "Optional try",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true about throwing functions?",
-    "hint": "Many people call <code>!<\/code> the crash operator because it might crash your app, and it's no different with <code>try!<\/code>.",
+    "hint": "Many people call `!` the crash operator because it might crash your app, and it's no different with `try!`.",
     "syntaxHighlighting": false,
     "correct": [
         {
-            "answer": "If you use <code>try<\/code> you must either catch the error or mark your function as <code>throws<\/code>",
+            "answer": "If you use `try` you must either catch the error or mark your function as `throws`",
             "reason": "This is correct."
         },
         {
-            "answer": "Using <code>try?<\/code> converts a function's return value into an optional.",
+            "answer": "Using `try?` converts a function's return value into an optional.",
             "reason": "This is correct."
         },
         {
-            "answer": "If you use <code>try!<\/code> and your call throws an error, your code crashes.",
+            "answer": "If you use `try!` and your call throws an error, your code crashes.",
             "reason": "This is correct."
         },
         {
-            "answer": "When using <code>try<\/code> you must catch all errors that can be thrown.",
+            "answer": "When using `try` you must catch all errors that can be thrown.",
             "reason": "This is correct."
         },
         {
-            "answer": "You can combine <code>try?<\/code> with <code>if let<\/code>",
+            "answer": "You can combine `try?` with `if let`",
             "reason": "This is correct."
         },
         {
-            "answer": "Functions that throw errors must be marked <code>throws<\/code>.",
+            "answer": "Functions that throw errors must be marked `throws`.",
             "reason": "This is correct."
         }
     ],
     "wrong": [
         {
-            "answer": "You can use <code>try?!<\/code> to combine <code>try?<\/code> and <code>try!<\/code>",
+            "answer": "You can use `try?!` to combine `try?` and `try!`",
             "reason": "This does not exist in Swift."
         },
         {
-            "answer": "If you use <code>try?<\/code> and your call throws an error, your code crashes.",
+            "answer": "If you use `try?` and your call throws an error, your code crashes.",
             "reason": "If the calls throws an error you'll get back nil."
         },
         {
-            "answer": "If you use <code>try<\/code> and know your function won't throw errors, you don't need to catch anything.",
+            "answer": "If you use `try` and know your function won't throw errors, you don't need to catch anything.",
             "reason": "Swift will force you to catch all errors."
         },
         {
-            "answer": "Functions that might throw errors must be marked <code>throws?<\/code>",
-            "reason": "They must be marked <code>throws<\/code>."
+            "answer": "Functions that might throw errors must be marked `throws?`",
+            "reason": "They must be marked `throws`."
         },
         {
             "answer": "Throwing functions must never call other throwing functions.",

@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "Protocol extensions can provide default implementations for our own protocol methods. This makes it easy for types to conform to a protocol, and allows a technique called “protocol-oriented programming” – crafting your code around protocols and protocol extensions."
+        },
+        {
+            "text": "First, here’s a protocol called `Identifiable` that requires any conforming type to have an `id` property and an `identify()` method:"
+        },
+        {
+            "code": "protocol Identifiable {\n  var id: String { get set }\n  func identify()\n}"
+        },
+        {
+            "text": "We *could* make every conforming type write their own `identify()` method, but protocol extensions allow us to provide a default:"
+        },
+        {
+            "code": "extension Identifiable {\n  func identify() {\n    print(\"My ID is \\(id).\")\n  }\n}"
+        },
+        {
+            "text": "Now when we create a type that conforms to `Identifiable` it gets `identify()` automatically:"
+        },
+        {
+            "code": "struct User: Identifiable {\n  var id: String\n}\nlet twostraws = User(id: \"twostraws\")\ntwostraws.identify()"
+        }
+    ],
     "title": "Protocol-oriented programming",
     "postscript": "Protocol extensions are default implementations of methods, but your types can still provide their own versions.",
     "reviewType": "multipleSelection",

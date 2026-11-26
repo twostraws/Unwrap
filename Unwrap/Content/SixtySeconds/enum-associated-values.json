@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "As well as storing a simple value, enums can also store *associated* values attached to each case. This lets you attach additional information to your enums so they can represent more nuanced data."
+        },
+        {
+            "text": "For example, we might define an enum that stores various kinds of activities:"
+        },
+        {
+            "code": "enum Activity {\n  case bored\n  case running\n  case talking\n  case singing\n}"
+        },
+        {
+            "text": "That lets us say that someone is talking, but we don’t know what they are talking *about*, or we can know that someone is running, but we don’t know where they are running *to*."
+        },
+        {
+            "text": "Enum associated values let us add those additional details:"
+        },
+        {
+            "code": "enum Activity {\n  case bored\n  case running(destination: String)\n  case talking(topic: String)\n  case singing(volume: Int)\n}"
+        },
+        {
+            "text": "Now we can be more precise – we can say that someone is talking about football:"
+        },
+        {
+            "code": "let talking = Activity.talking(topic: \"football\")"
+        }
+    ],
     "title": "Enum associated values",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -8,27 +34,27 @@
     "correct": [
         {
             "answer": "enum Activity { case reading(bookTitle: String) }",
-            "reason": "This creates a case called <code>reading<\/code> with the associated value <code>bookTitle<\/code>."
+            "reason": "This creates a case called `reading` with the associated value `bookTitle`."
         },
         {
             "answer": "enum Forecast { case cloudy(coverage: Int) }",
-            "reason": "This creates a case called <code>cloudy<\/code> with the associated value <code>coverage<\/code>."
+            "reason": "This creates a case called `cloudy` with the associated value `coverage`."
         },
         {
             "answer": "enum Sport { case running(distance: Int) }",
-            "reason": "This creates a case called <code>running<\/code> with the associated value <code>distance<\/code>."
+            "reason": "This creates a case called `running` with the associated value `distance`."
         },
         {
             "answer": "enum Building { case skyscraper(floors: Int) }",
-            "reason": "This creates a case called <code>skyscraper<\/code> with the associated value <code>floors<\/code>."
+            "reason": "This creates a case called `skyscraper` with the associated value `floors`."
         },
         {
             "answer": "enum Instruments { case piano(isElectric: Bool) }",
-            "reason": "This creates a case called <code>piano<\/code> with the associated value <code>isElectric<\/code>."
+            "reason": "This creates a case called `piano` with the associated value `isElectric`."
         },
         {
             "answer": "enum CharacterClass { case paladin(level: Int) }",
-            "reason": "This creates a case called <code>paladin<\/code> with the associated value <code>level<\/code>."
+            "reason": "This creates a case called `paladin` with the associated value `level`."
         }
     ],
     "wrong": [

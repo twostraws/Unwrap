@@ -1,4 +1,29 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of all the chapters – I hope you’re proud of all the work you’ve put in! Don’t worry if you found some things hard: topics such as closures and optionals *are* hard, so if they took some time to learn that’s just a sign your brain is working properly."
+        },
+        {
+            "text": "Now, the question is: where can you go next? Well, you have two options. The first is to continue with all the practice activities you've unlocked and take your daily challenges – this will help you solidify all the things you've learned so far."
+        },
+        {
+            "text": "The second is to check out the range of books I've written that I hope will help you answer that question:"
+        },
+        {
+            "bullets": [
+                "If you’d like to start using Swift to make iOS apps, you should read Hacking with Swift. It’s available free online [here](https://www.hackingwithswift.com/read) but you can buy the premium edition with bonus content [here](https://www.hackingwithswift.com/store/hacking-with-swift).",
+                "If you’d like to improve your knowledge of the Swift language, tackling more advanced features such as generics, custom operators, and functional programming, you should read Pro Swift. It’s available to buy [here](https://www.hackingwithswift.com/store/pro-swift).",
+                "If you’d like to learn to make games using Swift, you’re ready for my book Dive Into SpriteKit – you get to choose how each game project should develop. It’s available to buy [here](https://www.hackingwithswift.com/store/dive-into-spritekit).",
+                "If you’d like to try other Apple platforms, I have books teaching [macOS](https://www.hackingwithswift.com/store/hacking-with-macos), [watchOS](https://www.hackingwithswift.com/store/hacking-with-watchos), and [tvOS](https://www.hackingwithswift.com/store/hacking-with-tvos)."
+            ]
+        },
+        {
+            "text": "Congratulations on finishing this course – I hope you learned a lot, and that you’re able to have a lot of fun with your new coding skills!"
+        },
+        {
+            "text": "Now, are you ready for one last test of your skills…?"
+        }
+    ],
     "title": "Where now?",
     "postscript": "You can go back and re-read any of these chapters whenever you want \u2013 keep your Swift skills fresh!",
     "reviewType": "multipleSelection",
@@ -27,7 +52,7 @@
             "reason": "This is correct."
         },
         {
-            "answer": "Throwing functions must be called using <code>try<\/code>.",
+            "answer": "Throwing functions must be called using `try`.",
             "reason": "This is correct."
         }
     ],
@@ -37,15 +62,15 @@
             "reason": "They are called methods."
         },
         {
-            "answer": "Swift automatically generates the shorthand parameter names <code>#0<\/code>, <code>#1<\/code>, and so on.",
-            "reason": "They are named <code>$0<\/code> rather than <code>#0<\/code>."
+            "answer": "Swift automatically generates the shorthand parameter names `#0`, `#1`, and so on.",
+            "reason": "They are named `$0` rather than `#0`."
         },
         {
             "answer": "Classes may not contain private methods.",
             "reason": "Classes are perfectly able to contain private methods."
         },
         {
-            "answer": "You can make a new struct by inheriting from any other structs that are not declared using <code>final<\/code>.",
+            "answer": "You can make a new struct by inheriting from any other structs that are not declared using `final`.",
             "reason": "Structs cannot use inheritance."
         },
         {
@@ -53,8 +78,8 @@
             "reason": "You can also extend specific types."
         },
         {
-            "answer": "<code>String<\/code> and <code>String!<\/code> are the same thing.",
-            "reason": "Implicitly unwrapped optionals such as <code>String!<\/code> might be nil."
+            "answer": "`String` and `String!` are the same thing.",
+            "reason": "Implicitly unwrapped optionals such as `String!` might be nil."
         }
     ]
 }

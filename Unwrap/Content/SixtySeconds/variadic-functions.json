@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Some functions are *variadic*, which is a fancy way of saying they accept any number of parameters of the same type. The `print()` function is actually variadic: if you pass lots of parameters, they are all printed on one line with spaces between them:"
+        },
+        {
+            "code": "print(\"Haters\", \"gonna\", \"hate\")"
+        },
+        {
+            "text": "You can make any parameter variadic by writing `...` after its type. So, an `Int` parameter is a single integer, whereas `Int...` is zero or more integers – potentially hundreds. "
+        },
+        {
+            "text": "Inside the function, Swift converts the values that were passed in to an array of integers, so you can loop over them as needed."
+        },
+        {
+            "text": "To try this out, let’s write a `square()` function that can square many numbers:"
+        },
+        {
+            "code": "func square(numbers: Int...) {\n  for number in numbers {\n    print(\"\\(number) squared is \\(number * number)\")\n  }\n}"
+        },
+        {
+            "text": "Now we can run that with lots of numbers just by passing them in separated by commas:"
+        },
+        {
+            "code": "square(numbers: 1, 2, 3, 4, 5)"
+        }
+    ],
     "title": "Variadic functions",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -7,7 +33,7 @@
     "syntaxHighlighting": false,
     "correct": [
         {
-            "answer": "A variadic parameter is written with three dots after its type: <code>Int...<\/code>",
+            "answer": "A variadic parameter is written with three dots after its type: `Int...`",
             "reason": "This is correct."
         },
         {
@@ -23,7 +49,7 @@
             "reason": "This is correct."
         },
         {
-            "answer": "<code>print()<\/code> is a variadic function.",
+            "answer": "`print()` is a variadic function.",
             "reason": "You can pass in as many values as you want, separated by commas."
         },
         {

@@ -6,11 +6,48 @@
 //  Copyright © 2019 Hacking with Swift. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension User {
-    /// Returns an NSAttributedString to display progress in an alert.
-    func badgeProgress(_ badge: Badge) -> NSAttributedString {
+    /// Returns true if a specific badge has been earned, or false otherwise.
+    func isBadgeEarned(_ badge: Badge) -> Bool {
+        if badge.criterion == "read" {
+            guard var conditionChapter = Unwrap.chapters.first(where: {
+                $0.name.bundleName == badge.value
+
+            }) else {
+                fatalError("Unknown chapter name for criterion: \(badge.value).")
+            }
+
+            return conditionChapter.bundleNameSections.allSatisfy {
+                hasReviewed($0.bundleName)
+            }
+        } else if badge.criterion == "practice" {
+            let practiceBadgeCount = 10
+            return practiceSessions.count(for: badge.value) >= practiceBadgeCount
+        } else {
+            guard let intValue = Int(badge.value) else {
+                fatalError("Criterion must have its value specified as an integer: \(badge.criterion).")
+            }
+
+            switch badge.criterion {
+            case "streak":
+                return bestStreak >= intValue
+
+            case "challenge":
+                return dailyChallenges.count >= intValue
+
+            case "news":
+                return readNewsCount >= intValue
+
+            default:
+                fatalError("Unknown badge criterion: \(badge.criterion)")
+            }
+        }
+    }
+
+    /// Returns a user-facing summary of progress toward a badge.
+    func badgeProgress(_ badge: Badge) -> String {
         let progress: String
 
         if badge.criterion == "read" {
@@ -24,8 +61,7 @@ extension User {
             var awardedScore = 0
             let totalSections = conditionChapter.sections.count
 
-            for i in 1...totalSections {
-                let section = conditionChapter.sections[i-1]
+            for section in conditionChapter.sections {
                 let score = ratingForSection(section.bundleName)
                 if score == 100 {
                     awardedScore += 0
@@ -44,7 +80,7 @@ extension User {
                 progress = "\n\nYou have completed \(awardedScore / 200) out of \(totalSections) chapters!"
             }
 
-            return progress.centered()
+            return progress
 
         } else if badge.criterion == "practice" {
             if practiceSessions.count(for: badge.value) < 1 {
@@ -55,7 +91,7 @@ extension User {
                 progress = "\n\nYou have practiced \(practiceSessions.count(for: badge.value)) times!"
             }
 
-            return progress.centered()
+            return progress
         } else {
             switch badge.criterion {
             case "streak":
@@ -65,7 +101,7 @@ extension User {
                     progress = "\n\nYour best streak is \(bestStreak) days!"
                 }
 
-                return progress.centered()
+                return progress
 
             case "challenge":
                 if dailyChallenges.count < 1 {
@@ -76,7 +112,7 @@ extension User {
                     progress = "\n\nYou have completed \(dailyChallenges.count) challenges!"
                 }
 
-                return progress.centered()
+                return progress
 
             case "news":
                 if readNewsCount < 1 {
@@ -87,18 +123,7 @@ extension User {
                     progress = "\n\nYou have read \(readNewsCount) news articles!"
                 }
 
-                return progress.centered()
-
-            case "share":
-                if scoreShareCount < 1 {
-                    progress = "\n\nYou have not shared your score yet."
-                } else if scoreShareCount == 1 {
-                    progress = "\n\nYou have shared your score \(scoreShareCount) time!"
-                } else {
-                    progress = "\n\nYou have shared your score \(scoreShareCount) times!"
-                }
-
-                return progress.centered()
+                return progress
 
             default:
                 fatalError("Unknown badge criterion: \(badge.criterion)")

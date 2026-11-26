@@ -1,4 +1,21 @@
 {
+    "content": [
+        {
+            "text": "We’ve been using `() -> Void` to mean “accepts no parameters and returns nothing”, but you can replace that `Void` with any type of data to force the closure to return a value."
+        },
+        {
+            "text": "To demonstrate this, we can write a `travel()` function that accepts a closure as its only parameter, and that closure in turn accepts a string and returns a string:"
+        },
+        {
+            "code": "func travel(action: (String) -> String) {\n  print(\"I'm getting ready to go.\")\n  let description = action(\"London\")\n  print(description)\n  print(\"I arrived!\")\n}"
+        },
+        {
+            "text": "Now when we call `travel()` using trailing closure syntax, our closure code is required to accept a string and return a string:"
+        },
+        {
+            "code": "travel { (place: String) -> String in\n  return \"I'm going to \\(place) in my car\"\n}"
+        }
+    ],
     "title": "Using closures as parameters when they return values",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +51,27 @@
     "wrong": [
         {
             "answer": "func bakeCookies(number: Int, secretIngredient: () -> String) {\n\tfor _ in 0..<number {\n\t\tprint(\"Adding butter...\")\n\t\tprint(\"Adding flour...\")\n\t\tprint(\"Adding sugar...\")\n\t\tprint(\"Adding egg...\")\n\t\tlet extra = secretIngredient()\n\t\tprint(extra)\n\t}\n}\nbakeCookies(5) {\n\treturn \"Adding vanilla extract\"\n}",
-            "reason": "The call to <code>bakeCookies()<\/code> is missing the <code>number<\/code> parameter label."
+            "reason": "The call to `bakeCookies()` is missing the `number` parameter label."
         },
         {
             "answer": "func goShopping(for item: String, decisionHandler: (String) -> Bool) {\n\tprint(\"I'm going to buy \\(item)\")\n\tif decisionHandler() == true {\n\t\tprint(\"Great! I bought them.\")\n\t} else {\n\t\tprint(\"Maybe next time...\")\n\t}\n}\ngoShopping(for: \"shoes\") { item in\n\tif item == \"shoes\" {\n\t\treturn false\n\t} else {\n\t\treturn true\n\t}\n}",
-            "reason": "The call to <code>decisionHandler()<\/code> is missing its parameter."
+            "reason": "The call to `decisionHandler()` is missing its parameter."
         },
         {
             "answer": "func playMusic(randomizer: () -> String) {\n\tprint(\"\\(random()) is playing.\")\n}\nplayMusic {\n\tprint(\"Sorry, I only have one playlist!\")\n\treturn \"Taylor Swift\"\n}",
-            "reason": "This tries to call <code>random<\/code>, when it ought to call <code>randomizer()<\/code>."
+            "reason": "This tries to call `random`, when it ought to call `randomizer()`."
         },
         {
             "answer": "func printGreeting(for usernameLoader: (String) -> String) {\n\tlet username = usernameLoader()\n\tprint(\"Hello, \\(username)!\")\n}\nprintGreeting {\n\treturn \"twostraws\"\n}",
-            "reason": "This does not pass in a parameter when calling <code>usernameLoader<\/code>."
+            "reason": "This does not pass in a parameter when calling `usernameLoader`."
         },
         {
             "answer": "func scoreToGrade(score: Int, gradeMapping: (Int) -> String) {\n\tprint(\"Your score was \\(score)%.\")\n\tlet result = gradeMapping(score)\n\tprint(\"That's a \\(result).\")\n}\nscoreToGrade(score: 80) { (grade: Int) in\n\tif grade < 85 {\n\t\treturn \"Fail\"\n\t}\n}",
-            "reason": "The call to <code>scoreToGrade()<\/code> must return a value."
+            "reason": "The call to `scoreToGrade()` must return a value."
         },
         {
             "answer": "func teachLesson(name: String, topic: () -> String) {\n\tprint(\"Welcome to \\(name).\")\n\tprint(\"Please take out your laptops and be quiet at the back.\")\n\ttopic()\n\tprint(\"See you tomorrow!\")\n}\nteachLesson(name: \"Swift 101\") {\n\tprint(\"Swift is a modern language that can be used to make apps on iOS and more.\")\n}",
-            "reason": "Whatever is given as a closure to <code>teachLesson<\/code> must return a string."
+            "reason": "Whatever is given as a closure to `teachLesson` must return a string."
         }
     ]
 }

@@ -1,4 +1,19 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the third part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Swift has operators for doing arithmetic and for comparison; they mostly work like you already know.",
+                "There are compound variants of arithmetic operators that modify their variables in place: `+=`, `-=`, and so on.",
+                "You can use `if`, `else`, and `else if` to run code based on the result of a condition.",
+                "Swift has a ternary operator that combines a check with true and false code blocks. Although you might see it in other code, I wouldn’t recommend using it yourself.",
+                "If you have multiple conditions using the same value, it’s often clearer to use `switch` instead.",
+                "You can make ranges using `..<` and `...` depending on whether the last number should be excluded or included."
+            ]
+        }
+    ],
     "title": "Operators and conditions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -38,7 +53,7 @@
         },
         {
             "answer": "let height = 10\nlet weight = 20\nheight <> weight",
-            "reason": "<code><><\/code> is not one of Swift's built-in operators."
+            "reason": "`<>` is not one of Swift's built-in operators."
         },
         {
             "answer": "let testsTaken = 10\ntestsTaken += 1",
@@ -46,11 +61,11 @@
         },
         {
             "answer": "var poorRating = 0....10",
-            "reason": "<code>....<\/code> \u2013 with four dots \u2013 is not one of Swift's built-in operators. The closed-range operator is <code>...<\/code>, with three dots."
+            "reason": "`....` \u2013 with four dots \u2013 is not one of Swift's built-in operators. The closed-range operator is `...`, with three dots."
         },
         {
             "answer": "let rank = 4\nif rank <= 10 {\n\tprint(You're in the top 10!)\n}",
-            "reason": "The text inside the call to <code>print()<\/code> must be inside quote marks."
+            "reason": "The text inside the call to `print()` must be inside quote marks."
         },
         {
             "answer": "let numberOfCats = 1\nswitch numberOfCats {\ncase 0:\n\tprint(\"You have no cats\")\ncase 1...3:\n\tprint(\"You have some cats\")\ncase 4..<10:\n\tprint(\"You have many cats!\")\n}",

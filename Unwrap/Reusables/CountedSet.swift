@@ -6,10 +6,10 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 /// An unordered collection of distinct objects where items may appear more than once. Similar to NSCountedSet, just using Swift and Codable.
-struct CountedSet<T: Hashable & Codable>: Codable {
+struct CountedSet<T: Hashable & Codable>: Codable, Equatable {
     /// The only thing we need to save is our underlying storage.
     enum CodingKeys: String, CodingKey {
         case storage
@@ -30,7 +30,7 @@ struct CountedSet<T: Hashable & Codable>: Codable {
 
     /// Returns the number of times a specific object has been inserted into the set.
     public func count(for object: T) -> Int {
-        return storage[object, default: 0]
+        return Swift.max(0, storage[object, default: 0])
     }
 
     /// Returns true if the object is currently inside the counted set.
@@ -40,7 +40,9 @@ struct CountedSet<T: Hashable & Codable>: Codable {
 
     /// Adds an object to the counted set.
     public mutating func insert(_ object: T) {
-        storage[object, default: 0] += 1
+        let currentCount = Swift.max(0, storage[object, default: 0])
+        let (nextCount, overflowed) = currentCount.addingReportingOverflow(1)
+        storage[object] = overflowed ? .max : nextCount
     }
 
     /// Removes one instance of an object from the counted set.
@@ -49,12 +51,13 @@ struct CountedSet<T: Hashable & Codable>: Codable {
 
         let objectCount = count(for: object)
 
-        if objectCount == 1 {
+        if objectCount <= 1 {
             storage.removeValue(forKey: object)
         } else {
             storage[object] = objectCount - 1
         }
     }
+
 }
 
 /// Make CountedSet conform to Sequence so we can loop over it.

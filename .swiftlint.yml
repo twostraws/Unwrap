@@ -6,8 +6,4 @@ disabled_rules: # rule identifiers to exclude from running
   - implicit_optional_initialization
   - function_body_length
   - cyclomatic_complexity
-  - force_cast
   - unused_setter_value
-excluded: # paths to ignore during linting. overridden by `included`.
-  - Pods
-  - Unwrap/User/Zephyr.swift

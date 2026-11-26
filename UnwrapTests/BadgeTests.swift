@@ -11,6 +11,8 @@ import Testing
 @testable import Unwrap
 
 extension UserCoreTests {
+    // Swift Testing reads parameter collections outside the main actor during
+    // registration, so these Foundation-only fixtures must be nonisolated.
     private nonisolated struct BadgeTestMetadata: Decodable {
         let name: String
         let criterion: String
@@ -94,7 +96,7 @@ extension UserCoreTests {
     func streakBadges(badgeName: String) throws {
         let badge = try badge(named: badgeName)
         let threshold = try #require(Int(badge.value), "Badge \(badge.name) has a non-numeric value.")
-        let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
+        let badges = try allBadges()
         let laterBadges = badges.filter {
             $0.criterion == "streak" && (Int($0.value) ?? 0) > threshold
         }
@@ -115,7 +117,7 @@ extension UserCoreTests {
     func challengeBadges(badgeName: String) throws {
         let badge = try badge(named: badgeName)
         let threshold = try #require(Int(badge.value), "Badge \(badge.name) has a non-numeric value.")
-        let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
+        let badges = try allBadges()
         let laterBadges = badges.filter {
             $0.criterion == "challenge" && (Int($0.value) ?? 0) > threshold
         }
@@ -147,18 +149,12 @@ extension UserCoreTests {
         #expect(user.isBadgeEarned(badge), "Reading \(targetCount) stories should earn \(badge.name).")
     }
 
-    @Test("Sharing a score earns the social badge")
-    func scoreSharingBadge() throws {
-        let badge = try badge(named: "Social Sharer")
-        let user = User()
-
-        user.sharedScore()
-
-        #expect(user.isBadgeEarned(badge), "Sharing a score should earn \(badge.name).")
+    private func badge(named name: String) throws -> Badge {
+        let badges = try allBadges()
+        return try #require(badges.first { $0.name == name }, "Unknown badge \(name).")
     }
 
-    private func badge(named name: String) throws -> Badge {
-        let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
-        return try #require(badges.first { $0.name == name }, "Unknown badge \(name).")
+    private func allBadges() throws -> [Badge] {
+        try Bundle.main.decode([Badge].self, from: "Badges.json")
     }
 }

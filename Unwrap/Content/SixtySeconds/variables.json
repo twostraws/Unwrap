@@ -1,60 +1,89 @@
 {
+    "content": [
+        {
+            "text": "When you launch Xcode it will ask you what you want to do, and I’d like you to choose “Get Started with a Playground” – this is a sandbox where you can type Swift code and see immediate results."
+        },
+        {
+            "text": "The default is a blank playground for iOS, which is fine, so click Next then Create to save it on your desktop."
+        },
+        {
+            "text": "In this video I want to introduce you to variables, which are places where you can store program data. They are called variables because they can *vary* – you can change their values freely."
+        },
+        {
+            "text": "Playgrounds start with a line of code that creates a variable for us:"
+        },
+        {
+            "code": "var str = \"Hello, playground\""
+        },
+        {
+            "text": "That creates a new variable called `str`, giving it the value “Hello, playground”. On the right of the playground you can see “Hello, playground” in the output area – that’s Xcode showing us the value was set."
+        },
+        {
+            "text": "Because `str` is a variable we can change it:"
+        },
+        {
+            "code": "str = \"Goodbye\""
+        },
+        {
+            "text": "We don’t need `var` the second time because the variable has already been created – we’re just changing it."
+        }
+    ],
     "title": "Variables",
     "postscript": "Although Swift is pretty relaxed about how you name variables, it's usually a good idea to make them descriptive.",
     "reviewType": "multipleSelection",
     "question": "Which of these lines of code create new variables?",
-    "hint": "New variables are only created when you use the <code>var<\/code> keyword.",
+    "hint": "New variables are only created when you use the `var` keyword.",
     "syntaxHighlighting": true,
     "correct": [
         {
             "answer": "var str = \"Hello, playground\"",
-            "reason": "This creates a variable called <code>str<\/code>."
+            "reason": "This creates a variable called `str`."
         },
         {
             "answer": "var name = \"Sophie\"",
-            "reason": "This creates a variable called <code>name<\/code>."
+            "reason": "This creates a variable called `name`."
         },
         {
             "answer": "var address = \"321 Park Lane\"",
-            "reason": "This creates a variable called <code>address<\/code>."
+            "reason": "This creates a variable called `address`."
         },
         {
             "answer": "var operatingSystem = \"macOS\"",
-            "reason": "This creates a variable called <code>operatingSystem<\/code>."
+            "reason": "This creates a variable called `operatingSystem`."
         },
         {
             "answer": "var pirate = \"LeChuck\"",
-            "reason": "This creates a variable called <code>pirate<\/code>."
+            "reason": "This creates a variable called `pirate`."
         },
         {
             "answer": "var dinosaur = \"T-Rex\"",
-            "reason": "This creates a variable called <code>dinosaur<\/code>."
+            "reason": "This creates a variable called `dinosaur`."
         }
     ],
     "wrong": [
         {
             "answer": "user = \"twostraws\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         },
         {
             "answer": "status = \"success\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         },
         {
             "answer": "favoriteColor = \"heliotrope\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         },
         {
             "answer": "message = \"Good morning, Dave!\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         },
         {
             "answer": "spaceship = \"Nostromo\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         },
         {
             "answer": "city = \"Paris\"",
-            "reason": "This needs to start with <code>var<\/code> in order to create a new variable."
+            "reason": "This needs to start with `var` in order to create a new variable."
         }
     ]
 }

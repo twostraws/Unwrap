@@ -1,6 +1,29 @@
 {
+    "content": [
+        {
+            "text": "Protocols are a way of describing what properties and methods something must have. You then tell Swift which types use that protocol – a process known as adopting or conforming to a protocol."
+        },
+        {
+            "text": "For example, we can write a function that accepts something with an `id` property, but we don’t care precisely what type of data is used. We’ll start by creating an `Identifiable` protocol, which will require all conforming types to have an `id` string that can be read (“get”) or written (“set”):"
+        },
+        {
+            "code": "protocol Identifiable {\n  var id: String { get set }\n}"
+        },
+        {
+            "text": "We can’t *create* instances of that protocol - it’s a description of what we want, rather than something we can create and use directly. But we *can* create a struct that conforms to it:"
+        },
+        {
+            "code": "struct User: Identifiable {\n  var id: String\n}"
+        },
+        {
+            "text": "Finally, we’ll write a `displayID()` function that accepts any `Identifiable` object:"
+        },
+        {
+            "code": "func displayID(thing: Identifiable) {\n  print(\"My ID is \\(thing.id)\")\n}"
+        }
+    ],
     "title": "Protocols",
-    "postscript": "You can use <code>{ get set }<\/code> in your protocols to make read-write variables, or just <code>{ get }<\/code> to make read-only variables. Using just <code>{ set }<\/code> is not allowed.",
+    "postscript": "You can use `{ get set }` in your protocols to make read-write variables, or just `{ get }` to make read-only variables. Using just `{ set }` is not allowed.",
     "reviewType": "singleSelection",
     "question": "This is a valid protocol \u2013 true or false?",
     "hint": "Protocols can declare properties as read-only, but not write-only.",
@@ -38,7 +61,7 @@
         },
         {
             "answer": "protocol Strokeable {\n\tfluffiness: Int { get }\n}",
-            "reason": "<code>fluffiness<\/code> should be declared using <code>var<\/code>."
+            "reason": "`fluffiness` should be declared using `var`."
         },
         {
             "answer": "protocol Buildable {\n\tvar numberOfBricks: Int { set }\n\tvar materials: [String] { set }\n}",
@@ -46,15 +69,15 @@
         },
         {
             "answer": "protocol Swimmable {\n\tvar depth { get }\n}",
-            "reason": "This needs a type annotation for <code>depth<\/code>."
+            "reason": "This needs a type annotation for `depth`."
         },
         {
             "answer": "protocol Liftable {\n\tvar weight: Double get set\n}",
-            "reason": "This is missing braces around <code>get set<\/code>."
+            "reason": "This is missing braces around `get set`."
         },
         {
             "answer": "protocol Mailable {\n\tvar width: Double { get, set }\n\tvar height: Double { get, set }\n}",
-            "reason": "<code>{ get set }<\/code> should not have a comma inside."
+            "reason": "`{ get set }` should not have a comma inside."
         }
     ]
 }

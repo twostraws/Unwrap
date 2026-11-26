@@ -1,0 +1,40 @@
+{
+  "articlesRead" : [
+    "https:\/\/www.hackingwithswift.com\/articles\/100\/shipping-unwrap",
+    "https:\/\/www.hackingwithswift.com\/articles\/99\/swift-news"
+  ],
+  "bestStreak" : 120,
+  "dailyChallenges" : [
+    {
+      "date" : "2020-02-10T18:45:00Z",
+      "score" : 300
+    },
+    {
+      "date" : "2020-02-10T08:15:00Z",
+      "score" : 200
+    },
+    {
+      "date" : "2020-02-09T09:30:00Z",
+      "score" : 100
+    }
+  ],
+  "lastStreakEntry" : "2020-02-10T07:00:00Z",
+  "latestNewsArticle" : 456,
+  "learnedSections" : [
+    "closures",
+    "variables"
+  ],
+  "practicePoints" : 9876,
+  "practiceSessions" : {
+    "storage" : {
+      "free-coding" : 3,
+      "type-practice" : 7
+    }
+  },
+  "reviewedSections" : [
+    "variables"
+  ],
+  "scoreShareCount" : 9,
+  "streakDays" : 42,
+  "theme" : "Dark"
+}

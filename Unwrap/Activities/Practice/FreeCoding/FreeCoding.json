@@ -1,7 +1,7 @@
 [
     {
         "question": "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use.",
-        "hint": "If you make both strings lowercased using <code>lowercased()</code> you can compare the lowercased versions.",
+        "hint": "If you make both strings lowercased using `lowercased()` you can compare the lowercased versions.",
         "startingCode": "",
         "answers": [
             "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input1.lowercased() == input2.lowercased()\n}",
@@ -32,7 +32,7 @@
     },
     {
         "question": "Write a function that accepts two strings and returns them joined together. For example, sending in the strings 'car' and 'pet' should return 'carpet'.",
-        "hint": "You can use <code>+</code> to join two strings together.",
+        "hint": "You can use `+` to join two strings together.",
         "startingCode": "",
         "answers": [
             "func myFunction(input1:String,input2:String) -> String{\noptionalreturn input1 + input2\n}",
@@ -51,7 +51,7 @@
     },
     {
         "question": "Write a function that accepts a string and sends back an integer of how many characters are in the string.",
-        "hint": "You can use the <code>count</code> property to measure the length of the string.",
+        "hint": "You can use the `count` property to measure the length of the string.",
         "startingCode": "",
         "answers": [
             "func myFunction(input1:String) -> Int{\noptionalreturn input1.count\n}",
@@ -70,7 +70,7 @@
         ]
     },
     {
-        "question": "Write a function that accepts two Doubles and returns their product. For example, sending in <code>3, 5</code> will return 15.",
+        "question": "Write a function that accepts two Doubles and returns their product. For example, sending in `3, 5` will return 15.",
         "hint": "The product of two numbers is the numbers multiplied",
         "startingCode": "",
         "answers": [
@@ -81,7 +81,7 @@
     },
     {
         "question": "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total.",
-        "hint": "You can solve this using a <code>for</code> loop.",
+        "hint": "You can solve this using a `for` loop.",
         "startingCode": "let numbers = [1, 5, 2, 5, 3, 5]",
         "answers": [
             "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
@@ -132,7 +132,7 @@
     },
     {
         "question": "Write code that doubles all the numbers in this array.",
-        "hint": "You can solve this using a <code>for</code> loop.",
+        "hint": "You can solve this using a `for` loop.",
         "startingCode": "let numbers = [1, 3, 5, 7, 9]",
         "answers": [
             "var newArray:[Int] = [Int]()\nfor number in numbers{\nnewArray.append(number * 2)\n}",
@@ -175,7 +175,7 @@
     },
     {
         "question": "Write code that creates an array containing all the people with the first name Terry.",
-        "hint": "You can solve this using a <code>for</code> loop.",
+        "hint": "You can solve this using a `for` loop.",
         "startingCode": "let names = [\"Terry Jones\", \"John Terry\", \"Terry Crews\", \"Terry Farrell\", \"Samuel Terry\"]",
         "answers": [
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
@@ -208,8 +208,8 @@
         ]
     },
     {
-        "question": "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value.",
-        "hint": "You can solve this using a <code>didSet</code> property observer.",
+        "question": "Create a `Player` struct with a `score` integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value.",
+        "hint": "You can solve this using a `didSet` property observer.",
         "startingCode": "",
         "answers": [
             "struct Player {\n\tletvar score:Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
@@ -219,8 +219,8 @@
         ]
     },
     {
-        "question": "Write code that creates an array of all the items in <code>words</code>, capitalized. So, your finished array should contain THE, RAIN, IN, SPAIN.",
-        "hint": "You can solve this using a <code>for</code> loop.",
+        "question": "Write code that creates an array of all the items in `words`, capitalized. So, your finished array should contain THE, RAIN, IN, SPAIN.",
+        "hint": "You can solve this using a `for` loop.",
         "startingCode": "let words = [\"The\", \"rain\", \"in\", \"Spain\"]",
         "answers": [
             "var uppercased1:[String] = []\nfor word in words {\n\tuppercased1.append(word.uppercased())\n}",
@@ -243,7 +243,7 @@
     },
     {
         "question": "Write code that loops from 1 through 100 to create an array of all even numbers.",
-        "hint": "You'll need to use the division remainder operator, <code>%</code>, or the isMultiple(of:) method.",
+        "hint": "You'll need to use the division remainder operator, `%`, or the isMultiple(of:) method.",
         "startingCode": "",
         "answers": [
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\nif i.isMultiple(of: 2) {\neven1.append(i)\n}\n}",

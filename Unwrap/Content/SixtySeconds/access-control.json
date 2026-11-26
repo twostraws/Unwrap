@@ -1,9 +1,38 @@
 {
+    "content": [
+        {
+            "text": "Access control lets you restrict which code can use properties and methods. This is important because you might want to stop people reading a property directly, for example."
+        },
+        {
+            "text": "We could create a `Person` struct that has an `id` property to store their social security number:"
+        },
+        {
+            "code": "struct Person {\n  var id: String\n  init(id: String) {\n    self.id = id\n  }\n}\nlet ed = Person(id: \"12345\")"
+        },
+        {
+            "text": "Once that person has been created, we can make their `id` be private so you can’t read it from outside the struct – trying to write `ed.id` simply won’t work."
+        },
+        {
+            "text": "Just use the `private` keyword, like this:"
+        },
+        {
+            "code": "struct Person {\n  private var id: String\n  init(id: String) {\n    self.id = id\n  }\n}"
+        },
+        {
+            "text": "Now only methods inside `Person` can read the `id` property. For example:"
+        },
+        {
+            "code": "struct Person {\n  private var id: String\n  init(id: String) {\n    self.id = id\n  }\n  func identify() -> String {\n    return \"My social security number is \\(id)\"\n  }\n}"
+        },
+        {
+            "text": "Another common option is `public`, which lets all other code use the property or method."
+        }
+    ],
     "title": "Access control",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
-    "hint": "Make sure that <code>private<\/code> properties aren't accessed from outside their struct.",
+    "hint": "Make sure that `private` properties aren't accessed from outside their struct.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,11 +63,11 @@
     "wrong": [
         {
             "answer": "struct Toy {\n\tvar customerPrice: Double\n\tprivate var actualPrice: Int\n\tinit(price: Int) {\n\t\tactualPrice = price\n\t\tcustomerPrice = actualPrice * 2\n\t}\n}\nlet buzz = Toy(price: 10)",
-            "reason": "<code>actualPrice</code> is an <code>Int</code> and multiplying it by 2 makes another <code>Int</code>, but Swift won't let us assign that integer to a <code>Double</code>."
+            "reason": "`actualPrice` is an `Int` and multiplying it by 2 makes another `Int`, but Swift won't let us assign that integer to a `Double`."
         },
         {
             "answer": "struct RebelBase {\n\tprivate var location: String\n\tprivate var peopleCount: Int\n\tinit(location: String, people: Int) {\n\t\tself.location = location\n\t\tself.people = peopleCount\n\t}\n}\nlet base = RebelBase(location: \"Yavin\", people: 1000)",
-            "reason": "This attempts to set a property called <code>people</code>, but no such property exists."
+            "reason": "This attempts to set a property called `people`, but no such property exists."
         },
         {
             "answer": "struct FacebookUser {\n\tprivate var privatePosts: [String]\n\tpublic var publicPosts: [String]\n}\nlet user = FacebookUser()",
@@ -46,7 +75,7 @@
         },
         {
             "answer": "struct SecretAgent {\n\tprivate var actualName: String\n\tpublic var codeName: String\n\tinit(name: String, codeName: String) {\n\t\tself.actualName = name\n\t\tself.codeName = codeName\n\t}\n}\nlet bond = SecretAgent(name: \"James Bond\", codeName: 007)",
-            "reason": "The <code>codeName</code> property is marked as a string, but the code attempts to use an integer."
+            "reason": "The `codeName` property is marked as a string, but the code attempts to use an integer."
         },
         {
             "answer": "struct Doctor {\n\tvar name: String\n\tvar location: String\n\tprivate var currentPatient = \"No one\"\n}\nlet drJones = Doctor(name: \"Esther Jones\", location: \"Bristol\")",
@@ -54,7 +83,7 @@
         },
         {
             "answer": "struct Order {\n\tprivate var id: Int\n\tinit(id: Int) {\n\t\tself.id = id\n\t}\n}\nlet order = Order(id: \"1\")",
-            "reason": "The initializer expects an <code>Int</code> but is given a <code>String</code>."
+            "reason": "The initializer expects an `Int` but is given a `String`."
         }
     ]
 }

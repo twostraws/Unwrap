@@ -1,48 +1,74 @@
 {
+    "content": [
+        {
+            "text": "Now you know some operators you can write conditions using `if` statements. You give Swift a condition, and if that condition is true it will run code of your choosing."
+        },
+        {
+            "text": "To try this out, I want to use a Swift function called `print()`: you run it with some text, and it will be printed out."
+        },
+        {
+            "text": "We can use conditions to check for a winning Blackjack hand:"
+        },
+        {
+            "code": "let firstCard = 11\nlet secondCard = 10\nif firstCard + secondCard == 21 {\n  print(\"Blackjack!\")\n}"
+        },
+        {
+            "text": "The code inside the braces – `{` and `}` – will be run if the condition is true. If you want you can provide alternative code to run if the condition is *false*, using `else`:"
+        },
+        {
+            "code": "if firstCard + secondCard == 21 {\n  print(\"Blackjack!\")\n} else {\n  print(\"Regular cards\")\n}"
+        },
+        {
+            "text": "You can also chain conditions together using `else if`:"
+        },
+        {
+            "code": "if firstCard + secondCard == 2 {\n  print(\"Aces – lucky!\")\n} else if firstCard + secondCard == 21 {\n  print(\"Blackjack!\")\n} else {\n  print(\"Regular cards\")\n}"
+        }
+    ],
     "title": "Conditions",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code will print \"Success\" \u2013 true or false?",
-    "hint": "<code>else<\/code> blocks are executed if the condition is false, and Swift won't let you compare different types of data.",
+    "hint": "`else` blocks are executed if the condition is false, and Swift won't let you compare different types of data.",
     "syntaxHighlighting": true,
     "correct": [
         {
             "answer": "let age = 21\nif age > 18 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "This will print \"Success\" because <code>age<\/code> is over 18."
+            "reason": "This will print \"Success\" because `age` is over 18."
         },
         {
             "answer": "let name = \"Taylor\"\nif name == \"Paul\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-            "reason": "This will print \"Success\" because <code>name<\/code> is not \"Paul\"."
+            "reason": "This will print \"Success\" because `name` is not \"Paul\"."
         },
         {
             "answer": "let orderAmount = 200\nif orderAmount >= 200 {\n\tprint(\"Success\")\n}",
-            "reason": "This will print \"Success\" because <code>orderAmount<\/code> is equal to 200."
+            "reason": "This will print \"Success\" because `orderAmount` is equal to 200."
         },
         {
             "answer": "var city = \"Tokyo\"\nif city == \"Madrid\" {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-            "reason": "This will print \"Success\" because <code>city<\/code> is not \"Madrid\"."
+            "reason": "This will print \"Success\" because `city` is not \"Madrid\"."
         },
         {
             "answer": "let employeeCount = 50\nif employeeCount == 50 {\n\tprint(\"Success\")\n}",
-            "reason": "This will print \"Success\" because <code>employeeCount<\/code> is equal to 50."
+            "reason": "This will print \"Success\" because `employeeCount` is equal to 50."
         },
         {
             "answer": "let teaStrength = 5\nif teaStrength >= 4 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "This will print \"Success\" because <code>teaStrength<\/code> is over 4."
+            "reason": "This will print \"Success\" because `teaStrength` is over 4."
         }
     ],
     "wrong": [
         {
             "answer": "let sharkCount: Int = 21\nif sharkCount < 21 {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "<code>sharkCount<\/code> is equal to 21, so this will print \"Failure\"."
+            "reason": "`sharkCount` is equal to 21, so this will print \"Failure\"."
         },
         {
             "answer": "let passwordLength = 5\nif passwordLength <= 5 {\n\tprint(\"Failure\")\n} else {\n\tprint(\"Success\")\n}",
-            "reason": "<code>passwordLength<\/code> is equal to 5, so this will print \"Failure\"."
+            "reason": "`passwordLength` is equal to 5, so this will print \"Failure\"."
         },
         {
             "answer": "let isAvailable: Bool = false\nif isAvailable {\n\tprint(\"Success\")\n} else {\n\tprint(\"Failure\")\n}",
-            "reason": "<code>isAvailable<\/code> is false, so this will print \"Failure\"."
+            "reason": "`isAvailable` is false, so this will print \"Failure\"."
         },
         {
             "answer": "var actualWage: Int = 22_000\nvar medianWage: Double = 22_000\nif actualWage >= medianWage {\n\tprint(\"Success\")\n}",

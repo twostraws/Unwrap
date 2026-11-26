@@ -1,9 +1,41 @@
 {
+    "content": [
+        {
+            "text": "Now you know all the basic types in Swift, we can start to put them together using operators. Operators are those little mathematical symbols like `+` and `-`, and Swift has a huge range of them."
+        },
+        {
+            "text": "Here are a couple of test variables for us to work with:"
+        },
+        {
+            "code": "let firstScore = 12\nlet secondScore = 4"
+        },
+        {
+            "text": "We can add and subtract using `+` and `-`:"
+        },
+        {
+            "code": "let total = firstScore + secondScore\nlet difference = firstScore - secondScore"
+        },
+        {
+            "text": "And we can multiply and divide using `*` and `/`:"
+        },
+        {
+            "code": "let product = firstScore * secondScore\nlet divided = firstScore / secondScore"
+        },
+        {
+            "text": "Swift has a special operator for calculating remainders after division: `%`. It calculates how many times one number can fit inside another, then sends back the value that’s left over."
+        },
+        {
+            "text": "For example, we set `secondScore` to 4, so if we say `13 % secondScore` we’ll get back one, because 4 fits into 13 three times with remainder one:"
+        },
+        {
+            "code": "let remainder = 13 % secondScore"
+        }
+    ],
     "title": "Arithmetic operators",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of these make <code>result<\/code> an integer equal to 5?",
-    "hint": "The <code>%<\/code> operator calculates division remainder",
+    "question": "Which of these make `result` an integer equal to 5?",
+    "hint": "The `%` operator calculates division remainder",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -38,7 +70,7 @@
         },
         {
             "answer": "let result = 12 % 6",
-            "reason": "This will set <code>result<\/code> to be 0."
+            "reason": "This will set `result` to be 0."
         },
         {
             "answer": "let result = 10 \/ 2.0",
@@ -50,11 +82,11 @@
         },
         {
             "answer": "var result = 2 + 2 + 2",
-            "reason": "This will set <code>result<\/code> to 6."
+            "reason": "This will set `result` to 6."
         },
         {
             "answer": "var result = 12 - 8",
-            "reason": "This will set <code>result<\/code> to 4."
+            "reason": "This will set `result` to 4."
         }
     ]
 }

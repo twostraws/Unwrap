@@ -6,9 +6,9 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import Sourceful
-import UIKit
+import SwiftUI
 
+@Observable
 final class User: Codable {
     enum CodingKeys: String, CodingKey {
         case streakDays
@@ -21,7 +21,6 @@ final class User: Codable {
         case practicePoints
         case dailyChallenges
 
-        case scoreShareCount
         case latestNewsArticle
         case articlesRead
 
@@ -50,9 +49,6 @@ final class User: Codable {
     /// An array of all the days the user has completed a challenge.
     var dailyChallenges = [ChallengeResult]()
 
-    /// The number of times the user has shared their score.
-    var scoreShareCount = 0
-
     /// Stores the highest article ID the user has read.
     var latestNewsArticle = 0
 
@@ -69,11 +65,6 @@ final class User: Codable {
 
     // MARK: - Computed properties
 
-    /// The total number of points for this user.
-    var totalPoints: Int {
-        return learnPoints + reviewPoints + practicePoints + challengePoints
-    }
-
     /// The number of points this user earned through learning.
     var learnPoints: Int {
         return learnedSections.count * User.pointsForLearning
@@ -84,79 +75,47 @@ final class User: Codable {
         return reviewedSections.count * User.pointsForReviewing
     }
 
+    /// The total number of points for this user.
+    var totalPoints: Int {
+        Self.saturatingPointTotal([
+            learnPoints,
+            reviewPoints,
+            practicePoints,
+            challengePoints
+        ])
+    }
+
     /// The number of points this user earned through challenges.
     var challengePoints: Int {
-        return dailyChallenges.reduce(0) { $0 + $1.score }
+        Self.saturatingPointTotal(dailyChallenges.lazy.map(\.score))
     }
 
-    /// The users current rank number.
+    /// The user's current rank number.
     var rankNumber: Int {
-        let rank = User.rankLevels.firstIndex { $0 > totalPoints }
-        return (rank ?? 1)
+        User.rankLevels.firstIndex { $0 > totalPoints }
+            ?? (User.rankLevels.count - 1)
     }
 
-    /// How many points the user has earned towards their
-    /// next rank.
-    var pointsTowardsNextRank: Int {
-        return totalPoints - User.rankLevels[rankNumber - 1]
-    }
-
-    /// How many points the user needs before they rank up.
-    /// Returns nil if they are maxed out.
+    /// How many points the user needs before they rank up, or nil if they are at the maximum rank.
     var pointsUntilNextRank: Int? {
         guard rankNumber < 21 else { return nil }
         return User.rankLevels[rankNumber] - totalPoints
     }
 
-    /// How far through this user is for their
-    /// current rank, where 0.001 (the smallest value) means
-    /// "just starting".
-    var rankFraction: Double {
-        if rankNumber == 21 {
-            return 1.0
-        } else {
-            let pointsForNextRank = User.rankLevels[rankNumber]
-            let pointsFromPreviousRank = User.rankLevels[rankNumber - 1]
-            let pointsDelta = pointsForNextRank - pointsFromPreviousRank
-
-            let fraction = Double(pointsTowardsNextRank) / Double(pointsDelta)
-
-            // always draw at least a tiny piece of the progress
-            return max(fraction, User.smallestRankFraction)
-        }
-    }
-
-    /// Returns the correct image for the user's rank.
-    var rankImage: UIImage {
-        return UIImage(bundleName: "Rank Level \(rankNumber)")
-    }
-
-    /// Returns true if the user has completed today's challenge, or false otherwise.
-    var hasCompletedTodaysChallenge: Bool {
+    func hasCompletedChallenge(on date: Date) -> Bool {
         guard let mostRecent = dailyChallenges.first else { return false }
-
-        return mostRecent.date.isSameDay(as: Date())
-    }
-
-    /// Returns an instance of the correct source code theme for the user's current settings.
-    var sourceCodeTheme: SourceCodeTheme {
-        if UIApplication.activeTraitCollection.userInterfaceStyle == .dark {
-            return DarkTheme()
-        } else {
-            return LightTheme()
-        }
+        return mostRecent.date.isSameDay(as: date)
     }
 
     // MARK: - Methods
-    init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
-        updateStreak()
+    init(now: Date = .now) {
+        lastStreakEntry = now
     }
 
     /// Implement Decodable's initializer in an extension so we don't lose the built-in one: https://www.hackingwithswift.com/example-code/language/how-to-add-a-custom-initializer-to-a-struct-without-losing-its-memberwise-initializer
     ///
     /// NB: This is a custom initializer so we can add new fields with default values in the future. We don't need to create a custom encoder because we always save all coding keys.
-    init(from decoder: Decoder) throws {
+    init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         streakDays = try container.decodeIfPresent(Int.self, forKey: .streakDays) ?? 1
@@ -169,20 +128,30 @@ final class User: Codable {
         practicePoints = try container.decodeIfPresent(Int.self, forKey: .practicePoints) ?? 0
         dailyChallenges = try container.decodeIfPresent([ChallengeResult].self, forKey: .dailyChallenges) ?? []
 
-        scoreShareCount = try container.decodeIfPresent(Int.self, forKey: .scoreShareCount) ?? 0
         latestNewsArticle = try container.decodeIfPresent(Int.self, forKey: .latestNewsArticle) ?? 0
         articlesRead = try container.decodeIfPresent(Set<URL>.self, forKey: .articlesRead) ?? []
 
         theme = try container.decodeIfPresent(String.self, forKey: .theme) ?? "Light"
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStreak), name: .NSCalendarDayChanged, object: nil)
-
-        updateStreak()
     }
 
-    /// Triggered by new data coming from iCloud; pass it straight on to statusChanged() so all our UI refreshes.
-    func cloudUpdate() {
-        cloudStatusChanged()
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(streakDays, forKey: .streakDays)
+        try container.encode(bestStreak, forKey: .bestStreak)
+        try container.encode(lastStreakEntry, forKey: .lastStreakEntry)
+
+        try container.encode(learnedSections, forKey: .learnedSections)
+        try container.encode(reviewedSections, forKey: .reviewedSections)
+        try container.encode(practiceSessions, forKey: .practiceSessions)
+        try container.encode(practicePoints, forKey: .practicePoints)
+        try container.encode(dailyChallenges, forKey: .dailyChallenges)
+
+        try container.encode(latestNewsArticle, forKey: .latestNewsArticle)
+        try container.encode(articlesRead, forKey: .articlesRead)
+
+        try container.encode(theme, forKey: .theme)
     }
 
     /// Triggered when the user has finished learning
@@ -206,7 +175,7 @@ final class User: Codable {
     /// Triggered when the user has completed any practice session
     func completedPractice(_ type: String, score: Int) {
         practiceSessions.insert(type)
-        practicePoints += score
+        practicePoints = Self.saturatingPointTotal([practicePoints, score])
         statusChanged()
     }
 
@@ -214,9 +183,15 @@ final class User: Codable {
     /// They score points for each correct answer.
     /// Challenges are inserted at the start of the array so that
     /// most recently completed are shown first.
-    func completedChallenge(score: Int) {
-        let result = ChallengeResult(date: Date(), score: score)
+    func completedChallenge(score: Int, at date: Date = .now) {
+        let result = ChallengeResult(date: date, score: score)
         dailyChallenges.insert(result, at: 0)
+        statusChanged()
+    }
+
+    func removeChallenge(id: ChallengeResult.ID) {
+        guard let index = dailyChallenges.firstIndex(where: { $0.id == id }) else { return }
+        dailyChallenges.remove(at: index)
         statusChanged()
     }
 
@@ -231,32 +206,41 @@ final class User: Codable {
         return articlesRead.contains(url)
     }
 
-    /// Sends an app-wide notification that the user's data has changed somehow, so all listening objects can update.
-    private func statusChanged() {
-        let notification = Notification(name: .userStatusChanged)
+    /// Updates the user's streak relative to a supplied date.
+    func reconcileStreak(at today: Date) {
+        guard lastStreakEntry.isSameDay(as: today) == false else { return }
 
-        // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
-        NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
+        if today > lastStreakEntry {
+            let elapsedDays = lastStreakEntry.days(between: today)
 
-        // Keep unit-test persistence deterministic so one test cannot leave a save queued for another test.
-        if User.isRunningTests {
-            save()
-            return
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                let (nextStreak, overflowed) = streakDays.addingReportingOverflow(1)
+                streakDays = overflowed ? .max : nextStreak
+                bestStreak = max(bestStreak, streakDays)
+            } else {
+                streakDays = 1
+                lastStreakEntry = today
+            }
+        } else {
+            let elapsedDays = today.days(between: lastStreakEntry)
+
+            if elapsedDays == 1 {
+                lastStreakEntry = today
+                bestStreak = max(bestStreak, streakDays)
+            } else {
+                streakDays = 1
+                lastStreakEntry = today
+            }
         }
 
-        // Write the change out to disk at the next available chance; again, we don't want to do this immediately to avoid reading and writing at the same time.
-        Task { @MainActor in
-            self.save()
-        }
+        save()
     }
 
-    /// Sends an app-wide notification when the user's data has changed via the cloud, so all listening objects can update. This is the same as statusChanged but without the save.
-    private func cloudStatusChanged() {
-        let notification = Notification(name: .userStatusChanged)
-
-        // Prepare to tell all listeners that the user's status has changed. We don't do this immediately to avoid reading and writing at the same time. Coalescing on name means we can call this multiple times in the same run loop without posting multiple notifications.
-        NotificationQueue.default.enqueue(notification, postingStyle: .asap, coalesceMask: .onName, forModes: [.common])
-
+    /// Persists user changes. Observation updates the SwiftUI hierarchy directly.
+    private func statusChanged() {
+        // Progress changes should be durable before the next interaction.
+        save()
     }
 
     /// Returns how many points the user has earned for a specific chapter in the book.
@@ -286,90 +270,8 @@ final class User: Codable {
 
     /// Tracks the highest-numbered article the user has seen – i.e., was present when they visited the News tab. This doesn't mean they have *read* that article.
     func seenUpToArticle(_ articleID: Int) {
-        latestNewsArticle = articleID
+        latestNewsArticle = max(latestNewsArticle, articleID)
         statusChanged()
-    }
-
-    /// Called when the user shared their score.
-    func sharedScore() {
-        scoreShareCount += 1
-        statusChanged()
-    }
-
-    /// Returns true if a specific badge has been earned, or false otherwise.
-    func isBadgeEarned(_ badge: Badge) -> Bool {
-        if badge.criterion == "read" {
-            guard var conditionChapter = Unwrap.chapters.first(where: {
-                $0.name.bundleName == badge.value
-
-            }) else {
-                fatalError("Unknown chapter name for criterion: \(badge.value).")
-            }
-
-            return conditionChapter.bundleNameSections.allSatisfy {
-                hasReviewed($0.bundleName)
-            }
-        } else if badge.criterion == "practice" {
-            let practiceBadgeCount = 10
-            return practiceSessions.count(for: badge.value) >= practiceBadgeCount
-        } else {
-            guard let intValue = Int(badge.value) else {
-                fatalError("Criterion must have its value specified as an integer: \(badge.criterion).")
-            }
-
-            switch badge.criterion {
-            case "streak":
-                return bestStreak >= intValue
-
-            case "challenge":
-                return dailyChallenges.count >= intValue
-
-            case "news":
-                return readNewsCount >= intValue
-
-            case "share":
-                return scoreShareCount >= intValue
-
-            default:
-                fatalError("Unknown badge criterion: \(badge.criterion)")
-            }
-        }
-    }
-
-    /// Called whenever we need to update our streak. This checks whether the streak should be updated, then either carries it out or resets the streak if more than 1 day has passed.
-    @objc func updateStreak() {
-        reconcileStreak(at: Date())
-    }
-
-    /// Updates the user's streak relative to a supplied date, allowing deterministic testing around day boundaries.
-    func reconcileStreak(at today: Date) {
-        let elapsedDays: Int
-        guard lastStreakEntry.isSameDay(as: today) == false else { return }
-        // We want to see if today is more recent than sync'd lastStreakEntry. This will be true if we are first in app during or after a calendar day change. Otherwise, our lastStreakEntry is newer and we need to calculate elapsed days the other way.
-        if today > lastStreakEntry {
-            elapsedDays = lastStreakEntry.days(between: today)
-            if elapsedDays == 1 {
-                lastStreakEntry = today
-                streakDays += 1
-                bestStreak = max(bestStreak, streakDays)
-            } else {
-                // reset back to 1, because they obviously launched the app today
-                streakDays = 1
-                lastStreakEntry = today
-            }
-        } else if today < lastStreakEntry {
-            elapsedDays = today.days(between: lastStreakEntry)
-            if elapsedDays == 1 {
-                lastStreakEntry = today
-                // Not going to update streakDays here as the version from iCloud already has the correct value
-                bestStreak = max(bestStreak, streakDays)
-            } else {
-                // reset back to 1, because they obviously launched the app today
-                streakDays = 1
-                lastStreakEntry = today
-            }
-        }
-        save()
     }
 
     /// Reset user progress.
@@ -380,5 +282,22 @@ final class User: Codable {
         reviewedSections.removeAll()
         learnedSections.removeAll()
         statusChanged()
+    }
+
+    /// Updates this observable instance without breaking references held by active sessions.
+    func replaceProgress(with source: User) {
+        (streakDays, bestStreak, lastStreakEntry) = (source.streakDays, source.bestStreak, source.lastStreakEntry)
+        (learnedSections, reviewedSections) = (source.learnedSections, source.reviewedSections)
+        (practiceSessions, practicePoints) = (source.practiceSessions, source.practicePoints)
+        dailyChallenges = source.dailyChallenges
+        (latestNewsArticle, articlesRead, theme) = (source.latestNewsArticle, source.articlesRead, source.theme)
+    }
+
+    static func saturatingPointTotal<S: Sequence>(_ values: S) -> Int where S.Element == Int {
+        values.reduce(0) { partial, value in
+            let nonnegativeValue = max(0, value)
+            let (result, overflowed) = partial.addingReportingOverflow(nonnegativeValue)
+            return overflowed ? .max : result
+        }
     }
 }

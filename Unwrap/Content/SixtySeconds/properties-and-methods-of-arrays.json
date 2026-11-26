@@ -1,6 +1,53 @@
 {
+    "content": [
+        {
+            "text": "Arrays are also structs, which means they too have their own methods and properties we can use to query and manipulate the array."
+        },
+        {
+            "text": "Here’s a simple array to get us started:"
+        },
+        {
+            "code": "var toys = [\"Woody\"]"
+        },
+        {
+            "text": "You can read the number of items in an array using its `count` property:"
+        },
+        {
+            "code": "print(toys.count)"
+        },
+        {
+            "text": "If you want to add a new item, use the `append()` method like this:"
+        },
+        {
+            "code": "toys.append(\"Buzz\")"
+        },
+        {
+            "text": "You can locate any item inside an array using its `firstIndex()` method, like this:"
+        },
+        {
+            "code": "toys.firstIndex(of: \"Buzz\")"
+        },
+        {
+            "text": "That will return 1 because arrays count from 0."
+        },
+        {
+            "text": "Just like with strings, you can have Swift sort the items of the array alphabetically:"
+        },
+        {
+            "code": "print(toys.sorted())"
+        },
+        {
+            "text": "Finally, if you want to remove an item, use the `remove()` method like this:"
+        },
+        {
+            "code": "toys.remove(at: 0)"
+        },
+        {
+            "text": "Arrays have lots more properties and methods – try typing `toys.` to bring up Xcode’s code completion options."
+        }
+    ],
     "title": "Properties and methods of arrays",
-    "postscript": "Like strings, arrays also have a <code>contains()<\/code> method: <code>[1, 2, 3].contains(2)<\/code> is true.",
+    "postscript": "Like strings, arrays also have a `contains()` method: `[1, 2, 3].contains(2)` is true.",
     "reviewType": "singleSelection",
     "question": "This code will evaluate as true \u2013 true or false?",
     "hint": "Watch out for constants.",
@@ -54,7 +101,7 @@
         },
         {
             "answer": "var examScores = [100, 95, 92]\nexamScores.insert(98)",
-            "reason": "This is invalid Swift, because the <code>insert()<\/code> method must also be told where to insert the item."
+            "reason": "This is invalid Swift, because the `insert()` method must also be told where to insert the item."
         }
     ]
 }

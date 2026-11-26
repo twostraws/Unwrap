@@ -1,9 +1,35 @@
 {
+    "content": [
+        {
+            "text": "Arrays are collections of values that are stored as a single value. For example, John, Paul, George, and Ringo are names, but arrays let you group them in a single value called The Beatles."
+        },
+        {
+            "text": "In code, we write this:"
+        },
+        {
+            "code": "let john = \"John Lennon\"\nlet paul = \"Paul McCartney\"\nlet george = \"George Harrison\"\nlet ringo = \"Ringo Starr\"\nlet beatles = [john, paul, george, ringo]"
+        },
+        {
+            "text": "That last line makes the array: it starts and ends with brackets, with each item in the array separated by a comma."
+        },
+        {
+            "text": "You can read values from an array by writing a number inside brackets. Array positions count from 0, so if you want to read “Paul McCartney” you would write this:"
+        },
+        {
+            "code": "beatles[1]"
+        },
+        {
+            "text": "Be careful: Swift crashes if you read an item that doesn’t exist. For example, trying to read `beatles[9]` is a bad idea."
+        },
+        {
+            "text": "**Note:** If you’re using type annotations, arrays are written in brackets: `[String]`, `[Int]`, `[Double]`, and `[Bool]`."
+        }
+    ],
     "title": "Arrays",
-    "postscript": "If your array is empty, even reading <code>array[0]<\/code> will cause your app to crash. Be careful!",
+    "postscript": "If your array is empty, even reading `array[0]` will cause your app to crash. Be careful!",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create arrays?",
-    "hint": "Arrays start and end with brackets, e.g. <code>[1, 2, 3, 4, 5]<\/code>.",
+    "hint": "Arrays start and end with brackets, e.g. `[1, 2, 3, 4, 5]`.",
     "syntaxHighlighting": true,
     "correct": [
         {

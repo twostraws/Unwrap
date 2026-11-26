@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "Closures can also return values, and they are written similarly to parameters: you write them inside your closure, directly before the `in` keyword."
+        },
+        {
+            "text": "To demonstrate this, we’re going to take our `driving()` closure and make it return its value rather than print it directly. Here’s the original:"
+        },
+        {
+            "code": "let driving = { (place: String) in\n  print(\"I'm going to \\(place) in my car\")\n}"
+        },
+        {
+            "text": "We want a closure that returns a string rather than printing the message directly, so we need to use `-> String` before `in`, then use `return` just like a normal function:"
+        },
+        {
+            "code": "let drivingWithReturn = { (place: String) -> String in\n  return \"I'm going to \\(place) in my car\"\n}"
+        },
+        {
+            "text": "We can now run that closure and print its return value:"
+        },
+        {
+            "code": "let message = drivingWithReturn(\"London\")\nprint(message)"
+        }
+    ],
     "title": "Returning values from a closure",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,7 +57,7 @@
     "wrong": [
         {
             "answer": "let shovelSnow = { (depth) -> String in\n\tif depth < 1 {\n\t\treturn \"OK, I can do this...\"\n\t} else {\n\t\treturn \"I need some help!\"\n\t}\n}",
-            "reason": "This doesn't tell Swift what data type <code>depth<\/code> will be."
+            "reason": "This doesn't tell Swift what data type `depth` will be."
         },
         {
             "answer": "let goSurfing = { (waveHeight: Int) in\n\tif waveHeight < 5 {\n\t\treturn \"Let's go!\"\n\t} else if waveHeight < 10 {\n\t\treturn \"This could be tricky\"\n\t} else if waveHeight < 20 {\n\t\treturn \"Only a pro could do that\"\n\t} else {\n\t\treturn \"No way!\"\n\t}\n}",
@@ -46,7 +69,7 @@
         },
         {
             "answer": "func callNumber = { (number: Int) -> String in\n\treturn \"Calling now...\"\n}",
-            "reason": "This uses invalid syntax – to create a closure this should use <code>let callNumber<\/code> or <code>var callNumber<\/code>."
+            "reason": "This uses invalid syntax – to create a closure this should use `let callNumber` or `var callNumber`."
         },
         {
             "answer": "var buyMagazine = { (name: String) -> Int in\n\tlet amount = 10\n\tprint(\"\\(name) costs \\(amount)\")\n\treturn amount\n}\nbuyMagazine(name: \"Wired\")",

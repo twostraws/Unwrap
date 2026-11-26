@@ -1,4 +1,21 @@
 {
+    "content": [
+        {
+            "text": "Swift has a rarely used operator called the ternary operator. It works with three values at once, which is where its name comes from: it checks a condition specified in the first value, and if it’s true returns the second value, but if it’s false returns the third value."
+        },
+        {
+            "text": "The ternary operator is a condition plus true or false blocks all in one, split up by a question mark and a colon, all of which which makes it rather hard to read. Here’s an example:"
+        },
+        {
+            "code": "let firstCard = 11\nlet secondCard = 10\nprint(firstCard == secondCard ? \"Cards are the same\" : \"Cards are different\")"
+        },
+        {
+            "text": "That checks whether the two cards are the same, then prints “Cards are the same” if the condition is true, or “Cards are different” if it’s false. We could write the same code using a regular condition:"
+        },
+        {
+            "code": "if firstCard == secondCard {\n  print(\"Cards are the same\")\n} else {\n  print(\"Cards are different\")\n}"
+        }
+    ],
     "title": "The ternary operator",
     "postscript": "Although some coders love using the ternary operator, it's best to avoid it because it doesn't make your code very clear.",
     "reviewType": "singleSelection",
@@ -8,41 +25,41 @@
     "correct": [
         {
             "answer": "let numberOfCats = 21\nprint(numberOfCats >= 18 ? \"Success\" : \"Failure\")",
-            "reason": "Because <code>numberOfCats<\/code> is greater than 18, this will print \"Success\"."
+            "reason": "Because `numberOfCats` is greater than 18, this will print \"Success\"."
         },
         {
             "answer": "let strongMagnets = true\nprint(strongMagnets ? \"Success\" : \"Failure\")",
-            "reason": "Because <code>strongMagnets<\/code> is true, this will print \"Success\"."
+            "reason": "Because `strongMagnets` is true, this will print \"Success\"."
         },
         {
             "answer": "let phone = \"iPhone\"\nprint(phone == \"Android\" ? \"Failure\" : \"Success\")",
-            "reason": "Because <code>phone<\/code> is not \"Android\" this will print \"Success\"."
+            "reason": "Because `phone` is not \"Android\" this will print \"Success\"."
         },
         {
             "answer": "let dexterity = 18\nprint(dexterity >= 18 ? \"Success\" : \"Failure\")",
-            "reason": "Because <code>dexterity<\/code> is equal to 18, this will print \"Success\"."
+            "reason": "Because `dexterity` is equal to 18, this will print \"Success\"."
         },
         {
             "answer": "let isComplete: Bool = false\nprint(isComplete == true ? \"Failure\" : \"Success\")",
-            "reason": "Because <code>isComplete<\/code> is false, this will print \"Success\"."
+            "reason": "Because `isComplete` is false, this will print \"Success\"."
         },
         {
             "answer": "let sides = 5\nprint(sides <= 6 ? \"Success\" : \"Failure\")",
-            "reason": "Because <code>sides<\/code> is less than 6, this will print \"Success\"."
+            "reason": "Because `sides` is less than 6, this will print \"Success\"."
         }
     ],
     "wrong": [
         {
             "answer": "let isRecyclable = false\nprint(isRecyclable == true ? \"Success\" : \"Failure\")",
-            "reason": "<code>isRecyclable<\/code> is false, so this will print \"Failure\"."
+            "reason": "`isRecyclable` is false, so this will print \"Failure\"."
         },
         {
             "answer": "let highScore = 90\nlet actualScore = 89\nprint(actualScore > highScore ? \"Success\" : \"Failure\")",
-            "reason": "<code>actualScore<\/code> is less than <code>highScore<\/code> so this will print \"Failure\"."
+            "reason": "`actualScore` is less than `highScore` so this will print \"Failure\"."
         },
         {
             "answer": "let storageSpace = 500\nprint(storageSpace > 1000 ? \"Success\" : \"Failure\")",
-            "reason": "<code>storageSpace<\/code> is less than 1000, so this will print \"Failure\"."
+            "reason": "`storageSpace` is less than 1000, so this will print \"Failure\"."
         },
         {
             "answer": "var retweets = \"100\"\nprint(retweets > 10 ? \"Success\" : \"Failure\")",
@@ -50,7 +67,7 @@
         },
         {
             "answer": "var averagePages: Double = 10.01\nprint(averagePages == 10 ? \"Success\" : \"Failure\")",
-            "reason": "<code>averagePages<\/code> is 10.01, and this condition checks for exactly 10, so this will print \"Failure\"."
+            "reason": "`averagePages` is 10.01, and this condition checks for exactly 10, so this will print \"Failure\"."
         },
         {
             "answer": "var singers = [\"Taylor Swift\"]\nprint(singers == \"Taylor Swift\" ? \"Success\" : \"Failure\")",

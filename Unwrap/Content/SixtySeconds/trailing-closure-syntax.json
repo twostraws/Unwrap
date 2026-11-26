@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "If the last parameter to a function is a closure, Swift lets you use special syntax called *trailing closure syntax*. Rather than pass in your closure as a parameter, you pass it directly after the function inside braces."
+        },
+        {
+            "text": "To demonstrate this, here’s our `travel()` function again. It accepts an `action` closure so that it can be run between two `print()` calls:"
+        },
+        {
+            "code": "func travel(action: () -> Void) {\n  print(\"I'm getting ready to go.\")\n  action()\n  print(\"I arrived!\")\n}"
+        },
+        {
+            "text": "Because its last parameter is a closure, we can call `travel()` using trailing closure syntax like this:"
+        },
+        {
+            "code": "travel() {\n  print(\"I'm driving in my car\")\n}"
+        },
+        {
+            "text": "In fact, because there aren’t any other parameters, we can eliminate the parentheses entirely:"
+        },
+        {
+            "code": "travel {\n  print(\"I'm driving in my car\")\n}"
+        },
+        {
+            "text": "Trailing closure syntax is extremely common in Swift, so it’s worth getting used to."
+        }
+    ],
     "title": "Trailing closure syntax",
     "postscript": "Trailing closure syntax might seem obscure or perhaps a bit weird at first, but it's used very commonly in Swift.",
     "reviewType": "singleSelection",
@@ -38,15 +64,15 @@
         },
         {
             "answer": "func assembleToy(instruction: () -> Void) {\n\tinstructions()\n\tprint(\"It's done!\")\n}\nassembleToy {\n\tprint(\"Grok the glib\")\n\tprint(\"Flop the flip\")\n\tprint(\"Click the clack\")\n}",
-            "reason": "The parameter is called <code>instruction<\/code> but the code attempts to call <code>instructions()<\/code>."
+            "reason": "The parameter is called `instruction` but the code attempts to call `instructions()`."
         },
         {
             "answer": "func brewTea(steps: ()) {\n\tprint(\"Get tea\")\n\tprint(\"Get milk\")\n\tprint(\"Get sugar\")\n\tsteps()\n}\nbrewTea {\n\tprint(\"Brew tea in teapot.\")\n\tprint(\"Add milk to cup\")\n\tprint(\"Pour tea into cup\")\n\tprint(\"Add sugar to taste.\")\n}",
-            "reason": "The <code>steps<\/code> parameter is defined as an empty tuple, not a closure."
+            "reason": "The `steps` parameter is defined as an empty tuple, not a closure."
         },
         {
             "answer": "func knitSweater(then: () -> Void) {\n\tprint(\"Buy wool\")\n\tfor _ in 1...100 {\n\t\tprint(\"Knit knit knit...\")\n\t}\n\taction()\n}\nknitSweater {\n\tprint(\"Who wants to buy a sweater?\")\n}",
-            "reason": "The <code>knitSweater<\/code> method accepts a parameter called <code>then<\/code>, but attempts to call <code>action()<\/code>."
+            "reason": "The `knitSweater` method accepts a parameter called `then`, but attempts to call `action()`."
         },
         {
             "answer": "func phoneFriend(conversation: () -> Void) {\n\tprint(\"Calling 555-1234...\")\n\tconversation()\n}\nphoneFriend:\n\tprint(\"Hello!\")\n\tprint(\"A foreign prince wants to give you $5 million.\")\n\tprint(\"What are your bank details?\")",

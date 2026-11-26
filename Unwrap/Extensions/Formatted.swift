@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 /// A collection of helpful methods for formatting numbers and dates as strings.
 extension Int {

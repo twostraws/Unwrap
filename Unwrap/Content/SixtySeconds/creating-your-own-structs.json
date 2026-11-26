@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Swift lets you design your own types in two ways, of which the most common are called structures, or just *structs*. Structs can be given their own variables and constants, and their own functions, then created and used however you want."
+        },
+        {
+            "text": "Let’s start with a simple example: we’re going to create a `Sport` struct that stores its name as a string. Variables inside structs are called *properties*, so this is a struct with one property:"
+        },
+        {
+            "code": "struct Sport {\n  var name: String\n}"
+        },
+        {
+            "text": "That defines the type, so now we can create and use an instance of it:"
+        },
+        {
+            "code": "var tennis = Sport(name: \"Tennis\")\nprint(tennis.name)"
+        },
+        {
+            "text": "We made both `name` and `tennis` variable, so we can change them just like regular variables:"
+        },
+        {
+            "code": "tennis.name = \"Lawn tennis\""
+        },
+        {
+            "text": "Properties can have default values just like regular variables, and you can usually rely on Swift’s type inference."
+        }
+    ],
     "title": "Creating your own structs",
     "postscript": "In Swift we write the names of types such as Int, String, and MyStruct with a capitalized first letter, and the names of variables and constants with a lowercase first letter.",
     "reviewType": "singleSelection",
@@ -34,7 +60,7 @@
     "wrong": [
         {
             "answer": "struct Order {\n\tvar customerID: Int\n\tvar itemID: Int\n}\nlet order = Order(customer: 143, item: 556)",
-            "reason": "The first property is named <code>customerID<\/code> rather than <code>customer<\/code>, and the second property is named <code>itemID<\/code>, not <code>item<\/code>."
+            "reason": "The first property is named `customerID` rather than `customer`, and the second property is named `itemID`, not `item`."
         },
         {
             "answer": "struct LeviJeans {\n\tvar fitNumber: Int\n\tvar waist: Int\n\tvar leg: Int\n}\nlet jeans = LeviJeans(fitNumber: \"501\", waist: \"34\", leg: \"32\")",
@@ -42,11 +68,11 @@
         },
         {
             "answer": "struct Cup {\n\tvar size: Int\n\tvar color = White\n}",
-            "reason": "<code>White<\/code> doesn't have any meaning; strings should be enclosed in quote marks."
+            "reason": "`White` doesn't have any meaning; strings should be enclosed in quote marks."
         },
         {
             "answer": "struct RubiksCube {\n\tvar size = 3\n}\nlet large = RubiksCube(5)",
-            "reason": "This is missing the <code>size<\/code> parameter label."
+            "reason": "This is missing the `size` parameter label."
         },
         {
             "answer": "struct Dog (\n\tvar name: String\n\tvar breed: String\n)",
@@ -54,7 +80,7 @@
         },
         {
             "answer": "struct Boat {\n\tname: String\n\thomePort: String\n\tmaxSpeed: Int\n}",
-            "reason": "This is missing the <code>var<\/code> keyword."
+            "reason": "This is missing the `var` keyword."
         }
     ]
 }

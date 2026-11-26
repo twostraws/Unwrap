@@ -1,4 +1,18 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the ninth part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Protocols describe what methods and properties a conforming type must have, but don’t provide the implementations of those methods.",
+                "You can build protocols on top of other protocols, similar to classes.",
+                "Extensions let you add methods and computed properties to specific types such as `Int`.",
+                "Protocol extensions let you add methods and computed properties to protocols.",
+                "Protocol-oriented programming is the practice of designing your app architecture as a series of protocols, then using protocol extensions to provide default method implementations."
+            ]
+        }
+    ],
     "title": "Protocols and extensions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +48,27 @@
     "wrong": [
         {
             "answer": "protocol TravelsThroughTime {\n\tmutating func travel(to year: Int)\n}\nprotocol BiggerOnTheInside {\n\tfunc findSwimmingPool()\n}\nprotocol TARDIS: TravelsThroughTime BiggerOnTheInside {\n\tvar doctorNumber: Int { get set }\n}",
-            "reason": "The two protocols that <code>TARDIS<\/code> conforms to should be separated by commas."
+            "reason": "The two protocols that `TARDIS` conforms to should be separated by commas."
         },
         {
             "answer": "protocol Ridable\nprotocol Trainable\nprotocol Dog: Trainable",
-            "reason": "The <code>Dog<\/code> protocol needs to have empty braces."
+            "reason": "The `Dog` protocol needs to have empty braces."
         },
         {
             "answer": "protocol HasPages {\n\tvar pageCount: Int\n}\nprotocol HasTableOfContents {\n\tvar titles: [String]\n}\nprotocol Book: HasPages, HasTableOfContents {\n\tvar author: String\n}",
-            "reason": "All three properties here must have <code>{ get }<\/code> or <code>{ get set }<\/code> after them."
+            "reason": "All three properties here must have `{ get }` or `{ get set }` after them."
         },
         {
             "answer": "protocol NotAMoon { }\nprotocol HasExhaustPort { }\nstruct DeathStar: NotAMoon HasExhaustPort { }",
-            "reason": "The two protocols that <code>DeathStar<\/code> conforms to should be separated by commas."
+            "reason": "The two protocols that `DeathStar` conforms to should be separated by commas."
         },
         {
             "answer": "protocol CanFly {\n\tvar maximumFlightSpeed: Int { get set }\n}\nprotocol CanDrive {\n\tvar maximumDrivingSpeed: Int { get set }\n}\nstruct FlyingCar: CanFly, CanDrive { }",
-            "reason": "The <code>FlyingCar<\/code> struct does not conform to the two protocols it says it does because it doesn't have the required properties."
+            "reason": "The `FlyingCar` struct does not conform to the two protocols it says it does because it doesn't have the required properties."
         },
         {
             "answer": "protocol Adjustable {\n\tmutating func adjustValue(by amount)\n}",
-            "reason": "The <code>adjustValue()<\/code> method is missing a type annotation for its parameter."
+            "reason": "The `adjustValue()` method is missing a type annotation for its parameter."
         }
     ]
 }

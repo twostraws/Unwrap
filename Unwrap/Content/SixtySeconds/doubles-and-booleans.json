@@ -1,6 +1,32 @@
 {
+    "content": [
+        {
+            "text": "Two other basic types of data in Swift are doubles and booleans, and you’ll be using them a lot."
+        },
+        {
+            "text": "“Double” is short for “double-precision floating-point number”, and it’s a fancy way of saying it holds fractional values such as 38.1, or 3.141592654."
+        },
+        {
+            "text": "Whenever you create a variable with a fractional number, Swift automatically gives that variable the type `Double`. For example:"
+        },
+        {
+            "code": "var pi = 3.141"
+        },
+        {
+            "text": "Doubles are different from integers, and you can’t mix them by accident."
+        },
+        {
+            "text": "As for booleans, they are much simpler: they just hold either true or false, and Swift will automatically assign the boolean type to any variable assigned either true or false as its value."
+        },
+        {
+            "text": "For example:"
+        },
+        {
+            "code": "var awesome = true"
+        }
+    ],
     "title": "Doubles and booleans",
-    "postscript": "You will sometimes see another type called <code>Float<\/code>. This is similar to <code>Double<\/code>, but is less accurate because it uses less storage to store numbers.",
+    "postscript": "You will sometimes see another type called `Float`. This is similar to `Double`, but is less accurate because it uses less storage to store numbers.",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create Booleans?",
     "hint": "Booleans are any value that contain true or false.",
@@ -8,37 +34,37 @@
     "correct": [
         {
             "answer": "var loggedIn = true",
-            "reason": "This creates a Boolean with the name <code>loggedIn<\/code>."
+            "reason": "This creates a Boolean with the name `loggedIn`."
         },
         {
             "answer": "var isVisible = false",
-            "reason": "This creates a Boolean with the name <code>isVisible<\/code>."
+            "reason": "This creates a Boolean with the name `isVisible`."
         },
         {
             "answer": "var dressHasPockets = true",
-            "reason": "This creates a Boolean with the name <code>dressHasPockets<\/code>."
+            "reason": "This creates a Boolean with the name `dressHasPockets`."
         },
         {
             "answer": "var animated = false",
-            "reason": "This creates a Boolean with the name <code>animated<\/code>."
+            "reason": "This creates a Boolean with the name `animated`."
         },
         {
             "answer": "var isEncrypted = true",
-            "reason": "This creates a Boolean with the name <code>isEncrypted<\/code>."
+            "reason": "This creates a Boolean with the name `isEncrypted`."
         },
         {
             "answer": "var isReady = false",
-            "reason": "This creates a Boolean with the name <code>isReady<\/code>."
+            "reason": "This creates a Boolean with the name `isReady`."
         }
     ],
     "wrong": [
         {
             "answer": "var isSaved = \"true\"",
-            "reason": "Although this uses <code>true<\/code>, it's inside double quotes so this creates a string."
+            "reason": "Although this uses `true`, it's inside double quotes so this creates a string."
         },
         {
             "answer": "var sorted = \"false\"",
-            "reason": "Although this uses <code>false<\/code>, it's inside double quotes so this creates a string."
+            "reason": "Although this uses `false`, it's inside double quotes so this creates a string."
         },
         {
             "answer": "var zoomed = 0",

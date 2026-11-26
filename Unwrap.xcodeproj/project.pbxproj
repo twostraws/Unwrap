@@ -6,24 +6,7 @@
 	objectVersion = 70;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		5192DDD02273E05F0081C6DE /* Stickers.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5192DDC92273E05E0081C6DE /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5F2EF28426AE34C3008F29E4 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */; };
-		5F2EF28726AE3634008F29E4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28626AE3634008F29E4 /* SDWebImage */; };
-		5F2EF28A26AE368B008F29E4 /* MKRingProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28926AE368B008F29E4 /* MKRingProgressView */; };
-		5F2EF28D26AE36DA008F29E4 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28C26AE36DA008F29E4 /* Sourceful */; };
-		5F2EF29026AE39EE008F29E4 /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */; };
-		5F2EF29326AE40B9008F29E4 /* Zephyr in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2EF29226AE40B9008F29E4 /* Zephyr */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
-		5192DDCE2273E05F0081C6DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51CC13572065607C00F37A67 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5192DDC82273E05E0081C6DE;
-			remoteInfo = Stickers;
-		};
 		51CC13742065607F00F37A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51CC13572065607C00F37A67 /* Project object */;
@@ -33,54 +16,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		5192DD852273DCE20081C6DE /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				5192DDD02273E05F0081C6DE /* Stickers.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		5192DDC92273E05E0081C6DE /* Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CC135F2065607C00F37A67 /* Unwrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unwrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CC13732065607F00F37A67 /* UnwrapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnwrapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A1000000000000000000000B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		54D990089220B21FA31C4012 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 51CC13722065607F00F37A67 /* UnwrapTests */;
 		};
-		A1000000000000000000000C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		FC64F86A9E8C0A0A5A998DC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 51CC135E2065607C00F37A67 /* Unwrap */;
 		};
-		A1000000000000000000000D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 5192DDC82273E05E0081C6DE /* Stickers */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5192DDCA2273E05E0081C6DE /* Stickers */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A1000000000000000000000D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Stickers; sourceTree = "<group>"; };
-		51CC13612065607C00F37A67 /* Unwrap */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A1000000000000000000000C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Unwrap; sourceTree = "<group>"; };
-		51CC13762065607F00F37A67 /* UnwrapTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A1000000000000000000000B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = UnwrapTests; sourceTree = "<group>"; };
+		51CC13612065607C00F37A67 /* Unwrap */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FC64F86A9E8C0A0A5A998DC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Unwrap; sourceTree = "<group>"; };
+		51CC13762065607F00F37A67 /* UnwrapTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (54D990089220B21FA31C4012 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = UnwrapTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,23 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2EF28726AE3634008F29E4 /* SDWebImage in Frameworks */,
-				5F2EF28D26AE36DA008F29E4 /* Sourceful in Frameworks */,
-				5F2EF28A26AE368B008F29E4 /* MKRingProgressView in Frameworks */,
-				5F2EF28426AE34C3008F29E4 /* SwiftEntryKit in Frameworks */,
-				5F2EF29326AE40B9008F29E4 /* Zephyr in Frameworks */,
-				5F2EF29026AE39EE008F29E4 /* DZNEmptyDataSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		51CC13702065607F00F37A67 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E942F1A3F788D1DA47EED1D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,7 +66,6 @@
 			children = (
 				51CC13612065607C00F37A67 /* Unwrap */,
 				51CC13762065607F00F37A67 /* UnwrapTests */,
-				5192DDCA2273E05E0081C6DE /* Stickers */,
 				51CC13602065607C00F37A67 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,7 +75,6 @@
 			children = (
 				51CC135F2065607C00F37A67 /* Unwrap.app */,
 				51CC13732065607F00F37A67 /* UnwrapTests.xctest */,
-				5192DDC92273E05E0081C6DE /* Stickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,25 +82,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5192DDC82273E05E0081C6DE /* Stickers */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5192DDD12273E05F0081C6DE /* Build configuration list for PBXNativeTarget "Stickers" */;
-			buildPhases = (
-				5192DDC72273E05E0081C6DE /* Resources */,
-				E942F1A3F788D1DA47EED1D1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5192DDCA2273E05E0081C6DE /* Stickers */,
-			);
-			name = Stickers;
-			productName = Stickers;
-			productReference = 5192DDC92273E05E0081C6DE /* Stickers.appex */;
-			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
-		};
 		51CC135E2065607C00F37A67 /* Unwrap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51CC13872065607F00F37A67 /* Build configuration list for PBXNativeTarget "Unwrap" */;
@@ -164,25 +90,15 @@
 				51CC135C2065607C00F37A67 /* Frameworks */,
 				51CC135D2065607C00F37A67 /* Resources */,
 				C90D15D421EA485C004116DB /* Swiftlint */,
-				5192DD852273DCE20081C6DE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5192DDCF2273E05F0081C6DE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				51CC13612065607C00F37A67 /* Unwrap */,
 			);
 			name = Unwrap;
-			packageProductDependencies = (
-				5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */,
-				5F2EF28626AE3634008F29E4 /* SDWebImage */,
-				5F2EF28926AE368B008F29E4 /* MKRingProgressView */,
-				5F2EF28C26AE36DA008F29E4 /* Sourceful */,
-				5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */,
-				5F2EF29226AE40B9008F29E4 /* Zephyr */,
-			);
 			productName = Unwrap;
 			productReference = 51CC135F2065607C00F37A67 /* Unwrap.app */;
 			productType = "com.apple.product-type.application";
@@ -216,12 +132,9 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 2660;
+				LastUpgradeCheck = 2720;
 				ORGANIZATIONNAME = "Hacking with Swift";
 				TargetAttributes = {
-					5192DDC82273E05E0081C6DE = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
 					51CC135E2065607C00F37A67 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1020;
@@ -251,12 +164,6 @@
 			);
 			mainGroup = 51CC13562065607C00F37A67;
 			packageReferences = (
-				5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
-				5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */,
-				5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */,
-				5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
-				5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */,
 			);
 			productRefGroup = 51CC13602065607C00F37A67 /* Products */;
 			projectDirPath = "";
@@ -264,19 +171,11 @@
 			targets = (
 				51CC135E2065607C00F37A67 /* Unwrap */,
 				51CC13722065607F00F37A67 /* UnwrapTests */,
-				5192DDC82273E05E0081C6DE /* Stickers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5192DDC72273E05E0081C6DE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51CC135D2065607C00F37A67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,7 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint lint --config \"$SRCROOT/.swiftlint.yml\" --no-cache \"$SRCROOT/Unwrap\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Xcode runs scripts with a minimal PATH that leaves out Homebrew on Apple silicon.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint lint --config \"$SRCROOT/.swiftlint.yml\" --no-cache \"$SRCROOT/Unwrap\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -335,11 +234,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5192DDCF2273E05F0081C6DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5192DDC82273E05E0081C6DE /* Stickers */;
-			targetProxy = 5192DDCE2273E05F0081C6DE /* PBXContainerItemProxy */;
-		};
 		51CC13752065607F00F37A67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51CC135E2065607C00F37A67 /* Unwrap */;
@@ -348,45 +242,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5192DDD22273E05F0081C6DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				INFOPLIST_FILE = Stickers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.5;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift.Stickers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		5192DDD32273E05F0081C6DE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				INFOPLIST_FILE = Stickers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.5;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.unwrapswift.Stickers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		51CC13852065607F00F37A67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -437,14 +297,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -452,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -496,13 +360,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -515,8 +382,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Unwrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +395,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -540,8 +410,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Unwrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,6 +423,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -563,7 +436,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UnwrapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,6 +446,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
@@ -585,7 +459,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = UnwrapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +469,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unwrap.app/Unwrap";
@@ -604,15 +479,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5192DDD12273E05F0081C6DE /* Build configuration list for PBXNativeTarget "Stickers" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5192DDD22273E05F0081C6DE /* Debug */,
-				5192DDD32273E05F0081C6DE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		51CC135A2065607C00F37A67 /* Build configuration list for PBXProject "Unwrap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -641,90 +507,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.7;
-			};
-		};
-		5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.11.1;
-			};
-		};
-		5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/maxkonovalov/MKRingProgressView";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.3.0;
-			};
-		};
-		5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Sourceful.git";
-			requirement = {
-				kind = revision;
-				revision = 3e3bec0486229f623fdf24455806e8c63b837afd;
-			};
-		};
-		5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ArtSabintsev/Zephyr";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5F2EF28326AE34C3008F29E4 /* SwiftEntryKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF28226AE34C3008F29E4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
-			productName = SwiftEntryKit;
-		};
-		5F2EF28626AE3634008F29E4 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF28526AE3634008F29E4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		5F2EF28926AE368B008F29E4 /* MKRingProgressView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF28826AE368B008F29E4 /* XCRemoteSwiftPackageReference "MKRingProgressView" */;
-			productName = MKRingProgressView;
-		};
-		5F2EF28C26AE36DA008F29E4 /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF28B26AE36DA008F29E4 /* XCRemoteSwiftPackageReference "Sourceful" */;
-			productName = Sourceful;
-		};
-		5F2EF28F26AE39EE008F29E4 /* DZNEmptyDataSet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF28E26AE39EE008F29E4 /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */;
-			productName = DZNEmptyDataSet;
-		};
-		5F2EF29226AE40B9008F29E4 /* Zephyr */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F2EF29126AE40B9008F29E4 /* XCRemoteSwiftPackageReference "Zephyr" */;
-			productName = Zephyr;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51CC13572065607C00F37A67 /* Project object */;
 }

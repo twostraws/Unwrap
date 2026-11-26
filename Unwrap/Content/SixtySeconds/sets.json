@@ -1,4 +1,33 @@
 {
+    "content": [
+        {
+            "text": "Sets are collections of values just like arrays, except they have two differences:"
+        },
+        {
+            "numbered": [
+                "Items aren’t stored in any order; they are stored in what is effectively a random order.",
+                "No item can appear twice in a set; all items must be unique."
+            ]
+        },
+        {
+            "text": "You can create sets directly from arrays, like this:"
+        },
+        {
+            "code": "let colors = Set([\"red\", \"green\", \"blue\"])"
+        },
+        {
+            "text": "When you look at the value of `colors` inside the playground output you’ll see it doesn’t match the order we used to create it. It’s not really a *random* order, it’s just *unordered* – Swift makes no guarantees about its order. Because they are unordered, you can’t read values from a set using numerical positions like you can with arrays."
+        },
+        {
+            "text": "If you try to insert a duplicate item into a set, the duplicates get ignored. For example:"
+        },
+        {
+            "code": "let colors2 = Set([\"red\", \"green\", \"blue\", \"red\", \"blue\"])"
+        },
+        {
+            "text": "The final `colors2` set will still only include red, green, and blue once."
+        }
+    ],
     "title": "Sets",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -24,7 +53,7 @@
         },
         {
             "answer": "var readings = Set([true, false, true, true])",
-            "reason": "Sets must contain unique items, so the second and subsequent instances of <code>true</code> will be discarded."
+            "reason": "Sets must contain unique items, so the second and subsequent instances of `true` will be discarded."
         },
         {
             "answer": "var names = Set([\"Sean\", \"Paul\"])",
@@ -42,7 +71,7 @@
         },
         {
             "answer": "let earthquakeStrengths = Set(1, 1, 2, 2)",
-            "reason": "To create a set you must pass in an array of items rather than just loose integers – <code>Set([1, 1, 2, 2])</code> would have been correct."
+            "reason": "To create a set you must pass in an array of items rather than just loose integers – `Set([1, 1, 2, 2])` would have been correct."
         },
         {
             "answer": "let staffReviews = Set([1, 2, 1, 2, 3])",

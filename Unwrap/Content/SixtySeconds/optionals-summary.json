@@ -1,4 +1,22 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the tenth part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Optionals let us represent the absence of a value in a clear and unambiguous way.",
+                "Swift won’t let us use optionals without unwrapping them, either using `if let` or using `guard let`.",
+                "You can force unwrap optionals with an exclamation mark, but if you try to force unwrap `nil` your code will crash.",
+                "Implicitly unwrapped optionals don’t have the safety checks of regular optionals.",
+                "You can use nil coalescing to unwrap an optional and provide a default value if there was nothing inside.",
+                "Optional chaining lets us write code to manipulate an optional, but if the optional turns out to be empty the code is ignored.",
+                "You can use `try?` to convert a throwing function into an optional return value, or `try!` to crash if an error is thrown.",
+                "If you need your initializer to fail when it’s given bad input, use `init?()` to make a failable initializer.",
+                "You can use typecasting to convert one type of object to another."
+            ]
+        }
+    ],
     "title": "Optionals: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,11 +52,11 @@
     "wrong": [
         {
             "answer": "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]\nlet upperRingo = names.last.uppercased()\n",
-            "reason": "The <code>last<\/code> property is optional, so this needs to be written as <code>names.last?.uppercased()<\/code>"
+            "reason": "The `last` property is optional, so this needs to be written as `names.last?.uppercased()`"
         },
         {
             "answer": "enum NetworkError: Error {\n\tcase insecure\n\tcase noWifi\n}\nfunc downloadData(from url: String) -> String {\n\tif url.hasPrefix(\"https:\/\/\") {\n\t\treturn \"This is the best Swift site ever!\"\n\t} else {\n\t\tthrow NetworkError.insecure\n\t}\n}\nif let data = try? downloadData(from: \"https:\/\/www.hackingwithswift.com\") {\n\tprint(data)\n} else {\n\tprint(\"Unable to fetch the data.\")\n}",
-            "reason": "The <code>downloadData()<\/code> method cannot throw errors because it is not marked with <code>throws<\/code>."
+            "reason": "The `downloadData()` method cannot throw errors because it is not marked with `throws`."
         },
         {
             "answer": "struct Furniture { }\nstruct DeckChair: Furniture { }\nlet chair = DeckChair()\nif let furniture = chair as? Furniture {\n\tprint(\"This is furniture.\")\n}\n",
@@ -46,15 +64,15 @@
         },
         {
             "answer": "let birthYear: Int? = nil\nlet year = birthYear ? \"Unknown\"\n",
-            "reason": "The nil coalescing operator is <code>??<\/code>, not <code>?<\/code>."
+            "reason": "The nil coalescing operator is `??`, not `?`."
         },
         {
             "answer": "func brewBeer(to strength: Double?) {\n\tguard strength = strength else { return }\n\tprint(\"Let's brew some beer!\")\n}\nbrewBeer(to: 5.5)",
-            "reason": "This code is missing <code>let<\/code> in <code>guard strength = strength<\/code>; it should be <code>guard let strength = strength<\/code>."
+            "reason": "This code is missing `let` in `guard strength = strength`; it should be `guard let strength = strength`."
         },
         {
             "answer": "let doctor: String? = \"Dr Singh\"\nlet assignedDoctor: String = doctor?\n",
-            "reason": "<code>doctor?<\/code> is invalid syntax."
+            "reason": "`doctor?` is invalid syntax."
         }
     ]
 }

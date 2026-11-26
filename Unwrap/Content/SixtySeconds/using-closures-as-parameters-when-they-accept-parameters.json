@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "This is where closures can start to be read a bit like line noise: a closure you pass into a function can also accept its own parameters."
+        },
+        {
+            "text": "We’ve been using `() -> Void` to mean “accepts no parameters and returns nothing”, but you can go ahead and fill the `()` with the types of any parameters that your closure should accept."
+        },
+        {
+            "text": "To demonstrate this, we can write a `travel()` function that accepts a closure as its only parameter, and that closure in turn accepts a string:"
+        },
+        {
+            "code": "func travel(action: (String) -> Void) {\n  print(\"I'm getting ready to go.\")\n  action(\"London\")\n  print(\"I arrived!\")\n}"
+        },
+        {
+            "text": "Now when we call `travel()` using trailing closure syntax, our closure code is required to accept a string:"
+        },
+        {
+            "code": "travel { (place: String) in\n  print(\"I'm going to \\(place) in my car\")\n}"
+        }
+    ],
     "title": "Using closures as parameters when they accept parameters",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +54,27 @@
     "wrong": [
         {
             "answer": "func postOnTwitter(handler: (Int) -> Void) {\n\tprint(\"What's orange and sounds like a parrot? A carrot.\")\n\tlet replies = 32\n\tresponseHandler(replies)\n}\npostOnTwitter { (replies: Int) in\n\tprint(\"Your post had \\(replies) replies.\")\n}",
-            "reason": "This attempts to call <code>responseHandler<\/code>, when really it should call <code>handler<\/code>."
+            "reason": "This attempts to call `responseHandler`, when really it should call `handler`."
         },
         {
             "answer": "func getMeasurement(handler: Double -> Void) {\n\tlet measurement = 32.2\n\thandler(measurement)\n}\ngetMeasurement { (measurement: Double) in\n\tprint(\"It measures \\(measurement).\")\n}",
-            "reason": "The <code>getMeasurement()<\/code> function accepts a closure, but the closure's parameter is not placed inside parentheses."
+            "reason": "The `getMeasurement()` function accepts a closure, but the closure's parameter is not placed inside parentheses."
         },
         {
             "answer": "func createInterface(positioning: ([String]) -> Void) {\n\tprint(\"Creating some buttons\")\n\tlet buttons = [\"Button 1\" \"Button 2\" \"Button 3\"]\n\tpositioning(buttons)\n}\ncreateInterface { (buttons: [String]) in\n\tfor button in buttons {\n\t\tprint(\"I'll place \\(button) here...\")\n\t}\n}",
-            "reason": "The <code>buttons<\/code> array does not have commas after each item."
+            "reason": "The `buttons` array does not have commas after each item."
         },
         {
             "answer": "func processPrimes(using closure: (Int) -> Void) {\n\tlet primes = [2, 3, 5, 7, 11, 13, 17, 19]\n\tfor prime in primes {\n\t\tclosure(prime)\n\t}\n}\nprocessPrimes { (prime: Int) \n\tprint(\"\\(prime) is a prime number.\")\n\tlet square = prime * prime\n\tprint(\"\\(prime) squared is \\(square)\")\n}",
-            "reason": "The <code>processPrimes<\/code> closure is missing the <code>in<\/code> keyword after its parameter list."
+            "reason": "The `processPrimes` closure is missing the `in` keyword after its parameter list."
         },
         {
             "answer": "func makePizza(addToppings: (Int)) {\n\tprint(\"The dough is ready.\")\n\tprint(\"The base is flat.\")\n\taddToppings(3)\n}\nmakePizza { (toppingCount: Int) in\n\tlet toppings = [\"ham\", \"salami\", \"onions\", \"peppers\"]\n\tfor i in 0..<toppingCount {\n\t\tlet topping = toppings[i]\n\t\tprint(\"I'm adding \\(topping)\")\n\t}\n}",
-            "reason": "The <code>addToppings<\/code> parameter is specified as a single-item tuple rather than a closure."
+            "reason": "The `addToppings` parameter is specified as a single-item tuple rather than a closure."
         },
         {
             "answer": "func login(then action: (String) -> Void) {\n\tprint(\"Authenticating...\")\n\tlet username = \"twostraws\"\n\taction(username)\n}\nlogin {\n\tprint(\"Welcome, \\(username)!\")\n}",
-            "reason": "This calls the <code>login<\/code> closure but does not accept a parameter."
+            "reason": "This calls the `login` closure but does not accept a parameter."
         }
     ]
 }

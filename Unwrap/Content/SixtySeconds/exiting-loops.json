@@ -1,9 +1,26 @@
 {
+    "content": [
+        {
+            "text": "You can exit a loop at any time using the `break` keyword. To try this out, let’s start with a regular `while` loop that counts down for a rocket launch:"
+        },
+        {
+            "code": "var countDown = 10\nwhile countDown >= 0 {\n  print(countDown)\n  countDown -= 1\n}\nprint(\"Blast off!\")"
+        },
+        {
+            "text": "In this case, the astronaut in command gets bored part-way through the countdown and decides to skip the remainder and launch straight away:"
+        },
+        {
+            "code": "while countDown >= 0 {\n  print(countDown)\n  if countDown == 4 {\n    print(\"I'm bored. Let's go now!\")\n    break\n  }\n  countDown -= 1\n}"
+        },
+        {
+            "text": "With that change, as soon as `countDown` reaches 4 the astronaut’s message will be printed, and the rest of the loop gets skipped."
+        }
+    ],
     "title": "Exiting loops",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This loop will print some text \u2013 true or false?",
-    "hint": "Calling <code>break<\/code> skips the remainder of the current loop.",
+    "hint": "Calling `break` skips the remainder of the current loop.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,11 +51,11 @@
     "wrong": [
         {
             "answer": "for i in 1..<10 {\n\tif i == 10 {\n\t\tprint(\"Found number 10!\")\n\t}\n}",
-            "reason": "This prints some output only if <code>i<\/code> reaches 10, but the loop does not count up to 10."
+            "reason": "This prints some output only if `i` reaches 10, but the loop does not count up to 10."
         },
         {
             "answer": "for name in [\"John\", \"Paul\", \"George\"] {\n\tbreak\n\tprint(\"Welcome, \\(name)!\")\n}",
-            "reason": "This breaks out of the loop immediately, meaning that the <code>print()<\/code> code is never reached."
+            "reason": "This breaks out of the loop immediately, meaning that the `print()` code is never reached."
         },
         {
             "answer": "var isActive = false\nwhile isActive {\n\tprint(\"Checking for user input...\")\n}",
@@ -46,15 +63,15 @@
         },
         {
             "answer": "repeat while true {\n\tprint(\"Fetching updates\")\n}",
-            "reason": "<code>repeat while<\/code> is invalid syntax."
+            "reason": "`repeat while` is invalid syntax."
         },
         {
             "answer": "var counter: Int = 1\nwhile counter < 100 {\n\tcounter += 10\n\tif counter % 10 == 5 {\n\t\tprint(\"Matching number found\")\n\t}\n}",
-            "reason": "<code>counter<\/code> starts at 1 and increments by 10 each time the loop goes around, so it will never have a remainder of 5."
+            "reason": "`counter` starts at 1 and increments by 10 each time the loop goes around, so it will never have a remainder of 5."
         },
         {
             "answer": "var password = \"1\"\nrepeat {\n\tpassword += \"1\"\n\tif password == \"11111\" {\n\t\tprint(\"That's a terrible password.\")\n\t}\n\tbreak\n} while true",
-            "reason": "<code>break<\/code> will be hit the first time the loop executes, causing it to exit before any output is printed."
+            "reason": "`break` will be hit the first time the loop executes, causing it to exit before any output is printed."
         }
     ]
 }

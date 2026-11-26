@@ -1,4 +1,45 @@
 {
+    "content": [
+        {
+            "text": "We just made a `travel()` function. It accepts one parameter, which is a closure that itself accepts one parameter and returns a string. That closure is then run between two calls to `print()`."
+        },
+        {
+            "text": "Here’s that in code:"
+        },
+        {
+            "code": "func travel(action: (String) -> String) {\n  print(\"I'm getting ready to go.\")\n  let description = action(\"London\")\n  print(description)\n  print(\"I arrived!\")\n}"
+        },
+        {
+            "text": "We can call `travel()` using something like this:"
+        },
+        {
+            "code": "travel { (place: String) -> String in\n  return \"I'm going to \\(place) in my car\"\n}"
+        },
+        {
+            "text": "However, Swift *knows* the parameter to that closure must be a string, so we can remove it:"
+        },
+        {
+            "code": "travel { place -> String in\n  return \"I'm going to \\(place) in my car\"\n}"
+        },
+        {
+            "text": "It also knows the closure must return a string, so we can remove that:"
+        },
+        {
+            "code": "travel { place in\n  return \"I'm going to \\(place) in my car\"\n}"
+        },
+        {
+            "text": "As the closure only has one line of code that must be the one that returns the value, so Swift lets us remove the `return` keyword too:"
+        },
+        {
+            "code": "travel { place in\n  \"I'm going to \\(place) in my car\"\n}"
+        },
+        {
+            "text": "Swift has a shorthand syntax that lets you go even shorter. Rather than writing `place in` we can let Swift provide automatic names for the closure’s parameters. These are named with a dollar sign, then a number counting from 0."
+        },
+        {
+            "code": "travel {\n  \"I'm going to \\($0) in my car\"\n}"
+        }
+    ],
     "title": "Shorthand parameter names",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -15,11 +56,11 @@
             "reason": "This is correct."
         },
         {
-            "answer": "If there is only one line of code, you can skip writing <code>return<\/code>",
+            "answer": "If there is only one line of code, you can skip writing `return`",
             "reason": "This is correct."
         },
         {
-            "answer": "Shorthand parameters are written as <code>$0<\/code>, <code>$1<\/code> and so on.",
+            "answer": "Shorthand parameters are written as `$0`, `$1` and so on.",
             "reason": "This is correct."
         },
         {
@@ -27,7 +68,7 @@
             "reason": "This is correct. In fact, trying to list the parameters will cause an error."
         },
         {
-            "answer": "Swift automatically provides the <code>$<\/code> variables; we don't define them ourselves.",
+            "answer": "Swift automatically provides the `$` variables; we don't define them ourselves.",
             "reason": "This is correct."
         }
     ],
@@ -41,12 +82,12 @@
             "reason": "It provides as many as are needed."
         },
         {
-            "answer": "Shorthand syntax can only be used with Swift's built-in functions like <code>print()<\/code>",
+            "answer": "Shorthand syntax can only be used with Swift's built-in functions like `print()`",
             "reason": "It works fine with all functions, even ones we write."
         },
         {
-            "answer": "Shorthand parameters are written as <code>#0<\/code>, <code>#1<\/code>, and so on.",
-            "reason": "They are written using <code>$0<\/code>, <code>$1<\/code>, and so on."
+            "answer": "Shorthand parameters are written as `#0`, `#1`, and so on.",
+            "reason": "They are written using `$0`, `$1`, and so on."
         },
         {
             "answer": "You must always list the parameters you accept when using shorthand syntax.",

@@ -1,34 +1,51 @@
 {
+    "content": [
+        {
+            "text": "I already said that variables have that name because their values can change over time, and that is often useful. However, very often you want to set a value once and never change it, and so we have an alternative to the `var` keyword called `let`."
+        },
+        {
+            "text": "The `let` keyword creates *constants*, which are values that can be set once and never again. For example:"
+        },
+        {
+            "code": "let taylor = \"swift\""
+        },
+        {
+            "text": "If you try to change that, Xcode will refuse to run your code. It’s a form of safety: when you use constants you can no longer change something by accident."
+        },
+        {
+            "text": "When you write your own Swift code, you should always use `let` unless you specifically want to change a value. In fact, Xcode will warn you if you use `var` then *don’t* change the variable."
+        }
+    ],
     "title": "Constants",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create constants?",
-    "hint": "Variables are created using <code>var<\/code>, whereas constants are created using <code>let<\/code>.",
+    "hint": "Variables are created using `var`, whereas constants are created using `let`.",
     "syntaxHighlighting": true,
     "correct": [
         {
             "answer": "let age = 26",
-            "reason": "This creates a constant called <code>age<\/code>."
+            "reason": "This creates a constant called `age`."
         },
         {
             "answer": "let enabled = true",
-            "reason": "This creates a constant called <code>enabled<\/code>."
+            "reason": "This creates a constant called `enabled`."
         },
         {
             "answer": "let username = \"twostraws\"",
-            "reason": "This creates a constant called <code>username<\/code>."
+            "reason": "This creates a constant called `username`."
         },
         {
             "answer": "let width = 14.0",
-            "reason": "This creates a constant called <code>width<\/code>."
+            "reason": "This creates a constant called `width`."
         },
         {
             "answer": "let password = \"fr0sti3s\"",
-            "reason": "This creates a constant called <code>password<\/code>."
+            "reason": "This creates a constant called `password`."
         },
         {
             "answer": "let tweeted = false",
-            "reason": "This creates a constant called <code>tweeted<\/code>."
+            "reason": "This creates a constant called `tweeted`."
         }
     ],
     "wrong": [

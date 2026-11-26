@@ -1,4 +1,33 @@
 {
+    "content": [
+        {
+            "text": "We wrote our `square()` function like this:"
+        },
+        {
+            "code": "func square(number: Int) -> Int {\n  return number * number\n}"
+        },
+        {
+            "text": "That names its parameter `number`, so we can use `number` inside the function to refer to it, but we must also use the name when running the function, like this:"
+        },
+        {
+            "code": "let result = square(number: 8)"
+        },
+        {
+            "text": "Swift lets us provide two names for each parameter: one to be used externally when calling the function, and one to be used internally inside the function. This is as simple as writing two names, separated by a space."
+        },
+        {
+            "text": "To demonstrate this, here’s a function that uses two names for its string parameter:"
+        },
+        {
+            "code": "func sayHello(to name: String) {\n  print(\"Hello, \\(name)!\")\n}"
+        },
+        {
+            "text": "The parameter is called `to name`, which means externally it’s called `to`, but internally it’s called `name`. This gives variables a sensible name inside the function, but means calling the function reads naturally:"
+        },
+        {
+            "code": "sayHello(to: \"Taylor\")"
+        }
+    ],
     "title": "Parameter labels",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +63,27 @@
     "wrong": [
         {
             "answer": "func isWorkingDay(day name: Int) -> Bool {\n\tif day == \"Saturday\" {\n\t\treturn false\n\t}\n\tif day == \"Sunday\" {\n\t\treturn false\n\t}\n\treturn true\n}",
-            "reason": "<code>isWorkingDay()<\/code> says that the internal name of its parameter is <code>name<\/code>, but it uses <code>day<\/code>."
+            "reason": "`isWorkingDay()` says that the internal name of its parameter is `name`, but it uses `day`."
         },
         {
             "answer": "func drive(to: String) {\n\tprint(\"I'm going to \\(destination) in my car.\")\n}",
-            "reason": "<code>drive()<\/code> says that the internal name of its parameter is <code>to<\/code>, but it uses <code>destination<\/code>."
+            "reason": "`drive()` says that the internal name of its parameter is `to`, but it uses `destination`."
         },
         {
             "answer": "func add(numbers input sum: [Int]) -> Int {\n\tvar total = 0\n\tfor number in input {\n\t\ttotal += number\n\t}\n\treturn total\n}",
-            "reason": "<code>add()<\/code> has three labels for its parameter, which is invalid."
+            "reason": "`add()` has three labels for its parameter, which is invalid."
         },
         {
             "answer": "func putCriminals(place: String) -> String {\n\tif place == \"jail\" {\n\t\treturn \"You'll be out tomorrow\"\n\t} else {\n\t\treturn \"You'll be out in a decade\"\n\t}\n}\nputCriminals(in: \"jail\")",
-            "reason": "<code>putCriminals()<\/code> takes one parameter that is labeled <code>place<\/code>, but it's called as <code>putCriminals(in:)<\/code>."
+            "reason": "`putCriminals()` takes one parameter that is labeled `place`, but it's called as `putCriminals(in:)`."
         },
         {
             "answer": "func accelerate(to speed: Int) -> String {\n\tif to > 80 {\n\t\treturn \"No way - that's too fast!\"\n\t} else {\n\t\treturn \"OK, here goes...\"\n\t}\n}",
-            "reason": "<code>accelerate()<\/code> says that the internal name of its parameter is <code>speed<\/code>, but it uses <code>to<\/code>."
+            "reason": "`accelerate()` says that the internal name of its parameter is `speed`, but it uses `to`."
         },
         {
             "answer": "func isMultipleOf100(number input: Int) -> Bool {\n\tif number % 100 == 0 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}",
-            "reason": "<code>isMultipleOf100()<\/code> says that the internal name of its parameter is <code>input<\/code>, but it uses <code>number<\/code>."
+            "reason": "`isMultipleOf100()` says that the internal name of its parameter is `input`, but it uses `number`."
         }
     ]
 }

@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Protocols let you describe what methods something should have, but don’t provide the code inside. Extensions let you provide the code inside your methods, but only affect one data type – you can’t add the method to lots of types at the same time."
+        },
+        {
+            "text": "Protocol extensions solve both those problems: they are like regular extensions, except rather than extending a specific type like `Int` you extend a whole protocol so that all conforming types get your changes."
+        },
+        {
+            "text": "For example, here is an array and a set containing some names:"
+        },
+        {
+            "code": "let pythons = [\"Eric\", \"Graham\", \"John\", \"Michael\", \"Terry\", \"Terry\"]\nlet beatles = Set([\"John\", \"Paul\", \"George\", \"Ringo\"])"
+        },
+        {
+            "text": "Swift’s arrays and sets both conform to a protocol called `Collection`, so we can write an extension to that protocol to add a `summarize()` method to print the collection neatly"
+        },
+        {
+            "code": "extension Collection {\n  func summarize() {\n    print(\"There are \\(count) of us:\")\n    for name in self {\n      print(name)\n    }\n  }\n}"
+        },
+        {
+            "text": "Both `Array` and `Set` will now have that method, so we can try it out:"
+        },
+        {
+            "code": "pythons.summarize()\nbeatles.summarize()"
+        }
+    ],
     "title": "Protocol extensions",
     "postscript": "One type can conform to as many protocols as you want.",
     "reviewType": "singleSelection",
@@ -8,37 +34,37 @@
     "correct": [
         {
             "answer": "protocol Mammal {\n\tfunc eat()\n}\nextension Mammal {\n\tfunc eat() {\n\t\tprint(\"Time for dinner!\")\n\t}\n}",
-            "reason": "The extension correctly implements the <code>eat()<\/code> method from <code>Mammal<\/code>."
+            "reason": "The extension correctly implements the `eat()` method from `Mammal`."
         },
         {
             "answer": "protocol Fencer {\n\tfunc fenceFoil()\n}\nextension Fencer {\n\tfunc fenceFoil() {\n\t\tprint(\"En garde!\")\n\t}\n}",
-            "reason": "The extension correctly implements the <code>fenceFoil()<\/code> method from <code>Fencer<\/code>."
+            "reason": "The extension correctly implements the `fenceFoil()` method from `Fencer`."
         },
         {
             "answer": "protocol Starship {\n\tfunc transport(number: Int)\n}\nextension Starship {\n\tfunc transport(number: Int) {\n\t\tprint(\"\\(number) to beam up - energize!\")\n\t}\n}",
-            "reason": "The extension correctly implements the <code>transport()<\/code> method from <code>Starship<\/code>."
+            "reason": "The extension correctly implements the `transport()` method from `Starship`."
         },
         {
             "answer": "protocol Anime {\n\tvar availableLanguages: [String] { get set }\n\tfunc watch(in language: String)\n}\nextension Anime {\n\tfunc watch(in language: String) {\n\t\tif availableLanguages.contains(language) {\n\t\t\tprint(\"Now playing in \\(language)\")\n\t\t} else {\n\t\t\tprint(\"Unrecognized language.\")\n\t\t}\n\t}\n}",
-            "reason": "The extension correctly implements the <code>watch()<\/code> method from <code>Anime<\/code>."
+            "reason": "The extension correctly implements the `watch()` method from `Anime`."
         },
         {
             "answer": "protocol Politician {\n\tvar isDirty: Bool { get set }\n\tfunc takeBribe()\n}\nextension Politician {\n\tfunc takeBribe() {\n\t\tif isDirty {\n\t\t\tprint(\"Thank you very much!\")\n\t\t} else {\n\t\t\tprint(\"Someone call the police!\")\n\t\t}\n\t}\n}",
-            "reason": "The extension correctly implements the <code>takeBribe()<\/code> method from <code>Politician<\/code>."
+            "reason": "The extension correctly implements the `takeBribe()` method from `Politician`."
         },
         {
             "answer": "protocol Hamster {\n\tvar name: String { get set }\n\tfunc runInWheel(minutes: Int)\n}\nextension Hamster {\n\tfunc runInWheel(minutes: Int) {\n\t\tprint(\"\\(name) is going for a run.\")\n\t\tfor _ in 0..<minutes {\n\t\t\tprint(\"Whirr whirr whirr\")\n\t\t}\n\t}\n}",
-            "reason": "The extension correctly implements the <code>runInWheel<\/code> method from <code>Hamster<\/code>."
+            "reason": "The extension correctly implements the `runInWheel` method from `Hamster`."
         }
     ],
     "wrong": [
         {
             "answer": "protocol SuperHeroMovie {\n\tfunc writeScript() -> String\n}\nextension SuperHeroMovie {\n\tfunc makeScript() -> String {\n\t\treturn \"\"\"\n\t\tLots of special effects,\n\t\tsome half-baked jokes,\n\t\tand a hint of another\n\t\tsequel at the end.\n\t\t\"\"\"\n\t}\n}",
-            "reason": "The protocol specifies a <code>writeScript()<\/code> method, but the extension implements <code>makeScript()<\/code>."
+            "reason": "The protocol specifies a `writeScript()` method, but the extension implements `makeScript()`."
         },
         {
             "answer": "protocol Chef {\n\tfunc getRecipes() -> [String]\n}\nextension Chief {\n\tfunc getRecipes() -> [String] {\n\t\treturn [\"Macaroni Cheese\"]\n\t}\n}",
-            "reason": "The protocol is called <code>Chef<\/code>, but the extension is for <code>Chief<\/code>."
+            "reason": "The protocol is called `Chef`, but the extension is for `Chief`."
         },
         {
             "answer": "protocol DogTrainer {\n\tfunc train(dog: String) {\n\t\tprint(\"We'll make \\(dog) behave in no time!\")\n\t}\n}",
@@ -46,15 +72,15 @@
         },
         {
             "answer": "protocol SmartPhone {\n\tfunc makeCall(to name { get set })\n}\nextension SmartPhone {\n\tfunc makeCall(to name: String) {\n\t\tprint(\"Dialling \\(name)...\")\n\t}\n}",
-            "reason": "<code>makeCall(to name { get set })<\/code> is invalid syntax."
+            "reason": "`makeCall(to name { get set })` is invalid syntax."
         },
         {
             "answer": "protocol Club {\n\tfunc organizeMeeting(day: String)\n}\nextension Club {\n\toverride func organizeMeeting(day: String) {\n\t\tprint(\"We're going to meet on \\(day).\")\n\t}\n}",
-            "reason": "The <code>override<\/code> keyword must not be used here."
+            "reason": "The `override` keyword must not be used here."
         },
         {
             "answer": "protocol Bartender {\n\tfunc makeDrink\n}\nextension Bartender {\n\tfunc makeDrink(name: String) {\n\t\tprint(\"One \\(name) coming right up.\")\n\t}\n}",
-            "reason": "The protocol tries to define <code>makeDrink()<\/code> but does not include parentheses after the method name."
+            "reason": "The protocol tries to define `makeDrink()` but does not include parentheses after the method name."
         }
     ]
 }

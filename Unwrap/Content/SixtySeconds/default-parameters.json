@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "The `print()` function prints something to the screen, but always adds a new line to the end of whatever you printed, so that multiple calls to `print()` don’t all appear on the same line."
+        },
+        {
+            "text": "You can change that behavior if you want, so you could use spaces rather than line breaks. Most of the time, though, folks want new lines, so `print()` has a `terminator` parameter that uses new line as its default value."
+        },
+        {
+            "text": "You can give your own parameters a default value just by writing an `=` after its type followed by the default you want to give it. So, we could write a `greet()` function that can optionally print nice greetings:"
+        },
+        {
+            "code": "func greet(_ person: String, nicely: Bool = true) {\n  if nicely == true {\n    print(\"Hello, \\(person)!\")\n  } else {\n    print(\"Oh no, it's \\(person) again...\")\n  }\n}"
+        },
+        {
+            "text": "That can be called in two ways:"
+        },
+        {
+            "code": "greet(\"Taylor\")\ngreet(\"Taylor\", nicely: false)"
+        }
+    ],
     "title": "Default parameters",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,23 +54,23 @@
     "wrong": [
         {
             "answer": "func goToWarp(speed: Int) {\n\tif speed > 9 {\n\t\tprint(\"The engines cannae take any more!\")\n\t} else {\n\t\tprint(\"Going to warp \\(speed)...\")\n\t}\n}\n\ngoToWarp()",
-            "reason": "This calls the <code>goToWarp()<\/code> function without passing in its parameter."
+            "reason": "This calls the `goToWarp()` function without passing in its parameter."
         },
         {
             "answer": "func brushTeeth(useFloss: Bool = true) {\n\tif floss {\n\t\tprint(\"I'm flossing first.\")\n\t}\n\tprint(\"I'm brushing my teeth.\")\n}",
-            "reason": "The parameter is called <code>useFloss<\/code> not <code>floss<\/code>."
+            "reason": "The parameter is called `useFloss` not `floss`."
         },
         {
             "answer": "func playGolf(holes: String = 18) {\n\tprint(\"Let's play \\(holes) holes of golf.\")\n}\nplayGolf()",
-            "reason": "The <code>playGolf()<\/code> function takes a <code>String<\/code> parameter, but uses a default value of an integer."
+            "reason": "The `playGolf()` function takes a `String` parameter, but uses a default value of an integer."
         },
         {
             "answer": "func takePicture(withFlash flash Bool = true) {\n\tif flash {\n\t\tprint(\"I'm taking a photo with flash\")\n\t} else {\n\t\tprint(\"I'm taking a photo\")\n\t}\n}",
-            "reason": "The syntax <code>withFlash flash Bool = true<\/code> is invalid, because it's missing a colon."
+            "reason": "The syntax `withFlash flash Bool = true` is invalid, because it's missing a colon."
         },
         {
             "answer": "func eatMeal(withDessert: Bool = true) {\n\tif withDessert {\n\t\tprint(\"All the best meals include dessert.\")\n\t} else {\n\t\tprint(\"Bah... maybe next time.\")\n\t}\n}\neatMeal(dessert: true)",
-            "reason": "This calls the <code>eatMeal()<\/code> function with the wrong parameter name."
+            "reason": "This calls the `eatMeal()` function with the wrong parameter name."
         },
         {
             "answer": "func fireArrow(skillLevel: Int = 1) -> String {\n\tswitch skillLevel {\n\tcase 1...3:\n\t\tprint(\"You missed the target.\")\n\tcase 4...7:\n\t\tprint(\"You hit the target.\")\n\tcase 8...10:\n\t\tprint(\"Great shot!\")\n\t}\n}",

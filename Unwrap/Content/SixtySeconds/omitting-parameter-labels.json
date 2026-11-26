@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "You might have noticed that we don’t actually send any parameter names when we call `print()` – we say `print(\"Hello\")` rather than `print(message: \"Hello\")`."
+        },
+        {
+            "text": "You can get this same behavior in your own functions by using an underscore, `_`, for your external parameter name, like this:"
+        },
+        {
+            "code": "func greet(_ person: String) {\n  print(\"Hello, \\(person)!\")\n}"
+        },
+        {
+            "text": "You can now call `greet()` without having to use the `person` parameter name:"
+        },
+        {
+            "code": "greet(\"Taylor\")"
+        },
+        {
+            "text": "This can make some code more natural to read, but generally it’s better to give your parameters external names to avoid confusion. For example, if I say `setAlarm(5)` it’s hard to tell what that means – does it set an alarm for five o’clock, set an alarm for five hours from now, or activate pre-configured alarm number 5?"
+        }
+    ],
     "title": "Omitting parameter labels",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,15 +54,15 @@
     "wrong": [
         {
             "answer": "func makeBurger(withCheese: Bool) {\n\tif cheese {\n\t\tprint(\"Here's a cheeseburger\")\n\t} else {\n\t\tprint(\"Here's a regular burger\")\n\t}\n}",
-            "reason": "The <code>makeBurger()<\/code> function says that its parameter is called <code>withCheese<\/code>, but it's used as <code>cheese<\/code>."
+            "reason": "The `makeBurger()` function says that its parameter is called `withCheese`, but it's used as `cheese`."
         },
         {
             "answer": "func countPoodles(dogs: [String]) -> Int {\n\tvar sum = 0\n\tfor dog in dogs {\n\t\tif dog == \"Poodle\" {\n\t\t\tsum += 1\n\t\t}\n\t}\n\treturn sum\n}\ncountPoodles([\"Mollie\", \"Penny\", \"Poppy\"])",
-            "reason": "This code calls <code>countPoodles()<\/code> without using its <code>dogs<\/code> parameter name."
+            "reason": "This code calls `countPoodles()` without using its `dogs` parameter name."
         },
         {
             "answer": "func addStudentToClass(_ name: String) {\n\tprint(\"Welcome to the class, \\(student)!\")\n}",
-            "reason": "The <code>addStudentToClass()<\/code> function says that its parameter is called <code>name<\/code>, but it's used as <code>student<\/code>."
+            "reason": "The `addStudentToClass()` function says that its parameter is called `name`, but it's used as `student`."
         },
         {
             "answer": "func isEveryoneCanadian(_ birthCountries: [String]) {\n\tfor country in birthCountries {\n\t\tif country != \"Canada\" {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
@@ -50,11 +70,11 @@
         },
         {
             "answer": "func printLogMessage(message: String) -> Bool {\n\tprint(\"Log: \\(message)\")\n\treturn true\n}\nprintLogMessage(\"Something went wrong!\")",
-            "reason": "This code calls <code>printLogMessage()<\/code> without using its <code>message<\/code> parameter name."
+            "reason": "This code calls `printLogMessage()` without using its `message` parameter name."
         },
         {
             "answer": "func formatLength(length length: Int) {\n\tprint(\"That measures \\(length)cm.\")\n}\nformatLength(95)",
-            "reason": "This code calls <code>formatLength()<\/code> without using its <code>length<\/code> parameter name."
+            "reason": "This code calls `formatLength()` without using its `length` parameter name."
         }
     ]
 }

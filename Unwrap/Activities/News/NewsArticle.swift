@@ -2,27 +2,14 @@
 //  NewsArticle.swift
 //  Unwrap
 //
-//  Created by Paul Hudson on 09/08/2018.
-//  Copyright © 2019 Hacking with Swift.
-//
 
-import UIKit
+import Foundation
 
-/// One news article, downloaded from Hacking with Swift.
-struct NewsArticle: Decodable {
-    /// The article ID integer.
-    var id: Int // swiftlint:disable:this identifier_name
-
-    /// The headline for the article.
-    var title: String
-
-    /// The subheadline/strap/standfirst for the article.
-    var strap: String
-
-    /// The URL for the full article on the site.
-    var url: URL
-
-    /// The URL to the main image for the article at a good size for this device.
-    var mainImage: URL
-
+/// A summary of one article returned by the Hacking with Swift News endpoint.
+struct NewsArticle: Decodable, Hashable, Identifiable {
+    let id: Int
+    let title: String
+    let strap: String
+    let url: URL
+    let mainImage: URL
 }

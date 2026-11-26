@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "Extensions allow you to add methods to existing types, to make them do things they weren’t originally designed to do. "
+        },
+        {
+            "text": "For example, we could add an extension to the `Int` type so that it has a `squared()` method that returns the current number multiplied by itself:"
+        },
+        {
+            "code": "extension Int {\n  func squared() -> Int {\n    return self * self\n  }\n}"
+        },
+        {
+            "text": "To try that out, just create an integer and you’ll see it now has a `squared()` method:"
+        },
+        {
+            "code": "let number = 8\nnumber.squared()"
+        },
+        {
+            "text": "Swift doesn’t let you add stored properties in extensions, so you must use computed properties instead. For example, we could add a new `isEven` computed property to integers that returns true if it holds an even number:"
+        },
+        {
+            "code": "extension Int {\n  var isEven: Bool {\n    return self % 2 == 0\n  }\n}"
+        }
+    ],
     "title": "Extensions",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -8,49 +31,49 @@
     "correct": [
         {
             "answer": "extension Int {\n\tfunc cubed() -> Int {\n\t\treturn self * self * self\n\t}\n}",
-            "reason": "This is a valid extension on <code>Int<\/code>."
+            "reason": "This is a valid extension on `Int`."
         },
         {
             "answer": "extension String {\n\tfunc withPrefix(_ prefix: String) -> String {\n\t\tif self.hasPrefix(prefix) { return self }\n\t\treturn \"\\(prefix)\\(self)\"\n\t}\n}",
-            "reason": "This is a valid extension on <code>String<\/code>."
+            "reason": "This is a valid extension on `String`."
         },
         {
             "answer": "extension String {\n\tvar isLong: Bool {\n\t\treturn count > 25\n\t}\n}",
-            "reason": "This is a valid extension on <code>String<\/code>."
+            "reason": "This is a valid extension on `String`."
         },
         {
             "answer": "extension Double {\n\tvar isNegative: Bool {\n\t\treturn self < 0\n\t}\n}",
-            "reason": "This is a valid extension on <code>Double<\/code>."
+            "reason": "This is a valid extension on `Double`."
         },
         {
             "answer": "extension Int {\n\tfunc clamped(min: Int, max: Int) -> Int {\n\t\tif (self > max) {\n\t\t\treturn max\n\t\t} else if (self < min) {\n\t\t\treturn min\n\t\t}\n\t\treturn self\n\t}\n}",
-            "reason": "This is a valid extension on <code>Int<\/code>."
+            "reason": "This is a valid extension on `Int`."
         },
         {
             "answer": "extension String {\n\tfunc isUppercased() -> Bool {\n\t\treturn self == self.uppercased()\n\t}\n}",
-            "reason": "This is a valid extension on <code>String<\/code>."
+            "reason": "This is a valid extension on `String`."
         }
     ],
     "wrong": [
         {
             "answer": "extension Int {\n\tvar isEven {\n\t\treturn self % 2 == 0\n\t}\n}",
-            "reason": "<code>isEven<\/code> is missing a type annotation."
+            "reason": "`isEven` is missing a type annotation."
         },
         {
             "answer": "extension String {\n\tfunc append(_ other: String) {\n\t\tself += other\n\t}\n}",
-            "reason": "The <code>append()<\/code> method must be marked <code>mutating<\/code>."
+            "reason": "The `append()` method must be marked `mutating`."
         },
         {
             "answer": "extension Bool {\n\tfunc toggled() -> Bool {\n\t\tif self = true {\n\t\t\treturn false\n\t\t} else {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-            "reason": "<code>if self = true<\/code> should read <code>if self == true<\/code>."
+            "reason": "`if self = true` should read `if self == true`."
         },
         {
             "answer": "ext Array {\n\tfunc summarize() {\n\t\tprint(\"The array has \\(count) items. They are:\")\n\t\tfor item in self {\n\t\t\tprint(item)\n\t\t}\n\t}\n}",
-            "reason": "<code>ext<\/code> should read <code>extension<\/code>."
+            "reason": "`ext` should read `extension`."
         },
         {
             "answer": "extension Int {\n\ttimes(_ action: () -> Void) {\n\t\tfor _ in 0..<self {\n\t\t\taction()\n\t\t}\n\t}\n}",
-            "reason": "The <code>times()<\/code> method is missing the <code>func<\/code> keyword."
+            "reason": "The `times()` method is missing the `func` keyword."
         },
         {
             "answer": "extension Int {\n\tvar isAnswerToLifeUniverseAndEverything: Bool {\n\t\tlet target = 42\n\t\tself == target\n\t}\n}",

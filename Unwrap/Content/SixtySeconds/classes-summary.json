@@ -1,4 +1,20 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the eighth part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Classes and structs are similar, in that they can both let you create your own types with properties and methods.",
+                "One class can inherit from another, and it gains all the properties and methods of the parent class. It’s common to talk about class hierarchies – one class based on another, which itself is based on another.",
+                "You can mark a class with the `final` keyword, which stops other classes from inheriting from it.",
+                "Method overriding lets a child class replace a method in its parent class with a new implementation.",
+                "When two variables point at the same class instance, they both point at the same piece of memory – changing one changes the other.",
+                "Classes can have a deinitializer, which is code that gets run when an instance of the class is destroyed.",
+                "Classes don’t enforce constants as strongly as structs – if a property is declared as a variable, it can be changed regardless of how the class instance was created."
+            ]
+        }
+    ],
     "title": "Classes: Summary",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -12,10 +28,10 @@
         },
         {
             "answer": "A child class can override a method from its parent class.",
-            "reason": "Swift requires that we use the <code>override<\/code> keyword to make this clear."
+            "reason": "Swift requires that we use the `override` keyword to make this clear."
         },
         {
-            "answer": "You can declare a class as <code>final<\/code> to stop subclasses of it being created.",
+            "answer": "You can declare a class as `final` to stop subclasses of it being created.",
             "reason": "This is correct."
         },
         {
@@ -41,11 +57,11 @@
             "reason": "Swift supports inheriting from only one class."
         },
         {
-            "answer": "The <code>override<\/code> keyword must be used in all methods of a child class.",
+            "answer": "The `override` keyword must be used in all methods of a child class.",
             "reason": "This keyword must be used only for methods that exist on a parent class."
         },
         {
-            "answer": "Classes do not have access control keywords such as <code>private<\/code>",
+            "answer": "Classes do not have access control keywords such as `private`",
             "reason": "They have the same access control keywords as structs."
         },
         {
@@ -53,7 +69,7 @@
             "reason": "They only need initializers if you don't give their properties default values."
         },
         {
-            "answer": "If you want others to inherit from your classes, you must mark it <code>nonfinal<\/code>",
+            "answer": "If you want others to inherit from your classes, you must mark it `nonfinal`",
             "reason": "The default behavior of classes is to be open for inheritance."
         }
     ]

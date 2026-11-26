@@ -1,6 +1,29 @@
 {
+    "content": [
+        {
+            "text": "The fourth difference between classes and structs is that classes can have *deinitializers* – code that gets run when an instance of a class is destroyed."
+        },
+        {
+            "text": "To demonstrate this, here’s a `Person` class with a `name` property, a simple initializer, and a `printGreeting()` method that prints a message:"
+        },
+        {
+            "code": "class Person {\n  var name = \"John Doe\"\n  init() {\n    print(\"\\(name) is alive!\")\n  }\n  func printGreeting() {\n    print(\"Hello, I'm \\(name)\")\n  }\n}"
+        },
+        {
+            "text": "We’re going to create a few instances of the `Person` class inside a loop, because each time the loop goes around a new person will be created then destroyed:"
+        },
+        {
+            "code": "for _ in 1...3 {\n  let person = Person()\n  person.printGreeting()\n}"
+        },
+        {
+            "text": "And now for the deinitializer. This will be called when the `Person` instance is being destroyed:"
+        },
+        {
+            "code": "deinit {\n  print(\"\\(name) is no more!\")\n}"
+        }
+    ],
     "title": "Deinitializers",
-    "postscript": "The <code>deinit<\/code> method doesn't have parentheses after it, because it never takes parameters. So, always write <code>deinit<\/code> rather than <code>deinit()<\/code>.",
+    "postscript": "The `deinit` method doesn't have parentheses after it, because it never takes parameters. So, always write `deinit` rather than `deinit()`.",
     "reviewType": "singleSelection",
     "question": "This code will print a message when an instance of the type is destroyed \u2013 true or false?",
     "hint": "Structs cannot have deinitializers.",
@@ -8,33 +31,33 @@
     "correct": [
         {
             "answer": "class IceCream {\n\tdeinit {\n\t\tprint(\"No more icecream :(\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>IceCream<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `IceCream` is destroyed."
         },
         {
             "answer": "class Job {\n\tdeinit {\n\t\tprint(\"I quit!\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>Job<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `Job` is destroyed."
         },
         {
             "answer": "class Lightsaber {\n\tdeinit {\n\t\tprint(\"Fssshhp!\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>Lightsaber<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `Lightsaber` is destroyed."
         },
         {
             "answer": "class Firefly {\n\tdeinit {\n\t\tprint(\"I'm still annoyed that this was cancelled.\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>Firefly<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `Firefly` is destroyed."
         },
         {
             "answer": "class MagicSpell {\n\tdeinit {\n\t\tprint(\"Good job, Hermione!\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>MagicSpell<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `MagicSpell` is destroyed."
         },
         {
             "answer": "class DisneyMovie {\n\tdeinit {\n\t\tprint(\"Relax, there'll be another in a year.\")\n\t}\n}",
-            "reason": "This will print a message when an instance of <code>DisneyMovie<\/code> is destroyed."
+            "reason": "This will print a message when an instance of `DisneyMovie` is destroyed."
         }
     ],
     "wrong": [
         {
             "answer": "class Meal {\n\tdealloc {\n\t\tprint(\"Please send over the bill.\")\n\t}\n}",
-            "reason": "<code>dealloc<\/code> is invalid; we need to use <code>deinit<\/code>."
+            "reason": "`dealloc` is invalid; we need to use `deinit`."
         },
         {
             "answer": "class Election {\n\tinit() {\n\t\tprint(\"And the winner is...\")\n\t}\n}",
@@ -42,7 +65,7 @@
         },
         {
             "answer": "struct Olympics {\n\tfunc deinit() {\n\t\tprint(\"And now for the closing ceremony.\")\n\t}\n}",
-            "reason": "You don't use <code>func<\/code> or write parentheses after <code>deinit<\/code>."
+            "reason": "You don't use `func` or write parentheses after `deinit`."
         },
         {
             "answer": "struct Fairytale {\n\tdeinit {\n\t\tprint(\"And they lived happily ever after.\")\n\t}\n}",
@@ -50,11 +73,11 @@
         },
         {
             "answer": "class PhoneCall {\n\tfunc deinit {\n\t\tprint(\"Bye!\")\n\t}\n}",
-            "reason": "You don't write <code>func<\/code> before a deinitializer."
+            "reason": "You don't write `func` before a deinitializer."
         },
         {
             "answer": "class MarketingFlyer {\n\tdeinit() {\n\t\tprint(\"You're going straight into recycling.\")\n\t}\n}",
-            "reason": "You don't write parentheses after <code>deinit<\/code>."
+            "reason": "You don't write parentheses after `deinit`."
         }
     ]
 }

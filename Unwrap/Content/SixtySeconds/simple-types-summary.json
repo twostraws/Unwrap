@@ -1,4 +1,18 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the first part of this series, so let’s summarize."
+        },
+        {
+            "numbered": [
+                "You make variables using `var` and constants using `let`. It’s preferable to use constants as often as possible.",
+                "Strings start and end with double quotes, but if you want them to run across multiple lines you should use three sets of double quotes.",
+                "Integers hold whole numbers, doubles hold fractional numbers, and booleans hold true or false.",
+                "String interpolation allows you to create strings from other variables and constants, placing their values inside your string.",
+                "Swift uses type inference to assign each variable or constant a type, but you can provide explicit types if you want."
+            ]
+        }
+    ],
     "title": "Simple types: Summary",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -8,27 +22,27 @@
     "correct": [
         {
             "answer": "var name = \"Rumpelstiltskin\"",
-            "reason": "This creates a variable called <code>name<\/code>."
+            "reason": "This creates a variable called `name`."
         },
         {
             "answer": "var depth = 10000",
-            "reason": "This creates a variable called <code>depth<\/code>."
+            "reason": "This creates a variable called `depth`."
         },
         {
             "answer": "var isActive = true",
-            "reason": "This creates a variable called <code>isActive<\/code>."
+            "reason": "This creates a variable called `isActive`."
         },
         {
             "answer": "var score: Double = 10",
-            "reason": "This creates a variable called <code>score<\/code>."
+            "reason": "This creates a variable called `score`."
         },
         {
             "answer": "var isEnabled: Bool = false",
-            "reason": "This creates a variable called <code>isEnabled<\/code>."
+            "reason": "This creates a variable called `isEnabled`."
         },
         {
             "answer": "var state = \"game over\"",
-            "reason": "This creates a variable called <code>state<\/code>."
+            "reason": "This creates a variable called `state`."
         }
     ],
     "wrong": [

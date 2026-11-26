@@ -1,8 +1,25 @@
 {
+    "content": [
+        {
+            "text": "Swift has shorthand operators that combine one operator with an assignment, so you can change a variable in place. These look like the existing operators you know – `+`, `-`, `*`, and `/`, but they have an `=` on the end because they assign the result back to whatever variable you were using."
+        },
+        {
+            "text": "For example, if someone scored 95 in an exam but needs to be penalized 5 points, you could write this:"
+        },
+        {
+            "code": "var score = 95\nscore -= 5"
+        },
+        {
+            "text": "Similarly, you can add one string to another using `+=`:"
+        },
+        {
+            "code": "var quote = \"The rain in Spain falls mainly on the \"\nquote += \"Spaniards\""
+        }
+    ],
     "title": "Compound assignment operators",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of these make <code>result<\/code> an integer equal to 10?",
+    "question": "Which of these make `result` an integer equal to 10?",
     "hint": "Watch out for constants!",
     "syntaxHighlighting": true,
     "correct": [
@@ -50,11 +67,11 @@
         },
         {
             "answer": "var result = 21\nresult -= 10",
-            "reason": "This will set <code>result<\/code> to 11."
+            "reason": "This will set `result` to 11."
         },
         {
             "answer": "var result = 3\nresult *= 3",
-            "reason": "This will set <code>result<\/code> to 9."
+            "reason": "This will set `result` to 9."
         }
     ]
 }

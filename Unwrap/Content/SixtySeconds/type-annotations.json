@@ -1,9 +1,29 @@
 {
+    "content": [
+        {
+            "text": "Swift assigns each variable and constant a type based on what value it’s given when it’s created. So, when you write code like this Swift can see it holds a string:"
+        },
+        {
+            "code": "let str = \"Hello, playground\""
+        },
+        {
+            "text": "That will make `str` a string, so you can’t try to assign it an integer or a boolean later on. This is called *type inference*: Swift is able to infer the type of something based on how you created it."
+        },
+        {
+            "text": "If you want you can be explicit about the type of your data rather than relying on Swift’s type inference, like this:"
+        },
+        {
+            "code": "let album: String = \"Reputation\"\nlet year: Int = 1989\nlet height: Double = 1.78\nlet taylorRocks: Bool = true"
+        },
+        {
+            "text": "Notice that booleans have the short type name `Bool`, in the same way that integers have the short type name `Int`."
+        }
+    ],
     "title": "Type annotations",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these lines create Doubles?",
-    "hint": "Doubles are any value that contain decimal data, or with the explicit typecast <code>Double<\/code>.",
+    "hint": "Doubles are any value that contain decimal data, or with the explicit typecast `Double`.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -12,7 +32,7 @@
         },
         {
             "answer": "var depth = 10.2",
-            "reason": "This creates a double called <code>depth<\/code>."
+            "reason": "This creates a double called `depth`."
         },
         {
             "answer": "var sales: Double = 100_000",
@@ -20,7 +40,7 @@
         },
         {
             "answer": "var average = 32.0",
-            "reason": "This creates a double called <code>average<\/code>."
+            "reason": "This creates a double called `average`."
         },
         {
             "answer": "var distance: Double = 320",
@@ -28,7 +48,7 @@
         },
         {
             "answer": "var populationMillions = 12.5",
-            "reason": "This creates a double called <code>populationMillions<\/code>."
+            "reason": "This creates a double called `populationMillions`."
         }
     ],
     "wrong": [

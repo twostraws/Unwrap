@@ -8,56 +8,59 @@
 
 import Foundation
 import Testing
-import UIKit
 @testable import Unwrap
 
-/// Tests that content can be loaded from our app bundle.
+/// Tests the bundle-loading helpers used by production code.
 @Suite("Bundle loading")
 struct BundleLoadingTests {
-    /// Tests decoding a type from JSON.
-    @Test("JSON resources decode")
-    func decoding() {
-        let items = Bundle.main.decode([TourItem].self, from: "Tour.json")
-        #expect(items.isEmpty == false)
+    private var bundle: Bundle {
+        .main
     }
 
-    /// Tests loading a Data instance from the app bundle.
+    @Test("JSON resources decode")
+    func decoding() throws {
+        let items = try bundle.decode([TourItem].self, from: "Tour.json")
+
+        #expect(items.count == 5)
+    }
+
     @Test("Data resources load")
-    func dataLoading() {
-        let data = Data(bundleName: "variables.json")
+    func dataLoading() throws {
+        let data = try bundle.data(named: "variables.json")
+
         #expect(data.isEmpty == false)
     }
 
-    /// Tests loading a String instance from the app bundle.
-    @Test("String resources load")
-    func stringLoading() {
-        let string = String(bundleName: "variables.json")
-        #expect(string.isEmpty == false)
+    @Test("Text resources load")
+    func textLoading() throws {
+        let text = try bundle.text(named: "Credits.md")
+
+        #expect(text.isEmpty == false)
+        #expect(text.contains("Unwrap was developed by Paul Hudson"))
     }
 
-    /// Tests that strings can be formatted in a bundle-friendly way.
+    @Test("Resource URLs are local and readable")
+    func resourceURLs() throws {
+        let url = try #require(bundle.url(named: "variables.mp4"))
+
+        #expect(url.isFileURL)
+        #expect(try Data(contentsOf: url).isEmpty == false)
+    }
+
+    @Test("Missing resources report their exact name")
+    func missingResource() {
+        #expect(throws: BundleResourceError.missingResource("not-a-real-resource.json")) {
+            try bundle.data(named: "not-a-real-resource.json")
+        }
+    }
+
     @Test("Strings form bundle names")
     func stringBundleNames() {
-        let testString = "This?is , a:test'"
-        #expect(testString.bundleName == "thisis--atest")
-    }
-
-    /// Tests loading the wrapper HTML from our bundle.
-    @Test("Wrapper HTML loads")
-    func loadingWrapperHTML() {
-        let wrapper = String.wrapperHTML(width: 320)
-        #expect(wrapper.isEmpty == false)
-    }
-
-    /// Tests loading a named color instance from the app bundle.
-    @Test("Named colors load")
-    func namedColors() {
-        _ = UIColor(bundleName: "Primary")
-    }
-
-    /// Tests loading a UIImage instance from the app bundle.
-    @Test("Images load")
-    func images() {
-        _ = UIImage(bundleName: "Rank Level 1")
+        #expect("This?is , a:test'".bundleName == "thisis--atest")
+        #expect("Where now?".bundleName == "where-now")
+        #expect(
+            "Operators and conditions: Summary".bundleName
+                == "operators-and-conditions-summary"
+        )
     }
 }

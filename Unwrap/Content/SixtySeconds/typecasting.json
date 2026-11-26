@@ -1,6 +1,35 @@
 {
+    "content": [
+        {
+            "text": "Swift must always know the type of each of your variables, but sometimes you know more information than Swift does. For example, here are three classes:"
+        },
+        {
+            "code": "class Animal { }\nclass Fish: Animal { }\nclass Dog: Animal {\n  func makeNoise() {\n    print(\"Woof!\")\n  }\n}"
+        },
+        {
+            "text": "We can create a couple of fish and a couple of dogs, and put them into an array, like this:"
+        },
+        {
+            "code": "let pets = [Fish(), Dog(), Fish(), Dog()]"
+        },
+        {
+            "text": "Swift can see both `Fish` and `Dog` inherit from the `Animal` class, so it uses type inference to make `pets` an array of `Animal`."
+        },
+        {
+            "text": "If we want to loop over the `pets` array and ask all the dogs to bark, we need to perform a typecast: Swift will check to see whether each pet is a `Dog` object, and if it is we can then call `makeNoise()`. "
+        },
+        {
+            "text": "This uses a new keyword called `as?`, which returns an optional: it will be `nil` if the typecast failed, or a converted type otherwise."
+        },
+        {
+            "text": "Here’s how we write the loop in Swift:"
+        },
+        {
+            "code": "for pet in pets {\n  if let dog = pet as? Dog {\n    dog.makeNoise()\n  }\n}"
+        }
+    ],
     "title": "Typecasting",
-    "postscript": "Trying to convert between unrelated types such as from <code>String<\/code> to <code>Int<\/code> will always fail. On the other hand, casting from something to itself, such as from <code>Int<\/code> to <code>Int<\/code>, will always succeed.",
+    "postscript": "Trying to convert between unrelated types such as from `String` to `Int` will always fail. On the other hand, casting from something to itself, such as from `Int` to `Int`, will always succeed.",
     "reviewType": "singleSelection",
     "question": "This code will print some output \u2013 true or false?",
     "hint": "Swift can only typecast between related types.",
@@ -34,19 +63,19 @@
     "wrong": [
         {
             "answer": "class Museum {\n\tvar name = \"National Museum\"\n}\nclass HistoryMuseum: Museum { }\nclass ToyMuseum: Museum { }\nlet museum = ToyMuseum()\nif let unwrappedMuseum = museum as? HistoryMuseum {\n\tprint(\"This is the \\(unwrappedMuseum.name).\")\n}",
-            "reason": "<code>museum<\/code> is an instance of <code>ToyMuseum<\/code>, not <code>HistoryMuseum<\/code>, so the typecast will fail."
+            "reason": "`museum` is an instance of `ToyMuseum`, not `HistoryMuseum`, so the typecast will fail."
         },
         {
             "answer": "class Phone {\n\tvar model = \"Unknown\"\n}\nclass Smartphone { }\nlet iPhone = Smartphone()\nif let phone = iPhone as? Phone {\n\tprint(\"The model is: \\(phone.model).\")\n}",
-            "reason": "<code>iPhone<\/code> is an instance of <code>SmartPhone<\/code>, not an instance of <code>Phone<\/code>, so the typecast will fail."
+            "reason": "`iPhone` is an instance of `SmartPhone`, not an instance of `Phone`, so the typecast will fail."
         },
         {
             "answer": "class Glasses {\n\tvar isShortSighted = true\n}\nstruct Sunglasses: Glasses { }\nlet shades = Sunglasses()\nif let glasses = shades as? Glasses {\n\tif glasses.isShortSighted {\n\t\tprint(\"These sunglasses are for shortsighted people.\")\n\t} else {\n\t\tprint(\"These sunglasses are for longsighted people.\")\n\t}\n}",
-            "reason": "<code>Sunglasses<\/code> is a struct, and cannot use class inheritance."
+            "reason": "`Sunglasses` is a struct, and cannot use class inheritance."
         },
         {
             "answer": "class Sport { }\nclass Swimming: Sport {\n\tvar distance = 100\n}\nlet swimming = Sport()\nif let sport as? Swimming {\n\tprint(\"The distance is \\(sport.distance).\")\n}",
-            "reason": "This code has several problems, not least that <code>sport<\/code> is undefined."
+            "reason": "This code has several problems, not least that `sport` is undefined."
         },
         {
             "answer": "var socialMediaSite = \"Twitter\"\nif let site = socialMediaSite as? Int {\n\tprint(\"The site is \\(site)\")\n}",

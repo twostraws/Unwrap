@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "One protocol can inherit from another in a process known as *protocol inheritance*. Unlike with classes, you can inherit from multiple protocols at the same time before you add your own customizations on top."
+        },
+        {
+            "text": "We’re going to define three protocols: `Payable` requires conforming types to implement a `calculateWages()` method, `NeedsTraining` requires conforming types to implement a `study()` method, and `HasVacation` requires conforming types to implement a `takeVacation()` method:"
+        },
+        {
+            "code": "protocol Payable {\n  func calculateWages() -> Int\n}\nprotocol NeedsTraining {\n  func study()\n}\nprotocol HasVacation {\n  func takeVacation(days: Int)\n}"
+        },
+        {
+            "text": "We can now create a single `Employee` protocol that brings them together in one protocol. We don’t need to add anything on top, so we’ll just write open and close braces:"
+        },
+        {
+            "code": "protocol Employee: Payable, NeedsTraining, HasVacation { }"
+        },
+        {
+            "text": "Now we can make new types conform to that single protocol rather than each of the three individual ones."
+        }
+    ],
     "title": "Protocol inheritance",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,23 +54,23 @@
     "wrong": [
         {
             "answer": "protocol HasEngine {\n\tfunc startEngine()\n}\nprotocol HasTrunk {\n\tfunc openTrunk()\n}\nstruct Car: HasEngine, HasTrunk { }",
-            "reason": "Although <code>Car<\/code> conforms to both protocols, there is no protocol inheritance here – neither protocol builds on the other."
+            "reason": "Although `Car` conforms to both protocols, there is no protocol inheritance here – neither protocol builds on the other."
         },
         {
             "answer": "protocol HasRooms {\n\tvar roomCount: Int { get set }\n}\nprotocol ServesFood {\n\tvar openingTime: Int { get set }\n}\nprotocol Hotel: HasRooms ServesFood {\n\tvar starRating: Int { get set }\n}",
-            "reason": "This is missing a comma between the two protocols that <code>Hotel<\/code> inherits from; it should be <code>protocol Hotel: HasRooms, ServesFood<\/code>."
+            "reason": "This is missing a comma between the two protocols that `Hotel` inherits from; it should be `protocol Hotel: HasRooms, ServesFood`."
         },
         {
             "answer": "protocol Readable {\n\tfunc read() -> String\n}\nprotocol Writeable {\n\tfunc write(string: String)\n}\nprotocol NetworkSocket: Readable, Writeable",
-            "reason": "Even empty protocols like <code>NetworkSocket<\/code> must still have empty braces, <code>{ }</code>."
+            "reason": "Even empty protocols like `NetworkSocket` must still have empty braces, `{ }`."
         },
         {
             "answer": "protocol Buyable {\n\tvar cost: Int\n}\nprotocol Sellable {\n\tfunc findBuyers() -> [String]\n}\nprotocol FineArt: Buyable, Sellable { }",
-            "reason": "The <code>cost<\/code> property must have <code>{ get }<\/code> or <code>{ get set }<\/code> after it."
+            "reason": "The `cost` property must have `{ get }` or `{ get set }` after it."
         },
         {
             "answer": "protocol Scoreable {\n\tfunc add\n}\nprotocol Winnable {\n\tfunc makeWinningSpeech\n}\nprotocol Competitor: Scoreable, Winnable { }",
-            "reason": "The <code>add()<\/code> and <code>makeWinningSpeech()<\/code> methods are missing parentheses."
+            "reason": "The `add()` and `makeWinningSpeech()` methods are missing parentheses."
         },
         {
             "answer": "struct Collectible {\n\tvar rarity: Int { get set }\n}\nstruct Tradeable {\n\tvar condition: String { get }\n}\nprotocol ClassicToy: Collectible, Tradeable { }",

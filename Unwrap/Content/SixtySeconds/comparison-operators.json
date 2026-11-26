@@ -1,8 +1,37 @@
 {
+    "content": [
+        {
+            "text": "Swift has several operators that perform comparison, and these work more or less like you would expect in mathematics."
+        },
+        {
+            "text": "Let’s start with a couple of example variables so we have something to work with:"
+        },
+        {
+            "code": "let firstScore = 6\nlet secondScore = 4"
+        },
+        {
+            "text": "There are two operators that check for equality: `==` checks two values are the same, and `!=` (pronounced “not equals”) checks two values are *not* the same:"
+        },
+        {
+            "code": "firstScore == secondScore\nfirstScore != secondScore"
+        },
+        {
+            "text": "There are four operators for comparing whether one value is greater than, less than, or equal to another. These are just like in mathematics:"
+        },
+        {
+            "code": "firstScore < secondScore\nfirstScore >= secondScore"
+        },
+        {
+            "text": "Each of these also work with strings, because strings have a natural alphabetical order:"
+        },
+        {
+            "code": "\"Taylor\" <= \"Swift\""
+        }
+    ],
     "title": "Comparison operators",
-    "postscript": "When comparing booleans you can write <code>if someBoolean<\/code> to mean <code>if someBoolean == true<\/code>.",
+    "postscript": "When comparing booleans you can write `if someBoolean` to mean `if someBoolean == true`.",
     "reviewType": "multipleSelection",
-    "question": "If <code>a<\/code> is 1, <code>b<\/code> is 2, and <code>c<\/code> is 3, which of these is true?",
+    "question": "If `a` is 1, `b` is 2, and `c` is 3, which of these is true?",
     "hint": "You'll need to do a tiny bit of arithmetic in your head here.",
     "syntaxHighlighting": true,
     "correct": [

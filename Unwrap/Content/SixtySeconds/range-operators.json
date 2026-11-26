@@ -1,14 +1,31 @@
 {
+    "content": [
+        {
+            "text": "Swift gives us two ways of making ranges: the `..<` and `...` operators. The half-open range operator, `..<`, creates ranges up to but excluding the final value, and the closed range operator, `...`, creates ranges up to and *including* the final value."
+        },
+        {
+            "text": "For example, the range `1..<5` contains the numbers 1, 2, 3, and 4, whereas the range `1...5` contains the numbers 1, 2, 3, 4, and 5."
+        },
+        {
+            "text": "Ranges are helpful with `switch` blocks, because you can use them for each of your cases. For example, if someone sat an exam we could print different messages depending on their score:"
+        },
+        {
+            "code": "let score = 85\nswitch score {\ncase 0..<50:\n  print(\"You failed badly.\")\ncase 50..<85:\n  print(\"You did OK.\")\ndefault:\n  print(\"You did great!\")\n}"
+        },
+        {
+            "text": "As before, the `default` case must be there to ensure all possible values are covered."
+        }
+    ],
     "title": "Range operators",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these ranges contain the number 5?",
-    "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
+    "hint": "The `..<` operator excludes the second number, whereas `...` includes it.",
     "syntaxHighlighting": false,
     "correct": [
         {
             "answer": "0...5",
-            "reason": "<code>0...5<\/code> is up to and including 5."
+            "reason": "`0...5` is up to and including 5."
         },
         {
             "answer": "5...10",

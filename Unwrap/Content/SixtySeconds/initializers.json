@@ -1,4 +1,36 @@
 {
+    "content": [
+        {
+            "text": "Initializers are special methods that provide different ways to create your struct. All structs come with one by default, called their *memberwise initializer* – this asks you to provide a value for each property when you create the struct."
+        },
+        {
+            "text": "You can see this if we create a `User` struct that has one property:"
+        },
+        {
+            "code": "struct User {\n  var username: String\n}"
+        },
+        {
+            "text": "When we create one of those structs, we must provide a username:"
+        },
+        {
+            "code": "var user = User(username: \"twostraws\")"
+        },
+        {
+            "text": "We can provide our own initializer to replace the default one. For example, we might want to create all new users as “Anonymous” and print a message, like this:"
+        },
+        {
+            "code": "struct User {\n  var username: String\n  init() {\n    username = \"Anonymous\"\n    print(\"Creating a new user!\")\n  }\n}"
+        },
+        {
+            "text": "You *don’t* write `func` before initializers, but you *do* need to make sure all properties have a value before the initializer ends."
+        },
+        {
+            "text": "Now our initializer accepts no parameters, we need to create the struct like this:"
+        },
+        {
+            "code": "var user = User()\nuser.username = \"twostraws\""
+        }
+    ],
     "title": "Initializers",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,15 +66,15 @@
     "wrong": [
         {
             "answer": "struct Wine {\n\tvar grape: String\n\tvar region: String\n}\nlet malbec = Wine(grapes: \"Malbec\", region: \"Cahors\")",
-            "reason": "The <code>Wine<\/code> struct has a <code>grape<\/code> property, but this attempts to create an instance using <code>grapes<\/code>."
+            "reason": "The `Wine` struct has a `grape` property, but this attempts to create an instance using `grapes`."
         },
         {
             "answer": "struct Book {\n\tvar title: String\n\tvar author: String\n\tinit(bookTitle: String) {\n\t\ttitle = bookTitle\n\t}\n}\nlet book = Book(bookTitle: \"Beowulf\")",
-            "reason": "This code does not provide a value for the <code>author<\/code> property."
+            "reason": "This code does not provide a value for the `author` property."
         },
         {
             "answer": "struct Sport {\n\tvar name: String\n\tvar isOlympicSport: Bool\n}\nlet chessBoxing = Sport(name: \"Chessboxing\", isOlympicSport: \"false\")",
-            "reason": "The <code>isOlympicSport<\/code> property is a Boolean, but this attempts to create a <code>Sport<\/code> instance by providing it with a string."
+            "reason": "The `isOlympicSport` property is a Boolean, but this attempts to create a `Sport` instance by providing it with a string."
         },
         {
             "answer": "struct Media {\n\tvar type: String\n\tvar users: Int\n\tinit() {\n\t\t\n\t}\n}\nlet tv = Media(type: \"Television\", users: 10_000_000)",
@@ -50,11 +82,11 @@
         },
         {
             "answer": "struct Tree {\n\tvar type: String\n\tvar hasFruit: Bool\n\tfunc init() {\n\t\ttype = \"Cherry\"\n\t\thasFruit = true\n\t}\n}\nlet cherryTree = Tree()",
-            "reason": "<code>init()<\/code> should not have the <code>func<\/code> keyword before it."
+            "reason": "`init()` should not have the `func` keyword before it."
         },
         {
             "answer": "struct Starship {\n\tvar name: String\n\tvar maxWarp: Double\n\tinit(starshipName: String) {\n\t\tname = starshipName\n\t}\n}\nlet voyager = Starship(starshipName: \"Voyager\")",
-            "reason": "This code does not provide a value for the <code>maxWarp<\/code> property."
+            "reason": "This code does not provide a value for the `maxWarp` property."
         }
     ]
 }

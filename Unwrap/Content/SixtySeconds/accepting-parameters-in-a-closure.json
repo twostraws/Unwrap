@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "When you create closures, they don’t have a name or space to write any parameters. That doesn’t mean they can’t *accept* parameters, just that they do so in a different way: they are listed *inside* the open braces."
+        },
+        {
+            "text": "To make a closure accept parameters, list them inside parentheses just after the opening brace, then write `in` so that Swift knows the main body of the closure is starting."
+        },
+        {
+            "text": "For example, we could make a closure that accepts a place name string as its only parameter like this:"
+        },
+        {
+            "code": "let driving = { (place: String) in\n  print(\"I'm going to \\(place) in my car\")\n}"
+        },
+        {
+            "text": "One of the differences between functions and closures is that you don’t use parameter labels when running closures. So, to call `driving()` now we’d write this:"
+        },
+        {
+            "code": "driving(\"London\")"
+        }
+    ],
     "title": "Accepting parameters in a closure",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,19 +54,19 @@
     "wrong": [
         {
             "answer": "let calculateResult = { (answer) in\n\tif answer == 42 {\n\t\tprint(\"You're correct!\")\n\t} else {\n\t\tprint(\"Try again.\")\n\t}\n}",
-            "reason": "Swift is unable to figure out what type of data <code>answer</code> is."
+            "reason": "Swift is unable to figure out what type of data `answer` is."
         },
         {
             "answer": "printDocument = { (copies: Int) in\n\tfor _ in 1...copies {\n\t\tprint(\"Printing document...\")\n\t}\n}",
-            "reason": "This is missing <code>let</code> or <code>var</code> before <code>printDocument()</code>"
+            "reason": "This is missing `let` or `var` before `printDocument()`"
         },
         {
             "answer": "let watchTV = { (channel: String) in\n\tprint(\"I'm going to watch some \\(channel)\")\n}\nwatch_TV(\"BBC News\")",
-            "reason": "This creates a closure called <code>watchTV</code> but tries to call it using <code>watch_TV()</code>."
+            "reason": "This creates a closure called `watchTV` but tries to call it using `watch_TV()`."
         },
         {
             "answer": "var shareWinnings = { (amount: Double) in\n\tlet half = amount \/ 2.0\n\tprint(\"It's \\(half) for me and \\(half) for you.\")\n}\nshareWinnings(\"50\")",
-            "reason": "This closure must accept a <code>Double</code> as its parameter, but is being sent a string."
+            "reason": "This closure must accept a `Double` as its parameter, but is being sent a string."
         },
         {
             "answer": "var pickFruit = { (name: String) in\n\tswitch name {\n\tcase strawberry:\n\t\tfallthrough\n\tcase raspberry:\n\t\tprint(\"Strawberries and raspberries are half price!\")\n\tdefault:\n\t\tprint(\"We don't have those.\")\n\t}\n}\n\npickFruit(\"strawberry\")",

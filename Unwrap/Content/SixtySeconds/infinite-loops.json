@@ -1,9 +1,26 @@
 {
+    "content": [
+        {
+            "text": "It’s common to use `while` loops to make *infinite* loops: loops that either have no end or only end when you’re ready. All apps on your iPhone use infinite loops, because they start running, then continually watch for events until you choose to quit them."
+        },
+        {
+            "text": "To make an infinite loop, just use `true` as your condition. `true` is always true, so the loop will repeat forever. **Warning:** Please make sure you have a check that exits your loop, otherwise it will never end."
+        },
+        {
+            "text": "As an example, we’re going to use `while true` to print the music of John Cage’s piece 4’33” – if you didn’t know, it’s famous because it’s 4 minutes and 33 seconds of complete silence."
+        },
+        {
+            "text": "We can write the “music” for this piece using `while true`, with a condition that exits the loop when we’ve gone around enough times:"
+        },
+        {
+            "code": "var counter = 0\nwhile true {\n  print(\" \")\n  counter += 1\n  if counter == 273 {\n    break\n  }\n}"
+        }
+    ],
     "title": "Infinite loops",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This loop will never end \u2013 true or false?",
-    "hint": "Infinite loops are commonly made using <code>while true<\/code> but other conditions can also work.",
+    "hint": "Infinite loops are commonly made using `while true` but other conditions can also work.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -12,23 +29,23 @@
         },
         {
             "answer": "var loggedIn = true\nwhile loggedIn {\n\tprint(\"Waiting for user input...\")\n}",
-            "reason": "This is an infinite loop because <code>loggedIn<\/code> will never become false."
+            "reason": "This is an infinite loop because `loggedIn` will never become false."
         },
         {
             "answer": "var counter = 1\nrepeat {\n\tprint(\"Counting: \\(counter)\")\n\tcounter += 2\n} while counter != 10",
-            "reason": "This is an infinite loop because <code>counter<\/code> will reach 7, then 9, then 11, then continue upwards without ever reaching 10."
+            "reason": "This is an infinite loop because `counter` will reach 7, then 9, then 11, then continue upwards without ever reaching 10."
         },
         {
             "answer": "var isVisible = true\nwhile isVisible == true {\n\tisVisible = false\n\tif isVisible == false {\n\t\tisVisible = true\n\t}\n}",
-            "reason": "This is an infinite loop because <code>isVisible<\/code> will always be true."
+            "reason": "This is an infinite loop because `isVisible` will always be true."
         },
         {
             "answer": "var passengerCount = 0\nrepeat {\n\tprint(\"There are \\(passengerCount) passengers\")\n\tpassengerCount *= 2\n} while passengerCount < 10",
-            "reason": "This is an infinite loop because <code>passengerCount<\/code> will always be 0 – multiplying 0 by 2 still makes 0."
+            "reason": "This is an infinite loop because `passengerCount` will always be 0 – multiplying 0 by 2 still makes 0."
         },
         {
             "answer": "var wantStarWarsSpinOffs = true\nwhile wantStarWarsSpinOffs {\n\tprint(\"It's time for another spin-off!\")\n}",
-            "reason": "This is an infinite loop because <code>wantStarWarsSpinOffs<\/code> will never become false."
+            "reason": "This is an infinite loop because `wantStarWarsSpinOffs` will never become false."
         }
     ],
     "wrong": [
@@ -42,7 +59,7 @@
         },
         {
             "answer": "var kids = 1\nrepeat {\n\tprint(\"Kids in the class: \\(kids)\")\n\tkids += 1\n} while kids != 10",
-            "reason": "When <code>kids<\/code> reaches 10 this loop will terminate."
+            "reason": "When `kids` reaches 10 this loop will terminate."
         },
         {
             "answer": "var isRead = false\nwhile isRead {\n\tisRead = true\n\tprint(\"You read this message.\")\n}",
@@ -50,7 +67,7 @@
         },
         {
             "answer": "var securityHoles = 1\nrepeat {\n\tprint(\"Security hole reported!\")\n\tsecurityHoles += 1\n} while securityHoles < 10",
-            "reason": "When <code>securityHoles<\/code> reaches 10 this loop will terminate."
+            "reason": "When `securityHoles` reaches 10 this loop will terminate."
         },
         {
             "answer": "var exCharacters = 0\nvar bookSeries = \"Game of Thrones\"\nwhile true {\n\tprint(\"It's time for someone else to go\")\n\texCharacters += \"1\"\n}",

@@ -24,17 +24,14 @@ extension UserCoreTests {
         #expect(user.practicePoints == 0)
         #expect(user.dailyChallenges.isEmpty)
         #expect(user.challengePoints == 0)
-        #expect(user.scoreShareCount == 0)
         #expect(user.latestNewsArticle == 0)
         #expect(user.articlesRead.isEmpty)
         #expect(user.readNewsCount == 0)
         #expect(user.theme == "Light")
         #expect(user.totalPoints == 0)
         #expect(user.rankNumber == 1)
-        #expect(user.pointsTowardsNextRank == 0)
         #expect(user.pointsUntilNextRank == User.rankLevels[1])
-        #expect(user.rankFraction == User.smallestRankFraction)
-        #expect(user.hasCompletedTodaysChallenge == false)
+        #expect(user.hasCompletedChallenge(on: .now) == false)
         #expect(user.hasLearned("variables") == false)
         #expect(user.hasReviewed("variables") == false)
     }
@@ -66,7 +63,7 @@ extension UserCoreTests {
         #expect(user.ratingForSection("unknown") == 0)
     }
 
-    @Test("Practice, challenge, news, and sharing aggregate independently")
+    @Test("Practice, challenge, and news aggregate independently")
     func activityAggregation() {
         let user = User()
         let firstArticle = URL(fileURLWithPath: "/news/1")
@@ -80,11 +77,12 @@ extension UserCoreTests {
         #expect(user.practiceSessions.count(for: "free-coding") == 1)
         #expect(user.practicePoints == 30)
 
-        user.completedChallenge(score: 50)
-        user.completedChallenge(score: 75)
+        let today = Date(timeIntervalSince1970: Date.now.timeIntervalSince1970.rounded(.down))
+        user.completedChallenge(score: 50, at: today.addingTimeInterval(-86_400))
+        user.completedChallenge(score: 75, at: today)
         #expect(user.dailyChallenges.map(\.score) == [75, 50])
         #expect(user.challengePoints == 125)
-        #expect(user.hasCompletedTodaysChallenge)
+        #expect(user.hasCompletedChallenge(on: today))
 
         user.readNewsStory(forURL: firstArticle)
         user.readNewsStory(forURL: firstArticle)
@@ -94,10 +92,7 @@ extension UserCoreTests {
         #expect(user.hasReadNewsStory(forURL: URL(fileURLWithPath: "/news/3")) == false)
 
         user.seenUpToArticle(42)
-        user.sharedScore()
-        user.sharedScore()
         #expect(user.latestNewsArticle == 42)
-        #expect(user.scoreShareCount == 2)
         #expect(user.totalPoints == 155)
     }
 
@@ -111,7 +106,6 @@ extension UserCoreTests {
         user.completedPractice("type-practice", score: 40)
         user.completedChallenge(score: 60)
         user.readNewsStory(forURL: article)
-        user.sharedScore()
         user.seenUpToArticle(99)
         user.streakDays = 8
         user.bestStreak = 12
@@ -134,58 +128,56 @@ extension UserCoreTests {
         #expect(user.bestStreak == 12)
         #expect(user.readNewsCount == 1)
         #expect(user.hasReadNewsStory(forURL: article))
-        #expect(user.scoreShareCount == 1)
         #expect(user.latestNewsArticle == 99)
         #expect(user.theme == "Dark")
     }
 
-    @Test("Every rank boundary reports consistent rank, points, and fraction")
+    @Test("Every rank boundary reports consistent rank and points remaining")
     func allRankBoundaries() {
         let levels = User.rankLevels
 
         for boundaryIndex in 1..<(levels.count - 1) {
             let boundary = levels[boundaryIndex]
-            let previousBoundary = levels[boundaryIndex - 1]
 
             let below = User()
             below.practicePoints = boundary - 1
             #expect(below.rankNumber == boundaryIndex)
-            #expect(below.pointsTowardsNextRank == boundary - previousBoundary - 1)
             #expect(below.pointsUntilNextRank == 1)
-            expectClose(
-                below.rankFraction,
-                max(
-                    Double(boundary - previousBoundary - 1) / Double(boundary - previousBoundary),
-                    User.smallestRankFraction
-                )
-            )
 
             let exact = User()
             exact.practicePoints = boundary
             #expect(exact.rankNumber == boundaryIndex + 1)
-            #expect(exact.pointsTowardsNextRank == 0)
 
             let above = User()
             above.practicePoints = boundary + 1
             #expect(above.rankNumber == boundaryIndex + 1)
-            #expect(above.pointsTowardsNextRank == 1)
 
             if boundaryIndex == levels.count - 2 {
                 #expect(exact.pointsUntilNextRank == nil)
-                #expect(exact.rankFraction == 1)
                 #expect(above.pointsUntilNextRank == nil)
-                #expect(above.rankFraction == 1)
             } else {
                 let nextBoundary = levels[boundaryIndex + 1]
                 #expect(exact.pointsUntilNextRank == nextBoundary - boundary)
-                #expect(exact.rankFraction == User.smallestRankFraction)
                 #expect(above.pointsUntilNextRank == nextBoundary - boundary - 1)
-                expectClose(
-                    above.rankFraction,
-                    max(1 / Double(nextBoundary - boundary), User.smallestRankFraction)
-                )
             }
         }
+    }
+
+    @Test("Extreme persisted point values saturate at maximum rank without overflowing")
+    func extremePointValuesAreSafe() {
+        let user = User()
+        user.practicePoints = .max
+        user.dailyChallenges = [ChallengeResult(date: .now, score: .max)]
+
+        #expect(user.challengePoints == .max)
+        #expect(user.totalPoints == .max)
+        #expect(user.rankNumber == User.rankLevels.count - 1)
+        #expect(user.pointsUntilNextRank == nil)
+        #expect(RankProgressSnapshot(totalPoints: .max).level == User.rankLevels.count - 1)
+        #expect(RankProgressSnapshot(totalPoints: -1).level == 1)
+
+        user.completedPractice("free-coding", score: User.pointsForPracticing)
+        #expect(user.practicePoints == .max)
     }
 
     @Test("Streak updates are deterministic for same, past, gap, and future dates")
@@ -244,9 +236,9 @@ extension UserCoreTests {
     }
 
     @Test("Badge catalog is internally consistent")
-    func badgeCatalog() {
-        let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
-        let allowedCriteria: Set<String> = ["read", "practice", "streak", "challenge", "news", "share"]
+    func badgeCatalog() throws {
+        let badges = try Bundle.main.decode([Badge].self, from: "Badges.json")
+        let allowedCriteria: Set<String> = ["read", "practice", "streak", "challenge", "news"]
         let expectedPracticeValues: Set<String> = [
             "type-practice",
             "spot-the-error",
@@ -258,7 +250,6 @@ extension UserCoreTests {
 
         #expect(badges.isEmpty == false)
         #expect(Set(badges.map(\.name)).count == badges.count)
-        #expect(Set(badges.map(\.filename)).count == badges.count)
         #expect(Set(badges.map(\.criterion)).isSubset(of: allowedCriteria))
         #expect(Set(badges.filter { $0.criterion == "practice" }.map(\.value)) == expectedPracticeValues)
 
@@ -278,8 +269,8 @@ extension UserCoreTests {
     }
 
     @Test("Every badge unlocks only at its boundary")
-    func badgeBoundaries() {
-        let badges = Bundle.main.decode([Badge].self, from: "Badges.json")
+    func badgeBoundaries() throws {
+        let badges = try Bundle.main.decode([Badge].self, from: "Badges.json")
 
         for badge in badges {
             #expect(User().isBadgeEarned(badge) == false)
@@ -355,27 +346,10 @@ extension UserCoreTests {
                 user.articlesRead = makeArticleURLs(count: threshold + 1)
                 #expect(user.isBadgeEarned(badge))
 
-            case "share":
-                guard let threshold = Int(badge.value) else {
-                    Issue.record("Invalid share threshold for \(badge.name)")
-                    continue
-                }
-                let user = User()
-                user.scoreShareCount = threshold - 1
-                #expect(user.isBadgeEarned(badge) == false)
-                user.scoreShareCount = threshold
-                #expect(user.isBadgeEarned(badge))
-                user.scoreShareCount = threshold + 1
-                #expect(user.isBadgeEarned(badge))
-
             default:
                 Issue.record("Unknown badge criterion \(badge.criterion)")
             }
         }
-    }
-
-    private func expectClose(_ actual: Double, _ expected: Double) {
-        #expect(abs(actual - expected) < 0.000_000_1)
     }
 
     func makeChallenges(count: Int) -> [ChallengeResult] {

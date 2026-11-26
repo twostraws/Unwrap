@@ -1,17 +1,34 @@
 {
+    "content": [
+        {
+            "text": "Swift doesn’t like errors to happen when your program runs, which means it won’t let you run an error-throwing function by accident."
+        },
+        {
+            "text": "Instead, you need to call these functions using three new keywords: `do` starts a section of code that might cause problems, `try` is used before every function that might throw an error, and `catch` lets you handle errors gracefully."
+        },
+        {
+            "text": "If any errors are thrown inside the `do` block, execution immediately jumps to the `catch` block. Let’s try calling `checkPassword()` with a parameter that throws an error:"
+        },
+        {
+            "code": "do {\n  try checkPassword(\"password\")\n  print(\"That password is good!\")\n} catch {\n  print(\"You can't use that password.\")\n}"
+        },
+        {
+            "text": "When that code runs, “You can’t use that password” is printed, but “That password is good” won’t be – that code will never be reached, because the error is thrown."
+        }
+    ],
     "title": "Running throwing functions",
     "postscript": "You can have multiple catch blocks to handle individual errors if you want, but you do need to catch all possible errors at some point otherwise your code won't build.",
     "reviewType": "multipleSelection",
     "question": "Which of the following are true?",
-    "hint": "Start a throwing block using <code>do<\/code>, mark each throwing line with <code>try<\/code> and catch errors using <code>catch<\/code>.",
+    "hint": "Start a throwing block using `do`, mark each throwing line with `try` and catch errors using `catch`.",
     "syntaxHighlighting": false,
     "correct": [
         {
-            "answer": "Throwing functions must be called using <code>try<\/code>",
+            "answer": "Throwing functions must be called using `try`",
             "reason": "This is correct."
         },
         {
-            "answer": "Throwing functions must be marked with <code>throws<\/code>",
+            "answer": "Throwing functions must be marked with `throws`",
             "reason": "This is correct."
         },
         {
@@ -19,11 +36,11 @@
             "reason": "This is correct."
         },
         {
-            "answer": "Use <code>do<\/code> to start a section of code that calls throwing functions.",
+            "answer": "Use `do` to start a section of code that calls throwing functions.",
             "reason": "This is correct."
         },
         {
-            "answer": "If any errors are thrown, execution immediately jumps to the <code>catch<\/code> block.",
+            "answer": "If any errors are thrown, execution immediately jumps to the `catch` block.",
             "reason": "This is correct."
         },
         {
@@ -37,11 +54,11 @@
             "reason": "They can return values just like regular functions."
         },
         {
-            "answer": "You can call only one throwing function inside a <code>do<\/code> block.",
+            "answer": "You can call only one throwing function inside a `do` block.",
             "reason": "You can call as many as you want."
         },
         {
-            "answer": "Swift lets you skip adding a <code>catch<\/code> block when it's safe.",
+            "answer": "Swift lets you skip adding a `catch` block when it's safe.",
             "reason": "If functions throw errors, you must catch those errors."
         },
         {

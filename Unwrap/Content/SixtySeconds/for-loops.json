@@ -1,9 +1,41 @@
 {
+    "content": [
+        {
+            "text": "Swift has a few ways of writing loops, but their underlying mechanism is the same: run some code repeatedly until a condition evaluates as false."
+        },
+        {
+            "text": "The most common loop in Swift is a `for` loop: it will loop over arrays and ranges, and each time the loop goes around it will pull out one item and assign to a constant."
+        },
+        {
+            "text": "For example, here’s a range of numbers:"
+        },
+        {
+            "code": "let count = 1...10"
+        },
+        {
+            "text": "We can use a `for` loop to print each item like this:"
+        },
+        {
+            "code": "for number in count {\n  print(\"Number is \\(number)\")\n}"
+        },
+        {
+            "text": "We can do the same with arrays:"
+        },
+        {
+            "code": "let albums = [\"Red\", \"1989\", \"Reputation\"]\nfor album in albums {\n  print(\"\\(album) is on Apple Music\")\n}"
+        },
+        {
+            "text": "If you don’t use the constant that `for` loops give you, you should use an underscore instead so that Swift doesn’t create needless values:"
+        },
+        {
+            "code": "print(\"Players gonna \")\nfor _ in 1...5 {\n  print(\"play\")\n}"
+        }
+    ],
     "title": "For loops",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code will print three lines of text \u2013 true or false?",
-    "hint": "The <code>..<<\/code> operator excludes the second number, whereas <code>...<\/code> includes it.",
+    "hint": "The `..<` operator excludes the second number, whereas `...` includes it.",
     "syntaxHighlighting": true,
     "correct": [
         {

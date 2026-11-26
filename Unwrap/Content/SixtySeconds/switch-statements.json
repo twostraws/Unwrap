@@ -1,21 +1,47 @@
 {
+    "content": [
+        {
+            "text": "If you have several conditions using `if` and `else if`, it’s often clearer to use a different construct known as `switch case`. Using this approach you write your condition once, then list all possible outcomes and what should happen for each of them."
+        },
+        {
+            "text": "To try this out, here’s a weather constant containing the string `sunny`:"
+        },
+        {
+            "code": "let weather = \"sunny\""
+        },
+        {
+            "text": "We can use a `switch` block to print one of four different messages:"
+        },
+        {
+            "code": "switch weather {\ncase \"rain\":\n  print(\"Bring an umbrella\")\ncase \"snow\":\n  print(\"Wrap up warm\")\ncase \"sunny\":\n  print(\"Wear sunscreen\")\ndefault:\n  print(\"Enjoy your day!\")\n}"
+        },
+        {
+            "text": "In that example, the last case – `default` – is required because Swift makes sure you cover all possible cases so that no eventuality is missed off. If the weather is anything other than rain, snow, or sun, the `default` case will be run."
+        },
+        {
+            "text": "Swift will only run the code inside each case. If you want execution to continue on to the next case, use the `fallthrough` keyword like this:"
+        },
+        {
+            "code": "switch weather {\ncase \"rain\":\n  print(\"Bring an umbrella\")\ncase \"snow\":\n  print(\"Wrap up warm\")\ncase \"sunny\":\n  print(\"Wear sunscreen\")\n  fallthrough\ndefault:\n  print(\"Enjoy your day!\")\n}"
+        }
+    ],
     "title": "Switch statements",
     "postscript": "",
     "reviewType": "multipleSelection",
-    "question": "Which of these statements are true about <code>switch case<\/code>?",
+    "question": "Which of these statements are true about `switch case`?",
     "hint": "Swift takes the safety of your code seriously, which means it will make sure all possibilities are handled.",
     "syntaxHighlighting": false,
     "correct": [
         {
-            "answer": "Switch statements are often clearer to read than multiple <code>if<\/code> conditions.",
+            "answer": "Switch statements are often clearer to read than multiple `if` conditions.",
             "reason": "They help us by focusing on one specific check, rather than many possible checks."
         },
         {
-            "answer": "Code from the following case will be run if you use <code>fallthrough<\/code>.",
+            "answer": "Code from the following case will be run if you use `fallthrough`.",
             "reason": "By default Swift will stop executing code in a switch block once it reaches the end of a case that was matched."
         },
         {
-            "answer": "You must list all outcomes as <code>case<\/code> statements or use <code>default<\/code>.",
+            "answer": "You must list all outcomes as `case` statements or use `default`.",
             "reason": "Switch statements must be exhaustive in Swift, which means that all possible cases are catered for."
         },
         {
@@ -23,11 +49,11 @@
             "reason": "Switch statements require some sort of value to check at the beginning."
         },
         {
-            "answer": "The default case is written as <code>default:<\/code> rather than <code>case default:<\/code>.",
-            "reason": "You omit the <code>case<\/code> keyword for the default case."
+            "answer": "The default case is written as `default:` rather than `case default:`.",
+            "reason": "You omit the `case` keyword for the default case."
         },
         {
-            "answer": "If you want to match all other values, use <code>default<\/code>.",
+            "answer": "If you want to match all other values, use `default`.",
             "reason": "This acts as a catch-all for unmatched cases."
         }
     ],
@@ -41,8 +67,8 @@
             "reason": "This default case is not needed if you already cover all other cases, such as with an enum."
         },
         {
-            "answer": "You may only use <code>fallthrough<\/code> once.",
-            "reason": "You can use <code>fallthrough<\/code> as many times as you want."
+            "answer": "You may only use `fallthrough` once.",
+            "reason": "You can use `fallthrough` as many times as you want."
         },
         {
             "answer": "Switch statements work best with constants.",

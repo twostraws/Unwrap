@@ -1,9 +1,29 @@
 {
+    "content": [
+        {
+            "text": "Like regular optionals, implicitly unwrapped optionals might contain a value or they might be `nil`. However, unlike regular optionals you don’t need to unwrap them in order to use them: you can use them as if they weren’t optional at all."
+        },
+        {
+            "text": "Implicitly unwrapped optionals are created by adding an exclamation mark after your type name, like this:"
+        },
+        {
+            "code": "let age: Int! = nil"
+        },
+        {
+            "text": "Because they behave as if they were already unwrapped, you don’t need `if let` or `guard let` to use implicitly unwrapped optionals. However, if you try to use them and they have no value – if they are `nil` – your code crashes."
+        },
+        {
+            "text": "Implicitly unwrapped optionals exist because sometimes a variable will start life as nil, but will always have a value before you need to use it. Because you know they will have a value by the time you need them, it’s helpful not having to write `if let` all the time."
+        },
+        {
+            "text": "That being said, if you’re able to use regular optionals instead it’s generally a good idea."
+        }
+    ],
     "title": "Implicitly unwrapped optionals",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true about optionals?",
-    "hint": "Both <code>String?<\/code> and <code>String!<\/code> might have a value or might not.",
+    "hint": "Both `String?` and `String!` might have a value or might not.",
     "syntaxHighlighting": false,
     "correct": [
         {
@@ -11,33 +31,33 @@
             "reason": "They can store a regular value for their type or nil."
         },
         {
-            "answer": "A <code>String?<\/code> must be unwrapped before use.",
+            "answer": "A `String?` must be unwrapped before use.",
             "reason": "This is correct."
         },
         {
-            "answer": "A <code>String!<\/code> does not need to be unwrapped before use.",
+            "answer": "A `String!` does not need to be unwrapped before use.",
             "reason": "If you access an implicitly unwrapped optional while it contains nil, your code will crash."
         },
         {
-            "answer": "Swift uses <code>nil<\/code> to represent the absence of a value.",
+            "answer": "Swift uses `nil` to represent the absence of a value.",
             "reason": "This is correct."
         },
         {
-            "answer": "You can use <code>if let<\/code> or <code>guard let<\/code> to unwrap optionals.",
+            "answer": "You can use `if let` or `guard let` to unwrap optionals.",
             "reason": "This is correct."
         },
         {
-            "answer": "If you try to use an implicitly unwrapped optional when it is <code>nil<\/code>, your code crashes.",
+            "answer": "If you try to use an implicitly unwrapped optional when it is `nil`, your code crashes.",
             "reason": "This is correct."
         }
     ],
     "wrong": [
         {
-            "answer": "<code>String?<\/code> and <code>String!<\/code> behave the same.",
+            "answer": "`String?` and `String!` behave the same.",
             "reason": "Although they are both optional, the former requires unwrapping before use whereas the latter does not."
         },
         {
-            "answer": "<code>String?<\/code> can be <code>nil<\/code>, but <code>String!<\/code> can't.",
+            "answer": "`String?` can be `nil`, but `String!` can't.",
             "reason": "Both can be nil."
         },
         {
@@ -49,11 +69,11 @@
             "reason": "You can do so if you wish; there's no reason not to."
         },
         {
-            "answer": "You can't use both <code>String!<\/code> and <code>String?<\/code> in the same program.",
+            "answer": "You can't use both `String!` and `String?` in the same program.",
             "reason": "You can mix and match these all you need."
         },
         {
-            "answer": "Once an optional has a value, you can't set it back to <code>nil<\/code>.",
+            "answer": "Once an optional has a value, you can't set it back to `nil`.",
             "reason": "You can set an optional back to nil whenever you want."
         }
     ]

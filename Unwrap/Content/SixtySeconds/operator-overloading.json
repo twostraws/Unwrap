@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "Swift supports operator overloading, which is a fancy way of saying that what an operator does depends on the values you use it with. For example, `+` sums integers like this:"
+        },
+        {
+            "code": "let meaningOfLife = 42\nlet doubleMeaning = 42 + 42"
+        },
+        {
+            "text": "But `+` also joins strings, like this:"
+        },
+        {
+            "code": "let fakers = \"Fakers gonna \"\nlet action = fakers + \"fake\""
+        },
+        {
+            "text": "You can even use `+` to join arrays, like this:"
+        },
+        {
+            "code": "let firstHalf = [\"John\", \"Paul\"]\nlet secondHalf = [\"George\", \"Ringo\"]\nlet beatles = firstHalf + secondHalf"
+        },
+        {
+            "text": "Remember, Swift is a type-safe language, which means it won’t let you mix types. For example, you can’t add an integer to a string because it doesn’t make any sense."
+        }
+    ],
     "title": "Operator overloading",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -54,7 +77,7 @@
         },
         {
             "answer": "var result = 3 ** 8",
-            "reason": "<code>**<\/code> is not a built-in operator in Swift."
+            "reason": "`**` is not a built-in operator in Swift."
         }
     ]
 }

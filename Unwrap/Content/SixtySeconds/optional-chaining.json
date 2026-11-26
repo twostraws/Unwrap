@@ -1,6 +1,29 @@
 {
+    "content": [
+        {
+            "text": "Swift provides us with a shortcut when using optionals: if you want to access something like `a.b.c` and `b` is optional, you can write a question mark after it to enable *optional chaining*: `a.b?.c`."
+        },
+        {
+            "text": "When that code is run, Swift will check whether `b` has a value, and if it’s `nil` the rest of the line will be ignored – Swift will return `nil` immediately. But if it *has* a value, it will be unwrapped and execution will continue."
+        },
+        {
+            "text": "To try this out, here’s an array of names:"
+        },
+        {
+            "code": "let names = [\"John\", \"Paul\", \"George\", \"Ringo\"]"
+        },
+        {
+            "text": "We’re going to use the `first` property of that array, which will return the first name if there is one or `nil` if the array is empty. We can then call `uppercased()` on the result to make it an uppercase string:"
+        },
+        {
+            "code": "let beatle = names.first?.uppercased()"
+        },
+        {
+            "text": "That question mark is optional chaining – if `first` returns `nil` then Swift won’t try to uppercase it, and will set `beatle` to `nil` immediately."
+        }
+    ],
     "title": "Optional chaining",
-    "postscript": "You can chain as many things as you need. For example, <code>someOptionalArray?.first?.lowercased()<\/code>.",
+    "postscript": "You can chain as many things as you need. For example, `someOptionalArray?.first?.lowercased()`.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
     "hint": "It might sound obvious, but optional chaining may only be used with optionals.",
@@ -34,27 +57,27 @@
     "wrong": [
         {
             "answer": "func loadForecast(for dayNumber: Int) -> String {\n\tprint(\"Forecast unavailable.\")\n\treturn nil\n}\nlet forecast = loadForecast(for: 3)?.uppercased()",
-            "reason": "The <code>loadForecast()<\/code> function does not return an optional string."
+            "reason": "The `loadForecast()` function does not return an optional string."
         },
         {
             "answer": "let captains: [String]? = [\"Archer\", \"Lorca\", \"Sisko\"]?\nlet lengthOfBestCaptain = captains.last?.count",
-            "reason": "The <code>captains<\/code> array is optional, so this should read <code>captains?.last?.count<\/code>. Also, the array should not end with a question mark."
+            "reason": "The `captains` array is optional, so this should read `captains?.last?.count`. Also, the array should not end with a question mark."
         },
         {
             "answer": "let credentials = [\"twostraws\", \"fr0sties\"]\nlet lowercaseUsername = credentials.first.lowercased()",
-            "reason": "Accessing the <code>first<\/code> property returns an optional, so this should read <code>credentials.first?.lowercased()<\/code>."
+            "reason": "Accessing the `first` property returns an optional, so this should read `credentials.first?.lowercased()`."
         },
         {
             "answer": "let opposites = [\"hot\": \"cold\", \"near\": \"far\"]\nlet oppositeOfLight = opposites[\"light\"].uppercased()",
-            "reason": "Accessing a dictionary key is optional, so this should read <code>opposites[\"light\"]?.uppercased()<\/code>."
+            "reason": "Accessing a dictionary key is optional, so this should read `opposites[\"light\"]?.uppercased()`."
         },
         {
             "answer": "let names = [\"Taylor\", \"Paul\", \"Adele\"]\nlet lengthOfLast = names.last?.count?",
-            "reason": "The <code>count<\/code> property is not optional, so this should read <code>names.last?.count<\/code>."
+            "reason": "The `count` property is not optional, so this should read `names.last?.count`."
         },
         {
             "answer": "let attendees: [String] = [String]()\nlet firstInLine = attendees?.first?.uppercased()",
-            "reason": "The <code>attendees<\/code> array is not optional, so this should read <code>attendees.first?.uppercased<\/code>."
+            "reason": "The `attendees` array is not optional, so this should read `attendees.first?.uppercased`."
         }
     ]
 }

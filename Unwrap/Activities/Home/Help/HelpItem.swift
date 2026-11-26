@@ -6,10 +6,10 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 struct HelpItem: Decodable {
-    var title: String
-    var text: String
-    var action: String
+    let title: String
+    let text: String
+    let action: String
 }

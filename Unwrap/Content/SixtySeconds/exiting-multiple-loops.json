@@ -1,9 +1,35 @@
 {
+    "content": [
+        {
+            "text": "If you put a loop inside a loop it’s called a *nested* loop, and it’s not uncommon to want to break out of both the inner loop and the outer loop at the same time."
+        },
+        {
+            "text": "As an example, we could write some code to calculate the times tables from 1 through 10 like this:"
+        },
+        {
+            "code": "for i in 1...10 {\n  for j in 1...10 {\n    let product = i * j\n    print (\"\\(i) * \\(j) is \\(product)\")\n  }\n}"
+        },
+        {
+            "text": "If we wanted to exit part-way through we need to do two things. First, we give the outside loop a label, like this:"
+        },
+        {
+            "code": "outerLoop: for i in 1...10 {\n  for j in 1...10 {\n    let product = i * j\n    print (\"\\(i) * \\(j) is \\(product)\")\n  }\n}"
+        },
+        {
+            "text": "Second, add our condition inside the inner loop, then use `break outerLoop` to exit both loops at the same time:"
+        },
+        {
+            "code": "outerLoop: for i in 1...10 {\n  for j in 1...10 {\n    let product = i * j\n    print (\"\\(i) * \\(j) is \\(product)\")\n    if product == 50 {\n      print(\"It's a bullseye!\")\n      break outerLoop\n    }\n  }\n}"
+        },
+        {
+            "text": "With a regular `break`, only the inner loop would be exited – the outer loop would continue where it left off."
+        }
+    ],
     "title": "Exiting multiple loops",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these statements about multiple loops are true?",
-    "hint": "Exiting multiple loops is done by using <code>break<\/code> with a loop label.",
+    "hint": "Exiting multiple loops is done by using `break` with a loop label.",
     "syntaxHighlighting": false,
     "correct": [
         {
@@ -11,11 +37,11 @@
             "reason": "This statement is correct."
         },
         {
-            "answer": "Using <code>break<\/code> by itself exits the current loop only.",
+            "answer": "Using `break` by itself exits the current loop only.",
             "reason": "This statement is correct."
         },
         {
-            "answer": "Loop labels look like this: <code>myLoop:<\/code>",
+            "answer": "Loop labels look like this: `myLoop:`",
             "reason": "This statement is correct."
         },
         {
@@ -37,12 +63,12 @@
             "reason": "You may have as many labeled loops as you need."
         },
         {
-            "answer": "Nesting can only be used with <code>for<\/code> loops.",
-            "reason": "You can nest <code>while<\/code> loops too, if you want."
+            "answer": "Nesting can only be used with `for` loops.",
+            "reason": "You can nest `while` loops too, if you want."
         },
         {
-            "answer": "Loop labels look like this: <code>myLoop {<\/code>",
-            "reason": "They are written as <code>loopName:<\/code> followed by your regular loop code."
+            "answer": "Loop labels look like this: `myLoop {`",
+            "reason": "They are written as `loopName:` followed by your regular loop code."
         },
         {
             "answer": "You can exit up to two loops at a time.",
@@ -53,7 +79,7 @@
             "reason": "You can break out of loops outside of conditions just fine."
         },
         {
-            "answer": "You can write <code>break 3<\/code> to break out of two loops.",
+            "answer": "You can write `break 3` to break out of two loops.",
             "reason": "We use names rather than numbers for breaking out of a specific loops."
         }
     ]

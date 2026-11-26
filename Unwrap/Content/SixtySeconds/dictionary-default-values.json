@@ -1,4 +1,33 @@
 {
+    "content": [
+        {
+            "text": "If you try to read a value from a dictionary using a key that doesn’t exist, Swift will send you back `nil` – nothing at all. While this might be what you want, there’s an alternative: we can provide the dictionary with a default value to use if we request a missing key."
+        },
+        {
+            "text": "To demonstrate this, let’s create a dictionary of favorite ice creams for two people:"
+        },
+        {
+            "code": "let favoriteIceCream = [\n  \"Paul\": \"Chocolate\",\n  \"Sophie\": \"Vanilla\"\n]"
+        },
+        {
+            "text": "We can read Paul’s favorite ice cream like this:"
+        },
+        {
+            "code": "favoriteIceCream[\"Paul\"]"
+        },
+        {
+            "text": "But if we tried reading the favorite ice cream for Charlotte, we’d get back nil, meaning that Swift doesn’t have a value for that key:"
+        },
+        {
+            "code": "favoriteIceCream[\"Charlotte\"]"
+        },
+        {
+            "text": "We can fix this by giving the dictionary a default value of “Unknown”, so that when no ice cream is found for Charlotte we get back “Unknown” rather than nil:"
+        },
+        {
+            "code": "favoriteIceCream[\"Charlotte\", default: \"Unknown\"]"
+        }
+    ],
     "title": "Dictionary default values",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -42,7 +71,7 @@
         },
         {
             "answer": "let scores = [\"Paul\": 80, \"Sophie\": 100]\nlet john = scores[john]",
-            "reason": "This dictionary has strings for its keys \u2013 trying to read <code>scores[john]<\/code> makes no sense, because it's not a string."
+            "reason": "This dictionary has strings for its keys \u2013 trying to read `scores[john]` makes no sense, because it's not a string."
         },
         {
             "answer": "let prices = [\"Milk\": 1, \"Pepsi\": 2]\nlet first = prices[0]",
@@ -54,7 +83,7 @@
         },
         {
             "answer": "let abbreviations = [\"m\": \"meters\", \"km\": \"kilometers\"]\nlet meters = abbreviations[\"m\", default \"m\"]",
-            "reason": "You must place a colon after <code>default<\/code> when reading a default value from a dictionary."
+            "reason": "You must place a colon after `default` when reading a default value from a dictionary."
         }
     ]
 }

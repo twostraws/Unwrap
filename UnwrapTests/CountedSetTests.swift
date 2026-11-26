@@ -6,12 +6,23 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
+import Foundation
 import Testing
 @testable import Unwrap
 
 /// Exercises CountedSets to ensure they work correctly.
 @Suite("CountedSet state transitions")
 struct CountedSetTests {
+    @Test("Inserting into a maximum persisted count saturates instead of overflowing")
+    func maximumCountInsertion() throws {
+        let data = Data(#"{"storage":{"practice":9223372036854775807}}"#.utf8)
+        var countedSet = try JSONDecoder().decode(CountedSet<String>.self, from: data)
+
+        countedSet.insert("practice")
+
+        #expect(countedSet.count(for: "practice") == .max)
+    }
+
     struct Scenario: CustomStringConvertible {
         let name: String
         let insertions: [String]

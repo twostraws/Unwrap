@@ -1,9 +1,35 @@
 {
+    "content": [
+        {
+            "text": "Child classes can replace parent methods with their own implementations – a process known as *overriding*. Here’s a trivial `Dog` class with a `makeNoise()` method:"
+        },
+        {
+            "code": "class Dog {\n  func makeNoise() {\n    print(\"Woof!\")\n  }\n}"
+        },
+        {
+            "text": "If we create a new `Poodle` class that inherits from `Dog`, it will inherit the `makeNoise()` method. So, this will print “Woof!”:"
+        },
+        {
+            "code": "class Poodle: Dog {\n}\nlet poppy = Poodle()\npoppy.makeNoise()"
+        },
+        {
+            "text": "Method overriding allows us to change the implementation of `makeNoise()` for the `Poodle` class."
+        },
+        {
+            "text": "Swift requires us to use `override func` rather than just `func` when overriding a method – it stops you from overriding a method by accident, and you’ll get an error if you try to override something that doesn’t exist on the parent class:"
+        },
+        {
+            "code": "class Poodle: Dog {\n  override func makeNoise() {\n    print(\"Yip!\")\n  }\n}"
+        },
+        {
+            "text": "With that change, `poppy.makeNoise()` will print “Yip!” rather than “Woof!”."
+        }
+    ],
     "title": "Overriding methods",
     "postscript": "It\u2019s an error to override a method that doesn\u2019t exist in the parent class.",
     "reviewType": "singleSelection",
     "question": "This code will print some sort of output \u2013 true or false?",
-    "hint": "Subclasses must use <code>override<\/code> to change methods from their parents.",
+    "hint": "Subclasses must use `override` to change methods from their parents.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,11 +60,11 @@
     "wrong": [
         {
             "answer": "class Doctor {\n\tfunc operate() {\n\t\tprint(\"I can't do that.\")\n\t}\n}\nclass Surgeon {\n\toverride func operate() {\n\t\tprint(\"OK, let's go!\")\n\t}\n}\nlet doogieHowser = Doctor()\ndoogieHowser.operate()",
-            "reason": "The <code>Surgeon<\/code> class cannot use <code>override<\/code> because it doesn't inherit from anything."
+            "reason": "The `Surgeon` class cannot use `override` because it doesn't inherit from anything."
         },
         {
             "answer": "class Building {\n\toverride func build() {\n\t\tprint(\"This will take a couple of months.\")\n\t}\n}\nclass Skyscraper: Building {\n\toverride func build() {\n\t\tprint(\"This will take a year.\")\n\t}\n}\nlet shanghaiTower = Skyscraper()\nshanghaiTower.build()",
-            "reason": "The <code>Building<\/code> class cannot use <code>override<\/code> because it doesn't inherit from anything."
+            "reason": "The `Building` class cannot use `override` because it doesn't inherit from anything."
         },
         {
             "answer": "class Airplane: Jet {\n\tfunc takeOff() {\n\t\tprint(\"Fasten your seatbelts.\")\n\t}\n}\nclass Jet: Airplane {\n\toverride func takeOff() {\n\t\tprint(\"Someone call Kenny Loggins, because we're going into the danger zone!\")\n\t}\n}\nlet f14 = Jet()\nf14.takeOff()",
@@ -46,7 +72,7 @@
         },
         {
             "answer": "class Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your popcorn ready!\")\n\t}\n}\nclass IMAXCinema: Cinema {\n\tfunc showMovie() {\n\t\tprint(\"Get your eardrums ready!\")\n\t}\n}\nlet londonIMAX = IMAXCinema()\nlondonIMAX.showMovie()",
-            "reason": "The <code>showMovie()<\/code> method of <code>IMAXCinema<\/code> must be declared using <code>override<\/code>."
+            "reason": "The `showMovie()` method of `IMAXCinema` must be declared using `override`."
         },
         {
             "answer": "class Store {\n\tfunc restock() -> String {\n\t\treturn \"Fill up the empty shelves\"\n\t}\n}\nclass GroceryStore: Store {\n\toverride func restock() -> String {\n\t\treturn \"We need to buy more food.\"\n\t}\n}\nlet tesco = GroceryStore()\ntesco.restock()",

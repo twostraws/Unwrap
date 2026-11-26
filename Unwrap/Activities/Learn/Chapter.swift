@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 /// One chapter of Swift in Sixty Seconds.
 struct Chapter: Decodable {

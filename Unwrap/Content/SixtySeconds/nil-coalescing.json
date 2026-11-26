@@ -1,9 +1,29 @@
 {
+    "content": [
+        {
+            "text": "The nil coalescing operator unwraps an optional and returns the value inside if there is one. If there *isn’t* a value – if the optional was `nil` – then a default value is used instead. Either way, the result won’t be optional: it will either be the value from inside the optional or the default value used as a backup."
+        },
+        {
+            "text": "Here’s a function that accepts an integer as its only parameter and returns an optional string:"
+        },
+        {
+            "code": "func username(for id: Int) -> String? {\n  if id == 1 {\n    return \"Taylor Swift\"\n  } else {\n    return nil\n  }\n}"
+        },
+        {
+            "text": "If we call that with ID 15 we’ll get back `nil` because the user isn’t recognized, but with nil coalescing we can provide a default value of “Anonymous” like this:"
+        },
+        {
+            "code": "let user = username(for: 15) ?? \"Anonymous\""
+        },
+        {
+            "text": "That will check the result that comes back from the `username()` function: if it’s a string then it will be unwrapped and placed into `user`, but if it has `nil` inside then “Anonymous” will be used instead."
+        }
+    ],
     "title": "Nil coalescing",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code demonstrates using nil coalescing with optionals \u2013 true or false?",
-    "hint": "The data type on the left of <code>??<\/code> must be the same as the data type on the right.",
+    "hint": "The data type on the left of `??` must be the same as the data type on the right.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -50,11 +70,11 @@
         },
         {
             "answer": "var conferenceName: String? = \"WWDC\"\nvar conference: String = conferenceName ?? nil",
-            "reason": "This code could result in trying to assign <code>nil<\/code> to <code>conference<\/code>, which is not allowed."
+            "reason": "This code could result in trying to assign `nil` to `conference`, which is not allowed."
         },
         {
             "answer": "var bestPony: String? = \"Pinkie Pie\"\nlet selectedPony: String? == bestPony ?? nil",
-            "reason": "This code uses <code>==<\/code> rather than <code>=<\/code>."
+            "reason": "This code uses `==` rather than `=`."
         }
     ]
 }

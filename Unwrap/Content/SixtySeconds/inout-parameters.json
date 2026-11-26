@@ -1,17 +1,37 @@
 {
+    "content": [
+        {
+            "text": "All parameters passed into a Swift function are *constants*, so you can’t change them. If you want, you can pass in one or more parameters as `inout`, which means they can be changed inside your function, and those changes reflect in the original value outside the function."
+        },
+        {
+            "text": "For example, if you want to double a number in place – i.e., change the value directly rather than returning a new one – you might write a function like this:"
+        },
+        {
+            "code": "func doubleInPlace(number: inout Int) {\n  number *= 2\n}"
+        },
+        {
+            "text": "To use that, you first need to make a variable integer – you can’t use constant integers with `inout`, because they might be changed. You also need to pass the parameter to `doubleInPlace` using an ampersand, `&`, before its name, which is an explicit recognition that you’re aware it is being used as `inout`."
+        },
+        {
+            "text": "In code, you’d write this:"
+        },
+        {
+            "code": "var myNum = 10 \ndoubleInPlace(number: &myNum)"
+        }
+    ],
     "title": "inout parameters",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are true?",
-    "hint": "<code>inout<\/code> parameters must be marked in your function wherever those functions are called.",
+    "hint": "`inout` parameters must be marked in your function wherever those functions are called.",
     "syntaxHighlighting": false,
     "correct": [
         {
-            "answer": "Inout parameters are marked using the <code>inout<\/code> keyword.",
+            "answer": "Inout parameters are marked using the `inout` keyword.",
             "reason": "This statement is correct."
         },
         {
-            "answer": "Inout parameters must be passed in using <code>&<\/code>",
+            "answer": "Inout parameters must be passed in using `&`",
             "reason": "This statement is correct."
         },
         {
@@ -41,7 +61,7 @@
             "reason": "Inout parameters must be variable, so they can be changed."
         },
         {
-            "answer": "Inout parameters must be passed in using <code>#<\/code>",
+            "answer": "Inout parameters must be passed in using `#`",
             "reason": "This is invalid syntax in Swift."
         },
         {

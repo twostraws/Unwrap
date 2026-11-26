@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "Swift lets us use functions just like any other type such as strings and integers. This means you can create a function and assign it to a variable, call that function using that variable, and even pass that function into other functions as parameters."
+        },
+        {
+            "text": "Functions used in this way are called *closures*, and although they work like functions they are written a little differently."
+        },
+        {
+            "text": "Let’s start with a simple example that prints a message:"
+        },
+        {
+            "code": "let driving = {\n  print(\"I'm driving in my car\")\n}"
+        },
+        {
+            "text": "That effectively creates a function without a name, and assigns that function to `driving`. You can now call `driving()` as if it were a regular function, like this:"
+        },
+        {
+            "code": "driving()"
+        }
+    ],
     "title": "Creating basic closures",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,7 +54,7 @@
     "wrong": [
         {
             "answer": "let upgrade() = {\n\tprint(\"Upgrading...\")\n}\nupgrade()",
-            "reason": "The parentheses after <code>upgrade<\/code> should not be there.."
+            "reason": "The parentheses after `upgrade` should not be there.."
         },
         {
             "answer": "let sing {\n\tprint(\"Tralala\")\n}\nsing()",
@@ -42,15 +62,15 @@
         },
         {
             "answer": "takeCruise = {\n\tprint(\"A week of vacation!\")\n}",
-            "reason": "This needs either <code>let<\/code> or <code>var<\/code> before <code>takeCruise<\/code>."
+            "reason": "This needs either `let` or `var` before `takeCruise`."
         },
         {
             "answer": "var meetFriends = {\n\tprint(\"Let's watch a movie\")\n}\nmeetfriends()",
-            "reason": "Closure names are case-sensitive, and this attempts to call <code>meetfriends()<\/code> rather than <code>meetFriends()<\/code>."
+            "reason": "Closure names are case-sensitive, and this attempts to call `meetfriends()` rather than `meetFriends()`."
         },
         {
             "answer": "var paintPicture() {\n\tprint(\"Where are my watercolors?\")\n}",
-            "reason": "This should read <code>var paintPicture = {<\/code>."
+            "reason": "This should read `var paintPicture = {`."
         },
         {
             "answer": "var signAutograph(to name: String) = {\n\tprint(\"To \\(name), my #1 fan\")\n}\nsignAutograph(to: \"Lisa\")",

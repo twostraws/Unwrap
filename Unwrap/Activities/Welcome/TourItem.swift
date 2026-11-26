@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 /// Stores a single page of the app tour loaded from JSON.
 struct TourItem: Decodable {

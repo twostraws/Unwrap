@@ -1,60 +1,89 @@
 {
+    "content": [
+        {
+            "text": "The third way of writing loops is not commonly used, but it’s so simple to learn we might as well cover it: it’s called the `repeat` loop, and it’s identical to a `while` loop except the condition to check comes at the end."
+        },
+        {
+            "text": "So, we could rewrite our hide and seek example like this:"
+        },
+        {
+            "code": "var number = 1\nrepeat {\n  print(number)\n  number += 1\n} while number <= 20\nprint(\"Ready or not, here I come!\")"
+        },
+        {
+            "text": "Because the condition comes at the *end* of the `repeat` loop the code inside the loop will always be executed at least once, whereas `while` loops check their condition before their first run."
+        },
+        {
+            "text": "For example, this `print()` function will never be run, because `false` is always false:"
+        },
+        {
+            "code": "while false {\n  print(\"This is false\")\n}"
+        },
+        {
+            "text": "Xcode will even warn us that the `print()` line will never be executed."
+        },
+        {
+            "text": "On the other hand, this `print()` function will be run once, because `repeat` only fails the condition after the loop runs:"
+        },
+        {
+            "code": "repeat {\n  print(\"This is false\")\n} while false"
+        }
+    ],
     "title": "Repeat loops",
     "postscript": "",
     "reviewType": "singleSelection",
-    "question": "This is a valid <code>repeat<\/code> loop \u2013 true or false?",
+    "question": "This is a valid `repeat` loop \u2013 true or false?",
     "hint": "Watch out for text that is printed only when a condition is satisfied.",
     "syntaxHighlighting": true,
     "correct": [
         {
             "answer": "var bagels = 5\nrepeat {\n\tprint(\"Someone ate a bagel!\")\n\tbagels -= 1\n} while bagels > 0",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         },
         {
             "answer": "var encores = 0\nrepeat {\n\tprint(\"Let's play that piece again.\")\n\tencores += 1\n} while encores < 3",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         },
         {
             "answer": "var frogs = 4\nrepeat {\n\tfor _ in 1...frogs {\n\t\tprint(\"Ribbit!\")\n\t}\n} while false",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         },
         {
             "answer": "var scales = [\"A\", \"B\", \"C\", \"D\", \"E\"]\nvar scaleCounter = 0\nrepeat {\n\tprint(\"Play the \\(scales[scaleCounter]) scale\")\n\tscaleCounter += 1\n} while scaleCounter < 3",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         },
         {
             "answer": "var countdown: Int = 5\nrepeat {\n\tprint(\"\\(countdown)...\")\n\tcountdown -= 1\n} while countdown > 0\nprint(\"Lift off!\")",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         },
         {
             "answer": "var number = 0\nrepeat {\n\tnumber += 2\n\tprint(\"\\(number) is an even number.\")\n} while number < 20",
-            "reason": "This is a valid <code>repeat<\/code> repeat loop."
+            "reason": "This is a valid `repeat` repeat loop."
         }
     ],
     "wrong": [
         {
             "answer": "let people = 0\nrepeat {\n\tpeople += 1\n\tprint(\"There's space another person\")\n} while people < 10\nprint(\"We're full!\")",
-            "reason": "This attempts to modify <code>people<\/code>, but it has been declared as a constant."
+            "reason": "This attempts to modify `people`, but it has been declared as a constant."
         },
         {
             "answer": "for i in 1...10 {\n\tprint(\"\\(i)...\")\n}\nprint(\"Ready or not, here I come!\")",
-            "reason": "This is a <code>for<\/code> loop, not a <code>repeat<\/code> loop"
+            "reason": "This is a `for` loop, not a `repeat` loop"
         },
         {
             "answer": "var days = 365\nwhile days {\n\tprint(\"There are \\(days) until my birthday!\")\n\tdays -= 1\n}",
-            "reason": "This is a <code>while<\/code> loop, not a <code>repeat<\/code> loop"
+            "reason": "This is a `while` loop, not a `repeat` loop"
         },
         {
             "answer": "var doubles = 0\nvar value = 1\nwhile {\n\tdoubles += 1\n\tvalue *= 2\n\tprint(\"Value is \\(value)\")\n} repeat doubles < 10",
-            "reason": "This is a <code>while<\/code> loop, not a <code>repeat<\/code> loop"
+            "reason": "This is a `while` loop, not a `repeat` loop"
         },
         {
             "answer": "var testRuns = 0\nrepeat while testRuns < 10 {\n\tprint(\"Testing!\")\n\ttestRuns += 1\n}",
-            "reason": "Swift has <code>repeat<\/code> loops and <code>while<\/code> loops, but you can't combine them together into <code>repeat while<\/code>."
+            "reason": "Swift has `repeat` loops and `while` loops, but you can't combine them together into `repeat while`."
         },
         {
             "answer": "let partyBags = 20\nrepeat {\n\tprint(\"Here's your party bag\")\n\tpartyBags -= 1\n} while partyBags > 0",
-            "reason": "This attempts to modify <code>partyBags<\/code>, but it has been declared as a constant."
+            "reason": "This attempts to modify `partyBags`, but it has been declared as a constant."
         }
     ]
 }

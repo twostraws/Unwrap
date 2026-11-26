@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "Sometimes you need to be able to assign values to enums so they have meaning. This lets you create them dynamically, and also use them in different ways."
+        },
+        {
+            "text": "For example, you might create a `Planet` enum that stores integer values for each of its cases:"
+        },
+        {
+            "code": "enum Planet: Int {\n  case mercury\n  case venus\n  case earth\n  case mars\n}"
+        },
+        {
+            "text": "Swift will automatically assign each of those a number starting from 0, and you can use that number to create an instance of the appropriate enum case. For example, `earth` will be given the number 2, so you can write this:"
+        },
+        {
+            "code": "let earth = Planet(rawValue: 2)"
+        },
+        {
+            "text": "If you want, you can assign one or more cases a specific value, and Swift will generate the rest. It’s not very natural for us to think of Earth as the second planet, so you could write this:"
+        },
+        {
+            "code": "enum Planet: Int {\n  case mercury = 1\n  case venus\n  case earth\n  case mars\n}"
+        },
+        {
+            "text": "Now Swift will assign 1 to `mercury` and count upwards from there, meaning that `earth` is now the third planet."
+        }
+    ],
     "title": "Enum raw values",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -8,7 +34,7 @@
     "correct": [
         {
             "answer": "Raw values let us give meaning to enum cases.",
-            "reason": "They let us say that <code>earth<\/code> has an underlying value of 3, for example."
+            "reason": "They let us say that `earth` has an underlying value of 3, for example."
         },
         {
             "answer": "Raw values let us create enum values dynamically.",

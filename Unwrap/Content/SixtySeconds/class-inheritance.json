@@ -1,4 +1,33 @@
 {
+    "content": [
+        {
+            "text": "The second difference between classes and structs is that you can create a class based on an existing class – it inherits all the properties and methods of the original class, and can add its own on top."
+        },
+        {
+            "text": "This is called *class inheritance* or *subclassing*, the class you inherit from is called the “parent” or “super” class, and the new class is called the “child” class."
+        },
+        {
+            "text": "Here’s the `Dog` class we just created:"
+        },
+        {
+            "code": "class Dog {\n  var name: String\n  var breed: String\n  init(name: String, breed: String) {\n    self.name = name\n    self.breed = breed\n  }\n}"
+        },
+        {
+            "text": "We could create a new class based on that one called `Poodle`. It will inherit the same properties and initializer as `Dog` by default:"
+        },
+        {
+            "code": "class Poodle: Dog {\n}"
+        },
+        {
+            "text": "However, we can also give `Poodle` its own initializer. We know it will always have the breed “Poodle”, so we can make a new initializer that only needs a `name` property. Even better, we can make the `Poodle` initializer call the `Dog` initializer directly so that all the same setup happens:"
+        },
+        {
+            "code": "class Poodle: Dog {\n  init(name: String) {\n    super.init(name: name, breed: \"Poodle\")\n  }\n}"
+        },
+        {
+            "text": "For safety reasons, Swift always makes you call `super.init()` from child classes – just in case the parent class does some important work when it’s created."
+        }
+    ],
     "title": "Class inheritance",
     "postscript": "Your classes may inherit from only one parent.",
     "reviewType": "singleSelection",
@@ -8,27 +37,27 @@
     "correct": [
         {
             "answer": "class Bicycle {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t}\n}\nclass MountainBike: Bicycle {\n\tvar tireThickness: Double\n\tinit(color: String, tireThickness: Double) {\n\t\tself.tireThickness = tireThickness\n\t\tsuper.init(color: color)\n\t}\n}",
-            "reason": "This shows the class <code>MountainBike<\/code> inheriting from <code>Bicycle<\/code>."
+            "reason": "This shows the class `MountainBike` inheriting from `Bicycle`."
         },
         {
             "answer": "class Printer {\n\tvar cost: Int\n\tinit(cost: Int) {\n\t\tself.cost = cost\n\t}\n}\nclass LaserPrinter: Printer {\n\tvar model: String\n\tinit(model: String, cost: Int) {\n\t\tself.model = model\n\t\tsuper.init(cost: cost)\n\t}\n}",
-            "reason": "This shows the class <code>LaserPrinter<\/code> inheriting from <code>Printer<\/code>."
+            "reason": "This shows the class `LaserPrinter` inheriting from `Printer`."
         },
         {
             "answer": "class Product {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Book: Product {\n\tvar isbn: String\n\tinit(name: String, isbn: String) {\n\t\tself.isbn = isbn\n\t\tsuper.init(name: name)\n\t}\n}",
-            "reason": "This shows the class <code>Book<\/code> inheriting from <code>Product<\/code>."
+            "reason": "This shows the class `Book` inheriting from `Product`."
         },
         {
             "answer": "class Shape {\n\tvar sides: Int\n\tinit(sides: Int) {\n\t\tself.sides = sides\n\t}\n}\nclass Rectangle: Shape {\n\tvar color: String\n\tinit(color: String) {\n\t\tself.color = color\n\t\tsuper.init(sides: 4)\n\t}\n}",
-            "reason": "This shows the class <code>Rectangle<\/code> inheriting from <code>Shape<\/code>."
+            "reason": "This shows the class `Rectangle` inheriting from `Shape`."
         },
         {
             "answer": "class Instrument {\n\tvar name: String\n\tinit(name: String) {\n\t\tself.name = name\n\t}\n}\nclass Piano: Instrument {\n\tvar isElectric: Bool\n\tinit(isElectric: Bool) {\n\t\tself.isElectric = isElectric\n\t\tsuper.init(name: \"Piano\")\n\t}\n}",
-            "reason": "This shows the class <code>Piano<\/code> inheriting from <code>Instrument<\/code>."
+            "reason": "This shows the class `Piano` inheriting from `Instrument`."
         },
         {
             "answer": "class Handbag {\n\tvar price: Int\n\tinit(price: Int) {\n\t\tself.price = price\n\t}\n}\nclass DesignerHandbag: Handbag {\n\tvar brand: String\n\tinit(brand: String, price: Int) {\n\t\tself.brand = brand\n\t\tsuper.init(price: price)\n\t}\n}",
-            "reason": "This shows the class <code>DesignerHandbag<\/code> inheriting from <code>Handbag<\/code>."
+            "reason": "This shows the class `DesignerHandbag` inheriting from `Handbag`."
         }
     ],
     "wrong": [
@@ -42,19 +71,19 @@
         },
         {
             "answer": "class Student {\n\tvar name: String\n}\nclass UniversityStudent: Student {\n\tvar annualFees: Int\n\tinit(name: String, annualFees: Int) {\n\t\tself.annualFees = annualFees\n\t\tsuper.init(name: name)\n\t}\n}",
-            "reason": "The <code>Student<\/code> class is missing an initializer."
+            "reason": "The `Student` class is missing an initializer."
         },
         {
             "answer": "class Food {\n\tvar name: String\n\tvar nutritionRating: Int\n\tsuper init(name: String, nutritionRating: Int) {\n\t\tself.name = name\n\t\tself.nutritionRating = nutritionRating\n\t}\n}\nclass Pizza: Food {\n\tinit() {\n\t\tsuper.init(name: \"Pizza\", nutritionRating: 3)\n\t}\n}",
-            "reason": "Using <code>super init<\/code> as two keywords is not allowed."
+            "reason": "Using `super init` as two keywords is not allowed."
         },
         {
             "answer": "class Vehicle {\n\tvar wheels: Int\n\tinit(wheels: Int) {\n\t\tself.wheels = wheels\n\t}\n}\nclass Truck: Vehicle {\n\tvar goodsCapacity: Int\n\tinit(wheels: Int, goodsCapacity: Int) {\n\t\tself.goodsCapacity = goodsCapacity\n\t\tsuper.init()\n\t}\n}",
-            "reason": "The <code>Truck<\/code> class must call the <code>Vehicle<\/code> initializer at some point."
+            "reason": "The `Truck` class must call the `Vehicle` initializer at some point."
         },
         {
             "answer": "class Computer {\n\tvar cpu: String\n\tvar ramGB: Int\n\tinit(cpu: String, ramGB: Int) {\n\t\tcpu = cpu\n\t\tramGB = ramGB\n\t}\n}\nclass Laptop: Computer {\n\tvar screenInches: Int\n\tinit(screenInches: Int, cpu: String, ramGB: Int) {\n\t\tself.screenInches = screenInches\n\t\tsuper.init(cpu: cpu, ramGB: ramGB)\n\t}\n}",
-            "reason": "The <code>Computer<\/code> initializer must use <code>self.<\/code> to distinguish its properties from the parameters that get passed in."
+            "reason": "The `Computer` initializer must use `self.` to distinguish its properties from the parameters that get passed in."
         }
     ]
 }

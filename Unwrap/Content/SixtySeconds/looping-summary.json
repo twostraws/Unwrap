@@ -1,9 +1,26 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the fourth part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Loops let us repeat code until a condition is false.",
+                "The most common loop is `for`, which assigns each item inside the loop to a temporary constant.",
+                "If you don’t need the temporary constant that `for` loops give you, use an underscore instead so Swift can skip that work.",
+                "There are `while` loops, which you provide with an explicit condition to check.",
+                "Although they are similar to `while` loops, `repeat` loops always run the body of their loop at least once.",
+                "You can exit a single loop using `break`, but if you have nested loops you need to use `break` followed by whatever label you placed before your outer loop.",
+                "You can skip items in a loop using `continue`.",
+                "Infinite loops don’t end until you ask them to, and are made using `while true`. Make sure you have a condition somewhere to end your infinite loops!"
+            ]
+        }
+    ],
     "title": "Looping: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
-    "hint": "Infinite loops are commonly made using <code>while true<\/code> but other conditions can also work.",
+    "hint": "Infinite loops are commonly made using `while true` but other conditions can also work.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,7 +51,7 @@
     "wrong": [
         {
             "answer": "for in 1...3 {\n\tprint(\"There's no place like home\")\n}",
-            "reason": "This is missing a name between <code>for<\/code> and <code>in<\/code>"
+            "reason": "This is missing a name between `for` and `in`"
         },
         {
             "answer": "for number in (2, 3, 5) {\n\tprint(\"\\(number) is a prime number.\")\n}",
@@ -42,19 +59,19 @@
         },
         {
             "answer": "outer: for i in 1...10 {\n\tfor i in 1...10 {\n\t\tlet product = i * j\n\t\tprint(\"Product is \\(product)\")\n\t\tbreak outer\n\t}\n}",
-            "reason": "<code>j<\/code> is not defined; <code>i<\/code> is used twice."
+            "reason": "`j` is not defined; `i` is used twice."
         },
         {
             "answer": "var booksToRead = 0\nwhile booksToRead {\n\tprint(\"You still have books to read!\")\n}",
-            "reason": "<code>while booksToRead<\/code> is an invalid condition; it should probably be <code>while booksToRead > 0<\/code>."
+            "reason": "`while booksToRead` is an invalid condition; it should probably be `while booksToRead > 0`."
         },
         {
             "answer": "var username = \"twostraws\"\nrepeat {\n\tprint(\"Your username is \\(username)\")\n} while username",
-            "reason": "<code>while username<\/code> is an invalid condition."
+            "reason": "`while username` is an invalid condition."
         },
         {
             "answer": "var population = 7_500_000_000\nrepeat {\n\tprint(\"More babies have been born.\")\n\tpopulation *= 1.0001\n} while true",
-            "reason": "This attempts to multiply an <code>Int<\/code> by a <code>Double<\/code>."
+            "reason": "This attempts to multiply an `Int` by a `Double`."
         }
     ]
 }

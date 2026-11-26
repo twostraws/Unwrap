@@ -6,11 +6,15 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 extension URL {
     /// A simple initializer that creates URLs that are hard-coded.
     init(staticString: String) {
-        self.init(string: staticString)!
+        guard let url = URL(string: staticString) else {
+            preconditionFailure("Invalid static URL: \(staticString)")
+        }
+
+        self = url
     }
 }

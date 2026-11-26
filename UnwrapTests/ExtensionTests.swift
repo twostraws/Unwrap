@@ -13,25 +13,16 @@ import Testing
 
 @Suite("String and date extensions")
 struct ExtensionTests {
+    // Swift Testing evaluates parameterized arguments outside the main actor
+    // while registering tests, so these fixture values must be nonisolated.
     nonisolated struct SameDayExpectation {
         let timeInterval: TimeInterval
-        let expectedResult: Bool
-    }
-
-    nonisolated struct StringBooleanExpectation {
-        let input: String
         let expectedResult: Bool
     }
 
     nonisolated struct StringCountExpectation {
         let input: String
         let expectedCount: Int
-    }
-
-    nonisolated struct LineDifferenceExpectation {
-        let source: String
-        let comparison: String
-        let expectedLine: Int
     }
 
     nonisolated struct StringTransformationExpectation {
@@ -45,43 +36,10 @@ struct ExtensionTests {
             SameDayExpectation(timeInterval: 100_000, expectedResult: false)
         ]
 
-        static let vowelExpectations = [
-            StringBooleanExpectation(input: "Andrew", expectedResult: true),
-            StringBooleanExpectation(input: "Olivia", expectedResult: true),
-            StringBooleanExpectation(input: "ETHAN", expectedResult: true),
-            StringBooleanExpectation(input: "URSULA", expectedResult: true),
-            StringBooleanExpectation(input: "Chris", expectedResult: false),
-            StringBooleanExpectation(input: "CHARLOTTE", expectedResult: false),
-            StringBooleanExpectation(input: "Mark", expectedResult: false),
-            StringBooleanExpectation(input: "SOPHIE", expectedResult: false)
-        ]
-
         static let lineCountExpectations = [
             StringCountExpectation(input: "Hello", expectedCount: 1),
             StringCountExpectation(input: "Hello\nworld", expectedCount: 2),
             StringCountExpectation(input: "Hello\ndarkness\nmy\nold\nfriend", expectedCount: 5)
-        ]
-
-        static let lineDifferenceExpectations = [
-            LineDifferenceExpectation(
-                source: "This\nis\na\ntest",
-                comparison: "This\nis\na\nmess",
-                expectedLine: 3
-            ),
-            LineDifferenceExpectation(
-                source: "This\nis\na\ntest",
-                comparison: "This\nis\na\ntest",
-                expectedLine: -1
-            )
-        ]
-
-        static let variableFormattingExpectations = [
-            StringTransformationExpectation(
-                input: "Number of cars", expectedOutput: "numberOfCars"),
-            StringTransformationExpectation(
-                input: "MY NAME IS INIGO MONTOYA", expectedOutput: "myNameIsInigoMontoya"),
-            StringTransformationExpectation(
-                input: "You Fight Like A Dairy Farmer", expectedOutput: "youFightLikeADairyFarmer")
         ]
 
         static let anonymizationExpectations = [
@@ -232,25 +190,9 @@ struct ExtensionTests {
         #expect(date.days(between: futureDate) == dayCount)
     }
 
-    @Test("Starting-vowel detection", arguments: Fixtures.vowelExpectations)
-    func vowels(expectation: StringBooleanExpectation) {
-        #expect(expectation.input.startsWithVowel == expectation.expectedResult)
-    }
-
     @Test("Splitting strings into lines", arguments: Fixtures.lineCountExpectations)
     func stringLines(expectation: StringCountExpectation) {
         #expect(expectation.input.lines.count == expectation.expectedCount)
-    }
-
-    @Test("Finding the first different line", arguments: Fixtures.lineDifferenceExpectations)
-    func lineDifference(expectation: LineDifferenceExpectation) {
-        #expect(
-            expectation.source.lineDiff(from: expectation.comparison) == expectation.expectedLine)
-    }
-
-    @Test("Formatting variable names", arguments: Fixtures.variableFormattingExpectations)
-    func variableFormatting(expectation: StringTransformationExpectation) {
-        #expect(expectation.input.formatAsVariable() == expectation.expectedOutput)
     }
 
     @Test("Anonymizing and homogenizing code", arguments: Fixtures.anonymizationExpectations)

@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "As well as receiving data, functions can also send back data. To do this, write a dash then a right angle bracket after your function’s parameter list, then tell Swift what kind of data will be returned."
+        },
+        {
+            "text": "Inside your function, you use the `return` keyword to send a value back if you have one. Your function then immediately exits, sending back that value – no other code from that function will be run."
+        },
+        {
+            "text": "We could rewrite our `square()` function to return a value rather than print it directly:"
+        },
+        {
+            "code": "func square(number: Int) -> Int {\n  return number * number\n}"
+        },
+        {
+            "text": "Now we can grab that return value when the function is run, and print it there:"
+        },
+        {
+            "code": "let result = square(number: 8)\nprint(result)"
+        },
+        {
+            "text": "If you need to return multiple values, this is a perfect example of when to use tuples."
+        }
+    ],
     "title": "Returning values",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -42,7 +65,7 @@
         },
         {
             "answer": "func playPiano(song: String) -> String {\n\tretrurn \"I'm going to play \\(song) on my piano.\"\n}",
-            "reason": "This has a typo – it should read <code>return<\/code> rather than <code>retrurn<\/code>."
+            "reason": "This has a typo – it should read `return` rather than `retrurn`."
         },
         {
             "answer": "func estimateCost(units: Int) -> Int {\n\tswitch units {\n\tcase 0...10:\n\t\treturn \"\\(units * 10)\"\n\tcase 11...50:\n\t\treturn \"\\(units * 9)\"\n\tcase 51...100:\n\t\treturn \"\\(units * 8)\"\n\tdefault:\n\t\treturn \"We can't make that many.\"\n\t}\n}",
@@ -50,7 +73,7 @@
         },
         {
             "answer": "func paintHouse(color: String) -> Bool {\n\tif color == \"tartan\" {\n\t\treturn false\n\t}\n}",
-            "reason": "This does not return a value if <code>color<\/code> is not \"tartan\"."
+            "reason": "This does not return a value if `color` is not \"tartan\"."
         },
         {
             "answer": "func giveDog(food: String) -> String {\n\tif food == \"treat\" {\n\t\t\"The dog ate it\"\n\t} else {\n\t\t\"The dog stared in disgust\"\n\t}\n}",

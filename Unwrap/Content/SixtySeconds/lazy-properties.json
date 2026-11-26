@@ -1,4 +1,30 @@
 {
+    "content": [
+        {
+            "text": "As a performance optimization, Swift lets you create some properties only when they are needed. As an example, consider this `FamilyTree` struct – it doesn’t do much, but in theory creating a family tree for someone takes a long time:"
+        },
+        {
+            "code": "struct FamilyTree {\n  init() {\n    print(\"Creating family tree!\")\n  }\n}"
+        },
+        {
+            "text": "We might use that `FamilyTree` struct as a property inside a `Person` struct, like this:"
+        },
+        {
+            "code": "struct Person {\n  var name: String\n  var familyTree = FamilyTree()\n  init(name: String) {\n    self.name = name\n  }\n}\nvar ed = Person(name: \"Ed\")"
+        },
+        {
+            "text": "But what if we didn’t always need the family tree for a particular person? If we add the `lazy` keyword to the `familyTree` property, then Swift will only create the `FamilyTree` struct when it’s first accessed:"
+        },
+        {
+            "code": "lazy var familyTree = FamilyTree()"
+        },
+        {
+            "text": "So, if you want to see the “Creating family tree!” message, you need to access the property at least once:"
+        },
+        {
+            "code": "ed.familyTree"
+        }
+    ],
     "title": "Lazy properties",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -15,7 +41,7 @@
             "reason": "This can help keep your code more organized."
         },
         {
-            "answer": "Lazy properties are created using the <code>lazy<\/code> keyword.",
+            "answer": "Lazy properties are created using the `lazy` keyword.",
             "reason": "This statement is correct."
         },
         {
@@ -49,8 +75,8 @@
             "reason": "Lazy properties are quite different from property observers."
         },
         {
-            "answer": "Lazy properties must be created using <code>self<\/code>",
-            "reason": "They are created using <code>lazy<\/code>."
+            "answer": "Lazy properties must be created using `self`",
+            "reason": "They are created using `lazy`."
         },
         {
             "answer": "Lazy properties can use trailing closure syntax.",

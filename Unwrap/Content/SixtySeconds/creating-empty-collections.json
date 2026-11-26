@@ -1,9 +1,47 @@
 {
+    "content": [
+        {
+            "text": "Arrays, sets, and dictionaries are called *collections*, because they collect values together in one place."
+        },
+        {
+            "text": "If you want to create an *empty* collection just write its type followed by opening and closing parentheses. For example, we can create an empty dictionary with strings for keys and values like this:"
+        },
+        {
+            "code": "var teams = [String: String]()"
+        },
+        {
+            "text": "We can then add entries later on, like this:"
+        },
+        {
+            "code": "teams[\"Paul\"] = \"Red\""
+        },
+        {
+            "text": "Similarly, you can create an empty array to store integers like this:"
+        },
+        {
+            "code": "var results = [Int]()"
+        },
+        {
+            "text": "The  exception is creating an empty set, which is done differently:"
+        },
+        {
+            "code": "var words = Set<String>()\nvar numbers = Set<Int>()"
+        },
+        {
+            "text": "This is because Swift has special syntax only for dictionaries and arrays; other types must use angle bracket syntax like sets."
+        },
+        {
+            "text": "If you wanted, you could create arrays and dictionaries with similar syntax:"
+        },
+        {
+            "code": "var scores = Dictionary<String, Int>()\nvar results = Array<Int>()"
+        }
+    ],
     "title": "Creating empty collections",
     "postscript": "",
     "reviewType": "multipleSelection",
     "question": "Which of these are valid in Swift?",
-    "hint": "Arrays and dictionaries can be made in two different ways, for example <code>[Int]<\/code> or <code>Array<Int><\/code> both create arrays.",
+    "hint": "Arrays and dictionaries can be made in two different ways, for example `[Int]` or `Array<Int>` both create arrays.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -38,7 +76,7 @@
         },
         {
             "answer": "var mountainHeights = [String, Int]()",
-            "reason": "The correct syntax is <code>[String: Int]<\/code>."
+            "reason": "The correct syntax is `[String: Int]`."
         },
         {
             "answer": "var episodeNames = Array()",
@@ -46,11 +84,11 @@
         },
         {
             "answer": "var measurements = [Double]",
-            "reason": "When creating a new empty array you must place empty parentheses after the type, e.g. <code>[Double]()<\/code>."
+            "reason": "When creating a new empty array you must place empty parentheses after the type, e.g. `[Double]()`."
         },
         {
             "answer": "var wines = Dictionary<String: String>()",
-            "reason": "The correct syntax is either <code>Dictionary<String, String>()<\/code> or <code>[String: String]()<\/code>."
+            "reason": "The correct syntax is either `Dictionary<String, String>()` or `[String: String]()`."
         },
         {
             "answer": "var badges = Set<>()",

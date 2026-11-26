@@ -1,4 +1,18 @@
 {
+    "content": [
+        {
+            "text": "Although class inheritance is very useful – and in fact large parts of Apple’s platforms require you to use it – sometimes you want to disallow other developers from building their own class based on yours."
+        },
+        {
+            "text": "Swift gives us a `final` keyword just for this purpose: when you declare a class as being final, no other class can inherit from it. This means they can’t override your methods in order to change your behavior – they need to use your class the way it was written."
+        },
+        {
+            "text": "To make a class final just put the `final` keyword before it, like this:"
+        },
+        {
+            "code": "final class Dog {\n  var name: String\n  var breed: String\n  init(name: String, breed: String) {\n    self.name = name\n    self.breed = breed\n  }\n}"
+        }
+    ],
     "title": "Final classes",
     "postscript": "",
     "reviewType": "singleSelection",

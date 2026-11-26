@@ -6,13 +6,14 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
+import Foundation
 import Testing
 @testable import Unwrap
 
 /// Tests that practice activities work correctly.
 @Suite("Practice activities", .serialized)
 struct PracticeTests {
-    nonisolated enum FreeCodingExercise: CaseIterable {
+    enum FreeCodingExercise: CaseIterable {
         case stringComparison
         case evenNumbers
         case countingValues
@@ -20,19 +21,21 @@ struct PracticeTests {
         case filteringNames
     }
 
-    @Test("Free Coding answer banks", arguments: FreeCodingExercise.allCases)
-    func freeCoding(exercise: FreeCodingExercise) {
-        switch exercise {
-        case .stringComparison:
-            checkStringComparisonAnswers()
-        case .evenNumbers:
-            checkEvenNumberAnswers()
-        case .countingValues:
-            checkCountingValueAnswers()
-        case .propertyObservers:
-            checkPropertyObserverAnswers()
-        case .filteringNames:
-            checkFilteringNameAnswers()
+    @Test("Free Coding answer banks preserve their accepted and rejected examples")
+    func freeCodingAnswerBanks() {
+        for exercise in FreeCodingExercise.allCases {
+            switch exercise {
+            case .stringComparison:
+                checkStringComparisonAnswers()
+            case .evenNumbers:
+                checkEvenNumberAnswers()
+            case .countingValues:
+                checkCountingValueAnswers()
+            case .propertyObservers:
+                checkPropertyObserverAnswers()
+            case .filteringNames:
+                checkFilteringNameAnswers()
+            }
         }
     }
 }
@@ -40,8 +43,7 @@ struct PracticeTests {
 extension PracticeTests {
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
     private func checkStringComparisonAnswers() {
-        let question = "Write a function that accepts two strings and returns true if they are both the same regardless of what letter case they use."
-        let answers = [
+        let acceptedAnswers = [
             "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.lowercased() == input2.lowercased()\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nreturn input1.uppercased() == input2.uppercased()\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
@@ -51,8 +53,6 @@ extension PracticeTests {
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.lowercased() == input2.lowercased(){\nreturn true\n}\nreturn false\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nif input1.uppercased() == input2.uppercased(){\nreturn true\n}\nreturn false\n}"
         ]
-
-        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "func compare(string1 str: String, against other: String) -> Bool {\nreturn str.lowercased() == other.lowercased()\n}",
@@ -88,21 +88,20 @@ extension PracticeTests {
 
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
     private func checkEvenNumberAnswers() {
-        let question = "Write code that loops from 1 through 100 to create an array of all even numbers."
-        let answers = [
+        let acceptedAnswers = [
             "var even1:[Int] = [Int]()\nfor i in 1...100 {\n\tif i % 2 == 0 {\n\t\teven1.append(i)\n\t}\n}",
             "var even2:[Int] = [Int]()\nfor i in 1...100 {\n\tletvar remainder = i % 2\n\tif remainder == 0 {\n\t\teven2.append(i)\n\t}\n}",
             "var even3:[Int] = [Int]()\nfor i in 1..<101 {\n\tif i % 2 == 0 {\n\t\teven3.append(i)\n\t}\n}",
@@ -117,8 +116,6 @@ extension PracticeTests {
             "letvar even9:[Int] = (1..<101).filter { num in num % 2 == 0 }",
             "letvar even9:[Int] = (1..<101).filter { num in return num % 2 == 0 }"
         ]
-
-        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "let evens = (1...100).filter { someNumber in return someNumber % 2 == 0 }",
@@ -148,13 +145,13 @@ extension PracticeTests {
 
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
@@ -163,8 +160,7 @@ extension PracticeTests {
 extension PracticeTests {
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
     private func checkCountingValueAnswers() {
-        let question = "Write code that goes over this array, counting the number of times it contains the number 5, then printing that total."
-        let answers = [
+        let acceptedAnswers = [
             "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal += 1\n}\n}\nprint(total)",
             "var total:Int = 0\nfor number in numbers{\nif number == 5{\ntotal = total + 1\n}\n}\nprint(total)",
             "letvar filtered:[Int] = numbers.filter{$0 == 5}\nprint(filtered.count)",
@@ -181,8 +177,6 @@ extension PracticeTests {
             "letvar total:Int = numbers.filter{num in\nnum == 5\n}.count\nprint(total)",
             "var count = 0\nfor index in 0..<numbers.count {\nif numbers[index] == 5 {\ncount += 1\n}\n}\nprint(count)"
         ]
-
-        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "let counter = numbers.filter{return $0 == 5}.count\nprint(counter)",
@@ -211,28 +205,25 @@ extension PracticeTests {
 
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
     private func checkPropertyObserverAnswers() {
-        let question = "Create a <code>Player</code> struct with a <code>score</code> integer property that has a property observer so that whenever the score has changed it prints \"The score is now\" followed by the new score value."
-        let answers = [
+        let acceptedAnswers = [
             "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
             "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}",
             "struct Player {\n\tletvar score: Int {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}",
             "struct Player {\n\tletvar score: Int = 0 {\n\t\tdidSet {\n\t\t\tprint(\"The score is now \\(score).\")\n\t\t}\n\t}\n}"
         ]
-
-        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "struct Player\n{\n\tvar score: Int = 0\n\t{\n\t\tdidSet\n\t\t{\n\t\t\tprint(\"The score is now \\(score)\")\n\t\t}\n\t}\n}"
@@ -245,21 +236,20 @@ extension PracticeTests {
 
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
 
     /// Compares various correct answers against a known question to make sure Free Coding is stable.
     private func checkFilteringNameAnswers() {
-        let question = "Write code that creates an array containing all the people with the first name Terry."
-        let answers = [
+        let acceptedAnswers = [
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.split(separator: \" \")[0] == \"Terry\" {\n\t\tparsed.append(name)\n\t}\n}",
             "letvar parsed2:[String] = names.filter{return $0.hasPrefix(\"Terry\")}",
@@ -273,8 +263,6 @@ extension PracticeTests {
             "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].hasPrefix(\"Terry\") {\n\t\tresult.append(name)\n\t}\n}\n",
             "var result:[String] = [String]()\nfor i in 0..<names.count{\n\tif names[i].split(separator: \" \")[0] == \"Terry\" {\n\t\tresult.append(name)\n\t}\n}\n"
         ]
-
-        let test = FreeCodingPractice(question: question, hint: "", startingCode: "", answers: answers)
 
         let correctAnswers = [
             "var parsed:[String] = [String]()\nfor name in names {\n\tif name.hasPrefix(\"Terry\") {\n\t\tparsed.append(name)\n\t}\n}",
@@ -307,71 +295,26 @@ extension PracticeTests {
 
         // Make sure all correct answers assert true.
         for answer in correctAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(result.isCorrect, "This answer should be correct: \(answer)")
         }
 
         // Make sure all wrong answers assert false.
         for answer in wrongAnswers {
-            let result = test.check(answer: answer)
+            let result = evaluate(answer, acceptedAnswers: acceptedAnswers)
             #expect(!result.isCorrect, "This answer should be wrong: \(answer).")
         }
     }
-}
 
-extension PracticeTests {
-    /// Generates a variety of Predict the Output practice questions so we give everything a thorough going over.
-    @Test("Generated Predict the Output answers validate", arguments: 1...100)
-    func predictTheOutput(iteration: Int) {
-        let test = PredictTheOutputPractice()
-
-        #expect(
-            test.answerIsCorrect(test.answer),
-            "Generated answer \(iteration) should validate against itself."
+    private func evaluate(
+        _ answer: String,
+        startingCode: String = "",
+        acceptedAnswers: [String]
+    ) -> FreeCodingEvaluator.Evaluation {
+        FreeCodingEvaluator().evaluate(
+            answer: answer,
+            startingCode: startingCode,
+            acceptedAnswers: acceptedAnswers
         )
-    }
-
-    /// Generates a variety of Rearrange the Lines practice questions, checking both the original answer and the original answer minus whitespace.
-    @Test("Generated Rearrange the Lines answers tolerate whitespace", arguments: 1...100)
-    func rearrangeTheLines(iteration: Int) {
-        let test = RearrangeTheLinesPractice()
-        #expect(test.answerIsCorrect(test.code), "Generated answer \(iteration) should validate against itself.")
-
-        let adjustedCode = test.code.map { "\t" + $0 + "\t" }
-
-        #expect(
-            test.answerIsCorrect(adjustedCode),
-            "Whitespace should be ignored in generated answer \(iteration)."
-        )
-    }
-
-    /// Generates a variety of Spot the Error activities, ensuring each one returns something other than lineNumber being -1.
-    @Test("Generated Spot the Error questions contain an error", arguments: 1...100)
-    func spotTheError(iteration: Int) {
-        let test = SpotTheErrorPractice()
-
-        #expect(
-            test.lineNumber != -1,
-            "Generated question \(iteration) should contain \(test.error) in \(test.code)."
-        )
-    }
-
-    /// Generates a wide variety of tap to code examples, ensuring each one generates at least two test components.
-    @Test("Generated Tap to Code questions contain multiple components", arguments: 1...100)
-    func tapToCode(iteration: Int) {
-        let test = TapToCodePractice()
-
-        #expect(
-            test.components.count >= 2,
-            "Generated Tap to Code question \(iteration) should have at least two components."
-        )
-    }
-
-    /// Generates a huge variety of examples for our Type Checkere.
-    @Test("Generated Type Checker questions contain ten answers", arguments: 1...100)
-    func typeChecker(iteration: Int) {
-        let test = TypeCheckerPractice()
-
-        #expect(test.answers.count == 10, "Generated question \(iteration) should have exactly ten answers.")
     }
 }

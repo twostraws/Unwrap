@@ -1,6 +1,6 @@
 [
 	{
-		"question": "Make an integer called <code>RANDOM_INT_NAME</code> equal to RANDOM_SMALL_INT.",
+		"question": "Make an integer called `RANDOM_INT_NAME` equal to RANDOM_SMALL_INT.",
 		"existingCode": "",
 		"components": [
 			"CONSTANT_OR_VARIABLE",
@@ -12,7 +12,7 @@
 		]
 	},
 	{
-		"question": "Make a string called <code>RANDOM_STRING_NAME</code> equal to \"RANDOM_STRING_VALUE_0\".",
+		"question": "Make a string called `RANDOM_STRING_NAME` equal to \"RANDOM_STRING_VALUE_0\".",
 		"existingCode": "",
 		"components": [
 			"CONSTANT_OR_VARIABLE",
@@ -24,7 +24,7 @@
 		]
 	},
 	{
-		"question": "Write code to print out <code>RANDOM_STRING_NAME</code>.",
+		"question": "Write code to print out `RANDOM_STRING_NAME`.",
 		"existingCode": "CONSTANT_OR_VARIABLE NAME_0 = \"VALUE_0\"",
 		"components": [
 			"print",
@@ -138,7 +138,7 @@
         ]
     },
     {
-        "question": "Write code that creates an instance of the <code>earth</code> case.",
+        "question": "Write code that creates an instance of the `earth` case.",
         "existingCode": "enum Planet: Int {\n  case mercury\n  case venus\n  case earth\n}",
         "components": [
             "let",
@@ -153,7 +153,7 @@
         ]
     },
     {
-        "question": "Write code that creates an instance of the <code>singing</code> case.",
+        "question": "Write code that creates an instance of the `singing` case.",
         "existingCode": "enum Activity {\n  case walking\n  case talking\n  case singing(song: String)\n}",
         "components": [
             "let",
@@ -204,7 +204,7 @@
         ]
     },
     {
-        "question": "Create a new constant that subtracts <code>RANDOM_INT_NAME2</code> from <code>NAME_01</code>.",
+        "question": "Create a new constant that subtracts `RANDOM_INT_NAME2` from `NAME_01`.",
         "existingCode": "CONSTANT_OR_VARIABLE NAME_01 = RANDOM_SMALL_INT\nCONSTANT_OR_VARIABLE NAME_02 = RANDOM_SMALL_INT",
         "components": [
             "let",
@@ -230,7 +230,7 @@
         ]
     },
     {
-        "question": "Use the ternary operator to make <code>bothTrue</code> equal to true if both <code>RANDOM_BOOL_NAME</code> and <code>RANDOM_BOOL_NAME</code> are true.",
+        "question": "Use the ternary operator to make `bothTrue` equal to true if both `RANDOM_BOOL_NAME` and `RANDOM_BOOL_NAME` are true.",
         "existingCode": "CONSTANT_OR_VARIABLE NAME_0 = TRUE_OR_FALSE\nCONSTANT_OR_VARIABLE NAME_1 = TRUE_OR_FALSE",
         "components": [
             "CONSTANT_OR_VARIABLE",
@@ -245,7 +245,7 @@
         ]
     },
     {
-        "question": "Write code that sets <code>remainder</code> to 4.",
+        "question": "Write code that sets `remainder` to 4.",
         "existingCode": "CONSTANT_OR_VARIABLE RANDOM_INT_NAME = 9\nCONSTANT_OR_VARIABLE split = 5",
         "components": [
             "CONSTANT_OR_VARIABLE",
@@ -257,7 +257,7 @@
         ]
     },
     {
-        "question": "Write code that creates an empty dictionary called <code>RANDOM_STRING_NAME</code>.",
+        "question": "Write code that creates an empty dictionary called `RANDOM_STRING_NAME`.",
         "existingCode": "",
         "components": [
             "CONSTANT_OR_VARIABLE",

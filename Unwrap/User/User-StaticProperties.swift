@@ -6,11 +6,9 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 extension User {
-    static var current: User!
-
     /// How many points we award for fixed tasks.
     static let pointsForLearning = 100
     static let pointsForReviewing = 100

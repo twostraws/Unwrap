@@ -4,102 +4,146 @@
 //
 
 import Foundation
+import SwiftUI
 import Testing
-import UIKit
 @testable import Unwrap
 
-/// Verifies that the content shipped with the app is complete and internally consistent.
+/// Verifies that content shipped with the app remains complete and internally consistent.
 @Suite("Shipped content integrity")
 struct ContentIntegrityTests {
-    @Test("Tour content is complete")
-    func tourContent() throws {
-        let items = try decode([TourItem].self, from: "Tour.json")
+    private var bundle: Bundle {
+        .main
+    }
 
-        #expect(items.count == 6)
+    @Test("Tour content and source assets are complete")
+    func tourContent() throws {
+        let items = try bundle.decode([TourItem].self, from: "Tour.json")
+        let expectedImages = ["Tour1", "Tour2", "Tour3", "Tour4", "Tour5"]
+
+        #expect(items.count == 5)
+        #expect(items.map(\.image) == expectedImages)
         #expect(allUnique(items.map(\.title)))
         #expect(allUnique(items.map(\.image)))
 
+        let imageResources: [ImageResource] = [.tour1, .tour2, .tour3, .tour4, .tour5]
+        #expect(imageResources.count == expectedImages.count)
+
         for item in items {
-            #expect(!item.title.isEmpty)
-            #expect(!item.text.isEmpty)
-            #expect(!item.image.isEmpty)
-            #expect(UIImage(named: item.image, in: Bundle.main, compatibleWith: nil) != nil)
+            #expect(item.title.isEmpty == false)
+            #expect(item.text.isEmpty == false)
         }
     }
 
-    @Test("Help content has only supported actions")
+    @Test("Help content preserves its shipped order and supported actions")
     func helpContent() throws {
-        let items = try decode([HelpItem].self, from: "Help.json")
-        let supportedActions: Set<String> = ["", "showTour", "resetProgress"]
+        let items = try bundle.decode([HelpItem].self, from: "Help.json")
+        let expectedTitles = [
+            "Where to start",
+            "What are the points for?",
+            "Can I retake daily challenges?",
+            "Where can I report mistakes?",
+            "How can I take the tour again?",
+            "How can I reset my data?",
+            "About this app"
+        ]
+        let expectedActions = ["", "", "", "", "showTour", "resetProgress", ""]
 
-        #expect(items.count == 7)
+        #expect(items.map(\.title) == expectedTitles)
+        #expect(items.map(\.action) == expectedActions)
         #expect(allUnique(items.map(\.title)))
-
-        for item in items {
-            #expect(!item.title.isEmpty)
-            #expect(!item.text.isEmpty)
-            #expect(supportedActions.contains(item.action))
-        }
+        #expect(items.allSatisfy { $0.text.isEmpty == false })
     }
 
-    @Test("Glossary entries are complete and unique")
-    func glossaryContent() throws {
-        let entries = try decode([GlossaryEntry].self, from: "glossary.json")
-        let normalizedTerms = entries.map { $0.term.lowercased() }
+    @Test("Every Learn topic loads its native content, review, and video")
+    func learnContent() throws {
+        let titles = Unwrap.chapters.flatMap(\.sections)
 
-        #expect(entries.count == 144)
-        #expect(allUnique(normalizedTerms))
+        #expect(Unwrap.chapters.count == 11)
+        #expect(titles.count == 99)
+        #expect(allUnique(titles))
 
-        for entry in entries {
-            #expect(!entry.term.isEmpty)
-            #expect(!entry.description.isEmpty)
-        }
-    }
+        for title in titles {
+            let lesson = try Lesson(title: title, bundle: bundle)
 
-    @Test("Every chapter section has its media and a valid review")
-    func chapterContent() throws {
-        let chapters = try decode([Chapter].self, from: "Chapters.json")
-        let chapterNames = chapters.map(\.name)
-        let sections = chapters.flatMap(\.sections)
-        let sectionNames = sections.map(\.bundleName)
+            #expect(lesson.id == title.bundleName)
+            #expect(lesson.content.blocks.isEmpty == false)
+            #expect(lesson.review.title == title)
+            #expect(lesson.review.question.isEmpty == false)
+            #expect(lesson.review.hint.isEmpty == false)
+            #expect(lesson.review.correct.count == 6)
+            #expect(lesson.review.wrong.count == 6)
+            for block in lesson.content.blocks {
+                switch block {
+                case .text(let markdown), .code(let markdown):
+                    #expect(markdown.isEmpty == false)
+                case .bullets(let items), .numbered(let items):
+                    #expect(items.isEmpty == false)
+                    #expect(items.allSatisfy { $0.isEmpty == false })
+                }
+            }
 
-        #expect(chapters.count == 11)
-        #expect(sections.count == 99)
-        #expect(allUnique(chapterNames))
-        #expect(allUnique(sectionNames))
-
-        for chapter in chapters {
-            #expect(!chapter.name.isEmpty)
-            #expect(!chapter.sections.isEmpty)
-
-            for section in chapter.sections {
-                let bundleName = section.bundleName
-
-                #expect(resourceExists(named: "\(bundleName).html"))
-                #expect(resourceExists(named: "\(bundleName).json"))
-                #expect(resourceExists(named: "\(bundleName).png"))
-                #expect(resourceExists(named: "\(bundleName).mp4") == (bundleName != "where-now"))
-
-                let review = try decode(StudyReview.self, from: "\(bundleName).json")
-                validate(review: review, expectedTitle: section)
+            if lesson.id == "where-now" {
+                #expect(lesson.videoURL == nil)
+            } else {
+                let videoURL = try #require(lesson.videoURL)
+                #expect(videoURL.isFileURL)
+                #expect(try Data(contentsOf: videoURL).isEmpty == false)
             }
         }
     }
 
-    @Test("Practice question banks satisfy their runtime assumptions")
-    func practiceContent() throws {
-        try validateFreeCoding()
-        try validatePredictTheOutput()
-        try validateRearrangeTheLines()
-        try validateTapToCode()
-        try validateSpotTheError()
+    @Test("The shipped glossary is complete and alphabetically indexed")
+    func glossaryContent() throws {
+        let entries = try bundle.decode([LearnGlossaryEntry].self, from: "glossary.json")
+        let index = GlossaryIndex(entries: entries)
+        let normalizedTerms = entries.map { $0.term.lowercased() }
+
+        #expect(entries.count == 144)
+        #expect(allUnique(normalizedTerms))
+        #expect(entries.allSatisfy {
+            $0.term.isEmpty == false && $0.description.isEmpty == false
+        })
+        #expect(index.sections.flatMap(\.entries).count == entries.count)
+        #expect(index.sections.map(\.title) == index.sections.map(\.title).sorted())
     }
 
-    @Test("Badge rules point to valid criteria and assets")
+    /// The glossary preserves file order within each letter, so the bundled JSON must be sorted.
+    @Test("Glossary entries are alphabetical within each letter")
+    func glossaryOrder() throws {
+        let entries = try bundle.decode([LearnGlossaryEntry].self, from: "glossary.json")
+
+        for section in GlossaryIndex(entries: entries).sections {
+            let terms = section.entries.map(\.term)
+            let sortedTerms = terms.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+
+            #expect(terms == sortedTerms, "Section \(section.title) is out of order.")
+        }
+    }
+
+    @Test("Practice question banks satisfy every runtime assumption")
+    func practiceContent() throws {
+        try validateFreeCoding(
+            bundle.decode([FreeCodingContent].self, from: "FreeCoding.json")
+        )
+        try validatePredictOutput(
+            bundle.decode([PredictOutputContent].self, from: "PredictTheOutput.json")
+        )
+        try validateRearrangeLines(
+            bundle.decode([RearrangeLinesContent].self, from: "RearrangeTheLines.json")
+        )
+        try validateTapToCode(
+            bundle.decode([TapToCodeContent].self, from: "TapToCode.json")
+        )
+        try validateSpotError(
+            bundle.decode([SpotErrorContent].self, from: "SpotTheError.json")
+        )
+        try validatePracticeReviews()
+    }
+
+    @Test("Badge rules point to valid criteria, chapter IDs, colors, and artwork")
     func badgeContent() throws {
-        let badges = try decode([Badge].self, from: "Badges.json")
-        let chapters = try decode([Chapter].self, from: "Chapters.json")
-        let chapterValues = Set(chapters.map { $0.name.bundleName })
+        let badges = try bundle.decode([Badge].self, from: "Badges.json")
+        let chapterValues = Set(Unwrap.chapters.map { $0.name.bundleName })
         let practiceValues: Set<String> = [
             "free-coding",
             "predict-the-output",
@@ -108,22 +152,29 @@ struct ContentIntegrityTests {
             "tap-to-code",
             "type-practice"
         ]
-        let numericCriteria: Set<String> = ["challenge", "news", "share", "streak"]
+        let numericCriteria: Set<String> = ["challenge", "news", "streak"]
         let supportedCriteria = numericCriteria.union(["practice", "read"])
+        let expectedColors: Set<String> = [
+            "Badge-Challenge", "Badge-Chapter", "Badge-Misc", "Badge-Practice", "Badge-Streak"
+        ]
+        let colorResources: [ColorResource] = [
+            .badgeChallenge, .badgeChapter, .badgeMisc, .badgePractice, .badgeStreak
+        ]
 
-        #expect(badges.count == 25)
+        #expect(badges.count == 24)
         #expect(allUnique(badges.map(\.name)))
-        #expect(allUnique(badges.map(\.filename)))
         #expect(Set(badges.map(\.criterion)) == supportedCriteria)
+        #expect(Set(badges.map(\.color)) == expectedColors)
+        #expect(colorResources.count == expectedColors.count)
 
         for badge in badges {
-            #expect(!badge.name.isEmpty)
-            #expect(!badge.description.isEmpty)
-            #expect(!badge.color.isEmpty)
-            #expect(!badge.value.isEmpty)
+            #expect(badge.name.isEmpty == false)
+            #expect(badge.description.isEmpty == false)
+            #expect(badge.color.isEmpty == false)
+            #expect(badge.value.isEmpty == false)
+            #expect(badge.symbolName.isEmpty == false)
             #expect(supportedCriteria.contains(badge.criterion))
-            #expect(UIColor(named: badge.color, in: Bundle.main, compatibleWith: nil) != nil)
-            #expect(UIImage(named: "Badge-\(badge.filename)", in: Bundle.main, compatibleWith: nil) != nil)
+            #expect(expectedColors.contains(badge.color))
 
             switch badge.criterion {
             case "read":
@@ -138,144 +189,113 @@ struct ContentIntegrityTests {
         }
     }
 
-    private func validate(review: StudyReview, expectedTitle: String) {
-        let supportedReviewTypes: Set<String> = ["multipleSelection", "singleSelection"]
-        let correctAnswers = Set(review.correct.map(\.answer))
-        let wrongAnswers = Set(review.wrong.map(\.answer))
-
-        #expect(review.title == expectedTitle)
-        #expect(!review.question.isEmpty)
-        #expect(!review.hint.isEmpty)
-        #expect(supportedReviewTypes.contains(review.reviewType))
-        #expect(review.correct.count == 6)
-        #expect(review.wrong.count == 6)
-        #expect(correctAnswers.count == review.correct.count)
-        #expect(wrongAnswers.count == review.wrong.count)
-        #expect(correctAnswers.isDisjoint(with: wrongAnswers))
-
-        for answer in review.correct + review.wrong {
-            #expect(!answer.answer.isEmpty)
-            #expect(!answer.reason.isEmpty)
-        }
-    }
-
-    private func validateFreeCoding() throws {
-        let questions = try decode([FreeCodingQuestion].self, from: "FreeCoding.json")
-
+    private func validateFreeCoding(_ questions: [FreeCodingContent]) throws {
         #expect(questions.count == 11)
         #expect(allUnique(questions.map(\.question)))
 
         for question in questions {
-            #expect(!question.question.isEmpty)
-            #expect(!question.hint.isEmpty)
-            #expect(!question.answers.isEmpty)
+            #expect(question.question.isEmpty == false)
+            #expect(question.hint.isEmpty == false)
+            #expect(question.answers.isEmpty == false)
             #expect(allUnique(question.answers))
-            #expect(question.answers.allSatisfy { !$0.isEmpty })
+            #expect(question.answers.allSatisfy { $0.isEmpty == false })
         }
     }
 
-    private func validatePredictTheOutput() throws {
-        let questions = try decode([PredictTheOutputQuestion].self, from: "PredictTheOutput.json")
+    private func validatePredictOutput(_ questions: [PredictOutputContent]) throws {
         let supportedChecks: Set<String> = ["<", "<=", "==", "!=", ">=", ">"]
 
         #expect(questions.count == 10)
         #expect(allUnique(questions.map(\.code)))
 
         for question in questions {
-            #expect(!question.code.isEmpty)
-            #expect(!question.answers.isEmpty)
+            #expect(question.code.isEmpty == false)
+            #expect(question.answers.isEmpty == false)
             #expect(question.answers.filter { $0.conditions == nil }.count == 1)
 
             for answer in question.answers {
-                #expect(!answer.text.isEmpty)
+                #expect(answer.text.isEmpty == false)
 
-                if let conditions = answer.conditions {
-                    #expect(!conditions.isEmpty)
+                for condition in answer.conditions ?? [] {
+                    let isOperatorPlaceholder = condition.check.hasPrefix("OPERATOR_")
+                        && Int(condition.check.dropFirst(9)) != nil
 
-                    for condition in conditions {
-                        let isOperatorPlaceholder = condition.check.hasPrefix("OPERATOR_")
-                            && Int(condition.check.dropFirst(9)) != nil
-
-                        #expect(!condition.left.isEmpty)
-                        #expect(!condition.right.isEmpty)
-                        #expect(supportedChecks.contains(condition.check) || isOperatorPlaceholder)
-                    }
+                    #expect(condition.left.isEmpty == false)
+                    #expect(condition.right.isEmpty == false)
+                    #expect(supportedChecks.contains(condition.check) || isOperatorPlaceholder)
                 }
             }
         }
     }
 
-    private func validateRearrangeTheLines() throws {
-        let questions = try decode([RearrangeTheLinesQuestion].self, from: "RearrangeTheLines.json")
-
+    private func validateRearrangeLines(_ questions: [RearrangeLinesContent]) throws {
         #expect(questions.count == 31)
         #expect(allUnique(questions.map(\.question)))
 
         for question in questions {
-            #expect(!question.question.isEmpty)
-            #expect(!question.hint.isEmpty)
+            #expect(question.question.isEmpty == false)
+            #expect(question.hint.isEmpty == false)
             #expect(question.code.lines.count >= 2)
-            #expect(question.code.lines.allSatisfy { !$0.isEmpty })
+            #expect(question.code.lines.allSatisfy { $0.isEmpty == false })
         }
     }
 
-    private func validateTapToCode() throws {
-        let questions = try decode([TapToCodeQuestion].self, from: "TapToCode.json")
-
+    private func validateTapToCode(_ questions: [TapToCodeContent]) throws {
         #expect(questions.count == 19)
         #expect(allUnique(questions.map(\.question)))
 
         for question in questions {
-            #expect(!question.question.isEmpty)
-            #expect(!question.components.isEmpty)
-            #expect(question.components.allSatisfy { !$0.isEmpty })
+            #expect(question.question.isEmpty == false)
+            #expect(question.components.isEmpty == false)
+            #expect(question.components.allSatisfy { $0.isEmpty == false })
         }
     }
 
-    private func validateSpotTheError() throws {
-        let questions = try decode([SpotTheErrorQuestion].self, from: "SpotTheError.json")
-
+    private func validateSpotError(_ questions: [SpotErrorContent]) throws {
         #expect(questions.count == 12)
         #expect(allUnique(questions.map(\.file)))
 
         for question in questions {
-            let template = try loadString(named: "SpotTheError-\(question.file).txt")
+            let template = try bundle
+                .text(named: "SpotTheError-\(question.file).txt")
+                .trimmingCharacters(in: .whitespacesAndNewlines)
 
             #expect(question.inputMinimum <= question.inputMaximum)
-            #expect(!question.replacements.isEmpty)
+            #expect(question.replacements.isEmpty == false)
+            #expect(template.isEmpty == false)
 
             for replacement in question.replacements {
-                #expect(!replacement.name.isEmpty)
-                #expect(!replacement.values.isEmpty)
+                #expect(replacement.name.isEmpty == false)
+                #expect(replacement.values.isEmpty == false)
                 #expect(allUnique(replacement.values))
-                #expect(replacement.values.allSatisfy { !$0.isEmpty })
+                #expect(replacement.values.allSatisfy { $0.isEmpty == false })
                 #expect(template.contains(replacement.name))
             }
+
+            // One generated error lowercases the function name at its call site, which
+            // only looks like a mistake when the real name contains a capital letter.
+            let functionNames = question.replacements.first { $0.name == "FUNCTION_NAME" }?.values ?? []
+            #expect(functionNames.isEmpty == false)
+            #expect(functionNames.allSatisfy { $0 != $0.lowercased() })
         }
     }
 
-    private func decode<T: Decodable>(_ type: T.Type, from filename: String) throws -> T {
-        let url = try #require(
-            Bundle.main.url(forResource: filename, withExtension: nil),
-            "Missing bundled resource: \(filename)"
-        )
-        let data = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return try decoder.decode(type, from: data)
-    }
+    private func validatePracticeReviews() throws {
+        let sectionIDs = Unwrap.chapters.flatMap(\.sections).map(\.bundleName)
 
-    private func loadString(named filename: String) throws -> String {
-        let url = try #require(
-            Bundle.main.url(forResource: filename, withExtension: nil),
-            "Missing bundled resource: \(filename)"
-        )
-        return try String(contentsOf: url, encoding: .utf8)
-    }
+        #expect(sectionIDs.count == 99)
+        #expect(allUnique(sectionIDs))
 
-    private func resourceExists(named filename: String) -> Bool {
-        Bundle.main.url(forResource: filename, withExtension: nil) != nil
+        for sectionID in sectionIDs {
+            let review = try bundle.decode(ReviewContent.self, from: "\(sectionID).json")
+
+            #expect(review.title.isEmpty == false)
+            #expect(review.question.isEmpty == false)
+            #expect(review.hint.isEmpty == false)
+            #expect([ReviewKind.singleSelection, .multipleSelection].contains(review.kind))
+            #expect(review.correct.count == 6)
+            #expect(review.wrong.count == 6)
+        }
     }
 
     private func allUnique<Element: Hashable>(_ elements: [Element]) -> Bool {

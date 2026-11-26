@@ -1,6 +1,44 @@
 {
+    "content": [
+        {
+            "text": "We’ve used lots of strings so far, and it turns out they are structs – they have their own methods and properties we can use to query and manipulate the string."
+        },
+        {
+            "text": "First, let’s create a test string:"
+        },
+        {
+            "code": "let string = \"Do or do not, there is no try.\""
+        },
+        {
+            "text": "You can read the number of characters in a string using its `count` property:"
+        },
+        {
+            "code": "print(string.count)"
+        },
+        {
+            "text": "They have a `hasPrefix()` method that returns true if the string starts with specific letters:"
+        },
+        {
+            "code": "print(string.hasPrefix(\"Do\"))"
+        },
+        {
+            "text": "You can uppercase a string by calling its `uppercased()` method:"
+        },
+        {
+            "code": "print(string.uppercased())"
+        },
+        {
+            "text": "And you can even have Swift sort the letters of the string into an array:"
+        },
+        {
+            "code": "print(string.sorted())"
+        },
+        {
+            "text": "Strings have lots more properties and methods – try typing `string.` to bring up Xcode’s code completion options."
+        }
+    ],
     "title": "Properties and methods of strings",
-    "postscript": "One of the most useful methods of strings is <code>contains()<\/code>, which returns true if the string contains another string. For example, <code>\"world\".contains(\"orl\")<\/code> is true.",
+    "postscript": "One of the most useful methods of strings is `contains()`, which returns true if the string contains another string. For example, `\"world\".contains(\"orl\")` is true.",
     "reviewType": "multipleSelection",
     "question": "Which of these are true?",
     "hint": "Strings are case-sensitive by default, so ABC is different from Abc and aBc.",
@@ -46,7 +84,7 @@
         },
         {
             "answer": "let definitelyTrue = \"Fox in box\"\ndefinitelyTrue.contains(\"socks\")",
-            "reason": "This is false, because the string we're looking for doesn't exist in <code>definitelyTrue<\/code>."
+            "reason": "This is false, because the string we're looking for doesn't exist in `definitelyTrue`."
         },
         {
             "answer": "let shoes = \"Jimmy Choo\"\nshoes.contains(Choo)",

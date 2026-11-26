@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "Swift is what’s known as a type-safe language, which means that every variable must be of one specific type. The `str` variable that Xcode created for us holds a string of letters that spell “Hello, playground”, so Swift assigns it the type `String`."
+        },
+        {
+            "text": "On the other hand, if we want to store someone’s age we might make a variable like this:"
+        },
+        {
+            "code": "var age = 38"
+        },
+        {
+            "text": "That holds a whole number, so Swift assigns the type `Int` – short for “integer”."
+        },
+        {
+            "text": "If you have large numbers, Swift lets you use underscores as thousands separators – they don’t change the number, but they do make it easier to read. For example:"
+        },
+        {
+            "code": "var population = 8_000_000"
+        },
+        {
+            "text": "Strings and integers are different types, and they can’t be mixed. So, while it’s safe to change `str` to “Goodbye”, I can’t make it 38 because that’s an `Int` not a `String`."
+        }
+    ],
     "title": "Strings and integers",
     "postscript": "Strings are case sensitive, which means \"Swift\" is not the same string as \"swift\".",
     "reviewType": "multipleSelection",
@@ -8,27 +31,27 @@
     "correct": [
         {
             "answer": "var rating = 5",
-            "reason": "This creates an integer called <code>rating<\/code>."
+            "reason": "This creates an integer called `rating`."
         },
         {
             "answer": "var power = 9001",
-            "reason": "This creates an integer called <code>power<\/code>."
+            "reason": "This creates an integer called `power`."
         },
         {
             "answer": "var speed = 88",
-            "reason": "This creates an integer called <code>speed<\/code>."
+            "reason": "This creates an integer called `speed`."
         },
         {
             "answer": "var mortgageRemaining = 100_000",
-            "reason": "This creates an integer called <code>mortgageRemaining<\/code>."
+            "reason": "This creates an integer called `mortgageRemaining`."
         },
         {
             "answer": "var highScore = 328_556",
-            "reason": "This creates an integer called <code>highScore<\/code>."
+            "reason": "This creates an integer called `highScore`."
         },
         {
             "answer": "var repeatCount = 82",
-            "reason": "This creates an integer called <code>repeatCount<\/code>."
+            "reason": "This creates an integer called `repeatCount`."
         }
     ],
     "wrong": [

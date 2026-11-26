@@ -18,8 +18,9 @@ extension String {
             let range = match.range(at: 1)
 
             if let swiftRange = Range(range, in: self) {
-                let textMatch = self[swiftRange]
-                return self.replacingOccurrences(of: textMatch, with: replacement, options: [], range: swiftRange)
+                var result = self
+                result.replaceSubrange(swiftRange, with: replacement)
+                return result
             }
         }
 

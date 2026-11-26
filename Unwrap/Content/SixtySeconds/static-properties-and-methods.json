@@ -1,6 +1,29 @@
 {
+    "content": [
+        {
+            "text": "All the properties and methods we’ve created so far have belonged to individual instances of structs, which means that if we had a `Student` struct we could create several student instances each with their own properties and methods:"
+        },
+        {
+            "code": "struct Student {\n  var name: String\n  init(name: String) {\n    self.name = name\n  }\n}\nlet ed = Student(name: \"Ed\")\nlet taylor = Student(name: \"Taylor\")"
+        },
+        {
+            "text": "You can also ask Swift to share specific properties and methods across all instances of the struct by declaring them as *static*."
+        },
+        {
+            "text": "To try this out, we’re going to add a static property to the `Student` struct to store how many students are in the class. Each time we create a new student, we’ll add one to it:"
+        },
+        {
+            "code": "struct Student {\n  static var classSize = 0\n  var name: String\n  init(name: String) {\n    self.name = name\n    Student.classSize += 1\n  }\n}"
+        },
+        {
+            "text": "Because the `classSize` property belongs to the struct itself rather than instances of the struct, we need to read it using `Student.classSize`:"
+        },
+        {
+            "code": "print(Student.classSize)"
+        }
+    ],
     "title": "Static properties and methods",
-    "postscript": "Static methods work the same way as static properties \u2013 just write <code>static func yourMethod()<\/code> rather than <code>func yourMethod()<\/code>.",
+    "postscript": "Static methods work the same way as static properties \u2013 just write `static func yourMethod()` rather than `func yourMethod()`.",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
     "hint": "Static properties and methods must be called on the struct that owns them, rather than on instances of that struct.",
@@ -34,27 +57,27 @@
     "wrong": [
         {
             "answer": "struct Person {\n\tstatic var population = 0\n\tvar name: String\n\tinit(personName: String) {\n\t\tname = personName\n\t\tpopulation += 1\n\t}\n}",
-            "reason": "Referencing a static property inside a regular method isn't allowed; this should use <code>Person.population<\/code>."
+            "reason": "Referencing a static property inside a regular method isn't allowed; this should use `Person.population`."
         },
         {
             "answer": "struct Cat {\n\tstatic let allCats = [Cat]()\n\tinit() {\n\t\tCat.allCats.append(self)\n\t}\n\tstatic func chorus() {\n\t\tfor _ in allCats {\n\t\t\tprint(\"Meow!\")\n\t\t}\n\t}\n}",
-            "reason": "<code>allCats<\/code> is a constant, and can't be modified."
+            "reason": "`allCats` is a constant, and can't be modified."
         },
         {
             "answer": "struct Marathon {\n\tstatic distance = 42\n\tvar name: String\n\tvar location: String\n}",
-            "reason": "<code>distance<\/code> must be declared <code>var<\/code> or <code>let<\/code>"
+            "reason": "`distance` must be declared `var` or `let`"
         },
         {
             "answer": "struct Raffle {\n\tvar ticketsUsed = 0\n\tvar name: String\n\tvar tickets: Int\n\tinit(name: String, tickets: Int) {\n\t\tself.name = name\n\t\tself.tickets = tickets\n\t\tRaffle.ticketsUsed += tickets\n\t}\n}",
-            "reason": "<code>ticketsUsed<\/code> is not declared as a static property."
+            "reason": "`ticketsUsed` is not declared as a static property."
         },
         {
             "answer": "struct Question {\n\tstatic let answer = 42\n\tvar questionText = \"Unknown\"\n\tinit(questionText: String, answer: String) {\n\t\tself.questionText = questionText\n\t\tself.answer = answer\n\t}\n}",
-            "reason": "This code has several problems, not least that <code>answer<\/code> is a constant static integer."
+            "reason": "This code has several problems, not least that `answer` is a constant static integer."
         },
         {
             "answer": "struct PlayingCards {\n\tstatic let deckSize\n\tvar pictureStyle: String\n}",
-            "reason": "<code>deckSize<\/code> needs a type annotation."
+            "reason": "`deckSize` needs a type annotation."
         }
     ]
 }

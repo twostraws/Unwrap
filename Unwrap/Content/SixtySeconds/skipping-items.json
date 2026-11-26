@@ -1,9 +1,23 @@
 {
+    "content": [
+        {
+            "text": "As you’ve seen, the `break` keyword exits a loop. But if you just want to skip the current item and continue on to the next one, you should use `continue` instead."
+        },
+        {
+            "text": "To try this out, we can write a loop from 1 through 10, then use Swift’s remainder operator to skip any numbers that are odd:"
+        },
+        {
+            "code": "for i in 1...10 {\n  if i % 2 == 1 {\n    continue\n  }\n  print(i)\n}"
+        },
+        {
+            "text": "Remember, the remainder operator figures out how many times 2 fits into each number in our loop, then returns whatever is left over. So, if 1 is left over, it means the number is odd, so we can use `continue` to skip it."
+        }
+    ],
     "title": "Skipping items",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This loop will print at least five lines of text \u2013 true or false?",
-    "hint": "Calling <code>break<\/code> skips the remainder of the current loop, but calling <code>continue<\/code> skips only the current item.",
+    "hint": "Calling `break` skips the remainder of the current loop, but calling `continue` skips only the current item.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -46,11 +60,11 @@
         },
         {
             "answer": "let kidsInClass = 0\nwhile kidsInClass < 30 {\n\tprint(\"Add another child to the class\")\n\tkidsInClass += 1\n}",
-            "reason": "<code>kidsInClass<\/code> is declared as a constant, so it can't be modified."
+            "reason": "`kidsInClass` is declared as a constant, so it can't be modified."
         },
         {
             "answer": "var passengerNumber = 0\nwhile passengerNumber < 30 \n\tpassengerNumber += 1\n\tif passengerNumber == 13 {\n\t\tprint(\"Let's skip the unlucky one.\")\n\t\tcontinue\n\t}\n\tprint(\"Now boarding passenger \\(passengerNumber)\")\n}",
-            "reason": "This is missing a brace at the start of the <code>while<\/code> loop."
+            "reason": "This is missing a brace at the start of the `while` loop."
         },
         {
             "answer": "var hoursStudied = 0\nvar goal = 10\nrepeat {\n\thoursStudied += 1\n\tif hoursStudied > 4 {\n\t\tgoal -= 1\n\t\tcontinue\n\t}\n\tprint(\"I've studied for \\(hoursStudied) hours\")\n} while hoursStudied < goal",

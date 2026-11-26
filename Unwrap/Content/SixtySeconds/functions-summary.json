@@ -1,4 +1,21 @@
 {
+    "content": [
+        {
+            "text": "You’ve made it to the end of the fifth part of this series, so let’s summarize:"
+        },
+        {
+            "numbered": [
+                "Functions let us re-use code without repeating ourselves.",
+                "Functions can accept parameters – just tell Swift the type of each parameter.",
+                "Functions can return values, and again you just specify what type will be sent back. Use tuples if you want to return several things.",
+                "You can use different names for parameters externally and internally, or omit the external name entirely.",
+                "Parameters can have default values, which helps you write less code when specific values are common.",
+                "Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.",
+                "Functions can throw errors, but you must call them using `try` and handle errors using `catch`.",
+                "You can use `inout` to change variables inside a function, but it’s usually better to return a new value."
+            ]
+        }
+    ],
     "title": "Functions: Summary",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +51,27 @@
     "wrong": [
         {
             "answer": "func eatIceCream {\n\tprint(\"Yum!\")\n}",
-            "reason": "This is missing parentheses after <code>eatIceCream()<\/code>."
+            "reason": "This is missing parentheses after `eatIceCream()`."
         },
         {
             "answer": "func makeSandwich(fillings String...) {\n\tprint(\"I'm making a sandwich...\")\n\tfor filling in fillings {\n\t\tprint(\"Let's add some \\(filling).\")\n\t}\n}",
-            "reason": "This is missing a colon between <code>fillings<\/code> and <code>String<\/code>."
+            "reason": "This is missing a colon between `fillings` and `String`."
         },
         {
             "answer": "enum SwimmingError: Error {\n\tcase cantSwim\n}\nfunc swim(distance: Int) {\n\tthrow SwimmingError.cantSwim\n}",
-            "reason": "The <code>swim()<\/code> function can't throw errors because it isn't marked with <code>throws<\/code>."
+            "reason": "The `swim()` function can't throw errors because it isn't marked with `throws`."
         },
         {
             "answer": "func checkFor(_ searchName: String, in names: [String]) -> Bool {\n\tfor name in names {\n\t\tif name == searchName {\n\t\t\treturn true\n\t\t}\n\t}\n}",
-            "reason": "If <code>searchName<\/code> isn't found in the <code>names<\/code> array this function won't return anything."
+            "reason": "If `searchName` isn't found in the `names` array this function won't return anything."
         },
         {
             "answer": "func paintWalls(tastefully: Bool, color: inout String) {\n\tif tastefully {\n\t\tcolor = \"cream\"\n\t} else {\n\t\tcolor = \"tartan\"\n\t}\n}\nlet color = \"\"\npaintWalls(tastefully: true, color: &color)",
-            "reason": "This attempts to pass a constant string into a function as an <code>inout<\/code> parameter."
+            "reason": "This attempts to pass a constant string into a function as an `inout` parameter."
         },
         {
             "answer": "func isUserAllowed(name username: String) -> Bool {\n\tif name == \"Anonymous\" {\n\t\tprint(\"Forbidden\")\n\t} else {\n\t\tprint(\"Allowed\")\n\t}\n}",
-            "reason": "This code has a couple of problems, not least that the <code>isUserAllowed()<\/code> function says it will return a Boolean, but it does not return anything."
+            "reason": "This code has a couple of problems, not least that the `isUserAllowed()` function says it will return a Boolean, but it does not return anything."
         }
     ]
 }

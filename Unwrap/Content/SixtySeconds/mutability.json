@@ -1,4 +1,24 @@
 {
+    "content": [
+        {
+            "text": "The final difference between classes and structs is the way they deal with constants. If you have a constant struct with a variable property, that property can’t be changed because the struct itself is constant."
+        },
+        {
+            "text": "However, if you have a constant *class* with a variable property, that property *can* be changed. Because of this, classes don’t need the `mutating` keyword with methods that change properties; that’s only needed with structs."
+        },
+        {
+            "text": "This difference means you can change any variable property on a class even when the class is created as a constant – this is perfectly valid code:"
+        },
+        {
+            "code": "class Singer {\n  var name = \"Taylor Swift\"\n}\nlet taylor = Singer()\ntaylor.name = \"Ed Sheeran\"\nprint(taylor.name)"
+        },
+        {
+            "text": "If you want to stop that from happening you need to make the property constant:"
+        },
+        {
+            "code": "class Singer {\n  let name = \"Taylor Swift\"\n}"
+        }
+    ],
     "title": "Mutability",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,11 +54,11 @@
     "wrong": [
         {
             "answer": "class School {\n\tlet students = 200\n\tfunc expel(student: String, for reason: String) {\n\t\tprint(\"\\(student) has been expelled for \\(reason).\")\n\t\tstudents -= 1\n\t}\n}\nlet school = School()\nschool.expel(student: \"Jason\", for: \"coding during class\")",
-            "reason": "The <code>students<\/code> property has been marked as a constant, so it can't be modified."
+            "reason": "The `students` property has been marked as a constant, so it can't be modified."
         },
         {
             "answer": "class SewingMachine {\n\tvar itemsMade = 0\n\tmutating func makeBag(count: Int) {\n\t\titemsMade += count\n\t}\n}\nvar machine = SewingMachine()\nmachine.makeBag(count: 1)",
-            "reason": "The <code>mutating</code> keyword is not allowed with classes."
+            "reason": "The `mutating` keyword is not allowed with classes."
         },
         {
             "answer": "struct Kindergarten {\n\tvar numberOfScreamingKids = 30\n\tmutating func handOutIceCream() {\n\t\tnumberOfScreamingKids = 0\n\t}\n}\nlet kindergarten = Kindergarten()\nkindergarten.handOutIceCream()",
@@ -46,15 +66,15 @@
         },
         {
             "answer": "struct Piano {\n\tvar untunedKeys = 3\n\tfunc tune() {\n\t\tif untunedKeys > 0 {\n\t\t\tuntunedKeys -= 1\n\t\t}\n\t}\n}\nvar piano = Piano()\npiano.tune()",
-            "reason": "The <code>tune()<\/code> method attempts to modify the <code>untunedKeys<\/code> property, but it isn't marked as <code>mutating<\/code>."
+            "reason": "The `tune()` method attempts to modify the `untunedKeys` property, but it isn't marked as `mutating`."
         },
         {
             "answer": "struct Park {\n\tvar numberOfFlowers = 1000\n\tfunc plantFlowers() {\n\t\tnumberOfFlowers += 50\n\t}\n}\nlet park = Park()\npark.plantFlowers()",
-            "reason": "The <code>plantFlowers()<\/code> method attempts to modify the <code>numberOfFlowers<\/code> property, but it isn't marked as <code>mutating<\/code>."
+            "reason": "The `plantFlowers()` method attempts to modify the `numberOfFlowers` property, but it isn't marked as `mutating`."
         },
         {
             "answer": "class Beach {\n\tvar lifeguards = 10\n\tmutating func addLifeguards(count: Int) {\n\t\tlifeguards += count\n\t}\n}\nvar beach = Beach()\nbeach.addLifeguards(count: 2)",
-            "reason": "The <code>mutating</code> keyword is not allowed with classes."
+            "reason": "The `mutating` keyword is not allowed with classes."
         }
     ]
 }

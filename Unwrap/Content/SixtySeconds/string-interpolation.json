@@ -1,4 +1,27 @@
 {
+    "content": [
+        {
+            "text": "You’ve seen how you can type values for strings directly into your code, but Swift also has a feature called string interpolation – the ability to place variables inside your strings to make them more useful."
+        },
+        {
+            "text": "You can place any type of variable inside your string – all you have to do is write a backslash, `\\`, followed by your variable name in parentheses. For example:"
+        },
+        {
+            "code": "var score = 85\nvar str = \"Your score was \\(score)\""
+        },
+        {
+            "text": "As you can see in the playground output, that sets the `str` variable to be “Your score was 85”."
+        },
+        {
+            "text": "You can do this as many times as you need, making strings out of strings if you want:"
+        },
+        {
+            "code": "var results = \"The test results are here: \\(str)\""
+        },
+        {
+            "text": "As you’ll see later on, string interpolation isn’t just limited to placing variables – you can actually run code inside there."
+        }
+    ],
     "title": "String interpolation",
     "postscript": "",
     "reviewType": "multipleSelection",
@@ -8,27 +31,27 @@
     "correct": [
         {
             "answer": "var greeting = \"Hello, \\(name)!\"",
-            "reason": "This uses string interpolation to create a string variable called <code>greeting<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `greeting`."
         },
         {
             "answer": "var warning = \"You need to be \\(years) or older\"",
-            "reason": "This uses string interpolation to create a string variable called <code>warning<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `warning`."
         },
         {
             "answer": "var alert = \"Error: \\(message)!\"",
-            "reason": "This uses string interpolation to create a string variable called <code>alert<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `alert`."
         },
         {
             "answer": "var name = \"\\(firstName) \\(lastName)\"",
-            "reason": "This uses string interpolation to create a string variable called <code>name<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `name`."
         },
         {
             "answer": "var result = \"\\(daysRemaining) days to go\"",
-            "reason": "This uses string interpolation to create a string variable called <code>result<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `result`."
         },
         {
             "answer": "var forecast = \"Today's weather will be \\(weather)\"",
-            "reason": "This uses string interpolation to create a string variable called <code>forecast<\/code>."
+            "reason": "This uses string interpolation to create a string variable called `forecast`."
         }
     ],
     "wrong": [
@@ -42,19 +65,19 @@
         },
         {
             "answer": "var message = \"Installation failed: \\{reason}.\"",
-            "reason": "String interpolation is written as <code>\\(reason)<\/code>."
+            "reason": "String interpolation is written as `\\(reason)`."
         },
         {
             "answer": "var versionString = \"You're using v(version)\"",
-            "reason": "String interpolation is written as <code>\\(reason)<\/code>."
+            "reason": "String interpolation is written as `\\(reason)`."
         },
         {
             "answer": "var engine = \"Your engine is (size)cc\"",
-            "reason": "String interpolation is written as <code>\\(reason)<\/code>."
+            "reason": "String interpolation is written as `\\(reason)`."
         },
         {
             "answer": "var formattedHeight = \"You are (size)cm\"",
-            "reason": "String interpolation is written as <code>\\(reason)<\/code>."
+            "reason": "String interpolation is written as `\\(reason)`."
         }
     ]
 }

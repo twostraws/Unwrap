@@ -6,18 +6,16 @@
 //  Copyright © 2019 Hacking with Swift.
 //
 
-import UIKit
+import Foundation
 
 extension Date {
     /// Returns true if two dates belong to the same day. Useful for deciding whether the user has taken today's daily challenge or not.
-    func isSameDay(as other: Date) -> Bool {
-        return Calendar.current.isDate(self, inSameDayAs: other)
+    func isSameDay(as other: Date, calendar: Calendar = .current) -> Bool {
+        calendar.isDate(self, inSameDayAs: other)
     }
 
     /// Calculates the number of days between two dates. Useful for figuring out whether the user's current streak is still active.
-    func days(between otherDate: Date) -> Int {
-        let calendar = Calendar.current
-
+    func days(between otherDate: Date, calendar: Calendar = .current) -> Int {
         let startOfSelf = calendar.startOfDay(for: self)
         let startOfOther = calendar.startOfDay(for: otherDate)
         let components = calendar.dateComponents([.day], from: startOfSelf, to: startOfOther)

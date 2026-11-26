@@ -9,18 +9,6 @@
 import Foundation
 
 extension String {
-    /// Converts a string such as "this is a test" into camel case, making "thisIsATest".
-    func formatAsVariable() -> String {
-        let parts = components(separatedBy: " ")
-        var output = parts[0].lowercased()
-
-        for part in parts.dropFirst() {
-            output += part.capitalized
-        }
-
-        return output
-    }
-
     /// An epic series of replacements to make some piece of code homogenized and anonymized so that variable names, function names, whitespace, etc, don't matter.
     func toAnonymizedVariables() -> String {
         var replaced = self.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -39,11 +27,11 @@ extension String {
         replaced = replaced.replacingOccurrences(of: #"\.isMultiple\(of: *(\d+)\)"#, with: " % $1 == 0", options: .regularExpression)
 
         // Replace .first with [0] to reduce the number of possible solutions
-        replaced = replaced.replacingOccurrences(of: ".first", with: "[0]")
+        replaced = replaced.replacing(".first", with: "[0]")
 
         // Homogenize brace style.
-        replaced = replaced.replacingOccurrences(of: "\n{\n", with: " {\n")
-        replaced = replaced.replacingOccurrences(of: "\n}\nelse {\n", with: "\n} else {\n")
+        replaced = replaced.replacing("\n{\n", with: " {\n")
+        replaced = replaced.replacing("\n}\nelse {\n", with: "\n} else {\n")
 
         // Homogenize statements with the optionalreturn keyword
         replaced = replaced.solveOptionalReturnStatements()
@@ -61,11 +49,11 @@ extension String {
         replaced = replaced.replacingOccurrences(of: "[ \t]*\n", with: "\n", options: .regularExpression)
 
         // Replace semi-colons with line breaks in the unlikely event folks try to put multiple statements on a single line.
-        replaced = replaced.replacingOccurrences(of: ";", with: "\n")
+        replaced = replaced.replacing(";", with: "\n")
 
         // Add spacing around range operators to avoid false positives that a full stop before a variable is a property access
-        replaced = replaced.replacingOccurrences(of: "...", with: " ... ")
-        replaced = replaced.replacingOccurrences(of: "..<", with: " ..< ")
+        replaced = replaced.replacing("...", with: " ... ")
+        replaced = replaced.replacing("..<", with: " ..< ")
 
         // Some folks, particularly those coming from Python, use Range(1...100) or (1...100) rather than just 1...100. This is legal, so we homogenize it to a regular Swift range.
         replaced = replaced.replacingOccurrences(of: #"Range\((\d+ \.\.\< \d+)\)"#, with: "$1", options: .regularExpression)
@@ -74,7 +62,16 @@ extension String {
         replaced = replaced.replacingOccurrences(of: #"\((\d+ \.\.\. \d+)\)"#, with: "$1", options: .regularExpression)
 
         // Replace ellipsis character '…' with three periods '...'. iOS has started autocorrecting to ellipsis causing marking correct answers as incorrect
-        replaced = replaced.replacingOccurrences(of: "…", with: " ... ")
+        replaced = replaced.replacing("…", with: " ... ")
+
+        // Replace smart quotes with their straight equivalents, for the same reason: iOS can
+        // substitute these as you type, which would otherwise mark correct answers
+        // as incorrect whenever the answer contains a string literal.
+        replaced = replaced
+            .replacing("\u{201C}", with: "\"")
+            .replacing("\u{201D}", with: "\"")
+            .replacing("\u{2018}", with: "'")
+            .replacing("\u{2019}", with: "'")
 
         // Anonymize variable names.
         replaced = replaced.anonymizingComponent("(?:let|var) ([A-Za-z_][A-Za-z0-9_]*)( =|:)", replacementWrapper: "&")
@@ -93,20 +90,20 @@ extension String {
 
         // Remove any extra spaces.
         for _ in 1...3 {
-            replaced = replaced.replacingOccurrences(of: "  ", with: " ")
+            replaced = replaced.replacing("  ", with: " ")
         }
 
         // Remove any completely blank lines.
         replaced = replaced.lines.filter { !$0.isEmpty }.joined(separator: "\n")
 
         // Always prefer shorthand data types.
-        replaced = replaced.replacingOccurrences(of: "Array<Int>", with: "[Int]")
-        replaced = replaced.replacingOccurrences(of: "Array<String>", with: "[String]")
-        replaced = replaced.replacingOccurrences(of: "Array<Double>", with: "[Double]")
+        replaced = replaced.replacing("Array<Int>", with: "[Int]")
+        replaced = replaced.replacing("Array<String>", with: "[String]")
+        replaced = replaced.replacing("Array<Double>", with: "[Double]")
 
-        replaced = replaced.replacingOccurrences(of: "Dictionary<String, String>", with: "[String: String]")
-        replaced = replaced.replacingOccurrences(of: "Dictionary<String, Int>", with: "[String: Int]")
-        replaced = replaced.replacingOccurrences(of: "Dictionary<String, Double>", with: "[String: Double]")
+        replaced = replaced.replacing("Dictionary<String, String>", with: "[String: String]")
+        replaced = replaced.replacing("Dictionary<String, Int>", with: "[String: Int]")
+        replaced = replaced.replacing("Dictionary<String, Double>", with: "[String: Double]")
 
         // If folks use explicit type annotation for a collection backed up by an empty initializer, prefer removing the annotation.
         replaced = replaced.replacingOccurrences(of: #":\[([A-Za-z]+)\] *= *\[\]"#, with: " = [$1]()", options: .regularExpression)
@@ -195,6 +192,7 @@ extension String {
 
             // The result could be changed and we need to get new matches with a new length of result otherwise we could get an error.
             let recalculatedMatches = rangeRegex.matches(in: result, options: [], range: NSRange(location: 0, length: result.utf16.count))
+            guard recalculatedMatches.isEmpty == false else { break }
 
             // In the first iteration, set the recalculated matches counter to the initial value.
             if index == 0 {
@@ -203,8 +201,9 @@ extension String {
 
             // Get a recalculated range from the recalculated regex matches.
             // In some cases, the change in the result affects the number of matches found (there will be a loss in the previous iteration of the processed match due to the incorporated changes). In this case, the number of matches will be reduced and we must work with the match on index 0 in the current iteration.
-            let i = recalculatedMatches.count == recalculatedMatchesCount ? index : 0
-            let range = Range(recalculatedMatches[i].range, in: result)
+            let recalculatedIndex = recalculatedMatches.indices.contains(index) ? index : 0
+            let i = recalculatedMatches.count == recalculatedMatchesCount ? recalculatedIndex : 0
+            guard let range = Range(recalculatedMatches[i].range, in: result) else { continue }
 
             // Set the recalculated matches counter to the current value.
             recalculatedMatchesCount = recalculatedMatches.count
@@ -233,10 +232,10 @@ extension String {
                 // If this has a space inside, it's probably an external parameter name; collapse it to use only internal.
                 if componentName.contains(" ") {
                     // Replace the original instance of double naming.
-                    replaced = replaced.replacingOccurrences(of: componentName, with: "\(replacementWrapper)\(componentNumber)\(replacementWrapper)")
+                    replaced = replaced.replacing(componentName, with: "\(replacementWrapper)\(componentNumber)\(replacementWrapper)")
 
                     // Now continue using only the internal name.
-                    componentName = componentName.components(separatedBy: " ").last!
+                    componentName = componentName.split(separator: " ").last.map(String.init) ?? componentName
                 }
 
                 // We don't want to just do a simple string replace, because they might call their thing "a" and that would be replaced everywhere.

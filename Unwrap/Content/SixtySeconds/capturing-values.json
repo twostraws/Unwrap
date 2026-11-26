@@ -1,4 +1,36 @@
 {
+    "content": [
+        {
+            "text": "If you use any external values inside your closure, Swift *captures* them – stores them alongside the closure, so they can be modified even if they don’t exist any more."
+        },
+        {
+            "text": "Right now we have a `travel()` function that returns a closure, and the returned closure accepts a string as its only parameter and returns nothing:"
+        },
+        {
+            "code": "func travel() -> (String) -> Void {\n  return {\n    print(\"I'm going to \\($0)\")\n  }\n}"
+        },
+        {
+            "text": "We can call `travel()` to get back the closure, then call that closure freely:"
+        },
+        {
+            "code": "let result = travel()\nresult(\"London\")"
+        },
+        {
+            "text": "Closure capturing happens if we create values in `travel()` that get used inside the closure. For example, we might want to track how often the returned closure is called:"
+        },
+        {
+            "code": "func travel() -> (String) -> Void {\n  var counter = 1\n  return {\n    print(\"\\(counter). I'm going to \\($0)\")\n    counter += 1\n  }\n}"
+        },
+        {
+            "text": "Even though that `counter` variable was created inside `travel()`, it gets captured by the closure so it will still remain alive for that closure."
+        },
+        {
+            "text": "So, if we call `result(\"London\")` multiple times, the counter will go up and up:"
+        },
+        {
+            "code": "result(\"London\")\nresult(\"London\")\nresult(\"London\")"
+        }
+    ],
     "title": "Capturing values",
     "postscript": "",
     "reviewType": "singleSelection",
@@ -34,27 +66,27 @@
     "wrong": [
         {
             "answer": "func takeMedicine(name: String) -> () -> Bool {\n\tvar pillsLeft = 30\n\treturn {\n\t\tif pillsLeft > 0 {\n\t\t\tpillsLeft -= 1\n\t\t\treturn true\n\t\t} else {\n\t\t\treturn false\n\t\t}\n\t}\n}\n\ntakeMedicine()",
-            "reason": "The <code>takeMedicine()</code> function expects to be given a name string, but none is provided."
+            "reason": "The `takeMedicine()` function expects to be given a name string, but none is provided."
         },
         {
             "answer": "func translate(String) -> (String) -> String {\n\treturn {\n\t\tif language == \"French\" {\n\t\t\tif $0 == \"Hello\" {\n\t\t\t\treturn \"Bonjour\"\n\t\t\t} else {\n\t\t\t\treturn \"\\($0) is unknown.\"\n\t\t\t}\n\t\t} else {\n\t\t\treturn \"Unknown language.\"\n\t\t}\n\t}\n}\nlet translator = translate(language: \"French\")\nlet french = translator(\"Hello\")",
-            "reason": "The <code>translate</code> function is missing a name for its parameter."
+            "reason": "The `translate` function is missing a name for its parameter."
         },
         {
             "answer": "func makeRepeater(count: Int) -> () -> Void {\n\treturn {\n\t\tfor _ in 0..<count {\n\t\t\tprint($0)\n\t\t}\n\t}\n}\nlet repeater = makeRepeater(count: 3)\nrepeater(\"There's no place like home.\")",
-            "reason": "The closure references a parameter, <code>$0</code>, but it doesn't take any parameters."
+            "reason": "The closure references a parameter, `$0`, but it doesn't take any parameters."
         },
         {
             "answer": "func makeTrivialEncrypter() -> () -> Void {\n\tlet sekritPassword = \"fr0sties\"\n\treturn {\n\t\treturn sekritPassword + $0 + sekritPassword\n\t}\n}\nlet encrypter = makeTrivialEncrypter()\nencrypter(\"hello\")",
-            "reason": "This calls <code>makeTrivialEncrypter()</code> with a parameter when it expects none, and returns a closure that uses a parameter when it doesn't have one."
+            "reason": "This calls `makeTrivialEncrypter()` with a parameter when it expects none, and returns a closure that uses a parameter when it doesn't have one."
         },
         {
             "answer": "func handOutBusinessCards() -> () -> Void {\n\tlet number = 0\n\treturn {\n\t\tnumber += 1\n\t\tprint(\"Number handed out: \\(number)\")\n\t}\n}\nlet handOut = handOutBusinessCards()\nhandOut()\nhandOut()",
-            "reason": "<code>number</code> was declared as a constant, so we can't use <code>+=</code> with it."
+            "reason": "`number` was declared as a constant, so we can't use `+=` with it."
         },
         {
             "answer": "func findTallest() -> (String, Double) -> (String) {\n\tvar tallestName = \"\"\n\tvar tallestHeight = 0\n\treturn {\n\t\tif $1 > tallestHeight {\n\t\t\ttallestName = $0\n\t\t\ttallestHeight = $1\n\t\t}\n\t\treturn tallestName\n\t}\n}\nlet tallest = findTallest()\nvar tallestName = tallest(\"Hannah\", 1.72)\ntallestName = tallest(\"Christina\", 1.68)",
-            "reason": "<code>$1</code> is a <code>Double</code>, but this code attempts to compare it against <code>tallestHeight</code>, which is an <code>Int</code>."
+            "reason": "`$1` is a `Double`, but this code attempts to compare it against `tallestHeight`, which is an `Int`."
         }
     ]
 }

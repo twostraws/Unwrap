@@ -1,9 +1,29 @@
 {
+    "content": [
+        {
+            "text": "If a struct has a variable property but the instance of the struct was created as a constant, that property can’t be changed – the struct is constant, so all its properties are also constant regardless of how they were created."
+        },
+        {
+            "text": "The problem is that when you create the struct Swift has no idea whether you will use it with constants or variables, so by default it takes the safe approach: Swift won’t let you write methods that change properties unless you specifically request it."
+        },
+        {
+            "text": "When you *want* to change a property inside a method, you need to mark it using the `mutating` keyword, like this:"
+        },
+        {
+            "code": "struct Person {\n  var name: String\n  mutating func makeAnonymous() {\n    name = \"Anonymous\"\n  }\n}"
+        },
+        {
+            "text": "Because it changes the property, Swift will only allow that method to be called on `Person` instances that are variables:"
+        },
+        {
+            "code": "var person = Person(name: \"Ed\")\nperson.makeAnonymous()"
+        }
+    ],
     "title": "Mutating methods",
     "postscript": "",
     "reviewType": "singleSelection",
     "question": "This code is valid Swift \u2013 true or false?",
-    "hint": "You may only change a struct's properties in a method if the method is marked <code>mutating<\/code>.",
+    "hint": "You may only change a struct's properties in a method if the method is marked `mutating`.",
     "syntaxHighlighting": true,
     "correct": [
         {
@@ -34,27 +54,27 @@
     "wrong": [
         {
             "answer": "struct Tree {\n\tvar height: Int\n\tmutating func grow() {\n\t\theight *= 1.001\n\t}\n}",
-            "reason": "This code attempts to multiply an <code>Int<\/code> by a <code>Double<\/code>, which is not allowed."
+            "reason": "This code attempts to multiply an `Int` by a `Double`, which is not allowed."
         },
         {
             "answer": "struct Stapler {\n\tvar stapleCount: Int\n\tfunc staple() {\n\t\tif stapleCount > 0 {\n\t\t\tstapleCount -= 1\n\t\t\tprint(\"It's stapled!\")\n\t\t} else {\n\t\t\tprint(\"Please refill me.\")\n\t\t}\n\t}\n}",
-            "reason": "The <code>staple()<\/code> method modifies a struct's property without being marked <code>mutating<\/code>."
+            "reason": "The `staple()` method modifies a struct's property without being marked `mutating`."
         },
         {
             "answer": "struct Singer {\n\tvar name: String\n\tvar bankBalance: Double\n\tmutating func goOnTour(venues: Int) {\n\t\tprint(\"Come and see \\(name) live on stage!\")\n\t\tbankBalance += venues * 100_000\n\t}\n}",
-            "reason": "<code>bankBalance<\/code> is a <code>Double<\/code>, and <code>venues * 100_000<\/code> will be an <code>Int<\/code>; it's not possible to add one to the other."
+            "reason": "`bankBalance` is a `Double`, and `venues * 100_000` will be an `Int`; it's not possible to add one to the other."
         },
         {
             "answer": "struct MeetingRoom {\n\tvar isBooked = true\n\tmutating book(for name: String) {\n\t\tif isBooked {\n\t\t\tprint(\"Sorry, the meeting room is already taken.\")\n\t\t} else {\n\t\t\tisBooked = true\n\t\t\tprint(\"It's reserved for \\(name).\")\n\t\t}\n\t}\n}",
-            "reason": "The <code>book()<\/code> method is missing the <code>func<\/code> keyword."
+            "reason": "The `book()` method is missing the `func` keyword."
         },
         {
             "answer": "struct Car {\n\tlet mileage: Int\n\tmutating func drive(distance: Int) {\n\t\tmileage += distance\n\t}\n}",
-            "reason": "<code>mileage<\/code> is declared as a constant, so it can't be changed."
+            "reason": "`mileage` is declared as a constant, so it can't be changed."
         },
         {
             "answer": "struct Switch {\n\tvar isOn: Bool\n\tmutating func toggle {\n\t\tif isOn {\n\t\t\tisOn == false\n\t\t} else {\n\t\t\tisOn == true\n\t\t}\n\t}\n}",
-            "reason": "The <code>toggle()<\/code> method is missing parentheses."
+            "reason": "The `toggle()` method is missing parentheses."
         }
     ]
 }
