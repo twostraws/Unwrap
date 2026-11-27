@@ -53,6 +53,10 @@ struct LessonContentView: View {
                         LessonListView(items: items, isNumbered: true)
                     }
                 }
+                if lesson.id == "nil-coalescing" {
+                    NameTagExperiment()
+                        .padding(.horizontal)
+                }
             }
             .padding(.bottom)
         }
