@@ -31,50 +31,67 @@ struct OptionalReviewRecord: Codable, Equatable {
 
 struct OptionalReviewView: View {
     let user: User
-    @State private var usedHint = false
-    @State private var lastExplanation: String?
-    private let examples = [
-        ("let title: String? = nil", "title ?? \"Mix\"", "Mix"),
-        ("let name: String? = \"\"", "name ?? \"Guest\"", "(empty string)"),
-        ("let city: String? = \"Lima\"", "city ?? \"Oslo\"", "Lima")
-    ]
+    @State private var presented = false
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 60)) { timeline in
             if let record = user.optionalReview, !record.isDue(at: timeline.date) {
-                if let lastExplanation { Text(lastExplanation) }
-                Text(record.outcome.summary)
-                Text("Review again \(record.nextReview.formatted(date: .abbreviated, time: .shortened)).")
+                VStack(alignment: .leading) {
+                    Text(record.outcome.summary)
+                    Text("Review again \(record.nextReview.formatted(date: .abbreviated, time: .shortened)).")
+                }
             } else {
-                let index = ((user.optionalReview?.exampleIndex ?? -1) % examples.count + 1) % examples.count
-                let example = examples[index]
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("What value does Swift produce?")
+                Button("Review optional values") { presented = true }
+            }
+        }
+        .sheet(isPresented: $presented) {
+            NavigationStack { OptionalReviewExercise(user: user) }
+        }
+    }
+}
+
+private struct OptionalReviewExercise: View {
+    @Environment(\.dismiss) private var dismiss
+    let user: User
+    @State private var usedHint = false
+    @State private var explanation: String?
+
+    private let examples = [
+        ("let title: String? = nil", "title ?? \"Mix\"", ["nil", "Mix", "(empty string)"], "Mix"),
+        ("let name: String? = \"\"", "name ?? \"Guest\"", ["Guest", "(empty string)", "nil"], "(empty string)"),
+        ("let city: String? = \"Lima\"", "city ?? \"Oslo\"", ["Oslo", "nil", "Lima"], "Lima")
+    ]
+
+    var body: some View {
+        let index = ((user.optionalReview?.exampleIndex ?? -1) % examples.count + 1) % examples.count
+        let example = examples[index]
+        Form {
+            if let explanation {
+                Text(explanation)
+                if let record = user.optionalReview { Text(record.outcome.summary) }
+                Button("Done") { dismiss() }
+            } else {
+                Section("What value does Swift produce?") {
                     Text("\(example.0)\n\(example.1)").font(.body.monospaced())
-                    ForEach(choices(at: index), id: \.self) { choice in
+                }
+                Section("Answer") {
+                    ForEach(example.2, id: \.self) { choice in
                         Button(choice) {
-                            lastExplanation = "\(example.1) produces \(example.2). Only nil uses the fallback."
                             let correctOutcome: OptionalReviewOutcome = usedHint ? .assisted : .independent
-                            user.recordOptionalReview(outcome: choice == example.2 ? correctOutcome : .missed, at: .now)
-                            usedHint = false
+                            user.recordOptionalReview(outcome: choice == example.3 ? correctOutcome : .missed, at: .now)
+                            explanation = "\(example.1) produces \(example.3). Only nil uses the fallback."
                         }
-                        .buttonStyle(.bordered)
                     }
+                }
+                Section {
                     if usedHint {
                         Text("The fallback is used only when the optional contains nil.")
                     } else {
-                        Button("Show hint") { usedHint = true }.buttonStyle(.borderless)
+                        Button("Show hint") { usedHint = true }
                     }
                 }
             }
         }
-    }
-
-    private func choices(at index: Int) -> [String] {
-        switch index {
-        case 0: ["nil", "Mix", "(empty string)"]
-        case 1: ["Guest", "(empty string)", "nil"]
-        default: ["Oslo", "nil", "Lima"]
-        }
+        .navigationTitle("Review optional values")
     }
 }
