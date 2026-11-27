@@ -24,6 +24,7 @@ final class User: Codable {
         case latestNewsArticle
         case articlesRead
 
+        case optionalReview
         case theme
     }
 
@@ -62,6 +63,8 @@ final class User: Codable {
 
     /// Tracks which articles the user has read.
     var articlesRead = Set<URL>()
+
+    private(set) var optionalReview: OptionalReviewRecord?
 
     // MARK: - Computed properties
 
@@ -131,6 +134,7 @@ final class User: Codable {
         latestNewsArticle = try container.decodeIfPresent(Int.self, forKey: .latestNewsArticle) ?? 0
         articlesRead = try container.decodeIfPresent(Set<URL>.self, forKey: .articlesRead) ?? []
 
+        optionalReview = try container.decodeIfPresent(OptionalReviewRecord.self, forKey: .optionalReview)
         theme = try container.decodeIfPresent(String.self, forKey: .theme) ?? "Light"
 
     }
@@ -138,6 +142,7 @@ final class User: Codable {
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
+        try container.encodeIfPresent(optionalReview, forKey: .optionalReview)
         try container.encode(streakDays, forKey: .streakDays)
         try container.encode(bestStreak, forKey: .bestStreak)
         try container.encode(lastStreakEntry, forKey: .lastStreakEntry)
@@ -274,8 +279,15 @@ final class User: Codable {
         statusChanged()
     }
 
+    func recordOptionalReview(outcome: OptionalReviewOutcome, at date: Date) {
+        guard optionalReview?.isDue(at: date) != false else { return }
+        optionalReview = OptionalReviewRecord(previous: optionalReview, outcome: outcome, date: date)
+        statusChanged()
+    }
+
     /// Reset user progress.
     func resetProgress() {
+        optionalReview = nil
         dailyChallenges.removeAll()
         practiceSessions = CountedSet<String>()
         practicePoints = 0
@@ -289,6 +301,7 @@ final class User: Codable {
         (streakDays, bestStreak, lastStreakEntry) = (source.streakDays, source.bestStreak, source.lastStreakEntry)
         (learnedSections, reviewedSections) = (source.learnedSections, source.reviewedSections)
         (practiceSessions, practicePoints) = (source.practiceSessions, source.practicePoints)
+        optionalReview = source.optionalReview
         dailyChallenges = source.dailyChallenges
         (latestNewsArticle, articlesRead, theme) = (source.latestNewsArticle, source.articlesRead, source.theme)
     }

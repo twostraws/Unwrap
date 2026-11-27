@@ -16,6 +16,12 @@ struct HomeDashboardView: View {
                 HomeRankSummaryView(user: user)
             }
 
+            if user.hasLearned("nil-coalescing") {
+                Section("Review an idea") {
+                    OptionalReviewView(user: user)
+                }
+            }
+
             Section("Points") {
                 HomeStatRow(
                     title: "Learning Points",
