@@ -1,0 +1,28 @@
+import SwiftUI
+
+struct Project: Decodable { let name: String }
+
+struct ContentView: View {
+    @State private var label = "Loading…"
+    @State private var attempt = 0
+
+    var body: some View {
+        VStack {
+            Text(label)
+            Button("Load again") { attempt += 1 }
+        }
+        .task(id: attempt) {
+            guard let url = URL(string: "https://api.github.com/repos/twostraws/Unwrap") else { return }
+            label = "Loading…"
+            do {
+                let (data, response) = try await URLSession.shared.data(from: url)
+                guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+                let project = try JSONDecoder().decode(Project.self, from: data)
+                try Task.checkCancellation()
+                label = project.name
+            } catch {
+                if !Task.isCancelled { label = "Couldn’t load the project. Try again." }
+            }
+        }
+    }
+}

@@ -75,6 +75,11 @@ Review, glossary, Help, and Credits rich text uses native `AttributedString` Mar
 The study flow is an explicit state machine: lesson, optional postscript, review, and completion. Single- and multiple-select review sessions own answer validation, retry, progression, and award eligibility.
 
 
+The Badge workshop in Learn ships standalone Swift examples as text so learners can share the exact source. After editing a workshop example, run the compiler checks and its Swift Testing example.
+
+    Tools/check-workshop-examples.sh
+
+
 ## Practice
 
 Practice supports seven activity kinds: Free Coding, Predict the Output, Rearrange the Lines, Review, Spot the Error, Tap to Code, and Type Checker.

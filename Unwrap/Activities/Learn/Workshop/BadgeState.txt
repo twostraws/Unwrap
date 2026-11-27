@@ -1,0 +1,18 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State private var favorite = false
+
+    var body: some View {
+        BadgeEditor(favorite: $favorite)
+    }
+}
+
+struct BadgeEditor: View {
+    @Binding var favorite: Bool
+
+    var body: some View {
+        Toggle(favorite ? "Favorite badge" : "Guest badge", isOn: $favorite)
+            .padding()
+    }
+}

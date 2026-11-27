@@ -1,0 +1,17 @@
+import Testing
+
+func badgeLabel(_ nickname: String?) -> String {
+    nickname ?? "Guest"
+}
+
+@Test func missingNameUsesFallback() {
+    #expect(badgeLabel(nil) == "Guest")
+}
+
+@Test func emptyNameIsAValue() {
+    #expect(badgeLabel("") == "")
+}
+
+@Test func nicknameAppearsOnBadge() {
+    #expect(badgeLabel("Fern") == "Fern")
+}

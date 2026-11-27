@@ -1,0 +1,39 @@
+import SwiftData
+import SwiftUI
+
+@Model final class SavedBadge {
+    var name: String
+    init(name: String) { self.name = name }
+}
+
+struct ContentView: View {
+    var body: some View {
+        BadgeList().modelContainer(for: SavedBadge.self)
+    }
+}
+
+struct BadgeList: View {
+    @Environment(\.modelContext) private var context
+    @Query(sort: \SavedBadge.name) private var badges: [SavedBadge]
+    @State private var name = ""
+    @State private var failure = ""
+
+    var body: some View {
+        Form {
+            TextField("Badge name", text: $name)
+            Button("Save badge") {
+                context.insert(SavedBadge(name: name))
+                do {
+                    try context.save()
+                    failure = ""
+                    name = ""
+                } catch {
+                    context.rollback()
+                    failure = error.localizedDescription
+                }
+            }.disabled(name.isEmpty)
+            Text(failure)
+            ForEach(badges) { badge in Text(badge.name) }
+        }
+    }
+}

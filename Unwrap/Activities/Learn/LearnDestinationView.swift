@@ -14,6 +14,8 @@ struct LearnDestinationView: View {
         Group {
             if let selection {
                 switch selection {
+                case .workshop:
+                    BadgeWorkshopView()
                 case .glossary:
                     GlossaryView(index: Self.glossaryIndex)
                 case .study(let title):

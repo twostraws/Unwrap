@@ -12,6 +12,9 @@ struct LearnCatalogView: View {
 
     var body: some View {
         List(selection: $selection) {
+            Section("Build an app") {
+                NavigationLink("Badge workshop", value: LearnRoute.workshop)
+            }
             ForEach(chapters, id: \.name) { chapter in
                 Section(chapter.name) {
                     ForEach(chapter.sections, id: \.self) { title in
