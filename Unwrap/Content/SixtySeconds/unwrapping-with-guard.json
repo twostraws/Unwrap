@@ -17,7 +17,7 @@
         }
     ],
     "title": "Unwrapping with guard",
-    "postscript": "It's common to use both `if let` and `guard let` to unwrap optionals into a constant of the same name. For example, `guard let name = name else { return }`",
+    "postscript": "It's common to use both `if let` and `guard let` to unwrap optionals into a constant of the same name. For example, you can write `guard let name = name else { return }`. Since Swift 5.7, you can also write `guard let name else { return }`. After the guard, `name` refers to the unwrapped value.",
     "reviewType": "singleSelection",
     "question": "This code will print a message \u2013 true or false?",
     "hint": "If your `guard let` condition fails, you must exit the current method, loop, or condition before the `else` block ends.",

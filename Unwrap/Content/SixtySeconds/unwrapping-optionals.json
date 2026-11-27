@@ -10,7 +10,7 @@
             "code": "var name: String? = nil"
         },
         {
-            "text": "What happens if we use `name.count`? A real string has a `count` property that stores how many letters it has, but this is `nil` – it’s empty memory, not a string, so it doesn’t have a `count`."
+            "text": "What happens if we use `name.count`? A real string has a `count` property that stores how many letters it has, but this is `nil` – there is no string value, so it doesn’t have a `count`."
         },
         {
             "text": "Because of this, trying to read `name.count` is unsafe and Swift won’t allow it. Instead, we must look inside the optional and see what’s there – a process known as *unwrapping*."
@@ -25,7 +25,7 @@
             "code": "if let unwrapped = name {\n  print(\"\\(unwrapped.count) letters\")\n} else {\n  print(\"Missing name.\")\n}"
         },
         {
-            "text": "If `name` holds a string, it will be put inside `unwrapped` as a regular `String` and we can read its `count` property inside the condition. Alternatively, if `name` is empty, the `else` code will be run."
+            "text": "If `name` holds a string, it will be put inside `unwrapped` as a regular `String` and we can read its `count` property inside the condition. Alternatively, if `name` is nil, the `else` code will run. An empty string still enters the first branch and prints a count of zero."
         }
     ],
     "title": "Unwrapping optionals",
