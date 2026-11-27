@@ -7,6 +7,7 @@ import SwiftUI
 
 struct PracticeView: View {
     @Environment(User.self) private var user
+    @State private var showsBlankPractice = false
     @State private var selectedKind: PracticeKind?
     @State private var session: PracticeSession?
     @State private var alertTitle = "Practice Unavailable"
@@ -18,6 +19,9 @@ struct PracticeView: View {
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedKind) {
+                Button("Fill in the Blank", systemImage: "text.cursor") {
+                    showsBlankPractice = true
+                }
                 ForEach(PracticeKind.allCases) { kind in
                     if isUnlocked(kind) {
                         NavigationLink(value: kind) {
@@ -55,6 +59,9 @@ struct PracticeView: View {
             } else {
                 PleaseSelectView(prompt: "Please select a practice activity to begin")
             }
+        }
+        .sheet(isPresented: $showsBlankPractice) {
+            NavigationStack { BlankPracticeView() }
         }
         .navigationSplitViewStyle(.balanced)
         .onChange(of: selectedKind) { _, selectedKind in
