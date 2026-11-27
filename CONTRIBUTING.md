@@ -84,6 +84,15 @@ Most activities load shipped JSON; generated questions must remain deterministic
 Adding high-quality, unambiguous questions is a useful contribution.
 
 
+### Draft an optional-value practice question
+
+On a Mac with Xcode 27 and Apple Intelligence enabled, run the following command to print one candidate for Predict the Output.
+
+    swift Tools/DraftOptionalQuestion.swift
+
+The on-device model suggests inputs. The tool calculates the expected output in Swift and writes the draft to standard output. Check the wording, run the printed Swift in a playground, and compare its output with the answer before adding a question. The brackets make an empty string visible. Include coverage for the new code pattern in the practice answer oracle when contributing it.
+
+
 ## Challenges
 
 Users can begin one daily challenge per day. A challenge contains ten weighted practice questions, allows up to three skips, and awards points only on successful completion.
