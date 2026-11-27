@@ -6,6 +6,8 @@
         "answers": [
             "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input1.lowercased() == input2.lowercased()\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input1.uppercased() == input2.uppercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input2.lowercased() == input1.lowercased()\n}",
+            "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn input2.uppercased() == input1.uppercased()\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn !(input1.lowercased() != input2.lowercased())\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\noptionalreturn !(input1.uppercased() != input2.uppercased())\n}",
             "func myFunction(input1:String,input2:String) -> Bool{\nletvar result:Bool = input1.lowercased() == input2.lowercased()\nreturn result\n}",
